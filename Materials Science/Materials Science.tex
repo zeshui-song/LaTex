@@ -382,4 +382,140 @@ These lattice strains interact in the following ways:
 \end{figure}
 \noindent
 The attractive forces will result in the half planes merging into a complete plane, eliminating the dislocation. The repulsive forces will make it more difficult for dislocations to move. The number of dislocations increases dramatically during plastic deformation because of multiplication of existing dislocations, grain boundaries, internal defects, and surface irregularities.
+\section*{Slip Systems}
+The preferred slip plane and slip direction are those with the densest atomic packing (highest planer density) and highest linear density respectively. The combination of slip plane and slip direction is called a \textbf{slip system}.\\\\
+\underline{Ex:} FCC $\{111\}\langle110\rangle$ slip system
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{slip system FCC.png}
+\end{figure}
+\textbf{Table of Slip Systems}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{table.png}
+\end{figure} \noindent
+\underline{Note:} More slip systems = more ductile material\\\\
+The \textbf{Burgers vector} has the same direction as the dislocation motion (slip direction) and its magnitude is equal to the interatomic spacing in that direction (unit slip distance). 
+\underline{Ex:} Burgers vector for FCC and BCC
+\[\vec{b}_{FCC} = \frac{a}{2}\langle110\rangle\]
+\[\vec{b}_{BCC} = \frac{a}{2}\langle111\rangle\]
+\section*{Slip in single crystals}
+For an applied shear stress $\sigma$, the resolved shear stress represents the magnitude of the shear stress acting on the slip plane in the slip direction. It is given by: 
+\[\tau_R=\sigma \cos \phi \cos \lambda\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{resolved.png}
+\end{figure}\noindent
+A metal single crystal has a number of different slip systems, each with its own value of resolved shear stresses. However, there will be one slip system with the maximum resolved shear stress, denoted $\tau_{R}(\text{max})$.
+\[\tau_{R}\text{(max)}=\sigma (\cos \phi \cos \lambda)_{max}\]
+In this slip system with the maximum resolved shear stress, slip occurs when the resolved shear stress reaches a critical value (the critical resolved shear stress, $\tau_{CRSS}$). This is the minimum shear stress required to initiate slip and thus determines when yielding will begin (when $\tau_{R}\text{(max)}=\tau_{CRSS}$).
+\[\sigma_y = \frac{\tau_{CRSS}}{(\cos\phi \cos\lambda)_{max}} \quad \text{(yield stress)}\]
+This yield stress is minimized when $\phi=\lambda =45^\circ$, maximizing $\cos\phi \cos\lambda = 0.5$. Thus
+\[\sigma_{y,min} = 2\tau_{CRSS}\]
+\newpage \noindent
+\underline{Ex:} Consider a single crystal of BCC iron oriented such that a tensile stress is applied along a [010] direction. Compute the resolved shear stress along a (110) plane and in a [$\overline{1}$11] direction when a tensile stress of 52 MPa (7500 psi) is applied.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Ex slip.jpg}
+\end{figure}
+Recall that we can find the angle by using the projection:
+\[\cos\theta=\frac{\vec{a}\cdot\vec{b}}{|\vec{a}||\vec{b}|}\]
+Where:
+\begin{itemize}
+    \item Applied tensile direction $[010] \implies \vec{l}=(0,1,0)$
+    \item Slip plane $(110) \implies \vec{n}=(1,1,0)$ (normal vector to plane)
+    \item Slip direction $[\overline{1}11] \implies \vec{d}=(-1,1,1)$
+\end{itemize}
+Thus,
+\[
+\begin{aligned}
+\phi &= \cos^{-1}\!\left(\frac{\vec{n}\cdot\vec{l}}{|\vec{n}||\vec{l}|}\right)\\
+     &= \cos^{-1}\!\left(\frac{(1,1,0)\cdot(0,1,0)}{\sqrt{1^2+1^2+0^2}\sqrt{0^2+1^2+0^2}}\right)\\
+     &= \cos^{-1}\!\left(\frac{1}{\sqrt{2}}\right)=45^\circ
+\end{aligned}
+\qquad
+\begin{aligned}
+\lambda &= \cos^{-1}\!\left(\frac{\vec{d}\cdot\vec{l}}{|\vec{d}||\vec{l}|}\right)\\
+     &= \cos^{-1}\!\left(\frac{(-1,1,1)\cdot(0,1,0)}{\sqrt{(-1)^2+1^2+1^2}\sqrt{0^2+1^2+0^2}}\right)\\
+     &= \cos^{-1}\!\left(\frac{1}{\sqrt{3}}\right)=54.74^\circ
+\end{aligned}
+\]
+\[\tau_R=(52\text{MPa}) \cos (45^\circ) \cos (54.74^\circ)=21.3\text{MPa}\]
+\newpage
+\section*{Deformation by Twinning}
+In addition to slip, plastic deformation in some metallic materials can occur by the
+formation of mechanical twins, or twinning. Twinning occurs when a shear force produces atomic displacements such that on one side of a plane (the twin boundary), atoms are located in mirror-image positions of atoms on the other side.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{twinning.png}
+\end{figure}
+Twinning is different from slip in several ways:
+\begin{itemize}
+    \item Twinning produces a reorientation of the crystal lattice, where slip crystallographic orientation is the same before and after deformation
+    \item Slip occurs in distinct atomic spacing multiples, whereas the atomic displacement for twinning is less than the interatomic separation.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{diff.png}
+\end{figure}
+Mechanical twinning occurs in metals with BCC and HCP crystal structures at low temps and high rates of loading where there are fewer slip systems. Twinning is important because it may place new slip systems in orientations that are favorable relative to the stress axis such that the slip process can now take place.
+\newpage
+\section*{Strengthening by grain size reduction}
+The strength and hardness of metals depend on how easily dislocations can move. Plastic deformation occurs through dislocation motion, so if dislocations move freely, the metal is soft and weak. If their motion is restricted, more force is needed to deform the metal, making it harder and stronger. Thus, nearly all strengthening methods work by hindering dislocation movement.\\\\
+Grain size affects a metal’s mechanical properties because grain boundaries hinder dislocation motion. When a dislocation moves from one grain to another, it encounters two obstacles:
+\begin{itemize}
+    \item The change in crystal orientation makes it harder for the dislocation to continue moving.
+    \item The atomic disorder at the grain boundary disrupts slip-plane continuity.
+\end{itemize}
+As a result, smaller grains (more boundaries) strengthen the metal by restricting dislocation motion.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grain bound.png}
+\end{figure}\noindent
+The relationship between yield strength and grain size is given by the \textbf{Hall-Petch equation}:
+\[\sigma_y=\sigma_o+k_y d^{-1/2}\]
+Where:
+\begin{itemize}
+    \item $\sigma_y$ = yield stress
+    \item $\sigma_o$ = friction stress (stress required to move dislocations, a material constant)
+    \item $k_y$ = strengthening coefficient (a material constant)
+    \item d = average grain diameter
+\end{itemize}
+\newpage
+\section*{Solid-solution strengthening}
+By creating alloys with impurity atoms in either a substitutional or interstitial solid solution, the strength of a metal can be increased. This process is called \textbf{solid-solution strengthening}. High-purity metals are almost always softer and weaker than alloys composed of the same base metal. This is because the impurity atoms impose lattice strains that hinder dislocation motion.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{solid solution.png}
+\end{figure}\noindent
+\section*{Strain hardening}
+\textbf{Strain hardening} is the phenomenon by which a ductile metal becomes harder and stronger as it is plastically deformed. Sometimes it is also called work hardening, or \textbf{cold working}.\\\\
+We can define the amount of plastic deformation as \textbf{percent cold work} instead of strain:
+\[\%CW=\frac{A_o - A_d}{A_o} \times 100\]
+Where:
+\begin{itemize}
+    \item $A_o$ = original cross-sectional area
+    \item $A_d$ = cross-sectional area after deformation
+\end{itemize}
+\section*{Recovery}
+When a polycrystalline metal is plastically deformed at low temperatures, its grains change shape, dislocation density increases, and it undergoes strain hardening. Some deformation energy is stored as strain energy, and properties such as electrical conductivity and corrosion resistance may change.\\\\
+\noindent
+These effects can be reversed by \textbf{annealing}, a heat treatment involving \textbf{recovery} and \textbf{recrystallization} (sometimes followed by grain growth). During \textbf{recovery}, atomic diffusion allows dislocations to rearrange and reduce internal strain energy without external stress. This lowers dislocation density and restores properties such as electrical and thermal conductivity to their original states.
+\section*{Recrystallization}
+\textbf{Recrystallization} replaces deformed grains with new, strain-free, equiaxed ones that have low dislocation density. This process, driven by stored strain energy, restores the metal’s softness and ductility. It depends on time and temperature; the \textbf{recrystallization temperature} (temp for completion in 1~h) is typically $0.3$–$0.5\,T_m$ for metals and up to $0.7\,T_m$ for alloys ($T_m$ is the melting temperature). Greater cold work lowers this temperature, while impurities raise it by slowing grain boundary motion.
+\section*{Grain Growth}
+\textbf{Grain growth} occurs when strain-free grains enlarge at elevated temperatures, even without prior recovery or recrystallization. As grain boundaries migrate, large grains grow at the expense of smaller ones, reducing total boundary area and energy. The driving force is the decrease in grain boundary energy, and boundary motion occurs through short-range atomic diffusion.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{grain growth.png}
+\end{figure}\noindent
+The grain diameter varies with time according to the relationship:
+\[d^n-d^n_o=Kt\]
+Where:
+\begin{itemize}
+    \item $d$ = grain diameter at time t
+    \item $d_o$ = initial grain diameter
+    \item n = grain growth exponent (typically 2)
+    \item K = temperature-dependent rate constant
+\end{itemize}
 \end{document}

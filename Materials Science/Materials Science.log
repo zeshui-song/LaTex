@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  1 NOV 2025 21:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  2 NOV 2025 12:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,24 +598,100 @@ File: interaction.png Graphic file (type png)
 <use interaction.png>
 Package pdftex.def Info: interaction.png  used on input line 381.
 (pdftex.def)             Requested size: 234.8775pt x 309.53242pt.
- [22 <./lattice strain.png> <./interaction.png>] (Materials Science.aux)
+<slip system FCC.png, id=124, 439.6425pt x 198.7425pt>
+File: slip system FCC.png Graphic file (type png)
+<use slip system FCC.png>
+Package pdftex.def Info: slip system FCC.png  used on input line 390.
+(pdftex.def)             Requested size: 281.85587pt x 127.41614pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--391
+
+ []
+
+[22 <./lattice strain.png> <./interaction.png>]
+<table.png, id=130, 617.9085pt x 290.2845pt>
+File: table.png Graphic file (type png)
+<use table.png>
+Package pdftex.def Info: table.png  used on input line 395.
+(pdftex.def)             Requested size: 422.77664pt x 198.61334pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--400
+
+ []
+
+[23 <./slip system FCC.png> <./table.png>]
+<resolved.png, id=136, 295.70474pt x 458.9145pt>
+File: resolved.png Graphic file (type png)
+<use resolved.png>
+Package pdftex.def Info: resolved.png  used on input line 407.
+(pdftex.def)             Requested size: 187.89914pt x 291.60353pt.
+ [24 <./resolved.png>]
+<Ex slip.jpg, id=141, 108.8868pt x 82.6287pt>
+File: Ex slip.jpg Graphic file (type jpg)
+<use Ex slip.jpg>
+Package pdftex.def Info: Ex slip.jpg  used on input line 419.
+(pdftex.def)             Requested size: 281.85587pt x 213.9078pt.
+ [25 <./Ex slip.jpg>]
+<twinning.png, id=146, 904.5795pt x 266.1945pt>
+File: twinning.png Graphic file (type png)
+<use twinning.png>
+Package pdftex.def Info: twinning.png  used on input line 450.
+(pdftex.def)             Requested size: 469.75502pt x 138.23509pt.
+<diff.png, id=147, 529.98pt x 236.082pt>
+File: diff.png Graphic file (type png)
+<use diff.png>
+Package pdftex.def Info: diff.png  used on input line 459.
+(pdftex.def)             Requested size: 281.85587pt x 125.55513pt.
+ [26 <./twinning.png> <./diff.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
+
+ []
+
+<grain bound.png, id=153, 579.3645pt x 302.3295pt>
+File: grain bound.png Graphic file (type png)
+<use grain bound.png>
+Package pdftex.def Info: grain bound.png  used on input line 473.
+(pdftex.def)             Requested size: 281.85587pt x 147.08171pt.
+[27 <./grain bound.png>]
+<solid solution.png, id=158, 967.81575pt x 239.09325pt>
+File: solid solution.png Graphic file (type png)
+<use solid solution.png>
+Package pdftex.def Info: solid solution.png  used on input line 489.
+(pdftex.def)             Requested size: 469.75502pt x 116.04764pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--504
+
+ []
+
+[28 <./solid solution.png>]
+<grain growth.png, id=163, 374.5995pt x 425.79076pt>
+File: grain growth.png Graphic file (type png)
+<use grain growth.png>
+Package pdftex.def Info: grain growth.png  used on input line 510.
+(pdftex.def)             Requested size: 187.89914pt x 213.57704pt.
+ [29 <./grain growth.png>] (Materials Science.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3759 strings out of 474486
- 56979 string characters out of 5743755
- 1930542 words of memory out of 5000000
- 25997 multiletter control sequences out of 15000+600000
+ 3822 strings out of 474486
+ 58251 string characters out of 5743755
+ 1934542 words of memory out of 5000000
+ 26060 multiletter control sequences out of 15000+600000
  576107 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,462b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,12n,65p,648b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "Materials Science.pdf" (22 pages, 2719665 bytes).
+Output written on "Materials Science.pdf" (29 pages, 3304041 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
+ 214 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
