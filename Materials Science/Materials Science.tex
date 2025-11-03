@@ -444,7 +444,19 @@ Where:
     \item $t$ = time
     \item $x$ = distance into solid
 \end{itemize}
-\underline{Note:} Values for the error function can be found for various $\frac{x}{2\sqrt{Dt}}$ inputs can be found can be found in tables.
+\textbf{Target concentration ($C_1$):} \\
+    If you want the solute in the alloy to reach a certain concentration $C_1$, you can express it in a normalized form:
+    \[
+    \frac{C_1 - C_0}{C_s - C_0} = \text{constant}
+    \]
+    This ratio is constant for a given point in the material at a fixed time.\\\\
+\textbf{Relation to diffusion distance and time:} \\
+    \[    \frac{x}{2\sqrt{Dt}} = \text{constant} \quad \text{or equivalently} \quad \frac{x^2}{Dt} = \text{constant}    \]
+    This is constant for fixed target concentration $C_1$ and initial and surface concentrations $C_0$ and $C_s$.\\\\
+\underline{Note:} \textbf{Carburizing} is the process by which the surface carbon concentration of a ferrous alloy is increased by diffusion from the surrounding environment. ($C_0$ is zero for pure iron)
+    
+    \newpage\noindent
+\underline{Note:} Values for the error function can be found for various $\frac{x}{2\sqrt{Dt}}$ inputs can be found can be found in tables. If the value does not match exactly, do a linear approx using the two closest values.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{error function.png}
