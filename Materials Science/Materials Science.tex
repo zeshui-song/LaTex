@@ -441,9 +441,9 @@ Where:
     \item $C_0$ = initial concentration inside solid
     \item $C_s$ = surface concentration
     \item $D$ = diffusion coefficient
-    \item $t$ = time
     \item $x$ = distance into solid
 \end{itemize}
+\underline{Note:} The concentrations can be in any consistent units (wt\%, at\%, kg/m$^3$, etc.) since they are in a ratio.\\\\
 \textbf{Target concentration ($C_1$):} \\
     If you want the solute in the alloy to reach a certain concentration $C_1$, you can express it in a normalized form:
     \[
@@ -461,6 +461,24 @@ Where:
     \centering
     \includegraphics[width=1\textwidth]{error function.png}
 \end{figure}
+\section*{Factors that influence diffusion}
+The diffusion coefficient D refers to the rate at which atoms diffuse. The diffusing species and the host material influence the diffusion coefficient.\\\\
+\textbf{Temperature Dependence}
+\[D=D_o e^{\left(-\frac{Q_d}{RT}\right)}\]
+Where:
+\begin{itemize}
+    \item $D_o$ = a temperature-independent preexponential ($m^2/s$)
+    \item $Q_d$ = activation energy for diffusion (J/mol or eV/atom)
+    \item R = universal gas constant ($8.314$ J/mol$\cdot$K)
+    \item T = absolute temperature (K)
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{diffusion co.png}
+\end{figure}
+Rewriting the equation:
+\[\ln D = \ln D_o - \frac{Q_d}{R}\left(\frac{1}{T}\right)\]
+This is the equation of a straight line with slope $-\frac{Q_d}{R}$ and y-intercept $\ln D_o$. Thus, a plot of $\ln D$ versus $\frac{1}{T}$ yields a straight line, from which $D_o$ and $Q_d$ can be determined.
 \newpage
 \section*{\LARGE\underline{Line Defects}}
 Dislocations are line defects. It occurs when there is slipping between crystal planes when dislocations move, and they cause permanent (plastic) deformation. There are two main types:
