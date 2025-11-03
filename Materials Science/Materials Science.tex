@@ -109,7 +109,7 @@ As $\%$ elongation:
 \[\%EL = \frac{l_f - l_0}{l_0} \times 100\]
 As $\%$ reduction in area
 \[\%RA = \frac{A_0 - A_f}{A_0} \times 100\]
-$l_f$ and $A_f$ are length and cross sectional area of sample at fracture respectively.\\\\
+$l_f$ and $A_f$ are length and cross-sectional area of sample at fracture respectively.\\\\
 \noindent\textbf{Resilience:} capacity of a material to absorb energy when it is deformed elastically and unloaded (similar to spring potential energy)\\\\
 \noindent\textbf{Modulus of Resilience}
 \[U_r = \int_{0}^{\epsilon_{yield}}\sigma d\epsilon\]
@@ -233,32 +233,32 @@ There are half as many Ca$^{2+}$ as F$^-$ (for CaF$_2$)
     \includegraphics[width=0.4\textwidth]{ABX3.png}
 \end{figure}
 \section*{Point Coordinates}
-To find the coordinate indices (q,r,s), find the cartesian coordinates and divide by the corresponding lattice parameter
+To find the coordinate indices (q, r, s), find the Cartesian coordinates and divide by the corresponding lattice parameter
 \[(q,r,s) = \left( \frac{x}{a}, \frac{y}{b}, \frac{z}{c} \right)\]
 \section*{Crystallographic Directions}
 How to define:
 \begin{itemize}
     \item Position vector to pass through origin
-    \item Read off projections onto coordinate axes in terms of lattice parameters (a,b,c)
+    \item Read off projections onto coordinate axes in terms of lattice parameters (a, b, c)
     \item Multiply through by common denominator
     \item Enclose in square brackets without commas, negatives go on top (ex: [$\overline{1} 2 3$])
 \end{itemize}
 How to read [123]:
 \begin{itemize}
     \item Divide by the common denominator used previously (say 6)
-    \item Vector in cartesian: (1/6,1/3,1/2)
+    \item Vector in Cartesian: (1/6,1/3,1/2)
 \end{itemize}
 \section*{Crystallographic Planes}
 How to define with Miller indices:
 \begin{itemize}
     \item Define any origin
-    \item Read intercepts of the plane with the coordinate axes in terms of lattice parameters (a,b,c)
+    \item Read intercepts of the plane with the coordinate axes in terms of lattice parameters (a, b, c)
     \item Take reciprocals of intercepts
-    \item Enclose in parenthesis without commas, negatives go on top (ex: ($\overline{1} 2 3$))
+    \item Enclose in parentheses without commas, negatives go on top (ex: ($\overline{1} 2 3$))
 \end{itemize}
 How to read:
 \begin{itemize}
-    \item Take reciprocols of plane to identify intercepts
+    \item Take reciprocals of plane to identify intercepts
 \end{itemize}
 \section*{Linear and Planer Density}
 \textbf{Linear Density}
@@ -300,7 +300,7 @@ Alloys are solid solutions of an impurity element (solute) dissolved in a base e
 Conditions for forming a solid solution:
 \begin{itemize}
     \item Atomic radii must be within 15\% of each other ($\Delta r < 0.15\%$)
-    \item Electronegativity values must be similar (ie. Close together on the periodic table)
+    \item Electronegativity values must be similar (i.e. Close together on the periodic table)
     \item Crystal structures of solvent and solute must be the same (for pure metals)
     \item Valencies should be similar (All else being equal, a metal will have a greater tendency to dissolve a metal of higher valency than one of lower valency)
 \end{itemize}
@@ -350,8 +350,108 @@ Where
 \[C_1'=\frac{C_1A_2}{C_1A_2 + C_2A_1}\times 100\]
 Where $A_1$ and $A_2$ are the atomic weights of elements 1 and 2 respectively
 \newpage
+\section*{Diffusion}
+\textbf{Diffusion:} The general process where atoms move from one place to another, causing mass transport within or between materials.\\[4pt]
+\textbf{Interdiffusion:} Occurs when atoms from two different metals migrate into each other, forming a region where the metals mix.\\[4pt]
+\textbf{Self-diffusion:} Happens in pure metals when atoms of the same kind exchange places, even though there is no concentration difference.
+\section*{Diffusion Mechanisms}
+For diffusion to occur: (1) an adjacent site must be vacant, and (2) the atom must have enough energy to break bonds and distort the lattice. Only a fraction of atoms at a given temperature have sufficient vibrational energy for diffusion, and this fraction increases with temperature. For metals, two main models describe this atomic motion.
+\begin{itemize}
+    \item \textbf{Vacancy Diffusion:} Atoms move into adjacent vacant lattice sites.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{vacancy diff.png}
+    \end{figure}
+    \item \textbf{Interstitial Diffusion:} Smaller atoms move through the spaces between larger atoms.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{interstitial diff.png}
+    \end{figure}
+\end{itemize}
+\newpage
+\section*{Fick's First Law}
+We quantify how fast diffusion occurs by defining the rate of mass transfer or the \textbf{diffusion flux} (J). It is the amount of substance that diffuses through a unit area per unit time.
+\[J=\frac{M}{At} \quad (kg/m^2\cdotp s \text{ or } atoms/m^2\cdotp s)\]
+Where:
+\begin{itemize}
+    \item M = mass of diffusing substance (kg or atoms)
+    \item A = cross-sectional area (m$^2$)
+    \item t = time (s)
+\end{itemize}
+\textbf{Fick's first law—diffusion flux for steady-state diffusion (in one direction)}
+\[J=-D\frac{dC}{dx}\]
+Where:
+\begin{itemize}
+    \item D = diffusion coefficient($m^2/s$)\\
+    The negative sign indicates that the direction of diffusion is down the concentration gradient, from a high to a low concentration.
+    \item $\frac{dC}{dx}$ = concentration gradient in the x direction.
+\end{itemize}
+\textbf{Fick's first law} describes the diffusion of atoms through a thin metal plate when the concentrations (or pressures) on both surfaces are constant. In this case, a \textbf{steady-state diffusion} is achieved, where the diffusion flux remains constant over time and there is no net accumulation of the diffusing species within the plate.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ficks 1.png}
+\end{figure}\noindent
+When the concentration $C$ is plotted against position $x$ in a solid, the curve is called the \textbf{concentration profile}, and the \textbf{concentration gradient} is the slope at any point on this curve. For simplicity, the concentration profile is often assumed to be linear.
+\[\text{(Concentration Gradient)}=\frac{dC}{dx}=\frac{\Delta C}{\Delta x}=\frac{C_A-C_B}{x_A-x_B}\]
+The \textbf{concentration} $C$ of a diffusing species is expressed as the mass of the species per unit volume of the solid, typically in units of kg/m$^3$ or g/cm$^3$.\\\\
+In diffusion, the term \textbf{driving force} refers to what compels the process to occur. When diffusion follows Fick's law, the \textbf{concentration gradient} acts as the driving force.\\\\
+\underline{Note:} We can convert between weight percent and concentration using the density of the material.
+\[C''_1=\frac{C_1}{\frac{C_1}{\rho_1}+\frac{C_2}{\rho_2}}\times 10^3\]
+Where:
+\begin{itemize}
+    \item $C_1$ = weight percent of 1
+    \item $C_2$ = weight percent of 2
+    \item $\rho_1$ = density of 1 (g/cm$^3$)
+    \item $\rho_2$ = density of 2 (g/cm$^3$)
+\end{itemize}
+\newpage
+\section*{Fick's second law—nonsteady-state diffusion}
+For nonsteady-state diffusion, the diffusion flux and the concentration gradient at some particular point in a solid vary with time, with a net accumulation or depletion of the diffusing species resulting.\\\\
+\textbf{Fick's second law—diffusion equation for nonsteady-state diffusion (in one direction)}
+\[\frac{\partial C}{\partial t} = D\frac{\partial^2 C}{\partial x^2}\]
+Where:
+\begin{itemize}
+    \item $C$ = concentration of the diffusing species (kg/m$^3$ or g/cm$^3$)
+    \item $D$ = diffusion coefficient (m$^2$/s)
+\end{itemize}
+Solutions to this differential equation are possible when physically meaningful boundary conditions are specified.\\\\
+\textbf{Semi-infinite Solid}\\\\
+A practically important case is diffusion into a \textbf{semi-infinite solid} where the surface concentration is held constant, often from a gas phase with constant partial pressure. The assumptions are:
+\begin{enumerate}
+    \item Initially, the solute atoms are uniformly distributed in the solid with concentration $C_0$.
+    \item The surface is at $x = 0$ and $x$ increases into the solid.
+    \item Time $t = 0$ is defined just before diffusion begins.
+\end{enumerate}
+\noindent
+These conditions can be expressed as:
+
+\textbf{Initial condition:} 
+\[t = 0, \quad C = C_0 \quad \text{for } 0 \le x \le \infty\]
+
+\textbf{Boundary conditions:} 
+\begin{align*}
+&t > 0, \quad C = C_s \quad \text{at } x = 0 \quad \text{($C_s$ is the constant surface concentration)}\\
+&t > 0, \quad C = C_0 \quad \text{at } x = \infty
+\end{align*}\newpage\noindent
+This results in the following solution:
+\[\boxed{\frac{C_x-C_0}{C_s - C_0} = 1-\text{erf}\left(\frac{x}{2\sqrt{Dt}}\right)}\]
+Where:
+\begin{itemize}
+    \item $C_x$ = concentration at distance x after time t
+    \item $C_0$ = initial concentration inside solid
+    \item $C_s$ = surface concentration
+    \item $D$ = diffusion coefficient
+    \item $t$ = time
+    \item $x$ = distance into solid
+\end{itemize}
+\underline{Note:} Values for the error function can be found for various $\frac{x}{2\sqrt{Dt}}$ inputs can be found can be found in tables.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{error function.png}
+\end{figure}
+\newpage
 \section*{\LARGE\underline{Line Defects}}
-Dislocations are line defects. It occurs when there is slipping between crystal planes when dislocations move and they cause permanent (plastic) deformation. There are two main types:
+Dislocations are line defects. It occurs when there is slipping between crystal planes when dislocations move, and they cause permanent (plastic) deformation. There are two main types:
 \begin{itemize}
     \item \textbf{Edge Dislocation}
     \begin{figure}[H]   
@@ -410,7 +510,7 @@ A metal single crystal has a number of different slip systems, each with its own
 \[\tau_{R}\text{(max)}=\sigma (\cos \phi \cos \lambda)_{max}\]
 In this slip system with the maximum resolved shear stress, slip occurs when the resolved shear stress reaches a critical value (the critical resolved shear stress, $\tau_{CRSS}$). This is the minimum shear stress required to initiate slip and thus determines when yielding will begin (when $\tau_{R}\text{(max)}=\tau_{CRSS}$).
 \[\sigma_y = \frac{\tau_{CRSS}}{(\cos\phi \cos\lambda)_{max}} \quad \text{(yield stress)}\]
-This yield stress is minimized when $\phi=\lambda =45^\circ$, maximizing $\cos\phi \cos\lambda = 0.5$. Thus
+This yield stress is minimized when $\phi=\lambda =45^\circ$, maximizing $\cos\phi \cos\lambda = 0.5$. Thus,
 \[\sigma_{y,min} = 2\tau_{CRSS}\]
 \newpage \noindent
 \underline{Ex:} Consider a single crystal of BCC iron oriented such that a tensile stress is applied along a [010] direction. Compute the resolved shear stress along a (110) plane and in a [$\overline{1}$11] direction when a tensile stress of 52 MPa (7500 psi) is applied.

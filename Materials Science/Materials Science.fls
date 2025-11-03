@@ -298,6 +298,34 @@ INPUT .\BCC radius.png
 INPUT .\BCC radius.png
 INPUT .\BCC radius.png
 INPUT .\BCC radius.png
+INPUT .\vacancy diff.png
+INPUT .\vacancy diff.png
+INPUT .\vacancy diff.png
+INPUT .\vacancy diff.png
+INPUT .\vacancy diff.png
+INPUT .\vacancy diff.png
+INPUT .\vacancy diff.png
+INPUT .\interstitial diff.png
+INPUT .\interstitial diff.png
+INPUT .\interstitial diff.png
+INPUT .\interstitial diff.png
+INPUT .\interstitial diff.png
+INPUT .\interstitial diff.png
+INPUT .\interstitial diff.png
+INPUT .\ficks 1.png
+INPUT .\ficks 1.png
+INPUT .\ficks 1.png
+INPUT .\ficks 1.png
+INPUT .\ficks 1.png
+INPUT .\ficks 1.png
+INPUT .\ficks 1.png
+INPUT .\error function.png
+INPUT .\error function.png
+INPUT .\error function.png
+INPUT .\error function.png
+INPUT .\error function.png
+INPUT .\error function.png
+INPUT .\error function.png
 INPUT .\Edge dislocation.png
 INPUT .\Edge dislocation.png
 INPUT .\Edge dislocation.png
@@ -404,6 +432,8 @@ INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
