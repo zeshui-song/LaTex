@@ -475,8 +475,71 @@ The \textbf{Relaxation Method} essentially calculates potentials at every point 
 
 \section*{Chapter 25 - Capacitance}
 \begin{enumerate}
-    \item Define the capacitance and explain its utility.
-    \item Calculate the capacitance for various arrangements of conductors. Especially be familiar with the properties of the ideal parallel plate capacitor.
+    \item Define the capacitance and explain its utility.\\\\
+Generally, separation of charges will result in a potential difference. When a capacitor is charged, charges are effectively moved off of one conductor onto the other. The capacitance is a measure of how much charge can be stored on each conductor for a given potential difference.
+\[q=C\Delta V\]
+Where:
+\begin{itemize}
+    \item C is the capacitance and ONLY depends on the geometry of the conductor (Farads, F or C/V)
+    \item V is the potential difference between the conductors (Volts, V)
+    \item q is the magnitude of charge on each conductor (Coulombs, C)
+\end{itemize}
+\underline{Note:} The greater the capacitance, the more charge can be stored for a given potential difference.
+    \item Calculate the capacitance for various arrangements of conductors. Especially be familiar with the properties of the ideal parallel plate capacitor.\\\\
+General steps:
+\begin{enumerate}
+    \item Assume a charge q on each conductor.
+    \item Calculate the electric field between the conductors using Gauss's law.
+    \item Calculate the potential difference between the conductors using the electric field.
+    \item Calculate the capacitance using $C=\frac{q}{\Delta V}$
+\end{enumerate}
+\begin{itemize}
+    \item \textbf{Parallel Plate Capacitor}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{parallel plate.png}
+    \end{figure}
+    Using Gauss's Law around one plate:
+    \[\varepsilon_o \int \vec{E}\cdot\hat{n}dA=Q_{enc}\]
+    \[\varepsilon_o EA=q\]
+    \[\implies E=\frac{q}{\varepsilon_o A}\]
+    Integrating from negative to positive plate to find a positive potential difference:
+    \[\Delta V=-\int_{-}^{+}\vec{E}\cdot d\vec{y}\]
+    \[\Delta V=\int_{0}^{d}Edy\]
+    \[\Delta V=Ed\]
+    Thus,
+    \[\boxed{C=\frac{\varepsilon_oA}{d}}\]    
+    \item \textbf{Cylindrical Capacitor}\\
+Inner cylinder with radius a, outer cylinder with radius b, length L
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{cylindrical capacitor.png}
+    \end{figure}
+Using Gauss's Law around the inner cylinder:
+\[\varepsilon_o \int \vec{E}\cdot\hat{n}dA=Q_{enc}\]
+\[\varepsilon_o E(2\pi r L)=q\]
+\[\implies E=\frac{q}{2\pi \varepsilon_o r L}\]
+Integrating from inner to outer cylinder to find a positive potential difference:
+\[\Delta V=-\int_{b}^{a}\vec{E}\cdot d\vec{r}\]
+\[\Delta V=-\int_{b}^{a}Edr\]
+\[\Delta V=-\int_{b}^{a}\frac{q}{2\pi \varepsilon_o r L}dr\]
+\[\Delta V=\frac{q}{2\pi \varepsilon_o L}ln\left(\frac{b}{a}\right)\]
+Thus,
+\[\boxed{C=\frac{2\pi \varepsilon_o L}{ln\left(\frac{b}{a}\right)}}\]
+    \item \textbf{Spherical Capacitor}\\
+Inner sphere (+) with radius a, outer sphere (-) with radius b\\\\
+Using Gauss's Law around the inner sphere:
+\[\varepsilon_o \int \vec{E}\cdot\hat{n}dA=Q_{enc}\]
+\[\varepsilon_o E(4\pi r^2)=q\]
+\[\implies E=\frac{q}{4\pi \varepsilon_o r^2}\]
+Integrating from inner to outer sphere to find a positive potential difference:
+\[\Delta V=-\int_{b}^{a}\vec{E}\cdot d\vec{r}\]
+\[\Delta V=-\int_{b}^{a}Edr\]
+\[\Delta V=-\int_{b}^{a}\frac{q}{4\pi \varepsilon_o r^2}dr\]
+\[\Delta V=\frac{q}{4\pi \varepsilon_o}\left(\frac{1}{a}-\frac{1}{b}\right)\]
+Thus,
+\[\boxed{C=4\pi \varepsilon_o \left(\frac{ab}{b-a}\right)}\]
+\end{itemize}
     \item Explain the use of dielectrics, their physics principles, and calculate capacitance in the presence of dielectric materials.
     \item Derive the electric field energy density. Calculate the electrostatic energy stored in a capacitor several different ways i.e., using expressions that directly involve the capacitance or computing the volume integral over the electric field energy density.
 \end{enumerate}
