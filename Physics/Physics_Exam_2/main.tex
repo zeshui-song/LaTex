@@ -651,8 +651,34 @@ U_{cap} &= \frac{\varepsilon_0}{2}\frac{V^2}{d^2}\int dV \\
 \end{align*}
 \end{enumerate}
 \section*{Chapter 26 - Current and Resistance}
-\begin{enumerate}
-    \item Define resistance and know Ohm's law. Use it to find the electric field in and potential difference across a resistor.
+\textbf{Current}\\
+Current is defined as the amount of charge that flows through a cross-sectional area per unit time.
+\[i=\frac{dq}{dt}\]
+Its units are Amperes (A) where 1 A = 1 C/s.\\\\
+\underline{Note:} The conventional current direction is the direction that positive charges would flow. In reality, electrons flow in the opposite direction of conventional current.\\\\
+\textbf{Current Density}\\
+To look at the flow of charge through a cross-section, we define a current density $\vec{J}$ in the direction of current flow with magnitude current per unit area such that the current through an area A is:
+\[i=\int \vec{J}\cdot \hat{n} dA\]
+\textbf{Drift Velocity}\\
+When an electric field is applied to a conductor, free electrons experience a force that causes them to accelerate. However, they frequently collide with atoms in the conductor which randomizes their motion. The average velocity of the electrons in the direction opposite to the electric field is called the drift velocity $\vec{v}_d$.\\\\\newpage\noindent
+\underline{Relating current density to drift velocity:}\\\\
+The amount of positive charge in a section of wire of length L and cross-sectional area A is:
+\[q=nALe\]
+Where n is the number of charge carriers per unit volume and e is the charge of each carrier. The time it takes for the charges to move through length L is:
+\[t=\frac{L}{v_d}\]
+Thus, the current is:
+\[i=\frac{q}{t}=\frac{nALe}{L/v_d}=nev_dA\]
+Solving for the drift velocity and recalling that $J=i/A$:
+\[\boxed{\vec{J}=n e \vec{v}_d}\]
+\underline{Note:} $ne$ is the carrier charge density (C/m$^3$). For positive charges, $\vec{J}$ and $\vec{v}_d$ point in the same direction. For negative charges (electrons), they point in opposite directions.
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{direction.png}
+\end{figure}\noindent
+\begin{enumerate}    
+    \item Define resistance and know Ohm's law. Use it to find the electric field in and potential difference across a resistor.\\\\
+\textbf{Resistance and Resistivity}\\
+
     \item Know the relations among power, potential, and resistance. Calculate the power dissipated in a resistor.
 \end{enumerate}
 \textbf{End Exam 2}
