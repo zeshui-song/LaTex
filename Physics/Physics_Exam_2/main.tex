@@ -472,7 +472,31 @@ Plugging into Laplace's Equation we get:
 \[\boxed{V(x,y)=\frac{1}{4}\left[V(x+h,y)+V(x-h,y)+V(x,y+h)+V(x,y-h)\right]}\]
 In other words, the potential at P is the average of the potentials at its 4 adjacent points.\\\\
 The \textbf{Relaxation Method} essentially calculates potentials at every point (not on the boundary) and iterates using previously calculated values until it converges. 
-
+\newpage\noindent
+\underline{Ex:} Energy to assemble a system of continuous charges (Solid Sphere)
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{assemble solid sphere.JPG}
+ \end{figure}\noindent
+We build the solid sphere of radius $R$ by bringing in spherical shells of charge from infinity. Suppose a sphere of radius $r$ with charge $q(r)$ already exists.\\
+Charge density of complete sphere:
+\[\rho=\frac{Q}{\frac{4}{3}\pi R^3}=\frac{3Q}{4\pi R^3}\]
+The voltage at the surface of the sphere of radius r is:
+\[V(r)=\frac{1}{4\pi\varepsilon_o}\frac{q(r)}{r}\]
+The work done to bring in the shell is:
+\[dW=V(r)dq\]
+\[ W=\int \frac{1}{4\pi\varepsilon_o}\frac{q(r)}{r}dq\]
+Where charge of little sphere with radius r:
+\[q(r)=\rho\frac{4}{3}\pi r^3=Q\frac{r^3}{R^3}\]
+Charge of shell (dq):
+\[dq=\rho 4\pi r^2 dr=\frac{3Qr^2}{R^3}dr\]
+Thus,
+\begin{align*}
+    W=&\frac{3Q^2}{4\pi\varepsilon_o R^6}\int_{0}^{R} r^4 dr\\
+    =&\frac{3Q^2}{4\pi\varepsilon_o R^6}\left(\frac{R^5}{5}\right)\\
+\end{align*}
+\[\boxed{W=\frac{3}{5}\frac{Q^2}{4\pi\varepsilon_o R}} \]
+\newpage
 \section*{Chapter 25 - Capacitance}
 \begin{enumerate}
     \item Define the capacitance and explain its utility.\\\\
@@ -485,13 +509,32 @@ Where:
     \item q is the magnitude of charge on each conductor (Coulombs, C)
 \end{itemize}
 \underline{Note:} The greater the capacitance, the more charge can be stored for a given potential difference.
+\item Finding the equivalent capacitance for capacitors in series and parallel.
+\begin{itemize}
+    \item \textbf{Capacitors in Series}
+\begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{cap-series.png}
+    \end{figure}
+\vspace{-2em}
+Each capacitor has the same amount of charge q on its plates, and the sum of the potential differences across each capacitor equals the total potential difference.
+\[\frac{1}{C_{eq}}=\frac{1}{C_1}+\frac{1}{C_2}+\frac{1}{C_3}+\ldots\]
+    \item \textbf{Capacitors in Parallel}
+\begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{cap-parallel.png}
+    \end{figure}
+\vspace{-1em}
+Each capacitor has the same potential difference across its plates, and the sum of the charges on each capacitor equals the total charge.
+\[C_{eq}=C_1+C_2+C_3+\ldots\]
+\end{itemize}
     \item Calculate the capacitance for various arrangements of conductors. Especially be familiar with the properties of the ideal parallel plate capacitor.\\\\
 General steps:
 \begin{enumerate}
     \item Assume a charge q on each conductor.
     \item Calculate the electric field between the conductors using Gauss's law.
     \item Calculate the potential difference between the conductors using the electric field.
-    \item Calculate the capacitance using $C=\frac{q}{\Delta V}$
+    \item Calculate the capacitance using \[C=\frac{q}{\Delta V}\]
 \end{enumerate}
 \begin{itemize}
     \item \textbf{Parallel Plate Capacitor}
@@ -544,8 +587,68 @@ To find the capacitance of an isolated sphere, we basically treat it as a spheri
 Thus,
 \[\boxed{C=4\pi \varepsilon_o R}\]
 \end{itemize}
-    \item Explain the use of dielectrics, their physics principles, and calculate capacitance in the presence of dielectric materials.
-    \item Derive the electric field energy density. Calculate the electrostatic energy stored in a capacitor several different ways i.e., using expressions that directly involve the capacitance or computing the volume integral over the electric field energy density.
+    \item Explain the use of dielectrics, their physics principles, and calculate capacitance in the presence of dielectric materials.\\\\
+Dielectrics are insulating materials that increase the capacitance of a capacitor by changing the permittivity by a factor of $\kappa$ (dielectric constant).
+\[\varepsilon=\kappa\varepsilon_o\]
+Thus, \[\boxed{C = \kappa C_{\text{air}}}\]
+where $C_{\text{air}}$ is the capacitance with only air between the conductors.\\\\
+In a region completely filled with a dielectric, electrostatic equations become:
+\[\vec{E}=\frac{1}{4\pi\kappa\varepsilon_o}\frac{q}{r^2} \quad \text{(point charge in dielectric)}\]
+\textbf{Working mechanism:}
+\begin{figure}[H]
+     \centering
+    \includegraphics[width=0.6\textwidth]{dielectric.png}
+\end{figure}
+\vspace{-1em}
+The electric field applied by charging the capacitor plates slightly stretches the atoms, separating the centers of positive and negative charge. These induced dipoles pull surface charges onto the plates that partially cancel the applied field $\vec{E}_o$.\\\\
+Note that by decreasing the electric field between the plates, the potential difference also decreases for a given charge. Since $C=q/\Delta V$, the capacitance increases.\\\\
+\textbf{Gauss's Law in Dielectrics}\\
+Previously, Gauss's Law was used in a vacuum/air, now we modify it for dielectrics.
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{dielectric gauss.png}
+\end{figure}
+\vspace{-1em}
+The original electric field without the dielectric is:
+\[E_o=\frac{q}{A\varepsilon_o}\]
+With the dielectric, the enclosed charge changes:
+\[E=\frac{q-q'}{A\varepsilon_o} \quad (1)\]
+Since the effect of the dielectric is to reduce the electric field by a factor of $\kappa$:
+\[E=\frac{E_o}{\kappa}=\frac{1}{\kappa}\frac{q}{A\varepsilon_o} \quad (2)\]
+Equating (1) and (2):
+\[\frac{q-q'}{A\varepsilon_o}=\frac{1}{\kappa}\frac{q}{A\varepsilon_o}\]
+\[\implies q-q'=\frac{q}{\kappa}\]
+Substituting $q-q'$ as $Q_{enc}$ in Gauss's Law:
+\[\boxed{\varepsilon_o \int \kappa\vec{E}\cdot\hat{n}dA=q}\]
+\underline{Note:} The charge q enclosed by the Gaussian surface is now taken to be the free charge only. The induced surface charge is deliberately ignored because it is accounted by the factor of $\kappa$ in the permittivity.
+\item Derive the electric field energy density. Calculate the electrostatic energy stored in a capacitor several different ways i.e., using expressions that directly involve the capacitance or computing the volume integral over the electric field energy density.\\\\
+First find the energy stored in a capacitor (equal to work done to charge it):
+\[dW=Vdq\]
+\[C=\frac{q}{V}\implies V=\frac{q}{C}\]
+\[W=\int_{0}^{Q} \frac{q}{C} dq\]
+Thus,
+\[\boxed{U_{cap}=\frac{1}{2}\frac{Q^2}{C}=\frac{1}{2}CV^2=\frac{1}{2}QV}\]
+\textbf{Electric Field Energy Density}\\
+In a parallel plate capacitor with plates of area A and separation d, the electric field is uniform between the plates. Thus, the energy stored in the capacitor is:
+\[U_{cap}=\frac{1}{2}CV^2\]
+and the volume between the plates is:
+\[\text{Volume}=Ad\]
+The energy density (energy per unit volume) is:
+\[u_E=\frac{U_{cap}}{\text{Volume}}=\frac{CV^2}{2Ad}\]
+Where
+\[C=\frac{\varepsilon_o A}{d}, \quad V=Ed\]
+\[\boxed{u_E=\frac{1}{2}\varepsilon_o E^2}\]
+\underline{Note:} Even though this was derived for a parallel plate capacitor, it is valid generally.\\\\
+\textbf{Finding Energy Stored in a Capacitor using Energy Density}\\
+We can integrate the energy density over a volume to find the total energy stored in a capacitor.
+\[U_{cap}=\int u_E dV\]
+\[\boxed{U_{cap}=\frac{\varepsilon_o}{2}\int  E^2 dV}\]
+\underline{Ex:} For a parallel plate capacitor with plate area A and separation d
+\begin{align*}
+U_{cap} &= \frac{\varepsilon_0}{2}\frac{V^2}{d^2}\int dV \\
+&= \frac{\varepsilon_0}{2}\frac{V^2}{d^2} A d \\
+&= \frac{1}{2} C V^2
+\end{align*}
 \end{enumerate}
 \section*{Chapter 26 - Current and Resistance}
 \begin{enumerate}

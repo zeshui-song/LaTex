@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  4 NOV 2025 13:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  5 NOV 2025 14:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -468,55 +468,112 @@ Underfull \hbox (badness 10000) in paragraph at lines 472--475
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 478--480
-
- []
-
 [19 <./relaxxx.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 488--490
+<assemble solid sphere.JPG, id=100, 3169.8425pt x 1032.85875pt>
+File: assemble solid sphere.JPG Graphic file (type jpg)
+<use assemble solid sphere.JPG>
+Package pdftex.def Info: assemble solid sphere.JPG  used on input line 479.
+(pdftex.def)             Requested size: 469.75502pt x 153.06242pt.
+ [20 <./assemble solid sphere.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 502--504
 
  []
 
-<parallel plate.png, id=100, 548.0475pt x 281.853pt>
+<cap-series.png, id=104, 1065.9825pt x 574.145pt>
+File: cap-series.png Graphic file (type png)
+<use cap-series.png>
+Package pdftex.def Info: cap-series.png  used on input line 517.
+(pdftex.def)             Requested size: 187.89914pt x 101.20401pt.
+<cap-parallel.png, id=105, 1011.78pt x 423.5825pt>
+File: cap-parallel.png Graphic file (type png)
+<use cap-parallel.png>
+Package pdftex.def Info: cap-parallel.png  used on input line 525.
+(pdftex.def)             Requested size: 187.89914pt x 78.65884pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--533
+
+ []
+
+[21 <./cap-series.png> <./cap-parallel.png>]
+<parallel plate.png, id=111, 548.0475pt x 281.853pt>
 File: parallel plate.png Graphic file (type png)
 <use parallel plate.png>
-Package pdftex.def Info: parallel plate.png  used on input line 500.
+Package pdftex.def Info: parallel plate.png  used on input line 543.
 (pdftex.def)             Requested size: 187.89914pt x 96.63298pt.
-[20 <./parallel plate.png>]
-<cylindrical capacitor.png, id=105, 251.7405pt x 286.671pt>
+<cylindrical capacitor.png, id=112, 251.7405pt x 286.671pt>
 File: cylindrical capacitor.png Graphic file (type png)
 <use cylindrical capacitor.png>
-Package pdftex.def Info: cylindrical capacitor.png  used on input line 516.
+Package pdftex.def Info: cylindrical capacitor.png  used on input line 559.
 (pdftex.def)             Requested size: 187.89914pt x 213.97476pt.
- [21 <./cylindrical capacitor.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 529--532
+ [22 <./parallel plate.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 572--575
+
+ []
+
+[23 <./cylindrical capacitor.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 585--588
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--545
+Underfull \hbox (badness 10000) in paragraph at lines 590--592
 
  []
 
-[22] [23] (main.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--596
+
+ []
+
+<dielectric.png, id=121, 1068.99374pt x 381.8265pt>
+File: dielectric.png Graphic file (type png)
+<use dielectric.png>
+Package pdftex.def Info: dielectric.png  used on input line 600.
+(pdftex.def)             Requested size: 281.85587pt x 100.67082pt.
+[24]
+<dielectric gauss.png, id=125, 907.59074pt x 295.70474pt>
+File: dielectric gauss.png Graphic file (type png)
+<use dielectric gauss.png>
+Package pdftex.def Info: dielectric gauss.png  used on input line 609.
+(pdftex.def)             Requested size: 328.82707pt x 107.13495pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--610
+
+ []
+
+[25 <./dielectric.png> <./dielectric gauss.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 624--626
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 640--644
+
+ []
+
+[26] [27] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3392 strings out of 474486
- 51168 string characters out of 5743755
+ 3427 strings out of 474486
+ 52031 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25649 multiletter control sequences out of 15000+600000
+ 25684 multiletter control sequences out of 15000+600000
  566426 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,522b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (23 pages, 4497719 bytes).
+Output written on main.pdf (27 pages, 5048990 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
+ 188 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
