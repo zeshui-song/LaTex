@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762372477.2497 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_2/main.tex" "main.pdf" "main" 1762372478.64409 0
+["pdflatex"] 1762537433.81993 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_2/main.tex" "main.pdf" "main" 1762537435.3315 0
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758289669 14064 f1b79be56b30e5d452b3bce564671b21 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
@@ -71,7 +71,7 @@
   "Dipole moment.png" 1761155791 42032 a2043f57e8c6b81eb3ce94c89e2fc074 ""
   "Dipole torque.png" 1761156447 62976 17d6d0ad2c4167a2e1ab2781014b510a ""
   "assemble solid sphere.JPG" 1762296229 406936 747cc4c565e725f583a10b9ce55bd2dc ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_2/main.tex" 1762372476 40962 a22bc427665d04aa1cb77073b4f26767 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_2/main.tex" 1762537433 43638 791a2667731aae22f947ccdced916dbc ""
   "cap-parallel.png" 1762369461 23542 a058f0f4dc219b1db6489de1877569c9 ""
   "cap-series.png" 1762369437 21801 98871665955bc792094bf18d76002e72 ""
   "conductingsphere.JPG" 1761428015 442225 38a14429be384deca5803e99e4380fb9 ""
@@ -87,11 +87,12 @@
   "energy2.png" 1761422177 29233 d64f52e30338cb35663be7cff9411db5 ""
   "equipotential.png" 1761426778 263263 0ed238c44cfe9bbbee4a5d2a1cb21fb2 ""
   "line.jpg" 1760376406 360506 0f337d9dcc1e0884db9b3578e8e0ec8c ""
-  "main.aux" 1762372478 33 0ae11b936eb3d966de265f4e1c711c46 "pdflatex"
-  "main.tex" 1762372476 40962 a22bc427665d04aa1cb77073b4f26767 ""
+  "main.aux" 1762537435 33 9227a8ee1c90cd54409ecb589a84df09 "pdflatex"
+  "main.tex" 1762537433 43638 791a2667731aae22f947ccdced916dbc ""
   "method of images.JPG" 1761440526 574594 658910fb4c5ca66edc56d6774d5fb4aa ""
   "parallel plate.png" 1762278192 51507 7c147b1c0abecb1856664885686fa99d ""
   "point.JPG" 1761424621 351382 f8cb8724fea1d7b32a450e697385ce9b ""
+  "power.png" 1762535766 23812 a4514ab0786a2a8e3a3d0e5b723f310c ""
   "relaxxx.JPG" 1761442948 643130 ae44fad14cb65919cd2050090c498c36 ""
   "ring.png" 1760377261 97828 943f4f23121143a9ec61e5289e75323d ""
   "sphere.jpg" 1760477150 487075 35400238d74ea24e09ccbbc04a4a899a ""

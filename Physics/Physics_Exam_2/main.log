@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  5 NOV 2025 14:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  7 NOV 2025 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -482,15 +482,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 502--504
 <cap-series.png, id=104, 1065.9825pt x 574.145pt>
 File: cap-series.png Graphic file (type png)
 <use cap-series.png>
-Package pdftex.def Info: cap-series.png  used on input line 517.
+Package pdftex.def Info: cap-series.png  used on input line 518.
 (pdftex.def)             Requested size: 187.89914pt x 101.20401pt.
 <cap-parallel.png, id=105, 1011.78pt x 423.5825pt>
 File: cap-parallel.png Graphic file (type png)
 <use cap-parallel.png>
-Package pdftex.def Info: cap-parallel.png  used on input line 525.
+Package pdftex.def Info: cap-parallel.png  used on input line 527.
 (pdftex.def)             Requested size: 187.89914pt x 78.65884pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--533
+Underfull \hbox (badness 10000) in paragraph at lines 533--535
 
  []
 
@@ -498,122 +498,154 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--533
 <parallel plate.png, id=111, 548.0475pt x 281.853pt>
 File: parallel plate.png Graphic file (type png)
 <use parallel plate.png>
-Package pdftex.def Info: parallel plate.png  used on input line 543.
+Package pdftex.def Info: parallel plate.png  used on input line 545.
 (pdftex.def)             Requested size: 187.89914pt x 96.63298pt.
 <cylindrical capacitor.png, id=112, 251.7405pt x 286.671pt>
 File: cylindrical capacitor.png Graphic file (type png)
 <use cylindrical capacitor.png>
-Package pdftex.def Info: cylindrical capacitor.png  used on input line 559.
+Package pdftex.def Info: cylindrical capacitor.png  used on input line 561.
 (pdftex.def)             Requested size: 187.89914pt x 213.97476pt.
  [22 <./parallel plate.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 572--575
+Underfull \hbox (badness 10000) in paragraph at lines 574--577
 
  []
 
 [23 <./cylindrical capacitor.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 585--588
+Underfull \hbox (badness 10000) in paragraph at lines 587--590
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 590--592
+Underfull \hbox (badness 10000) in paragraph at lines 592--594
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 593--596
+Underfull \hbox (badness 10000) in paragraph at lines 595--598
 
  []
 
 <dielectric.png, id=121, 1068.99374pt x 381.8265pt>
 File: dielectric.png Graphic file (type png)
 <use dielectric.png>
-Package pdftex.def Info: dielectric.png  used on input line 600.
+Package pdftex.def Info: dielectric.png  used on input line 602.
 (pdftex.def)             Requested size: 281.85587pt x 100.67082pt.
 [24]
 <dielectric gauss.png, id=125, 907.59074pt x 295.70474pt>
 File: dielectric gauss.png Graphic file (type png)
 <use dielectric gauss.png>
-Package pdftex.def Info: dielectric gauss.png  used on input line 609.
+Package pdftex.def Info: dielectric gauss.png  used on input line 611.
 (pdftex.def)             Requested size: 328.82707pt x 107.13495pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--610
+Underfull \hbox (badness 10000) in paragraph at lines 605--612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--610
+Underfull \hbox (badness 10000) in paragraph at lines 605--612
 
  []
 
 [25 <./dielectric.png> <./dielectric gauss.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
+Underfull \hbox (badness 10000) in paragraph at lines 626--628
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--644
+Underfull \hbox (badness 10000) in paragraph at lines 642--646
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 656--661
+Underfull \hbox (badness 10000) in paragraph at lines 660--665
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 656--661
+Underfull \hbox (badness 10000) in paragraph at lines 660--665
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--663
+Underfull \hbox (badness 10000) in paragraph at lines 665--670
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--663
+Underfull \hbox (badness 10000) in paragraph at lines 665--670
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 663--666
-
- []
-
 <direction.png, id=138, 690.78075pt x 397.485pt>
 File: direction.png Graphic file (type png)
 <use direction.png>
-Package pdftex.def Info: direction.png  used on input line 676.
+Package pdftex.def Info: direction.png  used on input line 680.
 (pdftex.def)             Requested size: 234.8775pt x 135.14917pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 679--681
+Underfull \hbox (badness 10000) in paragraph at lines 683--686
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 679--681
+Underfull \hbox (badness 10000) in paragraph at lines 686--690
 
  []
 
-[28 <./direction.png>] (main.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--693
+
+ []
+
+[28 <./direction.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 693--698
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 693--698
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--707
+
+ []
+
+[29]
+<power.png, id=146, 386.04225pt x 422.7795pt>
+File: power.png Graphic file (type png)
+<use power.png>
+Package pdftex.def Info: power.png  used on input line 714.
+(pdftex.def)             Requested size: 140.92793pt x 154.34225pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--715
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--726
+
+ []
+
+[30 <./power.png>] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3434 strings out of 474486
- 52170 string characters out of 5743755
+ 3441 strings out of 474486
+ 52281 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25691 multiletter control sequences out of 15000+600000
+ 25698 multiletter control sequences out of 15000+600000
  566426 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,522b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (28 pages, 5143684 bytes).
+Output written on main.pdf (30 pages, 5169574 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
+ 201 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 

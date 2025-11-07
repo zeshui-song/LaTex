@@ -512,6 +512,7 @@ Where:
 \item Finding the equivalent capacitance for capacitors in series and parallel.
 \begin{itemize}
     \item \textbf{Capacitors in Series}
+\vspace{-1em}
 \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{cap-series.png}
@@ -520,11 +521,12 @@ Where:
 Each capacitor has the same amount of charge q on its plates, and the sum of the potential differences across each capacitor equals the total potential difference.
 \[\frac{1}{C_{eq}}=\frac{1}{C_1}+\frac{1}{C_2}+\frac{1}{C_3}+\ldots\]
     \item \textbf{Capacitors in Parallel}
+\vspace{-1em}
 \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{cap-parallel.png}
     \end{figure}
-\vspace{-1em}
+\vspace{-1.5em}
 Each capacitor has the same potential difference across its plates, and the sum of the charges on each capacitor equals the total charge.
 \[C_{eq}=C_1+C_2+C_3+\ldots\]
 \end{itemize}
@@ -650,6 +652,8 @@ U_{cap} &= \frac{\varepsilon_0}{2}\frac{V^2}{d^2}\int dV \\
 &= \frac{1}{2} C V^2
 \end{align*}
 \end{enumerate}
+\underline{Note:} \textbf{Behavior of capacitors in circuits}\\
+Initially, when a capacitor is uncharged, it behaves like a short circuit (open switch, V=0). As it charges, the potential difference across its plates increases until it reaches the battery voltage, at which point it behaves like an open switch (i=0).
 \section*{Chapter 26 - Current and Resistance}
 \textbf{Current}\\
 Current is defined as the amount of charge that flows through a cross-sectional area per unit time.
@@ -660,7 +664,7 @@ Its units are Amperes (A) where 1 A = 1 C/s.\\\\
 To look at the flow of charge through a cross-section, we define a current density $\vec{J}$ in the direction of current flow with magnitude current per unit area such that the current through an area A is:
 \[i=\int \vec{J}\cdot \hat{n} dA\]
 \textbf{Drift Velocity}\\
-When an electric field is applied to a conductor, free electrons experience a force that causes them to accelerate. However, they frequently collide with atoms in the conductor which randomizes their motion. The average velocity of the electrons in the direction opposite to the electric field is called the drift velocity $\vec{v}_d$.\\\\\newpage\noindent
+When an electric field is applied to a conductor, free electrons experience a force that causes them to accelerate. However, they frequently collide with atoms in the conductor which randomizes their motion. The average velocity of the electrons in the direction opposite to the electric field is called the drift velocity $\vec{v}_d$.\\\\
 \underline{Relating current density to drift velocity:}\\\\
 The amount of positive charge in a section of wire of length L and cross-sectional area A is:
 \[q=nALe\]
@@ -678,8 +682,48 @@ Solving for the drift velocity and recalling that $J=i/A$:
 \begin{enumerate}    
     \item Define resistance and know Ohm's law. Use it to find the electric field in and potential difference across a resistor.\\\\
 \textbf{Resistance and Resistivity}\\
-
-    \item Know the relations among power, potential, and resistance. Calculate the power dissipated in a resistor.
+We determine the resistance between any two points of a conductor by applying a potential difference V between those points and measuring the resulting current i.
+\[R=\frac{V}{i}\]
+Its units are Ohms ($\Omega$) where $1 \Omega = 1 V/A$.\\
+\underline{Note:} For a fixed potential difference, a larger resistance results in a smaller current.\\\\
+\textbf{Resistivity} is a material property that is defined as:
+\[\rho=\frac{E}{J}\]
+Its units are Ohm-meters ($\Omega \cdot m$).\\\\
+\textbf{Conductivity} is the reciprocal of resistivity:
+\[\sigma=\frac{1}{\rho}\]
+Its units are Siemens per meter (S/m).\\\\
+\underline{Note:} $\vec{E}=\rho \vec{J}$ and $\vec{J}=\sigma \vec{E}$ so $nq\vec{v}_d=\sigma \vec{E}$\\\\
+\textbf{Relating Resistance with Resistivity}\\
+Resistance depends on both the geometry and material of the conductor. For a uniform wire of length L and cross-sectional area A with constant electric field along its length:
+\[\Delta V=EL \quad J=\frac{i}{A}\]
+\[\rho=\frac{E}{J}=\frac{V/L}{i/A}\]
+\[\boxed{R=\rho\frac{L}{A}}\]
+\textbf{Temperature Dependence of Resistance}\\
+For most conductors, resistivity has a linear relationship with temperature:
+\[\rho-\rho_o=\alpha(T-T_o)\]
+Where $\alpha$ is the temperature coefficient of resistivity and $\rho_o$ is the resistivity at temperature $T_o$.\\\\
+\textbf{Ohm's Law}\\
+The current through a conductor is directly proportional to the potential difference across it. However, this only applies if the resistivity of the material is independent of the magnitude and direction of the applied electric field.
+\[\Delta V=iR\]
+\newpage
+    \item Know the relations among power, potential, and resistance. Calculate the power dissipated in a resistor.\\\\
+For a circuit held at constant potential difference V, the power delivered across points a and b is:
+\vspace{-1em}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{power.png}
+\end{figure}
+\vspace{-2em}
+\[dU=Vdq\]
+\[P=\frac{dU}{dt}=V\frac{dq}{dt}\]
+\[\boxed{P=iV}\]
+For a resistor, the potential difference between points a and b is related to the current by Ohm's law:
+\[\Delta V=iR\]
+Thus,
+\[\boxed{P_{resistor}=i^2R=\frac{V^2}{R}}\]
+The units of power are Watts (W) where 1 W = 1 J/s.\\\\
+The power delivered through a resistor ($P_{resistor}=i^2R$) is dissipated as heat. While the power delivered from the battery is $P=iV$. Thus, the power delivered through the resistor is:
+\[P_{resistor}=P_{battery}=iV-i^2R\]
 \end{enumerate}
 \textbf{End Exam 2}
 \end{document}
