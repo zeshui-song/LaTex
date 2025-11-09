@@ -1,5 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1762642342.68083 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics Labs/Lab 4/Lab 4.tex" "Lab 4.pdf" "Lab 4" 1762642343.17276 0
+["pdflatex"] 1762651606.06441 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics Labs/Lab 4/Lab 4.tex" "Lab 4.pdf" "Lab 4" 1762651606.62568 0
+  "1.JPG" 1762651061 403770 a734eb677f64f5e88afda61dd3545ba8 ""
+  "2.JPG" 1762650993 394022 dd1930711385afa2a24a31e2a2ca313c ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233951848 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -71,9 +73,9 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1700599895 12667 e4b5eb11e4b7239e6c8a52bbe074a6c6 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1700599895 13231 2c742011581e2bf297e33520567d9464 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1700599895 7147 d45559f8a31b8c53ada0640516660003 ""
-  "Lab 4.aux" 1762642343 1523 f5d75eb65d482d987508a4e932040aa0 "pdflatex"
-  "Lab 4.tex" 1762642342 4723 e35c0fc424e82d14aa5c5d152c95950a ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics Labs/Lab 4/Lab 4.tex" 1762642342 4723 e35c0fc424e82d14aa5c5d152c95950a ""
+  "Lab 4.aux" 1762651606 1523 454a83b4d09061d79d6b4a5c508042d4 "pdflatex"
+  "Lab 4.tex" 1762651605 5604 ccaf3c5cd31bb0df2d8668c3c78bac0f ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics Labs/Lab 4/Lab 4.tex" 1762651605 5604 ccaf3c5cd31bb0df2d8668c3c78bac0f ""
   (generated)
   "Lab 4.aux"
   "Lab 4.log"

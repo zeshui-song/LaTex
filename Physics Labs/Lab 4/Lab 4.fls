@@ -121,6 +121,20 @@ INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cme
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
 OUTPUT Lab 4.pdf
 INPUT C:\Users\zsong\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT .\1.JPG
+INPUT .\1.JPG
+INPUT .\1.JPG
+INPUT .\1.JPG
+INPUT .\1.JPG
+INPUT .\1.JPG
+INPUT .\1.JPG
+INPUT .\2.JPG
+INPUT .\2.JPG
+INPUT .\2.JPG
+INPUT .\2.JPG
+INPUT .\2.JPG
+INPUT .\2.JPG
+INPUT .\2.JPG
 INPUT Lab 4.aux
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
