@@ -1,5 +1,4 @@
 \documentclass[12pt]{article}
-
 \usepackage{amsmath, amsfonts, bm, graphicx}
 \usepackage{tabularx}
 \usepackage{booktabs} 
@@ -19,28 +18,97 @@
 \section{Purpose}  
 Using Bessel's method to determine the focal lengths of two different converging lenses, we will construct a simple refracting telescope using these lenses and determine its magnification both experimentally and theoretically.
 \section{Data}
-\paragraph{Part A: Pfund's Method} \mbox{}\\
-% Petri Dish Thickness
+% Approx Focal Lengths
+\textbf{Approximate Focal Lengths}
+\begin{align*}
+f_1 &= \\
+f_2 &= \\
+\end{align*}
+\textbf{Measurements for Bessel's Method Calculations for Focal Lengths}
+
 \begin{table}[H]
 \centering
-\caption{Petri Dish Thickness}
+\caption{Bessel's Method Data for Lens 1}
 \scriptsize 
-\begin{tabular}{ccccc}
+\begin{tabularx}{\linewidth}{*{5}{>{\centering\arraybackslash}X}}
 \toprule
-\textbf{Thickness (mm)} & \textbf{Inst. Error (mm)} & \textbf{Random Error (mm)} \\
+\textbf{D (cm)} & \textbf{d (cm)}  & \textbf{Random Error D (mm)}& \textbf{Random Error d (mm)} & \textbf{Inst. Error (mm)}\\
 \midrule
-2.180 & & \\
-2.190 & & \\
-2.185 & & \\
-2.185 & & \\
-2.195 & & \\
-2.180 & 0.005 & 0.002 \\
+2.180 & & & & \\
+2.190 & & & & \\
+2.185 & & & & \\
+2.185 & & & & \\
+2.195 & & & & \\
+2.180 & 0.005 & 0.002 & 0.002 & 0.0005 \\
 \midrule
-\multicolumn{3}{l}{\textbf{Mean Thickness}} & \multicolumn{2}{l}{\textbf{2.186 mm}} \\
+\multicolumn{4}{l}{\textbf{Mean D}} & \textbf{7.66 mm} \\
+\multicolumn{4}{l}{\textbf{Mean d}} & \textbf{7.66 mm} \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
+\begin{table}[H]
+\centering
+\caption{Bessel's Method Data for Lens 2}
+\scriptsize 
+\begin{tabularx}{\linewidth}{*{5}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{D (cm)} & \textbf{d (cm)}  & \textbf{Random Error D (mm)}& \textbf{Random Error d (mm)} & \textbf{Inst. Error (mm)}\\
+\midrule
+2.180 & & & & \\
+2.190 & & & & \\
+2.185 & & & & \\
+2.185 & & & & \\
+2.195 & & & & \\
+2.180 & 0.005 & 0.002 & 0.002 & 0.0005 \\
+\midrule
+\multicolumn{4}{l}{\textbf{Mean D}} & \textbf{7.66 mm} \\
+\multicolumn{4}{l}{\textbf{Mean d}} & \textbf{7.66 mm} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\textbf{Approximate Angular Magnification}
+
 \section{Calculations}
+\paragraph{Length D Sample Calculations} \mbox{}\\
+\textbf{Mean Calculation:}
+\[\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i\]
+\[\bar{x} = \frac{1}{6} (2.180+2.190+2.185+2.185+2.195+2.180)\]
+\[\bar{x} =  \text{2.1858 mm}\]
+\textbf{Standard Deviation:}
+\[S_x = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}\]
+\[
+\begin{aligned}
+S_x &= \sqrt{\frac{1}{6-1} \Big[ (2.180-2.1858)^2 + (2.190-2.1858)^2 + \cdots + (2.180-2.1858)^2 \Big]} \\
+\end{aligned}
+\]
+\[S_x =  \text{0.005845 mm}\]
+\textbf{Standard Deviation of the Mean (SDOM):}
+\[\sigma_{\bar{x}} = \frac{S_x}{\sqrt{n}}\]
+\[\sigma_{\bar{x}} = \frac{0.005845}{\sqrt{6}}\]
+\[\sigma_{\bar{x}}=  \text{0.0023863 mm}\]
+The same procedure was applied to calculate the mean, standard deviation and standard deviation of the mean for the remaining measurements.
+\paragraph{Bessel's Method Calculations for Lens 1} \mbox{}\\
+\[f=\frac{D^2-d^2}{4D}\]
+\[f=\frac{(90.0)^2-(30.0)^2}{4(90.0)}\]
+\[f= \text{36.67 cm}\]
+\paragraph{Error Propagation for Bessel's Method (Lens 1)} \mbox{}\\
+Since the measurements of D and d are independent, we can use the independent error propagation formula:
+\[\delta f = \sqrt{\left(\frac{\partial f}{\partial D} \delta D\right)^2 + \left(\frac{\partial f}{\partial d} \delta d\right)^2}\]
+\[\delta f = \sqrt{\left(\frac{D^2+d^2}{4D^2} \delta D\right)^2 + \left(-\frac{d}{2D} \delta d\right)^2}\]
+\textbf{Chosen uncertainties:} $\delta D = 0.05~\mathrm{mm}$ (random, larger than instrumental) and $\delta d = 0.005~\mathrm{mm}$ (instrumental, larger than random).
+\[\delta f = \sqrt{\left(\frac{(90.0)^2+(30.0)^2}{4(90.0)^2} (0.05)\right)^2 + \left(-\frac{30.0}{2(90.0)} (0.005)\right)^2}\]
+\[\delta f = \text{0.0142 cm}\]
+\paragraph{Angular Magnification} \mbox{}\\
+\[m_\theta=-\frac{f_{obj}}{f_{eye}}\]
+\[m_\theta=-\frac{36.67}{10.0}\]
+\[m_\theta= \text{-3.667}\]
+\paragraph{Error Propagation for Angular Magnification} \mbox{}\\
+Since the measurements of $f_{obj}$ and $f_{eye}$ are independent, we can use the independent error propagation formula:
+\[\delta m_\theta = \sqrt{\left(\frac{\partial m_\theta}{\partial f_{obj}} \delta f_{obj}\right)^2 + \left(\frac{\partial m_\theta}{\partial f_{eye}} \delta f_{eye}\right)^2}\]
+\[\delta m_\theta = \sqrt{\left(-\frac{1}{f_{eye}} \delta f_{obj}\right)^2 + \left(\frac{f_{obj}}{f_{eye}^2} \delta f_{eye}\right)^2}\]
+\textbf{Chosen uncertainties:} $\delta f_{obj} = 0.0142~\mathrm{cm}$ (from previous calculation) and $\delta f_{eye} = 0.05~\mathrm{cm}$ (instrumental).
+\[\delta m_\theta = \sqrt{\left(-\frac{1}{10.0} (0.0142)\right)^2 + \left(\frac{36.67}{(10.0)^2} (0.05)\right)^2}\] 
+\[\delta m_\theta = \text{0.0191}\]
 \section{Results}
 \section{Conclusion}
 \section{Answers to questions}
