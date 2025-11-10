@@ -1,0 +1,260 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{amsmath, amsfonts, bm, graphicx}
+\usepackage{float}
+\geometry{margin=1in}
+\title{}
+\date{}
+\author{}
+
+\begin{document}
+\begin{center}
+    \Large \textbf{Differential Equations Review Sheet} \\
+    \normalsize Exam II
+\end{center}
+\section*{4.1 Linear Equations}
+General form of a nth order linear differential equation:
+\[a_n(x)y^{(n)}+ a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=g(x)\]
+\underline{\textbf{Thm: 4.1.1 Existence of a Unique Solution:}}\\
+For an interval $I: a<x<b$, if the functions $a_n(x), a_{n-1}(x), \ldots, a_0(x)$ and $g(x)$ are continuous on $I$ and $a_n(x)\neq 0$ for all $x$ in $I$, then there exists a unique solution $y=y(x)$ of the differential equation.\\\\
+If $x=x_o$ is in $I$, then a solution that satisfies the initial conditions exists on the interval and is unique.\\
+\underline{Note:} If $a_n(x)=0$ for some $x$ in the interval $I$ then there \textbf{may not} exist a unique solution.\\\\
+\textbf{Boundary Value Problems}\\
+If the constraints of a linear differential equation are at \textit{different points} instead of using derivatives at the \textit{same} point then it is known as a \textbf{boundary value problem (BVP)} and the constraints are known as \textbf{boundary conditions}.\\\\
+\textbf{Homogeneous vs Nonhomogeneous nth order ODE}\\
+Homogeneous: $a_n(x)y^{(n)}+ a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=0$\\\\
+Nonhomogeneous: $a_n(x)y^{(n)}+ a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=g(x)$, where $g(x)\neq 0$\\\\
+\underline{\textbf{Thm 4.1.2 Superposition Principle - Homogeneous Equations}}\\
+If $y_1, y_2,\ldots, y_k$ are solutions to the \textit{homogeneous} nth-order linear differential equation on an interval $I$, then the linear combination where $c_1, c_2, \ldots, c_n$ are arbitrary constants.
+\[y =c_1 y_1(x)+ c_2y_2(x)+\cdots+c_k y_k(x)\]
+is \textit{also} a solution on the interval.\\\\
+\newpage\noindent
+\textbf{Fundamental Set of Solutions}\\
+There exists a fundamental set of solutions $\{y_1, y_2, \ldots, y_n\}$ to the homogeneous nth-order linear differential equation. The fundamental set of solutions has to be \textit{linearly independent}.\\\\
+We test for linear independence using the \textbf{Wronskian}:\\\\
+The solutions $\{y_1, y_2, \ldots, y_n\}$ are linearly independent on the interval $I$ if and only if
+\[W(y_1, y_2,..., y_n)=\begin{vmatrix}
+y_1&y_2&\cdots &y_n\\
+Dy_1&Dy_2&\cdots &Dy_n\\
+\vdots&\vdots&&\vdots\\
+D^{n-1}y_1&D^{n-1}y_2&\cdots &D^{n-1}y_n\\
+\end{vmatrix}\neq0\]
+for every $x$ in the interval.\\\\
+\underline{Note:} $D$ is the differentiation operator, i.e. $Dy=\frac{dy}{dx}$, $D^2y=\frac{d^2y}{dx^2}$, and so on.\\\\
+\underline{\textbf{Thm 4.1.5 General Solution — Homogeneous Equations}}\\
+If $y_1, y_2, \ldots, y_n$ is a fundamental set of solutions to the homogeneous nth-order linear differential equation on an interval $I$, then the general solution is given by
+\[y=c_1 y_1(x)+ c_2y_2(x)+\cdots+c_n y_n(x)\]
+where $c_1, c_2, \ldots, c_n$ are arbitrary constants.\\\\
+\underline{\textbf{Thm 4.1.6 General Solution — Nonhomogeneous Equations}}\\
+If $y_p$ is a particular solution to the nonhomogeneous nth-order linear differential equation on an interval $I$, and if $y_h$ is the general solution to the corresponding homogeneous equation, then the general solution to the nonhomogeneous equation is given by
+\[y=y_h + y_p\]
+\newpage\noindent
+\section*{4.2 Reduction of Order}
+We know that the general solution of a homogeneous linear second-order differential equation
+\[a_2(x)y''+ a_1(x)y'+ a_0(x)y =0 \]
+is a linear combination 
+\[y = c_1y_1 +c_2y_2\]
+where $y_1$ and $y_2$ are solutions that constitute a linearly independent set on some interval $I$.\\\\
+Given that the differential equation only has constant coefficients, if we know one solution $y_1$, we can find a second solution $y_2$ using the method of \textbf{reduction of order}.\\\\
+\textbf{Method:}\\
+Since $y_1$ and $y_2$ are linearly independent, then their quotient $y_2/y_1$ hat to be nonconstant on $I$. In other words,
+\[\frac{y_2(x)}{y_1(x)}=u(x)\]
+\[\implies y_2(x) = u(x) y_1(x)\]
+We can find the function $u(x)$ by substituting $y_2(x) = u(x) y_1(x)$ into the original differential equation and solving for $u(x)$.\\\\
+\underline{Note:} This method reduces the differential equation from second-order to first-order in terms of $w=u'(x)$. But, it only works for second order ODE.\\\\
+\textbf{Solving for $u(x)$ for a General Case:}\\
+For a second-order linear differential equation with constant coefficients:
+\[a_2(x)y''+a_1(x)y'+a_0(x)y=0\]
+We put into general form by dividing through by $a_2(x)$:
+\[y''+P(x)y'+Q(x)y=0\]
+Assuming we know one solution $y_1$, we let $y_2 = u(x)y_1(x)$. Then we compute the first and second derivatives of $y_2$:
+\[y_2' = u'y_1 + uy_1'\]
+\[y_2'' = u''y_1 + 2u'y_1' + uy_1''\]
+Substituting $y_2$, $y_2'$, and $y_2''$ into the original differential equation gives:
+\[u\left[y_1'' + P(x)y_1' + Q(x)y_1\right]+ u''y_1 + u'(2y_1' + P(x)y_1) = 0\]
+Since $y_1$ is a solution to the original equation, $y_1'' + P(x)y_1' + Q(x)y_1=0$.
+\[\implies u''y_1 + u'(2y_1' + P(x)y_1) = 0\]
+Letting $w = u'$, we have a linear first order differential equation in $w$:
+\[w'y_1 + w(2y_1' + P(x)y_1) = 0\]
+We can use an integrating factor to solve for $w$:\\\\
+\fbox{%
+\begin{minipage}{0.95\textwidth}
+\underline{Recall:} Given a first-order linear ODE of the form
+\[\frac{dy}{dx}+p(x)y=g(x)\]
+the integrating factor is given by
+\[\mu(x) = e^{\textstyle\int p(x) \, dx}\]
+and the solution is 
+\[y(x)=\frac{1}{\mu}\int \mu g(x) \, dx\]
+\end{minipage}%
+}\\\\
+Thus,
+\[w'+ w\frac{2y_1' + P(x)y_1}{y_1} = 0\]
+\[\mu(x) = e^{\textstyle \int \frac{2y_1' + P(x)y_1}{y_1} \, dx}\]
+\[\int \frac{2y_1' + P(x)y_1}{y_1} \, dx = \int 2 \frac{y_1'}{y_1} \,dx + \int P(x) \, dx, \quad u=y_1, du=y'_1dx\]
+\[2\int \frac{1}{u}\,dx+\int P(x) \, dx\]
+\[2ln(y_1)+\int P(x) \, dx\]
+\[\implies \mu(x) = e^{2\ln(y_1) + \int P(x) \, dx} = y_1^2 e^{\int P(x) \, dx}\]
+Finally, we can solve for $w$:
+\[w(x) = \frac{1}{\mu(x)}\int \mu(x) \cdot 0 \, dx = \frac{c_1}{\mu(x)} = c_1\frac{e^{-\int P(x) \, dx}}{y_1^2}\]
+Then, we can find $u(x)$ by integrating $w$:
+\[u(x) = \int w(x) \, dx =  c_1\int\frac{e^{-\int P(x) \, dx}}{y_1^2} \, dx+c_2\]
+Choosing $c_1=1$ and $c_2=0$ for the fundamental set:
+\[\boxed{u(x)=\int\frac{e^{-\int P(x) \, dx}}{y_1^2} \, dx}\]
+Where $y_2(x) = u(x)y_1(x)$.
+\newpage\noindent
+\section*{4.3 Homogeneous Linear Equations with Constant Coefficients}
+For higher order homogeneous linear differential equations with constant coefficients of the form, we can use the characteristic equation to find the general solution.\\\\
+\textbf{Method:}\\
+Given a homogeneous linear differential equation with constant coefficients:
+\[ay'' + by' + cy = 0\]
+We assume the solution of the form:
+\vspace{-1em}
+\begin{eqnarray*}
+y(t) &=& e^{rt}\\
+y'(t) &=& re^{rt}\\
+y''(t) &=& r^{2}e^{rt}\\
+\end{eqnarray*}
+Then,  
+\vspace{-1em}
+\begin{eqnarray*}
+ay''+by'+cy&=&0\\
+ar^{2}e^{rt}+bre^{rt}+ce^{rt}&=&0\\
+e^{rt}(ar^{2}+br+c)&=&0\\
+ar^{2}+br+c&=&0
+\end{eqnarray*}
+We can solve for $r$ using the quadratic formula:
+\[r=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\]
+\underline{Note:} For higher order differential equations, we would get a polynomial of degree $n$, and we would solve for the roots by factoring.\\\\
+\textbf{Case 1: Real and Unique Roots}\\
+For roots $r_1$ and $r_2$, the general solution is:
+\[y(t) = c_1 e^{r_1 t} + c_2 e^{r_2 t}\]
+\textbf{Case 2: Complex Roots}\\
+For roots $\alpha \pm \beta i$, the general solution is:
+\[y(t) =   c_1 e^{\alpha t}\cos \beta t + c_2 e^{\alpha t} \sin \beta t\]
+\textbf{Case 3: Repeated Roots}\\
+For repeated root $r$, the general solution is:
+\[y(t) = c_1 e^{r t} + c_2 t e^{r t}\]
+\newpage\noindent
+\section*{4.4 Undetermined Coefficients (Superposition Approach)}
+To find a particular solution $Y_p$ to the higher order nonhomogeneous differential equation with constant coefficients, we will guess the form of $Y_p$ based on the form of $g(x)$.\\\\
+\textbf{Method:}
+\begin{itemize}
+    \item Guess a form of $Y_{P}(t)$ leaving the coefficient(s) undetermined (and hence the name of the method).
+    \item Plug the guess into the differential equation and see if we can determine values of the coefficients.
+    \item If we can determine values for the coefficients then we guessed correctly, if we can't find values for the coefficients then we guessed incorrectly.
+\end{itemize}
+In general, we will guess
+
+\[\begin{array}{c|c}
+g(t) & Y_{P}(t) \\
+\hline\hline
+ae^{bt} & Ae^{bt} \\
+a\cos(\beta t) & A\cos(\beta t)+B\sin(\beta t) \\
+a\sin(\beta t) & A\cos(\beta t)+B\sin(\beta t) \\
+a\cos(\beta t)+b\sin(\beta t) & A\cos(\beta t)+B\sin(\beta t) \\
+\text{n-th degree polynomial} & A_{n}t^{n}+\cdots +A_{1}t+A_{0}
+\end{array}\]\\
+\underline{Note:} If any term of $Y_{P}$ is duplicated in $y_{h}$ then the duplicated term must be multiplied by the minimum $+$ integer power of $t$ required to make all terms in general solution linearly independent. (So find the general homogeneous solution first before guessing the particular solution!)\\\\
+Then we will substitute our guess for $Y_{P}(t)$ into the original differential equation and solve for the undetermined coefficients.
+\section*{4.5 Undetermined Coefficients (Annihilator Approach)}
+Another way to solve for a particular solution $Y_p$ to the higher order nonhomogeneous differential equation with constant coefficients is to use the \textbf{differential operator} $D$ to create an \textbf{annihilator operator} to reduce the ODE.\\\\
+\textbf{Annihilator}\\
+If $L$ is a differential operator such that 
+\[L(g(x))=0\]
+then $L$ is called an \textbf{annihilator} of $g(x)$.\\\\
+\newpage\noindent
+\underline{Ex:} 
+\[y''+y'-6y=0\]
+\[D^2y + Dy - 6y = 0\implies (D^2 + D - 6)y = 0\]
+Here, the differential operator is $D^2 + D - 6$.\\\\
+\textbf{Method:}\\
+Given a nonhomogeneous differential equation:
+\[a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x)\]
+We can rewrite it using the differential operator $L$ on $y$ such that:
+\[L(y) = g(x)\]
+Next, we find an annihilator $L_1$ of $g(x)$ such that:
+\[L_1(g(x)) = 0\]
+Then, we apply $L_1$ to both sides of the equation:
+\[L_1(L(y)) = L_1(g(x))\]
+\[\implies L_1 L(y) = 0\]
+So by solving the \textit{homogeneous higher-order equation} $L_1L(y)=0$ we can discover the form of a particular solution $y_p$ for the original \textit{nonhomogeneous equation} $L(y)=g(x)$.\\\\
+\textbf{List of Annihilators:}
+\begin{itemize}
+    \item $D^n$ annihilates polynomials of degree $n-1$ or less. Thus, it annihilates each of the following:
+    \[1,x,x^2,\ldots,x^{n-1}\]
+    \item $(D-\alpha)^n$ annihilates each of the following:
+    \[e^{\alpha x},xe^{\alpha x},x^2e^{\alpha x},\ldots,x^{n-1}e^{\alpha x}\]
+    \item $[D^2-2\alpha D+(\alpha^2+\beta^2)]^n$ annihilates each of the following:
+    \[e^{\alpha x}\cos \beta x, xe^{\alpha x}\cos \beta x, \ldots, x^{n-1}e^{\alpha x}\cos \beta x\]
+    \[e^{\alpha x}\sin \beta x, xe^{\alpha x}\sin \beta x, \ldots, x^{n-1}e^{\alpha x}\sin \beta x\]
+\end{itemize}
+\underline{Ex:} Finding the particular solution for $y''+y'-6y=e^{4t}$\\
+Using $y=e^{rt}$, we find the homogeneous solution:
+\[y_h=c_1 e^{-3t} + c_2 e^{2t}\]
+The annihilator for $e^{4t}$ is $(D-4)$. Thus, we apply the annihilator to both sides of the equation:
+\[(D-4)(D^2 + D - 6)y = 0\]
+Solving the characteristic equation:
+\[(D-4)(D-2)(D+3)y=0\]
+The general solution to the higher order homogeneous equation is (matching each annihilator factor to its corresponding $g(t)$ term):
+\[y = c_1 e^{4t} + c_2 e^{2t} + c_3 e^{-3t}\]
+Thus, we can choose the particular solution to be:
+\[y_p = A e^{4t}\]
+Substituting $y_p$ into the original differential equation we can solve for $A$.
+\section*{4.6 Variation of Parameters}
+For nonhomogeneous linear differential equations where the method of undetermined coefficients does NOT work (ie. $g(x)$ is not of the right form, and NONconstant coefficients), we can use the method of \textbf{variation of parameters} to find a particular solution.\\\\
+\underline{Note:} Variation of parameters works for higher order ODEs, but the formulas get more complicated so most examples will be second order ODEs. \\
+IF we are given $y_h$, the homogeneous solution, we can find $y_p$, the particular solution, using variation of parameters. However, if we are not given $y_h$, we must find it first using the characteristic equation method. (Thus, unless given $y_h$ the problems we do will still only be constant coefficients)\\\\
+\textbf{Method:}\\
+\vspace{-1em}
+\begin{itemize}
+    \item Obtain general homogeneous solution:
+    \[y_h=c_1y_1 + c_2 y_2\]
+    For the second order ODE:
+    \[y'' + p(x)y' + q(x)y = g(x)\]
+    \underline{Note:} the coefficient of $y''$ \textbf{must} be 1, so divide through if necessary.
+    \item The particular solution is of the form:
+    \[y_p = u_1(x)y_1 + u_2(x)y_2\]
+    where we need to solve for $u_1(x)$ and $u_2(x)$.
+\end{itemize}
+Where $W(y_1,y_2)$ is the Wronskian of $y_1$ and $y_2$:
+\[\boxed{{u_1=-\int{\frac{y_2g(t)}{W(y_{1},y_{2})}} \ dt, \ \  u_2=\int{\frac{y_1g(t)}{W(y_{1},y_{2})}} \ dt}}\]
+Finally, the particular solution is:
+\[\boxed{Y_{P} = -y_{1}\int{\frac{y_2g(t)}{W(y_{1},y_{2})}} \ dt+y_{2}\int{\frac{y_1g(t)}{W(y_{1},y_{2})}} \ dt}\]
+\section*{4.7 Cauchy-Euler Equation}
+Nonhomogeneous differential equations with variable coefficients of the form:
+\[a_nx^ny^{(n)}+ a_{n-1}x^{n-1}y^{(n-1)}+\cdots+a_1xy'+a_0y=g(x)\]
+where $a_n,a_{n-1},\ldots, a_1, a_0$ are constants, are known as \textbf{Cauchy-Euler equations}.\\\\
+The method for solving Cauchy-Euler equations can be applied to higher order ODEs, but we will focus on second order ODEs.
+\[ax^2y''+ bxy'+cy=g(x)\]
+\underline{Note:} The coefficient $ax^2$ is zero at $x=0$.  To guarantee uniqueness we will assume we are looking for general solutions defined on the interval $(0,\infty)$.\\\\
+\textbf{Method to solve for homogeneous solution:}\\
+Given:
+\[ax^2y''+ bxy'+cy=0\]
+We assume the solution of the form:
+\vspace{-1em}
+\begin{eqnarray*}
+y(t) &=& x^m\\
+y'(t) &=& mx^{m-1}\\
+y''(t) &=& m(m-1)x^{m-2}\\
+\end{eqnarray*}
+Plugging into the differential equation:
+\vspace{-1em}
+\begin{eqnarray*}
+ax^2y''+ bxy'+cy&=&0\\
+ax^2m(m-1)x^{m-2} + bxmx^{m-1} + cx^m &=& 0\\
+x^m (am(m-1) + bm + c) &=& 0\\
+am(m-1) + bm + c &=& 0
+\end{eqnarray*}
+Thus, the characteristic equation for $m$ is:
+\[am^2 + (b-a)m + c = 0\]
+\newpage\noindent
+\textbf{Case 1: Real and Unique Roots}\\
+For roots $m_1$ and $m_2$, the general solution is:
+\[y_h = c_1 x^{m_1} + c_2 x^{m_2}\]
+\textbf{Case 2: Repeated Roots}\\
+If we have a repeated root then we know the discriminant of the quadratic formula must be zero.  Thus, the root is of the form $m_1=-(b-a)/(2a)$  To get the second solution we can do a \textbf{reduction of order}.\\\\
+Let $y_1=x^{m_1}$.\\\\
+
+
+\end{document}
