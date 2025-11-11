@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  10 NOV 2025 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  11 NOV 2025 13:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -375,58 +375,150 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--183
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 205--210
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--210
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 226--229
+Underfull \hbox (badness 10000) in paragraph at lines 227--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--233
+Underfull \hbox (badness 10000) in paragraph at lines 230--234
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 254--258
+Underfull \hbox (badness 10000) in paragraph at lines 255--259
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--258
+Underfull \hbox (badness 10000) in paragraph at lines 259--262
+
+ []
+
+[10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 305--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--258
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
-[10] (main.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+[12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 470--474
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 481--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--510
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--514
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 519--523
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--526
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--526
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--530
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 554--556
+
+ []
+
+<Unstable.png, id=69, 443.85825pt x 416.15475pt>
+File: Unstable.png Graphic file (type png)
+<use Unstable.png>
+Package pdftex.def Info: Unstable.png  used on input line 560.
+(pdftex.def)             Requested size: 187.89914pt x 176.17445pt.
+<Stable.png, id=71, 434.22224pt x 422.17725pt>
+File: Stable.png Graphic file (type png)
+<use Stable.png>
+Package pdftex.def Info: Stable.png  used on input line 565.
+(pdftex.def)             Requested size: 187.89914pt x 182.68578pt.
+[18 <./Unstable.png>]
+<Saddle.png, id=76, 299.9205pt x 337.86224pt>
+File: Saddle.png Graphic file (type png)
+<use Saddle.png>
+Package pdftex.def Info: Saddle.png  used on input line 570.
+(pdftex.def)             Requested size: 187.89914pt x 211.67891pt.
+ [19 <./Stable.png> <./Saddle.png>]
+<Repeated Diagonal.png, id=83, 371.58826pt x 425.1885pt>
+File: Repeated Diagonal.png Graphic file (type png)
+<use Repeated Diagonal.png>
+Package pdftex.def Info: Repeated Diagonal.png  used on input line 578.
+(pdftex.def)             Requested size: 187.89914pt x 215.0072pt.
+<Repeated Non-Diagonal.png, id=84, 379.4175pt x 435.42674pt>
+File: Repeated Non-Diagonal.png Graphic file (type png)
+<use Repeated Non-Diagonal.png>
+Package pdftex.def Info: Repeated Non-Diagonal.png  used on input line 583.
+(pdftex.def)             Requested size: 187.89914pt x 215.63988pt.
+ [20 <./Repeated Diagonal.png> <./Repeated Non-Diagonal.png>] [21] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3269 strings out of 474486
- 48396 string characters out of 5743755
- 1934542 words of memory out of 5000000
- 25525 multiletter control sequences out of 15000+600000
- 566773 words of font info for 67 fonts, out of 8000000 for 9000
+ 3329 strings out of 474486
+ 49618 string characters out of 5743755
+ 1943542 words of memory out of 5000000
+ 25580 multiletter control sequences out of 15000+600000
+ 568334 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,373b,151s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (10 pages, 172238 bytes).
+ 57i,11n,65p,395b,369s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (21 pages, 417707 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 156 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
