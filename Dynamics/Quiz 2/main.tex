@@ -1,14 +1,14 @@
-\documentclass[10pt, fleqn]{article}
-\usepackage[a4paper,margin=0.5in]{geometry}
+\documentclass[12pt]{article}
+\usepackage{amsmath, amsfonts,amssymb, bm, graphicx,geometry}
+\usepackage{booktabs} 
 \usepackage{multicol}
-\usepackage{amsmath, amssymb}
-\usepackage{titlesec}
 \usepackage{float}
-\usepackage{amsfonts, bm, graphicx}
-\setlength{\mathindent}{0pt} % remove indent for equations
-
-\titleformat{\section}{\large\bfseries}{}{0em}{}
-\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\usepackage{wrapfig}
+\usepackage{bm, xcolor}
+\geometry{margin=1in}
+\title{}
+\date{}
+\author{}
 
 \begin{document}
 
@@ -16,14 +16,254 @@
     \Large \textbf{Dynamics Formula Sheet} \\
     \normalsize Quiz II
 \end{center}
-
+\section*{Impulse and Momentum}
+\textbf{Linear Momentum:} 
+\[\vec{p}=m\vec{v}\]
+\textbf{Linear Impulse:} 
+\[\mathbf{Imp}_{1\to2}=\int_{t_1}^{t_2} \mathbf{F} \, dt\]
+Momentum changes by:
+\[m\mathbf{v_1}+\mathbf{Imp}_{1\to2}=m\mathbf{v_2}\]
+For a system of particles:
+\[\sum m \mathbf{v_{1}}+\sum \mathbf{Imp}_{1\to2}=\sum m \mathbf{v_{2}}\]
+\textbf{Impulse Diagrams:}
+Shows initial momentum, impulse, and final momentum as vectors.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imp.png}
+\end{figure}
+\noindent\underline{Note:} Impulsive forces acts over a short period of time. In order for it to result in a non-negligible change in momentum, the magnitude of the impulsive force must be very large. Likewise, forces such as gravity, friction, and normal forces that act over long periods of time are not impulsive forces and can be neglected.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imp2.png}
+\end{figure}
+\newpage\noindent
+\section*{Direct Central Impact}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Direct.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Direct 2.png}
+\end{figure}
+\noindent
+We can relate the initial and final velocities of two bodies undergoing a direct central impact using the coefficient of restitution, $e$:
+\[e=\frac{\int R\, dt}{\int P\, dt}\]
+Where $P$ is the impulsive force on each object during deformation and $R$ is the impulsive force during restitution. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Direct 3.png}
+\end{figure}
+This leads to the equation:
+\[\boxed{v_B'-v_A'=e(v_A-v_B)}\]
+\newpage\noindent
+Special cases:
+\begin{itemize}
+    \item \textbf{Perfectly elastic impact:} $e=1$\\
+Momentum \textit{and} energy is conserved.
+    \item \textbf{Perfectly plastic impact:} $e=0$\\
+Particles stick together after impact. Only momentum is conserved.
+\end{itemize}
+\section*{Oblique Central Impact}
+The only impulses during impact are due to internal forces and directed along line of impact. Thus, momentum is conserved in the direction of impact, while the component of velocity perpendicular to the line of impact remains unchanged.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Oblique.png}
+\end{figure}
+\noindent
+Velocity doesn't change in the t direction (no impulsive force):
+\[v_{A,t}'=v_{A,t}\]
+\[v_{B,t}'=v_{B,t}\]
+Momentum is conserved in the n direction (no external impulse):
+\[m_Av_{A,n}+m_Bv_{B,n} = m_Av_{A,n}'+m_Bv_{B,n}'\]
+Use coefficient of restitution to relate final velocities in n direction:
+\[v_{B,n}'-v_{A,n}'=e(v_{A,n}-v_{B,n})\]
+\newpage\noindent
+\section*{Rigid Body Rotation}
+\makeatletter
+\@fleqntrue
+\makeatother
 \begin{multicols}{2}
-
-\section*{Kinematics}
-\columnbreak
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Rigid rotation.png}
+\end{figure}\noindent
+Where the angular quantities are along the axis through $O$ and the radius vector $\mathbf{r}$ extends from $O$ to the point of interest.
+\[\mathbf{v}=\mathbf{\omega} \times \mathbf{r}\]
+\[\mathbf{a}=\mathbf{\alpha} \times \mathbf{r} - \omega^2 \mathbf{r}\]
 \end{multicols}
-\newpage
+\begin{multicols}{2}
+\noindent
+\textbf{Kinematics:}
+\[\omega=\frac{d\theta}{dt}\]
+\[\alpha=\frac{d\omega}{dt}=\frac{d^2\theta}{dt^2}\]
+\[\alpha=\frac{d\theta}{dt}\frac{d\omega}{d\theta}=\omega \frac{d\omega }{d\theta}\]
+\textbf{Constant Angular Acceleration:}
+\[\theta=\theta_0+\omega_0 t + \frac{1}{2}\alpha t^2\]
+\[\omega=\omega_0+\alpha t\]
+\[\omega^2=\omega_0^2 + 2\alpha(\theta - \theta_0)\]
+\end{multicols}
 \makeatletter
 \@fleqnfalse
 \makeatother
+\section*{General Planar Motion}
+\vspace{-2em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{General Planar.png}
+\end{figure}
+The relative velocity of point B with respect to A is due to rotation about A. Thus by applying the relative velocity equation:
+\[\mathbf{v_B}=\mathbf{v_A}+\mathbf{v_{B/A}}\]
+\[\boxed{\mathbf{v}_B=\mathbf{v}_A+\mathbf{\omega}\hat{k} \times \mathbf{r}_{B/A}}\]
+\underline{Note:} $\mathbf{r}_{B/A}$ is the position vector pointing from A to B ($\left<B\right>-\left<A\right>$).\\\\
+For acceleration:
+\[\boxed{\mathbf{a}_B=\mathbf{a}_A+\mathbf{\alpha}\hat{k} \times \mathbf{r}_{B/A} - \omega^2 \mathbf{r}_{B/A}}\]
+\underline{Note:} The positive $\hat{k}$ direction is from a counterclockwise rotation.\\
+\underline{Note:} For mechanisms, points that are joined must have the same absolute velocity and acceleration.
+\newpage
+\section*{Instantaneous Center of Rotation}
+At a given instant, the velocities of particles within a body are the same as if the body was rotating around an axis perpendicular to the body that intersects at point C.
+\begin{itemize}
+    \item One velocity magnitude and direction known:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{IC1.png}
+\end{figure}
+\item Two velocity directions known:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{IC2.png}
+\end{figure}
+\item Two velocity magnitudes known:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{IC3.png}
+\end{figure}
+\end{itemize}
+\newpage
+\section*{Center of Mass}
+At the center of mass, moments from all weight elements cancel out.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Center of Mass.png}
+\end{figure}
+\[\bar{x}=\frac{x_1\Delta W_1+\cdots+x_n \Delta W_n}{W_T}\]
+\[\bar{y}=\frac{y_1\Delta W_1+\cdots+y_n \Delta W_n}{W_T}\]
+Thus, for a object of continuous weight distribution:
+\[\bar{x}=\frac{\int x \, dW}{W}\]
+\[\bar{y}=\frac{\int y \, dW}{W}\]
+For a flat object of uniform thickness and density:
+\[\bar{x}=\frac{\int x \, dA}{A}\]
+\[\bar{y}=\frac{\int y \, dA}{A}\]
+\underline{Note:} This is equal to the centroid or the geometric center of the object.\\\\
+\textbf{Complex Objects}\\
+For objects composed of multiple simple shapes, the center of mass can be found using:
+\begin{itemize}
+    \item Divide the object into simple shapes with known centroids.
+    \item Establish a consistent coordinate system and find the coordinates of each centroid.
+    \item Calculate the area and weight of each shape. Use negative mass for empty areas.
+\end{itemize}
+Use the formulas for discrete weights to find the center of mass.
+\[x_c=\frac{\sum x_{ci}A_i}{\sum A_i}, \qquad \frac{\sum x_{ci}W_i}{\sum W_i}\]
+\[y_c=\frac{\sum y_{ci}A_i}{\sum A_i},\qquad \frac{\sum y_{ci}W_i}{\sum W_i}\]
+\newpage
+\section*{Moment of Inertia}
+The moment of inertia of a body about a given axis is a measure of the body's resistance to rotation about that axis.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{MI.png}
+\end{figure}
+\[I_x=\int y^2 \, dA\]
+\[I_y=\int x^2 \, dA\]
+\textbf{Polar Moment of Inertia}\\
+Moment about the "pole" O
+\[J_O=\int r^2 \, dA,\qquad r^2 = x^2 + y^2\]
+\[J_O = I_x + I_y\]
+\newpage\noindent
+\textbf{Radius of Gyration}\\
+We can imagine as if all the area/mass was concentrated at a distance $k$ from the axis of rotation, giving us:
+\begin{multicols}{2}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Obj.png}
+\end{figure}
+\[I_x = k_x^2 A, \qquad k_x = \sqrt{\frac{I_x}{A}}\]
+\[I_y = k_y^2 A, \qquad k_y = \sqrt{\frac{I_y}{A}}\]
+\[J_O = k_o^2 A, \qquad k_o = \sqrt{\frac{J_O}{A}}\]
+\end{multicols}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Gyration.png}
+\end{figure}
+\section*{Mass Moment of Inertia in 3-D}
+Using the formula $I=\int r^2 \, dm$,
+\begin{multicols}{2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{3DMI.png}
+\end{figure}
+\[I_x=\int (y^2+z^2) \, dm\]
+\[I_y=\int (x^2+z^2) \, dm\]
+\[I_z=\int (x^2+y^2) \, dm\]
+\textbf{Parallel Axis Theorem}
+\[I=\bar{I}+md^2\]
+\end{multicols}
+\newpage
+\section*{Rotating Reference Frames}
+Frame xyz is rotating relative to frame XYZ (the absolute frame) with angular velocity $\mathbf{\omega}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Rotating Ref.png}
+\end{figure}\noindent
+The absolute velocity of point B is related to the velocity observed in the rotating frame by:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{Rot Vel.png}
+\end{figure}\noindent
+The acceleration observed in the rotating frame is related to the absolute acceleration by:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Rot acc.png}
+\end{figure}\noindent
+\underline{Note:} We have to use rotating frames if we are given quantities relative to a rotating body.
+\newpage
+\section*{Rigid Body Kinetics}
+\vspace{-2em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Kinetics.png}
+\end{figure}\noindent
+We can sum up moments and forces to get angular acceleration and linear acceleration at the center of mass:
+\[\sum \mathbf{F}=m\bar{a}\]
+\[\sum \mathbf{M_{G}}=\dot{H}_G=\bar{I}\alpha\]
+\underline{Note:} If we sum moments about a point other than the center of mass, we have to include the moment from the linear acceleration of the center of mass:
+\[\sum M_P=\bar{I}\alpha+m\bar{a}d\quad \text{Where $d$ is the perpendicular distance from P to line of action}\]
+Parallel axis theorem only applies when the rotation is about a \textbf{fixed} axis.
+\section*{Rolling Motion}
+When unsure about which direction forces such as friction acts, remember that the moment direction must be consistent regardless of the point we take moments about (moment about center vs instantaneous center of rotation should be the same direction).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Rolling.png}
+\end{figure}
+\newpage\noindent
+There are 3 cases of rolling motion:
+\begin{enumerate}
+    \item Rolling without slipping:
+    \[F_f\leq \mu_sN\qquad \bar{a}=r\alpha\]
+    \item Rolling, slipping impeding
+    \[F_f=\mu_sN\qquad \bar{a}= r\alpha\]
+    \item Rolling and slipping:
+    \[F_f=\mu_kN\qquad\bar{a}\text{ and }\alpha\text{ becomes decoupled and indepenent}\]
+\end{enumerate}
+\underline{Note:} If unsure about which case, assume rolling without slipping first and calculate $F_f$. If $F_f>\mu_sN$, then it is slipping, and we need to adjust our equation for $F_f$.
+\section*{Asymmetric Rolling}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Asym.png}
+\end{figure}
+\begin{align*}
+\bm{\bar{a}} &= \bm{a_G} = \bm{a_O} + \bm{a_{G/O}} \\
+&= \bm{a_O} + (\bm{a_{G/O}})_t + (\bm{a_{G/O}})_n \\
+&= \bm{a_O} + \bm{\alpha} \times \bm{r_{G/O}} - \omega^2 \bm{r_{G/O}}
+\end{align*}
 \end{document}
