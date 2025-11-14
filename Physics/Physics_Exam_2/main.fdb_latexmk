@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762537433.81993 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_2/main.tex" "main.pdf" "main" 1762537435.3315 0
+["pdflatex"] 1763090680.40669 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_2/main.tex" "main.pdf" "main" 1763090681.72322 0
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758289669 14064 f1b79be56b30e5d452b3bce564671b21 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
@@ -33,7 +33,6 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
-  "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
@@ -71,7 +70,7 @@
   "Dipole moment.png" 1761155791 42032 a2043f57e8c6b81eb3ce94c89e2fc074 ""
   "Dipole torque.png" 1761156447 62976 17d6d0ad2c4167a2e1ab2781014b510a ""
   "assemble solid sphere.JPG" 1762296229 406936 747cc4c565e725f583a10b9ce55bd2dc ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_2/main.tex" 1762537433 43638 791a2667731aae22f947ccdced916dbc ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_2/main.tex" 1763090679 43750 563cc9d6c69b886efe3731750fcb7a7c ""
   "cap-parallel.png" 1762369461 23542 a058f0f4dc219b1db6489de1877569c9 ""
   "cap-series.png" 1762369437 21801 98871665955bc792094bf18d76002e72 ""
   "conductingsphere.JPG" 1761428015 442225 38a14429be384deca5803e99e4380fb9 ""
@@ -87,8 +86,8 @@
   "energy2.png" 1761422177 29233 d64f52e30338cb35663be7cff9411db5 ""
   "equipotential.png" 1761426778 263263 0ed238c44cfe9bbbee4a5d2a1cb21fb2 ""
   "line.jpg" 1760376406 360506 0f337d9dcc1e0884db9b3578e8e0ec8c ""
-  "main.aux" 1762537435 33 9227a8ee1c90cd54409ecb589a84df09 "pdflatex"
-  "main.tex" 1762537433 43638 791a2667731aae22f947ccdced916dbc ""
+  "main.aux" 1763090681 33 9227a8ee1c90cd54409ecb589a84df09 "pdflatex"
+  "main.tex" 1763090679 43750 563cc9d6c69b886efe3731750fcb7a7c ""
   "method of images.JPG" 1761440526 574594 658910fb4c5ca66edc56d6774d5fb4aa ""
   "parallel plate.png" 1762278192 51507 7c147b1c0abecb1856664885686fa99d ""
   "point.JPG" 1761424621 351382 f8cb8724fea1d7b32a450e697385ce9b ""

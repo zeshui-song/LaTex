@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762884567.41692 "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/main.tex" "main.pdf" "main" 1762884568.25266 0
+["pdflatex"] 1763090426.96975 "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/main.tex" "main.pdf" "main" 1763090428.07063 0
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758289669 14064 f1b79be56b30e5d452b3bce564671b21 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
@@ -77,14 +77,17 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1665067579 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1704400941 30006 57b07afb710ee2f649c65cfbafda39c1 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1700599895 13231 2c742011581e2bf297e33520567d9464 ""
+  "Center.png" 1763064705 52148 8eb6d56c5e8e0d8b76c91175ef9dd2dc ""
   "Repeated Diagonal.png" 1762884455 53960 6b3ca226c02ddbc8058a68853eefbeb4 ""
   "Repeated Non-Diagonal.png" 1762884529 43178 7686aedb1bfa96bc2b07aa7d50de0ab2 ""
   "Saddle.png" 1762883943 56962 5546119f65b0d5069253978d8dbb8c4e ""
+  "Stable Spiral.png" 1763064677 48842 3ab4a6532b56c59700a815bff1bffca7 ""
   "Stable.png" 1762883829 67286 50c2dd2fe978dd36a1f61288d996cbf2 ""
+  "Unstable Spiral.png" 1763064597 43055 723d6227e89ffc7d810f047fa10c9ddb ""
   "Unstable.png" 1762883853 66390 d6d7d45f9e0ae792ba15d351845ac622 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/main.tex" 1762884566 31349 b821347c62921469b3668f0e80c27919 ""
-  "main.aux" 1762884568 33 335403d078a7844e2f506daeffb2ed95 "pdflatex"
-  "main.tex" 1762884566 31349 b821347c62921469b3668f0e80c27919 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/main.tex" 1763090426 32659 022f31a1e85bf58e32f283f51d75b63a ""
+  "main.aux" 1763090427 33 a035df0073161ba654cb90f84378266a "pdflatex"
+  "main.tex" 1763090426 32659 022f31a1e85bf58e32f283f51d75b63a ""
   (generated)
   "main.aux"
   "main.log"

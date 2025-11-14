@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  7 NOV 2025 12:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  13 NOV 2025 22:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -339,292 +339,296 @@ Underfull \hbox (badness 10000) in paragraph at lines 276--278
  []
 
 [11]
-<energy 1.png, id=63, 735.34724pt x 116.23425pt>
-File: energy 1.png Graphic file (type png)
-<use energy 1.png>
-Package pdftex.def Info: energy 1.png  used on input line 308.
-(pdftex.def)             Requested size: 187.89914pt x 29.70052pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--309
+Underfull \hbox (badness 10000) in paragraph at lines 301--304
 
  []
 
-<energy2.png, id=64, 499.8675pt x 433.62pt>
+<energy 1.png, id=62, 735.34724pt x 116.23425pt>
+File: energy 1.png Graphic file (type png)
+<use energy 1.png>
+Package pdftex.def Info: energy 1.png  used on input line 309.
+(pdftex.def)             Requested size: 187.89914pt x 29.70052pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--310
+
+ []
+
+<energy2.png, id=63, 499.8675pt x 433.62pt>
 File: energy2.png Graphic file (type png)
 <use energy2.png>
-Package pdftex.def Info: energy2.png  used on input line 319.
+Package pdftex.def Info: energy2.png  used on input line 320.
 (pdftex.def)             Requested size: 140.92793pt x 122.24644pt.
 [12 <./energy 1.png>]
-Overfull \hbox (0.86249pt too wide) in paragraph at lines 327--329
+Overfull \hbox (0.86249pt too wide) in paragraph at lines 328--330
 $[]$ \OT1/cmr/m/n/12 Or-der doesn't mat-ter when it comes to as-sem-bling the sys-tem of charges. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
 [13 <./energy2.png>]
-<point.JPG, id=74, 2895.81876pt x 891.33pt>
+<point.JPG, id=73, 2895.81876pt x 891.33pt>
 File: point.JPG Graphic file (type jpg)
 <use point.JPG>
-Package pdftex.def Info: point.JPG  used on input line 352.
+Package pdftex.def Info: point.JPG  used on input line 353.
 (pdftex.def)             Requested size: 328.82707pt x 101.20193pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--366
+Underfull \hbox (badness 10000) in paragraph at lines 362--367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--366
+Underfull \hbox (badness 10000) in paragraph at lines 362--367
 
  []
 
-<equipotential.png, id=75, 1197.87524pt x 399.894pt>
+<equipotential.png, id=74, 1197.87524pt x 399.894pt>
 File: equipotential.png Graphic file (type png)
 <use equipotential.png>
-Package pdftex.def Info: equipotential.png  used on input line 373.
+Package pdftex.def Info: equipotential.png  used on input line 374.
 (pdftex.def)             Requested size: 422.77664pt x 141.13655pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--374
+Underfull \hbox (badness 10000) in paragraph at lines 369--375
 
  []
 
 [14 <./point.JPG>]
-<conductingsphere.JPG, id=79, 2660.94125pt x 939.51pt>
+<conductingsphere.JPG, id=78, 2660.94125pt x 939.51pt>
 File: conductingsphere.JPG Graphic file (type jpg)
 <use conductingsphere.JPG>
-Package pdftex.def Info: conductingsphere.JPG  used on input line 379.
+Package pdftex.def Info: conductingsphere.JPG  used on input line 380.
 (pdftex.def)             Requested size: 234.8775pt x 82.91797pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--380
+Underfull \hbox (badness 10000) in paragraph at lines 376--381
 
  []
 
 [15 <./equipotential.png> <./conductingsphere.JPG>]
-<distribution.JPG, id=84, 2118.91624pt x 1329.96875pt>
+<distribution.JPG, id=83, 2118.91624pt x 1329.96875pt>
 File: distribution.JPG Graphic file (type jpg)
 <use distribution.JPG>
-Package pdftex.def Info: distribution.JPG  used on input line 399.
+Package pdftex.def Info: distribution.JPG  used on input line 400.
 (pdftex.def)             Requested size: 234.8775pt x 147.41316pt.
  [16 <./distribution.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 405--407
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
-<method of images.JPG, id=88, 3095.565pt x 1348.03625pt>
+<method of images.JPG, id=87, 3095.565pt x 1348.03625pt>
 File: method of images.JPG Graphic file (type jpg)
 <use method of images.JPG>
-Package pdftex.def Info: method of images.JPG  used on input line 422.
+Package pdftex.def Info: method of images.JPG  used on input line 423.
 (pdftex.def)             Requested size: 375.80544pt x 163.64975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--423
+Underfull \hbox (badness 10000) in paragraph at lines 417--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--423
+Underfull \hbox (badness 10000) in paragraph at lines 417--424
 
  []
 
 [17 <./method of images.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 433--435
+Underfull \hbox (badness 10000) in paragraph at lines 434--436
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--442
+Underfull \hbox (badness 10000) in paragraph at lines 439--443
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--442
+Underfull \hbox (badness 10000) in paragraph at lines 439--443
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--447
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--455
+Underfull \hbox (badness 10000) in paragraph at lines 454--456
 
  []
 
 [18]
-<relaxxx.JPG, id=95, 2569.6pt x 1674.255pt>
+<relaxxx.JPG, id=94, 2569.6pt x 1674.255pt>
 File: relaxxx.JPG Graphic file (type jpg)
 <use relaxxx.JPG>
-Package pdftex.def Info: relaxxx.JPG  used on input line 459.
+Package pdftex.def Info: relaxxx.JPG  used on input line 460.
 (pdftex.def)             Requested size: 234.8775pt x 153.02678pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--475
+Underfull \hbox (badness 10000) in paragraph at lines 473--476
 
  []
 
 [19 <./relaxxx.JPG>]
-<assemble solid sphere.JPG, id=100, 3169.8425pt x 1032.85875pt>
+<assemble solid sphere.JPG, id=99, 3169.8425pt x 1032.85875pt>
 File: assemble solid sphere.JPG Graphic file (type jpg)
 <use assemble solid sphere.JPG>
-Package pdftex.def Info: assemble solid sphere.JPG  used on input line 479.
+Package pdftex.def Info: assemble solid sphere.JPG  used on input line 480.
 (pdftex.def)             Requested size: 469.75502pt x 153.06242pt.
  [20 <./assemble solid sphere.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 502--504
+Underfull \hbox (badness 10000) in paragraph at lines 503--505
 
  []
 
-<cap-series.png, id=104, 1065.9825pt x 574.145pt>
+<cap-series.png, id=103, 1065.9825pt x 574.145pt>
 File: cap-series.png Graphic file (type png)
 <use cap-series.png>
-Package pdftex.def Info: cap-series.png  used on input line 518.
+Package pdftex.def Info: cap-series.png  used on input line 519.
 (pdftex.def)             Requested size: 187.89914pt x 101.20401pt.
-<cap-parallel.png, id=105, 1011.78pt x 423.5825pt>
+<cap-parallel.png, id=104, 1011.78pt x 423.5825pt>
 File: cap-parallel.png Graphic file (type png)
 <use cap-parallel.png>
-Package pdftex.def Info: cap-parallel.png  used on input line 527.
+Package pdftex.def Info: cap-parallel.png  used on input line 528.
 (pdftex.def)             Requested size: 187.89914pt x 78.65884pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 533--535
+Underfull \hbox (badness 10000) in paragraph at lines 534--536
 
  []
 
 [21 <./cap-series.png> <./cap-parallel.png>]
-<parallel plate.png, id=111, 548.0475pt x 281.853pt>
+<parallel plate.png, id=110, 548.0475pt x 281.853pt>
 File: parallel plate.png Graphic file (type png)
 <use parallel plate.png>
-Package pdftex.def Info: parallel plate.png  used on input line 545.
+Package pdftex.def Info: parallel plate.png  used on input line 546.
 (pdftex.def)             Requested size: 187.89914pt x 96.63298pt.
-<cylindrical capacitor.png, id=112, 251.7405pt x 286.671pt>
+<cylindrical capacitor.png, id=111, 251.7405pt x 286.671pt>
 File: cylindrical capacitor.png Graphic file (type png)
 <use cylindrical capacitor.png>
-Package pdftex.def Info: cylindrical capacitor.png  used on input line 561.
+Package pdftex.def Info: cylindrical capacitor.png  used on input line 562.
 (pdftex.def)             Requested size: 187.89914pt x 213.97476pt.
  [22 <./parallel plate.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 574--577
+Underfull \hbox (badness 10000) in paragraph at lines 575--578
 
  []
 
 [23 <./cylindrical capacitor.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 587--590
+Underfull \hbox (badness 10000) in paragraph at lines 588--591
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--594
+Underfull \hbox (badness 10000) in paragraph at lines 593--595
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 595--598
+Underfull \hbox (badness 10000) in paragraph at lines 596--599
 
  []
 
-<dielectric.png, id=121, 1068.99374pt x 381.8265pt>
+<dielectric.png, id=120, 1068.99374pt x 381.8265pt>
 File: dielectric.png Graphic file (type png)
 <use dielectric.png>
-Package pdftex.def Info: dielectric.png  used on input line 602.
+Package pdftex.def Info: dielectric.png  used on input line 603.
 (pdftex.def)             Requested size: 281.85587pt x 100.67082pt.
 [24]
-<dielectric gauss.png, id=125, 907.59074pt x 295.70474pt>
+<dielectric gauss.png, id=124, 907.59074pt x 295.70474pt>
 File: dielectric gauss.png Graphic file (type png)
 <use dielectric gauss.png>
-Package pdftex.def Info: dielectric gauss.png  used on input line 611.
+Package pdftex.def Info: dielectric gauss.png  used on input line 612.
 (pdftex.def)             Requested size: 328.82707pt x 107.13495pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--612
+Underfull \hbox (badness 10000) in paragraph at lines 606--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--612
+Underfull \hbox (badness 10000) in paragraph at lines 606--613
 
  []
 
 [25 <./dielectric.png> <./dielectric gauss.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 626--628
+Underfull \hbox (badness 10000) in paragraph at lines 627--629
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 642--646
+Underfull \hbox (badness 10000) in paragraph at lines 643--647
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 660--665
+Underfull \hbox (badness 10000) in paragraph at lines 661--666
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--665
+Underfull \hbox (badness 10000) in paragraph at lines 661--666
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 665--670
+Underfull \hbox (badness 10000) in paragraph at lines 666--671
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 665--670
+Underfull \hbox (badness 10000) in paragraph at lines 666--671
 
  []
 
 [27]
-<direction.png, id=138, 690.78075pt x 397.485pt>
+<direction.png, id=137, 690.78075pt x 397.485pt>
 File: direction.png Graphic file (type png)
 <use direction.png>
-Package pdftex.def Info: direction.png  used on input line 680.
+Package pdftex.def Info: direction.png  used on input line 681.
 (pdftex.def)             Requested size: 234.8775pt x 135.14917pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--686
+Underfull \hbox (badness 10000) in paragraph at lines 684--687
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 686--690
+Underfull \hbox (badness 10000) in paragraph at lines 687--691
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--693
+Underfull \hbox (badness 10000) in paragraph at lines 691--694
 
  []
 
 [28 <./direction.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 693--698
+Underfull \hbox (badness 10000) in paragraph at lines 694--699
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 693--698
+Underfull \hbox (badness 10000) in paragraph at lines 694--699
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--707
+Underfull \hbox (badness 10000) in paragraph at lines 704--708
 
  []
 
 [29]
-<power.png, id=146, 386.04225pt x 422.7795pt>
+<power.png, id=145, 386.04225pt x 422.7795pt>
 File: power.png Graphic file (type png)
 <use power.png>
-Package pdftex.def Info: power.png  used on input line 714.
+Package pdftex.def Info: power.png  used on input line 715.
 (pdftex.def)             Requested size: 140.92793pt x 154.34225pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 709--715
+Underfull \hbox (badness 10000) in paragraph at lines 710--716
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--726
+Underfull \hbox (badness 10000) in paragraph at lines 724--727
 
  []
 
@@ -642,10 +646,10 @@ Here is how much of TeX's memory you used:
  566426 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,522b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (30 pages, 5169574 bytes).
+ <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (30 pages, 5161652 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
+ 196 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  126 words of extra memory for PDF output out of 10000 (max. 10000000)
 

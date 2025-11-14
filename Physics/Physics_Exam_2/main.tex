@@ -274,16 +274,16 @@ where $\theta$ is the angle between $\vec{E}$ and the surface normal.
     \item A conductor only has excess charge on its surface.
 \end{itemize}
     \item Given an electric field as a function of position, find the charge density.\\\\
-    Ex: A insulating spherical charge with and varying charge density $\rho (r)=$ produces an electric field $\vec{E}=Kr^4$
+    Ex: A insulating spherical charge with and varying charge density $\rho (r)$ produces an electric field $\vec{E}=Kr^4$
     \begin{flalign*}
     \oint \vec{E} \cdot d\vec{A} =& \frac{Q_{\text{enc}}}{\varepsilon_0}\\
-    =&\frac{1}{\varepsilon_o}\int\rho (r)\;dV\\
-    =&\frac{1}{\varepsilon_o}\int_{0}^{r_o}\rho (r) 4\pi r^2\;dr
+    =&\frac{1}{\varepsilon_o}\int\rho (r')\;dV\\
+    =&\frac{1}{\varepsilon_o}\int_{0}^{r}\rho (r') 4\pi r'^2\;dr'
     \end{flalign*}
-    \[\vec{E}(r_o)(4\pi r_o^2)= \frac{1}{\varepsilon_o}\int_{0}^{r_o}\rho (r) 4\pi r^2\;dr\]
-    \[\frac{d}{dr}\left(\vec{E}(r_o)(4\pi \varepsilon_o r_o^2)\right)= \rho (r_o) 4\pi r_o^2\]
-    \[\frac{\varepsilon_o }{r_o^2}\frac{d}{dr}\left(Kr_o^4(r_o^2)\right)= \rho (r_o)\]
-    \[\rho (r_o)=\frac{\varepsilon_o }{r_o^2}\left(6Kr_o^5\right)=6K\varepsilon_o r_o^3\]
+    \[\vec{E}(r)(4\pi r^2)= \frac{1}{\varepsilon_o}\int_{0}^{r}\rho (r') 4\pi r'^2\;dr'\]
+    \[\frac{d}{dr}\left(\vec{E}(r)(4\pi \varepsilon_o r^2)\right)= \rho (r) 4\pi r^2 \quad \text{(Fundamental Theorem of Calculus)}\]
+    \[\frac{\varepsilon_o }{r^2}\frac{d}{dr}\left(Kr^4(r^2)\right)= \rho (r)\]
+    \[\rho (r)=\frac{\varepsilon_o }{r^2}\left(6Kr^5\right)=6K\varepsilon_o r^3\]
 \end{enumerate}
 \newpage
 \section*{Chapter 24 - Electric Potential}
@@ -299,7 +299,8 @@ Since the electrostatic force is a conservative force, it follows the relationsh
 \[\boxed{\Delta V = \frac{-W}{q}}\]
 If we define the potential energy to be zero at $\infty$ then the potential at any point is:
 \[V=\frac{-W_{\infty}}{q}\]
-Where $W_{\infty}$ is the work done by the electric field on a charged particle as it moves from $\infty$ to a point.
+Where $W_{\infty}$ is the work done by the electric field on a charged particle as it moves from $\infty$ to a point.\\\\
+\underline{Note:} $\sum W=\Delta K,\quad W_{nc}=\Delta K+\Delta U,\quad W_c=-\Delta U$
 \item \textbf{Electric potential energy of a system of point charges}\\
 The electric potential of a system of fixed point charges (at rest) is equal to the work that must be done by an external force to assemble the system, bringing in each charge from $\infty$.\\\\
 \underline{Ex:}

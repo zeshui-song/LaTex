@@ -564,7 +564,7 @@ By analyzing the eigenvalues and eigenvectors of the system, we can see the dyna
     \centering
     \includegraphics[width=0.4\textwidth]{Stable.png}
 \end{figure}
-    \item Eigenvalues of opposite sign: \textbf{Saddle Point} (solutions move away from origin along one eigenvector and toward origin along the other eigenvector)
+    \item Eigenvalues of opposite sign: \textbf{Saddle Point (Semi-Unstable)} (solutions move away from origin along one eigenvector and toward origin along the other eigenvector)
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{Saddle.png}
@@ -584,14 +584,41 @@ By analyzing the eigenvalues and eigenvectors of the system, we can see the dyna
 \end{figure}
 \end{itemize}
 \end{itemize}
+The eigenvectors are straight line solutions that indicate the direction of the flow in the phase plane where all other trajectories are asymptotic to these lines (to satisfy uniqueness of solutions).
 \newpage\noindent
 \textbf{Complex Eigenvalues}
 \begin{itemize}
     \item Real part positive: \textbf{Unstable Spiral} (solutions spiral away from origin)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Unstable Spiral.png}
+\end{figure}
     \item Real part negative: \textbf{Stable Spiral} (solutions spiral toward origin)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Stable Spiral.png}
+\end{figure}
+\newpage
     \item Real part zero: \textbf{Center} (solutions circle around origin)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Center.png}
+\end{figure}
 \end{itemize}
-The eigenvectors are straight line solutions that indicate the direction of the flow in the phase plane where all other trajectories are asymptotic to these lines (to satisfy uniqueness of solutions).
+By plugging in the initial conditions into the differential equation, we can see the direction of motion in terms of $dx/dt$ and $dy/dt$ at that point. Therefore, we can determine if the motion is clockwise or counterclockwise around the origin.
+\section*{8.3 Non-Homogeneous Linear Systems}
+To solve non-homogeneous linear systems of the form:
+\[\mathbf X' = \mathbf A \mathbf X + \mathbf F(t)\]
+We find the particular solution $\mathbf X_p$ using either \textbf{undetermined coefficients} or \textbf{variation of parameters}, and then add it to the complementary function $\mathbf X_c$ found from solving the homogeneous system.\\\\
+\textbf{Undetermined Coefficients}
+Similar to before, we guess the form of $\mathbf X_p$ based on the form of $\mathbf F(t)$.  However, now we must guess a vector function.\\\\
+\underline{Ex:} Given the system:
+ \begin{eqnarray*}
+ \frac{dx}{dt} &=& 2x+3y-7\\
+ \frac{dy}{dt} &=& -x-2y+5\\
+ \end{eqnarray*}
+ This can be rearranged as:
+
 
 
 
