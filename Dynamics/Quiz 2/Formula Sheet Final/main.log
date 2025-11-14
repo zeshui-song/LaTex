@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  2 NOV 2025 18:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  14 NOV 2025 15:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -332,26 +332,99 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- [1
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<Imp2.png, id=1, 560.0925pt x 151.16475pt>
+File: Imp2.png Graphic file (type png)
+<use Imp2.png>
+Package pdftex.def Info: Imp2.png  used on input line 39.
+(pdftex.def)             Requested size: 210.09193pt x 56.70277pt.
+<Oblique.png, id=3, 450.483pt x 310.15875pt>
+File: Oblique.png Graphic file (type png)
+<use Oblique.png>
+Package pdftex.def Info: Oblique.png  used on input line 53.
+(pdftex.def)             Requested size: 210.09193pt x 144.65298pt.
 
-{C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+<Rotating Ref.png, id=4, 590.80725pt x 575.14874pt>
+File: Rotating Ref.png Graphic file (type png)
+<use Rotating Ref.png>
+Package pdftex.def Info: Rotating Ref.png  used on input line 76.
+(pdftex.def)             Requested size: 210.09193pt x 204.52588pt.
+<Rot Vel.png, id=5, 898.557pt x 392.667pt>
+File: Rot Vel.png Graphic file (type png)
+<use Rot Vel.png>
+Package pdftex.def Info: Rot Vel.png  used on input line 80.
+(pdftex.def)             Requested size: 210.09193pt x 91.8094pt.
+<Rot acc.png, id=6, 1828.431pt x 539.01375pt>
+File: Rot acc.png Graphic file (type png)
+<use Rot acc.png>
+Package pdftex.def Info: Rot acc.png  used on input line 84.
+(pdftex.def)             Requested size: 288.88243pt x 85.1583pt.
+
+Overfull \hbox (31.26349pt too wide) in paragraph at lines 84--85
+ [][] 
+ []
+
+[1
+
+{C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Imp2.png> <./Oblique.png> <./Rotating Ref.png> <./Rot Vel.png> <./Rot acc.png>]
+Overfull \hbox (6.02351pt too wide) detected at line 102
+$\OML/cmm/m/it/10 I[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 z[]\OT1/cmr/m/n/10 ) \OML/cmm/m/it/10 dm;  I[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 z[]\OT1/cmr/m/n/10 ) \OML/cmm/m/it/10 dm;  I[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[]\OT1/cmr/m/n/10 ) \OML/cmm/m/it/10 dm$ 
+ []
+
+
+Overfull \hbox (4.45316pt too wide) detected at line 119
+ $\OML/cmm/m/it/10 F[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^V[]N [][][]$ 
+ []
+
+<Asym.png, id=29, 627.5445pt x 625.1355pt>
+File: Asym.png Graphic file (type png)
+<use Asym.png>
+Package pdftex.def Info: Asym.png  used on input line 126.
+(pdftex.def)             Requested size: 157.57297pt x 156.97028pt.
+<IC1.png, id=30, 774.4935pt x 495.0495pt>
+File: IC1.png Graphic file (type png)
+<use IC1.png>
+Package pdftex.def Info: IC1.png  used on input line 135.
+(pdftex.def)             Requested size: 210.09193pt x 134.28456pt.
+<IC2.png, id=31, 606.46574pt x 519.1395pt>
+File: IC2.png Graphic file (type png)
+<use IC2.png>
+Package pdftex.def Info: IC2.png  used on input line 139.
+(pdftex.def)             Requested size: 157.57297pt x 134.88594pt.
+<IC3.png, id=32, 747.39224pt x 505.89pt>
+File: IC3.png Graphic file (type png)
+<use IC3.png>
+Package pdftex.def Info: IC3.png  used on input line 143.
+(pdftex.def)             Requested size: 210.09193pt x 142.20401pt.
+[2 <./Asym.png> <./IC1.png> <./IC2.png> <./IC3.png>] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4972 strings out of 474486
- 79750 string characters out of 5743755
- 1925542 words of memory out of 5000000
- 27242 multiletter control sequences out of 15000+600000
- 559279 words of font info for 40 fonts, out of 8000000 for 9000
+ 5106 strings out of 474486
+ 81977 string characters out of 5743755
+ 1944542 words of memory out of 5000000
+ 27352 multiletter control sequences out of 15000+600000
+ 564416 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,299b,217s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on main.pdf (1 page, 24221 bytes).
+ 57i,8n,65p,299b,379s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (2 pages, 943715 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

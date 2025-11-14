@@ -25,13 +25,123 @@
 
 \begin{center}
     \Large \textbf{Dynamics Formula Sheet} \\
-    \normalsize Quiz I
+    \normalsize Quiz II
 \end{center}
 
 \begin{multicols}{2}
 
-\section*{Kinematics}
+\section*{Impulse and Momentum}
+\[\vec{p}=m\vec{v}\qquad \Delta\vec{p}=\mathbf{Imp}_{1\to2}=\int_{t_1}^{t_2} \mathbf{F} \, dt\]
+Momentum changes by:
+\[m\mathbf{v_1}+\mathbf{Imp}_{1\to2}=m\mathbf{v_2}\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Imp2.png}
+\end{figure}
+\vspace{-2em}
+\section*{Collisions}
+\[e=\frac{v_B'-v_A'}{v_A-v_B}\]
+\begin{itemize}
+    \item \textbf{Perfectly elastic impact:} $e=1$\\
+Momentum \textit{and} energy is conserved.
+    \item \textbf{Perfectly plastic impact:} $e=0$\\
+Particles stick together after impact. Only momentum is conserved.
+\end{itemize}
+\textbf{Oblique Central Impact}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Oblique.png}
+\end{figure}\noindent
+No impulsive force in $t$: \[v_{A,t}'=v_{A,t},\quad v_{B,t}'=v_{B,t}\]
+Conservation of momentum in $n$: \[m_Av_{A,n}+m_Bv_{B,n} = m_Av_{A,n}'+m_Bv_{B,n}'\]
+Relate velocities using $e$: \[v_{B,n}'-v_{A,n}'=e(v_{A,n}-v_{B,n})\]
+\section*{Rigid Body Rotation}
+\textbf{Kinematics}\\
+\[\mathbf{v}=\mathbf{\omega} \times \mathbf{r},\quad \mathbf{a}=\mathbf{\alpha} \times \mathbf{r} - \omega^2 \mathbf{r}\]
+\[\omega=\frac{d\theta}{dt},\quad \alpha=\frac{d\omega}{dt}=\frac{d^2\theta}{dt^2},\quad \alpha=\frac{d\theta}{dt}\frac{d\omega}{d\theta}=\omega \frac{d\omega }{d\theta}\]
+\newcolumn\\
+\textbf{Constant Angular Acceleration}
+\[\theta=\theta_0+\omega_0 t + \frac{1}{2}\alpha t^2\]
+\[\omega=\omega_0+\alpha t\]
+\[\omega^2=\omega_0^2 + 2\alpha(\theta - \theta_0)\]
+\section*{General Planar Motion}
+\[\mathbf{v_B}=\mathbf{v_A}+\mathbf{v_{B/A}}\]
+\[\boxed{\mathbf{v}_B=\mathbf{v}_A+\mathbf{\omega}\hat{k} \times \mathbf{r}_{B/A}}\]
+\[\boxed{\mathbf{a}_B=\mathbf{a}_A+\mathbf{\alpha}\hat{k} \times \mathbf{r}_{B/A} - \omega^2 \mathbf{r}_{B/A}}\]
+\underline{Note:} $\mathbf{r}_{B/A}$ is the position vector pointing from A to B 
+\section*{Rotating Reference Frames}
+Frame xyz is rotating relative to frame XYZ (the absolute frame) with angular velocity $\mathbf{\omega}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Rotating Ref.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Rot Vel.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{Rot acc.png}
+\end{figure}\noindent
+\underline{Note:} We have to use rotating frames if we are given quantities relative to a rotating body.
+\end{multicols}
+\newpage
+\begin{multicols}{2}
+\section*{Center of Mass}
+Continuous Body:
+\[\bar{x}=\frac{\int x \, dW}{W},\quad \bar{y}=\frac{\int y \, dW}{W}\]
+Discrete Masses:
+\[x_c=\frac{\sum x_{ci}A_i}{\sum A_i}, \qquad \frac{\sum x_{ci}W_i}{\sum W_i}\]
+\[y_c=\frac{\sum y_{ci}A_i}{\sum A_i},\qquad \frac{\sum y_{ci}W_i}{\sum W_i}\]
+\section{Moment of Inertia}
+Area Moments:
+\[I_x=\int y^2 \, dA,\quad I_y=\int x^2 \, dA\]
+Polar Moment:
+\[J_O=\int r^2 \, dA = I_x + I_y\]
+Mass Moments:
+\[I_x=\int (y^2+z^2) \, dm,\  I_y=\int (x^2+z^2) \, dm,\  I_z=\int (x^2+y^2) \, dm\]
+Radius of Gyration:
+\[I_x = k_x^2 A, \quad I_y = k_y^2 A,\quad J_O = k_o^2 A\]
+\section*{Rigid Body Kinetics}
+Sum of forces and moments about the center of mass:
+\[\sum \mathbf{F}=m\mathbf{\bar{a}},\quad \sum \mathbf{M_{G}}=\mathbf{\dot{H}_G}=\bar{I}\mathbf{\alpha}\]
+Summing moments about a point other than $\mathbf{G}$:
+\[\sum M_P=\bar{I}\alpha+m\bar{a}d\quad\]
+\underline{Note:} Parallel axis theorem only applies for fixed rotation. ($I=\bar{I}+md^2$)
+\section*{Rolling Motion}
+There are 3 cases of rolling motion:
+\begin{enumerate}
+    \item Rolling without slipping:
+    \[F_f\leq \mu_sN\qquad \bar{a}=r\alpha\]
+    \item Rolling, slipping impeding
+    \[F_f=\mu_sN\qquad \bar{a}= r\alpha\]
+    \item Rolling and slipping:
+    \[F_f=\mu_kN\qquad\bar{a}\text{ and }\alpha\text{ becomes decoupled and independent}\]
+\end{enumerate}
+\underline{Note:} If unsure about which case, assume rolling without slipping first and calculate $F_f$. If $F_f>\mu_sN$, then it is slipping, and we need to adjust our equation for $F_f$.\\
+\columnbreak\\
+\textbf{Asymmetric Rolling}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Asym.png}
+\end{figure}
+\vspace{-2em}
+\[\bm{\bar{a}} = \bm{a_G} = \bm{a_O} + \bm{a_{G/O}}\]
+\[\bm{a_G}= \bm{a_O} + (\bm{a_{G/O}})_t + (\bm{a_{G/O}})_n\]
+\[\bm{a_G}= \bm{a_O} + \bm{\alpha} \times \bm{r_{G/O}} - \omega^2 \bm{r_{G/O}}\]
+\section*{Instantaneous Center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{IC1.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{IC2.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{IC3.png}
+\end{figure}
 
 \end{multicols}
-
 \end{document}
