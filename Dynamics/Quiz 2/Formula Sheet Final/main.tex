@@ -119,16 +119,24 @@ There are 3 cases of rolling motion:
     \[F_f=\mu_kN\qquad\bar{a}\text{ and }\alpha\text{ becomes decoupled and independent}\]
 \end{enumerate}
 \underline{Note:} If unsure about which case, assume rolling without slipping first and calculate $F_f$. If $F_f>\mu_sN$, then it is slipping, and we need to adjust our equation for $F_f$.\\
-\columnbreak\\
+\columnbreak
+\section*{Normal and Tangential}
+\[\vec{v}=v\hat{u}_t\]
+\[\vec{a}=\frac{dv}{dt}\hat{u}_t+\frac{v^2}{\rho}\hat{u}_n\]
+\section*{Cylindrical (Radial and Transverse)}
+\[\vec{v}=\dot{r}\hat{u}_r+r\dot{\theta}\hat{u}_{\theta}\]
+\[\vec{a}=\left[\ddot{r}-r\dot{\theta}^2\right]\hat{u}_r+\left[r\ddot{\theta}+2\dot{r}\dot{\theta}\right]\hat{u}_{\theta}\]
 \textbf{Asymmetric Rolling}
-\begin{figure}[H]
+\begin{multicols}{2}
+    \begin{figure}[H]
     \centering
-    \includegraphics[width=0.3\textwidth]{Asym.png}
+    \includegraphics[width=0.2\textwidth]{Asym.png}
 \end{figure}
 \vspace{-2em}
 \[\bm{\bar{a}} = \bm{a_G} = \bm{a_O} + \bm{a_{G/O}}\]
 \[\bm{a_G}= \bm{a_O} + (\bm{a_{G/O}})_t + (\bm{a_{G/O}})_n\]
 \[\bm{a_G}= \bm{a_O} + \bm{\alpha} \times \bm{r_{G/O}} - \omega^2 \bm{r_{G/O}}\]
+\end{multicols}
 \section*{Instantaneous Center}
 \begin{figure}[H]
     \centering
@@ -142,6 +150,5 @@ There are 3 cases of rolling motion:
     \centering
     \includegraphics[width=0.4\textwidth]{IC3.png}
 \end{figure}
-
 \end{multicols}
 \end{document}

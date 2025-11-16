@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  14 NOV 2025 15:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  16 NOV 2025 17:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -390,22 +390,32 @@ Overfull \hbox (4.45316pt too wide) detected at line 119
 <Asym.png, id=29, 627.5445pt x 625.1355pt>
 File: Asym.png Graphic file (type png)
 <use Asym.png>
-Package pdftex.def Info: Asym.png  used on input line 126.
-(pdftex.def)             Requested size: 157.57297pt x 156.97028pt.
-<IC1.png, id=30, 774.4935pt x 495.0495pt>
+Package pdftex.def Info: Asym.png  used on input line 133.
+(pdftex.def)             Requested size: 105.04596pt x 104.64049pt.
+
+Overfull \hbox (7.29pt too wide) detected at line 137
+$\OML/cmm/b/it/10 a[] \OT1/cmr/m/n/10 = \OML/cmm/b/it/10 a[] \OT1/cmr/m/n/10 + (\OML/cmm/b/it/10 a[]\OT1/cmr/m/n/10 )[] + (\OML/cmm/b/it/10 a[]\OT1/cmr/m/n/10 )[]$ 
+ []
+
+
+Overfull \hbox (7.14063pt too wide) detected at line 138
+$\OML/cmm/b/it/10 a[] \OT1/cmr/m/n/10 = \OML/cmm/b/it/10 a[] \OT1/cmr/m/n/10 + \OML/cmm/b/it/10  \OMS/cmsy/m/n/10 ^^B \OML/cmm/b/it/10 r[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ![]\OML/cmm/b/it/10 r[]$ 
+ []
+
+<IC1.png, id=30, 1264.725pt x 793.96625pt>
 File: IC1.png Graphic file (type png)
 <use IC1.png>
-Package pdftex.def Info: IC1.png  used on input line 135.
-(pdftex.def)             Requested size: 210.09193pt x 134.28456pt.
-<IC2.png, id=31, 606.46574pt x 519.1395pt>
+Package pdftex.def Info: IC1.png  used on input line 143.
+(pdftex.def)             Requested size: 210.09193pt x 131.88316pt.
+<IC2.png, id=31, 985.6825pt x 821.0675pt>
 File: IC2.png Graphic file (type png)
 <use IC2.png>
-Package pdftex.def Info: IC2.png  used on input line 139.
-(pdftex.def)             Requested size: 157.57297pt x 134.88594pt.
+Package pdftex.def Info: IC2.png  used on input line 147.
+(pdftex.def)             Requested size: 157.57297pt x 131.2482pt.
 <IC3.png, id=32, 747.39224pt x 505.89pt>
 File: IC3.png Graphic file (type png)
 <use IC3.png>
-Package pdftex.def Info: IC3.png  used on input line 143.
+Package pdftex.def Info: IC3.png  used on input line 151.
 (pdftex.def)             Requested size: 210.09193pt x 142.20401pt.
 [2 <./Asym.png> <./IC1.png> <./IC2.png> <./IC3.png>] (main.aux)
  ***********
@@ -416,13 +426,13 @@ L3 programming layer <2024-01-04>
 Here is how much of TeX's memory you used:
  5106 strings out of 474486
  81977 string characters out of 5743755
- 1944542 words of memory out of 5000000
+ 1948542 words of memory out of 5000000
  27352 multiletter control sequences out of 15000+600000
  564416 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,299b,379s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,9n,65p,299b,429s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (2 pages, 943715 bytes).
+Output written on main.pdf (2 pages, 990017 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
