@@ -610,7 +610,7 @@ By plugging in the initial conditions into the differential equation, we can see
 To solve non-homogeneous linear systems of the form:
 \[\mathbf X' = \mathbf A \mathbf X + \mathbf F(t)\]
 We find the particular solution $\mathbf X_p$ using either \textbf{undetermined coefficients} or \textbf{variation of parameters}, and then add it to the complementary function $\mathbf X_c$ found from solving the homogeneous system.\\\\
-\textbf{Undetermined Coefficients}
+\textbf{Undetermined Coefficients}\\
 Similar to before, we guess the form of $\mathbf X_p$ based on the form of $\mathbf F(t)$.  However, now we must guess a vector function.\\\\
 \underline{Ex:} Given the system:
  \begin{eqnarray*}
@@ -618,14 +618,167 @@ Similar to before, we guess the form of $\mathbf X_p$ based on the form of $\mat
  \frac{dy}{dt} &=& -x-2y+5\\
  \end{eqnarray*}
  This can be rearranged as:
+\begin{eqnarray*}\frac{d\mathbf X}{dt} =  \begin{pmatrix}2 & 3\\-1& -2\end{pmatrix}\mathbf X+\begin{pmatrix}-7\\5\end{pmatrix}
+ \end{eqnarray*}
+ To solve the particular solution. Look at $\mathbf F(t)=\begin{pmatrix}-7\\5\end{pmatrix}$ which is just a constant solution so guess
+$$\mathbf X_p=\begin{pmatrix}A\\B\end{pmatrix}$$
+Now plug in and we get
+\[\begin{aligned}
+0 &= 2A + 3B - 7 
+   &&\Rightarrow\; 7 = 2A + 3B
+   &&\Rightarrow\; 7 = 2(5 - 2B) + 3B = 10 - B, \\[0.5em]
+0 &= -A - 2B + 5
+   &&\Rightarrow\; -5 = -A - 2B
+   &&\Rightarrow\; A = 5 - 2B.
+\end{aligned}\]\noindent
+Thus, $B=3$ and $A=-1$\\\\
+If we wanted to see the phase plane for this system, we can look at the\\
+$x$-nullclines:
+$$0=x'=2x+3y-7\Rightarrow y=\frac{7-2x}{3}$$
+the $y$-nullclines:
+$$0=y'=-x-2y+5\Rightarrow y=\frac{5-x}{2}$$
+The intersection of these two lines is the equilibrium point of the system.  By analyzing the eigenvalues of the homogeneous system we can determine the stability of this equilibrium point.
+\begin{eqnarray*}
+\frac{7-2x}{3}&=&\frac{5-x}{2}\\
+{14-4x}&=&{15-3x}\\
+x&=&-1\Rightarrow y=3
+\end{eqnarray*}
+\textbf{Variation of Parameters}\\
+If $\mathbf{X}_1,\mathbf{X}_2,\ldots,\mathbf{X}_n$ is a fundamental set of solutions on an interval $I$ to the homogeneous system $\mathbf X'=\mathbf A\mathbf X$, then its general solution is the linear combination: 
+\[\mathbf{X}=c_1\mathbf{X}_1+c_2\mathbf{X}_2+\ldots +c_n\mathbf{X}_n\]
+Rewriting it as a matrix:
+\[\mathbf{X}
+= c_1\begin{pmatrix}x_{11}\\x_{12}\\ \vdots \\x_{1n}\end{pmatrix}
++ c_2\begin{pmatrix}x_{21}\\x_{22}\\ \vdots \\x_{2n}\end{pmatrix}
++ \cdots 
++ c_n\begin{pmatrix}x_{n1}\\x_{n2}\\ \vdots \\x_{nn}\end{pmatrix}
+= \begin{pmatrix}
+c_1x_{11}+c_2x_{12}+\cdots +c_nx_{1n}\\
+c_1x_{21}+c_2x_{22}+\cdots +c_nx_{2n}\\
+\vdots\\
+c_1x_{n1}+c_2x_{n2}+\cdots +c_nx_{nn}
+\end{pmatrix}\]
+In other words,
+\[\mathbf{X}= \begin{pmatrix}
+x_{11}&x_{12}&\cdots&x_{1n}\\
+x_{21}&x_{22}&\cdots&x_{2n}\\
+\vdots&\vdots&&\vdots\\
+x_{n1}&x_{n2}&\cdots&x_{nn}\\
+ \end{pmatrix}
+ \begin{pmatrix}c_1\\c_2\\\vdots\\c_n\end{pmatrix}=\mathbf \Phi(t)\mathbf C\]
+Where $\mathbf \Phi(t)$ is called the \textbf{fundamental matrix} of the system.
+\newpage\noindent
+There are two properties of the fundamental matrix:
+\begin{itemize}
+    \item The matrix $\mathbf \Phi(t)$ is nonsingular
+    \item If $\mathbf \Phi(t)$ is a fundamental matrix of the system $\mathbf X'=\mathbf A\mathbf X$ then $$\mathbf \Phi(t)' = \mathbf A \mathbf \Phi(t) $$
+\end{itemize}
+By applying these properties we can find a particular solution to the non-homogeneous system using variation of parameters:
+\[\mathbf X'=\mathbf A\mathbf X+\mathbf F(t)\]
+\textbf{Method:}
+Similar to variation of parameters before, we are looking to replace $\mathbf C$ with a vector of functions
+$$  \mathbf U = \begin{pmatrix}u_1(t)\\u_2(t)\\\vdots\\u_n(t)\end{pmatrix}$$
+so that $\mathbf X_p=\mathbf \Phi(t)\mathbf U(t)$ is a particular solution to the nonhomogeneous system.
+$$\boxed{\mathbf X_p=\mathbf \Phi(t)\int \mathbf \Phi^{-1}(t)\mathbf F(t) \ dt}$$
+\underline{Ex:} Solve the system
+ \begin{eqnarray*}
+ \frac{dx}{dt} &=& 2x+3y-7\\
+ \frac{dy}{dt} &=& -x-2y+5\\
+ \end{eqnarray*}
+We find the homogeneous solution to be:
+$$\mathbf X_c(t) = k_{1}e^{t}\begin{pmatrix}-3\\1\end{pmatrix}+k_{2}e^{-t}\begin{pmatrix}-1 \\ 1\end{pmatrix}$$
+Using \textit{variation of parameters}:
+$$\mathbf \Phi(t)= \begin{pmatrix}-3e^t & -e^{-t}\\e^t & e^{-t}\end{pmatrix}\Rightarrow \mathbf \Phi^{-1}(t)=\frac{1}{-3+1} \begin{pmatrix}e^{-t} & e^{-t}\\-e^t & -3e^{t}\end{pmatrix}$$
+\begin{eqnarray*}
+\mathbf X_p&=&\mathbf \Phi(t)\int \mathbf \Phi^{-1}(t)\mathbf F(t) \ dt\\
+&=&\begin{pmatrix}-3e^t & -e^{-t}\\e^t & e^{-t}\end{pmatrix}\int \frac{1}{-3+1} \begin{pmatrix}e^{-t} & e^{-t}\\-e^t & -3e^{t}\end{pmatrix}\begin{pmatrix}-7 \\5\end{pmatrix}\ dt\\
+&=&\begin{pmatrix}-3e^t & -e^{-t}\\e^t & e^{-t}\end{pmatrix}\int \frac{1}{-3+1} \begin{pmatrix}-2e^{-t}\\-8e^t\end{pmatrix}\ dt\\
+&=&\begin{pmatrix}-3e^t & -e^{-t}\\e^t & e^{-t}\end{pmatrix}\int  \begin{pmatrix}e^{-t}\\4e^t\end{pmatrix}\ dt\\
+&=&\begin{pmatrix}-3e^t & -e^{-t}\\e^t & e^{-t}\end{pmatrix}\begin{pmatrix}-e^{-t}\\4e^t\end{pmatrix}\\
+&=&\begin{pmatrix}-1\\3\end{pmatrix}
+\end{eqnarray*}
 
-
-
-
-
-
-
-
-
-
+Therefore
+$$\mathbf X=\mathbf X_c+\mathbf X_p=k_{1}e^{t}\begin{pmatrix}-3\\1\end{pmatrix}+k_{2}e^{-t}\begin{pmatrix}-1 \\ 1\end{pmatrix}+\begin{pmatrix}-1\\3\end{pmatrix}$$
+\section*{8.4 Matrix Exponentials}
+Just like how for linear first order equations where the solution for $x'= \alpha x$, where $\alpha$ is constant, as:
+\[x = Ce^{\alpha t}\]
+We can do the same for matrices where $\mathbf X'= \mathbf A\mathbf X$, where $\mathbf A$ is a constant matrix.  The solution is:
+\[\mathbf X=e^{\mathbf At}\]
+\underline{Def:} For any $n\times n$ matrix $\mathbf A$ the \textbf{matrix exponential} is defined as  
+$$e^{\mathbf A t}=\mathbf I+\mathbf A t +\frac{(\mathbf A t)^2}{2!}+\frac{(\mathbf A t)^3}{3!}+\cdots=\sum_{k=0}^\infty \mathbf A^k\frac{t^k}{k!}$$
+\underline{Note:} The series converges for all $t\in \mathbb{R}$ and any $n\times n$ matrix $\mathbf A$. Also, $$\mathbf A^2=\mathbf A\mathbf A, \mathbf A^3=\mathbf A(\mathbf A^2),\cdots$$
+\underline{Rcll:}
+$$e^{\alpha t}=1+\alpha t +\frac{(\alpha t)^2}{2!}++\frac{(\alpha t)^3}{3!}+\cdots=\sum_{k=0}^\infty \alpha^k\frac{t^k}{k!}$$
+\underline{Ex:}
+\begin{eqnarray*}e^{\begin{pmatrix}2&0\\0&3\end{pmatrix} t}&=&\mathbf I+\begin{pmatrix}2&0\\0&3\end{pmatrix} t +\frac{1}{2!}\begin{pmatrix}2&0\\0&3\end{pmatrix}^2 t^2++\frac{1}{3!}\begin{pmatrix}2&0\\0&3\end{pmatrix}^3 t^3+\cdots\\
+&=&\sum_{k=0}^\infty \frac{t^k}{k!}\begin{pmatrix}2&0\\0&3\end{pmatrix}^k\\
+&=&\begin{pmatrix}\sum_{k=0}^\infty \frac{t^k}{k!}2^k&0\\0&\sum_{k=0}^\infty \frac{t^k}{k!}3^k\end{pmatrix}\\
+&=&\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}
+\end{eqnarray*}
+\underline{Def:} The derivative of $e^{\mathbf A t}$ is
+$$\frac{d}{dt}e^{\mathbf A t}=\frac{d}{dt}\sum_{k=0}^\infty \mathbf A^k\frac{t^k}{k!}=\sum_{k=1}^\infty \mathbf A^k\frac{t^{k-1}}{(k-1)!}=\mathbf A\sum_{k=1}^\infty \mathbf A^{k-1}\frac{t^{k-1}}{(k-1)!}=\mathbf A\sum_{k=0}^\infty \mathbf A^{k}\frac{t^{k}}{k!}=\mathbf Ae^{\mathbf A t}$$
+\underline{\textbf{Thm:}}\\
+The matrix exponential $\mathbf X = e^{\mathbf A t}\mathbf c$ solves $$\mathbf X'=\mathbf A\mathbf X$$ for every vector of constants $\mathbf c$ since $$\mathbf X'=\frac{d}{dt}e^{\mathbf A t}\mathbf c=\mathbf A e^{\mathbf A t}\mathbf c= \mathbf A \mathbf X$$
+\underline{\textbf{Thm:}}\\
+The general solution of $$\mathbf X'=\mathbf A\mathbf X+\mathbf F(t)$$ is $$\mathbf X=\mathbf X_h+\mathbf X_p=e^{\mathbf A t}\mathbf c + e^{\mathbf A t}\int_{t_0}^te^{-\mathbf As}\mathbf F(s) \ ds$$
+\newpage\noindent
+\underline{Ex:}
+Solve $$\mathbf X'=\begin{pmatrix}2&0\\0&3\end{pmatrix}\mathbf X+\begin{pmatrix}2\\3\end{pmatrix}$$
+From above we see $$\mathbf X_h=\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}\mathbf c=\begin{pmatrix}c_1e^{2t}\\c_2e^{3t}\end{pmatrix}=c_1e^{2t}\begin{pmatrix}1\\0\end{pmatrix}+c_2e^{3t}\begin{pmatrix}0\\1\end{pmatrix}$$
+Now to calculuate a particular solution we first see that
+$$ e^{\mathbf At}=\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}\Rightarrow e^{-\mathbf At}=\frac{1}{e^{5t}}\begin{pmatrix}e^{3t}&0\\0&e^{2t}\end{pmatrix}=\begin{pmatrix}e^{-2t}&0\\0&e^{-3t}\end{pmatrix}$$
+Therefore the particular solution
+\begin{eqnarray*} \mathbf X_p&=&e^{\mathbf A t}\int_{t_0}^te^{-\mathbf As}\mathbf F(s) \ ds\\
+&=&\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}\int_{t_0}^t\begin{pmatrix}e^{-2s}&0\\0&e^{-3s}\end{pmatrix}\begin{pmatrix}2\\3\end{pmatrix} \ ds\\
+&=&\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}\int_{t_0}^t\begin{pmatrix}2e^{-2s}\\3e^{-3s}\end{pmatrix} \ ds\\
+&=&\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}\left(\begin{pmatrix}-e^{-2s}\\-e^{-3s}\end{pmatrix}_{t_0}^t \right)\\
+&=&\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}\left(\begin{pmatrix}-e^{-2t}\\-e^{-3t}\end{pmatrix}+\begin{pmatrix}e^{-2t_0}\\e^{-3t_0}\end{pmatrix} \right)\\
+&=&\begin{pmatrix}-1\\-1\end{pmatrix}+\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}\begin{pmatrix}e^{-2t_0}\\e^{-3t_0}\end{pmatrix} \\
+&=&\begin{pmatrix}-1\\-1\end{pmatrix}+\left(e^{2t}\begin{pmatrix}e^{-2t_0}\\0\end{pmatrix}+e^{3t}\begin{pmatrix}0\\e^{-3t_0}\end{pmatrix} \right)
+\end{eqnarray*}
+Notice the second part of the sum can be incorporated into the homogeneous solution $\mathbf X_h$.  Thus the general solution is
+$$\mathbf X=c_1e^{2t}\begin{pmatrix}1\\0\end{pmatrix}+c_2e^{3t}\begin{pmatrix}0\\1\end{pmatrix}-\begin{pmatrix}1\\1\end{pmatrix}$$
+\newpage\noindent
+\section*{Applications: 5.1 Linear Models}
+We study spring–mass systems modeled by the second-order linear ODE 
+\[a\frac{d^2y}{dt^2}+b\frac{dy}{dt}+cy=g(t)\]
+With initial conditions $y(t_0)=y_0,\quad y'(t_0)=y_1$\\\\
+\textbf{Free Undamped}\\
+From Hooke's law, where the positive direction is downward:
+\[\sum F_x=-kx=ma_x\]
+As a differential equation:
+\[\boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}\]
+If we let $\omega^2=\frac{k}{m}$, then the general solution is:
+\[x(t)=c_1\cos \omega t + c_2 \sin \omega t\]
+The motion is periodic with period 
+\[T=\frac{2\pi}{\omega}\]
+With frequency
+\[f=\frac{1}{T}=\frac{\omega}{2\pi}\]
+\textbf{Free Damped}\\
+Now we add a damping force proportional to velocity:
+\[\sum F_x=-kx - \beta\frac{dx}{dt} = ma_x\]
+As a differential equation:
+\[\boxed{\frac{d^2x}{dt^2}+\frac{\beta}{m}\frac{dx}{dt}+\frac{k}{m}x=0}\]
+Like before, let $\omega^2=\frac{k}{m}$ and let $2\lambda=\frac{\beta}{m}$.
+\[\frac{d^2x}{dt^2}+2\lambda\frac{dx}{dt}+\omega^2x=0\]
+Then the characteristic equation is:
+\[m^2 +2\lambda m + \omega^2 = 0\]
+and the corresponding roots are then $$m=-\lambda\pm\sqrt{\lambda^2-\omega^2}$$
+\newpage\noindent
+\underline{There are three cases:}
+\begin{itemize}
+    \item \textbf{Case 1: $\lambda^2-\omega^2>0$}\\
+This system is said to be \textbf{overdamped} because the damping coefficient $\beta$ is large compared to the spring constant $\omega$ so the solution is of the form $$x(t)=e^{-\lambda t}\left(c_1e^{\sqrt{\lambda^2-\omega^2}t}+c_2e^{-\sqrt{\lambda^2-\omega^2}t}\right)$$
+    \item \textbf{Case 2: $\lambda^2-\omega^2=0$}\\
+This system is said to be \textbf{critically damped} because any slight decrease in the dampling force would result in oscillatory motion. The solution is of the form $$x(t)=e^{-\lambda t}(c_1+c_2t)$$
+    \item \textbf{Case 3: $\lambda^2-\omega^2<0$}\\
+This system is said to be \textbf{underdamped} because the damping coefficient $\beta$ is small compared to the spring constant $\omega$ so the solution is of the form $$x(t)=e^{-\lambda t}\left(c_1\cos{\sqrt{\omega^2-\lambda^2}t}+c_2\sin{\sqrt{\omega^2-\lambda^2}t}\right)$$
+\end{itemize}
+\textbf{Driven Motion}\\
+Now we add an external force $f(t)$ to the system:
+\[\sum F_x=-kx - \beta\frac{dx}{dt} + f(t) = ma_x\]
+As a differential equation, $f(t)$ makes it a non-homogeneous equation:
+\[\boxed{m\frac{d^2x}{dt^2}+\beta\frac{dx}{dt}+kx=f(t)}\]\\
+Basically, once we have the differential eqation set up, we can solve for the homogenous and particular solutions normally.
 \end{document}
