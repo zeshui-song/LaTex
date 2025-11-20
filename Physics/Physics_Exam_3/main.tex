@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{amsmath, amsfonts, bm, graphicx}
+\usepackage{float}
+\geometry{margin=1in}
+\title{}
+\date{}
+\author{}
+
+\begin{document}
+
+\section*{Mathematical Methods}
+
+\begin{enumerate}
+    \item Use the Taylor series expansion to find approximations. The ones for sin, cos, tan, and $(1 + x)^n$ are especially useful.
+\begin{flalign*}
+\sin x &= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} 
+       = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots & \\[6pt]
+\cos x &= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} 
+       = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots & \\[6pt]
+\tan x &= \sum_{n=1}^{\infty} \frac{B_{2n} (-4)^n (1-4^n)}{(2n)!}\,x^{2n-1} 
+       = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} + \cdots & \\[6pt]
+(1+x)^m &= \sum_{n=0}^{\infty} \binom{m}{n} x^n 
+       = 1 + mx + \frac{m(m-1)}{2}x^2 + \frac{m(m-1)(m-2)}{6}x^3 + \cdots &
+\end{flalign*}
+\underline{Note:} For small x, higher order terms reduce to zero
+
+    \item Use complex exponentials to manipulate complicated trig functions.
+\[
+e^{ix} = \cos x + i \sin x
+\]
+    \item Solve differential equations by substituting in trial solutions. Especially you should recognize the differential equation for a simple harmonic oscillator and be able to come up with solutions to that ODE that satisfy any initial conditions you are given.
+
+\[
+\frac{d^2x}{dt^2} + \omega^2 x = 0
+\]
+
+\[
+x(t) = A \cos(\omega t) + B \sin(\omega t)
+\]
+Wave equation: 
+\[v^2 \frac{\partial ^2 y}{\partial x^2}=\frac{\partial^2 y}{\partial t^2}\]
+
+\item Useful integration formulas:
+\[\int\frac{1}{(x^2+a^2)^\frac{3}{2}}dx=\frac{x}{a^2\sqrt{x^2+a^2}}+C\]
+\[\int\frac{x}{(x^2+a^2)^\frac{3}{2}}dx=-\frac{1}{\sqrt{x^2+a^2}}+C\]
+\end{enumerate}
+\newpage
+\section*{Chapter 28 - Magnetic Fields}
+\begin{enumerate}
+    \item Solve Newton's second law to determine the motion of charged particles acting under the influence of a magnetic field and any other forces (e.g., gravity, electric fields...).
+    \item Explain the Hall effect and describe its applications.
+    \item Explain the principle of operation of a cyclotron
+    \item Determine the forces and/or torques on various arrangements of current carrying wires (straight, circular loops, square loops, etc...) located in a given magnetic field.
+\end{enumerate}
+
+\section*{Chapter 29 - Magnetic Fields due to Currents}
+\begin{enumerate}
+    \item Use the Biot-Savart law to calculate the magnetic field due to a current-carrying wires of arbitrary (but tractable) geometry. e.g., a loop.
+    \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.
+    \item Find the magnetic force on a current carrying wire due to another current carrying wire.
+    \item Describe the forces and torques on magnetic dipoles in terms of their magnetic moment.
+\end{enumerate}
+
+\section*{Chapter 30 \& 31.11 - Induction and Inductance}
+\begin{enumerate}
+    \item Understand the meaning Faraday's law of induction and be able to use it to determine the electromotive force. Explain and apply the equivalence of Faraday's law and the Lorentz force law for motional emfs.
+    \item Apply Lenz's law to determine the sign of induced currents or electromotive forces.
+    \item Define inductance and be able to calculate the self or mutual inductance for various (usually simple) current distributions. Know and use the reciprocity relation for mutual inductances.
+    \item Be able to calculate the energy stored in magnetic fields for a given inductor using either the formula involving inductance or the energy density of the magnetic field.
+    \item Describe the principle of operation of a generator and a motor.
+\end{enumerate}
+
+\section*{Chapter 32 - Maxwell's Equations}
+\begin{enumerate}
+    \item Describe Gauss's law for Magnetism and its applications.
+    \item Describe the Ampere-Maxwell law, the displacement current, and calculate the magnetic field in a charging or discharging capacitor.
+\end{enumerate}
+
+\section*{Chapter 33 - Electromagnetic Waves}
+\begin{enumerate}
+    \item Test whether a given arrangement of propagating electromagnetic fields satisfies Maxwell's Equations.
+    \item Understand the principles of electromagnetic waves and their basic properties, such as phase speed, relation between $\vec{k}$, $\vec{E}$, and $\vec{B}$.
+    \item Define the Poynting vector or Poynting flux and be able to use it to calculate the energy carried by electromagnetic fields.
+    \item Qualitatively describe how electromagnetic waves are generated. For an accelerating charge, identify the directions in which one will see the largest/smallest electric fields and describe the polarization of the electric field vector.
+\end{enumerate}
+
+\section*{Chapters 27, 30.12, \& 31 - Circuits}
+\begin{enumerate}
+    \item Know and be able to apply the Voltage Loop Rule and the Current Node Rule (conservation of energy and conservation of charge, respectively) to analyze a circuit. A good example is to prove the rules for adding resistors in series or in parallel.
+    \item Know the relation between current and voltage for the basic circuit elements of resistor, capacitor, and inductor.
+    \item Write differential equations for RLC circuits (or RL, RC, LC). Understand qualitatively the behavior of resistors, inductors, and capacitors at high and low frequencies. Be able to describe how electromagnetic energy is stored, supplied, and dissipated in such circuits.
+    \item Solve the differential equations for such circuits, identify characteristic timescales, frequencies, and resonances. If initial conditions are given, be able to find solutions that satisfy those initial conditions.
+    \item Know or be able to derive the complex impedances for resistors, capacitors, and inductors. Know or derive the rules for combining parallel and series impedances. Use those impedances to describe the relations among currents and voltages in circuits, both in magnitude and phase.
+\end{enumerate}
+\textbf{End Final Exam}
+\end{document}
