@@ -2,7 +2,7 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{amsmath, amsfonts, bm, graphicx}
-\usepackage{float}
+\usepackage{float,multicol}
 \geometry{margin=1in}
 \title{}
 \date{}
@@ -27,18 +27,12 @@
 \underline{Note:} For small x, higher order terms reduce to zero
 
     \item Use complex exponentials to manipulate complicated trig functions.
-\[
-e^{ix} = \cos x + i \sin x
-\]
+\[e^{ix} = \cos x + i \sin x\]
     \item Solve differential equations by substituting in trial solutions. Especially you should recognize the differential equation for a simple harmonic oscillator and be able to come up with solutions to that ODE that satisfy any initial conditions you are given.
 
-\[
-\frac{d^2x}{dt^2} + \omega^2 x = 0
-\]
+\[\frac{d^2x}{dt^2} + \omega^2 x = 0\]
 
-\[
-x(t) = A \cos(\omega t) + B \sin(\omega t)
-\]
+\[x(t) = A \cos(\omega t) + B \sin(\omega t)\]
 Wave equation: 
 \[v^2 \frac{\partial ^2 y}{\partial x^2}=\frac{\partial^2 y}{\partial t^2}\]
 
@@ -48,9 +42,53 @@ Wave equation:
 \end{enumerate}
 \newpage
 \section*{Chapter 28 - Magnetic Fields}
+\textbf{Types of magnets}
+\begin{itemize}
+    \item \textbf{Current loop:} a current carrying loop of wire creates an electromagnet.
+    \item \textbf{Permanent Magnet:} the magnetic fields of the electrons within the material do not cancel out, resulting in a net magnetic field.
+\end{itemize}
+\textit{All} magnets are \textbf{magnetic dipoles} with a \textbf{north} and \textbf{south} pole (the magnetic monopole doesn't exist, sadly). Opposite magnetic poles attract each other, and like magnetic poles repel each other. Magnetic field lines are \textit{closed loops} that exit through the north pole and enter through the south pole.
+\begin{multicols}{2}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Magnetic Field.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.34\textwidth]{Horseshoe.png}
+\end{figure}
+\end{multicols}\noindent
+\underline{Note:} Inside the bar magnet, the magnetic field lines point from south to north, completing the closed loop.\\\\
+\underline{Magnetic field lines and the magnetic field are related by:}
+\begin{itemize}
+    \item The direction of the magnetic field is tangent to the field lines.
+    \item The spacing of the field lines represents the strength (magnitude) of the magnetic field. Closer lines = stronger field.
+\end{itemize}
+\newpage
 \begin{enumerate}
-    \item Solve Newton's second law to determine the motion of charged particles acting under the influence of a magnetic field and any other forces (e.g., gravity, electric fields...).
+    \item Solve Newton's second law to determine the motion of charged particles acting under the influence of a magnetic field and any other forces (e.g., gravity, electric fields...).\\\\
+Stationary charges do not interact with the magnetic field. Moving charges with a component of velocity perpendicular to the magnetic field experiences a force:
+\[\boxed{\vec{F}_B = q\vec{v} \times \vec{B}}\]
+\underline{Note:} This force is \textit{always} perpendicular to the velocity of the particle, so it does \textbf{no work} on the particle and cannot change its speed, only its direction.\\\\
+\underline{Note:} The magnetic force is zero when the velocity is along the magnetic field lines (i.e., parallel or antiparallel) or when stationary.\\\\
+ The unit for the magnetic field $\vec{B}$ is the Tesla (T):
+ \[1\, \text{T} = 1\, \frac{\text{N}}{\text{C}\cdot \text{m/s}} = 1\, \frac{\text{N}}{\text{A}\cdot \text{m}}\]
+\underline{Recall:} \textbf{Right hand rule}
+\begin{multicols}{2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{RHR.png}
+\end{figure}
+\columnbreak
+\begin{itemize}
+    \item Point fingers in the direction of the velocity $\vec{v}$.
+    \item Curl fingers toward the direction of the magnetic field $\vec{B}$, sweeping through the smaller angle.
+    \item Thumb points in the direction of the force $\vec{F}_B$ for \textbf{a positive charge}. For a negative charge, the force is in the opposite direction.
+\end{itemize}
+\end{multicols}
+\underline{Note to self:} Bring dynamics formula sheet for kinematics equations.
     \item Explain the Hall effect and describe its applications.
+
     \item Explain the principle of operation of a cyclotron
     \item Determine the forces and/or torques on various arrangements of current carrying wires (straight, circular loops, square loops, etc...) located in a given magnetic field.
 \end{enumerate}
