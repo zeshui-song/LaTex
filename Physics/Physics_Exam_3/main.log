@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  22 NOV 2025 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  22 NOV 2025 23:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -324,49 +324,138 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--63
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
 [2 <./Magnetic Field.png> <./Horseshoe.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--75
+Underfull \hbox (badness 10000) in paragraph at lines 73--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--75
+Underfull \hbox (badness 10000) in paragraph at lines 73--77
 
  []
 
 <RHR.png, id=23, 338.4645pt x 336.0555pt>
 File: RHR.png Graphic file (type png)
 <use RHR.png>
-Package pdftex.def Info: RHR.png  used on input line 80.
+Package pdftex.def Info: RHR.png  used on input line 82.
 (pdftex.def)             Requested size: 140.92793pt x 139.92705pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+
+ []
+
 [3 <./RHR.png>]
-Overfull \hbox (13.03024pt too wide) in paragraph at lines 121--122
+<Wien.jpg, id=28, 3276.24pt x 970.62625pt>
+File: Wien.jpg Graphic file (type jpg)
+<use Wien.jpg>
+Package pdftex.def Info: Wien.jpg  used on input line 100.
+(pdftex.def)             Requested size: 328.82707pt x 97.40895pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--101
+
+ []
+
+<Mass Spec.jpg, id=29, 2477.255pt x 1434.35875pt>
+File: Mass Spec.jpg Graphic file (type jpg)
+<use Mass Spec.jpg>
+Package pdftex.def Info: Mass Spec.jpg  used on input line 112.
+(pdftex.def)             Requested size: 187.89914pt x 108.77602pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--113
+
+ []
+
+[4 <./Wien.jpg> <./Mass Spec.jpg>]
+<Mass Spec full.jpg, id=33, 3229.06375pt x 1219.55624pt>
+File: Mass Spec full.jpg Graphic file (type jpg)
+<use Mass Spec full.jpg>
+Package pdftex.def Info: Mass Spec full.jpg  used on input line 125.
+(pdftex.def)             Requested size: 422.77664pt x 159.66441pt.
+<Diff Charges.jpg, id=34, 2068.72874pt x 1534.73375pt>
+File: Diff Charges.jpg Graphic file (type jpg)
+<use Diff Charges.jpg>
+Package pdftex.def Info: Diff Charges.jpg  used on input line 130.
+(pdftex.def)             Requested size: 164.41711pt x 121.96156pt.
+ [5 <./Mass Spec full.jpg> <./Diff Charges.jpg>]
+<Deflection.jpg, id=38, 2939.98375pt x 1359.0775pt>
+File: Deflection.jpg Graphic file (type jpg)
+<use Deflection.jpg>
+Package pdftex.def Info: Deflection.jpg  used on input line 137.
+(pdftex.def)             Requested size: 281.85587pt x 130.27502pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--138
+
+ []
+
+<CRT.png, id=39, 835.32076pt x 352.9185pt>
+File: CRT.png Graphic file (type png)
+<use CRT.png>
+Package pdftex.def Info: CRT.png  used on input line 150.
+(pdftex.def)             Requested size: 281.85587pt x 119.08061pt.
+[6 <./Deflection.jpg> <./CRT.png>]
+<Hall Effect.jpg, id=44, 3073.4825pt x 1839.87375pt>
+File: Hall Effect.jpg Graphic file (type jpg)
+<use Hall Effect.jpg>
+Package pdftex.def Info: Hall Effect.jpg  used on input line 162.
+(pdftex.def)             Requested size: 281.85587pt x 168.7258pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--163
+
+ []
+
+[7 <./Hall Effect.jpg>]
+Overfull \hbox (13.03024pt too wide) in paragraph at lines 205--206
 []\OT1/cmr/m/n/12 Test whether a given ar-range-ment of prop-a-gat-ing elec-tro-mag-netic fields sat-is-fies Maxwell's
  []
 
-[4] [5] (main.aux)
+[8] [9] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3427 strings out of 474486
- 51156 string characters out of 5743755
+ 3476 strings out of 474486
+ 52129 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25680 multiletter control sequences out of 15000+600000
+ 25729 multiletter control sequences out of 15000+600000
  566773 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,9n,65p,442b,386s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,9n,65p,453b,386s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (5 pages, 546927 bytes).
+Output written on main.pdf (9 pages, 4182769 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
+ 101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

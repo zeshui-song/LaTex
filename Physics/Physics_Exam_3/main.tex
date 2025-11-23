@@ -64,7 +64,9 @@ Wave equation:
     \item The direction of the magnetic field is tangent to the field lines.
     \item The spacing of the field lines represents the strength (magnitude) of the magnetic field. Closer lines = stronger field.
 \end{itemize}
-\newpage
+Also, analogous to Gauss's law for electric fields, we have \textbf{Gauss's law for magnetism:}
+\[\int \vec{B} \cdot \hat{n}\,d\vec{A} = 0\]
+Since there are no magnetic monopoles, the net magnetic flux through any closed surface is zero (there are no sources or sinks of magnetic field lines).\\\\\newpage
 \begin{enumerate}
     \item Solve Newton's second law to determine the motion of charged particles acting under the influence of a magnetic field and any other forces (e.g., gravity, electric fields...).\\\\
 Stationary charges do not interact with the magnetic field. Moving charges with a component of velocity perpendicular to the magnetic field experiences a force:
@@ -86,9 +88,91 @@ Stationary charges do not interact with the magnetic field. Moving charges with 
     \item Thumb points in the direction of the force $\vec{F}_B$ for \textbf{a positive charge}. For a negative charge, the force is in the opposite direction.
 \end{itemize}
 \end{multicols}
+\underline{Note:} When $\vec{B}$ and $\vec{v}$ are orthogonal, we can just multiply the magnitudes to find the force and use the right hand rule to find the direction.\\\\
+\underline{Note:} A magnetic force exists even if there is \textit{relative velocity} between charges and a magnetic field. For example, a moving magnet will exert a magnetic force on stationary charges.\\\\
 \underline{Note to self:} Bring dynamics formula sheet for kinematics equations.
-    \item Explain the Hall effect and describe its applications.
-
+\newpage
+    \item Explain the Hall effect and describe its applications.\\\\
+Here are several interesting applications where both the magnetic field and electric field acts on a moving charge.\\\\
+\textbf{Wien Filter (Velocity Selector)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Wien.jpg}
+\end{figure}
+\vspace{-1em}
+Suppose we have a source charged particles ($+q$) with random velocities. If it passes through a region with \textit{only} an $\vec{E}$ field, it will be pushed onto the negative plate, following a parabolic trajectory. However, if there is a $\vec{B}$ field in addition to the $\vec{E}$ field, then the forces will cancel for particles with a specific velocity:
+\[\sum \vec{F}_y=\vec{F}_B-\vec{F}_E=0 \implies \vec{F}_B=\vec{F}_E \]
+\[q\vec{v}\times \vec{B}=q\vec{E}\]
+\[\boxed{v=\frac{E}{B}}\]
+Thus, only particles with velocity $v=E/B$ will pass straight through the filter. \\\\
+By combining the Wien filter with another region of magnetic fields, we create a mass spectrometer that can separate particles based on their charge-to-mass ratio.\\\\
+\textbf{Mass Spectrometer}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Mass Spec.jpg}
+\end{figure}
+\vspace{-1em}
+Since we know both the charge and velocity entering the magnetic field region, we can find the particle's mass by measuring the radius of its circular path:
+\[\sum \vec{F}_n=\vec{F}_B=\frac{mv^2}{R} \implies qvB=\frac{mv^2}{R}\]
+\[\boxed{m=\frac{BRq}{v}}\]
+\newpage
+\underline{Note:} Typically, the charges are accelerated through a potential difference $V$ before entering the velocity selector, so we can find their velocity using energy conservation:
+\[W_{nc}=\Delta E = 0 \implies \Delta U = \Delta K\]
+\[qV=\frac{1}{2}mv^2 \implies v=\sqrt{\frac{2qV}{m}}\]
+The full set up looks like this:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Mass Spec full.jpg}
+\end{figure}
+Also note that since the magnetic force is opposite for negative charges, they will curve in the opposite direction in the magnetic field region:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{Diff Charges.jpg}
+\end{figure}
+\newpage
+Let's consider a setup similar to a Wien filter, but where the parallel plates are designed to deflect the particle beam rather than selectively filter it.\\\\
+\textbf{Cathode Ray Tube}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Deflection.jpg}
+\end{figure}
+\vspace{-1em}
+First, without a $\vec{B}$ field, the particles will be deflected by the $\vec{E}$ field:
+\[\sum \vec{F}=-qE\hat{j} \implies |a_y|=\frac{|q|E}{m}\]
+The time spent in the field is:
+\[\Delta x = vt = L \implies t = \frac{L}{v}\]
+The vertical displacement upon exiting the plates is:
+\[\Delta y = v_{oy}t + \frac{1}{2}a_yt^2 = 0 + \frac{1}{2}\left(\frac{|q|E}{m}\right)\left(\frac{L}{v}\right)^2\]
+\[\boxed{\Delta y = \frac{|q|EL^2}{2mv^2}}\]
+Now consider adding a magnetic field like this:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{CRT.png}
+\end{figure}
+\vspace{-1em}
+We know from the Wien filter that the forces will cancel when:
+\[v=\frac{E}{B}\]
+Thus, plugging this into our previous equation for vertical displacement:
+\[\frac{m}{|q|}=\frac{BL^2}{2\Delta y E}\]
+\newpage
+Finally, let's talk about the Hall effect!\\\\
+\textbf{Hall Effect}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Hall Effect.jpg}
+\end{figure}
+\vspace{-1em}
+Consider a conductor with a current $I$ flowing through it in a region with a $\vec{B}$ field. The moving charges will be pushed to one side of the conductor by the magnetic force, creating a \textbf{Hall potential difference} ($\Delta V$) and an electric field ($\vec{E}$) inside the conductor. 
+\[\Delta V=Ed\]
+Eventually, when the electric force balances the magnetic force, the charges stop accumulating.
+\[\sum \vec{F} = \vec{F}_E-\vec{F}_B=0 \implies qE=qv_dB\]
+Thus, by measuring the Hall potential difference, we can find the magnetic field strength:
+\[\boxed{B=\frac{\Delta V}{v_d d}}\]
+We can also find the number of charge carriers per unit volume ($n$) in the conductor, letting $q=e$ for electrons and plugging in for $v_d$ from before:
+\[I=nev_d A ,\quad \text{(A is cross-sectional area of conductor)}\]
+\[n=\frac{IBd}{eA\Delta V}\]
+\underline{Note:} It is also possible to determine the drift velocity using the Hall effect, by mechanically moving the conductor such that there is no relative velocity between the charges and the magnetic field. Therefore, there will be \textbf{zero} Hall potential difference (since there is no magnetic force).
+\newpage
     \item Explain the principle of operation of a cyclotron
     \item Determine the forces and/or torques on various arrangements of current carrying wires (straight, circular loops, square loops, etc...) located in a given magnetic field.
 \end{enumerate}
