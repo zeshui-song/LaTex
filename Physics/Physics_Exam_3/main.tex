@@ -90,7 +90,9 @@ Stationary charges do not interact with the magnetic field. Moving charges with 
 \end{multicols}
 \underline{Note:} When $\vec{B}$ and $\vec{v}$ are orthogonal, we can just multiply the magnitudes to find the force and use the right hand rule to find the direction.\\\\
 \underline{Note:} A magnetic force exists even if there is \textit{relative velocity} between charges and a magnetic field. For example, a moving magnet will exert a magnetic force on stationary charges.\\\\
-\underline{Note to self:} Bring dynamics formula sheet for kinematics equations.
+\underline{Note to self:} Bring dynamics formula sheet for kinematics equations.\\\\
+The total electronmagnetic force on a charged particle in both electric and magnetic fields is given by the \textbf{Lorentz force:}
+\[\boxed{\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}}\]
 \newpage
     \item Explain the Hall effect and describe its applications.\\\\
 Here are several interesting applications where both the magnetic field and electric field acts on a moving charge.\\\\
@@ -173,8 +175,123 @@ We can also find the number of charge carriers per unit volume ($n$) in the cond
 \[n=\frac{IBd}{eA\Delta V}\]
 \underline{Note:} It is also possible to determine the drift velocity using the Hall effect, by mechanically moving the conductor such that there is no relative velocity between the charges and the magnetic field. Therefore, there will be \textbf{zero} Hall potential difference (since there is no magnetic force).
 \newpage
-    \item Explain the principle of operation of a cyclotron
-    \item Determine the forces and/or torques on various arrangements of current carrying wires (straight, circular loops, square loops, etc...) located in a given magnetic field.
+    \item Explain the principle of operation of a cyclotron\\\\
+\textbf{Circulating Charged Particles}\\\\
+We know that for a particle of charge $q$ moving with $\vec{v}$ in a uniform magnetic field, it will tend towards a circular path due to the magnetic force (no tangential force, only normal force).
+\[\sum F_n = |q|vB=\frac{mv^2}{r} \implies r=\frac{mv}{|q|B} \quad \text{(radius)}\]
+From which we can define the following quantities:
+\[T=\frac{2\pi r}{v}=\frac{2 \pi}{v}\frac{mv}{|q|B}=\frac{2\pi m}{|q|B} \quad \text{(period)}\]
+\[f=\frac{1}{T}=\frac{|q|B}{2\pi m} \quad \text{(frequency)}\]
+\[\omega = \frac{2 \pi}{T}=2\pi f = \frac{|q|B}{m} \quad \text{(angular frequency)}\]
+\underline{Note:} The quantities $T,f, \text{ and } \omega$ do not depend on the speed of the particle (as long as it isn't moving at relativistic speeds). Fast particles move in large circles and slow ones in small circles, but all particles with the same charge-to-mass ratio $|q|/m$ take the same time $T$ to complete one loop.\\\\
+\textbf{Helical Paths}\\\\
+If the velocity of the charged particle has a component parallel to the magnetic field, then the particle will follow a helical path:
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Helical.png}
+\end{figure}
+\vspace{-1em}
+Where the angle $\phi$ is the angle between $\vec{v}$ and $\vec{B}$.
+\[v_{\parallel} = v \cos \phi, \quad v_{\perp} = v \sin \phi\]
+The radius of the helical path is determined by $v_{\perp}$:
+\[r=\frac{mv_{\perp}}{|q|B}=\frac{mv\sin \phi}{|q|B}\]
+The pitch of the helix (distance between successive turns) is determined by $v_{\parallel}$ and the period $T$:
+\[p=v_{\parallel}T=v\cos \phi \left(\frac{2\pi m}{|q|B}\right)\]
+\textbf{Magnetic Mirror}\\\\
+A charged particle can be confined to a region of space by a magnetic field that is stronger at the ends than in the middle. As the particle approaches the stronger field (shown by the more closely spaced field lines), a component of the magnetic force pushes it back toward the center of the region, reflecting it back and forth between the two ends.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Mag Mirror.png}
+\end{figure}
+This type of field can be created by two current-carrying coils (magnetic dipoles) at the ends of the region. Notably, the Earth's magnetic field acts as a magnetic mirror for charged particles from the solar wind, trapping them in the Van Allen radiation belts.\\\\
+\underline{Note:} The magnetic force only reflects the particle as a result of the curvature of the field lines, which creates a component of the magnetic force along the direction of motion of the particle.
+\newpage
+\textbf{Cyclotron}\\\\
+A cyclotron is a device that uses a combination of a constant magnetic field and an oscillating electric potential difference to accelerate charged particles. The magnetic field forces the particles to move in circular paths while the potential difference between the dees accelerates them each time they cross the gap.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{Cyclotron.png}
+\end{figure}
+Suppose a proton is injected at source $S$. It will be accelerated toward the negatively charged dee and enter it. Once inside, there will be no electric field (shielded by the conducting walls of the dee), and it will move in a semicircular path due to the magnetic field. When it exits the dee, the potential difference is reversed to accelerate it again across the gap. Thus, the frequency $f$ at which the proton circulates (independent of speed) \textit{must} match the frequency of the oscillating potential difference $f_{osc}$:
+\[f=f_{osc} \quad \text{(resonance condition)}\]
+\[\frac{|q|B}{2\pi m}=f_{osc}\]
+\textbf{Synchrotron}\\\\
+At relativistic speeds (above 10\% of $c$), the frequency of revolution is now no longer independent of the charged particle's speed. As the speed approaches the speed of light, the frequency of revolution decreases, and is no longer in sync to the fixed $f_{osc}$. Thus a \textbf{synchrotron} is used to vary both the magnetic field and $f_{osc}$ to keep the particle in resonance as it accelerates to higher speeds. The proton also follows a circular path instead of a spiral in a synchrotron.
+\newpage
+    \item Determine the forces and/or torques on various arrangements of current carrying wires (straight, circular loops, square loops, etc...) located in a given magnetic field.\\\\
+\textbf{Magnetic Force on a Current Carrying Wire}\\\\
+We know that moving charges experience a magnetic force in a magnetic field. Thus, a current-carrying wire (which has moving charges) will also experience a magnetic force when placed in a magnetic field.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Wire.png}
+\end{figure}
+\vspace{-1em}
+\underline{Note:} The motion of electrons is opposite to the direction of conventional current. However, since both the charge and velocity are negative, the magnetic force ends up being in the same direction as if we considered positive charges moving with the current.\\\\
+We know that the magnetic force on a single charge is:
+\[\vec{F}_B = q\vec{v} \times \vec{B}\]
+Thus, for $N$ charges in a wire segment of length $L$, the total magnetic force is:
+\[\vec{F}_B = Nq\vec{v}_d \times \vec{B}\]
+If we rewrite $N$ in terms of the number of charge carriers per unit volume $n$ and the volume of the wire segment $AL$ (where $A$ is the cross-sectional area), we get:
+\[\vec{F}_B = (nAL)q\vec{v}_d \times \vec{B}\]
+Recall that current is defined as $I=qnv_dA$, so we can rewrite the magnetic force as:
+\[\boxed{\vec{F}_B = I \vec{L} \times \vec{B} \quad \text{(force on a straight wire)}}\]
+Where $\vec{L}$ is a vector in the direction of the conventional current with magnitude $L$.\\\\
+If the wire is not straight or the field is not uniform, we can find the differential force on a small current element $I dl$ and integrate over the length of the wire:
+\[\boxed{d\vec{F}_B = I d\vec{L} \times \vec{B}}\]
+\underline{Note:} There is no such thing as an isolated current-carrying wire, there must always be a way to introduce current into the wire and take it out at the other end.
+\newpage
+\textbf{Magnetic Torque on a Current Loop}\\\\
+A motor converts current into rotation by using magnetic forces on a current-carrying loop to generate a torque. In this case, the direction of current is reversed every half turn to keep the torque in the same direction using a commutator (not shown).
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Torque.png}
+\end{figure}
+\vspace{-1em}
+Let's consider the following rectangular current loop in a uniform magnetic field:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Torque 1.jpg}
+\end{figure}
+\begin{multicols}{2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.34\textwidth]{RHR 2.png}
+\end{figure}
+The orientation of the loop is defined using a normal vector $\vec{n}$ that is perpendicular to the plane of the loop and follows the right-hand rule with respect to the current direction.\\\\
+Curl fingers in the direction of the current and the thumb points in the direction of $\vec{n}$. The angle $\theta$ is defined as the angle between $\vec{n}$ and $\vec{B}$.
+\end{multicols}
+Finding the magnetic force on each side of the loop using $\vec{F}_B = I \vec{L} \times \vec{B}=ILBsin\theta$ where $\theta$ is the angle between $\vec{L}$ and $\vec{B}$:
+\[||\vec{F}_1||=||\vec{F}_3||=iaB\]
+\[||\vec{F}_2||=||\vec{F}_4||=ibBsin(90^\circ-\theta)=ibBcos\theta\]
+\newpage
+By symmetry, the forces act in opposite directions on each side, so the net force on the loop is zero. However, there is a torque about the center of the loop due to $\vec{F}_1$ and $\vec{F}_3$ (since their lines of action do not pass through the center):
+\[\tau = \vec{r}\times\vec{F}\]
+\[\tau = \left(iaB \frac{b}{2}sin\theta\right)+\left(iaB \frac{b}{2}sin\theta\right)=iabBsin\theta\]
+Note that $A=ab$ is the area of the loop, so we can rewrite the torque as:
+\[\boxed{\tau = iABsin\theta}\]
+This relation holds for any shape of current loop, as long as $A$ is the area of the loop and $\theta$ is the angle between $\vec{n}$ and $\vec{B}$.\\\\
+If we have a \textit{coil} with $N$ loops of wire, we can approximate them as $N$ identical current loops stacked together in the same plane. Thus, the total torque on the coil is:
+\[\boxed{\sum \tau = NIABsin\theta}\]
+\underline{Note:} The current-carrying coil will tend to rotate such that $\vec{n}$ is aligned with $\vec{B}$, minimizing the potential energy of the system.\\\\
+\textbf{Magnetic Dipole Moment}\\\\
+Similar to a bar magnet, a current-carrying loop tends to align itself with an external magnetic field. Thus, the current loop is said to be a \textbf{magnetic dipole} with a \textbf{magnetic dipole moment} $\vec{\mu}$ defined as:
+\[\boxed{\vec{\mu} = NiA\hat{n}}\]
+Where $N$ is the number of loops, $i$ is the current, $A$ is the area of the loop, and $\hat{n}$ is the unit normal vector to the plane of the loop.It has units of amphere-square meter ($\text{A}\cdot \text{m}^2$). \\\\
+Using $\vec{\mu}$, we can rewrite the torque on the current loop as:
+\[\boxed{\vec{\tau} = \vec{\mu} \times \vec{B}}\]
+\newpage
+Similar to the electric dipole in an electric field, the potential energy of a magnetic dipole in a magnetic field is given by:
+\[\boxed{U = -\vec{\mu} \cdot \vec{B}}\]
+\underline{Note:} The minimum potential energy ($-\mu B$) occurs when $\vec{\mu}$ is aligned with $\vec{B}$, and the maximum potential energy ($\mu B$) occurs when they are anti-aligned.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Potential.png}
+\end{figure}
+Work applied and conservation:
+
 \end{enumerate}
 
 \section*{Chapter 29 - Magnetic Fields due to Currents}

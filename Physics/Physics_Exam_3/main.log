@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  22 NOV 2025 23:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  24 NOV 2025 13:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -355,12 +355,17 @@ File: RHR.png Graphic file (type png)
 Package pdftex.def Info: RHR.png  used on input line 82.
 (pdftex.def)             Requested size: 140.92793pt x 139.92705pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 91--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 91--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--95
 
  []
 
@@ -368,30 +373,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--94
 <Wien.jpg, id=28, 3276.24pt x 970.62625pt>
 File: Wien.jpg Graphic file (type jpg)
 <use Wien.jpg>
-Package pdftex.def Info: Wien.jpg  used on input line 100.
+Package pdftex.def Info: Wien.jpg  used on input line 102.
 (pdftex.def)             Requested size: 328.82707pt x 97.40895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--101
+Underfull \hbox (badness 10000) in paragraph at lines 97--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--101
+Underfull \hbox (badness 10000) in paragraph at lines 97--103
 
  []
 
 <Mass Spec.jpg, id=29, 2477.255pt x 1434.35875pt>
 File: Mass Spec.jpg Graphic file (type jpg)
 <use Mass Spec.jpg>
-Package pdftex.def Info: Mass Spec.jpg  used on input line 112.
+Package pdftex.def Info: Mass Spec.jpg  used on input line 114.
 (pdftex.def)             Requested size: 187.89914pt x 108.77602pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
+Underfull \hbox (badness 10000) in paragraph at lines 108--115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
+Underfull \hbox (badness 10000) in paragraph at lines 108--115
 
  []
 
@@ -399,63 +404,198 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--113
 <Mass Spec full.jpg, id=33, 3229.06375pt x 1219.55624pt>
 File: Mass Spec full.jpg Graphic file (type jpg)
 <use Mass Spec full.jpg>
-Package pdftex.def Info: Mass Spec full.jpg  used on input line 125.
+Package pdftex.def Info: Mass Spec full.jpg  used on input line 127.
 (pdftex.def)             Requested size: 422.77664pt x 159.66441pt.
 <Diff Charges.jpg, id=34, 2068.72874pt x 1534.73375pt>
 File: Diff Charges.jpg Graphic file (type jpg)
 <use Diff Charges.jpg>
-Package pdftex.def Info: Diff Charges.jpg  used on input line 130.
+Package pdftex.def Info: Diff Charges.jpg  used on input line 132.
 (pdftex.def)             Requested size: 164.41711pt x 121.96156pt.
  [5 <./Mass Spec full.jpg> <./Diff Charges.jpg>]
 <Deflection.jpg, id=38, 2939.98375pt x 1359.0775pt>
 File: Deflection.jpg Graphic file (type jpg)
 <use Deflection.jpg>
-Package pdftex.def Info: Deflection.jpg  used on input line 137.
+Package pdftex.def Info: Deflection.jpg  used on input line 139.
 (pdftex.def)             Requested size: 281.85587pt x 130.27502pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--138
+Underfull \hbox (badness 10000) in paragraph at lines 135--140
 
  []
 
 <CRT.png, id=39, 835.32076pt x 352.9185pt>
 File: CRT.png Graphic file (type png)
 <use CRT.png>
-Package pdftex.def Info: CRT.png  used on input line 150.
+Package pdftex.def Info: CRT.png  used on input line 152.
 (pdftex.def)             Requested size: 281.85587pt x 119.08061pt.
 [6 <./Deflection.jpg> <./CRT.png>]
 <Hall Effect.jpg, id=44, 3073.4825pt x 1839.87375pt>
 File: Hall Effect.jpg Graphic file (type jpg)
 <use Hall Effect.jpg>
-Package pdftex.def Info: Hall Effect.jpg  used on input line 162.
+Package pdftex.def Info: Hall Effect.jpg  used on input line 164.
 (pdftex.def)             Requested size: 281.85587pt x 168.7258pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--163
+Underfull \hbox (badness 10000) in paragraph at lines 160--165
 
  []
 
 [7 <./Hall Effect.jpg>]
-Overfull \hbox (13.03024pt too wide) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 178--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--181
+
+ []
+
+<Helical.png, id=49, 2607.7425pt x 1354.05875pt>
+File: Helical.png Graphic file (type png)
+<use Helical.png>
+Package pdftex.def Info: Helical.png  used on input line 192.
+(pdftex.def)             Requested size: 305.33789pt x 158.53374pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--193
+
+ []
+
+[8 <./Helical.png>]
+<Mag Mirror.png, id=54, 1650.165pt x 704.6325pt>
+File: Mag Mirror.png Graphic file (type png)
+<use Mag Mirror.png>
+Package pdftex.def Info: Mag Mirror.png  used on input line 206.
+(pdftex.def)             Requested size: 328.82707pt x 140.40791pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
+
+ []
+
+[9 <./Mag Mirror.png>]
+<Cyclotron.png, id=59, 603.4545pt x 648.62325pt>
+File: Cyclotron.png Graphic file (type png)
+<use Cyclotron.png>
+Package pdftex.def Info: Cyclotron.png  used on input line 215.
+(pdftex.def)             Requested size: 164.41711pt x 176.72406pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--222
+
+ []
+
+[10 <./Cyclotron.png>]
+<Wire.png, id=64, 879.88725pt x 613.69275pt>
+File: Wire.png Graphic file (type png)
+<use Wire.png>
+Package pdftex.def Info: Wire.png  used on input line 228.
+(pdftex.def)             Requested size: 234.8775pt x 163.81705pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--242
+
+ []
+
+[11 <./Wire.png>]
+<Torque.png, id=69, 777.50475pt x 539.01375pt>
+File: Torque.png Graphic file (type png)
+<use Torque.png>
+Package pdftex.def Info: Torque.png  used on input line 250.
+(pdftex.def)             Requested size: 187.89914pt x 130.26242pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--251
+
+ []
+
+<Torque 1.jpg, id=70, 3172.85374pt x 1171.37625pt>
+File: Torque 1.jpg Graphic file (type jpg)
+<use Torque 1.jpg>
+Package pdftex.def Info: Torque 1.jpg  used on input line 256.
+(pdftex.def)             Requested size: 422.77664pt x 156.07349pt.
+<RHR 2.png, id=71, 392.06474pt x 376.40625pt>
+File: RHR 2.png Graphic file (type png)
+<use RHR 2.png>
+Package pdftex.def Info: RHR 2.png  used on input line 261.
+(pdftex.def)             Requested size: 159.71498pt x 153.33392pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
+
+ []
+
+[12 <./Torque.png> <./Torque 1.jpg> <./RHR 2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 274--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--284
+
+ []
+
+[13]
+<Potential.png, id=81, 491.436pt x 355.3275pt>
+File: Potential.png Graphic file (type png)
+<use Potential.png>
+Package pdftex.def Info: Potential.png  used on input line 291.
+(pdftex.def)             Requested size: 140.92793pt x 101.89832pt.
+ [14 <./Potential.png>]
+Overfull \hbox (13.03024pt too wide) in paragraph at lines 322--323
 []\OT1/cmr/m/n/12 Test whether a given ar-range-ment of prop-a-gat-ing elec-tro-mag-netic fields sat-is-fies Maxwell's
  []
 
-[8] [9] (main.aux)
+[15] [16] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3476 strings out of 474486
- 52129 string characters out of 5743755
+ 3532 strings out of 474486
+ 53143 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25729 multiletter control sequences out of 15000+600000
+ 25785 multiletter control sequences out of 15000+600000
  566773 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,9n,65p,453b,386s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,9n,65p,626b,392s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (9 pages, 4182769 bytes).
+Output written on main.pdf (16 pages, 6021422 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
+ 138 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
