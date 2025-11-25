@@ -140,7 +140,7 @@ Let's consider a setup similar to a Wien filter, but where the parallel plates a
 \end{figure}
 \vspace{-1em}
 First, without a $\vec{B}$ field, the particles will be deflected by the $\vec{E}$ field:
-\[\sum \vec{F}=-qE\hat{j} \implies |a_y|=\frac{|q|E}{m}\]
+\[\sum \vec{F}=-qE\hat{\jmath} \implies |a_y|=\frac{|q|E}{m}\]
 The time spent in the field is:
 \[\Delta x = vt = L \implies t = \frac{L}{v}\]
 The vertical displacement upon exiting the plates is:
@@ -275,14 +275,14 @@ Note that $A=ab$ is the area of the loop, so we can rewrite the torque as:
 This relation holds for any shape of current loop, as long as $A$ is the area of the loop and $\theta$ is the angle between $\vec{n}$ and $\vec{B}$.\\\\
 If we have a \textit{coil} with $N$ loops of wire, we can approximate them as $N$ identical current loops stacked together in the same plane. Thus, the total torque on the coil is:
 \[\boxed{\sum \tau = NIABsin\theta}\]
-\underline{Note:} The current-carrying coil will tend to rotate such that $\vec{n}$ is aligned with $\vec{B}$, minimizing the potential energy of the system.\\\\
+\underline{Note:} The current-carrying coil will tend to rotate such that $\vec{n}$ is aligned with $\vec{B}$, minimizing the potential energy of the system.
+\newpage
 \textbf{Magnetic Dipole Moment}\\\\
 Similar to a bar magnet, a current-carrying loop tends to align itself with an external magnetic field. Thus, the current loop is said to be a \textbf{magnetic dipole} with a \textbf{magnetic dipole moment} $\vec{\mu}$ defined as:
 \[\boxed{\vec{\mu} = NiA\hat{n}}\]
 Where $N$ is the number of loops, $i$ is the current, $A$ is the area of the loop, and $\hat{n}$ is the unit normal vector to the plane of the loop.It has units of amphere-square meter ($\text{A}\cdot \text{m}^2$). \\\\
 Using $\vec{\mu}$, we can rewrite the torque on the current loop as:
 \[\boxed{\vec{\tau} = \vec{\mu} \times \vec{B}}\]
-\newpage
 Similar to the electric dipole in an electric field, the potential energy of a magnetic dipole in a magnetic field is given by:
 \[\boxed{U = -\vec{\mu} \cdot \vec{B}}\]
 \underline{Note:} The minimum potential energy ($-\mu B$) occurs when $\vec{\mu}$ is aligned with $\vec{B}$, and the maximum potential energy ($\mu B$) occurs when they are anti-aligned.
@@ -292,12 +292,67 @@ Similar to the electric dipole in an electric field, the potential energy of a m
 \end{figure}
 \underline{Note:} The work done by an external torque to rotate the dipole is $W_{ext}=\Delta U = U_f - U_i$. If the dipole is stationary before and after the rotation.\\\\
 A bar magnet and a rotating sphere of charge are magnetic dipoles as well, and we can approximate the Earth as a big magnetic dipole. Most subatomic particles (like electrons, protons, and neutrons) also have intrinsic magnetic dipole moments due to their spin and charge. Thus, we can model their interactions with magnetic fields using the same equations as above.
-
 \end{enumerate}
-
+\newpage
 \section*{Chapter 29 - Magnetic Fields due to Currents}
 \begin{enumerate}
-    \item Use the Biot-Savart law to calculate the magnetic field due to a current-carrying wires of arbitrary (but tractable) geometry. e.g., a loop.
+    \item Use the Biot-Savart law to calculate the magnetic field due to a current-carrying wires of arbitrary (but tractable) geometry. e.g., a loop.\\\\
+Like electric fields, magnetic fields obey superposition. Thus, we can find the magnetic field from a wire by summing up the $d\vec{B}$ at point $P$ produced by small current elements $Id\vec{l}$ along the wire.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Biot Savart.jpg}
+\end{figure}
+\vspace{-1em}
+We can find $d\vec{B}$ by using the \textbf{Biot-Savart Law}:
+\[\boxed{d\vec{B} = \frac{\mu_0}{4\pi} \frac{ I d\vec{l} \times \hat{r}}{r^2}}\]
+Where
+\begin{itemize}
+    \item $I d\vec{l}$ is the current element that produces the differential magnetic field $d\vec{B}$.
+    \item $r$ is the distance from the current element to point $P$.
+    \item $\hat{r}$ is the unit vector that points from the current element to point $P$.
+    \item $\mu_0$ is the permeability of free space and has a value of:
+\[\boxed{\mu_0 = 4\pi \times 10^{-7} \,\text{T}\cdot \text{m/A}}\]
+\end{itemize}
+\underline{Note:} $I d\vec{l} \times \hat{r} = I dl \sin \theta $ where $\theta$ is the angle between $d\vec{l}$ and $\vec{r}$.\\\\
+We can also find the direction of the magnetic field using the right-hand rule:
+\begin{multicols}{2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{RHR 3.png}
+\end{figure}
+\begin{itemize}
+    \item Grasp the current element and point thumb in the direction of the current.
+    \item Your fingers will then naturally curl around in the direction of the magnetic field lines due to that element.
+\end{itemize}
+\end{multicols}
+\newpage
+\textbf{Magnetic Field Due to a Current in a Straight Wire}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Long Wire.jpg}
+\end{figure}
+\vspace{-1em}
+Biot-Savart law:
+\[d\vec{B} = \frac{\mu_0}{4\pi} \frac{ I d\vec{l} \times \hat{r}}{r^2}\]
+Vectors:
+\[d\vec{l} = dy' \hat{\jmath}\]
+\[\vec{r}=\left<x,0\right>-\left<0,y'\right>=\left<x,-y'\right>,\quad ||\vec{r}|| = \sqrt{x^2 + y'^{\,2}}\]
+\[\hat{r}=\frac{\left<x,-y'\right>}{\sqrt{x^2 + y'^{\,2}}}\]
+Cross product:
+\begin{align*}
+d\vec{B} &= \frac{\mu_0}{4\pi} \frac{ I dy'\hat{\jmath} \times \left<x,-y'\right>}{(x^2 + y'^{\,2})^{3/2}}\\
+&= \frac{\mu_0}{4\pi} \frac{ -Ixdy'\hat{k}}{(x^2 + y'^{\,2})^{3/2}}
+\end{align*}
+Integrate:
+\begin{align*}
+\vec{B}&=-\frac{\mu_0 I}{2\pi}\int_{-L/2}^{L/2}\frac{xdy'}{(x^2 + y'^{\,2})^{3/2}} \hat{k} \\
+&=-\frac{\mu_0 I}{2\pi} \frac{1}{x\sqrt{x^2+(L/2)^2}}\hat{k}
+\end{align*}
+Taking the limit as $L \to \infty$, letting $r=x$:
+\[\boxed{||\vec{B}|| = \frac{\mu_0 I}{2\pi r} \quad \text{(infinite straight wire)}}\]
+\underline{Note:} For a semi-infinite wire (from $0\to\infty$), the magnetic field is half that of an infinite wire at the same distance $r$ from the wire.
+\[||\vec{B}|| = \frac{\mu_0 I}{4\pi r} \quad \text{(semi-infinite straight wire)}\]
+\newpage
     \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.
     \item Find the magnetic force on a current carrying wire due to another current carrying wire.
     \item Describe the forces and torques on magnetic dipoles in terms of their magnetic moment.

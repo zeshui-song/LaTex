@@ -1,5 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1764026634.05643 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1764026635.82421 0
+["pdflatex"] 1764101939.1144 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1764101941.42705 0
+  "Biot Savart.jpg" 1764099585 942767 e3fdb08d5f8a9497acc58352f4a13a5f ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758289669 14064 f1b79be56b30e5d452b3bce564671b21 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
@@ -76,20 +77,22 @@
   "Hall Effect.jpg" 1763872243 1083724 7b59e88fdd91dd015e4dbc4bb1c19a9e ""
   "Helical.png" 1764000802 476329 01a5b56516b14bdb717f20b2dae1cc75 ""
   "Horseshoe.png" 1763851776 155034 5537dc05129f87c3c198abbd54fd60f9 ""
+  "Long Wire.jpg" 1764100827 904765 c9f94eed7359303b5506bebffacd1f1b ""
   "Mag Mirror.png" 1764001241 454356 bb9b12c412b36aef3137f900c075af18 ""
   "Magnetic Field.png" 1763850905 262491 1e96a2ddafa536e6b3cb2c9496d5a776 ""
   "Mass Spec full.jpg" 1763867112 538528 04ad7c9f2e804f155e67fd8a02674f91 ""
   "Mass Spec.jpg" 1763865956 507788 1c073a5b3d38fcab8fd0e6327ffb5dd0 ""
   "Potential.png" 1764010143 46826 6929bfea707b9997d2adef6ab7fbc43d ""
   "RHR 2.png" 1764008008 80988 c7e51734ebe98c4d2c096d35aa6be2ab ""
+  "RHR 3.png" 1764098207 142298 c88feee8dfbe438384fb7e756037356c ""
   "RHR.png" 1763677197 121329 c95c1fc4a146256592d7953fb0f2387b ""
   "Torque 1.jpg" 1764007883 634566 27410bfcbe5ccdda03cd06226c8eb1b2 ""
   "Torque.png" 1764006283 234866 8c480b0c18bcaebd6ad34e0ad8f49ca0 ""
   "Wien.jpg" 1763864678 415470 e8f4a7c4b2ea19f763708a5c6629a939 ""
   "Wire.png" 1764003347 167991 2aaa8892e5e406f77e20e3958a469c85 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1764026633 24565 9677fecf1556ba8ebe9218df37b24b66 ""
-  "main.aux" 1764026635 33 f7d8a52c1d960073e083a764194e265e "pdflatex"
-  "main.tex" 1764026633 24565 9677fecf1556ba8ebe9218df37b24b66 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1764101938 27360 e5f93315f3842d8d8b0d1e8849a85de4 ""
+  "main.aux" 1764101941 33 49835556b7333b11e315c53cb0218aaa "pdflatex"
+  "main.tex" 1764101938 27360 e5f93315f3842d8d8b0d1e8849a85de4 ""
   (generated)
   "main.aux"
   "main.log"
