@@ -51,6 +51,8 @@ If $y_p$ is a particular solution to the nonhomogeneous nth-order linear differe
 \[y=y_h + y_p\]
 \newpage\noindent
 \section*{4.2 Reduction of Order}
+\vspace{-1em}
+\textbf{Homogeneous, standard form rewrite for formula}\\\\
 We know that the general solution of a homogeneous linear second-order differential equation
 \[a_2(x)y''+ a_1(x)y'+ a_0(x)y =0 \]
 is a linear combination 
@@ -104,6 +106,8 @@ Choosing $c_1=1$ and $c_2=0$ for the fundamental set:
 Where $y_2(x) = u(x)y_1(x)$.
 \newpage\noindent
 \section*{4.3 Homogeneous Linear Equations with Constant Coefficients}
+\vspace{-1em}
+\textbf{Homogeneous}\\\\
 For higher order homogeneous linear differential equations with constant coefficients of the form, we can use the characteristic equation to find the general solution.\\\\
 \textbf{Method:}\\
 Given a homogeneous linear differential equation with constant coefficients:
@@ -137,6 +141,8 @@ For repeated root $r$, the general solution is:
 \[\boxed{y(t) = c_1 e^{r t} + c_2 t e^{r t}}\]
 \newpage\noindent
 \section*{4.4 Undetermined Coefficients (Superposition Approach)}
+\vspace{-1em}
+\textbf{Particular}\\\\
 To find a particular solution $Y_p$ to the higher order nonhomogeneous differential equation with constant coefficients, we will guess the form of $Y_p$ based on the form of $g(x)$.\\\\
 \textbf{Method:}
 \begin{itemize}
@@ -145,7 +151,7 @@ To find a particular solution $Y_p$ to the higher order nonhomogeneous different
     \item If we can determine values for the coefficients then we guessed correctly, if we can't find values for the coefficients then we guessed incorrectly.
 \end{itemize}
 In general, we will guess
-
+\vspace{-0.31em}
 \[\begin{array}{c|c}
 g(t) & Y_{P}(t) \\
 \hline\hline
@@ -158,6 +164,8 @@ a\cos(\beta t)+b\sin(\beta t) & A\cos(\beta t)+B\sin(\beta t) \\
 \underline{Note:} If any term of $Y_{P}$ is duplicated in $y_{h}$ then the duplicated term must be multiplied by the minimum $+$ integer power of $t$ required to make all terms in general solution linearly independent. (So find the general homogeneous solution first before guessing the particular solution!)\\\\
 Then we will substitute our guess for $Y_{P}(t)$ into the original differential equation and solve for the undetermined coefficients.
 \section*{4.5 Undetermined Coefficients (Annihilator Approach)}
+\vspace{-1em}
+\textbf{Particular}\\\\
 Another way to solve for a particular solution $Y_p$ to the higher order nonhomogeneous differential equation with constant coefficients is to use the \textbf{differential operator} $D$ to create an \textbf{annihilator operator} to reduce the ODE.\\\\
 \textbf{Annihilator}\\
 If $L$ is a differential operator such that 
@@ -190,6 +198,11 @@ So by solving the \textit{homogeneous higher-order equation} $L_1L(y)=0$ we can 
     \[e^{\alpha x}\sin \beta x, xe^{\alpha x}\sin \beta x, \ldots, x^{n-1}e^{\alpha x}\sin \beta x\]
 \end{itemize}
 \newpage\noindent
+When going backwards from the annihilator to the function $g(t)$, we look at the roots of the characteristic equation of the annihilator.\\\\
+For example, the characteristic equation of $D^2-2\alpha D+(\alpha^2+\beta^2)$ is:
+\[r^2-2\alpha r + (\alpha^2+\beta^2) = 0\]
+\[r=\frac{2 \alpha \pm \sqrt{4\alpha^2-4\alpha^2-4\beta^2}}{2}=\frac{2\alpha\pm2\beta i}{2}\]
+\[\implies g(t)=e^{(\alpha \pm\beta i)t}=e^{\alpha t}(\cos \beta t + i \sin \beta t)\]
 \underline{Ex:} Finding the particular solution for $y''+y'-6y=e^{4t}$\\
 Using $y=e^{rt}$, we find the homogeneous solution:
 \[y_h=c_1 e^{-3t} + c_2 e^{2t}\]
@@ -199,13 +212,17 @@ Solving the characteristic equation:
 \[(D-4)(D-2)(D+3)y=0\]
 The general solution to the higher order homogeneous equation is (matching each annihilator factor to its corresponding $g(t)$ term):
 \[y = c_1 e^{4t} + c_2 e^{2t} + c_3 e^{-3t}\]
+\underline{Note:} List EVERY function that the differential operator annihilates. (Ex: $D^2: \, Ax+B$)\\\\
 Thus, we can choose the particular solution to be:
 \[y_p = A e^{4t}\]
 Substituting $y_p$ into the original differential equation we can solve for $A$.
 \section*{4.6 Variation of Parameters}
+\vspace{-1em}
+\textbf{Particular, standard form rewrite to use formulas}\\\\
 For nonhomogeneous linear differential equations where the method of undetermined coefficients does NOT work (ie. $g(x)$ is not of the right form, and NONconstant coefficients), we can use the method of \textbf{variation of parameters} to find a particular solution.\\\\
 \underline{Note:} Variation of parameters works for higher order ODEs, but the formulas get more complicated so most examples will be second order ODEs. \\
-IF we are given $y_h$, the homogeneous solution, we can find $y_p$, the particular solution, using variation of parameters. However, if we are not given $y_h$, we must find it first using the characteristic equation method. (Thus, unless given $y_h$ the problems we do will still only be constant coefficients)\\\\
+IF we are given $y_h$, the homogeneous solution, we can find $y_p$, the particular solution, using variation of parameters. However, if we are not given $y_h$, we must find it first using the characteristic equation method. (Thus, unless given $y_h$ the problems we do will still only be constant coefficients)
+\newpage\noindent
 \textbf{Method:}\\
 \vspace{-1em}
 \begin{itemize}
@@ -228,7 +245,8 @@ Nonhomogeneous differential equations with variable coefficients of the form:
 where $a_n,a_{n-1},\ldots, a_1, a_0$ are constants, are known as \textbf{Cauchy-Euler equations}.\\\\
 The method for solving Cauchy-Euler equations can be applied to higher order ODEs, but we will focus on second order ODEs.
 \[ax^2y''+ bxy'+cy=g(x)\]
-\underline{Note:} The coefficient $ax^2$ is zero at $x=0$.  To guarantee uniqueness we will assume we are looking for general solutions defined on the interval $(0,\infty)$.\\\\
+\underline{Note:} The coefficient $ax^2$ is zero at $x=0$.  To guarantee uniqueness we will assume we are looking for general solutions defined on the interval $(0,\infty)$.
+\newpage\noindent
 \textbf{Method to solve for homogeneous solution:}\\
 Given:
 \[ax^2y''+ bxy'+cy=0\]
@@ -258,7 +276,7 @@ If we have a repeated root then we know the discriminant of the quadratic formul
 Rewriting the Cauchy-Euler equation in standard form:
 \[y'' + \frac{b}{ax}y' + \frac{c}{ax^2}y = 0\]
 Letting $y_1 = x^{m_1} \implies y_2 = u(x)y_1$.\\\\
-Recall that:
+Recall that (reduction of order):
 \[u(x) = \int \frac{e^{-\int P(x) \,dx}}{y_1^2} \, dx\]
 Where $P(x) = \frac{b}{ax}$ and
 \[\int P(x) \, dx = \int \frac{b}{ax} \, dx = \frac{b}{a} \ln(x)\]  
@@ -302,7 +320,7 @@ Since $\mathbf x \neq \mathbf O$ then $\mathbf A-\lambda \mathbf I$ must \textbf
 \textbf{Method:}
 \begin{itemize}
     \item Calculate the \textbf{characteristic polynomial} by looking for the eigenvalues $\lambda$ where $$\textrm{det}(\mathbf A-\lambda \mathbf I)=0$$
-    \item Calculate the \textbf{eigenspace} associated with $\lambda$ by looking at $$\textrm{null}(\mathbf A-\lambda \mathbf I)$$
+    \item Calculate the \textbf{eigenspace} associated with $\lambda$ by looking at $$\textrm{null}(\mathbf A-\lambda \mathbf I) \implies (\mathbf{A}-\lambda \mathbf{I})\mathbf{x}=0 \quad \text{(where $\mathbf{x}$ is the nullspace)}$$
 Any non-zero $\mathbf{x}\in\textrm{null}(\mathbf A-\lambda \mathbf I)$ is an \textbf{eigenvector} of $\mathbf A$ associated with $\lambda$.\\\\
 \underline{Note:} The null space is all vectors $\mathbf x$ such that $(\mathbf A-\lambda \mathbf I)\mathbf x=\mathbf 0$.
 \end{itemize}
@@ -426,7 +444,8 @@ and added we would get
 \end{eqnarray*}
 so
 $$\boxed{x(t) = c_3e^{5t}+c_4e^{-3t}}$$
-Finally we substitute both solutions back into one of the original equations to the constants.
+Finally we substitute both solutions back into one of the original equations to the constants.\\\\
+\underline{Note:} For non-homogeneous systems, we must also operate on the non-homogeneous part when we apply the differential operator to both sides of the equation. This way we can get a differential equation in terms of only 1 of the variables so we can apply undetermined coefficients or other methods to find a particular solution.
 \newpage\noindent
 \section*{8.1 Preliminary Theory - Linear Systems}
 A \textbf{first order system} is made up of differential equations of the form:
@@ -527,7 +546,7 @@ Let $\lambda_1, \lambda_2, \ldots, \lambda_n$ be the eigenvalues and $\mathbf v_
 \textbf{Case 2: Complex Eigenvalues}\\
 We know that complex eigenvalues and eigenvectors come in conjugate pairs, so we can just use the $+$ case and get the $-$ case by taking the complex conjugate.\\\\
 Looking at the $+$ case, let $\lambda_1 = \alpha + i \beta$ be the eigenvalue and $\mathbf v_1 = \mathbf p + i \mathbf q$ be the eigenvector. Then the general solution is:
-\[\boxed{\mathbf{X(t)}=[\mathbf{B_1}\cos(\beta t)-\mathbf{B_2}\sin(\beta t)]e^{\alpha t}+[\mathbf{B_2}\cos(\beta t)+\mathbf{B_1}\sin(\beta t)]e^{\alpha t}}\]
+\[\boxed{\mathbf{X(t)}=k_1[\mathbf{B_1}\cos(\beta t)-\mathbf{B_2}\sin(\beta t)]e^{\alpha t}+k_2[\mathbf{B_2}\cos(\beta t)+\mathbf{B_1}\sin(\beta t)]e^{\alpha t}}\]
 Where $\mathbf B_1$ and $\mathbf B_2$ are the real and imaginary parts of the eigenvector $\mathbf v_1$.
 \[\mathbf{B_1}=Re(\mathbf{v_1})=\mathbf{p}\]
 \[\mathbf{B_2}=Im(\mathbf{v_1})=\mathbf{q}\]
@@ -547,9 +566,16 @@ $$\mathbf v_{0}= \begin{pmatrix}x(0)\\y(0) \end{pmatrix}$$
 Then set
 $$\mathbf v_{1} = (\mathbf A-\lambda \mathbf I)\mathbf v_{0}$$
 And the solution becomes
-$$\mathbf X = e^{\lambda t}\mathbf v_{0}+te^{\lambda t}\mathbf v_{1}$$
-Nice thing about this method is it automatically solves for the initial conditions!    
+$$\boxed{\mathbf X = e^{\lambda t}\mathbf v_{0}+te^{\lambda t}\mathbf v_{1}}$$
+This method automatically solves for the initial conditions!\\\\
+If $\mathbf{v_1}\neq \mathbf{0}$ then $\mathbf{v_1}$ is an eigenvector with eigenvalue $\lambda$. If $\mathbf{v_1}=\mathbf{0}$, then $\mathbf{v_0}$ is the eigenvector.
 \end{enumerate}
+The textbook solution for case 2 \textit{without} initial conditions is:\\\\
+Suppose we found the one eigenvector $\mathbf v_1$ associated with the repeated eigenvalue $\lambda$.  Then we can find a second, linearly independent solution vector $\mathbf v_2$ by solving:
+\[(\mathbf A - \lambda \mathbf I)\mathbf v_2 = \mathbf v_1\]
+Then the general solution is:
+\[\boxed{\mathbf X(t) = k_1 e^{\lambda t} \mathbf v_1 + k_2 [\mathbf{v_1}te^{\lambda t}+ \mathbf{v_2}e^{\lambda t}]}\]
+\newpage\noindent
 \section*{Phase Portraits}
 By analyzing the eigenvalues and eigenvectors of the system, we can see the dynamics of the solutions across time.\\\\
 \textbf{Real Eigenvalues}
@@ -564,12 +590,12 @@ By analyzing the eigenvalues and eigenvectors of the system, we can see the dyna
     \centering
     \includegraphics[width=0.4\textwidth]{Stable.png}
 \end{figure}
+\newpage\noindent
     \item Eigenvalues of opposite sign: \textbf{Saddle Point (Semi-Unstable)} (solutions move away from origin along one eigenvector and toward origin along the other eigenvector)
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{Saddle.png}
 \end{figure}
-\newpage\noindent
     \item Repeated eigenvalues: All solutions move toward or away from origin along eigenvector direction (depending on sign of eigenvalue). There are two cases for the two general solutions:
 \begin{itemize}
     \item For a diagonal matrix, \textbf{all} vectors in $\mathbb{R}^2$ are eigenvectors, so solutions move directly toward or away from origin along straight lines in all directions.
@@ -577,6 +603,7 @@ By analyzing the eigenvalues and eigenvectors of the system, we can see the dyna
     \centering
     \includegraphics[width=0.4\textwidth]{Repeated Diagonal.png}
 \end{figure}
+\newpage
     \item For a non-diagonal matrix, there is only \textbf{one} eigenvector, so solutions move toward or away from origin along the eigenvector direction, and other trajectories curve toward this line.
 \begin{figure}[H]
     \centering
@@ -584,8 +611,7 @@ By analyzing the eigenvalues and eigenvectors of the system, we can see the dyna
 \end{figure}
 \end{itemize}
 \end{itemize}
-The eigenvectors are straight line solutions that indicate the direction of the flow in the phase plane where all other trajectories are asymptotic to these lines (to satisfy uniqueness of solutions).
-\newpage\noindent
+The eigenvectors are straight line solutions that indicate the direction of the flow in the phase plane where all other trajectories are asymptotic to these lines (to satisfy uniqueness of solutions).\\\\
 \textbf{Complex Eigenvalues}
 \begin{itemize}
     \item Real part positive: \textbf{Unstable Spiral} (solutions spiral away from origin)
@@ -593,19 +619,20 @@ The eigenvectors are straight line solutions that indicate the direction of the 
     \centering
     \includegraphics[width=0.4\textwidth]{Unstable Spiral.png}
 \end{figure}
+\newpage
     \item Real part negative: \textbf{Stable Spiral} (solutions spiral toward origin)
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{Stable Spiral.png}
 \end{figure}
-\newpage
     \item Real part zero: \textbf{Center} (solutions circle around origin)
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{Center.png}
 \end{figure}
 \end{itemize}
-By plugging in the initial conditions into the differential equation, we can see the direction of motion in terms of $dx/dt$ and $dy/dt$ at that point. Therefore, we can determine if the motion is clockwise or counterclockwise around the origin.
+By plugging in the initial conditions into the differential equation, we can see the direction of motion in terms of $dx/dt$ and $dy/dt$ at that point. Therefore, we can determine if the motion is \textit{clockwise} or \textit{counterclockwise} around the origin.
+\newpage
 \section*{8.3 Non-Homogeneous Linear Systems}
 To solve non-homogeneous linear systems of the form:
 \[\mathbf X' = \mathbf A \mathbf X + \mathbf F(t)\]
@@ -666,8 +693,7 @@ x_{21}&x_{22}&\cdots&x_{2n}\\
 x_{n1}&x_{n2}&\cdots&x_{nn}\\
  \end{pmatrix}
  \begin{pmatrix}c_1\\c_2\\\vdots\\c_n\end{pmatrix}=\mathbf \Phi(t)\mathbf C\]
-Where $\mathbf \Phi(t)$ is called the \textbf{fundamental matrix} of the system.
-\newpage\noindent
+Where $\mathbf \Phi(t)$ is called the \textbf{fundamental matrix} of the system (columns are the solution vectors).\\\\
 There are two properties of the fundamental matrix:
 \begin{itemize}
     \item The matrix $\mathbf \Phi(t)$ is nonsingular
@@ -675,6 +701,7 @@ There are two properties of the fundamental matrix:
 \end{itemize}
 By applying these properties we can find a particular solution to the non-homogeneous system using variation of parameters:
 \[\mathbf X'=\mathbf A\mathbf X+\mathbf F(t)\]
+\newpage\noindent
 \textbf{Method:}
 Similar to variation of parameters before, we are looking to replace $\mathbf C$ with a vector of functions
 $$  \mathbf U = \begin{pmatrix}u_1(t)\\u_2(t)\\\vdots\\u_n(t)\end{pmatrix}$$
@@ -705,24 +732,24 @@ Just like how for linear first order equations where the solution for $x'= \alph
 \[x = Ce^{\alpha t}\]
 We can do the same for matrices where $\mathbf X'= \mathbf A\mathbf X$, where $\mathbf A$ is a constant matrix.  The solution is:
 \[\mathbf X=e^{\mathbf At}\]
+\underline{\textbf{Thm:}}\\
+The matrix exponential $\mathbf X = e^{\mathbf A t}\mathbf c$ solves $$\mathbf X'=\mathbf A\mathbf X$$ for every vector of constants $\mathbf c$ since $$\mathbf X'=\frac{d}{dt}e^{\mathbf A t}\mathbf c=\mathbf A e^{\mathbf A t}\mathbf c= \mathbf A \mathbf X$$
+\underline{\textbf{Thm:}}\\
+The general solution of $$\mathbf X'=\mathbf A\mathbf X+\mathbf F(t)$$ is $$\mathbf X=\mathbf X_h+\mathbf X_p=e^{\mathbf A t}\mathbf c + e^{\mathbf A t}\int_{t_0}^te^{-\mathbf As}\mathbf F(s) \ ds$$
 \underline{Def:} For any $n\times n$ matrix $\mathbf A$ the \textbf{matrix exponential} is defined as  
-$$e^{\mathbf A t}=\mathbf I+\mathbf A t +\frac{(\mathbf A t)^2}{2!}+\frac{(\mathbf A t)^3}{3!}+\cdots=\sum_{k=0}^\infty \mathbf A^k\frac{t^k}{k!}$$
+$$e^{\mathbf A t}=\sum_{k=0}^\infty \mathbf A^k\frac{t^k}{k!}=\mathbf I+\mathbf A t +\frac{(\mathbf A t)^2}{2!}+\frac{(\mathbf A t)^3}{3!}+\cdots$$
 \underline{Note:} The series converges for all $t\in \mathbb{R}$ and any $n\times n$ matrix $\mathbf A$. Also, $$\mathbf A^2=\mathbf A\mathbf A, \mathbf A^3=\mathbf A(\mathbf A^2),\cdots$$
 \underline{Rcll:}
-$$e^{\alpha t}=1+\alpha t +\frac{(\alpha t)^2}{2!}++\frac{(\alpha t)^3}{3!}+\cdots=\sum_{k=0}^\infty \alpha^k\frac{t^k}{k!}$$
+$$e^{\alpha t}=\sum_{k=0}^\infty \alpha^k\frac{t^k}{k!}=1+\alpha t +\frac{(\alpha t)^2}{2!}++\frac{(\alpha t)^3}{3!}+\cdots$$
+\underline{Def:} The derivative of $e^{\mathbf A t}$ is
+$$\frac{d}{dt}e^{\mathbf A t}=\frac{d}{dt}\sum_{k=0}^\infty \mathbf A^k\frac{t^k}{k!}=\sum_{k=1}^\infty \mathbf A^k\frac{t^{k-1}}{(k-1)!}=\mathbf A\sum_{k=1}^\infty \mathbf A^{k-1}\frac{t^{k-1}}{(k-1)!}=\mathbf A\sum_{k=0}^\infty \mathbf A^{k}\frac{t^{k}}{k!}$$
+\[\frac{d}{dt}e^{\mathbf A t}=\mathbf Ae^{\mathbf A t}\]
 \underline{Ex:}
 \begin{eqnarray*}e^{\begin{pmatrix}2&0\\0&3\end{pmatrix} t}&=&\mathbf I+\begin{pmatrix}2&0\\0&3\end{pmatrix} t +\frac{1}{2!}\begin{pmatrix}2&0\\0&3\end{pmatrix}^2 t^2++\frac{1}{3!}\begin{pmatrix}2&0\\0&3\end{pmatrix}^3 t^3+\cdots\\
 &=&\sum_{k=0}^\infty \frac{t^k}{k!}\begin{pmatrix}2&0\\0&3\end{pmatrix}^k\\
 &=&\begin{pmatrix}\sum_{k=0}^\infty \frac{t^k}{k!}2^k&0\\0&\sum_{k=0}^\infty \frac{t^k}{k!}3^k\end{pmatrix}\\
 &=&\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}
 \end{eqnarray*}
-\underline{Def:} The derivative of $e^{\mathbf A t}$ is
-$$\frac{d}{dt}e^{\mathbf A t}=\frac{d}{dt}\sum_{k=0}^\infty \mathbf A^k\frac{t^k}{k!}=\sum_{k=1}^\infty \mathbf A^k\frac{t^{k-1}}{(k-1)!}=\mathbf A\sum_{k=1}^\infty \mathbf A^{k-1}\frac{t^{k-1}}{(k-1)!}=\mathbf A\sum_{k=0}^\infty \mathbf A^{k}\frac{t^{k}}{k!}=\mathbf Ae^{\mathbf A t}$$
-\underline{\textbf{Thm:}}\\
-The matrix exponential $\mathbf X = e^{\mathbf A t}\mathbf c$ solves $$\mathbf X'=\mathbf A\mathbf X$$ for every vector of constants $\mathbf c$ since $$\mathbf X'=\frac{d}{dt}e^{\mathbf A t}\mathbf c=\mathbf A e^{\mathbf A t}\mathbf c= \mathbf A \mathbf X$$
-\underline{\textbf{Thm:}}\\
-The general solution of $$\mathbf X'=\mathbf A\mathbf X+\mathbf F(t)$$ is $$\mathbf X=\mathbf X_h+\mathbf X_p=e^{\mathbf A t}\mathbf c + e^{\mathbf A t}\int_{t_0}^te^{-\mathbf As}\mathbf F(s) \ ds$$
-\newpage\noindent
 \underline{Ex:}
 Solve $$\mathbf X'=\begin{pmatrix}2&0\\0&3\end{pmatrix}\mathbf X+\begin{pmatrix}2\\3\end{pmatrix}$$
 From above we see $$\mathbf X_h=\begin{pmatrix}e^{2t}&0\\0&e^{3t}\end{pmatrix}\mathbf c=\begin{pmatrix}c_1e^{2t}\\c_2e^{3t}\end{pmatrix}=c_1e^{2t}\begin{pmatrix}1\\0\end{pmatrix}+c_2e^{3t}\begin{pmatrix}0\\1\end{pmatrix}$$
