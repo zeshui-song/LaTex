@@ -1,6 +1,6 @@
-PWD c:\Users\zsong\OneDrive\Desktop\LaTex\Lab 6
+PWD c:\Users\zsong\OneDrive\Desktop\LaTex\Physics Labs\Lab 6
 INPUT C:\Users\zsong\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\zsong\OneDrive\Desktop\LaTex\Lab 6\Lab 6.tex
+INPUT c:\Users\zsong\OneDrive\Desktop\LaTex\Physics Labs\Lab 6\Lab 6.tex
 OUTPUT Lab 6.log
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -130,6 +130,20 @@ INPUT .\N-Slit.png
 INPUT .\N-Slit.png
 INPUT .\N-Slit.png
 INPUT .\N-Slit.png
+INPUT .\Single Slit.png
+INPUT .\Single Slit.png
+INPUT .\Single Slit.png
+INPUT .\Single Slit.png
+INPUT .\Single Slit.png
+INPUT .\Single Slit.png
+INPUT .\Single Slit.png
+INPUT .\Finite Double.png
+INPUT .\Finite Double.png
+INPUT .\Finite Double.png
+INPUT .\Finite Double.png
+INPUT .\Finite Double.png
+INPUT .\Finite Double.png
+INPUT .\Finite Double.png
 INPUT Lab 6.aux
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
@@ -139,5 +153,11 @@ INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb

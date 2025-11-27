@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1759186972.35755 "c:/Users/zsong/OneDrive/Desktop/LaTex/Lab 6/Lab 6.tex" "Lab 6.pdf" "Lab 6" 1759186972.83837 0
-  "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758289666 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1764270487.43301 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics Labs/Lab 6/Lab 6.tex" "Lab 6.pdf" "Lab 6" 1764270488.08203 0
+  "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233951848 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -37,6 +37,9 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
+  "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1247596666 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-sys.cfg" 1616067285 584 2a1075dd71571459f59146da9f7502ad ""
@@ -63,11 +66,13 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1700599895 12667 e4b5eb11e4b7239e6c8a52bbe074a6c6 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1700599895 13231 2c742011581e2bf297e33520567d9464 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1700599895 7147 d45559f8a31b8c53ada0640516660003 ""
-  "Lab 6.aux" 1759186972 1103 4f60afb5e0fe5418d13a0c12782db898 "pdflatex"
-  "Lab 6.tex" 1759186971 1219 35d1e931364adf1ffa16392a8ee1d075 ""
-  "N-Slit.png" 1759186896 33134 a45d270b51d9b71540173ead0415a00f ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Lab 6/Lab 6.tex" 1759186971 1219 35d1e931364adf1ffa16392a8ee1d075 ""
-  "youngs_ds.png" 1759184463 32114 fcfc0511c3d21178f544af708a3a11b3 ""
+  "Finite Double.png" 1764269221 71882 afcfd505ab54e78e1041d5ee05cc75fc ""
+  "Lab 6.aux" 1764270487 1809 c8edb78e2fd73d1e6f9d0934585f2288 "pdflatex"
+  "Lab 6.tex" 1764270486 2858 a7b03192fc952f34bdd1830e9dde4160 ""
+  "N-Slit.png" 1764268341 33134 a45d270b51d9b71540173ead0415a00f ""
+  "Single Slit.png" 1764268556 34217 19441b1a3bf1c7e419db9c0b41c18024 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics Labs/Lab 6/Lab 6.tex" 1764270486 2858 a7b03192fc952f34bdd1830e9dde4160 ""
+  "youngs_ds.png" 1764268340 32114 fcfc0511c3d21178f544af708a3a11b3 ""
   (generated)
   "Lab 6.aux"
   "Lab 6.log"

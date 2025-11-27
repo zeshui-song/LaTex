@@ -17,22 +17,48 @@
 \maketitle
 
 \section{Purpose}  
-In this lab, Python will be used to compute and plot the solutions to wave equations. In particular, interference patterns from Young's double slit experiment will be visualized along with the single slit and N-slit cases.
+In this lab, Python will be used to compute and plot the solutions to wave equations. In particular, interference patterns from Young's double slit experiment will be visualized along with the N-slit case. Additionally, single slit diffraction patterns will also be plotted.
 \newpage
 \section{Results}
-\paragraph{Double Slit}\mbox{}\\
+\paragraph{Double Slit}\mbox{}
+\vspace{-1em}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{youngs_ds.png}
+    \includegraphics[width=1\textwidth]{youngs_ds.png}
 \caption{Young's Double Slit Intensity Pattern ($d=1\,\mathrm{\mu m},\,\lambda=650\,\mathrm{nm}$) using the following linspace command: \texttt{theta = np.linspace(-np.pi/2.0, np.pi/2.0, int(np.pi/0.001))}}
 \end{figure}
-\paragraph{N-Slit} \mbox{}\\
+\newpage
+\paragraph{N-Slit} \mbox{}
+\vspace{-1em}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{N-Slit.png}
+    \includegraphics[width=1\textwidth]{N-Slit.png}
 \caption{N-Slit Intensity Pattern with varying slits ($d=1\,\mathrm{\mu m},\,\lambda=650\,\mathrm{nm}$)}
 \end{figure}
-
+\newpage
+\paragraph{Single Slit} \mbox{}
+\vspace{-1em}
+\begin{figure}[H]   
+    \centering
+    \includegraphics[width=1\textwidth]{Single Slit.png}
+\caption{Single Slit Diffraction Pattern with slit width $a=1.5\,\mathrm{\mu m}$ and wavelengths $\lambda_1=350\,\mathrm{nm}$, $\lambda_2=700\,\mathrm{nm}$}
+\end{figure}
+\newpage
+\paragraph{Youngs Double Slit with Finite Width} \mbox{}
+\vspace{-1em}
+\begin{figure}[H]   
+    \centering
+    \includegraphics[width=1\textwidth]{Finite Double.png}
+\caption{Young's Double Slit Intensity Pattern with finite slit width $w = 2 \lambda$, slit separation $d = 3w$, and wavelength $\lambda=650\,\mathrm{nm}$}
+\end{figure}
+\newpage
 \section{Conclusion}
+In this lab, Python was successfully used to compute and plot various wave interference and diffraction patterns. The plots show how the standard double slit interference pattern clusters around the central maximum in the N-slit case, and how finite slit width modulates the amplitude of the interference pattern.
 \section{Answers to Questions}
+In figure 4, $m=3$ is missing because it corresponds to a minimum of the single slit diffraction pattern where 
+\[a \sin \theta = n \lambda, \quad n=\pm 1, \pm 2, \pm 3, \ldots\]
+In this case, $a=2\lambda$ and $\lambda=650\,\mathrm{nm}$, so $n=1$ corresponds to the angle $\theta = \arcsin(1/2)=30^\circ$. This angle coincides with the position of the $m=3$ maximum in the double slit interference pattern, leading to its absence in the combined pattern.
+\[dsin\theta = m\lambda, \quad \text{where } d = 6 \lambda\]
+\[\theta = arcsin(m/6), \quad m=3\]
+\[\theta = 30^\circ\]
 \end{document}
