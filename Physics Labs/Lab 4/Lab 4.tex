@@ -21,96 +21,116 @@ Using Bessel's method to determine the focal lengths of two different converging
 % Approx Focal Lengths
 \textbf{Approximate Focal Lengths}
 \begin{align*}
-f_1 &= \\
-f_2 &= \\
+f_1 &= 10 \pm 0.3 \text{ cm}\\
+f_2 &= 4.6 \pm 0.6 \text{ cm}\\
 \end{align*}
+\newpage
 \textbf{Measurements for Bessel's Method Calculations for Focal Lengths}
-
 \begin{table}[H]
 \centering
 \caption{Bessel's Method Data for Lens 1}
 \scriptsize 
 \begin{tabularx}{\linewidth}{*{5}{>{\centering\arraybackslash}X}}
 \toprule
-\textbf{D (cm)} & \textbf{d (cm)}  & \textbf{Random Error D (mm)}& \textbf{Random Error d (mm)} & \textbf{Inst. Error (mm)}\\
+\textbf{D (cm)} & \textbf{d (cm)}  & \textbf{Random Error D (cm)}& \textbf{Random Error d (cm)} & \textbf{Optical Bench Inst. Error (cm)}\\
 \midrule
-2.180 & & & & \\
-2.190 & & & & \\
-2.185 & & & & \\
-2.185 & & & & \\
-2.195 & & & & \\
-2.180 & 0.005 & 0.002 & 0.002 & 0.0005 \\
+43.00 & 9.85 & & & \\
+43.00 & 9.85 & & & \\
+43.00 & 9.25 & & & \\
+43.00 & 9.20 & & & \\
+43.00 & 9.60 & & & \\
+43.00 & 9.75 & 0 & 0.12 & 0.05 \\
 \midrule
-\multicolumn{4}{l}{\textbf{Mean D}} & \textbf{7.66 mm} \\
-\multicolumn{4}{l}{\textbf{Mean d}} & \textbf{7.66 mm} \\
+\multicolumn{4}{l}{\textbf{Mean D}} & \textbf{43.00 cm} \\
+\multicolumn{4}{l}{\textbf{Mean d}} & \textbf{9.58 cm} \\
 \bottomrule
 \end{tabularx}
 \end{table}
+Image sharpness uncertainty (for position d):
+\begin{itemize}
+    \item Position 1: 0.30 cm
+    \item Position 2: 0.20 cm
+\end{itemize}
 \begin{table}[H]
 \centering
 \caption{Bessel's Method Data for Lens 2}
 \scriptsize 
 \begin{tabularx}{\linewidth}{*{5}{>{\centering\arraybackslash}X}}
 \toprule
-\textbf{D (cm)} & \textbf{d (cm)}  & \textbf{Random Error D (mm)}& \textbf{Random Error d (mm)} & \textbf{Inst. Error (mm)}\\
+\textbf{D (cm)} & \textbf{d (cm)}  & \textbf{Random Error D (cm)}& \textbf{Random Error d (cm)} & \textbf{Optical Bench Inst. Error (cm)}\\
 \midrule
-2.180 & & & & \\
-2.190 & & & & \\
-2.185 & & & & \\
-2.185 & & & & \\
-2.195 & & & & \\
-2.180 & 0.005 & 0.002 & 0.002 & 0.0005 \\
+24.95 & 7.45 & & & \\
+24.95 & 8.25 & & & \\
+24.95 & 7.55 & & & \\
+24.95 & 7.95 & & & \\
+24.95 & 8.20 & & & \\
+24.95 & 7.30 & 0 & 0.16 & 0.05 \\
 \midrule
-\multicolumn{4}{l}{\textbf{Mean D}} & \textbf{7.66 mm} \\
-\multicolumn{4}{l}{\textbf{Mean d}} & \textbf{7.66 mm} \\
+\multicolumn{4}{l}{\textbf{Mean D}} & \textbf{24.95 cm} \\
+\multicolumn{4}{l}{\textbf{Mean d}} & \textbf{7.78 cm} \\
 \bottomrule
 \end{tabularx}
 \end{table}
-\textbf{Approximate Angular Magnification}
-
+Image sharpness uncertainty (for position d):
+\begin{itemize}
+    \item Position 1: 0.05 cm
+    \item Position 2: 0.60 cm
+\end{itemize}
+\newpage
 \section{Calculations}
-\paragraph{Length D Sample Calculations} \mbox{}\\
+\paragraph{Sample Calculations for Distance d (Lens 1)} \mbox{}\\
 \textbf{Mean Calculation:}
 \[\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i\]
-\[\bar{x} = \frac{1}{6} (2.180+2.190+2.185+2.185+2.195+2.180)\]
-\[\bar{x} =  \text{2.1858 mm}\]
+\[\bar{x} = \frac{1}{6} (9.85+9.85+9.25+9.20+9.60+9.75)\]
+\[\bar{x} =  \text{9.5833 cm}\]
 \textbf{Standard Deviation:}
 \[S_x = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}\]
-\[
-\begin{aligned}
-S_x &= \sqrt{\frac{1}{6-1} \Big[ (2.180-2.1858)^2 + (2.190-2.1858)^2 + \cdots + (2.180-2.1858)^2 \Big]} \\
-\end{aligned}
-\]
-\[S_x =  \text{0.005845 mm}\]
+\[\begin{aligned}
+S_x &= \sqrt{\frac{1}{6-1} \Big[ (9.85-9.5833)^2 + (9.85-9.5833)^2 + \cdots + (9.75-9.5833)^2 \Big]} \\
+\end{aligned}\]
+\[S_x =  \text{0.29268 cm}\]
 \textbf{Standard Deviation of the Mean (SDOM):}
 \[\sigma_{\bar{x}} = \frac{S_x}{\sqrt{n}}\]
-\[\sigma_{\bar{x}} = \frac{0.005845}{\sqrt{6}}\]
-\[\sigma_{\bar{x}}=  \text{0.0023863 mm}\]
+\[\sigma_{\bar{x}} = \frac{0.29268}{\sqrt{6}}\]
+\[\sigma_{\bar{x}}=  \text{0.11948 cm}\]
 The same procedure was applied to calculate the mean, standard deviation and standard deviation of the mean for the remaining measurements.
 \paragraph{Bessel's Method Calculations for Lens 1} \mbox{}\\
 \[f=\frac{D^2-d^2}{4D}\]
-\[f=\frac{(90.0)^2-(30.0)^2}{4(90.0)}\]
-\[f= \text{36.67 cm}\]
+\[f=\frac{(43.00)^2-(9.58)^2}{4(43.00)}\]
+\[f= \text{10.22 cm}\]
 \paragraph{Error Propagation for Bessel's Method (Lens 1)} \mbox{}\\
 Since the measurements of D and d are independent, we can use the independent error propagation formula:
 \[\delta f = \sqrt{\left(\frac{\partial f}{\partial D} \delta D\right)^2 + \left(\frac{\partial f}{\partial d} \delta d\right)^2}\]
 \[\delta f = \sqrt{\left(\frac{D^2+d^2}{4D^2} \delta D\right)^2 + \left(-\frac{d}{2D} \delta d\right)^2}\]
-\textbf{Chosen uncertainties:} $\delta D = 0.05~\mathrm{mm}$ (random, larger than instrumental) and $\delta d = 0.005~\mathrm{mm}$ (instrumental, larger than random).
-\[\delta f = \sqrt{\left(\frac{(90.0)^2+(30.0)^2}{4(90.0)^2} (0.05)\right)^2 + \left(-\frac{30.0}{2(90.0)} (0.005)\right)^2}\]
-\[\delta f = \text{0.0142 cm}\]
+\textbf{Chosen uncertainties:} $\delta D = 0.05~\mathrm{cm}$ (Instrumental uncertainty, larger than random) and $\delta d = 0.30~\mathrm{cm}$ (Image sharpness uncertainty, larger than random and instrumental).
+\[\delta f = \sqrt{\left(\frac{(43.00)^2+(9.58)^2}{4(43.00)^2} (0.05)\right)^2 + \left(-\frac{9.58}{2(43.00)} (0.30)\right)^2}\]
+\[\delta f = \text{0.036 cm}\]
 \paragraph{Angular Magnification} \mbox{}\\
+Where $f_{obj}$ is the focal length of the lens 1 and $f_{eye}$ is the focal length of the lens 2.
 \[m_\theta=-\frac{f_{obj}}{f_{eye}}\]
-\[m_\theta=-\frac{36.67}{10.0}\]
-\[m_\theta= \text{-3.667}\]
+\[m_\theta=-\frac{10.216}{5.630}\]
+\[m_\theta= \text{-1.814}\]
 \paragraph{Error Propagation for Angular Magnification} \mbox{}\\
 Since the measurements of $f_{obj}$ and $f_{eye}$ are independent, we can use the independent error propagation formula:
 \[\delta m_\theta = \sqrt{\left(\frac{\partial m_\theta}{\partial f_{obj}} \delta f_{obj}\right)^2 + \left(\frac{\partial m_\theta}{\partial f_{eye}} \delta f_{eye}\right)^2}\]
 \[\delta m_\theta = \sqrt{\left(-\frac{1}{f_{eye}} \delta f_{obj}\right)^2 + \left(\frac{f_{obj}}{f_{eye}^2} \delta f_{eye}\right)^2}\]
-\textbf{Chosen uncertainties:} $\delta f_{obj} = 0.0142~\mathrm{cm}$ (from previous calculation) and $\delta f_{eye} = 0.05~\mathrm{cm}$ (instrumental).
-\[\delta m_\theta = \sqrt{\left(-\frac{1}{10.0} (0.0142)\right)^2 + \left(\frac{36.67}{(10.0)^2} (0.05)\right)^2}\] 
-\[\delta m_\theta = \text{0.0191}\]
+\textbf{Chosen uncertainties:} $\delta f_{obj} = 0.036~\mathrm{cm}$ (calculated) and $\delta f_{eye} = 0.095~\mathrm{cm}$ (calculated).
+\[\delta m_\theta = \sqrt{\left(-\frac{1}{5.630} (0.036)\right)^2 + \left(\frac{10.216}{(5.630)^2} (0.095)\right)^2}\]
+\[\delta m_\theta = \text{0.031}\]
 \section{Results}
+Focal Lengths:
+\begin{itemize}
+    \item Lens 1: $f_{obj} = 10.22 \pm 0.04~\mathrm{cm}$
+    \item Lens 2: $f_{eye} = 5.63 \pm 0.10~\mathrm{cm}$
+\end{itemize}
+Angular Magnification:
+\begin{itemize}
+    \item Theoretical: $m_\theta = -1.81 \pm 0.03$
+    \item Experimental approximation: $m_\theta \approx -1.36$
+\end{itemize}
 \section{Conclusion}
+The focal lengths of the two lenses were determined using Bessel's method to be $10.22 \pm 0.04~\mathrm{cm}$ for lens 1 and $5.63 \pm 0.10~\mathrm{cm}$ for lens 2. The approximate focal length of lens 1 ($10 \pm 0.3~\mathrm{cm}$) is within the uncertainty range of the calculated focal length, while the approximate focal length of lens 2 ($4.6 \pm 0.6~\mathrm{cm}$) is slightly outside the uncertainty range of the calculated focal length. The theoretical angular magnification of the telescope was calculated to be $-1.81 \pm 0.03$, while the experimental approximation yielded a value of $-1.36$. This discrepancy could be due to systemic errors such as the lenses not being set up exactly $f_{obj} + f_{eye}$ apart, and bias in estimating the lengths of tape seen through the telescope. 
+\newpage
 \section{Answers to questions}
 \paragraph{Question 1} \mbox{}\\
 \vspace{-1em}

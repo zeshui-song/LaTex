@@ -47,7 +47,7 @@ Wave equation:
     \item \textbf{Current loop:} a current carrying loop of wire creates an electromagnet.
     \item \textbf{Permanent Magnet:} the magnetic fields of the electrons within the material do not cancel out, resulting in a net magnetic field.
 \end{itemize}
-\textit{All} magnets are \textbf{magnetic dipoles} with a \textbf{north} and \textbf{south} pole (the magnetic monopole doesn't exist, sadly). Opposite magnetic poles attract each other, and like magnetic poles repel each other. Magnetic field lines are \textit{closed loops} that exit through the north pole and enter through the south pole.
+\textit{All} magnets are \textbf{magnetic dipoles} with a \textbf{north} and \textbf{south} pole (the magnetic monopole doesn't exist, sadly). Opposite magnetic poles attract each other, and like magnetic poles repel each other. Magnetic field lines are \textit{closed loops} that exit through the North pole and enter through the South pole.
 \begin{multicols}{2}
     \begin{figure}[H]
     \centering
@@ -91,7 +91,7 @@ Stationary charges do not interact with the magnetic field. Moving charges with 
 \underline{Note:} When $\vec{B}$ and $\vec{v}$ are orthogonal, we can just multiply the magnitudes to find the force and use the right hand rule to find the direction.\\\\
 \underline{Note:} A magnetic force exists even if there is \textit{relative velocity} between charges and a magnetic field. For example, a moving magnet will exert a magnetic force on stationary charges.\\\\
 \underline{Note to self:} Bring dynamics formula sheet for kinematics equations.\\\\
-The total electronmagnetic force on a charged particle in both electric and magnetic fields is given by the \textbf{Lorentz force:}
+The total electromagnetic force on a charged particle in both electric and magnetic fields is given by the \textbf{Lorentz force:}
 \[\boxed{\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}}\]
 \newpage
     \item Explain the Hall effect and describe its applications.\\\\
@@ -280,7 +280,7 @@ If we have a \textit{coil} with $N$ loops of wire, we can approximate them as $N
 \textbf{Magnetic Dipole Moment}\\\\
 Similar to a bar magnet, a current-carrying loop tends to align itself with an external magnetic field. Thus, the current loop is said to be a \textbf{magnetic dipole} with a \textbf{magnetic dipole moment} $\vec{\mu}$ defined as:
 \[\boxed{\vec{\mu} = NiA\hat{n}}\]
-Where $N$ is the number of loops, $i$ is the current, $A$ is the area of the loop, and $\hat{n}$ is the unit normal vector to the plane of the loop.It has units of amphere-square meter ($\text{A}\cdot \text{m}^2$). \\\\
+Where $N$ is the number of loops, $i$ is the current, $A$ is the area of the loop, and $\hat{n}$ is the unit normal vector to the plane of the loop.It has units of Amphere-square meter ($\text{A}\cdot \text{m}^2$). \\\\
 Using $\vec{\mu}$, we can rewrite the torque on the current loop as:
 \[\boxed{\vec{\tau} = \vec{\mu} \times \vec{B}}\]
 Similar to the electric dipole in an electric field, the potential energy of a magnetic dipole in a magnetic field is given by:
@@ -291,20 +291,23 @@ Similar to the electric dipole in an electric field, the potential energy of a m
     \includegraphics[width=0.3\textwidth]{Potential.png}
 \end{figure}
 \underline{Note:} The work done by an external torque to rotate the dipole is $W_{ext}=\Delta U = U_f - U_i$. If the dipole is stationary before and after the rotation.\\\\
-A bar magnet and a rotating sphere of charge are magnetic dipoles as well, and we can approximate the Earth as a big magnetic dipole. Most subatomic particles (like electrons, protons, and neutrons) also have intrinsic magnetic dipole moments due to their spin and charge. Thus, we can model their interactions with magnetic fields using the same equations as above.
+A bar magnet and a rotating sphere of charge are magnetic dipoles as well, and we can approximate the Earth as a big magnetic dipole. Most subatomic particles (like electrons, protons, and neutrons) also have intrinsic magnetic dipole moments due to their spin and charge. Thus, we can model their interactions with magnetic fields using the same equations as above.\\\\
+Note that when a magnet exerts a magnetic force on a current-carrying wire, Newton’s third law requires that the wire exert an equal and opposite force back on the magnet. The only way the wire can interact with the magnet is through magnetic fields, so the wire must itself produce a magnetic field...
 \end{enumerate}
 \newpage
 \section*{Chapter 29 - Magnetic Fields due to Currents}
 \begin{enumerate}
-    \item Use the Biot-Savart law to calculate the magnetic field due to a current-carrying wires of arbitrary (but tractable) geometry. e.g., a loop.\\\\
+    \item Use the Biot-Savart law to calculate the magnetic field due to a current-carrying wires of arbitrary (but tractable) geometry. e.g., a loop.
+\begin{multicols}{2}
 Like electric fields, magnetic fields obey superposition. Thus, we can find the magnetic field from a wire by summing up the $d\vec{B}$ at point $P$ produced by small current elements $Id\vec{l}$ along the wire.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{Biot Savart.jpg}
 \end{figure}
+\end{multicols}
 \vspace{-1em}
 We can find $d\vec{B}$ by using the \textbf{Biot-Savart Law}:
-\[\boxed{d\vec{B} = \frac{\mu_0}{4\pi} \frac{ I d\vec{l} \times \hat{r}}{r^2}}\]
+\[\boxed{d\vec{B} = \frac{\mu_0}{4\pi} \frac{ I d\vec{l} \times \hat{r}}{r^2}\quad \text{(current carrying wire)}}\]
 Where
 \begin{itemize}
     \item $I d\vec{l}$ is the current element that produces the differential magnetic field $d\vec{B}$.
@@ -314,6 +317,8 @@ Where
 \[\boxed{\mu_0 = 4\pi \times 10^{-7} \,\text{T}\cdot \text{m/A}}\]
 \end{itemize}
 \underline{Note:} $I d\vec{l} \times \hat{r} = I dl \sin \theta $ where $\theta$ is the angle between $d\vec{l}$ and $\vec{r}$.\\\\
+For a moving point charge:
+\[\boxed{d\vec{B} = \frac{\mu_0}{4\pi} \frac{ q \vec{v} \times \hat{r}}{r^2} \quad \text{(point charge)}}\]
 We can also find the direction of the magnetic field using the right-hand rule:
 \begin{multicols}{2}
 \begin{figure}[H]
@@ -353,6 +358,34 @@ Taking the limit as $L \to \infty$, letting $r=x$:
 \underline{Note:} For a semi-infinite wire (from $0\to\infty$), the magnetic field is half that of an infinite wire at the same distance $r$ from the wire.
 \[||\vec{B}|| = \frac{\mu_0 I}{4\pi r} \quad \text{(semi-infinite straight wire)}\]
 \newpage
+\textbf{Magnetic Field Due to a Current in a Circular Loop of Wire}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Loop.jpg}
+\end{figure}
+Biot-Savart law:
+\[d\vec{B} = \frac{\mu_0}{4\pi} \frac{ I d\vec{l} \times \hat{r}}{r^2}\]
+Vectors:
+\[d\vec{l} = Rd\theta \, \hat{\theta}\]
+\[\vec{r}=\left<0,0,z\right>-\left<Rcos\theta,Rsin\theta,0\right>=\left<-Rcos\theta,-Rsin\theta,z\right>,\quad ||\vec{r}|| = \sqrt{R^2+z^2}\]
+\[\hat{r}=\frac{\left<-Rcos\theta,-Rsin\theta,z\right>}{\sqrt{R^2+z^2}}\]
+Rewriting $\hat{\theta}$ in cartesian, using a unit circle:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Unit circle.jpg}
+\end{figure}
+\vspace{-2em}
+\[\hat{\theta}=\left<-sin\theta,cos\theta,0\right>\]
+Cross product:
+\[d\vec{l}\times\vec{r}=
+\begin{vmatrix}
+\hat{\imath} & \hat{\jmath} & \hat{k} \\
+-Rd\theta sin\theta & Rd\theta cos\theta & 0 \\
+-Rcos\theta & -Rsin\theta & z
+\end{vmatrix}
+=()
+\]
+
     \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.
     \item Find the magnetic force on a current carrying wire due to another current carrying wire.
     \item Describe the forces and torques on magnetic dipoles in terms of their magnetic moment.
