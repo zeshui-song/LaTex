@@ -8,6 +8,7 @@
         "exponentials",
         "Lenz's",
         "Poynting",
-        "Savart"
+        "Savart",
+        "SDOM"
     ]
 }
