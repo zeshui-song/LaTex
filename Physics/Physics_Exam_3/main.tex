@@ -279,8 +279,8 @@ If we have a \textit{coil} with $N$ loops of wire, we can approximate them as $N
 \newpage
 \textbf{Magnetic Dipole Moment}\\\\
 Similar to a bar magnet, a current-carrying loop tends to align itself with an external magnetic field. Thus, the current loop is said to be a \textbf{magnetic dipole} with a \textbf{magnetic dipole moment} $\vec{\mu}$ defined as:
-\[\boxed{\vec{\mu} = NiA\hat{n}}\]
-Where $N$ is the number of loops, $i$ is the current, $A$ is the area of the loop, and $\hat{n}$ is the unit normal vector to the plane of the loop.It has units of Amphere-square meter ($\text{A}\cdot \text{m}^2$). \\\\
+\[\boxed{\vec{\mu} = NIA\hat{n}}\]
+Where $N$ is the number of loops, $I$ is the current, $A$ is the area of the loop, and $\hat{n}$ is the unit normal vector to the plane of the loop.It has units of Amphere-square meter ($\text{A}\cdot \text{m}^2$). \\\\
 Using $\vec{\mu}$, we can rewrite the torque on the current loop as:
 \[\boxed{\vec{\tau} = \vec{\mu} \times \vec{B}}\]
 Similar to the electric dipole in an electric field, the potential energy of a magnetic dipole in a magnetic field is given by:
@@ -377,14 +377,27 @@ Rewriting $\hat{\theta}$ in cartesian, using a unit circle:
 \vspace{-2em}
 \[\hat{\theta}=\left<-sin\theta,cos\theta,0\right>\]
 Cross product:
-\[d\vec{l}\times\vec{r}=
+\begin{align*}
+d\vec{l}\times\vec{r}&=
 \begin{vmatrix}
 \hat{\imath} & \hat{\jmath} & \hat{k} \\
 -Rd\theta sin\theta & Rd\theta cos\theta & 0 \\
 -Rcos\theta & -Rsin\theta & z
-\end{vmatrix}
-=()
-\]
+\end{vmatrix}\\
+&=(Rzcos\theta d\theta)\hat{i}+(Rzsin\theta d\theta)\hat{j}+(R^2 sin^2\theta d\theta+R^2cos^2 \theta d\theta)\hat{k}\\
+&=(Rzcos\theta d\theta)\hat{i}+(Rzsin\theta d\theta)\hat{j}+(R^2 d\theta)\hat{k}
+\end{align*}
+By symmetry, the $\hat{i}$ and $\hat{j}$ components will cancel out when integrating over the full loop, so we only need to consider the $\hat{k}$ component:
+\[B_z=\int_{0}^{2\pi} \frac{\mu_0}{4\pi}\frac{IR^2 \, d\theta}{(R^2+z^2)^{3/2}}=\frac{\mu_0}{4\pi}\frac{2\pi IR^2}{(R^2+z^2)^{3/2}}\]
+Notice that $\mu = NIA = I\pi R^2$, Thus
+\[\vec{B}=\frac{\mu_0}{4\pi}\frac{2\mu}{(R^2+z^2)^{3/2}}\]
+\textbf{Magnetic Field due to a Current in a Circular Arc of Wire}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Arc.jpg}
+\end{figure}
+
+
 
     \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.
     \item Find the magnetic force on a current carrying wire due to another current carrying wire.

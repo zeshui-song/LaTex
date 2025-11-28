@@ -1,5 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1764193886.45757 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1764193889.49241 0
+["pdflatex"] 1764368450.04043 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1764368452.28351 0
+  "Arc.jpg" 1764368446 237608 731ba8d9ba7d08bd774fb50d19ed1446 ""
   "Biot Savart.jpg" 1764099585 942767 e3fdb08d5f8a9497acc58352f4a13a5f ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758289669 14064 f1b79be56b30e5d452b3bce564671b21 ""
@@ -92,9 +93,9 @@
   "Unit circle.jpg" 1764106555 495623 94cc6174fee3e8bc27f65bfa724c6372 ""
   "Wien.jpg" 1763864678 415470 e8f4a7c4b2ea19f763708a5c6629a939 ""
   "Wire.png" 1764003347 167991 2aaa8892e5e406f77e20e3958a469c85 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1764193874 28822 5168b2fe23de2b20e89e6c69748b29ad ""
-  "main.aux" 1764193889 33 7c0742bf35ce21725e3e7ead3b0fecc6 "pdflatex"
-  "main.tex" 1764193874 28822 5168b2fe23de2b20e89e6c69748b29ad ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1764368449 29602 4ae59a69efa46d7a1cd650061df62257 ""
+  "main.aux" 1764368452 33 7c0742bf35ce21725e3e7ead3b0fecc6 "pdflatex"
+  "main.tex" 1764368449 29602 4ae59a69efa46d7a1cd650061df62257 ""
   (generated)
   "main.aux"
   "main.log"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  26 NOV 2025 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  28 NOV 2025 17:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -622,28 +622,34 @@ File: Unit circle.jpg Graphic file (type jpg)
 Package pdftex.def Info: Unit circle.jpg  used on input line 375.
 (pdftex.def)             Requested size: 140.92793pt x 122.41266pt.
  [17 <./Loop.jpg> <./Unit circle.jpg>]
-Overfull \hbox (13.03024pt too wide) in paragraph at lines 411--412
+<Arc.jpg, id=101, 2791.42876pt x 1126.2075pt>
+File: Arc.jpg Graphic file (type jpg)
+<use Arc.jpg>
+Package pdftex.def Info: Arc.jpg  used on input line 397.
+(pdftex.def)             Requested size: 234.8775pt x 94.75545pt.
+ [18 <./Arc.jpg>]
+Overfull \hbox (13.03024pt too wide) in paragraph at lines 424--425
 []\OT1/cmr/m/n/12 Test whether a given ar-range-ment of prop-a-gat-ing elec-tro-mag-netic fields sat-is-fies Maxwell's
  []
 
-[18] [19] (main.aux)
+[19] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3571 strings out of 474486
- 53917 string characters out of 5743755
+ 3578 strings out of 474486
+ 54014 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25824 multiletter control sequences out of 15000+600000
+ 25831 multiletter control sequences out of 15000+600000
  566773 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,10n,65p,626b,394s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,15n,65p,626b,394s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (19 pages, 9034007 bytes).
+Output written on main.pdf (19 pages, 9274059 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
+ 155 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
