@@ -1,0 +1,177 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amsfonts, bm, graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs} 
+\usepackage{float}
+
+\title{Ph291E Lab 5 -- Diffraction \& Interference}
+\author{
+    Zeshui Song\\
+    The Cooper Union
+}
+\date{November 27, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Purpose}  
+Using a diffraction grating, we will measure the wavelength of light from a laser diode. We will then confirm this wavelength by measuring the single slit diffraction pattern produced by the same laser diode through a known aperture width. Additionally, we will measure the width of a human hair using Babinet’s principle.
+\newpage
+\section{Data}
+\textbf{Part A: Determination of laser diode emission wavelength using a diffraction grating}\\
+Set up:
+\begin{itemize}
+    \item Slit separation: $d$ = 0.100 mm
+    \item Distance from grating to screen: $D$ = 500 mm
+\end{itemize}
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabularx}{\linewidth}{*{5}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{$x_-$ (mm)} & \textbf{$x_+$ (mm)}  & \textbf{Random Error $x_-$ (mm)}& \textbf{Random Error $x_+$ (mm)} & \textbf{Vernier Caliper Inst. Error (mm)}\\
+\midrule
+43.00 & 9.85 & & & \\
+43.00 & 9.85 & & & \\
+43.00 & 9.25 & & & \\
+43.00 & 9.20 & & & \\
+43.00 & 9.60 & & & \\
+43.00 & 9.75 & 0 & 0.12 & 0.02 \\
+\midrule
+\multicolumn{4}{l}{\textbf{Mean $x_-$}} & \textbf{43.00 mm} \\
+\multicolumn{4}{l}{\textbf{Mean $x_+$}} & \textbf{9.58 mm} \\
+\bottomrule
+\end{tabularx}
+\caption{Diffraction Grating Maxima (First Order)}
+\end{table}
+\newpage\noindent
+\textbf{Part B: Determination of laser diode emission wavelength using single slit diffraction}\\
+Set up:
+\begin{itemize}
+    \item Aperture width: $a$
+    \item Distance from aperture to screen: $D$ = 500 mm
+\end{itemize}
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\linewidth}{*{5}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{$a$ (mm)} & \textbf{$x_-$ (mm)} & \textbf{$x_+$ (mm)} &
+\textbf{$x_{-2}$ (mm)} & \textbf{$x_{+2}$ (mm)} \\
+\midrule
+0.2 & 43.00 & 9.75 & 0 & 0.12 \\
+0.3 & 43.00 & 9.75 & 0 & 0.12 \\
+0.4 & 43.00 & 9.75 & 0 & 0.12 \\
+\bottomrule
+\end{tabularx}
+\caption{Single Slit Diffraction Minima (First \& Second Order)}
+\end{table}
+\textbf{Part C: Measuring the width of a human hair}\\
+Set up:
+\begin{itemize}
+    \item Laser wavelength: $\lambda$ = 650 nm
+    \item Distance from hair to screen: $D$ = 500 mm
+\end{itemize}
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\linewidth}{*{6}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{$x_-$ (mm)} & \textbf{$x_+$ (mm)} & \textbf{$x_{-2}$ (mm)} & \textbf{$x_{+2}$ (mm)} & \textbf{$x_{-3}$ (mm)} & \textbf{$x_{+3}$ (mm)} \\
+\midrule
+0.2 & 43.00 & 9.75 & 0 & 0.12 & 1 \\
+\bottomrule
+\end{tabularx}
+\caption{Hair Diffraction Minima (First, Second \& Third Order)}
+\end{table}
+\newpage
+\section{Calculations}
+\paragraph{Sample Calculations for maximum $x_+$} \mbox{}\\
+\textbf{Mean Calculation:}
+\[\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i\]
+\[\bar{x} = \frac{1}{6} (9.85+9.85+9.25+9.20+9.60+9.75)\]
+\[\bar{x} =  \text{9.5833 cm}\]
+\textbf{Standard Deviation:}
+\[S_x = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}\]
+\[\begin{aligned}
+S_x &= \sqrt{\frac{1}{6-1} \Big[ (9.85-9.5833)^2 + (9.85-9.5833)^2 + \cdots + (9.75-9.5833)^2 \Big]} \\
+\end{aligned}\]
+\[S_x =  \text{0.29268 cm}\]
+\textbf{Standard Deviation of the Mean (SDOM):}
+\[\sigma_{\bar{x}} = \frac{S_x}{\sqrt{n}}\]
+\[\sigma_{\bar{x}} = \frac{0.29268}{\sqrt{6}}\]
+\[\sigma_{\bar{x}}=  \text{0.11948 cm}\]
+The same procedure was applied to calculate the mean, standard deviation and standard deviation of the mean for the remaining measurements.
+\newpage
+\paragraph{Part A Calculations for $x_+$} \mbox{}\\
+\textbf{Wavelength:}
+\[sin\theta = \frac{x}{\sqrt{x^2 + D^2}}\]
+\[\lambda = \frac{d}{m}sin\theta, \quad m=1\]
+\[\lambda = \frac{d}{m}\frac{x}{\sqrt{x^2 + D^2}}\]
+\[\lambda = \frac{(0.11)(0.1)}{(1)\sqrt{(0.0958)^2 + (0.5)^2}} = 0.001916\]
+The same procedure was applied to calculate the wavelength using $x_-$. The average of the two wavelengths is the best result, and the uncertainty is half the difference between the two results.
+\[\delta \lambda = \frac{|0.001916 - 0.001916|}{2} = 0\]
+\textbf{Error propagation:}\\
+Since the measurements of $x$ and $D$ are independent, we can use the independent error propagation formula:
+\[\delta \lambda = \sqrt{\left(\frac{\partial \lambda}{\partial x} \delta x\right)^2 + \left(\frac{\partial \lambda}{\partial D} \delta D\right)^2}\]
+Calculating the partial derivatives:
+\[\frac{\partial \lambda}{\partial x} = \frac{D^2\,d}{m\,{\left(D^2+x^2\right)}^{3/2}}\]
+\[\frac{\partial \lambda}{\partial D} = -\frac{D\,d\,x}{m\,{\left(D^2+x^2\right)}^{3/2}}\]
+Thus,
+\[\delta \lambda = \sqrt{\left(\frac{D^2\,d}{m\,{\left(D^2+x^2\right)}^{3/2}}\delta x\right)^2 + \left(-\frac{D\,d\,x}{m\,{\left(D^2+x^2\right)}^{3/2}}\delta D\right)^2}\]
+\textbf{Chosen uncertainties:} $\delta x = 0.036~\mathrm{cm}$ (Instrumental uncertainty, larger than random) and $\delta D = 0.095~\mathrm{cm}$ (Instrumental uncertainty, larger than random).
+\[\delta \lambda = \sqrt{\left(\frac{(0.11)^2\,(0.22)}{m\,{\left((0.11)^2+(0.01)^2\right)}^{3/2}}(0.05)\right)^2 + \left(-\frac{(0.11)\,(0.22)\,(0.01)}{m\,{\left((0.11)^2+(0.01)^2\right)}^{3/2}}(0.55)\right)^2}= 0.111\]
+The same procedure was applied to calculate the error propagation using $x_-$.
+\paragraph{Part B Calculations for $x_+$} \mbox{}\\
+\textbf{Wavelength:}
+\[sin\theta = \frac{x}{\sqrt{x^2 + D^2}}\]
+\[\lambda = \frac{a}{p}sin\theta, \quad p =1,\]
+\[\lambda = \frac{a}{p}\frac{x}{\sqrt{x^2 + D^2}}\]
+\[\lambda = \frac{(0.11)(0.21)}{(0.11)\sqrt{(0.21)^2+(0.02)^2}}=0.12\]
+The same procedure was applied to calculate the wavelength using first and second order minima on both sides, for varying aperture widths. The SDOM of all calculated wavelengths is taken as the uncertainty.
+\newpage
+\paragraph{Part C Calculations for $x_+$} \mbox{}\\
+\textbf{Hair Width:}
+\[sin\theta = \frac{x}{\sqrt{x^2 + D^2}}\]
+\[a = \frac{p\lambda}{sin\theta}, \quad p=1\]
+\[a=\frac{p\lambda \sqrt{x^2+D^2}}{x}\]
+\[a=\frac{(1)(0.001)\sqrt{(0.21)^2+(0.5)^2}}{0.21}=0.0017\]
+The same procedure was applied to calculate the wavelength using first, second, and third order minima on both sides. The SDOM of all calculated hair widths is taken as the uncertainty.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Results}
+\section{Conclusion}
+\section{Answers to questions}
+\paragraph{Question 1} \mbox{}\\
+N-Slit intensity:
+\[I(\delta) = I_0 \left[\frac{sin\left(\frac{N\delta}{2}\right)}{sin\left(\frac{\delta}{2}\right)}\right]^2, \quad \delta = \frac{2\pi}{\lambda}dsin\theta\]
+The principal maxima occur when both the numerator and denominator are zero. Thus,
+\[\frac{\delta}{2} = m\pi, \quad m = 0, \pm 1, \pm 2, \ldots\]
+Since N is an integer, the numerator will also be zero at these points. Therefore, the principal maxima occur at:
+\[\frac{1}{2}\left(\frac{2\pi}{\lambda}dsin\theta\right)=m\pi\]
+\[\frac{d}{\lambda}sin\theta=m\]
+\[\implies sin\theta = \frac{m\lambda}{d}, \quad m = 0, \pm 1, \pm 2, \ldots\]
+\paragraph{Question 2} \mbox{}\\
+Single slit diffraction intensity:
+\[I(\beta)=I_0\left(\frac{sin\beta}{\beta}\right)^2, \quad \beta = \frac{\pi}{\lambda}asin\theta\]
+Minima occur when the numerator is zero (excluding the central maximum at $\beta = 0$):
+\[sin\beta = 0 \implies \beta = p\pi, \quad p = \pm 1, \pm 2, \ldots\]
+Thus,
+\[\frac{\pi}{\lambda}asin\theta = p\pi\]
+\[\implies sin\theta = \frac{p\lambda}{a}, \quad p = \pm 1, \pm 2, \ldots\]
+\end{document}
