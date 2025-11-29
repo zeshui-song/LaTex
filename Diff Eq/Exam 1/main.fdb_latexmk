@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1764426932.01502 "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/Exam 1/main.tex" "main.pdf" "main" 1764426932.56604 0
+["pdflatex"] 1764434002.87725 "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/Exam 1/main.tex" "main.pdf" "main" 1764434003.45452 0
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758289669 14064 f1b79be56b30e5d452b3bce564671b21 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
@@ -34,8 +34,10 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
+  "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
@@ -69,9 +71,9 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1704400941 30006 57b07afb710ee2f649c65cfbafda39c1 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1700599895 13231 2c742011581e2bf297e33520567d9464 ""
   "Phase.png" 1764422393 108672 4abc956d6a1cf499aceaab8d71184d87 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/Exam 1/main.tex" 1764426931 11708 5fe792c7a7218eb2681c042ce9d6f760 ""
-  "main.aux" 1764426932 33 06c322e1d88c4778ac780ba5e7d05c77 "pdflatex"
-  "main.tex" 1764426931 11708 5fe792c7a7218eb2681c042ce9d6f760 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/Exam 1/main.tex" 1764434002 15987 49f4dfb93e903aa7b6b6dc3aed78fe74 ""
+  "main.aux" 1764434003 33 6bbbc4989d0c340984f875bce9661f09 "pdflatex"
+  "main.tex" 1764434002 15987 49f4dfb93e903aa7b6b6dc3aed78fe74 ""
   (generated)
   "main.aux"
   "main.log"
