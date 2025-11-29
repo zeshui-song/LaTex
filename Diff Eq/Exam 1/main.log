@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  25 NOV 2025 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  29 NOV 2025 08:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -224,26 +224,105 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-)) [1
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 19--26
 
-{C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.aux)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--26
+
+ []
+
+[1
+
+{C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--40
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 53--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--63
+
+ []
+
+[3]
+<Phase.png, id=19, 505.89pt x 318.59026pt>
+File: Phase.png Graphic file (type png)
+<use Phase.png>
+Package pdftex.def Info: Phase.png  used on input line 74.
+(pdftex.def)             Requested size: 375.80544pt x 236.67188pt.
+ [4 <./Phase.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 80--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--105
+
+ []
+
+[5] [6] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3187 strings out of 474486
- 47094 string characters out of 5743755
- 1925542 words of memory out of 5000000
- 25472 multiletter control sequences out of 15000+600000
- 558973 words of font info for 39 fonts, out of 8000000 for 9000
+ 3280 strings out of 474486
+ 48589 string characters out of 5743755
+ 1933542 words of memory out of 5000000
+ 25536 multiletter control sequences out of 15000+600000
+ 566773 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,273b,151s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on main.pdf (1 page, 23928 bytes).
+ 57i,10n,65p,519b,239s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (6 pages, 241616 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
+ 79 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

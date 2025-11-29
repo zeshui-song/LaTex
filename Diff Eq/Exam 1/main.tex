@@ -13,5 +13,110 @@
     \Large \textbf{Differential Equations Review Sheet} \\
     \normalsize Exam I
 \end{center}
-\section*{4.1 Linear Equations}
+\section*{1.1 Definitions and Terminology}
+\textbf{Linear Equations}\\
+n $n$th-order ODE is said to be \textbf{linear} if it is linear in $y, y', . . . , y^{(n)}$. This means that an $n$th-order ODE is linear when it is represented as 
+\[a_n(x)y^{(n)}+ a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=g(x)\]
+If not the ODE is said to be \textbf{nonlinear}.\\\\
+\textbf{Solution of a Differential Equation}\\
+A \textbf{solution} of a differential equation is a function (or set of functions) that has at least as many continuous derivatives as the order of the differential equation and satisfies the equation on a given interval.\\\\
+That interval $I$ is called the \textbf{interval of validity}, \textbf{interval of definition}, or \textbf{interval of existence} for the solution.\\\\
+\underline{\textbf{Thm 1.2.1 Existence of a Unique Solution}}\\
+For a rectangular region in the $xy$-plane defined by $x \in [a,b], \, y \in [c,d]$ that contains the initial point $(x_0, y_0)$ in its interior. \textbf{If $f(x, y)$ and $\frac{\partial f}{\partial y}$ are continuous in the region}, then there exists a unique solution $y(x)$, defined on $I_0$ where $I_0$ is within $[a,b]$, for the initial value problem:
+\begin{align*} \frac{dy}{dx} &=f(x,y)\\y(x_0)&=y_0\end{align*}
+\section*{1.3 Differential Equations as Mathematical Models}
+\textbf{Population Dynamics}\\
+The rate of population growth is proportional to the current population:
+\[\frac{dP}{dt} = kP(t)\] 
+where the proportionality constant $k>0$ (for growth) or $k<0$ (for decay).
+\newpage\noindent
+\textbf{Spread of Disease}\\
+ A contagious disease is spread throughout a community by people coming into contact with other people.\\\\
+ Let $x(t)$ be the number of people who have contracted the disease and $y(t)$ be the number of people who have not yet been exposed. Assuming that the rate $dx/dt$ at which the disease spreads is proportional to the number of interactions between these two groups of people. Then if we assume that the number of interactions is jointly proportional to $x(t)$ and $y(t)$ then we can describe this as the model 
+ \[\frac{dx}{dt} = kxy\]
+\textbf{Mixtures}\\
+Determine the rate of change of the amount of substance in the tank as two solutions of differing concentrations mix.\\\\
+Suppose a large tank initially contains 20 g of salt dissolved in 200 liters of water. Starting at $t_0=0$, water that contains $1/4$ g of salt per liter is poured into the tank at the rate of 4 liters/min and the mixture is drained from the tank at the rate of 2 liters/min.\\\\  If $A(t)$ denotes the amount of salt (measured in grams) in the tank at time $t$, then the rate at which $A(t)$ changes is a net rate:
+\begin{align}\frac{dA(t)}{dt}=&(\textrm{input rate of salt})- (\textrm{output rate of salt})\\=&R_{in}-R_{out}\end{align}
+where 
+$$R_{in} = 1/4\textrm{ g/liter}*4\textrm{ liter/min} = 1\textrm{g/min}$$
+To find the output rate, we need to determine the concentration of salt in the tank at time $t$. The volume of solution in the tank at time $t$ is
+\[V(t) = 200 + (4-2)t = 200 + 2t \textrm{ liters}\]
+Thus the concentration of salt in the tank at time $t$ is
+\[\frac{A(t)}{V(t)}=\frac{A(t)}{200 + 2t}\textrm{ g/liter}\]
+and the output rate of salt is
+\[R_{out} = \frac{A(t)}{200 + 2t} \cdot 2 \textrm{ liters/min} = \frac{A(t)}{100 + t} \textrm{ g/min}\]
+Putting it all together, we have the initial value problem
+\[\frac{dA}{dt} = 1 - \frac{A}{100 + t}, \quad A(0) = 20\]
+\newpage\noindent
+\section*{2.1 Solution Curves Without a Solution}
+Without explicitly solving a differential equation, we can learn about its solutions by analyzing its \textbf{slope field} and \textbf{isoclines}.\\\\
+\textbf{Slope Field}\\
+Suppose a differential equation of the form
+\[\frac{dy}{dx} = f(x,y)\]
+The derivative $f(x,y)$ gives the slope of the solution curve $y(x)$ at the point $(x,y)$. A \textbf{slope field} or \textbf{direction field} is a graphical representation of the slopes of solution curves of a first-order differential equation at all the points in the $xy$-plane.\\\\
+\textbf{Isoclines}\\
+If the derivative $f(x,y)$ is constant, then it forms a straight line solution curve called an \textbf{isocline}. If the derivative is zero, then it is called a \textbf{nullcline}.\\\\
+\underline{Note:} By the Existence and Uniqueness Theorem, through each point in the \(xy\)-plane there can be only \textbf{one} solution curve. Therefore, since isoclines and nullclines themselves are solutions, no other solution curve can intersect them without violating the uniqueness condition. As a result, solution curves are effectively \textit{bounded} by the isoclines and nullclines and are asymptotic to them.\\\\
+\textbf{Autonomous Differential Equations}\\
+A differential equation where the independent variable does not explicitly appear is called an \textbf{autonomous} differential equation. An autonomous differential equation has the form
+\[\frac{dy}{dx} = f(y)\]
+The nullclines of an autonomous differential equation are the horizontal lines where $f(y) = 0$. These lines become \textbf{equilibrium points} or \textbf{critical points}.
+\newpage\noindent
+We can analyze the stability by looking at the sign of the derivative to see if the solution curves move toward or away from the equilibrium points.
+\begin{itemize}
+    \item If 2 arrows point toward the equilibrium point, it is \textbf{stable} and is known as an \textbf{attractor} or \textbf{sink}.
+    \item If 2 arrows point away from the equilibrium point, it is \textbf{unstable} and is known as a \textbf{repellor} or \textbf{source}.
+    \item If 1 arrow points toward and 1 arrow points away from the equilibrium point, it is \textbf{semistable} and known as a \textbf{saddle}.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Phase.png}
+\end{figure}
+Next we will look at methods of solving first-order differential equations.
+\newpage
+\section*{2.2 Separable Equations}
+A first-order differential equation is \textbf{separable} if it has the form:
+\[\frac{dy}{dx} = g(x)h(y)\]
+\fbox{%
+\begin{minipage}{0.95\textwidth}
+\textbf{Method:}
+$$\frac{dy}{dx} = g(x)h(y)$$
+Separate and integrate:
+\[\frac{1}{h(y)}\,dy = g(x)\,dx\]
+$$\boxed{\int \frac{1}{h(y)} dy = \int g(x)dx}$$
+\end{minipage}%
+}\\\\
+\underline{Note:} For cases where there are absolute values or square roots, consider the initial conditions to determine if the solution is positive or negative.\\\\
+Also take note to specify the interval of validity for the solution.
+\section*{2.3 Linear Equations}
+For a first-order linear differential equation of the form:
+\[\frac{dy}{dx} + p(t)y = g(t)\]
+\fbox{%
+\begin{minipage}{0.95\textwidth}
+\textbf{Method:}\\
+Find the integrating factor:
+\[\boxed{\mu(t) = e^{\int p(t) dt}}\]
+The solution is given by:
+\[\boxed{y(t) = \frac{1}{\mu(t)}\int \mu(t)g(t) dt}\]
+\end{minipage}%
+}\\\\
+\underline{Note:} We found this by assuming that there is a $\mu(t)$ such that
+\begin{align*}
+\frac{d(\mu y)}{dt} &= \mu\frac{dy}{dt}+\mu p(t)y\\
+&= \mu g(t)
+\end{align*}
+$$\implies \mu y = \int \mu g(t) dt$$
+and then solving for $y$.
+\[y = \frac{1}{\mu}\int \mu g(t) \ dt\]
+To determine the integrating factor \(\mu\), we use the product rule
+\[\frac{d(\mu y)}{dt}=\frac{d\mu}{dt}y+\mu\frac{dy}{dt}, \quad \frac{d(\mu y)}{dt} = \mu\frac{dy}{dt}+\mu p(t)y\]
+Matching coefficients gives the differential equation
+\[\frac{d\mu}{dt}=\mu p(t)\]
+which is separable. Solving yields the integrating factor
+\[\mu(t)=e^{\int p(t)\,dt}\]
+\underline{Note:} Transient terms in the solution are terms that approach zero as \(t \to \infty\). Steady-state terms are terms that remain as \(t \to \infty\).
+\section*{2.4 Exact Equations}
+
+
 \end{document}
