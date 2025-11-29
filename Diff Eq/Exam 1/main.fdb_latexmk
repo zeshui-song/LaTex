@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1764423884.48826 "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/Exam 1/main.tex" "main.pdf" "main" 1764423885.01064 0
+["pdflatex"] 1764426932.01502 "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/Exam 1/main.tex" "main.pdf" "main" 1764426932.56604 0
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758289669 14064 f1b79be56b30e5d452b3bce564671b21 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
@@ -69,9 +69,9 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1704400941 30006 57b07afb710ee2f649c65cfbafda39c1 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1700599895 13231 2c742011581e2bf297e33520567d9464 ""
   "Phase.png" 1764422393 108672 4abc956d6a1cf499aceaab8d71184d87 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/Exam 1/main.tex" 1764423883 8018 3275a8635f7e5bf62cd1c1d38970c0bb ""
-  "main.aux" 1764423884 32 77e0dffd05b653a64f0caf3eb9bb454a "pdflatex"
-  "main.tex" 1764423883 8018 3275a8635f7e5bf62cd1c1d38970c0bb ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Diff Eq/Exam 1/main.tex" 1764426931 11708 5fe792c7a7218eb2681c042ce9d6f760 ""
+  "main.aux" 1764426932 33 06c322e1d88c4778ac780ba5e7d05c77 "pdflatex"
+  "main.tex" 1764426931 11708 5fe792c7a7218eb2681c042ce9d6f760 ""
   (generated)
   "main.aux"
   "main.log"

@@ -89,6 +89,7 @@ $$\boxed{\int \frac{1}{h(y)} dy = \int g(x)dx}$$
 }\\\\
 \underline{Note:} For cases where there are absolute values or square roots, consider the initial conditions to determine if the solution is positive or negative.\\\\
 Also take note to specify the interval of validity for the solution.
+\newpage
 \section*{2.3 Linear Equations}
 For a first-order linear differential equation of the form:
 \[\frac{dy}{dx} + p(t)y = g(t)\]
@@ -116,7 +117,112 @@ Matching coefficients gives the differential equation
 which is separable. Solving yields the integrating factor
 \[\mu(t)=e^{\int p(t)\,dt}\]
 \underline{Note:} Transient terms in the solution are terms that approach zero as \(t \to \infty\). Steady-state terms are terms that remain as \(t \to \infty\).
+\newpage
 \section*{2.4 Exact Equations}
+For first-order differential equations of the form:
+\[M(x,y)dx + N(x,y)dy = 0\]
+\fbox{%
+\begin{minipage}{0.95\textwidth}
+\textbf{Method:}\\
+Check if the equation is exact:
+\[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\]
+\[M_y = N_x\]
+If exact, there exists a function \(\Psi(x,y)\) such that
+\[\frac{\partial \Psi}{\partial x} = M(x,y), \quad \frac{\partial \Psi}{\partial y} = N(x,y)\]
+Thus, the implicit solution is
+\[\Psi(x,y) = C\]
+where $C$ is a constant of integration given from solving initial conditions.\\\\
+To find \(\Psi(x,y)\):
+\begin{itemize}
+    \item Integrate \(M(x,y)\) with respect to \(x\):
+    \[\Psi(x,y) = \int M(x,y) \, dx + h(y)\]
+    where \(h(y)\) is a function of \(y\) only.
+    \item Differentiate \(\Psi(x,y)\) with respect to \(y\):
+    \[\frac{\partial \Psi}{\partial y} = \frac{\partial}{\partial y}\left(\int M(x,y) \, dx + h(y)\right)\]
+    \item Solve for \(h(y)\) by comparing with \(N(x,y)\).
+    \[\frac{\partial \Psi}{\partial y} = N(x,y)\]
+\end{itemize}
+\underline{Note:} The order of integrating for \(\Psi(x,y)\) can be switched.
+\end{minipage}%
+}
+\newpage\noindent
+\underline{Ex:}
+\[2x+y^2+2xyy'=0\]
+\[\implies \frac{dy}{dx} = \frac{-(2x+y^2)}{2xy}, \qquad \left(\frac{dy}{dx}=\frac{-M(x,y)}{N(x,y)}\right)\]
+Check for exact:
+\[M_y=2y,\quad N_x=2y\]
+Solve for \(\Psi(x,y)\):
+\[\Psi_x = M(x,y)\]
+\begin{align*}
+    \Psi &= \int M(x,y) \, dx \\
+    &= \int (2x + y^2) \, dx\\ 
+    &= x^2 + y^2x + h(y)
+\end{align*}
+Solve for \(h(y)\):
+\[\Psi_y = N(x,y)\]
+\begin{align*}
+    \Psi_y &= \frac{\partial}{\partial y}(x^2 + y^2x + h(y)) \\
+    &= 2xy + h'(y)
+\end{align*}
+Set equal to \(N(x,y)\):
+\[2xy + h'(y) = 2xy\]
+\[\implies h'(y)=0 \implies h(y)=C\]
+Thus the solution is
+\[x^2 + y^2x +C=0\]
+If the differential equation is not exact, we can sometimes find an \textbf{integrating factor} \(\mu(x,y)\) such that multiplying the entire equation by \(\mu\) makes it exact.\\\\
+\fbox{%
+\begin{minipage}{0.95\textwidth}
+\textbf{Method:}\\
+Find an integrating factor \(\mu(x,y)\) such that
+$$\mu(x,y)M(x, y) dx + \mu(x,y)N(x, y) dy = 0$$
+To be exact,
+\[(\mu M)_y = (\mu N)_x\]
+To find $\mu$, it must either be a function of $x$ only or $y$ only.
+\begin{itemize}
+    \item If $\mu$ is ONLY in terms of $x$:
+\[\frac{d\mu}{dx}=\mu\frac{M_y-N_x}{N}\]
+    \item If $\mu$ is ONLY in terms of $y$:
+\[\frac{d\mu}{dy}=\mu\frac{N_x-M_y}{M}\]
+\end{itemize}
+Then we solve for $\mu$ by separating and integrating.
+\end{minipage}%
+}\\\\
+\underline{Ex:}
+$$ y(x+y+1)dx+(x+2y)dy=0$$
+\begin{eqnarray*}
+M &=& y(x+y+1)=xy+y^2+y\\
+N &=& (x+2y)
+\end{eqnarray*}
+Check for exact:
+\[M_y = x+2y+1, \quad N_x = 1\]
+Try for integrating factor:
+\[\frac{M_y - N_x}{N} = \frac{(x+2y+1)-1}{x+2y} = \frac{x+2y}{x+2y} = 1\]
+\[\implies \mu = e^{\int 1 \, dx} = e^x\]
+Multiply the entire equation by $\mu$:
+$$ e^xy(x+y+1)dx+e^x(x+2y)dy=0$$
+Now it is exact:
+\[M = e^xy(x+y+1)=e^x(xy+y^2+y), \quad N = e^x(x+2y)\]
+\[M_y = xe^x+2ye^x+e^x,\quad N_x = xe^x+e^x+2ye^x\]
+Finally solve for \(\Psi(x,y)\):
+\[\Psi_y = N(x,y)\]
+\begin{align*}
+    \Psi &= \int N(x,y) \, dy \\
+    &= \int e^x(x+2y) \, dy\\ 
+    &= xe^xy+y^2e^x+ h(x)
+\end{align*}
+Solve for \(h(x)\):
+\[\Psi_x = e^xy + xe^xy + y^2e^x+ h'(x)\]
+Set equal to \(M(x,y)\):
+\[e^x(xy+y^2+y) = e^xy + xe^xy + y^2e^x+ h'(x)\]
+\[\implies h'(x)=0 \implies h(x)=C\]
+Thus the solution is
+\[xe^xy+y^2e^x+C=0\]
+\section*{2.5 Solutions by Substitution}
+Some first-order differential equations can be simplified by an appropriate substitution. Here are some common types:
+\begin{enumerate}
+    \item \textbf{Homogeneous Equations:} If a first-order differential equation can be expressed in the form
+\end{enumerate}
+
 
 
 \end{document}
