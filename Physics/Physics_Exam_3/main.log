@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  28 NOV 2025 17:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  28 NOV 2025 21:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -628,28 +628,115 @@ File: Arc.jpg Graphic file (type jpg)
 Package pdftex.def Info: Arc.jpg  used on input line 397.
 (pdftex.def)             Requested size: 234.8775pt x 94.75545pt.
  [18 <./Arc.jpg>]
-Overfull \hbox (13.03024pt too wide) in paragraph at lines 424--425
+Underfull \hbox (badness 10000) in paragraph at lines 407--410
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--410
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--414
+
+ []
+
+<RHR4.png, id=105, 461.92575pt x 329.43076pt>
+File: RHR4.png Graphic file (type png)
+<use RHR4.png>
+Package pdftex.def Info: RHR4.png  used on input line 416.
+(pdftex.def)             Requested size: 140.92793pt x 100.50388pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--426
+
+ []
+
+<Ampere long wire.jpg, id=106, 2113.8975pt x 1493.58pt>
+File: Ampere long wire.jpg Graphic file (type jpg)
+<use Ampere long wire.jpg>
+Package pdftex.def Info: Ampere long wire.jpg  used on input line 437.
+(pdftex.def)             Requested size: 187.89914pt x 132.75272pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--438
+
+ []
+
+[19 <./RHR4.png>]
+<Ampere long wire 1.jpg, id=112, 2457.18pt x 1455.4375pt>
+File: Ampere long wire 1.jpg Graphic file (type jpg)
+<use Ampere long wire 1.jpg>
+Package pdftex.def Info: Ampere long wire 1.jpg  used on input line 447.
+(pdftex.def)             Requested size: 187.89914pt x 111.28508pt.
+ [20 <./Ampere long wire.jpg> <./Ampere long wire 1.jpg>]
+<parallel wire.png, id=116, 669.702pt x 456.5055pt>
+File: parallel wire.png Graphic file (type png)
+<use parallel wire.png>
+Package pdftex.def Info: parallel wire.png  used on input line 462.
+(pdftex.def)             Requested size: 187.89914pt x 128.0784pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--463
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--463
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--463
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--471
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--473
+
+ []
+
+[21 <./parallel wire.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 476--478
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--478
+
+ []
+
+
+Overfull \hbox (13.03024pt too wide) in paragraph at lines 497--498
 []\OT1/cmr/m/n/12 Test whether a given ar-range-ment of prop-a-gat-ing elec-tro-mag-netic fields sat-is-fies Maxwell's
  []
 
-[19] (main.aux)
+[22] [23] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3578 strings out of 474486
- 54014 string characters out of 5743755
+ 3617 strings out of 474486
+ 54780 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25831 multiletter control sequences out of 15000+600000
- 566773 words of font info for 67 fonts, out of 8000000 for 9000
+ 25865 multiletter control sequences out of 15000+600000
+ 568334 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,65p,626b,394s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (19 pages, 9274059 bytes).
+Output written on main.pdf (23 pages, 10722471 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
+ 173 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

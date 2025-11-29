@@ -390,18 +390,91 @@ d\vec{l}\times\vec{r}&=
 By symmetry, the $\hat{i}$ and $\hat{j}$ components will cancel out when integrating over the full loop, so we only need to consider the $\hat{k}$ component:
 \[B_z=\int_{0}^{2\pi} \frac{\mu_0}{4\pi}\frac{IR^2 \, d\theta}{(R^2+z^2)^{3/2}}=\frac{\mu_0}{4\pi}\frac{2\pi IR^2}{(R^2+z^2)^{3/2}}\]
 Notice that $\mu = NIA = I\pi R^2$, Thus
-\[\vec{B}=\frac{\mu_0}{4\pi}\frac{2\mu}{(R^2+z^2)^{3/2}}\]
+\[\boxed{\vec{B}=\frac{\mu_0}{4\pi}\frac{2\mu}{(R^2+z^2)^{3/2}}}\]
 \textbf{Magnetic Field due to a Current in a Circular Arc of Wire}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{Arc.jpg}
 \end{figure}
-
-
-
-    \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.
-    \item Find the magnetic force on a current carrying wire due to another current carrying wire.
-    \item Describe the forces and torques on magnetic dipoles in terms of their magnetic moment.
+\vspace{-1em}
+Biot-Savart law:
+\[d\vec{B} = \frac{\mu_0}{4\pi} \frac{ I d\vec{l} \times \hat{r}}{r^2}\]
+The angle between $d\vec{l}$ and $\vec{r}$ is always $90^\circ$ for a circular arc, so:
+\[d\vec{B}=\frac{\mu_0}{4\pi} \frac{ I dl}{R^2} \hat{k},\quad \text{(Direction found by RHR)}\]
+\[\vec{B}=\int_{0}^{\phi}\frac{\mu_0}{4\pi} \frac{ I dl}{R^2} \hat{k}\]
+\[\boxed{\vec{B}=\frac{\mu_0 I\phi}{4\pi R} \hat{k} \quad \text{(circular arc of wire)}}\]
+\newpage
+    \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.\\\\
+\textbf{Ampere's Law}\\\\
+Ampere's Law states that the circulation of the magnetic field $\vec{B}$ around a closed \textbf{Amperian loop} is proportional to the net current $I_{\text{enc}}$ piercing the surface bounded by that loop.
+\[\boxed{\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}}\]
+We may arbitrarily choose a direction for integration around the Amperian loop and initially assume that the magnetic field $\vec{B}$ is aligned with this direction. If the resulting value of $\vec{B}$ is negative, this indicates that the true direction of the magnetic field is opposite to the assumed direction.\\\\
+The signs for the current enclosed can be determined using the right-hand rule:
+\begin{multicols}{2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{RHR4.png}
+\end{figure}
+\begin{itemize}
+    \item Curl fingers around the Amperian loop, with fingers pointing in the direction of integration ($d\vec{l}$).
+    \item Your thumb will point in the direction of positive current piercing the surface.
+\end{itemize}
+\end{multicols}
+\underline{Note:} Generally, for a CCW integration direction, current coming out of the page is positive and current going into the page is negative.\\\\
+The magnetic field determined using Ampere's law is the superposition of the fields produced by all currents, including those outside the Amperian loop. However, similar to Gauss's law, only the current enclosed by the Amperian loop contributes to the net magnetic circulation around the closed path, while the contribution from external currents results in zero net circulation.\\\\
+Ampere's law is most useful for finding magnetic fields in situations with high symmetry, such as:
+\begin{itemize}
+    \item Infinite straight wire (cylindrical symmetry)
+    \item Infinite solenoid (translational and cylindrical symmetry)
+    \item Toroidal solenoid (cylindrical symmetry)
+    \item Infinite current sheet (planar symmetry)
+\end{itemize}
+In these cases, the magnetic field is uniform along the Amperian loop, allowing us to take $\vec{B}$ outside the integral.\\\\
+\textbf{Magnetic Field of a Long Straight Wire with Current}\\
+Outside wire:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Ampere long wire.jpg}
+\end{figure}
+\vspace{-1em}
+Ampere's law:
+\[\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}\]
+\[B\int dl = \mu_0 I\]
+\[\boxed{B=\frac{\mu_0 I}{2\pi r} \quad \text{(outside wire)}}\]
+Inside wire (with uniform current density):
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Ampere long wire 1.jpg}
+\end{figure}
+\vspace{-1em}
+Current density:
+\[J=\frac{I}{\pi R^2}\]
+\[\implies I_{\text{enc}} = J \pi r^2 = I \frac{r^2}{R^2}\]
+Ampere's law:
+\[\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}\]
+\[B\int dl = \mu_0 I \frac{{r^2}}{R^2}\]
+\[\boxed{B=\frac{\mu_0 I r}{2\pi R^2} \quad \text{(inside wire)}}\]
+\newpage
+    \item Find the magnetic force on a current carrying wire due to another current carrying wire.\\\\
+\textbf{Force Between Two Parallel Current-Carrying Wires}\\\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{parallel wire.png}
+\end{figure}
+To find the force on wire b due to wire a, we first find the magnetic field produced by wire a at the location of wire b:
+\[B_a = \frac{\mu_0 i_a}{2\pi d}\]
+Since the distance between the wires is constant, this magnetic field is unifrom along wire b. Now we can find the force on wire b using 
+\[\vec{F}_{ba} = i_b \vec{L} \times \vec{B}_a\]
+\[F_{ba}=i_bLB_asin(90^\circ)=\frac{\mu_0Li_ai_b}{2\pi d}, \quad \text{($\vec{L}$ and $\vec{B}_a$ are perpendicular)}\]
+Using the right-hand rule, we find that the force is toward wire a. By Newton's third law, the force on wire a due to wire b is equal in magnitude and opposite in direction.\\\\
+\underline{Note:} Parallel currents attract, and anti-parallel currents repel.
+    \item Describe the forces and torques on magnetic dipoles in terms of their magnetic moment.\\\\
+Recall that the torque on a magnetic dipole in a magnetic field is given by:
+\[\vec{\tau} = \vec{\mu} \times \vec{B} \implies U = -\vec{\mu} \cdot \vec{B}, \qquad \text{where } \vec{\mu} = NIA\hat{n}\]
+We know that potential energy is related to force by:
+\[\boxed{\vec{F} = -\nabla U}\]
+\newpage\noindent
+\underline{Ex:} Force between a bar magnet and a circular loop of current\\\\
 \end{enumerate}
 
 \section*{Chapter 30 \& 31.11 - Induction and Inductance}
