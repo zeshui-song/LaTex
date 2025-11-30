@@ -198,16 +198,6 @@ The radius of the helical path is determined by $v_{\perp}$:
 \[r=\frac{mv_{\perp}}{|q|B}=\frac{mv\sin \phi}{|q|B}\]
 The pitch of the helix (distance between successive turns) is determined by $v_{\parallel}$ and the period $T$:
 \[p=v_{\parallel}T=v\cos \phi \left(\frac{2\pi m}{|q|B}\right)\]
-\textbf{Magnetic Mirror}\\\\
-A charged particle can be confined to a region of space by a magnetic field that is stronger at the ends than in the middle. As the particle approaches the stronger field (shown by the more closely spaced field lines), a component of the magnetic force pushes it back toward the center of the region, reflecting it back and forth between the two ends.
-\vspace{-1em}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Mag Mirror.png}
-\end{figure}
-This type of field can be created by two current-carrying coils (magnetic dipoles) at the ends of the region. Notably, the Earth's magnetic field acts as a magnetic mirror for charged particles from the solar wind, trapping them in the Van Allen radiation belts.\\\\
-\underline{Note:} The magnetic force only reflects the particle as a result of the curvature of the field lines, which creates a component of the magnetic force along the direction of motion of the particle.
-\newpage
 \textbf{Cyclotron}\\\\
 A cyclotron is a device that uses a combination of a constant magnetic field and an oscillating electric potential difference to accelerate charged particles. The magnetic field forces the particles to move in circular paths while the potential difference between the dees accelerates them each time they cross the gap.
 \begin{figure}[H]
@@ -431,7 +421,7 @@ Ampere's law is most useful for finding magnetic fields in situations with high 
     \item Infinite straight wire (cylindrical symmetry)
     \item Infinite solenoid (translational and cylindrical symmetry)
     \item Toroidal solenoid (cylindrical symmetry)
-    \item Infinite current sheet (planar symmetry)
+    \item Infinite sheet of current (planar symmetry)
 \end{itemize}
 In these cases, the magnetic field is uniform along the Amperian loop, allowing us to take $\vec{B}$ outside the integral.\\\\
 \textbf{Magnetic Field of a Long Straight Wire with Current}\\
@@ -460,7 +450,71 @@ Ampere's law:
 \[\boxed{B=\frac{\mu_0 I r}{2\pi R^2} \quad \text{(inside wire)}}\]
 \newpage\noindent
 \textbf{Magnetic Field of an Infinite Solenoid}\\
-
+A solenoid is to magnetostatics as capacitors is to electrostatics. An ideal infinite solenoid produces a uniform magnetic field inside and \textbf{zero} magnetic field outside.\\\\
+\textit{Why is it zero outside the infinite solenoid?}\\
+Consider the magnetic field at a point off axis from a single current loop. When it is close, the current loop looks more like an infinite wire, magnetic field pointing left.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Solenoid near.jpg}
+\end{figure}
+\vspace{-1em}
+However, as point $P$ moves further away, the current loop starts to look more like a magnetic dipole, magnetic field pointing right.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Solenoid far.jpg}
+\end{figure}
+\vspace{-1em}
+The key idea is that, for an infinite solenoid, only a \textit{finite} set of nearby current loops contributes a strong leftward magnetic field at a given external point, while an \textit{infinite} set of more distant loops contributes a much weaker rightward field. The cumulative effect of these infinitely many weak contributions exactly cancels the finite strong contribution, yielding zero net magnetic field outside the solenoid. The full mathematical proof is given by Pathak (\textit{An elementary argument for the magnetic field outside a solenoid}).
+\begin{multicols}{2}
+    Note that in a \textbf{finite} solenoid, it is not long enough for complete cancellation to occur, so there will be a small magnetic field outside the solenoid (similar to the fringe electric fields in a finite capacitor).
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.29\textwidth]{Ideal Solenoid.png}
+\end{figure}
+\end{multicols}
+\newpage
+Calculating the magnetic field inside an infinite solenoid using Ampere's law:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Solenoid.jpg}
+\end{figure}
+Suppose an Amperian loop with side length $L$ that encloses $N$ loops of wire, each loop carries current $I$
+\[\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}\]
+\[\int_b B dl = \mu_0 NI \quad \text{(Zero magnetic circulation along sides $a,c,d$)}\]
+\[B_{\text{inside}}=\frac{\mu_0 NI}{L}\]
+\[\boxed{B_{\text{inside}}=\mu_0 n I \quad \text{(infinite solenoid)}}\]
+Where $n=\frac{N}{L}$ is the number of loops per unit length.\\\\
+\underline{Note:} If the Amperian loop encloses both ends of the loop, the net current enclosed is zero, so the magnetic field outside the solenoid is zero as well.\newpage\noindent
+\textbf{Magnetic Field of a Toroidal Solenoid}
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Toroid.png}
+\end{figure}
+\vspace{-1em}
+Suppose the toroid has $N$ loops of wire, each carrying current $I$, we will integrate clockwise around an Amperian loop of radius $r$:
+\[\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}\]
+\[B(2\pi r)=\mu_0 I N\]
+\[\boxed{B=\frac{\mu_0 IN}{2\pi r} \quad \text{(toroidal solenoid)}}\]
+\textbf{Infinite Sheet of Current}
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Inf Sheet 1.jpg}
+\end{figure}
+\vspace{-1em}
+Suppose the sheet carries a current density $\rho$ (current per unit length). We will integrate around a rectangular Amperian loop of width $L$ and height $H$:
+\begin{multicols}{2}
+\begin{figure}[H]
+    \includegraphics[width=0.4\textwidth]{Inf Sheet.jpg}
+\end{figure}
+\[\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}, \quad I_{\text{enc}} = \rho L\]
+\[B(2L)=\mu_0 \rho L\]
+\[\boxed{B=\frac{\mu_0 \rho}{2} \quad \text{(infinite sheet of current)}}\]
+\underline{Note:} Due to superposition, the magnetic field above and below are uniform and point in opposite directions.
+\end{multicols}
 \newpage
     \item Find the magnetic force on a current carrying wire due to another current carrying wire.\\\\
 \textbf{Force Between Two Parallel Current-Carrying Wires}
@@ -487,24 +541,67 @@ Since both the bar magnet and the current loop produce magnetic dipoles, we can 
 \vspace{-1em}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{dipole.jpg}
+    \includegraphics[width=0.9\textwidth]{dipole.jpg}
 \end{figure}
 \vspace{-1em}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{dipole 1.jpg}
-\end{figure}
 Recall that the magnetic field along the axis of a magnetic dipole (current loop) is: 
 \[B_z=\frac{\mu_0}{4\pi}\frac{2\mu}{(R^2+z^2)^{3/2}}\]
 Taking the limit $R \ll z$ (far field approximation):
 \[B_{z}=\frac{\mu_0}{4\pi}\frac{2\mu}{z^3}\]
 Thus, the potential energy of the current loop in the magnetic field of the bar magnet is:
 \[U=-\vec{\mu}_{loop} \cdot \vec{B}_{bar,z} = -\mu_{loop}\frac{\mu_0}{4\pi}\frac{2\mu_{bar}}{z^3}\]
-\newpage\noindent
 Now let's find the magnitude of the force on the current loop due to the bar magnet:
-\[||\vec{F}_z||=\left|-\frac{dU}{dz}\right|\]
-\[\boxed{||\vec{F}_z||=\frac{\mu_0}{4 \pi}\frac{6\mu_{bar}\,\mu_{loop}}{z^4}}\]
-We can find the direction of the force using the right-hand rule (also by intuition by looking at the poles). Note that this force is equal and opposite for the force on the bar magnet due to the current loop.
+\[\boxed{||\vec{F}_z||=\left|-\frac{dU}{dz}\right|=\frac{\mu_0}{4 \pi}\frac{6\mu_{bar}\,\mu_{loop}}{z^4}}\]
+\begin{multicols}{2}
+    We can find the direction of the force using the right-hand rule (also by intuition by looking at the poles). Note that this force is equal and opposite for the force on the bar magnet due to the current loop.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{dipole 1.jpg}
+\end{figure}
+\end{multicols}
+\textbf{Force from a Magnetic Mirror (*work in progress*)}\\
+A charged particle can be confined to a region of space by a magnetic field that is stronger at the ends than in the middle. As the particle approaches the stronger field (shown by the more closely spaced field lines), a component of the magnetic force pushes it back toward the center of the region, reflecting it back and forth between the two ends.\\\\
+In a magnetic mirror, a charged particle moves in a helical path with
+\[\vec{v} = v_{\parallel} \hat{B} + v_{\perp} \hat{\perp}\]
+With a component along the magnetic field and a component perpendicular to it.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Fields_in_magnetic_bottles.jpg}
+\end{figure}
+Magnetic moment of a positive charged particle (with an axis of rotation tangent to the local magnetic field line):
+\[T=\frac{2\pi r_L}{v_{\perp}}=\frac{2\pi}{\omega},
+\qquad \omega=\frac{qB}{m}\]
+For a single loop \(N=1\), the magnetic dipole moment magnitude is
+\[\|\mu\| = IA, \qquad I=\frac{q}{T}=\frac{q\omega}{2\pi}, \qquad A=\pi r_L^2, \qquad
+r_L=\frac{m v_{\perp}}{qB}\]
+Substituting,
+\[\|\mu\|
+= \frac{q\omega}{2\pi}\,\pi r_L^2
+= \frac{q\omega}{2}\,r_L^2
+= \frac{q}{2}\left(\frac{qB}{m}\right)\left(\frac{m v_{\perp}}{qB}\right)^2\]
+\[\boxed{\|\mu\|=\frac{m v_{\perp}^2}{2B}}\]
+Since the magnetic force does no work on a charged particle and there is no electric field, the total kinetic energy is conserved:
+\[K=\frac{1}{2}m v_{\perp}^{2}+\frac{1}{2}m v_{\parallel}^{2} = \text{constant}\]
+Rewriting the perpendicular kinetic energy in terms of the magnetic moment,
+\[\frac{1}{2}m v_{\perp}^{2} = \mu B\]
+Thus the total kinetic energy becomes
+\[K = \mu B + \frac{1}{2}m v_{\parallel}^{2}
+= \text{constant}\]
+Taking the derivative along the magnetic field lines \(s\),
+\[\frac{dK}{ds}
+= \mu \frac{dB}{ds}
++ m v_{\parallel} \frac{d v_{\parallel}}{ds}=0\]
+Rearranging,
+\[m v_{\parallel} \frac{d v_{\parallel}}{ds}
+= -\mu \frac{dB}{ds}\]
+Since \( \dfrac{ds}{dt} = v_{\parallel} \), this gives
+\[m \frac{d v_{\parallel}}{dt}
+= -\mu \frac{dB}{ds}\]
+Therefore, the parallel force on the particle is
+\[\boxed{F_{\parallel}= -\mu \frac{dB}{ds}}\]
+\underline{Note:} We can also use try using $\vec{F}_B=q\vec{v} \times \vec{B}$ to derive this result, using Gauss's law for magnetism $\nabla \cdot \vec{B} = 0 \implies \frac{dB}{d_x}+\frac{dB}{dy}+\frac{dB}{dz}=0$ to relate the changes in $B$ along and perpendicular to the field lines. Another way is to use the conservation of energy argument along with Faraday's law to relate the changes in $v_{\perp}$ and $v_{\parallel}$ as the particle moves into regions of different magnetic field strength.\\\\
+\underline{Note:} The magnetic force only reflects the particle as a result of the changing magnetic field strength (shown by the curvature of the field lines), which creates a component of the magnetic force along the direction of motion of the particle.
 \end{enumerate}
 
 \section*{Chapter 30 \& 31.11 - Induction and Inductance}
