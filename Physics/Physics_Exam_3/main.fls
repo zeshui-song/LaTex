@@ -264,6 +264,13 @@ INPUT .\Unit circle.jpg
 INPUT .\Unit circle.jpg
 INPUT .\Unit circle.jpg
 INPUT .\Unit circle.jpg
+INPUT .\loop 2.png
+INPUT .\loop 2.png
+INPUT .\loop 2.png
+INPUT .\loop 2.png
+INPUT .\loop 2.png
+INPUT .\loop 2.png
+INPUT .\loop 2.png
 INPUT .\Arc.jpg
 INPUT .\Arc.jpg
 INPUT .\Arc.jpg
@@ -305,6 +312,20 @@ INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
+INPUT .\dipole.jpg
+INPUT .\dipole.jpg
+INPUT .\dipole.jpg
+INPUT .\dipole.jpg
+INPUT .\dipole.jpg
+INPUT .\dipole.jpg
+INPUT .\dipole.jpg
+INPUT .\dipole 1.jpg
+INPUT .\dipole 1.jpg
+INPUT .\dipole 1.jpg
+INPUT .\dipole 1.jpg
+INPUT .\dipole 1.jpg
+INPUT .\dipole 1.jpg
+INPUT .\dipole 1.jpg
 INPUT main.aux
 INPUT C:\Users\zsong\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\zsong\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk

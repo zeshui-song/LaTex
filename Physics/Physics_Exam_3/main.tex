@@ -384,13 +384,17 @@ d\vec{l}\times\vec{r}&=
 -Rd\theta sin\theta & Rd\theta cos\theta & 0 \\
 -Rcos\theta & -Rsin\theta & z
 \end{vmatrix}\\
-&=(Rzcos\theta d\theta)\hat{i}+(Rzsin\theta d\theta)\hat{j}+(R^2 sin^2\theta d\theta+R^2cos^2 \theta d\theta)\hat{k}\\
-&=(Rzcos\theta d\theta)\hat{i}+(Rzsin\theta d\theta)\hat{j}+(R^2 d\theta)\hat{k}
+&=(Rzcos\theta d\theta)\hat{\imath}+(Rzsin\theta d\theta)\hat{\jmath}+(R^2 sin^2\theta d\theta+R^2cos^2 \theta d\theta)\hat{k}\\
+&=(Rzcos\theta d\theta)\hat{\imath}+(Rzsin\theta d\theta)\hat{\jmath}+(R^2 d\theta)\hat{k}
 \end{align*}
-By symmetry, the $\hat{i}$ and $\hat{j}$ components will cancel out when integrating over the full loop, so we only need to consider the $\hat{k}$ component:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{loop 2.png}
+\end{figure}
+By symmetry, the $\hat{\imath}$ and $\hat{\jmath}$ components will cancel out when integrating over the full loop, so we only need to consider the $\hat{k}$ component:
 \[B_z=\int_{0}^{2\pi} \frac{\mu_0}{4\pi}\frac{IR^2 \, d\theta}{(R^2+z^2)^{3/2}}=\frac{\mu_0}{4\pi}\frac{2\pi IR^2}{(R^2+z^2)^{3/2}}\]
 Notice that $\mu = NIA = I\pi R^2$, Thus
-\[\boxed{\vec{B}=\frac{\mu_0}{4\pi}\frac{2\mu}{(R^2+z^2)^{3/2}}}\]
+\[\boxed{\vec{B}=\frac{\mu_0}{4\pi}\frac{2\mu}{(R^2+z^2)^{3/2}} \hat{k}}\]
 \textbf{Magnetic Field due to a Current in a Circular Arc of Wire}
 \begin{figure}[H]
     \centering
@@ -454,13 +458,17 @@ Ampere's law:
 \[\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}\]
 \[B\int dl = \mu_0 I \frac{{r^2}}{R^2}\]
 \[\boxed{B=\frac{\mu_0 I r}{2\pi R^2} \quad \text{(inside wire)}}\]
+\newpage\noindent
+\textbf{Magnetic Field of an Infinite Solenoid}\\
+
 \newpage
     \item Find the magnetic force on a current carrying wire due to another current carrying wire.\\\\
-\textbf{Force Between Two Parallel Current-Carrying Wires}\\\\
+\textbf{Force Between Two Parallel Current-Carrying Wires}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{parallel wire.png}
 \end{figure}
+\vspace{-1em}
 To find the force on wire b due to wire a, we first find the magnetic field produced by wire a at the location of wire b:
 \[B_a = \frac{\mu_0 i_a}{2\pi d}\]
 Since the distance between the wires is constant, this magnetic field is unifrom along wire b. Now we can find the force on wire b using 
@@ -475,6 +483,28 @@ We know that potential energy is related to force by:
 \[\boxed{\vec{F} = -\nabla U}\]
 \newpage\noindent
 \underline{Ex:} Force between a bar magnet and a circular loop of current\\\\
+Since both the bar magnet and the current loop produce magnetic dipoles, we can imagine that they will behave like two bar magnets where like poles repel and opposite poles attract.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{dipole.jpg}
+\end{figure}
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{dipole 1.jpg}
+\end{figure}
+Recall that the magnetic field along the axis of a magnetic dipole (current loop) is: 
+\[B_z=\frac{\mu_0}{4\pi}\frac{2\mu}{(R^2+z^2)^{3/2}}\]
+Taking the limit $R \ll z$ (far field approximation):
+\[B_{z}=\frac{\mu_0}{4\pi}\frac{2\mu}{z^3}\]
+Thus, the potential energy of the current loop in the magnetic field of the bar magnet is:
+\[U=-\vec{\mu}_{loop} \cdot \vec{B}_{bar,z} = -\mu_{loop}\frac{\mu_0}{4\pi}\frac{2\mu_{bar}}{z^3}\]
+\newpage\noindent
+Now let's find the magnitude of the force on the current loop due to the bar magnet:
+\[||\vec{F}_z||=\left|-\frac{dU}{dz}\right|\]
+\[\boxed{||\vec{F}_z||=\frac{\mu_0}{4 \pi}\frac{6\mu_{bar}\,\mu_{loop}}{z^4}}\]
+We can find the direction of the force using the right-hand rule (also by intuition by looking at the poles). Note that this force is equal and opposite for the force on the bar magnet due to the current loop.
 \end{enumerate}
 
 \section*{Chapter 30 \& 31.11 - Induction and Inductance}
