@@ -176,7 +176,7 @@ We can also find the number of charge carriers per unit volume ($n$) in the cond
 \underline{Note:} It is also possible to determine the drift velocity using the Hall effect, by mechanically moving the conductor such that there is no relative velocity between the charges and the magnetic field. Therefore, there will be \textbf{zero} Hall potential difference (since there is no magnetic force).
 \newpage
     \item Explain the principle of operation of a cyclotron\\\\
-\textbf{Circulating Charged Particles}\\\\
+\textbf{Circulating Charged Particles}\\
 We know that for a particle of charge $q$ moving with $\vec{v}$ in a uniform magnetic field, it will tend towards a circular path due to the magnetic force (no tangential force, only normal force).
 \[\sum F_n = |q|vB=\frac{mv^2}{r} \implies r=\frac{mv}{|q|B} \quad \text{(radius)}\]
 From which we can define the following quantities:
@@ -184,12 +184,12 @@ From which we can define the following quantities:
 \[f=\frac{1}{T}=\frac{|q|B}{2\pi m} \quad \text{(frequency)}\]
 \[\omega = \frac{2 \pi}{T}=2\pi f = \frac{|q|B}{m} \quad \text{(angular frequency)}\]
 \underline{Note:} The quantities $T,f, \text{ and } \omega$ do not depend on the speed of the particle (as long as it isn't moving at relativistic speeds). Fast particles move in large circles and slow ones in small circles, but all particles with the same charge-to-mass ratio $|q|/m$ take the same time $T$ to complete one loop.\\\\
-\textbf{Helical Paths}\\\\
+\textbf{Helical Paths}\\
 If the velocity of the charged particle has a component parallel to the magnetic field, then the particle will follow a helical path:
 \vspace{-1em}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{Helical.png}
+    \includegraphics[width=0.6\textwidth]{Helical.png}
 \end{figure}
 \vspace{-1em}
 Where the angle $\phi$ is the angle between $\vec{v}$ and $\vec{B}$.
@@ -198,7 +198,8 @@ The radius of the helical path is determined by $v_{\perp}$:
 \[r=\frac{mv_{\perp}}{|q|B}=\frac{mv\sin \phi}{|q|B}\]
 The pitch of the helix (distance between successive turns) is determined by $v_{\parallel}$ and the period $T$:
 \[p=v_{\parallel}T=v\cos \phi \left(\frac{2\pi m}{|q|B}\right)\]
-\textbf{Cyclotron}\\\\
+\newpage\noindent
+\textbf{Cyclotron}\\
 A cyclotron is a device that uses a combination of a constant magnetic field and an oscillating electric potential difference to accelerate charged particles. The magnetic field forces the particles to move in circular paths while the potential difference between the dees accelerates them each time they cross the gap.
 \begin{figure}[H]
     \centering
@@ -207,11 +208,11 @@ A cyclotron is a device that uses a combination of a constant magnetic field and
 Suppose a proton is injected at source $S$. It will be accelerated toward the negatively charged dee and enter it. Once inside, there will be no electric field (shielded by the conducting walls of the dee), and it will move in a semicircular path due to the magnetic field. When it exits the dee, the potential difference is reversed to accelerate it again across the gap. Thus, the frequency $f$ at which the proton circulates (independent of speed) \textit{must} match the frequency of the oscillating potential difference $f_{osc}$:
 \[f=f_{osc} \quad \text{(resonance condition)}\]
 \[\frac{|q|B}{2\pi m}=f_{osc}\]
-\textbf{Synchrotron}\\\\
+\textbf{Synchrotron}\\
 At relativistic speeds (above 10\% of $c$), the frequency of revolution is now no longer independent of the charged particle's speed. As the speed approaches the speed of light, the frequency of revolution decreases, and is no longer in sync to the fixed $f_{osc}$. Thus a \textbf{synchrotron} is used to vary both the magnetic field and $f_{osc}$ to keep the particle in resonance as it accelerates to higher speeds. The proton also follows a circular path instead of a spiral in a synchrotron.
 \newpage
     \item Determine the forces and/or torques on various arrangements of current carrying wires (straight, circular loops, square loops, etc...) located in a given magnetic field.\\\\
-\textbf{Magnetic Force on a Current Carrying Wire}\\\\
+\textbf{Magnetic Force on a Current Carrying Wire}\\
 We know that moving charges experience a magnetic force in a magnetic field. Thus, a current-carrying wire (which has moving charges) will also experience a magnetic force when placed in a magnetic field.
 \begin{figure}[H]
     \centering
@@ -232,7 +233,7 @@ If the wire is not straight or the field is not uniform, we can find the differe
 \[\boxed{d\vec{F}_B = I d\vec{L} \times \vec{B}}\]
 \underline{Note:} There is no such thing as an isolated current-carrying wire, there must always be a way to introduce current into the wire and take it out at the other end.
 \newpage
-\textbf{Magnetic Torque on a Current Loop}\\\\
+\textbf{Magnetic Torque on a Current Loop}\\
 A motor converts current into rotation by using magnetic forces on a current-carrying loop to generate a torque. In this case, the direction of current is reversed every half turn to keep the torque in the same direction using a commutator (not shown).
 \vspace{-1em}
 \begin{figure}[H]
@@ -267,7 +268,7 @@ If we have a \textit{coil} with $N$ loops of wire, we can approximate them as $N
 \[\boxed{\sum \tau = NIABsin\theta}\]
 \underline{Note:} The current-carrying coil will tend to rotate such that $\vec{n}$ is aligned with $\vec{B}$, minimizing the potential energy of the system.
 \newpage
-\textbf{Magnetic Dipole Moment}\\\\
+\textbf{Magnetic Dipole Moment}\\
 Similar to a bar magnet, a current-carrying loop tends to align itself with an external magnetic field. Thus, the current loop is said to be a \textbf{magnetic dipole} with a \textbf{magnetic dipole moment} $\vec{\mu}$ defined as:
 \[\boxed{\vec{\mu} = NIA\hat{n}}\]
 Where $N$ is the number of loops, $I$ is the current, $A$ is the area of the loop, and $\hat{n}$ is the unit normal vector to the plane of the loop.It has units of Amphere-square meter ($\text{A}\cdot \text{m}^2$). \\\\
@@ -399,7 +400,7 @@ The angle between $d\vec{l}$ and $\vec{r}$ is always $90^\circ$ for a circular a
 \[\boxed{\vec{B}=\frac{\mu_0 I\phi}{4\pi R} \hat{k} \quad \text{(circular arc of wire)}}\]
 \newpage
     \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.\\\\
-\textbf{Ampere's Law}\\\\
+\textbf{Ampere's Law}\\
 Ampere's Law states that the circulation of the magnetic field $\vec{B}$ around a closed \textbf{Amperian loop} is proportional to the net current $I_{\text{enc}}$ piercing the surface bounded by that loop.
 \[\boxed{\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}}\]
 We may arbitrarily choose a direction for integration around the Amperian loop and initially assume that the magnetic field $\vec{B}$ is aligned with this direction. If the resulting value of $\vec{B}$ is negative, this indicates that the true direction of the magnetic field is opposite to the assumed direction.\\\\
@@ -603,11 +604,88 @@ Therefore, the parallel force on the particle is
 \underline{Note:} We can also use try using $\vec{F}_B=q\vec{v} \times \vec{B}$ to derive this result, using Gauss's law for magnetism $\nabla \cdot \vec{B} = 0 \implies \frac{dB}{d_x}+\frac{dB}{dy}+\frac{dB}{dz}=0$ to relate the changes in $B$ along and perpendicular to the field lines. Another way is to use the conservation of energy argument along with Faraday's law to relate the changes in $v_{\perp}$ and $v_{\parallel}$ as the particle moves into regions of different magnetic field strength.\\\\
 \underline{Note:} The magnetic force only reflects the particle as a result of the changing magnetic field strength (shown by the curvature of the field lines), which creates a component of the magnetic force along the direction of motion of the particle.
 \end{enumerate}
-
+\newpage
 \section*{Chapter 30 \& 31.11 - Induction and Inductance}
 \begin{enumerate}
-    \item Understand the meaning Faraday's law of induction and be able to use it to determine the electromotive force. Explain and apply the equivalence of Faraday's law and the Lorentz force law for motional emfs.
-    \item Apply Lenz's law to determine the sign of induced currents or electromotive forces.
+    \item Understand the meaning Faraday's law of induction and be able to use it to determine the electromotive force. Explain and apply the equivalence of Faraday's law and the Lorentz force law for motional emfs.\\\\
+\textbf{Faraday's Law of Induction}\\
+Faraday's law states that if an arbitrary closed loop encloses a region with a changing magnetic flux, then an electromotive force (emf) will be induced in the loop. If there happens to be a conducting wire along the loop, then an induced current will exist in the wire.
+\[\boxed{\mathcal{E} = -\frac{d\Phi_B}{dt}}\]
+The units for magnetic flux $\Phi_B$ are Weber (Wb), where
+\[1\, \text{Wb} = 1\, \text{T}\cdot \text{m}^2\]
+It can also be written in integral form as:
+\[\boxed{\mathcal{E} = \int \vec{E} \cdot d\vec{l} = -\frac{d}{dt}\int \vec{B}\cdot\hat{n}dA}\]
+Where
+\begin{itemize}
+    \item $\mathcal{E}$ is the \textbf{induced emf} (in volts), representing the work done per unit charge by the induced electric field (\(\vec{E}\)) around the faradian loop (in a CCW direction).
+    \item $\hat{n}$ is the unit normal vector to the surface bounded by the faradian loop.
+    \item $dA$ is the differential area element of that surface.
+\end{itemize}
+Another way to think about Faraday's law is that there will be circulating electric fields induced in regions of changing magnetic flux.\\\\
+The induced electric field has the following properties:
+\begin{itemize}
+    \item Do not terminate and originate on charges
+    \item Form closed loops!
+    \item Is present whenever the magnetic flux is changing, even in regions where there are no conductors
+    \item Is a non-conservative field, meaning that the work done by the field around a closed loop is non-zero
+\end{itemize}
+In the case where there is a coil of wire with $N$ turns, and the coil is tightly wound so that each turn experiences the same magnetic flux, then the total emf induced in the coil is:
+\[\mathcal{E}=-N\frac{d\phi_B}{dt} \quad \text{(coil of N turns)}\]
+\underline{Note:} Typically, we don't need to think too hard about the direction of the induced electric field, and just need to consider the magnitude of the induced emf. The direction can be determined using Lenz's law.\\\\
+By examining the terms in Faraday's law, we can see that there are a few ways to induce an emf in a loop:
+\begin{itemize}
+    \item Change the magnitude of the magnetic field $B$ within the coil.
+    \item Change either the total area of the coil or the portion of that area that lies within the magnetic field (ex: by expanding the coil or moving it in/out of the magnetic field).
+    \item Change the orientation of the loop (angle between $\vec{B}$ and $\hat{n}$). For example, by rotating the coil within the magnetic field.
+\end{itemize}
+\textbf{Motional emf}\\
+A motional emf is induced when there is relative motion between a conductor and a magnetic field. This can be understood using either Faraday's law or the Lorentz force law.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Motional emf.jpg}
+\end{figure}
+\vspace{-1em}
+Consider the following circuit formed by a conductor sliding on two stationary rails in the presence of a uniform magnetic field $\vec{B}$ pointing out of the page. By the Lorentz force law, we can find the emf induced in the circuit as follows:
+\[\vec{F}_B=q\vec{v}\times\vec{B} \implies F_B = qvB\]
+\[F_E= qE\]
+The magnetic force pushes positive charges down, creating a potential difference and electric field in the conductor. The electrons stop moving when the magnetic force is balanced by the electric force (Lorentz force equalling zero):
+\[F_B = F_E\]
+\[qvB = qE \implies E = vB\]
+The emf induced in the circuit is then:
+\[\boxed{\mathcal{E} = EL = vBL}\]
+\newpage\noindent
+We can also find the emf using Faraday's law:
+\[\mathcal{E} = \int \vec{E} \cdot d\vec{l} = -\frac{d}{dt}\int \vec{B}\cdot\hat{n}dA\]
+Only the area is changing as the conductor slides, so:
+\[\mathcal{E} = -\frac{d}{dt}(BLx) = -BL\frac{dx}{dt} = -BLv\]
+Taking the magnitude, we get the same result as before:
+\[\boxed{|\mathcal{E}| = BLv}\]
+\textbf{Power and Energy}\\
+Considering the same circuit as before, when there is a current $I$ flowing through the circuit, there is a magnetic force slowing down the conductor:
+\[\vec{F}_B = I\vec{L} \times \vec{B} \implies F_B = ILB\]
+We can find the current using Ohm's law and the emf:
+\[I = \frac{\mathcal{E}}{R} = \frac{BLv}{R}\]
+\[F_B =\frac{BLv}{R}LB = \frac{B^2L^2v}{R}\]
+If we want the conductor to move at a constant velocity then we need to apply an external force equal in magnitude and opposite in direction to the magnetic force:
+\[F_{\text{app}} =F_B= \frac{B^2L^2v}{R}\]
+The power supplied by this external force is:
+\[P_{\text{app}} = F_{\text{app}} v = \frac{B^2L^2v^2}{R}\]
+There is no change in kinetic energy of the conductor so all this power must be dissipated as heat in the resistor. We can verify this by calculating the power dissipated in the resistor:
+\[P_R = I^2 R = \left(\frac{BLv}{R}\right)^2 R = \frac{B^2L^2v^2}{R}\]
+\underline{Note:} Even though there is also current in the upper and lower rails, and thus a magnetic force, these forces cancel out since they point in opposite directions, so they do not contribute to the net force on the conductor.\\\\
+Also note that as a result of Lenz's law, regardless of the direction of motion of the conductor, there will be a magnetic force opposing the motion and thus requiring the external force to do \textit{positive} work to keep the conductor moving at a constant velocity. 
+\newpage\noindent
+\textbf{Eddy Currents}\\
+Suppose that we move a solid conducting plate out of a region with a uniform magnetic field $\vec{B}$ pointing into the page. Similar to the motional emf example, the relative motion of the field and the conductor will induce a current and thus a magnetic force that opposes the motion. However, since the conductor solid, the conduction electrons will not follow a single path, but rather will swirl about within the plate, forming eddy currents. However, we can represent the effect of these eddy currents \textit{as if} it were a single induced current loop around the edge of the plate.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Eddy.png}
+\end{figure}
+
+
+    \item Apply Lenz's law to determine the sign of induced currents or electromotive forces.\\\\
+\textbf{Lenz's Law}\\
+Lenz's law states that the induced current around a loop will flow in a direction that produces a secondary magnetic field that will \textit{oppose} the \textit{change} in the magnetic flux in the loop. Note that Lenz's law still holds if there is no conducting wire to actually produce the secondary magnetic field, the direction is the same regardless.
     \item Define inductance and be able to calculate the self or mutual inductance for various (usually simple) current distributions. Know and use the reciprocity relation for mutual inductances.
     \item Be able to calculate the energy stored in magnetic fields for a given inductor using either the formula involving inductance or the energy density of the magnetic field.
     \item Describe the principle of operation of a generator and a motor.
