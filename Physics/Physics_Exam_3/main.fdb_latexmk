@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1764615293.11064 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1764615295.95269 0
+["pdflatex"] 1764705900.99686 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1764705903.47563 0
   "Ampere long wire 1.jpg" 1764381714 548044 3871289a16e610092f82177bf01a4499 ""
   "Ampere long wire.jpg" 1764381407 552932 ef50b3429c5c89c2600996df695893a6 ""
   "Arc.jpg" 1764368519 384206 f7e0c810b9e75975865708362cd0890f ""
@@ -83,6 +83,8 @@
   "Cyclotron.png" 1764002067 217429 5269224d49d084b1941cec6f8fc1f542 ""
   "Deflection.jpg" 1763868917 538593 d452a77fbab95a44260eb482845e3ccd ""
   "Diff Charges.jpg" 1763867124 460050 c9968ba37436639c088919725ebc5a0c ""
+  "Eddy 2.png" 1764695394 100766 272ad5c88d2e917e3da4f82c4f7450aa ""
+  "Eddy Brake.png" 1764695780 118146 c0ef7f6f51335f861241618f431bc433 ""
   "Eddy.png" 1764615274 66412 deff0b4c04dc16a89a61c920f8323f5d ""
   "Fields_in_magnetic_bottles.jpg" 1764517876 59275 62c7068173ae1e909415eecc88ab1f70 ""
   "Hall Effect.jpg" 1763872243 1083724 7b59e88fdd91dd015e4dbc4bb1c19a9e ""
@@ -91,6 +93,7 @@
   "Ideal Solenoid.png" 1764522133 109332 ab61856a3449957c998bc2ae2e7a2523 ""
   "Inf Sheet 1.jpg" 1764530343 268418 0f876df0bbd4c7c8a7db45745e0dd8f8 ""
   "Inf Sheet.jpg" 1764530171 427856 985542869ec10799ce47fd4ff16bf317 ""
+  "Lam.png" 1764696087 89166 aa009a9059ccee83616256e085f2fe9b ""
   "Long Wire.jpg" 1764100827 904765 c9f94eed7359303b5506bebffacd1f1b ""
   "Loop.jpg" 1764105943 537719 23c55bbfbec63f88cc096f01537e7451 ""
   "Magnetic Field.png" 1763850905 262491 1e96a2ddafa536e6b3cb2c9496d5a776 ""
@@ -111,12 +114,12 @@
   "Unit circle.jpg" 1764106555 495623 94cc6174fee3e8bc27f65bfa724c6372 ""
   "Wien.jpg" 1763864678 415470 e8f4a7c4b2ea19f763708a5c6629a939 ""
   "Wire.png" 1764003347 167991 2aaa8892e5e406f77e20e3958a469c85 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1764615291 48005 08f3b8a3fc3a23af3aa39f7a226ce743 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1764705900 55628 d79fe6b5f0c6129d30c12899d84f2c56 ""
   "dipole 1.jpg" 1764469396 644097 e0da1d86f82e7a71e4d32e5078303458 ""
   "dipole.jpg" 1764470092 769402 09050178e898d09fe0e7c4ba311f0ac7 ""
   "loop 2.png" 1764467603 75215 f1b718bd8715b6adf9598804b860085c ""
-  "main.aux" 1764615295 33 9c6d12a466ddf25e525340d0a343aadd "pdflatex"
-  "main.tex" 1764615291 48005 08f3b8a3fc3a23af3aa39f7a226ce743 ""
+  "main.aux" 1764705903 33 e043013ea740b52ce19646dc2df21a8a "pdflatex"
+  "main.tex" 1764705900 55628 d79fe6b5f0c6129d30c12899d84f2c56 ""
   "parallel wire.png" 1764369126 168511 0158ddf80d4c8b0354f6651a32f4f5a5 ""
   (generated)
   "main.aux"

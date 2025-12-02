@@ -677,17 +677,96 @@ Also note that as a result of Lenz's law, regardless of the direction of motion 
 \newpage\noindent
 \textbf{Eddy Currents}\\
 Suppose that we move a solid conducting plate out of a region with a uniform magnetic field $\vec{B}$ pointing into the page. Similar to the motional emf example, the relative motion of the field and the conductor will induce a current and thus a magnetic force that opposes the motion. However, since the conductor solid, the conduction electrons will not follow a single path, but rather will swirl about within the plate, forming eddy currents. However, we can represent the effect of these eddy currents \textit{as if} it were a single induced current loop around the edge of the plate.
+\vspace{-1em}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{Eddy.png}
+    \includegraphics[width=0.3\textwidth]{Eddy.png}
 \end{figure}
-
-
+\vspace{-1em}
+\begin{multicols}{2}
+If the plate in the example was longer, it will enclose 2 regions of changing magnetic flux (one where the flux is increasing as the plate enters the field, and one where the flux is decreasing as the plate exits the field). Thus, there will be two sets of eddy currents induced in the plate, each opposing the change in flux in their respective regions.
+\columnbreak 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Eddy 2.png}
+\end{figure}
+\end{multicols}
+\begin{multicols}{2}
+Like in the motional emf example, the interaction between the magnetic field and the eddy currents produces a magnetic force that opposes the motion of the plate. This causes energy to be lost as heat in the conductor due to the resistance of the material, thereby slowing down the motion of the conducting plate. This effect is used in electromagnetic braking systems.
+\columnbreak
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Eddy Brake.png}
+\end{figure}
+\end{multicols}
+\newpage\noindent
+Sometimes we want to minimize the energy loss from eddy current such as in transformers or electric motors. This can be done by using materials with low conductivity (high resistivity) or by using thin sheets of material with insulating layers in between (laminations) to restrict the flow of eddy currents. Similar to the Hall effect, charges build up on the surfaces of the laminations, creating an electric field that opposes the motion of the charges and thus reducing the eddy currents.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Lam.png}
+\end{figure} 
+\textbf{Revisiting Electric Potential}\\
+In electrostatics, we were able to define an electric potential $V$ as a scalar field from the electric field produced by \textit{static charges}, however, we cannot define an electric potential for electric fields induced by changing magnetic fluxes. This is because the induced electric fields are non-conservative, meaning that the work done by the field around a closed loop is non-zero. As a result, there is no unique scalar potential around a closed loop because the induced electric field is non-conservative ($\oint \vec{E}\cdot d\vec{l}\neq0$), so the work done by the field over one full loop is nonzero and is equal to the emf.\\\\
+However, laws such as Ohm's law remain valid in circuits with induced emfs, provided that the induced emf is treated as an effective \textit{potential difference}, like a battery that adds or removes energy from charges as they move around the circuit. Since Ohm's law relates the current to the voltage drop across a resistor, it remains applicable in this case.
     \item Apply Lenz's law to determine the sign of induced currents or electromotive forces.\\\\
 \textbf{Lenz's Law}\\
 Lenz's law states that the induced current around a loop will flow in a direction that produces a secondary magnetic field that will \textit{oppose} the \textit{change} in the magnetic flux in the loop. Note that Lenz's law still holds if there is no conducting wire to actually produce the secondary magnetic field, the direction is the same regardless.
-    \item Define inductance and be able to calculate the self or mutual inductance for various (usually simple) current distributions. Know and use the reciprocity relation for mutual inductances.
-    \item Be able to calculate the energy stored in magnetic fields for a given inductor using either the formula involving inductance or the energy density of the magnetic field.
+\newpage
+    \item Define inductance and be able to calculate the self or mutual inductance for various (usually simple) current distributions. Know and use the reciprocity relation for mutual inductances.\\\\
+\textbf{Inductance}\\
+Inductance measures the ability of a conductor to induce an emf in itself (self-inductance) or in another conductor (mutual inductance) as a result of a changing current. The inductance depends only on the geometry of the conductors and the magnetic permeability of the medium. For an inductor carrying current $I$ with $N$ turns, the \textbf{inductance} is defined as:
+\[\boxed{L=\frac{N\Phi_B}{I}}\]
+Where $\phi_B$ is the magnetic flux through a single turn of the inductor. The units for inductance are Henry (H), where
+\[1\, \text{H} = 1\,\text{T}\cdot \text{m}^2/\text{A}\]
+\textbf{Self Inductance of a Solenoid}\\
+Consider a solenoid with $N$ turns, length $l$, cross-sectional area $A$, carrying current $I$. The magnetic field inside the solenoid is:
+\[B=\mu_0 n I, \quad n=\frac{N}{l}\]
+The magnetic flux through a single turn of the solenoid is:
+\[\Phi_B = B A = \mu_0 n I A\]
+Thus, the inductance of the solenoid is:
+\[L = \frac{N \Phi_B}{I} = \frac{N (\mu_0 n I A)}{I} = \mu_0 n^2 A l\]
+\[\boxed{L = \mu_0 \frac{N^2}{l} A \quad \text{(solenoid)}}\]
+\textbf{Self Induced emf}\\
+When the current in an inductor changes, the changing magnetic flux induces an emf in the inductor itself, opposing the change in current (Lenz's law). This is called \textbf{self-induction} and the \textbf{self-induced emf} can be found using Faraday's law:\\\\
+We can rewrite emf in terms of inductance:
+\[N\Phi_B = LI\]
+\[\mathcal{E} = -\frac{d(N\Phi_B)}{dt}=-\frac{d(LI)}{dt}\]
+\[\boxed{\mathcal{E} = -L \frac{dI}{dt}}\]
+This self-induced emf opposes changes in current, thus an increasing current induces a negative emf (opposing the increase), and this is sometimes called the \textit{back emf}.
+\newpage\noindent
+We can also define a self-induced potential difference $V_L$ across the inductor (outside the region of changing magnetic flux). For an \textit{ideal} inductor, the magnitude of $V_L$ is equal to the magnitude of the self-induced emf. For \textit{non-ideal} inductors, we can treat it as an ideal inductor in series with a resistor (to account for energy loss due to resistance).\\\\
+\textbf{Mutual Induction}\\
+Suppose we have two inductors (coils of wire) placed close to each other, such that the current in one coil will produce a magnetic flux that passes through the other coil. If the current in coil 1 changes, the changing magnetic flux through coil 2 will induce an emf in coil 2. This is called \textbf{mutual induction} and is defined by the \textbf{mutual inductance} $M_{21}$ of coil 2 with respect to coil 1 as:
+\[\boxed{M_{21} = \frac{N_2 \Phi_{B2}}{I_1}}\]
+Note that the mutual inductance is \textit{symmetric}, meaning that
+\[M_{21} = M_{12}\]
+This is very useful in cases where it is easier to find the flux through one coil than the other.\\\\
+Similar to self-induction, the emf induced in coil 2 due to a changing current in coil 1 is given by:
+\[\boxed{\mathcal{E}_2 = -M_{21} \frac{dI_1}{dt}}\]
+If the current in coil 2 changes, it will also induce an emf in coil 1 given by:
+\[\boxed{\mathcal{E}_1 = -M_{12} \frac{dI_2}{dt}}\]
+\textbf{Mutual Induction of a Transformer}\\
+FINISH THIS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\\\\\\
+    \item Be able to calculate the energy stored in magnetic fields for a given inductor using either the formula involving inductance or the energy density of the magnetic field.\\\\
+\textbf{Energy Stored in an Inductor}\\
+When current flows through an inductor, energy is stored in the magnetic field created by the current. The energy stored in the magnetic field of an inductor can be found by integrating the power supplied to the inductor as the current increases from 0 to $I$:
+\[|\mathcal{E}|=\frac{d\Phi_B}{dt}=L\frac{dI}{dt}\]
+\[P = IV\]
+This equation is valid because it is derived using potential difference and work. Thus, the power supplied to the inductor is:
+\[P = I |\mathcal{E}| = I L \frac{dI}{dt}\]
+The energy stored in the inductor is then:
+\[P=\frac{dU}{dt} \implies \int dU = \int_0^I I L dI = \frac{1}{2} L I^2\]
+\[\boxed{U = \frac{1}{2} L I^2}\]
+\textbf{Energy Density of a Magnetic Field}\\
+Similar to finding the energy density of an electric field, we can find the energy density of a magnetic field by dividing the total energy stored in the magnetic field by the volume over which the field exists. This is assuming that the magnetic field is uniform over that volume.\\\\
+For a solenoid with length $l$ and cross-sectional area $A$, its volume is $V = Al$, and it stores an energy of:
+\[U = \frac{1}{2} L I^2, \quad L_{\text{solenoid}}=\mu_0 \frac{N^2}{l}A=\mu_0 n^2 A l\]
+The energy density of the magnetic field is then:
+\[u_B = \frac{U}{V} = \frac{\frac{1}{2} (\mu_0 n^2 A l) I^2}{A l} = \frac{1}{2} \mu_0 n^2 I^2\]
+Since the magnetic field inside the solenoid is $B = \mu_0 n I$, we can rewrite the energy density as:
+\[\boxed{u_B = \frac{1}{2\mu_0} B^2}\]
+Like how we found the generalized electric field energy density using a parallel plate capacitor. This equation is valid for any magnetic field, not just the uniform field inside a solenoid.
     \item Describe the principle of operation of a generator and a motor.
 \end{enumerate}
 
