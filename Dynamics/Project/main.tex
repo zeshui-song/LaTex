@@ -4,31 +4,50 @@
 \usepackage{amsmath, amsfonts, bm, graphicx}
 \usepackage{float,multicol}
 \geometry{margin=1in}
-\title{}
+\title{Dynamics Final Project Report}
 \date{}
-\author{}
+\author{Zeshui Song, Roy He, Ryan Lee}
 
 \begin{document}
+\maketitle
+\section*{Introduction to project}
+\section*{Assumptions}
+\section*{Constraints: Kinematics}
+Our goal is to find the angles $\theta_2$, $\theta_3$, $\theta_4$, and $\theta_5$ given the input angle $\theta_1$ and the lengths $l_1$, $l_2$, $l_3$, $l_4$, and $l_5$. We can use two methods to solve for these angles: the vector loop method and the circle intersection method.
+\vspace{-1em}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Kinematics.png}
+    \includegraphics[width=0.5\textwidth]{Kinematics.png}
 \end{figure}
 \noindent
-Our goal is to find the angles $\theta_2$, $\theta_3$, $\theta_4$, and $\theta_5$ given the input angle $\theta_1$ and the lengths $l_1$, $l_2$, $l_3$, $l_4$, and $l_5$. We can use two methods to solve for these angles: the vector loop method and the circle intersection method.\\
-\textbf{Using the vector loop method:}\\
+We found that it is faster and cleaner to use geometry to find the angles. To do that, we just need to find the coordinate of point $B$.
+\vspace{-1em}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Vector loop.png}
+    \includegraphics[width=0.3\textwidth]{Geometry.png}
 \end{figure}
+\vspace{-2em}
 \noindent
-By numerically solving the equations, we can find angles $\theta_2$ and $\theta_3$. Following that, we know that $l_5$ is always perpendicular to $l_3$, and thus we can find $\theta_4$ by trigonometry. By using the vector from C to D $\vec{l_5}$ we can find the point $D$. Knowing both $D$ and $E$, we can find angle $\theta_5$ using trigonometry as well.\\
-\textbf{Using the circle intersection method:}\\
-We found that it is faster and cleaner to use the circle intersection method to define the angles and points instead.\\
-We know the locations of the fixed points $O$, $C$, and $E$:
-\[O = (0,0) \quad C = (0, l_4) \quad E = (-6,l_4)\]
-We know the Cartesian coordinates for points $A$ and $B$ by defining it in terms of a vector relative their respective fixed points:
-\[\vec{l_1}= \left<l_2 \cos(\theta_1), l_2 \sin(\theta_1)\right> \implies A = \left<0,0\right>+\left<l_2 \cos(\theta_1), l_2 \sin(\theta_1)\right>\]
-\[\vec{l_3} = \left<l_3 \cos(\theta_3), l_3 \sin(\theta_3)\right> \implies B = \left<0,l_4\right>+\left<l_3 \cos(\theta_3), l_3 \sin(\theta_3)\right>\]
-
-
+We know the coordinates of point \(A\) and point \(C\):
+\[\vec{l_1} = \langle l_1 \cos \theta_1, l_1 \sin \theta_1 \rangle, \quad \vec{l_4} = \langle 0, l_4 \rangle\]
+\[A=\vec{O}+\vec{l_1}, \quad C=\vec{O}+\vec{l_4}\]
+We can define the vector from point \(A\) to point \(C\) and its magnitude \(d\):
+\[\vec{d} = \vec{l_4} - \vec{l_1}, \quad d = \|\vec{d}\|\]
+By the pythagorean theorem, we can find the height \(h\) from point \(P\) to point \(B\):
+\[h^2 = l_2^2 - a^2\]
+By law of cosines for triangle \(ABP\)
+\[l_2^2 = a^2 + h^2 - a h \cos \theta_p, \quad \theta_p = 90^\circ\]
+\[l_2^2 = a^2 + h^2 \quad (1)\]
+By law of cosines for triangle \(CPB\)
+\[l_3^2 = (d - a)^2 + h^2 - (d - a) h \cos \theta_p, \quad \theta_p = 90^\circ\]
+\[l_3^2 = (d - a)^2 + h^2 \quad (2)\]
+Solving for \(a\) using (1) and (2)
+\[l_3^2 - l_2^2 + a^2 = d^2 - 2ad + a^2\]
+\[a = \frac{l_3^2 - l_2^2 - d^2}{-2d}\]
+Knowing \(a\) and \(h\), we can find the coordinates of point \(B\):
+\[\vec{B} = \vec{A} + a \hat{d} + h \hat{d}_\perp\]
+\[\hat{d} = \frac{\vec{d}}{d}\]
+\[\hat{d}_\perp = \left\langle -\frac{d_y}{d}, \frac{d_x}{d} \right\rangle\]
+Finally, we can define vectors \(\vec{l_2}\) and \(\vec{l_3}\) using points \(A\), \(B\), and \(C\). From there, we can find point $D$ by numerically finding the normal vector of \(\vec{l_3}\) and using the length \(l_5\). With points \(D\) and \(E\), we have fully defined the system and can find all the angles using trigonometry.
+\newpage
 \end{document}
