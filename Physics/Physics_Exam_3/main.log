@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  2 DEC 2025 15:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  2 DEC 2025 15:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -848,28 +848,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 760--764
  []
 
 
-Overfull \hbox (13.03024pt too wide) in paragraph at lines 781--782
+Underfull \hbox (badness 10000) in paragraph at lines 768--771
+
+ []
+
+[34]
+<Motor.jpg, id=184, 3146.75626pt x 857.2025pt>
+File: Motor.jpg Graphic file (type jpg)
+<use Motor.jpg>
+Package pdftex.def Info: Motor.jpg  used on input line 776.
+(pdftex.def)             Requested size: 375.80544pt x 102.36282pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--777
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 785--788
+
+ []
+
+
+Overfull \hbox (13.03024pt too wide) in paragraph at lines 798--799
 []\OT1/cmr/m/n/12 Test whether a given ar-range-ment of prop-a-gat-ing elec-tro-mag-netic fields sat-is-fies Maxwell's
  []
 
-[34] [35] (main.aux)
+[35 <./Motor.jpg>] [36] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3722 strings out of 474486
- 56928 string characters out of 5743755
+ 3729 strings out of 474486
+ 57039 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25970 multiletter control sequences out of 15000+600000
+ 25977 multiletter control sequences out of 15000+600000
  568334 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,65p,733b,407s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (35 pages, 15208764 bytes).
+Output written on main.pdf (36 pages, 15585787 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
+ 241 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 216 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -766,8 +766,25 @@ The energy density of the magnetic field is then:
 \[u_B = \frac{U}{V} = \frac{\frac{1}{2} (\mu_0 n^2 A l) I^2}{A l} = \frac{1}{2} \mu_0 n^2 I^2\]
 Since the magnetic field inside the solenoid is $B = \mu_0 n I$, we can rewrite the energy density as:
 \[\boxed{u_B = \frac{1}{2\mu_0} B^2}\]
-Like how we found the generalized electric field energy density using a parallel plate capacitor. This equation is valid for any magnetic field, not just the uniform field inside a solenoid.
-    \item Describe the principle of operation of a generator and a motor.
+Like how we found the generalized electric field energy density using a parallel plate capacitor. This equation is valid for any magnetic field, not just the uniform field inside a solenoid.\\\\
+Using the magnetic field energy density, we can find the total energy stored in any magnetic field by integrating the energy density over the volume of the field.
+\newpage
+    \item Describe the principle of operation of a generator and a motor.\\\\
+By Faraday's law, we can induce an emf in a coil of wire by changing its orientation in a magnetic field. We can solve for the emf induced in a rotating coil as follows:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Motor.jpg}
+\end{figure}
+As the coil rotates, the magnetic flux through the coil will decrease, thus inducing a ccw current in the coil. First we can define how the orientation of the coil changes by:
+\[\hat{n}=\cos(\omega t)\hat{k}+\sin(\omega t)\hat{\imath}\]
+The magnetic field is constant and points in the $\hat{k}$ direction $\vec{B}=B\hat{k}$, so the magnetic flux through the coil is:
+\[\Phi_B = \vec{B}\cdot\hat{n}A = BA\cos(\omega t)\]
+The emf induced in the coil is then:
+\[\mathcal{E} = -N\frac{d\Phi_B}{dt}, \quad N=1\]
+\[\mathcal{E} = -\frac{d}{dt}(AB\cos(\omega t)) = AB\omega \sin(\omega t)\]
+\[\boxed{\mathcal{E} = AB\omega \sin(\omega t)}\]
+This is the principle of operation of an AC generator, where mechanical energy is converted into electrical energy by rotating a coil in a magnetic field. It is AC because the direction of the induced current changes from ccw to cw as the coil continues to rotate.\\\\
+Similarly, a motor works in reverse by supplying an AC current to a coil in a magnetic field, which produces a torque on the coil that causes it to rotate, thereby converting electrical energy into mechanical energy.
 \end{enumerate}
 
 \section*{Chapter 32 - Maxwell's Equations}
