@@ -13,13 +13,22 @@
     \centering
     \includegraphics[width=0.6\textwidth]{Kinematics.png}
 \end{figure}
+\noindent
+Our goal is to find the angles $\theta_2$, $\theta_3$, $\theta_4$, and $\theta_5$ given the input angle $\theta_1$ and the lengths $l_1$, $l_2$, $l_3$, $l_4$, and $l_5$. We can use two methods to solve for these angles: the vector loop method and the circle intersection method.\\
+\textbf{Using the vector loop method:}\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Vector loop.png}
+\end{figure}
+\noindent
+By numerically solving the equations, we can find angles $\theta_2$ and $\theta_3$. Following that, we know that $l_5$ is always perpendicular to $l_3$, and thus we can find $\theta_4$ by trigonometry. By using the vector from C to D $\vec{l_5}$ we can find the point $D$. Knowing both $D$ and $E$, we can find angle $\theta_5$ using trigonometry as well.\\
 \textbf{Using the circle intersection method:}\\
+We found that it is faster and cleaner to use the circle intersection method to define the angles and points instead.\\
 We know the locations of the fixed points $O$, $C$, and $E$:
 \[O = (0,0) \quad C = (0, l_4) \quad E = (-6,l_4)\]
 We know the Cartesian coordinates for points $A$ and $B$ by defining it in terms of a vector relative their respective fixed points:
-\[\vec{l_1}= \left<l_2 \cos(\theta_2), l_2 \sin(\theta_2)\right> \implies A = \left<0,0\right>+\left<l_2 \cos(\theta_2), l_2 \sin(\theta_2)\right>\]
+\[\vec{l_1}= \left<l_2 \cos(\theta_1), l_2 \sin(\theta_1)\right> \implies A = \left<0,0\right>+\left<l_2 \cos(\theta_1), l_2 \sin(\theta_1)\right>\]
 \[\vec{l_3} = \left<l_3 \cos(\theta_3), l_3 \sin(\theta_3)\right> \implies B = \left<0,l_4\right>+\left<l_3 \cos(\theta_3), l_3 \sin(\theta_3)\right>\]
-We can then define the equations of the circles centered at $O$ and $C$ with radii $l_2$ and $l_3$ respectively:
-\[\]
+
 
 \end{document}

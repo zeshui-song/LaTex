@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1764620512.12515 "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" "main.pdf" "main" 1764620512.67056 0
+["pdflatex"] 1764622411.15495 "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" "main.pdf" "main" 1764622411.82674 0
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761417027 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -61,9 +61,10 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1700599895 13231 2c742011581e2bf297e33520567d9464 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1700599895 32515 51caec75eda9c8890135f12f1a4eddc3 ""
   "Kinematics.png" 1764619478 28592 a108c1c0ee25f5177452589be006fe29 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" 1764620511 1046 2806c72f6614e11511fac93945ba2295 ""
-  "main.aux" 1764620512 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "main.tex" 1764620511 1046 2806c72f6614e11511fac93945ba2295 ""
+  "Vector loop.png" 1764620766 44155 a935ffcd826080dd2ba6b912a7110487 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" 1764622410 1852 ebd5344320fcc8d9d30db430ade6c723 ""
+  "main.aux" 1764622411 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "main.tex" 1764622410 1852 ebd5344320fcc8d9d30db430ade6c723 ""
   (generated)
   "main.aux"
   "main.log"
