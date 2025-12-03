@@ -1,0 +1,213 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{amsmath, amsfonts, bm, graphicx}
+\usepackage{float,mathrsfs}
+\geometry{margin=1in}
+\title{}
+\date{}
+\author{}
+
+\begin{document}
+\begin{center}
+    \Large \textbf{Differential Equations Review Sheet} \\
+    \normalsize Laplace transforms and Fourier series
+\end{center}
+\section*{Laplace Transform Formulas}
+\renewcommand{\arraystretch}{2}
+\[
+\begin{tabular}{|p{5cm}||p{5cm}|}
+\hline
+$f(t)$ & $F(s)$ \\
+\hline\hline
+$1$ & $\dfrac{1}{s}$ \\
+\hline
+$t^{n}$ & $\dfrac{n!}{s^{n+1}}$ \\
+\hline
+$e^{at}$ & $\dfrac{1}{s-a}$ \\
+\hline
+$\sin(at)$ & $\dfrac{a}{s^{2}+a^{2}}$ \\
+\hline
+$\cos(at)$ & $\dfrac{s}{s^{2}+a^{2}}$ \\
+\hline
+$\sinh(at)$ & $\dfrac{a}{s^{2}-a^{2}}$ \\
+\hline
+$\cosh(at)$ & $\dfrac{s}{s^{2}-a^{2}}$ \\
+\hline
+$\mathscr{U}(t-a)$ & $\dfrac{e^{-as}}{s}$ \\
+\hline
+$\mathscr{U}(t-a)f(t-a)$ & $e^{-as}F(s)$ \\
+\hline
+$e^{at}f(t)$ & $F(s-a)$ \\
+\hline
+$t^n f(t)$ & $(-1)^n\dfrac{d^n}{ds^n}F(s)$ \\
+\hline
+$\sin(at)-at\cos(at)$ & $\dfrac{2a^3}{(s^2+a^2)^2}$ \\
+\hline
+$t\sin(at)$ & $\dfrac{2as}{(s^2+a^2)^2}$ \\
+\hline
+$f * g$ & $F(s)G(s)$ \\
+\hline
+$\delta(t-a)$ & $e^{-sa}$ \\
+\hline
+$f'(t)$ & $sF(s)-f(0)$ \\
+\hline
+$f''(t)$ & $s^2F(s)-sf(0)-f'(0)$ \\
+\hline
+\end{tabular}
+\]
+\section*{7.1 Definition of the Laplace Transform}
+\textbf{Laplace Transform}\\
+For a function $f(t)$ defined for $t \geq 0$, the Laplace transform of $f(t)$ is defined as
+$$\boxed{\mathscr{L}\{f(t)\}=\int_0^\infty e^{-st}f(t) \ dt}$$
+The Laplace transform is a linear transformation meaning that
+\[ \mathscr{L}\{\alpha f(t)+\beta g(t)\}=\alpha\mathscr{L}\{f(t)\}+\beta\mathscr{L}\{g(t)\}\]
+\textbf{Exponential order}\\
+A function $f$ is said to be of exponential order if there exist constants $M$, $c$, and $T$ such that
+$$|f(t)| \leq Me^{ct} \text{ for all } t > T$$
+Basically, this means $f$ is \textit{bounded} by an exponential function as $t$ approaches infinity.\\\\
+\underline{\textbf{Thm: Sufficient Condition for Existence}}\\
+If $f$ is piecewise continuous on $[0,\infty)$ and of exponential order, then the Laplace transform $\mathscr{L}\{f(t)\}$ exists for $s>c$.
+\section*{7.2 Inverse Transforms and Transforms of Derivatives}
+\textbf{Inverse Laplace Transform}\\
+Let $F(s)$ be the Laplace transform of $f(t)$ ($\mathscr{L}\{f(t)\}=F(s)$). Then we say that $f(t)$ is the inverse Laplace transform of $F(s)$ and write
+$$f(t)=\mathscr{L}^{-1}\{F(s)\}$$
+The inverse Laplace transform is also linear:
+$$ \mathscr{L}^{-1}\{\alpha F(s)+\beta G(s)\}=\alpha\mathscr{L}^{-1}\{F(s)\}+\beta\mathscr{L}^{-1}\{G(s)\}$$
+\underline{\textbf{Thm: Transform of a Derivative}}\\
+If $f,f',\cdots,f^{(n-1)}$ are continuous on $[0,\infty]$ and are of exponential order and $f^{(n)}(t)$ is piecewise continuous on $[0,\infty)$ then we define the Laplace transform of $f^{(n)}(t)$ as
+$$\boxed{\mathscr{L}\{f^{(n)}(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots - f^{(n-1)}(0)}$$
+where $F(s)=\mathscr{L}\{f(t)\}$ and $f(0),f'(0),\cdots,f^{(n-1)}(0)$ are the initial conditions.
+\newpage\noindent
+\textbf{Method:}\\
+To solve a differential equation with given initial conditions using Laplace transforms:
+\begin{enumerate}  
+    \item Apply the Laplace transform $\mathscr{L}$ to both sides of the differential equation. This transforms the differential equation to an algebraic equation in the $s$-domain in terms of $Y(s)=\mathscr{L}\{y(t)\}$.
+    
+    \item Solve the algebraic equation for $Y(s)$.
+    
+    \item Apply the inverse Laplace transform $\mathscr{L}^{-1}$ to find $y(t)$, converting from the $s$-domain back to the time domain.
+\end{enumerate}
+\underline{Note:} The Laplace transform already solves for the initial conditions when transforming derivatives.\\\\
+Typically, partial fraction decomposition is needed to find the inverse Laplace transform.\\\\
+\textbf{Partial fraction decomposition}\\
+For the method of partial fraction decomposition, the degree of the numerator must be less than the degree of the denominator.
+\begin{enumerate}
+    \item Factor the denominator completely into:
+    \begin{itemize}
+\item Linear factors: $(ax+b)$
+\item Repeated linear factors: $(ax+b)^n$
+\item Irreducible quadratics: $(ax^2+bx+c)$
+\end{itemize}
+    \item Write the Decomposition\\\\
+\textbf{Distinct linear factors:}
+\[
+\frac{P(x)}{(x-a)(x-b)} = \frac{A}{x-a} + \frac{B}{x-b}
+\]
+
+\textbf{Repeated linear factors:}
+\[
+\frac{P(x)}{(x-a)^n}
+= \frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + \cdots + \frac{A_n}{(x-a)^n}
+\]
+
+\textbf{Irreducible quadratic factors:}
+\[
+\frac{P(x)}{x^2+ax+b} = \frac{Ax+B}{x^2+ax+b}
+\]
+    \item Solve for coefficients
+\end{enumerate}
+\newpage
+\section*{7.3 Operational Properties I}
+\underline{\textbf{First Translation Theorem}}\\
+ If $\mathscr{L}\{f(t)\}=F(s)$ and $a$ is any real number then 
+ $$\boxed{\mathscr{L}\{e^{at}f(t)\}=F(s-a)}$$
+\underline{Note:} This basically shifts the function in the $s$-domain, so instead of $s$ we have $s-a$. Another way to write this is
+$$\mathscr{L}\{e^{at}f(t)\}=F(s-a)=\left.\mathscr{L}\{f(t)\}\right|_{s\rightarrow s-a}$$
+\textbf{Unit Step Function}\\
+The unit step function or Heaviside function is defined as
+$$ \mathscr{U}(t-a)=   \left\{
+\begin{array}{ll}
+      0 & 0\le t<a \\
+      1 & t\ge a \\
+\end{array}
+\right.  $$
+Using this function, we can represent piecewise functions as a single function. For example,
+$$ f(t)=  \left\{
+\begin{array}{ll}
+      g(t) & 0\le t<a \\
+      h(t) & t\ge a \\
+\end{array}
+\right.  $$
+We can define this in the following way
+$$f(t) = g(t)(1-\mathscr U(t-a))+h(t)\mathscr U(t-a)$$
+\underline{Note:} We can do this using the fact that $\mathscr U(t-a)$ is 0 before $t=a$ and 1 after $t=a$. Thus, $1-\mathscr U(t-a)$ is 1 before $t=a$ and 0 after $t=a$.\\\\
+\underline{\textbf{Second Translation Theorem}}\\
+If $F(s)=\mathscr{L}\{f(t)\}$ and $a>0$, then 
+$$\boxed{\mathscr{L}\{f(t-a)\mathscr{U}(t-a)\}=e^{-as}F(s)} $$
+If $f(t)=\mathscr{L}^{-1}\{F(s)\}$ the inverse form for $a>0$ is
+$$\mathscr{L}^{-1}\{e^{-as}F(s)\}=f(t-a)\mathscr{U}(t-a)$$
+Note that $f(t-a)$ shifts the function to the right by $a$ and $\mathscr{U}(t-a)$ makes the function equal to 0 for $t<a$, thus delaying the function by $a$ units.\\\\
+\underline{Note:} The first translation theorem multiplies $f(t)$ by an exponential in the time domain, which produces a shift of the transform in the $s$-domain. The second translation theorem multiplies $F(s)$ by an exponential in the $s$-domain, which produces a shift of the function in the time domain.
+\newpage
+\section*{7.4 Operational Properties II}
+\textbf{Derivatives of Transforms}\\
+If $F(s)=\mathscr{L}\{f(t)\}$ and $n$ is a positive integer, then
+$$\boxed{\mathscr{L}\{t^n f(t)\}=(-1)^n \dfrac{d^n}{ds^n}F(s)}$$
+Each multiplication by $t$ in the time domain corresponds to a differentiation with respect to $s$ in the $s$-domain, along with a factor of $(-1)^n$.\\\\
+\textbf{Convolution}\\
+If functions $f$ and $g$ are piecewise continuous on the interval $[0,\infty)$, then the convolution of $f$ and $g$ is defined as
+$$\boxed{f*g=\int_0^t f(\tau)g(t-\tau) \ d\tau }$$
+\underline{\textbf{Convolution Theorem}}\\
+If $f(t)$ and $g(t)$ are piecewise continuous on $[0,\infty)$ and of exponential order, then 
+$$\boxed{\mathscr{L}\{f*g\}=\mathscr{L}\{f(t)\}\mathscr{L}\{g(t)\}}$$
+\[\boxed{\mathscr{L}^{-1}\{F(s)G(s)\}=f*g}\]
+Meaning that a convolution in the time domain corresponds to multiplication in the $s$-domain, and vice versa.\\\\
+\textbf{Laplace Transform of Periodic Functions}\\
+If $f(t)$ is piecewise continuous on $[0,\infty)$, of exponential order, and periodic with period $T$, then its Laplace transform is given by
+$$\boxed{\mathscr{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^Te^{-st}f(t)dt}$$
+\newpage
+\section*{7.5 Dirac Delta Function}
+The Dirac delta function models an instantaneous impulse, where there is a very large force applied over a very short time interval, resulting in a sharp peak at a specific point in time. It is not a function in the traditional sense, but rather a distribution. \\\\
+\textbf{Unit Impulse}\\
+The unit impulse function $\delta(t-t_0)$ is defined as a piecewise function for $a,t_0>0$.
+$$\delta_a(t-t_0)= \left\{
+\begin{array}{ll}
+      0, & 0\le t<t_0-a \\
+      \frac{1}{2a}, & t_0-a\le t< t_0+a\\
+      0, &t\ge t_0+a \\
+\end{array}
+\right.  $$
+\vspace{-2em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Dirac.png}
+\end{figure}
+It is called a unit impulse because the area under the curve is equal to 1:
+$$\int_0^\infty \delta_a(t-t_0) \ dt=1$$
+\newpage\noindent
+\textbf{Dirac Delta Function}\\
+The Dirac delta function $\delta(t-t_0)$ is defined as the limit of the unit impulse as $a$ approaches 0:
+$$\delta(t-t_0)=\lim_{a\rightarrow 0}\delta_a(t-t_0)$$
+Visually, as $a$ approaches 0, the rectangle becomes narrower and taller, approaching an infinitely tall and narrow spike at $t=t_0$. The area under the curve remains equal to 1.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Dirac delta.png}
+\end{figure}\noindent
+Note that the Dirac delta function is not a function in the traditional sense and can be characterized by the two properties:
+$$\delta(t-t_0)= \left\{
+\begin{array}{ll}
+      \infty, & t=t_0 \\
+      0, & t\neq t_0
+\end{array}\right.  $$
+and
+$$\int_0^\infty \delta(t-t_0) \ dt=1$$
+Basically, it is zero everywhere except at $t=t_0$, where it is infinitely large, but the area under the curve is equal to 1.\\\\
+\textbf{Laplace Transform of the Dirac Delta Function}\\
+For $t_0>0$, 
+$$\boxed{\mathscr{L}\{\delta(t-t_0)\}=e^{-st_0}}$$
+\\\\
+\textbf{End of Laplace Transform notes}
+\section*{11.1 Orthogonal Functions}
+
+\end{document}
