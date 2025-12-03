@@ -560,7 +560,7 @@ Now let's find the magnitude of the force on the current loop due to the bar mag
     \includegraphics[width=0.5\textwidth]{dipole 1.jpg}
 \end{figure}
 \end{multicols}
-\textbf{Force from a Magnetic Mirror (*work in progress*)}\\
+\textbf{Force from a Magnetic Mirror}\\
 A charged particle can be confined to a region of space by a magnetic field that is stronger at the ends than in the middle. As the particle approaches the stronger field (shown by the more closely spaced field lines), a component of the magnetic force pushes it back toward the center of the region, reflecting it back and forth between the two ends.\\\\
 In a magnetic mirror, a charged particle moves in a helical path with
 \[\vec{v} = v_{\parallel} \hat{B} + v_{\perp} \hat{\perp}\]
@@ -601,8 +601,11 @@ Since \( \dfrac{ds}{dt} = v_{\parallel} \), this gives
 = -\mu \frac{dB}{ds}\]
 Therefore, the parallel force on the particle is
 \[\boxed{F_{\parallel}= -\mu \frac{dB}{ds}}\]
-\underline{Note:} We can also use try using $\vec{F}_B=q\vec{v} \times \vec{B}$ to derive this result, using Gauss's law for magnetism $\nabla \cdot \vec{B} = 0 \implies \frac{dB}{d_x}+\frac{dB}{dy}+\frac{dB}{dz}=0$ to relate the changes in $B$ along and perpendicular to the field lines. Another way is to use the conservation of energy argument along with Faraday's law to relate the changes in $v_{\perp}$ and $v_{\parallel}$ as the particle moves into regions of different magnetic field strength.\\\\
 \underline{Note:} The magnetic force only reflects the particle as a result of the changing magnetic field strength (shown by the curvature of the field lines), which creates a component of the magnetic force along the direction of motion of the particle.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Magnetic bottle.png}
+\end{figure}
 \end{enumerate}
 \newpage
 \section*{Chapter 30 \& 31.11 - Induction and Inductance}
@@ -746,8 +749,27 @@ Similar to self-induction, the emf induced in coil 2 due to a changing current i
 \[\boxed{\mathcal{E}_2 = -M_{21} \frac{dI_1}{dt}}\]
 If the current in coil 2 changes, it will also induce an emf in coil 1 given by:
 \[\boxed{\mathcal{E}_1 = -M_{12} \frac{dI_2}{dt}}\]
+\newpage\noindent
 \textbf{Mutual Induction of a Transformer}\\
-FINISH THIS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\\\\\\
+Suppose there are 2 concentric coils of wire, coil 1 with $N_1$ turns, length $l_1$, and area $A_1$, and coil 2 with $N_2$ turns, length $l_2$, and area $A_2$. Coil 1 carries a current $I_1$, and coil 2 is an open circuit (not carrying any current).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Transformer.jpg}
+\end{figure}
+The magnetic field within coil 1 is the same as that of a solenoid:
+\[B_1 = \mu_0 \frac{N_1}{l_1} I_1\]
+The magnetic flux through a single turn of coil 2 is:
+\[\Phi_{B2} = B_1 A_2 = \mu_0 \frac{N_1}{l_1} I_1 A_2\]
+Thus, the mutual inductance of coil 2 with respect to coil 1 is:
+\[M_{21} = \frac{N_2 \Phi_{B2}}{I_1} = \frac{N_2 (\mu_0 \frac{N_1}{l_1} I_1 A_2)}{I_1} = \mu_0 \frac{N_1 N_2 A_2}{l_1} \]
+The voltage across coil 2 when the current in coil 1 is changing is then:
+\[V_2 = |\mathcal{E}_2| = M_{21} \frac{dI_1}{dt}\]
+\[V_2 =\mu_0 \frac{N_1 N_2 A_2}{l_1} \frac{dI_1}{dt}\]
+Since coil 2 doesn't induce a magnetic flux in coil 1 (open circuit), the voltage across coil 1 is just its self-induced emf:
+\[V_1 = |\mathcal{E}_1|= L_1 \frac{dI_1}{dt}, \quad L_1 = \mu_0 \frac{N_1^2 A_1}{l_1}\]
+\[V_1 = \mu_0 \frac{N_1^2 A_1}{l_1} \frac{dI_1}{dt}\]
+The ratio of the voltages across the two coils is then:
+\[\frac{V_2}{V_1} = \frac{N_2}{N_1}\quad \text{(transformer equation)}\]
     \item Be able to calculate the energy stored in magnetic fields for a given inductor using either the formula involving inductance or the energy density of the magnetic field.\\\\
 \textbf{Energy Stored in an Inductor}\\
 When current flows through an inductor, energy is stored in the magnetic field created by the current. The energy stored in the magnetic field of an inductor can be found by integrating the power supplied to the inductor as the current increases from 0 to $I$:
@@ -786,11 +808,72 @@ The emf induced in the coil is then:
 This is the principle of operation of an AC generator, where mechanical energy is converted into electrical energy by rotating a coil in a magnetic field. It is AC because the direction of the induced current changes from ccw to cw as the coil continues to rotate.\\\\
 Similarly, a motor works in reverse by supplying an AC current to a coil in a magnetic field, which produces a torque on the coil that causes it to rotate, thereby converting electrical energy into mechanical energy.
 \end{enumerate}
-
+\newpage
 \section*{Chapter 32 - Maxwell's Equations}
+\makeatletter
+\@fleqntrue
+\makeatother
+\textbf{In integral form:}
 \begin{enumerate}
-    \item Describe Gauss's law for Magnetism and its applications.
-    \item Describe the Ampere-Maxwell law, the displacement current, and calculate the magnetic field in a charging or discharging capacitor.
+    \item \textbf{Gauss's Law for Electricity}\\
+    Relates the electric flux through a closed 3D Gaussian surface to the total charge enclosed within that surface.
+    \[\int \vec{E}\cdot\hat{n}\,dA=\frac{Q_{\text{enc}}}{\varepsilon_0}\]
+    \item \textbf{Gauss's Law for Magnetism}\\
+    Any 3D Gaussian surface will have zero net magnetic flux (no magnetic monopoles).
+    \[\int \vec{B}\cdot\hat{n}dA=0\]
+    \item \textbf{Ampere-Maxwell Law}\\
+    Relates the magnetic circulation around a closed Amperian loop to the enclosed current and changing electric flux through the surface bounded by the loop.
+    \[\oint \vec{B}\cdot d\vec{l}=\mu_0 \left[I_{\text{enc}}+\varepsilon_0 \frac{d\Phi_E}{dt}\right],\quad \Phi_E=\int \vec{E}\cdot \hat{n}\,dA\]
+    \item \textbf{Faraday's Law of Induction}\\
+    Relates the electric circulation around a closed Faradian loop to the changing magnetic flux through the surface bounded by the loop.    
+    \[\oint \vec{E}\cdot d\vec{l}=-\frac{d\Phi_B}{dt}, \quad \Phi_B = \int \vec{B}\cdot \hat{n}\,dA\]
+    \underline{Note:} For coils with $N$ turns, multiply the flux by $N$. 
+\end{enumerate}
+\textbf{In differential form:}
+\begin{enumerate}
+    \item \textbf{Gauss's Law for Electricity}
+    \[\vec{\nabla}\cdot\vec{E}=\frac{\rho}{\varepsilon_0}\]
+    \item \textbf{Gauss's Law for Magnetism}
+    \[\vec{\nabla}\cdot\vec{B}=0\]
+    \item \textbf{Ampere-Maxwell Law}
+    \[\vec{\nabla}\times\vec{B}=\mu_0 \left(\vec{J}+\varepsilon_0 \frac{\partial \vec{E}}{\partial t}\right), \quad I_{\text{enc}}=\int \vec{J}\cdot \hat{n}dA\]
+    \item \textbf{Faraday's Law of Induction}
+    \[\vec{\nabla}\times\vec{E}=-\frac{\partial \vec{B}}{\partial t}\]
+\end{enumerate}
+\makeatletter
+\@fleqnfalse
+\makeatother
+\newpage
+\begin{enumerate}
+    \item Describe Gauss's law for Magnetism and its applications.\\\\
+Gauss's law for magnetism states that the net magnetic flux through any closed surface is zero. This is because there only exists magnetic dipoles, so no matter how much or how little magnetic material is enclosed, the net magnetic flux will be zero. \\\\
+\underline{Note:} Even if you split a magnet into pieces, new north and south poles will form on each piece, so there are still no magnetic monopoles. Thus, even if you enclose a section of a magnet, Gauss's law for magnetism still holds.
+    \item Describe the Ampere-Maxwell law, the displacement current, and calculate the magnetic field in a charging or discharging capacitor.\\\\
+Consider the following charging capacitor with rectangular plates of area $A$ and separation distance $d$. Since it is not fully charged, there is current $I$ in the wires, inducing a magnetic field.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Charging cap.jpg}
+\end{figure}
+The magnetic field around the wire can be found using Ampere's law:
+\[\oint \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}\]
+\[B(2\pi r) = \mu_0 I \implies B = \frac{\mu_0 I}{2\pi r}\]
+However in the region between the plates, there is no current, so $I_{\text{enc}}=0$, and thus Ampere's law would give $B=0$. However, we can still draw a slanted amperian loop that encloses the wire and passes between the plates. Thus, this indicates that Ampere's law is incomplete.\\\\
+To fix this, we have the Ampere-Maxwell law  with an additional term called the \textbf{displacement current}, which accounts for the changing electric flux between the plates of the capacitor. The displacement current is defined as:
+\[I_d = \varepsilon_0 \frac{d\Phi_E}{dt}, \quad \Phi_E = \int \vec{E}\cdot \hat{n} dA\]
+Thus, the Ampere-Maxwell law is:
+\[\oint \vec{B}\cdot d\vec{l}=\mu_0 \left(I_{\text{enc}} + \varepsilon_0 \frac{d\Phi_E}{dt}\right)\]
+\newpage\noindent
+To find the magnetic field between the plates, we first know that the electric field between the plates is:
+\[E = \frac{V}{d}, \qquad V = \frac{Q}{C}, \qquad C = \varepsilon_0 \frac{A}{d}\]
+\[E = \frac{1}{d}Q\frac{d}{\varepsilon_0 A} = \frac{Q}{\varepsilon_0 A}\]
+The electric flux through a circular amperian loop that fully encloses the plates is then:
+\[\Phi_E = \int \vec{E}\cdot \hat{n} dA = EA = \frac{Q}{\varepsilon_0 A} A = \frac{Q}{\varepsilon_0}\]
+The displacement current is then:
+\[I_d = \varepsilon_0 \frac{d\Phi_E}{dt} = \varepsilon_0 \frac{d}{dt}\left(\frac{Q}{\varepsilon_0}\right) = \frac{dQ}{dt} = I\]
+Thus, the magnetic field between the plates can be found using the Ampere-Maxwell law:
+\[\oint \vec{B}\cdot d\vec{l}=\mu_0 \varepsilon_0 \frac{d\Phi_E}{dt}\]
+\[B(2\pi r) = \mu_0 I \implies \boxed{B = \frac{\mu_0 I}{2\pi r}}\]
+This is the same magnetic field as outside the plates, showing that the magnetic field is continuous across the capacitor.
 \end{enumerate}
 
 \section*{Chapter 33 - Electromagnetic Waves}

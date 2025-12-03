@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  2 DEC 2025 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  3 DEC 2025 13:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -735,162 +735,179 @@ File: Fields_in_magnetic_bottles.jpg Graphic file (type jpg)
 Package pdftex.def Info: Fields_in_magnetic_bottles.jpg  used on input line 571.
 (pdftex.def)             Requested size: 234.8775pt x 128.31358pt.
 [25 <./Fields_in_magnetic_bottles.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 603--606
-
- []
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 610--613
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
+<Magnetic bottle.png, id=146, 916.6245pt x 392.667pt>
+File: Magnetic bottle.png Graphic file (type png)
+<use Magnetic bottle.png>
+Package pdftex.def Info: Magnetic bottle.png  used on input line 607.
+(pdftex.def)             Requested size: 234.8775pt x 100.61707pt.
+ [26 <./Magnetic bottle.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 613--616
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--636
+Underfull \hbox (badness 10000) in paragraph at lines 627--629
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--639
 
  []
 
 [27]
-<Motional emf.jpg, id=153, 1978.39125pt x 1408.26125pt>
+<Motional emf.jpg, id=154, 1978.39125pt x 1408.26125pt>
 File: Motional emf.jpg Graphic file (type jpg)
 <use Motional emf.jpg>
-Package pdftex.def Info: Motional emf.jpg  used on input line 645.
+Package pdftex.def Info: Motional emf.jpg  used on input line 648.
 (pdftex.def)             Requested size: 234.8775pt x 167.17903pt.
  [28 <./Motional emf.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 674--677
+Underfull \hbox (badness 10000) in paragraph at lines 677--680
 
  []
 
 [29]
-<Eddy.png, id=160, 502.87875pt x 418.56375pt>
+<Eddy.png, id=161, 502.87875pt x 418.56375pt>
 File: Eddy.png Graphic file (type png)
 <use Eddy.png>
-Package pdftex.def Info: Eddy.png  used on input line 683.
+Package pdftex.def Info: Eddy.png  used on input line 686.
 (pdftex.def)             Requested size: 140.92793pt x 117.29922pt.
-<Eddy 2.png, id=161, 963.6pt x 539.01375pt>
+<Eddy 2.png, id=162, 963.6pt x 539.01375pt>
 File: Eddy 2.png Graphic file (type png)
 <use Eddy 2.png>
-Package pdftex.def Info: Eddy 2.png  used on input line 691.
+Package pdftex.def Info: Eddy 2.png  used on input line 694.
 (pdftex.def)             Requested size: 187.89914pt x 105.10313pt.
-<Eddy Brake.png, id=162, 963.6pt x 650.43pt>
+<Eddy Brake.png, id=163, 963.6pt x 650.43pt>
 File: Eddy Brake.png Graphic file (type png)
 <use Eddy Brake.png>
-Package pdftex.def Info: Eddy Brake.png  used on input line 699.
+Package pdftex.def Info: Eddy Brake.png  used on input line 702.
 (pdftex.def)             Requested size: 187.89914pt x 126.82837pt.
  [30 <./Eddy.png> <./Eddy 2.png> <./Eddy Brake.png>]
-<Lam.png, id=169, 1204.5pt x 574.145pt>
+<Lam.png, id=170, 1204.5pt x 574.145pt>
 File: Lam.png Graphic file (type png)
 <use Lam.png>
-Package pdftex.def Info: Lam.png  used on input line 707.
+Package pdftex.def Info: Lam.png  used on input line 710.
 (pdftex.def)             Requested size: 187.89914pt x 89.561pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 709--712
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 712--715
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--718
+
+ []
+
 [31 <./Lam.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 716--719
+Underfull \hbox (badness 10000) in paragraph at lines 719--722
 
  []
 
 
-Overfull \hbox (6.0456pt too wide) in paragraph at lines 716--719
+Overfull \hbox (6.0456pt too wide) in paragraph at lines 719--722
 \OT1/cmr/m/n/12 Inductance mea-sures the abil-ity of a con-duc-tor to in-duce an emf in it-self (self-inductance)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 729--733
+Underfull \hbox (badness 10000) in paragraph at lines 732--736
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 737--741
+Underfull \hbox (badness 10000) in paragraph at lines 740--744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 743--746
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--751
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--751
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--751
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 751--754
+Underfull \hbox (badness 10000) in paragraph at lines 746--749
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 760--764
+<Transformer.jpg, id=182, 2229.32875pt x 1311.90125pt>
+File: Transformer.jpg Graphic file (type jpg)
+<use Transformer.jpg>
+Package pdftex.def Info: Transformer.jpg  used on input line 757.
+(pdftex.def)             Requested size: 234.8775pt x 138.2041pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--776
+
+ []
+
+[34 <./Transformer.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 782--786
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--771
+Underfull \hbox (badness 10000) in paragraph at lines 790--793
 
  []
 
-[34]
-<Motor.jpg, id=184, 3146.75626pt x 857.2025pt>
+[35]
+<Motor.jpg, id=189, 3146.75626pt x 857.2025pt>
 File: Motor.jpg Graphic file (type jpg)
 <use Motor.jpg>
-Package pdftex.def Info: Motor.jpg  used on input line 776.
+Package pdftex.def Info: Motor.jpg  used on input line 798.
 (pdftex.def)             Requested size: 375.80544pt x 102.36282pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--777
+Underfull \hbox (badness 10000) in paragraph at lines 794--799
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 785--788
+Underfull \hbox (badness 10000) in paragraph at lines 807--810
+
+ []
+
+[36 <./Motor.jpg>] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 848--851
 
  []
 
 
-Overfull \hbox (13.03024pt too wide) in paragraph at lines 798--799
+Underfull \hbox (badness 10000) in paragraph at lines 848--851
+
+ []
+
+<Charging cap.jpg, id=197, 2669.975pt x 1039.885pt>
+File: Charging cap.jpg Graphic file (type jpg)
+<use Charging cap.jpg>
+Package pdftex.def Info: Charging cap.jpg  used on input line 855.
+(pdftex.def)             Requested size: 234.8775pt x 91.47525pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 851--856
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--862
+
+ []
+
+[38 <./Charging cap.jpg>]
+Overfull \hbox (13.03024pt too wide) in paragraph at lines 881--882
 []\OT1/cmr/m/n/12 Test whether a given ar-range-ment of prop-a-gat-ing elec-tro-mag-netic fields sat-is-fies Maxwell's
  []
 
-[35 <./Motor.jpg>] [36] (main.aux)
+[39] [40] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3729 strings out of 474486
- 57039 string characters out of 5743755
+ 3750 strings out of 474486
+ 57533 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25977 multiletter control sequences out of 15000+600000
+ 25998 multiletter control sequences out of 15000+600000
  568334 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,65p,733b,407s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (36 pages, 15585787 bytes).
+ <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (40 pages, 16585460 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
+ 255 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 
