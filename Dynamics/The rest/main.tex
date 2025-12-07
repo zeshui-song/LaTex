@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amsfonts,amssymb, bm, graphicx,geometry}
+\usepackage{booktabs} 
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{bm, xcolor}
+\geometry{margin=1in}
+\title{}
+\date{}
+\author{}
+
+\begin{document}
+
+\begin{center}
+    \Large \textbf{Dynamics Formula Sheet} \\
+    \normalsize The rest of Dynamics
+\end{center}
+\section*{Work and Energy of Rigid Bodies}
+\textbf{Review from energy of particles:}\\
+Work-Energy Principle:
+\[T_1 + U_{1\to2}=T_2\]
+where \(T\) is kinetic energy and \(U\) is work done by all forces from state 1 to state 2.\\\\
+Conservation of Mechanical Energy:
+\[T_1 + V_{g1}+V_{e1}+U^{NC}_{1\to2}=T_2 + V_{g2}+V_{e2}\]
+\[U_{1\to2}=\int_{A1}^{A2} \mathbf{F} \cdot d\mathbf{r}\]
+\underline{Note:} Internal forces do not do work on a rigid body.\\\\
+\textbf{Forces that do zero work}\\
+\begin{itemize}
+    \item Force applied at a fixed point (ex: reaction forces at a pin or surface)
+    \item Forces acting perpendicular to motion (ex: weight and normal force when horizontal motion only)
+    \item When rolling without slipping, the friction at the contact point does no work
+\end{itemize}
+\textbf{Work of a moment couple}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Couple.png}
+\end{figure}
+\[\boxed{U_{1\to2} = \int_{\theta_1}^{\theta_2} M \, d\theta}\]
+For a constant moment \(M\):
+\[U_{1\to2} = M(\theta_2 - \theta_1)\]
+\newpage\noindent
+\textbf{Kinetic Energy of a Rigid Body}\\
+The total kinetic energy of a rigid body can be expressed as the sum of the kinetic energy of its center of mass and the kinetic energy due to rotation about the center of mass.
+\[\boxed{T = \frac{1}{2}m\bar{v}^2+\frac{1}{2}\bar{I}\omega^2}\]
+\textbf{Non-centroidal Rotation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Non centroid.png}
+\end{figure}\noindent
+For rotation about a FIXED axis $o$:
+\[\boxed{T=\frac{1}{2}I_o\omega^2}\]
+\textbf{Power}\\
+\[P=\frac{dU}{dt}=\mathbf{F} \cdot \mathbf{v}\]
+\[P=\frac{dU}{dt}=M\frac{d\theta}{dt}=M\omega\]
+\newpage
+\section*{Impulse and Momentum of Rigid Bodies}
+Like energy, total impulse and momentum of a rigid body is equal to a linear and rotational component at the center of mass.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Impulse momentum.png}
+\end{figure}
+\noindent
+From the impulse momentum diagram, we can write 3 equations for rigid body motion:
+\[\text{X-direction:}\quad
+m \bar{v}_{x,1} + \sum \int_{t_1}^{t_2} \bar{\mathbf{F}}_x \, dt = m \bar{v}_{x,2}\]
+\[\text{Y-direction:}\quad
+m \bar{v}_{y,1} + \sum \int_{t_1}^{t_2} \bar{\mathbf{F}}_y \, dt = m \bar{v}_{y,2}\]
+\[\text{Moment about point } G:\quad
+\bar{I}\omega_1+ \sum \int_{t_1}^{t_2} \mathbf{M_G} \, dt
+= \bar{I}\omega_2\]
+We can sum moments about any point. For a point \(P\) not at the center of mass, we have:
+\[\text{Moment about point } P:\quad
+\bar{I}\omega_1 + m \bar{v}_1 d_{\perp 1}
++ \sum \int_{t_1}^{t_2} \mathbf{M_P} \, dt
+= \bar{I}\omega_2 + m \bar{v}_2 d_{\perp 2}\]
+Where \(d_{\perp}\) is the perpendicular distance from point \(P\) to the line of action of the velocity vector \(\bar{v}\), basically the "moment" of the linear momentum about point \(P\).\\\\
+\underline{Note:} The angular impulse for summing moments uses MOMENTS. Take care to convert forces to moments about the point of interest.
+\newpage\noindent
+\textbf{Non-centroidal Rotation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Impulse.png}
+\end{figure}
+\noindent
+Impulse/momentum about fixed point \(o\):
+\[I_o\omega_1 + \sum \int_{t_1}^{t_2} \mathbf{M_o} \, dt = I_o\omega_2\]
+\textbf{Systems of Rigid Bodies}\\
+For a system of rigid bodies, we can apply the impulse-momentum equations to the entire system as a whole or to each body individually. When applying to the entire system, internal forces and moments cancel out.\\\\
+\textbf{Conservation of Angular Momentum}\\
+If no external applied moments act on a rigid body or system of rigid bodies, the angular momentum remains constant.\\\\
+\textbf{Eccentric Impact}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Eccentric Impact.png}
+\end{figure}
+\noindent
+Similar to eccentric collisions in particles, we can use the coefficient of restitution \(e\) to relate the relative velocities before and after impact.
+\[\boxed{(v_B')_n-(v_A')_n=e[(v_a)_n-(v_B)_n]}\]
+\newpage\noindent
+Even for constrained motion like below, the same equation for coefficient of restitution applies.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Fixed.png}
+\end{figure}\noindent
+Problem approach:
+\begin{itemize}
+    \item Draw impulse-momentum diagram
+    \item Write impulse-momentum equations. If there is no external impulse, use conservation of momentum. If no external moment impulse, use conservation of angular momentum.
+    \item Write coefficient of restitution equation
+    \item Solve the system of equations
+\end{itemize}
+
+\end{document}
