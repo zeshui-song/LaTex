@@ -119,7 +119,9 @@ Since we know both the charge and velocity entering the magnetic field region, w
 \[\boxed{m=\frac{BRq}{v}}\]
 \newpage
 \underline{Note:} Typically, the charges are accelerated through a potential difference $V$ before entering the velocity selector, so we can find their velocity using energy conservation:
-\[W_{nc}=\Delta E = 0 \implies \Delta U = \Delta K\]
+\[W_{nc}=\Delta E = 0 \implies -\Delta U = \Delta K\]
+\[\Delta K = -q\Delta V\]
+For a positive charge to gain kinetic energy, it must be accelerated through a drop in electric potential (from high to low potential), thus $\Delta V = V_f-V_i = -V$:
 \[qV=\frac{1}{2}mv^2 \implies v=\sqrt{\frac{2qV}{m}}\]
 The full set up looks like this:
 \begin{figure}[H]
@@ -208,6 +210,8 @@ A cyclotron is a device that uses a combination of a constant magnetic field and
 Suppose a proton is injected at source $S$. It will be accelerated toward the negatively charged dee and enter it. Once inside, there will be no electric field (shielded by the conducting walls of the dee), and it will move in a semicircular path due to the magnetic field. When it exits the dee, the potential difference is reversed to accelerate it again across the gap. Thus, the frequency $f$ at which the proton circulates (independent of speed) \textit{must} match the frequency of the oscillating potential difference $f_{osc}$:
 \[f=f_{osc} \quad \text{(resonance condition)}\]
 \[\frac{|q|B}{2\pi m}=f_{osc}\]
+\underline{Note:} To find the speed of particles exiting the cyclotron, we can use the radius and centripetal force due to the magnetic field, or by using the frequency of oscillation:
+\[f=\frac{1}{T}=\frac{v}{2\pi r}\]
 \textbf{Synchrotron}\\
 At relativistic speeds (above 10\% of $c$), the frequency of revolution is now no longer independent of the charged particle's speed. As the speed approaches the speed of light, the frequency of revolution decreases, and is no longer in sync to the fixed $f_{osc}$. Thus a \textbf{synchrotron} is used to vary both the magnetic field and $f_{osc}$ to keep the particle in resonance as it accelerates to higher speeds. The proton also follows a circular path instead of a spiral in a synchrotron.
 \newpage
@@ -274,6 +278,7 @@ Similar to a bar magnet, a current-carrying loop tends to align itself with an e
 Where $N$ is the number of loops, $I$ is the current, $A$ is the area of the loop, and $\hat{n}$ is the unit normal vector to the plane of the loop.It has units of Amphere-square meter ($\text{A}\cdot \text{m}^2$). \\\\
 Using $\vec{\mu}$, we can rewrite the torque on the current loop as:
 \[\boxed{\vec{\tau} = \vec{\mu} \times \vec{B}}\]
+\underline{Note:} This is only for torque about an axis through the center of the loop.\\\\
 Similar to the electric dipole in an electric field, the potential energy of a magnetic dipole in a magnetic field is given by:
 \[\boxed{U = -\vec{\mu} \cdot \vec{B}}\]
 \underline{Note:} The minimum potential energy ($-\mu B$) occurs when $\vec{\mu}$ is aligned with $\vec{B}$, and the maximum potential energy ($\mu B$) occurs when they are anti-aligned.
@@ -396,7 +401,7 @@ Biot-Savart law:
 \[d\vec{B} = \frac{\mu_0}{4\pi} \frac{ I d\vec{l} \times \hat{r}}{r^2}\]
 The angle between $d\vec{l}$ and $\vec{r}$ is always $90^\circ$ for a circular arc, so:
 \[d\vec{B}=\frac{\mu_0}{4\pi} \frac{ I dl}{R^2} \hat{k},\quad \text{(Direction found by RHR)}\]
-\[\vec{B}=\int_{0}^{\phi}\frac{\mu_0}{4\pi} \frac{ I dl}{R^2} \hat{k}\]
+\[\vec{B}=\int_{0}^{R \phi}\frac{\mu_0}{4\pi} \frac{ I dl}{R^2} \hat{k}\]
 \[\boxed{\vec{B}=\frac{\mu_0 I\phi}{4\pi R} \hat{k} \quad \text{(circular arc of wire)}}\]
 \newpage
     \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.\\\\
