@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  7 DEC 2025 22:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  8 DEC 2025 13:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -907,24 +907,213 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--831
 
  []
 
-[46] [47] (Materials Science.aux)
+[46]
+<Solubility.png, id=261, 882.8985pt x 611.28375pt>
+File: Solubility.png Graphic file (type png)
+<use Solubility.png>
+Package pdftex.def Info: Solubility.png  used on input line 847.
+(pdftex.def)             Requested size: 328.82707pt x 227.66383pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 850--852
+
+ []
+
+[47 <./Solubility.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 859--862
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--862
+
+ []
+
+<Single component.png, id=266, 1070.8005pt x 584.1825pt>
+File: Single component.png Graphic file (type png)
+<use Single component.png>
+Package pdftex.def Info: Single component.png  used on input line 867.
+(pdftex.def)             Requested size: 469.75502pt x 256.27449pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 863--868
+
+ []
+
+[48]
+<Binary phase.png, id=270, 743.77875pt x 602.85225pt>
+File: Binary phase.png Graphic file (type png)
+<use Binary phase.png>
+Package pdftex.def Info: Binary phase.png  used on input line 877.
+(pdftex.def)             Requested size: 281.85587pt x 228.45152pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 871--878
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 871--878
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 871--878
+
+ []
+
+[49 <./Single component.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 881--884
+
+ []
+
+[50 <./Binary phase.png>]
+<Tieline.png, id=280, 828.696pt x 525.76425pt>
+File: Tieline.png Graphic file (type png)
+<use Tieline.png>
+Package pdftex.def Info: Tieline.png  used on input line 889.
+(pdftex.def)             Requested size: 328.82707pt x 208.61723pt.
+<Lever.png, id=281, 1371.9255pt x 727.518pt>
+File: Lever.png Graphic file (type png)
+<use Lever.png>
+Package pdftex.def Info: Lever.png  used on input line 897.
+(pdftex.def)             Requested size: 352.31625pt x 186.83011pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 890--898
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 890--898
+
+ []
+
+[51 <./Tieline.png> <./Lever.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 903--907
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--907
+
+ []
+
+<Equilibrium cooling.png, id=287, 557.08125pt x 665.48625pt>
+File: Equilibrium cooling.png Graphic file (type png)
+<use Equilibrium cooling.png>
+Package pdftex.def Info: Equilibrium cooling.png  used on input line 917.
+(pdftex.def)             Requested size: 187.89914pt x 224.45483pt.
+[52]
+<Nonequlibrium.png, id=291, 555.87675pt x 679.338pt>
+File: Nonequlibrium.png Graphic file (type png)
+<use Nonequlibrium.png>
+Package pdftex.def Info: Nonequlibrium.png  used on input line 926.
+(pdftex.def)             Requested size: 272.45877pt x 332.97182pt.
+ [53 <./Equilibrium cooling.png> <./Nonequlibrium.png>]
+<Binary eutectic.png, id=297, 1085.85675pt x 826.88925pt>
+File: Binary eutectic.png Graphic file (type png)
+<use Binary eutectic.png>
+Package pdftex.def Info: Binary eutectic.png  used on input line 938.
+(pdftex.def)             Requested size: 375.80544pt x 286.17293pt.
+ [54 <./Binary eutectic.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 946--950
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 946--950
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 950--953
+
+ []
+
+[55]
+<Case 1.png, id=307, 513.117pt x 634.16925pt>
+File: Case 1.png Graphic file (type png)
+<use Case 1.png>
+Package pdftex.def Info: Case 1.png  used on input line 959.
+(pdftex.def)             Requested size: 234.8775pt x 290.28925pt.
+ [56 <./Case 1.png>]
+<Case 2.png, id=312, 453.49425pt x 630.55576pt>
+File: Case 2.png Graphic file (type png)
+<use Case 2.png>
+Package pdftex.def Info: Case 2.png  used on input line 965.
+(pdftex.def)             Requested size: 234.8775pt x 326.58235pt.
+<Case 3.png, id=313, 786.5385pt x 592.01175pt>
+File: Case 3.png Graphic file (type png)
+<use Case 3.png>
+Package pdftex.def Info: Case 3.png  used on input line 971.
+(pdftex.def)             Requested size: 234.8775pt x 176.78285pt.
+<Case 4.png, id=314, 763.653pt x 642.60075pt>
+File: Case 4.png Graphic file (type png)
+<use Case 4.png>
+Package pdftex.def Info: Case 4.png  used on input line 979.
+(pdftex.def)             Requested size: 328.82707pt x 276.70514pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--980
+
+ []
+
+[57 <./Case 2.png> <./Case 3.png>]
+<HyperHypo.png, id=320, 600.44325pt x 479.99326pt>
+File: HyperHypo.png Graphic file (type png)
+<use HyperHypo.png>
+Package pdftex.def Info: HyperHypo.png  used on input line 984.
+(pdftex.def)             Requested size: 281.85587pt x 225.31122pt.
+<Microconstituent.png, id=321, 816.04875pt x 654.64575pt>
+File: Microconstituent.png Graphic file (type png)
+<use Microconstituent.png>
+Package pdftex.def Info: Microconstituent.png  used on input line 991.
+(pdftex.def)             Requested size: 328.82707pt x 263.79153pt.
+ [58 <./Case 4.png> <./HyperHypo.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 996--999
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1002--1005
+
+ []
+
+[59 <./Microconstituent.png>]
+Overfull \hbox (10.97876pt too wide) in paragraph at lines 1006--1006
+[]\OT1/cmr/bx/n/17.28 Equilibrium di-a-grams hav-ing in-ter-me-di-ate phases or com-
+ []
+
+<Intermediate.png, id=331, 679.338pt x 504.6855pt>
+File: Intermediate.png Graphic file (type png)
+<use Intermediate.png>
+Package pdftex.def Info: Intermediate.png  used on input line 1010.
+(pdftex.def)             Requested size: 281.85587pt x 209.39436pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1011--1015
+
+ []
+
+[60 <./Intermediate.png>]
+<Intermetallic.png, id=336, 813.63976pt x 525.162pt>
+File: Intermetallic.png Graphic file (type png)
+<use Intermetallic.png>
+Package pdftex.def Info: Intermetallic.png  used on input line 1019.
+(pdftex.def)             Requested size: 281.85587pt x 181.9183pt.
+ [61 <./Intermetallic.png>] (Materials Science.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3955 strings out of 474486
- 61213 string characters out of 5743755
+ 4067 strings out of 474486
+ 63626 string characters out of 5743755
  1934542 words of memory out of 5000000
- 26193 multiletter control sequences out of 15000+600000
+ 26305 multiletter control sequences out of 15000+600000
  576454 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,13n,65p,675b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "Materials Science.pdf" (47 pages, 5511248 bytes).
+ <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "Materials Science.pdf" (61 pages, 7689230 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
+ 406 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 346 words of extra memory for PDF output out of 10000 (max. 10000000)
 

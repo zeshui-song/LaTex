@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{amsmath, amsfonts, bm, graphicx,amssymb,geometry,tabularx,booktabs,float,wrapfig}
-\geometry{margin=1in}
+\geometry{margin = 1in}
 \title{}
 \date{}
 \author{}
@@ -835,6 +835,239 @@ Fracture surfaces from fatigue failures often exhibit features such as
 \begin{center}
 \section*{\LARGE\underline{Phase Diagrams}}
 \end{center}
+\section*{Definitions and basic concepts}
+\begin{itemize}
+    \item \textbf{Component}: A chemically distinct species in a system (ex: solute or solvent).
+    \item \textbf{System}: A specific body of material under consideration or it can relate to the series of possible alloys that is composed of the same components but varying in composition (ex: iron-carbon system).
+    \item \textbf{Solubility limit}: The maximum concentration of solute that can dissolve in a solvent at a given temperature to form a solid solution.
+\end{itemize}
+Before the solubility limit, there is only a single phase solution. Beyond the solubility limit, a second phase will form (usually solid). The two phases will coexist in equilibrium. The compositions of the two phases are given by the phase diagram at that temperature.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Solubility.png}
+\end{figure}
+\section*{Phases}
+A phase is a physically and chemically homogeneous portion of a system that is separated from other portions by distinct boundaries. Note that differences in crystal structure also define different phases.\\\\
+\textbf{Types of phase systems}:
+\begin{itemize}
+    \item \textbf{Single phase system}: usually termed homogeneous (ex: pure metals, solid solutions)
+    \item \textbf{Two phase system}: usually termed heterogeneous systems or mixtures (ex: metallic alloys)
+\end{itemize}
+\section*{Microstructure}
+Microstructure refers to the spatial arrangement of phases within a material. Microstructures directly influences material properties and can consist of single-phase grains, two-phase mixtures, layered structures, etc.
+\section*{Phase Equilibria}
+\textbf{Free energy} is a function of the internal energy of a system and the entropy of the system (randomness of the atoms). A system is at \textbf{equilibrium} when its free energy is minimized under a given set of conditions (temperature, pressure, composition).\\\\
+\textbf{Phase equilibrium} in a system with multiple phases occurs when the free energy of each phase is equal. At equilibrium, there is no net change in the amount or composition of each phase over time.\\\\
+\textbf{Metastable} states are non-equilibrium states that can persist for long periods. Such as in the case of in solid systems, where a metastable state or microstructure may persist indefinitely.
+\section*{One-component (or unary) phase diagrams}
+Phase diagrams or equilibrium diagrams graphically represent the phases present in a system at equilibrium as a function of variables such as temperature, pressure, and composition.\\\\
+For a one component phase diagram (ex: water, carbon), the diagram typically plots temperature vs. pressure. The diagram shows the regions of stability for different phases (solid, liquid, gas) and the lines or curves that separate these regions represent the conditions under which two phases coexist in equilibrium (phase boundaries).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Single component.png}
+\end{figure}\noindent
+At the triple point $O$, all three phases exist in equilibrium. The critical point $C$ represents the temperature and pressure above which the liquid and gas phases become indistinguishable (supercritical fluid).
+\section*{Binary isomorphous systems}
+A binary phase diagram shows the equilibrium relationships between phases in a two-component system as a function of temperature and composition, keeping pressure constant (usually at 1 atm).\\\\
+Composition is typically expressed in weight percent (wt\%) or atomic percent (at\%). In a binary phase diagram, the x-axis represents the composition of one component (from 0 to 100 wt\% or at\%), while the y-axis represents temperature.\\\\
+Many microstructures develop during phase transformations (typically during cooling).\\\\
+The liquid region is a liquid solution of both copper and nickel. The $\alpha$ phase is a substitutional solid of both Cu and Ni atoms in a FCC crystal structure. This system is called an \textbf{isomorphous system} because the two components are completely soluble in each other in both liquid and solid states (and have the same structure).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Binary phase.png}
+\end{figure}\noindent
+For metallic alloys, solid solutions are typically given in lowercase Greek letters (e.g., $\alpha$, $\beta$) while liquids are given in uppercase Roman letters (e.g., L). The line separating the liquid phase from the liquid + solid phase is called the \textbf{liquidus line}, while the line separating the solid phase from the liquid + solid phase is called the \textbf{solidus line}. 
+\section*{Interpretation of phase diagrams}
+For a binary system of known composition and temperature at equilibrium, we can determine:\\\\
+\textbf{Phases present}\\
+Locate the point on the phase diagram corresponding to the given composition and temperature. The region in which this point lies indicates the phases present.
+\newpage\noindent
+\textbf{Determination of phase compositions}\\
+If the point lies in a one phase region, the composition of that phase is equal to the overall composition. If the point lies in a two-phase region, draw a horizontal \textbf{tie line} at the given temperature. The intersections of this tie line with the phase boundaries give the compositions of each phase.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Tieline.png}
+\end{figure}\noindent
+Where $C_L$ is the composition of the liquid phase and $C_\alpha$ is the composition of the solid phase, they make up the alloy composition $C_0$ at temperature T.\\\\
+\underline{Note:} The closer $C_0$ is to $C_L$, the more liquid phase there is. The closer $C_0$ is to $C_\alpha$, the more solid phase there is.\\\\
+\textbf{Determination of phase amounts}\\
+In a two-phase region, the relative amounts of each phase can be determined using the \textbf{lever rule}. It calculates the mass fraction of each phase based on the overall composition and the compositions of each phase at equilibrium.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Lever.png}
+\end{figure}\noindent
+The lever rule essentially just uses the distances along the tie line between $C_0$, $C_L$, and $C_\alpha$ to find the mass fractions:
+\[\boxed{W_L = \frac{C_\alpha - C_0}{C_\alpha - C_L}\quad \text{(liquid mass fraction)}}\]
+\[\boxed{W_\alpha = \frac{C_0 - C_L}{C_\alpha - C_L}\quad \text{($\alpha$-phase mass fraction)}}\]
+For an alloy consisting of $\alpha$ and $\beta$ phases, the volume fraction of the $\alpha$ phase, $V_{\alpha}$, is defined as
+\[V_{\alpha} = \frac{v_{\alpha}}{v_{\alpha} + v_{\beta}}\]
+Where $v_{\alpha}$ and $v_{\beta}$ are the volumes of the respective phases in the alloy. An analogous expression exists for $V_{\beta}$, and, for an alloy consisting of two phases, $V_{\alpha} + V_{\beta} = 1$.\\\\
+If we want to convert between mass fractions and volume fractions:\\\\
+\textbf{Conversion of mass fractions of $\alpha$ and $\beta$ phases to volume fractions}
+\[V_{\alpha} = \frac{\frac{w_{\alpha}}{\rho_{\alpha}}}{\frac{w_{\alpha}}{\rho_{\alpha}} + \frac{w_{\beta}}{\rho_{\beta}}}\]
+\[V_{\beta} = \frac{\frac{w_{\beta}}{\rho_{\beta}}}{\frac{w_{\alpha}}{\rho_{\alpha}} + \frac{w_{\beta}}{\rho_{\beta}}}\]
+\textbf{Conversion of volume fractions of $\alpha$ and $\beta$ phases to mass fractions}
+\[W_{\alpha} = \frac{V_{\alpha}\rho_{\alpha}}{V_{\alpha}\rho_{\alpha} + V_{\beta}\rho_{\beta}}\]
+\[W_{\beta} = \frac{V_{\beta}\rho_{\beta}}{V_{\alpha}\rho_{\alpha} + V_{\beta}\rho_{\beta}}\]
+\section*{Development of microstructure in isomorphous alloys}
+\textbf{Equilibrium cooling}\\
+In the case where cooling occurs very slowly, the alloy remains in equilibrium at all times. The microstructure that develops during equilibrium cooling consists of grains of the solid solution phase ($\alpha$) that form as the liquid phase solidifies. The composition of the solid solution phase changes as cooling progresses, following the solidus line on the phase diagram, however the overall composition of the alloy remains constant.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Equilibrium cooling.png}
+\end{figure}
+\vspace{-1em}
+\noindent
+\textbf{Nonequilibrium cooling}\\
+In the case of equilibrium cooling, the composition of the solid solution phase changes continuously as cooling progresses. However, if cooling occurs rapidly, there may not be enough time for diffusion to occur and for the composition of the solid solution phase to adjust to the equilibrium values given by the phase diagram. This results in a microstructure that is not in equilibrium, with regions of different compositions within the solid solution phase.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.58\textwidth]{Nonequlibrium.png}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Formation of Coring:} During nonequilibrium cooling, diffusion is too slow to homogenize the grain. The initial $\alpha$ phase retains its original composition, while new layers form with changing compositions, creating a concentration gradient.
+    \item \textbf{Shifted Solidus Line:} The standard equilibrium solidus line defines the \textit{outer edge} composition of the grain. A new nonequilibrium solidus line represents the \textit{average} composition of the entire $\alpha$ grain.
+\end{itemize}
+\section*{Mechanical properties of isomorphous alloys}
+When in a solid phase, isomorphous alloys experience a solid-solution strengthening. On average, when tensile strength increases with increasing solute concentration, ductility decreases.
+\section*{Binary eutectic systems}
+In the binary eutectic phase diagram for the copper-silver system, there are 3 single-phase regions (liquid, $\alpha$, and $\beta$). The $\alpha$ phase is a solid solution rich in copper with nickel solute. The $\beta$ phase is a solid solution rich in nickel with copper solute. Pure copper and nickel are also considered to be $\alpha$ and $\beta$ phases, respectively.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Binary eutectic.png}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Solvus Line}: The boundary line separating a solid solution phase (like $\alpha$) from a mixed solid region (like $\alpha + \beta$), representing the solid solubility limit.
+    \item \textbf{Solidus Line}: The boundary separating a solid phase from a liquid-plus-solid region (e.g., $\alpha + L$); the horizontal isotherm ($BEG$) is also considered a solidus line representing the lowest temperature a liquid can exist in equilibrium.
+    \item \textbf{Liquidus Line}: The temperature boundary above which the alloy is entirely liquid; this line decreases in temperature as solute is added to the solvent.
+    \item \textbf{Invariant Point ($E$)}: The specific point where the two liquidus lines meet, defined by the eutectic composition ($C_E$) and eutectic temperature ($T_E$).
+\end{itemize}
+Note that like before, the tie line can be used to determine phase compositions in two-phase regions, and the lever rule can be used to determine phase amounts.\\\\
+\textbf{Eutectic reaction}\\
+A reaction in which, upon cooling, a liquid phase transforms isothermally (at constant temperature) and reversibly into two intimately mixed solid phases. This occurs at the eutectic composition and temperature, where the liquid phase solidifies into a mixture of $\alpha$ and $\beta$ phases. The term "eutectic" means "easily melted".\\\\
+\underline{General Equation}:
+    $$ L(C_E) \underset{\text{heating}}{\overset{\text{cooling}}{\rightleftharpoons}} \alpha(C_{\alpha E}) + \beta(C_{\beta E}) $$
+This reaction is termed an \textbf{invariant reaction} because it occurs at a specific temperature and composition where three phases coexist in equilibrium.\\\\
+This reaction tells us the concentrations of each phase that is formed. These concentrations can be used in the lever rule to determine the amounts of each phase present after solidification.
+\newpage
+\section*{Development of microstructure in eutectic alloys}
+\textbf{Case I}\\
+Single-phase solid solution alloy forms when the solute concentration is less than the solubility limit of the solvent (to the left of the solvus line). The microstructure consists of grains of the $\alpha$ phase with a uniform composition.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Case 1.png}
+\end{figure}\newpage\noindent
+\textbf{Case II}\\
+When the alloy composition is between the room-temperature solubility limit and the maximum solubility limit, a microstructure consisting of $\alpha$ polycrystal with fine $\beta$-phase inclusions forms.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Case 2.png}
+\end{figure}\noindent
+\textbf{Case III}\\
+When the alloy composition is at the eutectic composition, the microstructure consists of alternating layers of $\alpha$ and $\beta$ phases that form simultaneously from the liquid during the eutectic reaction.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Case 3.png}
+\end{figure}\noindent
+This microstructure is called a \textbf{eutectic structure} and has a lamellar (layered) appearance. The spacing between the layers depends on the cooling rate; faster cooling results in finer lamellae.\\\\
+\textbf{Case IV}\\
+When the alloy composition is greater than the maximum solubility limit of the solute (to the right of the solvus line), and crosses the eutectic temperature during cooling, a microstructure consisting of primary $\alpha$ phase grains surrounded by a eutectic mixture of $\alpha$ and $\beta$ phases forms.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Case 4.png}
+\end{figure}
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{HyperHypo.png}
+\end{figure}\noindent
+\textbf{Microconstituent}\\
+A \textbf{microconstituent} is a distinct phase or combination of phases that can be identified in the microstructure of an alloy. Examples include single-phase regions (like $\alpha$ or $\beta$) and two-phase mixtures (like eutectic structures). We can use the lever rule to determine the amounts of each microconstituent present in a given alloy composition at a specific temperature.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Microconstituent.png}
+\end{figure}
+\vspace{-1em}
+\noindent
+Since the eutectic microstructures come from the liquid phase, we can use the lever rule to determine the amounts of the eutectic microconstituent by:
+\[W_e = W_L = \frac{P}{P+Q}=\frac{C\alpha -C_0}{C_\alpha - C_L}\]
+\underline{Note:} For the lever rule, we always use the lever arm on opposite side of the fulcrum (P for $W_L$ and Q for $W_\alpha$).\\\\
+The primary grains of the $\alpha$ phase that form before the eutectic reaction can also be determined using the lever rule:
+\[W_{\alpha'}=\frac{Q}{P+Q}=\frac{C_0-C_L}{C_\alpha - C_L}\]
+We can also use the full tie line below the eutectic temperature to determine the TOTAL amounts of each phase (not just the eutectic microconstituent):
+\[W_{\alpha}=\frac{Q+R}{P+Q+R}\]
+\[W_{\beta}=\frac{P}{P+Q+R}\]
+Remember that we use the opposite lever arms for each phase.\\\\
+\underline{Note:} We can find the eutectic $\alpha$ phase fraction by doing $W_{\alpha e}=W_\alpha - W_{\alpha'}$.
+\newpage
+\section*{Equilibrium diagrams having intermediate phases or compounds}
+The phase diagrams for many binary alloy systems are much more complex. They may contain \textbf{terminal solid solutions}, which are solid solutions that exist at the concentration extremes of the phase diagram. They may also contain \textbf{intermediate solid soltuions} or phases, which are found between the terminal solid solutions.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Intermediate.png}
+\end{figure}\noindent
+The composition of an intermediate phase can still be found using a tie line, and the amounts of each phase can be found using the lever rule.\\\\
+\textbf{Intermetallic compounds}\\
+Unlike solid solutions, which exist over a range of compositions, some systems form \textit{discrete intermediate compounds} with distinct chemical formulas. These compounds (called intermetallic compounds) form at specific, stoichiometric ratios. (Ex: The compound $\text{Mg}_2\text{Pb}$ exists specifically at a composition of $19\text{ wt\% Mg}$ and $81\text{ wt\% Pb}$ ($33\text{ at\% Pb}$)). Because the compound has no compositional range (finite width), it is represented as a vertical line on the phase diagram.
+\newpage\noindent
+Thus, we can treat it as two phase diagrams joined at the intermetallic compound line. We can still use tie lines and the lever rule to determine phase compositions and amounts.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Intermetallic.png}
+\end{figure}
+\section*{Eutectoid and peritectic reactions}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
