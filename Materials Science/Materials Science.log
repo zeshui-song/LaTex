@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  4 NOV 2025 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  7 DEC 2025 22:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -87,38 +87,14 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks22
-) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
-))
-\Gm@cnth=\count273
-\Gm@cntv=\count274
-\c@Gm@tempcnt=\count275
-\Gm@bindingoffset=\dimen150
-\Gm@wd@mp=\dimen151
-\Gm@odd@mp=\dimen152
-\Gm@even@mp=\dimen153
-\Gm@layoutwidth=\dimen154
-\Gm@layoutheight=\dimen155
-\Gm@layouthoffset=\dimen156
-\Gm@layoutvoffset=\dimen157
-\Gm@dimlist=\toks23
- (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
+) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
 Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
@@ -129,7 +105,10 @@ Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 ) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
@@ -140,9 +119,30 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen158
-\Gin@req@width=\dimen159
-) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count273
+\Gm@cntv=\count274
+\c@Gm@tempcnt=\count275
+\Gm@bindingoffset=\dimen152
+\Gm@wd@mp=\dimen153
+\Gm@odd@mp=\dimen154
+\Gm@even@mp=\dimen155
+\Gm@layoutwidth=\dimen156
+\Gm@layoutheight=\dimen157
+\Gm@layouthoffset=\dimen158
+\Gm@layoutvoffset=\dimen159
+\Gm@dimlist=\toks23
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
@@ -201,21 +201,39 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (Materials Science.aux)
 \openout1 = `"Materials Science.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count284
+\scratchdimen=\dimen182
+\scratchbox=\box59
+\nofMPsegments=\count285
+\nofMParguments=\count286
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count287
+\MPscratchDim=\dimen183
+\MPnumerator=\count288
+\makeMPintoPDFobject=\count289
+\everyMPtoPDFconversion=\toks30
+) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -250,30 +268,11 @@ LaTeX Font Info:    ... okay on input line 15.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count284
-\scratchdimen=\dimen182
-\scratchbox=\box59
-\nofMPsegments=\count285
-\nofMParguments=\count286
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count287
-\MPscratchDim=\dimen183
-\MPnumerator=\count288
-\makeMPintoPDFobject=\count289
-\everyMPtoPDFconversion=\toks30
-) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
- (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+(C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -282,182 +281,182 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <types of loading.png, id=10, 617.30624pt x 386.6445pt>
 File: types of loading.png Graphic file (type png)
 <use types of loading.png>
-Package pdftex.def Info: types of loading.png  used on input line 41.
+Package pdftex.def Info: types of loading.png  used on input line 36.
 (pdftex.def)             Requested size: 375.80544pt x 235.38672pt.
  [2 <./types of loading.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--51
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
 
  []
 
 <geometric stress.png, id=16, 436.63126pt x 219.82124pt>
 File: geometric stress.png Graphic file (type png)
 <use geometric stress.png>
-Package pdftex.def Info: geometric stress.png  used on input line 58.
+Package pdftex.def Info: geometric stress.png  used on input line 53.
 (pdftex.def)             Requested size: 375.80544pt x 189.20021pt.
 [3 <./geometric stress.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 63--65
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--71
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--71
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--71
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 
  []
 
 <poissons.jpg, id=23, 1104.125pt x 406.51875pt>
 File: poissons.jpg Graphic file (type jpg)
 <use poissons.jpg>
-Package pdftex.def Info: poissons.jpg  used on input line 75.
+Package pdftex.def Info: poissons.jpg  used on input line 70.
 (pdftex.def)             Requested size: 375.80544pt x 138.3634pt.
 [4 <./poissons.jpg>]
 <poissons 2.png, id=27, 278.2395pt x 228.25275pt>
 File: poissons 2.png Graphic file (type png)
 <use poissons 2.png>
-Package pdftex.def Info: poissons 2.png  used on input line 83.
+Package pdftex.def Info: poissons 2.png  used on input line 78.
 (pdftex.def)             Requested size: 187.89914pt x 154.14406pt.
  [5 <./poissons 2.png>]
 <yield.jpg, id=32, 216.81pt x 360.3864pt>
 File: yield.jpg Graphic file (type jpg)
 <use yield.jpg>
-Package pdftex.def Info: yield.jpg  used on input line 95.
+Package pdftex.def Info: yield.jpg  used on input line 90.
 (pdftex.def)             Requested size: 187.89914pt x 312.34584pt.
 <tensile.jpg, id=33, 49.6254pt x 40.10985pt>
 File: tensile.jpg Graphic file (type jpg)
 <use tensile.jpg>
-Package pdftex.def Info: tensile.jpg  used on input line 103.
+Package pdftex.def Info: tensile.jpg  used on input line 98.
 (pdftex.def)             Requested size: 258.36668pt x 208.82635pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--104
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
 [6 <./yield.jpg> <./tensile.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+Underfull \hbox (badness 10000) in paragraph at lines 106--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+Underfull \hbox (badness 10000) in paragraph at lines 106--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--118
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
 
  []
 
@@ -465,83 +464,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--118
 <SC.jpg, id=43, 39.7485pt x 19.5129pt>
 File: SC.jpg Graphic file (type jpg)
 <use SC.jpg>
-Package pdftex.def Info: SC.jpg  used on input line 131.
+Package pdftex.def Info: SC.jpg  used on input line 128.
 (pdftex.def)             Requested size: 281.85587pt x 138.46857pt.
 <BCC.png, id=44, 344.487pt x 145.0218pt>
 File: BCC.png Graphic file (type png)
 <use BCC.png>
-Package pdftex.def Info: BCC.png  used on input line 139.
+Package pdftex.def Info: BCC.png  used on input line 136.
 (pdftex.def)             Requested size: 281.85587pt x 118.65973pt.
- [8 <./SC.jpg>]
-<BCC diag.png, id=48, 380.622pt x 271.61475pt>
+ [8 <./SC.jpg> <./BCC.png>]
+<BCC diag.png, id=49, 380.622pt x 271.61475pt>
 File: BCC diag.png Graphic file (type png)
 <use BCC diag.png>
-Package pdftex.def Info: BCC diag.png  used on input line 144.
+Package pdftex.def Info: BCC diag.png  used on input line 141.
 (pdftex.def)             Requested size: 140.92793pt x 100.56633pt.
- [9 <./BCC.png> <./BCC diag.png>]
+ [9 <./BCC diag.png>]
 <FCC.png, id=54, 327.624pt x 146.949pt>
 File: FCC.png Graphic file (type png)
 <use FCC.png>
-Package pdftex.def Info: FCC.png  used on input line 154.
+Package pdftex.def Info: FCC.png  used on input line 151.
 (pdftex.def)             Requested size: 281.85587pt x 126.43196pt.
  [10 <./FCC.png>]
 <HCP.jpg, id=59, 55.1661pt x 28.4262pt>
 File: HCP.jpg Graphic file (type jpg)
 <use HCP.jpg>
-Package pdftex.def Info: HCP.jpg  used on input line 164.
+Package pdftex.def Info: HCP.jpg  used on input line 161.
 (pdftex.def)             Requested size: 281.85587pt x 145.26086pt.
 <Untitled.jpg, id=60, 78.7743pt x 71.3064pt>
 File: Untitled.jpg Graphic file (type jpg)
 <use Untitled.jpg>
-Package pdftex.def Info: Untitled.jpg  used on input line 168.
+Package pdftex.def Info: Untitled.jpg  used on input line 165.
 (pdftex.def)             Requested size: 187.89914pt x 170.10405pt.
  [11 <./HCP.jpg> <./Untitled.jpg>]
 <ceramic.png, id=64, 709.4505pt x 364.9635pt>
 File: ceramic.png Graphic file (type png)
 <use ceramic.png>
-Package pdftex.def Info: ceramic.png  used on input line 194.
+Package pdftex.def Info: ceramic.png  used on input line 191.
 (pdftex.def)             Requested size: 375.80544pt x 193.32391pt.
  [12 <./ceramic.png>]
 <Rocksalt.png, id=70, 265.74281pt x 240.9pt>
 File: Rocksalt.png Graphic file (type png)
 <use Rocksalt.png>
-Package pdftex.def Info: Rocksalt.png  used on input line 210.
+Package pdftex.def Info: Rocksalt.png  used on input line 207.
 (pdftex.def)             Requested size: 187.89914pt x 170.3381pt.
 <AX.png, id=71, 342.078pt x 235.6002pt>
 File: AX.png Graphic file (type png)
 <use AX.png>
-Package pdftex.def Info: AX.png  used on input line 218.
+Package pdftex.def Info: AX.png  used on input line 215.
 (pdftex.def)             Requested size: 187.89914pt x 129.41513pt.
  [13 <./Rocksalt.png>]
 <AX2.png, id=77, 267.399pt x 287.6346pt>
 File: AX2.png Graphic file (type png)
 <use AX2.png>
-Package pdftex.def Info: AX2.png  used on input line 226.
+Package pdftex.def Info: AX2.png  used on input line 223.
 (pdftex.def)             Requested size: 187.89914pt x 202.12407pt.
 <ABX3.png, id=78, 295.8252pt x 334.851pt>
 File: ABX3.png Graphic file (type png)
 <use ABX3.png>
-Package pdftex.def Info: ABX3.png  used on input line 233.
+Package pdftex.def Info: ABX3.png  used on input line 230.
 (pdftex.def)             Requested size: 187.89914pt x 212.69444pt.
  [14 <./AX.png> <./AX2.png>] [15 <./ABX3.png>] [16]
 <vacancy.png, id=91, 702.82574pt x 181.8795pt>
 File: vacancy.png Graphic file (type png)
 <use vacancy.png>
-Package pdftex.def Info: vacancy.png  used on input line 274.
+Package pdftex.def Info: vacancy.png  used on input line 273.
 (pdftex.def)             Requested size: 234.8775pt x 60.78082pt.
 <intersitial.png, id=92, 689.57625pt x 187.902pt>
 File: intersitial.png Graphic file (type png)
 <use intersitial.png>
-Package pdftex.def Info: intersitial.png  used on input line 279.
+Package pdftex.def Info: intersitial.png  used on input line 278.
 (pdftex.def)             Requested size: 234.8775pt x 64.00052pt.
  [17 <./vacancy.png> <./intersitial.png>]
 <alloy.png, id=99, 767.86874pt x 263.7855pt>
 File: alloy.png Graphic file (type png)
 <use alloy.png>
-Package pdftex.def Info: alloy.png  used on input line 297.
+Package pdftex.def Info: alloy.png  used on input line 296.
 (pdftex.def)             Requested size: 375.80544pt x 129.10307pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--301
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
 
  []
 
@@ -549,77 +548,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--301
 <FCC radius.png, id=104, 783.52725pt x 352.9185pt>
 File: FCC radius.png Graphic file (type png)
 <use FCC radius.png>
-Package pdftex.def Info: FCC radius.png  used on input line 312.
+Package pdftex.def Info: FCC radius.png  used on input line 311.
 (pdftex.def)             Requested size: 328.82707pt x 148.11166pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--313
+Underfull \hbox (badness 10000) in paragraph at lines 307--312
 
  []
 
 <BCC radius.png, id=105, 777.50475pt x 293.898pt>
 File: BCC radius.png Graphic file (type png)
 <use BCC radius.png>
-Package pdftex.def Info: BCC radius.png  used on input line 321.
+Package pdftex.def Info: BCC radius.png  used on input line 320.
 (pdftex.def)             Requested size: 328.82707pt x 124.29733pt.
 [19 <./FCC radius.png> <./BCC radius.png>] [20]
 <vacancy diff.png, id=115, 476.37975pt x 218.0145pt>
 File: vacancy diff.png Graphic file (type png)
 <use vacancy diff.png>
-Package pdftex.def Info: vacancy diff.png  used on input line 363.
+Package pdftex.def Info: vacancy diff.png  used on input line 362.
 (pdftex.def)             Requested size: 281.85587pt x 128.99002pt.
 <interstitial diff.png, id=116, 461.3235pt x 190.91325pt>
 File: interstitial diff.png Graphic file (type png)
 <use interstitial diff.png>
-Package pdftex.def Info: interstitial diff.png  used on input line 368.
+Package pdftex.def Info: interstitial diff.png  used on input line 367.
 (pdftex.def)             Requested size: 281.85587pt x 116.64334pt.
  [21 <./vacancy diff.png> <./interstitial diff.png>]
 <ficks 1.png, id=122, 676.32675pt x 327.02174pt>
 File: ficks 1.png Graphic file (type png)
 <use ficks 1.png>
-Package pdftex.def Info: ficks 1.png  used on input line 392.
+Package pdftex.def Info: ficks 1.png  used on input line 391.
 (pdftex.def)             Requested size: 375.80544pt x 181.71378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--399
+Underfull \hbox (badness 10000) in paragraph at lines 394--398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--399
+Underfull \hbox (badness 10000) in paragraph at lines 394--398
 
  []
 
 [22 <./ficks 1.png>] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 409--411
+Underfull \hbox (badness 10000) in paragraph at lines 408--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--420
+Underfull \hbox (badness 10000) in paragraph at lines 416--419
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--420
+Underfull \hbox (badness 10000) in paragraph at lines 416--419
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 446--449
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--454
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--454
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--457
+Underfull \hbox (badness 10000) in paragraph at lines 453--456
 
  []
 
@@ -627,46 +626,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--457
 <error function.png, id=138, 623.931pt x 317.988pt>
 File: error function.png Graphic file (type png)
 <use error function.png>
-Package pdftex.def Info: error function.png  used on input line 461.
+Package pdftex.def Info: error function.png  used on input line 460.
 (pdftex.def)             Requested size: 469.75502pt x 239.41716pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--466
+Underfull \hbox (badness 10000) in paragraph at lines 463--465
 
  []
 
 <diffusion co.png, id=139, 548.0475pt x 489.027pt>
 File: diffusion co.png Graphic file (type png)
 <use diffusion co.png>
-Package pdftex.def Info: diffusion co.png  used on input line 477.
+Package pdftex.def Info: diffusion co.png  used on input line 476.
 (pdftex.def)             Requested size: 469.75502pt x 419.17455pt.
 [26 <./error function.png>] [27 <./diffusion co.png>]
 <Edge dislocation.png, id=149, 976.8495pt x 352.9185pt>
 File: Edge dislocation.png Graphic file (type png)
 <use Edge dislocation.png>
-Package pdftex.def Info: Edge dislocation.png  used on input line 489.
+Package pdftex.def Info: Edge dislocation.png  used on input line 490.
 (pdftex.def)             Requested size: 375.80544pt x 135.76903pt.
 <screw dislocation.png, id=150, 539.01375pt x 164.41425pt>
 File: screw dislocation.png Graphic file (type png)
 <use screw dislocation.png>
-Package pdftex.def Info: screw dislocation.png  used on input line 495.
+Package pdftex.def Info: screw dislocation.png  used on input line 496.
 (pdftex.def)             Requested size: 375.80544pt x 114.63258pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--500
+Underfull \hbox (badness 10000) in paragraph at lines 498--501
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--500
+Underfull \hbox (badness 10000) in paragraph at lines 498--501
 
  []
 
 <lattice strain.png, id=151, 329.43076pt x 231.86626pt>
 File: lattice strain.png Graphic file (type png)
 <use lattice strain.png>
-Package pdftex.def Info: lattice strain.png  used on input line 506.
+Package pdftex.def Info: lattice strain.png  used on input line 507.
 (pdftex.def)             Requested size: 187.89914pt x 132.25357pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--507
+Underfull \hbox (badness 10000) in paragraph at lines 503--508
 
  []
 
@@ -674,15 +673,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 502--507
 <interaction.png, id=157, 361.95226pt x 476.982pt>
 File: interaction.png Graphic file (type png)
 <use interaction.png>
-Package pdftex.def Info: interaction.png  used on input line 511.
+Package pdftex.def Info: interaction.png  used on input line 512.
 (pdftex.def)             Requested size: 234.8775pt x 309.53242pt.
 <slip system FCC.png, id=158, 439.6425pt x 198.7425pt>
 File: slip system FCC.png Graphic file (type png)
 <use slip system FCC.png>
-Package pdftex.def Info: slip system FCC.png  used on input line 520.
+Package pdftex.def Info: slip system FCC.png  used on input line 521.
 (pdftex.def)             Requested size: 281.85587pt x 127.41614pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--521
+Underfull \hbox (badness 10000) in paragraph at lines 517--522
 
  []
 
@@ -690,10 +689,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 516--521
 <table.png, id=164, 617.9085pt x 290.2845pt>
 File: table.png Graphic file (type png)
 <use table.png>
-Package pdftex.def Info: table.png  used on input line 525.
+Package pdftex.def Info: table.png  used on input line 526.
 (pdftex.def)             Requested size: 422.77664pt x 198.61334pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--530
+Underfull \hbox (badness 10000) in paragraph at lines 527--531
 
  []
 
@@ -701,48 +700,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 526--530
 <resolved.png, id=170, 295.70474pt x 458.9145pt>
 File: resolved.png Graphic file (type png)
 <use resolved.png>
-Package pdftex.def Info: resolved.png  used on input line 537.
+Package pdftex.def Info: resolved.png  used on input line 538.
 (pdftex.def)             Requested size: 187.89914pt x 291.60353pt.
  [31 <./resolved.png>]
 <Ex slip.jpg, id=176, 108.8868pt x 82.6287pt>
 File: Ex slip.jpg Graphic file (type jpg)
 <use Ex slip.jpg>
-Package pdftex.def Info: Ex slip.jpg  used on input line 549.
+Package pdftex.def Info: Ex slip.jpg  used on input line 550.
 (pdftex.def)             Requested size: 281.85587pt x 213.9078pt.
  [32 <./Ex slip.jpg>]
 <twinning.png, id=180, 904.5795pt x 266.1945pt>
 File: twinning.png Graphic file (type png)
 <use twinning.png>
-Package pdftex.def Info: twinning.png  used on input line 580.
+Package pdftex.def Info: twinning.png  used on input line 581.
 (pdftex.def)             Requested size: 469.75502pt x 138.23509pt.
 <diff.png, id=181, 529.98pt x 236.082pt>
 File: diff.png Graphic file (type png)
 <use diff.png>
-Package pdftex.def Info: diff.png  used on input line 589.
+Package pdftex.def Info: diff.png  used on input line 590.
 (pdftex.def)             Requested size: 281.85587pt x 125.55513pt.
  [33 <./twinning.png> <./diff.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 594--596
+Underfull \hbox (badness 10000) in paragraph at lines 595--597
 
  []
 
 <grain bound.png, id=187, 579.3645pt x 302.3295pt>
 File: grain bound.png Graphic file (type png)
 <use grain bound.png>
-Package pdftex.def Info: grain bound.png  used on input line 603.
+Package pdftex.def Info: grain bound.png  used on input line 604.
 (pdftex.def)             Requested size: 281.85587pt x 147.08171pt.
 [34 <./grain bound.png>]
 <solid solution.png, id=192, 967.81575pt x 239.09325pt>
 File: solid solution.png Graphic file (type png)
 <use solid solution.png>
-Package pdftex.def Info: solid solution.png  used on input line 619.
+Package pdftex.def Info: solid solution.png  used on input line 620.
 (pdftex.def)             Requested size: 469.75502pt x 116.04764pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--624
+Underfull \hbox (badness 10000) in paragraph at lines 623--625
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--634
+Underfull \hbox (badness 10000) in paragraph at lines 632--635
 
  []
 
@@ -750,26 +749,182 @@ Underfull \hbox (badness 10000) in paragraph at lines 631--634
 <grain growth.png, id=197, 374.5995pt x 425.79076pt>
 File: grain growth.png Graphic file (type png)
 <use grain growth.png>
-Package pdftex.def Info: grain growth.png  used on input line 640.
+Package pdftex.def Info: grain growth.png  used on input line 641.
 (pdftex.def)             Requested size: 187.89914pt x 213.57704pt.
- [36 <./grain growth.png>] (Materials Science.aux)
+ [36 <./grain growth.png>]
+<Fracture.png, id=202, 419.166pt x 374.5995pt>
+File: Fracture.png Graphic file (type png)
+<use Fracture.png>
+Package pdftex.def Info: Fracture.png  used on input line 662.
+(pdftex.def)             Requested size: 187.89914pt x 167.92232pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--663
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--663
+
+ []
+
+<Ductile.png, id=203, 1005.15524pt x 318.59026pt>
+File: Ductile.png Graphic file (type png)
+<use Ductile.png>
+Package pdftex.def Info: Ductile.png  used on input line 669.
+(pdftex.def)             Requested size: 469.75502pt x 148.89157pt.
+<Chevron.png, id=204, 459.51675pt x 254.1495pt>
+File: Chevron.png Graphic file (type png)
+<use Chevron.png>
+Package pdftex.def Info: Chevron.png  used on input line 677.
+(pdftex.def)             Requested size: 281.85587pt x 155.89188pt.
+[37 <./Fracture.png> <./Ductile.png>]
+<Transgranular.png, id=212, 879.285pt x 474.573pt>
+File: Transgranular.png Graphic file (type png)
+<use Transgranular.png>
+Package pdftex.def Info: Transgranular.png  used on input line 683.
+(pdftex.def)             Requested size: 375.80544pt x 202.83138pt.
+ [38 <./Chevron.png> <./Transgranular.png>]
+<Intergranular.png, id=218, 841.34325pt x 475.7775pt>
+File: Intergranular.png Graphic file (type png)
+<use Intergranular.png>
+Package pdftex.def Info: Intergranular.png  used on input line 689.
+(pdftex.def)             Requested size: 375.80544pt x 212.52252pt.
+ [39 <./Intergranular.png>]
+<Stress concentrator.png, id=223, 376.40625pt x 781.11826pt>
+File: Stress concentrator.png Graphic file (type png)
+<use Stress concentrator.png>
+Package pdftex.def Info: Stress concentrator.png  used on input line 696.
+(pdftex.def)             Requested size: 234.8775pt x 487.4349pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 692--698
+
+ []
+
+
+Underfull \hbox (badness 5161) in paragraph at lines 698--701
+\OT1/cmr/m/n/12 in-clu-sions) that act as stress con-cen-
+ []
+
+
+Underfull \hbox (badness 2753) in paragraph at lines 698--701
+\OT1/cmr/m/n/12 tra-tors. The stress at the tip of a
+ []
+
+
+Underfull \hbox (badness 1596) in paragraph at lines 698--701
+\OT1/cmr/m/n/12 plied stress, lead-ing to pre-ma-ture frac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 698--701
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 711--713
+
+ []
+
+[40 <./Stress concentrator.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 723--727
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--727
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 734--738
+
+ []
+
+<Mode I.png, id=228, 885.3075pt x 323.40825pt>
+File: Mode I.png Graphic file (type png)
+<use Mode I.png>
+Package pdftex.def Info: Mode I.png  used on input line 742.
+(pdftex.def)             Requested size: 469.75502pt x 171.60786pt.
+[41] [42 <./Mode I.png>]
+<Impact test.png, id=236, 746.79pt x 460.119pt>
+File: Impact test.png Graphic file (type png)
+<use Impact test.png>
+Package pdftex.def Info: Impact test.png  used on input line 753.
+(pdftex.def)             Requested size: 328.82707pt x 202.60042pt.
+<DTBT.png, id=237, 624.53325pt x 370.986pt>
+File: DTBT.png Graphic file (type png)
+<use DTBT.png>
+Package pdftex.def Info: DTBT.png  used on input line 761.
+(pdftex.def)             Requested size: 281.85587pt x 167.42331pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--762
+
+ []
+
+[43 <./Impact test.png> <./DTBT.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 765--767
+
+ []
+
+<Cyclic stress.png, id=244, 602.25pt x 287.27325pt>
+File: Cyclic stress.png Graphic file (type png)
+<use Cyclic stress.png>
+Package pdftex.def Info: Cyclic stress.png  used on input line 777.
+(pdftex.def)             Requested size: 328.82707pt x 156.8567pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--778
+
+ []
+
+<Cyclic stress 2.png, id=245, 458.9145pt x 205.36725pt>
+File: Cyclic stress 2.png Graphic file (type png)
+<use Cyclic stress 2.png>
+Package pdftex.def Info: Cyclic stress 2.png  used on input line 782.
+(pdftex.def)             Requested size: 328.82707pt x 147.15295pt.
+[44 <./Cyclic stress.png> <./Cyclic stress 2.png>]
+<Cyclic stress 3.png, id=251, 419.76825pt x 210.7875pt>
+File: Cyclic stress 3.png Graphic file (type png)
+<use Cyclic stress 3.png>
+Package pdftex.def Info: Cyclic stress 3.png  used on input line 787.
+(pdftex.def)             Requested size: 234.8775pt x 117.9437pt.
+<SN curve.png, id=252, 938.90775pt x 309.5565pt>
+File: SN curve.png Graphic file (type png)
+<use SN curve.png>
+Package pdftex.def Info: SN curve.png  used on input line 804.
+(pdftex.def)             Requested size: 469.75502pt x 154.88177pt.
+ [45 <./Cyclic stress 3.png> <./SN curve.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 805--810
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 820--824
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 829--831
+
+ []
+
+[46] [47] (Materials Science.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3861 strings out of 474486
- 59183 string characters out of 5743755
+ 3955 strings out of 474486
+ 61213 string characters out of 5743755
  1934542 words of memory out of 5000000
- 26099 multiletter control sequences out of 15000+600000
- 576107 words of font info for 102 fonts, out of 8000000 for 9000
+ 26193 multiletter control sequences out of 15000+600000
+ 576454 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,13n,65p,648b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "Materials Science.pdf" (36 pages, 3605917 bytes).
+ 57i,13n,65p,675b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "Materials Science.pdf" (47 pages, 5511248 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
+ 324 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,19 +1,12 @@
 \documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{geometry}
-\usepackage{amsmath, amsfonts, bm, graphicx}
-\usepackage{tabularx}
-\usepackage{booktabs} 
-\usepackage{float}
-\usepackage{wrapfig}
+\usepackage{amsmath, amsfonts, bm, graphicx,amssymb,geometry,tabularx,booktabs,float,wrapfig}
 \geometry{margin=1in}
 \title{}
 \date{}
 \author{}
 
 \begin{document}
-
+\noindent
 \textbf{SI Prefixes}
 \[\begin{aligned}
 \text{femto (f)}  &= 10^{-15} \\
@@ -33,7 +26,9 @@
 \end{aligned}\]
 \underline{Note:} $1\text{Angstrom}\,(\text{\AA}) = 10^{-10}$ m
 \newpage
-\section*{\LARGE\underline{Mechanical Properties}}
+\begin{center}
+    \section*{\LARGE\underline{Mechanical Properties}}
+\end{center}
 \section*{Stress and Strain}
 \textbf{Types of loading}
 \begin{figure}[H]
@@ -117,7 +112,9 @@ Area under the stress - strain plot from 0 to yield point\\\\
 Assuming a linear elastic region:
 \[U_r=\frac{1}{2}\sigma_y\epsilon_y\]
 \newpage
-\section*{\LARGE\underline{Crystal Structures}}
+\begin{center}
+    \section*{\LARGE\underline{Crystal Structures}}
+\end{center}
 \noindent\textbf{Atomic Packing Factor}
 \[ APF = \frac{\text{Volume of atoms in unit cell}}{\text{Total unit cell volume}}\]
 \noindent\textbf{Packing Fraction}
@@ -266,7 +263,9 @@ How to read:
 \textbf{Planer Density}
 \[PD=\frac{\text{Number of atoms centered on plane}}{\text{Area of plane}}\]
 \newpage
-\section*{\LARGE\underline{Point Defects}}
+\begin{center}
+    \section*{\LARGE\underline{Point Defects}}
+\end{center}
 \begin{itemize}
     \item Vacancies: Missing atoms in the lattice
     \begin{figure}[H]
@@ -480,7 +479,9 @@ Rewriting the equation:
 \[\ln D = \ln D_o - \frac{Q_d}{RT}\]
 This is the equation of a straight line with slope $-\frac{Q_d}{R}$ and y-intercept $\ln D_o$. Thus, a plot of $\ln D$ versus $\frac{1}{T}$ yields a straight line, from which $D_o$ and $Q_d$ can be determined.
 \newpage
+\begin{center}
 \section*{\LARGE\underline{Line Defects}}
+\end{center}
 Dislocations are line defects. It occurs when there is slipping between crystal planes when dislocations move, and they cause permanent (plastic) deformation. There are two main types:
 \begin{itemize}
     \item \textbf{Edge Dislocation}
@@ -648,4 +649,193 @@ Where:
     \item n = grain growth exponent (typically 2)
     \item K = temperature-dependent rate constant
 \end{itemize}
+\newpage
+\begin{center}
+\section*{\LARGE\underline{Failure}}
+\end{center}
+\section*{Fracture}
+\textit{Simple fracture} is when a body breaks into two or more pieces under static stress. For metals, fracture can be classified as either \textbf{brittle} or \textbf{ductile}.\\\\
+\textbf{Brittle fracture} occurs with little to no plastic deformation and is characterized by a rapid crack propagation.\\\\
+\textbf{Ductile fracture} occurs with extensive plastic deformation and is characterized by significant necking before fracture.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Fracture.png}
+\end{figure}\noindent
+Fractures involves two steps: crack formation and propagation. 
+\section*{Ductile Fracture Mechanism}
+\vspace{-2em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Ductile.png}
+\end{figure}\noindent
+After necking begins, small cavities form in the center of the necked down region. The cavities grow and coalesce to form a single crack. The crack propagates toward the outer edge of the sample, resulting in fracture. Ductile materials show almost 100\% reduction in area at fracture. Ductile fractures usually resemble a cup-and-cone shape (crack propagates at 45$^\circ$ to the applied load).
+\section*{Brittle Fracture}
+In brittle fracture, cracks form in the center perpendicular to the direction of applied load. The crack then propagates rapidly. Brittle materials show very little reduction in area at fracture. The fracture surface is usually flat and perpendicular to the applied load. The fracture surface usually has V-shaped "chevron" markings that point in the direction of crack propagation.
+\vspace{-2em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Chevron.png}
+\end{figure}\noindent
+\textbf{Transgranular Fracture}\\
+For most brittle materials, crack propagation corresponds to the breaking of atomic bonds along specific crystallographic planes, known as \textit{cleavage}. When the fracture surface passes through grains, it is called \textbf{transgranular fracture}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Transgranular.png}
+\end{figure}\newpage\noindent
+\textbf{Intergranular Fracture}\\
+In some cases, cracks propagate along grain boundaries, resulting in \textbf{intergranular fracture}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Intergranular.png}    
+\end{figure}\newpage
+\section*{Principles of fracture mechanics}
+\textbf{Stress concentration}\\
+\vspace{-2em}
+\begin{wrapfigure}{l}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Stress concentrator.png}
+    \vspace{-6em}
+\end{wrapfigure}
+The measured fracture strength of a material is often much lower than the theoretical strength calculated based on atomic bond strengths. This is due to the presence of microscopic flaws (cracks, voids, inclusions) that act as stress concentrators. The stress at the tip of a crack can be much higher than the applied stress, leading to premature fracture.\\\\
+For internal cracks that are elliptical, the maximum stress at the crack tip is given by:
+\[\boxed{\sigma_m=2\sigma_o\left(\frac{a}{\rho_t}\right)^{1/2}=K_t\sigma_o}\]
+\[K_t = \frac{\sigma_m}{\sigma_o}\]
+Where
+\begin{itemize}
+    \item $\sigma_m$ = maximum stress at crack tip
+    \item $\sigma_o$ = applied stress
+    \item a = length of a \textit{surface} crack, or half of the length of an \textit{internal} crack
+    \item $\rho_t$ = radius of curvature at crack tip
+    \item $K_t$ = stress concentration factor
+\end{itemize}
+\underline{Note:} Sharper cracks (smaller $\rho_t$) lead to higher stress concentrations. \\\\
+\underline{Note:} Exterior fillets also act as stress concentrators (surface cracks).
+\newpage\noindent\\
+\textbf{Critical stress}\\
+Cracks propagate when the stress at the crack tip reaches a critical value, $\sigma_c$, (ie. $\sigma_m = \sigma_c$ or $K_t>K_c$). The critical stress for crack propagation is given by:
+\[\boxed{\sigma_c = \left(\frac{2E\gamma_s}{\pi a}\right)^{1/2}}\]
+Where:
+\begin{itemize}
+    \item E = modulus of elasticity
+    \item $\gamma_s$ = specific surface energy
+    \item a = length of a \textit{surface} crack, or half of the length of an \textit{internal} crack
+\end{itemize}
+For ductile fracture, replace $\gamma_s$ with $\gamma_s + \gamma_p$, where $\gamma_p$ is the plastic deformation energy per unit area.\\\\
+\underline{Note:} Larger cracks (larger a) lead to lower critical stresses for fracture.\\\\
+\textbf{Fracture Toughness}\\
+Fracture toughness, $K_C$, is a measure of a material's resistance to fracture in the presence of a crack. It represents the critical value of the stress intensity factor at which crack propagation becomes unstable. It is defined as:
+\[\boxed{K_C = Y\sigma_c \sqrt{\pi a}}\]
+Where:
+\begin{itemize}
+    \item $Y$ = geometric correction factor (dimensionless)
+    \item $\sigma_c$ = critical applied stress for crack propagation
+    \item $a$ = crack length (half-length for an internal crack)
+\end{itemize}
+$K_C$ has units of MPa$\cdot$m$^{1/2}$ or psi$\cdot$in$^{1/2}$. In general, $K_C$ may depend on specimen thickness and geometry. A higher $K_C$ value indicates greater resistance to crack propagation.
+\\\\
+\textbf{Plane Strain Fracture Toughness}\\
+For specimens with thickness much greater than the crack dimensions and the crack-tip plastic zone, $K_C$ becomes independent of thickness. Under these conditions, plane strain exists (no strain perpendicular to the front and back faces). The fracture toughness under plane strain conditions is denoted $K_{IC}$ for Mode I crack opening.
+\[\boxed{K_{IC} = Y\sigma \sqrt{\pi a}}\]
+$\sigma$ is the applied stress. Under valid plane strain conditions, $K_{IC}$ is a true material property and represents the minimum fracture toughness of the material.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Mode I.png}
+\end{figure}\noindent
+\textbf{Design using fracture mechanics}\\
+Typically when it comes to design, the fracture toughness $K_C$ or $K_{IC}$ is known for a material, and if we know either the applied stress $\sigma$ or the crack length $a$, we can solve for the other variable to ensure that fracture does not occur. Thus, rearranging the equation we see that:
+\[\boxed{\sigma_c=\frac{K_{IC}}{Y\sqrt{\pi a}} \quad \text{(Max stress)}}\]
+\[\boxed{a_c= \frac{1}{\pi}\left(\frac{K_{IC}}{Y\sigma}\right)^2 \quad \text{(Max crack length/ defect size)}}\]
+\newpage
+\section*{Fracture toughness testing}
+There are two tests, the \textbf{Charpy} and \textbf{Izod}, that measure the \textbf{impact energy} (energy absorbed during fracture) of a material. Both tests involve breaking a notched specimen with a swinging pendulum hammer. The difference is in how the specimen is held:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Impact test.png}
+\end{figure}\noindent
+\textbf{Ductile-to-brittle transition}\\
+Some materials exhibit a transition from ductile behavior at high temperatures to brittle behavior at low temperatures. This phenomenon is known as the ductile-to-brittle transition. The transition is characterized by a sharp drop in impact energy over a narrow temperature range.\\\\
+The temperature at which the material changes from ductile to brittle fracture behavior is called the ductile-to-brittle transition temperature (DBTT). Above the DBTT, materials absorb a large amount of energy before fracturing (ductile). Below the DBTT, materials absorb very little energy (brittle). The Charpy V-notch impact test is commonly used to determine the ductile-to-brittle transition temperature (DBTT) of materials.
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{DTBT.png}
+\end{figure}
+\newpage
+\section*{Cyclic stresses}
+\textbf{Fatigue} is failure that occurs due to cyclic or fluctuating stresses, typically well below the static tensile or yield strength of the material. Most engineering failures occur by fatigue.\\\\
+Fatigue failure proceeds in three stages:
+\begin{itemize}
+    \item Crack initiation (usually at surface defects, notches, scratches)
+    \item Crack propagation (incremental crack advance per cycle)
+    \item Final sudden fracture when remaining cross-section cannot support load
+\end{itemize}
+The applied stress may be axial (tension-compression), flexural (bending), or torsional (twisting) in nature. In general, three different fluctuating stress–time
+modes are possible.\\\\
+Reversed stress cycle, in which the stress alternates from a maximum tensile stress ($+$) to a maximum compressive stress ($-$) of equal magnitude:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Cyclic stress.png}
+\end{figure}\noindent
+Repeated stress cycle, in which maximum and minimum stresses are asymmetrical relative to the zero-stress level; mean stress $\sigma_m$, range of stress $\sigma_r$, and stress amplitude $\sigma_a$ are indicated:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Cyclic stress 2.png}
+\end{figure}\newpage\noindent
+Random stress cycle:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Cyclic stress 3.png}
+\end{figure}
+We can characterize cyclic stresses using the following parameters:
+\begin{itemize}
+    \item Mean stress for cyclic loading
+    \[\boxed{\sigma_m = \frac{\sigma_{max} + \sigma_{min}}{2}}\]
+    \item Range of stress of cyclic loading
+    \[\boxed{\sigma_r = \sigma_{max} - \sigma_{min}}\]
+    \item Stress amplitude of cyclic loading
+    \[\boxed{\sigma_a =\frac{\sigma_r}{2}= \frac{\sigma_{max} - \sigma_{min}}{2}}\]
+    \item Stress ratio of cyclic loading
+    \[\boxed{R = \frac{\sigma_{min}}{\sigma_{max}}}\]
+\end{itemize}
+\section*{The S-N curve}
+Fatigue behavior is commonly represented using an S–N curve, which plots stress amplitude vs. number of cycles to failure.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{SN curve.png}
+\end{figure}\newpage\noindent
+For some metals (primarily steels), the S–N curve levels off at a plateau called the: \textbf{fatigue limit}. Below this limit, the material can theoretically endure infinite cycles without failure. For other metals (such as aluminum and copper), there is no distinct fatigue limit; instead, the S–N curve continues to slope downward, indicating that failure will eventually occur at any stress level given enough cycles. For these metals, \textbf{fatigue strength} is defined as the stress amplitude at a specified number of cycles (\textbf{fatigue life}).\\\\
+\textbf{Fatigue Lifetime (Basquin's Law)}\\
+To determine the number of cycles to failure for a given stress amplitude, or to determine the stress amplitude for a desired fatigue life, we use the mathematical form of the S--N curve.\\
+For many metals in the high-cycle fatigue region, the S--N curve follows a power-law relationship known as \textbf{Basquin's Law}:
+\[\boxed{\sigma_a = A N^b}\]
+Where:
+\begin{itemize}
+    \item $\sigma_a$ = stress amplitude
+    \item $N$ = number of cycles to failure
+    \item $A$ = material constant (intercept)
+    \item $b$ = fatigue exponent (slope), typically negative
+\end{itemize}
+
+Taking the logarithm of both sides gives a linear relationship:
+\[\boxed{\log \sigma_a = \log A + b \log N}\]
+Thus, when plotted on a log--log graph, the S--N curve becomes a straight line.\\\\
+\textbf{Determining $A$ and $b$ From Data}\\
+Given two points on the S--N curve, $(\sigma_{a1}, N_1)$ and $(\sigma_{a2}, N_2)$, we can compute the constants:
+\[\boxed{b = \frac{\log \sigma_{a2} - \log \sigma_{a1}}{\log N_2 - \log N_1}}\]
+\[\boxed{A = \sigma_{a1} N_1^{-b}}\]
+Once $A$ and $b$ are known, we may solve for:
+\[\boxed{N = \left(\frac{\sigma_a}{A}\right)^{1/b}}\qquad\text{or}\qquad\boxed{\sigma_a = A N^b}\]
+\section*{Crack initiation and propagation}
+Cracks associated with fatigue failure almost always initiate (or nucleate) on the surface of a component at stress concentrators such as: surface scratches, sharp fillets, keyways, threads, dents, etc. Cyclic loading can also produce microscopic surface cracks from dislocation slip steps. Once a fatigue crack forms, it grows incrementally every cycle.\\\\
+Fracture surfaces from fatigue failures often exhibit features such as
+\begin{itemize}
+    \item \textbf{Benchmarks} (macroscopic): pattern formed by intermittent loading
+    \item \textbf{Striations} (microscopic): each marks one cycle of crack growth
+\end{itemize}
+\begin{center}
+\section*{\LARGE\underline{Phase Diagrams}}
+\end{center}
+
+
+
 \end{document}
