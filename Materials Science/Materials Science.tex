@@ -736,7 +736,9 @@ $K_C$ has units of MPa$\cdot$m$^{1/2}$ or psi$\cdot$in$^{1/2}$. In general, $K_C
 \textbf{Plane Strain Fracture Toughness}\\
 For specimens with thickness much greater than the crack dimensions and the crack-tip plastic zone, $K_C$ becomes independent of thickness. Under these conditions, plane strain exists (no strain perpendicular to the front and back faces). The fracture toughness under plane strain conditions is denoted $K_{IC}$ for Mode I crack opening.
 \[\boxed{K_{IC} = Y\sigma \sqrt{\pi a}}\]
-$\sigma$ is the applied stress. Under valid plane strain conditions, $K_{IC}$ is a true material property and represents the minimum fracture toughness of the material.
+$\sigma$ is the applied stress. Under valid plane strain conditions, $K_{IC}$ is a true material property and represents the minimum fracture toughness of the material.\\\\
+\underline{Note:} The fracture condition is met when $\boxed{K_C \geq K_{IC}}$.
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Mode I.png}
@@ -947,7 +949,7 @@ Note that like before, the tie line can be used to determine phase compositions 
 \textbf{Eutectic reaction}\\
 A reaction in which, upon cooling, a liquid phase transforms isothermally (at constant temperature) and reversibly into two intimately mixed solid phases. This occurs at the eutectic composition and temperature, where the liquid phase solidifies into a mixture of $\alpha$ and $\beta$ phases. The term "eutectic" means "easily melted".\\\\
 \underline{General Equation}:
-    $$ L(C_E) \underset{\text{heating}}{\overset{\text{cooling}}{\rightleftharpoons}} \alpha(C_{\alpha E}) + \beta(C_{\beta E}) $$
+    $$\boxed{L(C_E) \underset{\text{heating}}{\overset{\text{cooling}}{\rightleftharpoons}} \alpha(C_{\alpha E}) + \beta(C_{\beta E})} $$
 This reaction is termed an \textbf{invariant reaction} because it occurs at a specific temperature and composition where three phases coexist in equilibrium.\\\\
 This reaction tells us the concentrations of each phase that is formed. These concentrations can be used in the lever rule to determine the amounts of each phase present after solidification.
 \newpage
@@ -1011,19 +1013,77 @@ The phase diagrams for many binary alloy systems are much more complex. They may
 \end{figure}\noindent
 The composition of an intermediate phase can still be found using a tie line, and the amounts of each phase can be found using the lever rule.\\\\
 \textbf{Intermetallic compounds}\\
-Unlike solid solutions, which exist over a range of compositions, some systems form \textit{discrete intermediate compounds} with distinct chemical formulas. These compounds (called intermetallic compounds) form at specific, stoichiometric ratios. (Ex: The compound $\text{Mg}_2\text{Pb}$ exists specifically at a composition of $19\text{ wt\% Mg}$ and $81\text{ wt\% Pb}$ ($33\text{ at\% Pb}$)). Because the compound has no compositional range (finite width), it is represented as a vertical line on the phase diagram.
-\newpage\noindent
-Thus, we can treat it as two phase diagrams joined at the intermetallic compound line. We can still use tie lines and the lever rule to determine phase compositions and amounts.
+Unlike solid solutions, which exist over a range of compositions, some systems form \textit{discrete intermediate compounds} with distinct chemical formulas. These compounds (called intermetallic compounds) form at specific, stoichiometric ratios. (Ex: The compound $\text{Mg}_2\text{Pb}$ exists specifically at a composition of $19\text{ wt\% Mg}$ and $81\text{ wt\% Pb}$ ($33\text{ at\% Pb}$)). Because the compound has no compositional range (finite width), it is represented as a vertical line on the phase diagram.\\\\
+Thus, we can treat it as two phase diagrams joined at the intermetallic compound line. We can still use tie lines and the lever rule to determine phase compositions and amounts.\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Intermetallic.png}
 \end{figure}
+\vspace{-1em}
 \section*{Eutectoid and peritectic reactions}
-
-
-
-
-
+In addition to the eutectic, other invariant reactions involving three different phases are found for some alloy systems. Upon cooling, a solid $\sigma$-phase cools into $\gamma$ and $\epsilon$ solid phases according to the \textbf{eutectoid reaction}
+\[\boxed{\delta \underset{\text{heating}}{\overset{\text{cooling}}{\rightleftharpoons}} \gamma + \epsilon}\]
+Eutectoid means eutectic-like. The difference between a \textit{eutectoid} from \textit{eutectic} is that one solid phase instead of a liquid transforms into two other solid phases at a single temperature.\\\\
+The \textbf{peritectic reaction} is where, upon heating, one solid phase will convert into a liquid phase and another solid phase. 
+\[\boxed{\delta + L \underset{\text{heating}}{\overset{\text{cooling}}{\rightleftharpoons}} \epsilon}\]
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Invariant stuff.png}
+\end{figure}\noindent
+$E$ is the eutectoid and $P$ is the peritectic points respectively.
+\newpage\noindent
+In summary,
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Summary Invariant.png}
+\end{figure}
+\section*{Congruent phase transformations}
+Phase transformations in which there are no changes in composition are called \textbf{congruent phase transformations}. In these transformations, the composition of the phase remains constant throughout the transformation. For example, the transformation of a liquid phase into a solid phase at a specific temperature and composition without any change in composition is a congruent transformation.\\\\
+There is a congruent transformation when the $\gamma$ solid phase transforms into a liquid phase at the point below:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Congruent.png}
+\end{figure}
+\newpage
+\section*{The Gibbs phase rule}
+The \textbf{Gibbs phase rule} governs phase equilibria in materials systems. It is given by:
+\[P + F = C + N\]
+Where:
+\begin{itemize}
+    \item \(P\) = number of phases
+    \item \(F\) = degrees of freedom (independent variables)
+    \item \(C\) = number of components
+    \item \(N\) = number of non-compositional variables (e.g., temperature, pressure)
+\end{itemize}
+For binary systems at constant pressure (\(N=1\)):
+\[F = 3 - P\]
+\begin{itemize}
+    \item For a single-phase region: \(F = 2\) (both temperature and composition can vary independently).
+    \item For two-phase coexistence: \(F = 1\) (only temperature or phase composition can vary independently).
+    \item For three-phase equilibrium: \(F = 0\) (all conditions are fixed, e.g., eutectic isotherm).
+\end{itemize}
+The rule helps analyze equilibrium and identify non-equilibrium conditions in phase diagrams.
+\newpage
+\section*{The iron-iron carbide phase diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{IronIron.png}
+\end{figure}
+Pure iron, upon heating, experiences two changes in crystal structures before it melts. At room temperature, iron has a stable BCC structure, called \textbf{ferrite} or $\alpha$-iron. At 912$^\circ$C, it transforms to a FCC structure called \textbf{austenite} or $\gamma$-iron. At 1394$^\circ$C, it transforms back to BCC structure called \textbf{$\delta$-ferrite} or $\delta$-iron. The melting point of pure iron is 1538$^\circ$C. We can track these changes along the y-axis of the iron-iron carbide phase diagram.\\\\
+The phase diagram only goes up to 6.7 wt\% C because that is the composition of the compound \textbf{cementite} or $\text{Fe}_3\text{C}$. Cementite is an intermediate compound and is represented as a vertical line on the diagram. 
+\begin{itemize}
+    \item \textbf{Austenite (\(\gamma\)-Fe)} is stable only above 727°C.
+    \item \textbf{Cementite (Fe$_3$C)} is metastable at room temperature.
+    \item Over long periods at 650--700°C, cementite slowly decomposes into \(\alpha\)-iron and graphite.
+\end{itemize}
+One eutectic exists for the iron-iron carbide system, at 4.30 wt\% C and 1147°C (2097°F):
+\[L\underset{\text{heating}}{\overset{\text{cooling}}{\rightleftharpoons}} \gamma + \text{Fe}_3\text{C}\]
+A eutectoid reaction also exists at 0.76 wt\% C and 727°C (1341°F):
+\[\gamma (0.76 \text{wt\% C}) \underset{\text{heating}}{\overset{\text{cooling}}{\rightleftharpoons}} \alpha(0.022 \text{wt\% C}) + \text{Fe}_3\text{C}(6.7 \text{wt\% C})\]
+\underline{Note:} Ferrous alloys with less than 2.11 wt\% C are called \textbf{steels}, while those with more than 2.11 wt\% C are called \textbf{cast irons}.
+\newpage
+\section*{Development of microstructure in iron-carbon alloys}
 
 
 

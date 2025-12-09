@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  8 DEC 2025 13:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  9 DEC 2025 12:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -840,70 +840,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 734--738
 
  []
 
-<Mode I.png, id=228, 885.3075pt x 323.40825pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--741
+
+ []
+
+[41]
+<Mode I.png, id=231, 885.3075pt x 323.40825pt>
 File: Mode I.png Graphic file (type png)
 <use Mode I.png>
-Package pdftex.def Info: Mode I.png  used on input line 742.
+Package pdftex.def Info: Mode I.png  used on input line 744.
 (pdftex.def)             Requested size: 469.75502pt x 171.60786pt.
-[41] [42 <./Mode I.png>]
+ [42 <./Mode I.png>]
 <Impact test.png, id=236, 746.79pt x 460.119pt>
 File: Impact test.png Graphic file (type png)
 <use Impact test.png>
-Package pdftex.def Info: Impact test.png  used on input line 753.
+Package pdftex.def Info: Impact test.png  used on input line 755.
 (pdftex.def)             Requested size: 328.82707pt x 202.60042pt.
 <DTBT.png, id=237, 624.53325pt x 370.986pt>
 File: DTBT.png Graphic file (type png)
 <use DTBT.png>
-Package pdftex.def Info: DTBT.png  used on input line 761.
+Package pdftex.def Info: DTBT.png  used on input line 763.
 (pdftex.def)             Requested size: 281.85587pt x 167.42331pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 754--762
+Underfull \hbox (badness 10000) in paragraph at lines 756--764
 
  []
 
 [43 <./Impact test.png> <./DTBT.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 765--767
+Underfull \hbox (badness 10000) in paragraph at lines 767--769
 
  []
 
 <Cyclic stress.png, id=244, 602.25pt x 287.27325pt>
 File: Cyclic stress.png Graphic file (type png)
 <use Cyclic stress.png>
-Package pdftex.def Info: Cyclic stress.png  used on input line 777.
+Package pdftex.def Info: Cyclic stress.png  used on input line 779.
 (pdftex.def)             Requested size: 328.82707pt x 156.8567pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--778
+Underfull \hbox (badness 10000) in paragraph at lines 774--780
 
  []
 
 <Cyclic stress 2.png, id=245, 458.9145pt x 205.36725pt>
 File: Cyclic stress 2.png Graphic file (type png)
 <use Cyclic stress 2.png>
-Package pdftex.def Info: Cyclic stress 2.png  used on input line 782.
+Package pdftex.def Info: Cyclic stress 2.png  used on input line 784.
 (pdftex.def)             Requested size: 328.82707pt x 147.15295pt.
 [44 <./Cyclic stress.png> <./Cyclic stress 2.png>]
 <Cyclic stress 3.png, id=251, 419.76825pt x 210.7875pt>
 File: Cyclic stress 3.png Graphic file (type png)
 <use Cyclic stress 3.png>
-Package pdftex.def Info: Cyclic stress 3.png  used on input line 787.
+Package pdftex.def Info: Cyclic stress 3.png  used on input line 789.
 (pdftex.def)             Requested size: 234.8775pt x 117.9437pt.
 <SN curve.png, id=252, 938.90775pt x 309.5565pt>
 File: SN curve.png Graphic file (type png)
 <use SN curve.png>
-Package pdftex.def Info: SN curve.png  used on input line 804.
+Package pdftex.def Info: SN curve.png  used on input line 806.
 (pdftex.def)             Requested size: 469.75502pt x 154.88177pt.
  [45 <./Cyclic stress 3.png> <./SN curve.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 805--810
+Underfull \hbox (badness 10000) in paragraph at lines 807--812
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 820--824
+Underfull \hbox (badness 10000) in paragraph at lines 822--826
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 829--831
+Underfull \hbox (badness 10000) in paragraph at lines 831--833
 
  []
 
@@ -911,30 +917,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--831
 <Solubility.png, id=261, 882.8985pt x 611.28375pt>
 File: Solubility.png Graphic file (type png)
 <use Solubility.png>
-Package pdftex.def Info: Solubility.png  used on input line 847.
+Package pdftex.def Info: Solubility.png  used on input line 849.
 (pdftex.def)             Requested size: 328.82707pt x 227.66383pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 850--852
+Underfull \hbox (badness 10000) in paragraph at lines 852--854
 
  []
 
 [47 <./Solubility.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 859--862
+Underfull \hbox (badness 10000) in paragraph at lines 861--864
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 859--862
+Underfull \hbox (badness 10000) in paragraph at lines 861--864
 
  []
 
 <Single component.png, id=266, 1070.8005pt x 584.1825pt>
 File: Single component.png Graphic file (type png)
 <use Single component.png>
-Package pdftex.def Info: Single component.png  used on input line 867.
+Package pdftex.def Info: Single component.png  used on input line 869.
 (pdftex.def)             Requested size: 469.75502pt x 256.27449pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 863--868
+Underfull \hbox (badness 10000) in paragraph at lines 865--870
 
  []
 
@@ -942,25 +948,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 863--868
 <Binary phase.png, id=270, 743.77875pt x 602.85225pt>
 File: Binary phase.png Graphic file (type png)
 <use Binary phase.png>
-Package pdftex.def Info: Binary phase.png  used on input line 877.
+Package pdftex.def Info: Binary phase.png  used on input line 879.
 (pdftex.def)             Requested size: 281.85587pt x 228.45152pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 871--878
+Underfull \hbox (badness 10000) in paragraph at lines 873--880
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 871--878
+Underfull \hbox (badness 10000) in paragraph at lines 873--880
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 871--878
+Underfull \hbox (badness 10000) in paragraph at lines 873--880
 
  []
 
 [49 <./Single component.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 881--884
+Underfull \hbox (badness 10000) in paragraph at lines 883--886
 
  []
 
@@ -968,62 +974,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 881--884
 <Tieline.png, id=280, 828.696pt x 525.76425pt>
 File: Tieline.png Graphic file (type png)
 <use Tieline.png>
-Package pdftex.def Info: Tieline.png  used on input line 889.
+Package pdftex.def Info: Tieline.png  used on input line 891.
 (pdftex.def)             Requested size: 328.82707pt x 208.61723pt.
 <Lever.png, id=281, 1371.9255pt x 727.518pt>
 File: Lever.png Graphic file (type png)
 <use Lever.png>
-Package pdftex.def Info: Lever.png  used on input line 897.
+Package pdftex.def Info: Lever.png  used on input line 899.
 (pdftex.def)             Requested size: 352.31625pt x 186.83011pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--898
+Underfull \hbox (badness 10000) in paragraph at lines 892--900
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--898
+Underfull \hbox (badness 10000) in paragraph at lines 892--900
 
  []
 
 [51 <./Tieline.png> <./Lever.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 903--907
+Underfull \hbox (badness 10000) in paragraph at lines 905--909
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 903--907
+Underfull \hbox (badness 10000) in paragraph at lines 905--909
 
  []
 
 <Equilibrium cooling.png, id=287, 557.08125pt x 665.48625pt>
 File: Equilibrium cooling.png Graphic file (type png)
 <use Equilibrium cooling.png>
-Package pdftex.def Info: Equilibrium cooling.png  used on input line 917.
+Package pdftex.def Info: Equilibrium cooling.png  used on input line 919.
 (pdftex.def)             Requested size: 187.89914pt x 224.45483pt.
 [52]
 <Nonequlibrium.png, id=291, 555.87675pt x 679.338pt>
 File: Nonequlibrium.png Graphic file (type png)
 <use Nonequlibrium.png>
-Package pdftex.def Info: Nonequlibrium.png  used on input line 926.
+Package pdftex.def Info: Nonequlibrium.png  used on input line 928.
 (pdftex.def)             Requested size: 272.45877pt x 332.97182pt.
  [53 <./Equilibrium cooling.png> <./Nonequlibrium.png>]
 <Binary eutectic.png, id=297, 1085.85675pt x 826.88925pt>
 File: Binary eutectic.png Graphic file (type png)
 <use Binary eutectic.png>
-Package pdftex.def Info: Binary eutectic.png  used on input line 938.
+Package pdftex.def Info: Binary eutectic.png  used on input line 940.
 (pdftex.def)             Requested size: 375.80544pt x 286.17293pt.
  [54 <./Binary eutectic.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 946--950
+Underfull \hbox (badness 10000) in paragraph at lines 948--952
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 946--950
+Underfull \hbox (badness 10000) in paragraph at lines 948--952
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 950--953
+Underfull \hbox (badness 10000) in paragraph at lines 952--955
 
  []
 
@@ -1031,26 +1037,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 950--953
 <Case 1.png, id=307, 513.117pt x 634.16925pt>
 File: Case 1.png Graphic file (type png)
 <use Case 1.png>
-Package pdftex.def Info: Case 1.png  used on input line 959.
+Package pdftex.def Info: Case 1.png  used on input line 961.
 (pdftex.def)             Requested size: 234.8775pt x 290.28925pt.
  [56 <./Case 1.png>]
 <Case 2.png, id=312, 453.49425pt x 630.55576pt>
 File: Case 2.png Graphic file (type png)
 <use Case 2.png>
-Package pdftex.def Info: Case 2.png  used on input line 965.
+Package pdftex.def Info: Case 2.png  used on input line 967.
 (pdftex.def)             Requested size: 234.8775pt x 326.58235pt.
 <Case 3.png, id=313, 786.5385pt x 592.01175pt>
 File: Case 3.png Graphic file (type png)
 <use Case 3.png>
-Package pdftex.def Info: Case 3.png  used on input line 971.
+Package pdftex.def Info: Case 3.png  used on input line 973.
 (pdftex.def)             Requested size: 234.8775pt x 176.78285pt.
 <Case 4.png, id=314, 763.653pt x 642.60075pt>
 File: Case 4.png Graphic file (type png)
 <use Case 4.png>
-Package pdftex.def Info: Case 4.png  used on input line 979.
+Package pdftex.def Info: Case 4.png  used on input line 981.
 (pdftex.def)             Requested size: 328.82707pt x 276.70514pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 972--980
+Underfull \hbox (badness 10000) in paragraph at lines 974--982
 
  []
 
@@ -1058,35 +1064,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 972--980
 <HyperHypo.png, id=320, 600.44325pt x 479.99326pt>
 File: HyperHypo.png Graphic file (type png)
 <use HyperHypo.png>
-Package pdftex.def Info: HyperHypo.png  used on input line 984.
+Package pdftex.def Info: HyperHypo.png  used on input line 986.
 (pdftex.def)             Requested size: 281.85587pt x 225.31122pt.
 <Microconstituent.png, id=321, 816.04875pt x 654.64575pt>
 File: Microconstituent.png Graphic file (type png)
 <use Microconstituent.png>
-Package pdftex.def Info: Microconstituent.png  used on input line 991.
+Package pdftex.def Info: Microconstituent.png  used on input line 993.
 (pdftex.def)             Requested size: 328.82707pt x 263.79153pt.
  [58 <./Case 4.png> <./HyperHypo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 996--999
+Underfull \hbox (badness 10000) in paragraph at lines 998--1001
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1002--1005
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1007
 
  []
 
 [59 <./Microconstituent.png>]
-Overfull \hbox (10.97876pt too wide) in paragraph at lines 1006--1006
+Overfull \hbox (10.97876pt too wide) in paragraph at lines 1008--1008
 []\OT1/cmr/bx/n/17.28 Equilibrium di-a-grams hav-ing in-ter-me-di-ate phases or com-
  []
 
 <Intermediate.png, id=331, 679.338pt x 504.6855pt>
 File: Intermediate.png Graphic file (type png)
 <use Intermediate.png>
-Package pdftex.def Info: Intermediate.png  used on input line 1010.
+Package pdftex.def Info: Intermediate.png  used on input line 1012.
 (pdftex.def)             Requested size: 281.85587pt x 209.39436pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1011--1015
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1017
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1017
 
  []
 
@@ -1094,26 +1105,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 1011--1015
 <Intermetallic.png, id=336, 813.63976pt x 525.162pt>
 File: Intermetallic.png Graphic file (type png)
 <use Intermetallic.png>
-Package pdftex.def Info: Intermetallic.png  used on input line 1019.
+Package pdftex.def Info: Intermetallic.png  used on input line 1020.
 (pdftex.def)             Requested size: 281.85587pt x 181.9183pt.
- [61 <./Intermetallic.png>] (Materials Science.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1028
+
+ []
+
+<Invariant stuff.png, id=337, 732.93825pt x 438.438pt>
+File: Invariant stuff.png Graphic file (type png)
+<use Invariant stuff.png>
+Package pdftex.def Info: Invariant stuff.png  used on input line 1032.
+(pdftex.def)             Requested size: 305.33789pt x 182.65752pt.
+[61 <./Intermetallic.png> <./Invariant stuff.png>]
+<Summary Invariant.png, id=344, 775.09575pt x 319.1925pt>
+File: Summary Invariant.png Graphic file (type png)
+<use Summary Invariant.png>
+Package pdftex.def Info: Summary Invariant.png  used on input line 1039.
+(pdftex.def)             Requested size: 375.80544pt x 154.75946pt.
+<Congruent.png, id=345, 364.36125pt x 383.63326pt>
+File: Congruent.png Graphic file (type png)
+<use Congruent.png>
+Package pdftex.def Info: Congruent.png  used on input line 1046.
+(pdftex.def)             Requested size: 234.8775pt x 247.29813pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1042--1047
+
+ []
+
+[62 <./Summary Invariant.png> <./Congruent.png>] [63]
+<IronIron.png, id=354, 612.48825pt x 449.2785pt>
+File: IronIron.png Graphic file (type png)
+<use IronIron.png>
+Package pdftex.def Info: IronIron.png  used on input line 1071.
+(pdftex.def)             Requested size: 328.82707pt x 241.20825pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1073--1075
+
+ []
+
+[64 <./IronIron.png>] [65] (Materials Science.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4067 strings out of 474486
- 63626 string characters out of 5743755
+ 4096 strings out of 474486
+ 64287 string characters out of 5743755
  1934542 words of memory out of 5000000
- 26305 multiletter control sequences out of 15000+600000
+ 26334 multiletter control sequences out of 15000+600000
  576454 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,13n,65p,675b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Materials Science.pdf" (61 pages, 7689230 bytes).
+Output written on "Materials Science.pdf" (65 pages, 7928191 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
+ 427 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 346 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 
