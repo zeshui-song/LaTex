@@ -885,9 +885,95 @@ This is the same magnetic field as outside the plates, showing that the magnetic
 \end{enumerate}
 
 \section*{Chapter 33 - Electromagnetic Waves}
+The key mechanism of an electromagnetic wave is given by Maxwell’s equations: a time-varying electric field induces a magnetic field through Faraday’s law, and a time-varying magnetic field induces an electric field through the Maxwell–Ampere law. This mutual induction allows the electric and magnetic fields to sustain each other and self-propagate through space as a wave.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{EM.png}
+\end{figure}
+\newpage\noindent
+\textbf{Properties of electromagnetic waves}
+\begin{itemize}
+    \item Electromagnetic waves do not require a medium to propagate; they can travel through vacuum.
+    \item The $\vec{E}$ and $\vec{B}$ fields are always perpendicular to the direction of wave propagation. Thus, electromagnetic waves are transverse waves, and $\vec{E}\times \vec{B}$ points in the direction of propagation.
+    \item The $\vec{E}$ field is always perpendicular to the $\vec{B}$ field.
+    \item The magnitudes of the fields are related by $E=cB$, where $c$ is the speed of light in vacuum.
+    \item The speed of electromagnetic waves in vacuum is a constant $c=\dfrac{1}{\sqrt{\mu_0 \varepsilon_0}} \approx 3.00\times 10^8\, \text{m/s}$.
+    \item The fields always vary sinusoidally and are in phase with each other with the same frequency $f$ and wavelength $\lambda$.    
+\end{itemize}
 \begin{enumerate}
-    \item Test whether a given arrangement of propagating electromagnetic fields satisfies Maxwell's Equations.
-    \item Understand the principles of electromagnetic waves and their basic properties, such as phase speed, relation between $\vec{k}$, $\vec{E}$, and $\vec{B}$.
+    \item Test whether a given arrangement of propagating electromagnetic fields satisfies Maxwell's Equations.\\\\
+Consider the following electromagnetic wave pulse traveling with velocity $\vec{v}$ in a vacuum, carrying a time-varying electric field $\vec{E}$ and magnetic field $\vec{B}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{EM pulse.jpg}
+\end{figure}
+\vspace{-1em}
+\textit{Does it satisfy Gauss's Law?}\\
+The pulse is in a vacuum without any external charges, thus $Q_{\text{enc}}=0$ and $I_{\text{enc}}=0$.\\\\
+\begin{minipage}{0.5\textwidth}
+    \includegraphics[width=\linewidth]{EM Gauss.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+\[\int \vec{E}\cdot \hat{n} dA = \frac{{Q_{\text{enc}}}}{\varepsilon_0} = 0\]
+\[\int \vec{B}\cdot \hat{n} dA = 0\]
+\end{minipage}\\\\
+Therefore, Gauss's law for electricity and magnetism are satisfied.
+\newpage\noindent
+\textit{Does it satisfy Faraday's Law?}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{EM Faraday.jpg}
+\end{figure}
+\vspace{-2em}
+\[\Phi_B = \int \vec{B}\cdot \hat{n} dA = Bhx \implies \frac{d\Phi_B}{dt}=-Bhv \quad \text{(flux is decreasing)}\]
+\[\int \vec{E}\cdot d\vec{l}=-Eh \quad \text{(CCW is positive, $\vec{E}$ is CW)}\]
+Thus,
+\[-Eh=-Bhv \implies \boxed{E = Bv, \quad v=c}\]
+\textit{Does it satisfy Ampere-Maxwell Law?}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{EM Ampere.jpg}
+\end{figure}
+\vspace{-1em}
+There is no enclosed current, so $I_{\text{enc}}=0$.
+\[\int \vec{B}\cdot d\vec{l}=\mu_0\varepsilon_0 \frac{d\Phi_E}{dt}\]
+\[\Phi_E = \int \vec{E}\cdot \hat{n} dA\ = Ehx \implies \frac{d\Phi_E}{dt}=Ehv \quad \text{(flux is increasing)}\]
+\[\int \vec{B}\cdot d\vec{l}=Bh \quad \text{(CCW is positive, $\vec{B}$ is CCW)}\]
+Thus,
+\[Bh=\mu_0 \varepsilon_0 Ehv \implies \boxed{B = \mu_0 \varepsilon_0 E v, \quad v=c}\]
+\newpage\noindent
+To satisfy both Faraday's law and the Ampere-Maxwell law, the fields must satisfy:
+\[E = Bc, \qquad B = \mu_0 \varepsilon_0 E c\]
+\[\implies E = \mu_0 \varepsilon_0 c^2 E\]
+Thus,
+\[\boxed{c=\frac{1}{\sqrt{\mu_0\varepsilon_0}} \quad \text{(speed of light)}}\]
+\underline{Note:} We can also derive the wave equation for electromagnetic waves using the differential form of Maxwell's equations.
+\[\vec{\nabla}\times\vec{E}=-\frac{d\vec{B}}{dt}\quad \text{(Faraday's law)}\]
+\[\vec{\nabla}\times\left(\vec{\nabla}\times\vec{E}\right)=\vec{\nabla}\times\left(-\frac{d\vec{B}}{dt}\right)\]
+Right hand side:
+\[\vec{\nabla}\times\left(-\frac{d\vec{B}}{dt}\right) = -\frac{d}{dt}\left(\vec{\nabla}\times\vec{B}\right)=-\frac{d}{dt}\left(\mu_0\varepsilon_0\frac{d\vec{E}}{dt}\right)=-\frac{1}{c^2}\frac{d^2 \vec{E}}{dt^2}\]
+Left hand side:
+\[\vec{\nabla}\times\left(\vec{\nabla}\times\vec{E}\right) = \vec{\nabla}\left(\vec{\nabla}\cdot\vec{E}\right) - \nabla^2 \vec{E}\]
+Since there are no enclosed charge, Gauss's law states $\vec{\nabla}\cdot\vec{E}=0$, so:
+\[\vec{\nabla}\times\left(\vec{\nabla}\times\vec{E}\right) = -\nabla^2 \vec{E}\]
+Thus we have:
+\[-\nabla^2 \vec{E} = -\frac{1}{c^2}\frac{d^2 \vec{E}}{dt^2} \implies \boxed{\nabla^2 \vec{E} = \frac{1}{c^2}\frac{d^2 \vec{E}}{dt^2}}\]
+    \item Understand the principles of electromagnetic waves and their basic properties, such as phase speed, relation between $\vec{k}$, $\vec{E}$, and $\vec{B}$.\\\\
+If we consider a plane electromagnetic wave traveling in the $+(\hat{E}\times\hat{B})$ direction, the electric and magnetic fields can be represented as:
+\[\vec{E}(x,t) = E_{m} \sin(kx - \omega t) \hat{E}\]
+\[\vec{B}(x,t) = B_{m} \sin(kx - \omega t) \hat{B}\]
+Where $k$ is the wave number, $\omega$ is the angular frequency, and $E_{m}$ and $B_{m}$ are the amplitudes of the fields, and $\hat{E}$ and $\hat{B}$ are unit vectors in the directions of the electric and magnetic fields, respectively.
+\newpage\noindent
+Recall that the phase velocity of a transverse wave is:
+\[v = \frac{\omega}{k}=\frac{\lambda}{T}=\lambda f\]
+\[v=c\]
+Also recall that the wavenumber is related to the wavelength by:
+\[k = \frac{2\pi}{\lambda}\]
+The electromagnetic wave vector $\vec{k}$ has magnitude $k$ and points in the direction of wave propagation. Thus,
+\[\boxed{\vec{k} = k (\hat{E}\times\hat{B})}\]
+\textbf{Relationship between $\vec{E}$ and $\vec{B}$}\\
+Recall that the magnitudes of the electric and magnetic fields in an electromagnetic wave are related by $E=cB$.
     \item Define the Poynting vector or Poynting flux and be able to use it to calculate the energy carried by electromagnetic fields.
     \item Qualitatively describe how electromagnetic waves are generated. For an accelerating charge, identify the directions in which one will see the largest/smallest electric fields and describe the polarization of the electric field vector.
 \end{enumerate}

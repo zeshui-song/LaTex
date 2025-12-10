@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  10 DEC 2025 13:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  10 DEC 2025 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -894,29 +894,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 879--882
 
  []
 
+<EM.png, id=204, 2569.6pt x 634.37pt>
+File: EM.png Graphic file (type png)
+<use EM.png>
+Package pdftex.def Info: EM.png  used on input line 891.
+(pdftex.def)             Requested size: 281.85587pt x 69.57764pt.
+[40 <./EM.png>]
+<EM pulse.jpg, id=209, 1590.94376pt x 1387.1825pt>
+File: EM pulse.jpg Graphic file (type jpg)
+<use EM pulse.jpg>
+Package pdftex.def Info: EM pulse.jpg  used on input line 908.
+(pdftex.def)             Requested size: 140.92793pt x 122.87253pt.
 
-Overfull \hbox (13.03024pt too wide) in paragraph at lines 889--890
+Overfull \hbox (13.03024pt too wide) in paragraph at lines 904--909
 []\OT1/cmr/m/n/12 Test whether a given ar-range-ment of prop-a-gat-ing elec-tro-mag-netic fields sat-is-fies Maxwell's
  []
 
-[40] [41] (main.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 904--909
+
+ []
+
+<EM Gauss.jpg, id=210, 2354.7975pt x 1140.26pt>
+File: EM Gauss.jpg Graphic file (type jpg)
+<use EM Gauss.jpg>
+Package pdftex.def Info: EM Gauss.jpg  used on input line 914.
+(pdftex.def)             Requested size: 234.8775pt x 113.7195pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--922
+
+ []
+
+[41 <./EM pulse.jpg> <./EM Gauss.jpg>]
+<EM Faraday.jpg, id=214, 1826.825pt x 1453.43pt>
+File: EM Faraday.jpg Graphic file (type jpg)
+<use EM Faraday.jpg>
+Package pdftex.def Info: EM Faraday.jpg  used on input line 926.
+(pdftex.def)             Requested size: 187.89914pt x 149.47653pt.
+<EM Ampere.jpg, id=215, 2233.34375pt x 1808.7575pt>
+File: EM Ampere.jpg Graphic file (type jpg)
+<use EM Ampere.jpg>
+Package pdftex.def Info: EM Ampere.jpg  used on input line 936.
+(pdftex.def)             Requested size: 187.89914pt x 152.15538pt.
+ [42 <./EM Faraday.jpg> <./EM Ampere.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 962--964
+
+ []
+
+[43] [44] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3750 strings out of 474486
- 57533 string characters out of 5743755
+ 3787 strings out of 474486
+ 58232 string characters out of 5743755
  1937542 words of memory out of 5000000
- 25998 multiletter control sequences out of 15000+600000
+ 26035 multiletter control sequences out of 15000+600000
  568334 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,65p,680b,407s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (41 pages, 16587964 bytes).
+Output written on main.pdf (44 pages, 18545662 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
+ 274 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
