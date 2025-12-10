@@ -258,7 +258,7 @@ Let's consider the following rectangular current loop in a uniform magnetic fiel
 The orientation of the loop is defined using a normal vector $\vec{n}$ that is perpendicular to the plane of the loop and follows the right-hand rule with respect to the current direction.\\\\
 Curl fingers in the direction of the current and the thumb points in the direction of $\vec{n}$. The angle $\theta$ is defined as the angle between $\vec{n}$ and $\vec{B}$.
 \end{multicols}
-Finding the magnetic force on each side of the loop using $\vec{F}_B = I \vec{L} \times \vec{B}=ILBsin\theta$ where $\theta$ is the angle between $\vec{L}$ and $\vec{B}$:
+Finding the magnetic force on each side of the loop using $\vec{F}_B = I \vec{L} \times \vec{B}=ILBsin\phi$ where $\phi$ is the angle between $\vec{L}$ and $\vec{B}$:
 \[||\vec{F}_1||=||\vec{F}_3||=iaB\]
 \[||\vec{F}_2||=||\vec{F}_4||=ibBsin(90^\circ-\theta)=ibBcos\theta\]
 \newpage
@@ -269,7 +269,7 @@ Note that $A=ab$ is the area of the loop, so we can rewrite the torque as:
 \[\boxed{\tau = iABsin\theta}\]
 This relation holds for any shape of current loop, as long as $A$ is the area of the loop and $\theta$ is the angle between $\vec{n}$ and $\vec{B}$.\\\\
 If we have a \textit{coil} with $N$ loops of wire, we can approximate them as $N$ identical current loops stacked together in the same plane. Thus, the total torque on the coil is:
-\[\boxed{\sum \tau = NIABsin\theta}\]
+\[\boxed{\sum \tau = NiABsin\theta}\]
 \underline{Note:} The current-carrying coil will tend to rotate such that $\vec{n}$ is aligned with $\vec{B}$, minimizing the potential energy of the system.
 \newpage
 \textbf{Magnetic Dipole Moment}\\
@@ -279,18 +279,20 @@ Where $N$ is the number of loops, $I$ is the current, $A$ is the area of the loo
 Using $\vec{\mu}$, we can rewrite the torque on the current loop as:
 \[\boxed{\vec{\tau} = \vec{\mu} \times \vec{B}}\]
 \underline{Note:} This is only for torque about an axis through the center of the loop.\\\\
-Similar to the electric dipole in an electric field, the potential energy of a magnetic dipole in a magnetic field is given by:
+Similar to the electric dipole in an electric field, the potential energy of a magnetic dipole in a magnetic field is given by integrating the work done by the magnetic torque as it rotates ($\Delta U = -W_c$):
 \[\boxed{U = -\vec{\mu} \cdot \vec{B}}\]
-\underline{Note:} The minimum potential energy ($-\mu B$) occurs when $\vec{\mu}$ is aligned with $\vec{B}$, and the maximum potential energy ($\mu B$) occurs when they are anti-aligned.
+The minimum potential energy ($-\mu B$) occurs when $\vec{\mu}$ is aligned with $\vec{B}$, and the maximum potential energy ($\mu B$) occurs when they are anti-aligned.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{Potential.png}
 \end{figure}
 \underline{Note:} The work done by an external torque to rotate the dipole is $W_{ext}=\Delta U = U_f - U_i$. If the dipole is stationary before and after the rotation.\\\\
-A bar magnet and a rotating sphere of charge are magnetic dipoles as well, and we can approximate the Earth as a big magnetic dipole. Most subatomic particles (like electrons, protons, and neutrons) also have intrinsic magnetic dipole moments due to their spin and charge. Thus, we can model their interactions with magnetic fields using the same equations as above.\\\\
-Note that when a magnet exerts a magnetic force on a current-carrying wire, Newton’s third law requires that the wire exert an equal and opposite force back on the magnet. The only way the wire can interact with the magnet is through magnetic fields, so the wire must itself produce a magnetic field...
+We will later see that there is an energy stored in the external magnetic field. The potential energy of the magnetic dipole is related to the change in the energy stored in the magnetic field when the dipole is rotated.\\\\
+\textbf{(WORK IN PROGRESS)}\\\\
+A bar magnet and a rotating sphere of charge are magnetic dipoles as well, and we can approximate the Earth as a big magnetic dipole. Most subatomic particles (like electrons, protons, and neutrons) also have intrinsic magnetic dipole moments due to their spin and charge. Thus, we can model their interactions with magnetic fields using the same equations as above.
 \end{enumerate}
-\newpage
+\newpage\noindent
+When a magnet exerts a magnetic force on a current-carrying wire, Newton’s third law requires that the wire exert an equal and opposite force back on the magnet. The only way the wire can interact with the magnet is through magnetic fields, so the wire must itself produce a magnetic field...
 \section*{Chapter 29 - Magnetic Fields due to Currents}
 \begin{enumerate}
     \item Use the Biot-Savart law to calculate the magnetic field due to a current-carrying wires of arbitrary (but tractable) geometry. e.g., a loop.
@@ -315,6 +317,7 @@ Where
 \underline{Note:} $I d\vec{l} \times \hat{r} = I dl \sin \theta $ where $\theta$ is the angle between $d\vec{l}$ and $\vec{r}$.\\\\
 For a moving point charge:
 \[\boxed{d\vec{B} = \frac{\mu_0}{4\pi} \frac{ q \vec{v} \times \hat{r}}{r^2} \quad \text{(point charge)}}\]
+\newpage\noindent
 We can also find the direction of the magnetic field using the right-hand rule:
 \begin{multicols}{2}
 \begin{figure}[H]
@@ -326,7 +329,6 @@ We can also find the direction of the magnetic field using the right-hand rule:
     \item Your fingers will then naturally curl around in the direction of the magnetic field lines due to that element.
 \end{itemize}
 \end{multicols}
-\newpage
 \textbf{Magnetic Field Due to a Current in a Straight Wire}
 \begin{figure}[H]
     \centering
@@ -353,7 +355,6 @@ Taking the limit as $L \to \infty$, letting $r=x$:
 \[\boxed{||\vec{B}|| = \frac{\mu_0 I}{2\pi r} \quad \text{(infinite straight wire)}}\]
 \underline{Note:} For a semi-infinite wire (from $0\to\infty$), the magnetic field is half that of an infinite wire at the same distance $r$ from the wire.
 \[||\vec{B}|| = \frac{\mu_0 I}{4\pi r} \quad \text{(semi-infinite straight wire)}\]
-\newpage
 \textbf{Magnetic Field Due to a Current in a Circular Loop of Wire}
 \begin{figure}[H]
     \centering
@@ -365,7 +366,8 @@ Vectors:
 \[d\vec{l} = Rd\theta \, \hat{\theta}\]
 \[\vec{r}=\left<0,0,z\right>-\left<Rcos\theta,Rsin\theta,0\right>=\left<-Rcos\theta,-Rsin\theta,z\right>,\quad ||\vec{r}|| = \sqrt{R^2+z^2}\]
 \[\hat{r}=\frac{\left<-Rcos\theta,-Rsin\theta,z\right>}{\sqrt{R^2+z^2}}\]
-Rewriting $\hat{\theta}$ in cartesian, using a unit circle:
+\newpage\noindent
+Rewriting $\hat{\theta}$ in Cartesian, using a unit circle:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{Unit circle.jpg}
@@ -408,8 +410,8 @@ The angle between $d\vec{l}$ and $\vec{r}$ is always $90^\circ$ for a circular a
 \textbf{Ampere's Law}\\
 Ampere's Law states that the circulation of the magnetic field $\vec{B}$ around a closed \textbf{Amperian loop} is proportional to the net current $I_{\text{enc}}$ piercing the surface bounded by that loop.
 \[\boxed{\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}}\]
-We may arbitrarily choose a direction for integration around the Amperian loop and initially assume that the magnetic field $\vec{B}$ is aligned with this direction. If the resulting value of $\vec{B}$ is negative, this indicates that the true direction of the magnetic field is opposite to the assumed direction.\\\\
-The signs for the current enclosed can be determined using the right-hand rule:
+We can arbitrarily choose a direction for integration around the Amperian loop and assume that the magnetic field $\vec{B}$ is along this direction. If the resulting value of $\vec{B}$ is negative, then the true direction of the magnetic field is opposite to the assumed direction.\\\\
+The sign for the current enclosed can be determined using the right-hand rule:
 \begin{multicols}{2}
 \begin{figure}[H]
     \centering
@@ -543,14 +545,14 @@ We know that potential energy is related to force by:
 \[\boxed{\vec{F} = -\nabla U}\]
 \newpage\noindent
 \underline{Ex:} Force between a bar magnet and a circular loop of current\\\\
-Since both the bar magnet and the current loop produce magnetic dipoles, we can imagine that they will behave like two bar magnets where like poles repel and opposite poles attract.
+Since both the bar magnet and the current loop are magnetic dipoles, we can imagine that they will behave like two bar magnets whose like poles repel and opposite poles attract.
 \vspace{-1em}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{dipole.jpg}
 \end{figure}
 \vspace{-1em}
-Recall that the magnetic field along the axis of a magnetic dipole (current loop) is: 
+Recall that the magnetic field along the axis of a current loop of radius $R$ is: 
 \[B_z=\frac{\mu_0}{4\pi}\frac{2\mu}{(R^2+z^2)^{3/2}}\]
 Taking the limit $R \ll z$ (far field approximation):
 \[B_{z}=\frac{\mu_0}{4\pi}\frac{2\mu}{z^3}\]
@@ -601,7 +603,7 @@ Taking the derivative along the magnetic field lines \(s\),
 Rearranging,
 \[m v_{\parallel} \frac{d v_{\parallel}}{ds}
 = -\mu \frac{dB}{ds}\]
-Since \( \dfrac{ds}{dt} = v_{\parallel} \), this gives
+Since \( \dfrac{dv_{\parallel}}{ds}=\dfrac{dv_{\parallel}}{dt} \dfrac{dt}{ds} = \dfrac{1}{v_{\parallel}} \dfrac{dv_{\parallel}}{dt} \), this gives
 \[m \frac{d v_{\parallel}}{dt}
 = -\mu \frac{dB}{ds}\]
 Therefore, the parallel force on the particle is
@@ -617,7 +619,7 @@ Therefore, the parallel force on the particle is
 \begin{enumerate}
     \item Understand the meaning Faraday's law of induction and be able to use it to determine the electromotive force. Explain and apply the equivalence of Faraday's law and the Lorentz force law for motional emfs.\\\\
 \textbf{Faraday's Law of Induction}\\
-Faraday's law states that if an arbitrary closed loop encloses a region with a changing magnetic flux, then an electromotive force (emf) will be induced in the loop. If there happens to be a conducting wire along the loop, then an induced current will exist in the wire.
+Faraday's law states that if an arbitrary closed loop encloses a region with changing magnetic flux, then an electromotive force (emf) will be induced in the loop. If there happens to be a conducting wire along the loop, then an induced current will exist in the wire.
 \[\boxed{\mathcal{E} = -\frac{d\Phi_B}{dt}}\]
 The units for magnetic flux $\Phi_B$ are Weber (Wb), where
 \[1\, \text{Wb} = 1\, \text{T}\cdot \text{m}^2\]
@@ -635,15 +637,15 @@ The induced electric field has the following properties:
     \item Do not terminate and originate on charges
     \item Form closed loops!
     \item Is present whenever the magnetic flux is changing, even in regions where there are no conductors
-    \item Is a non-conservative field, meaning that the work done by the field around a closed loop is non-zero
+    \item Is a non-conservative field, meaning that the work done by the field around a closed loop is non-zero (and thus cannot be described by a potential energy function)
 \end{itemize}
 In the case where there is a coil of wire with $N$ turns, and the coil is tightly wound so that each turn experiences the same magnetic flux, then the total emf induced in the coil is:
-\[\mathcal{E}=-N\frac{d\phi_B}{dt} \quad \text{(coil of N turns)}\]
+\[\boxed{\mathcal{E}=-N\frac{d\phi_B}{dt} \quad \text{(coil of N turns)}}\]
 \underline{Note:} Typically, we don't need to think too hard about the direction of the induced electric field, and just need to consider the magnitude of the induced emf. The direction can be determined using Lenz's law.\\\\
 By examining the terms in Faraday's law, we can see that there are a few ways to induce an emf in a loop:
 \begin{itemize}
     \item Change the magnitude of the magnetic field $B$ within the coil.
-    \item Change either the total area of the coil or the portion of that area that lies within the magnetic field (ex: by expanding the coil or moving it in/out of the magnetic field).
+    \item Change either the total area of the coil or the portion of that area that lies within the magnetic field (ex: by expanding the coil or moving the coil in/out of the magnetic field).
     \item Change the orientation of the loop (angle between $\vec{B}$ and $\hat{n}$). For example, by rotating the coil within the magnetic field.
 \end{itemize}
 \textbf{Motional emf}\\
@@ -673,15 +675,15 @@ Considering the same circuit as before, when there is a current $I$ flowing thro
 \[\vec{F}_B = I\vec{L} \times \vec{B} \implies F_B = ILB\]
 We can find the current using Ohm's law and the emf:
 \[I = \frac{\mathcal{E}}{R} = \frac{BLv}{R}\]
-\[F_B =\frac{BLv}{R}LB = \frac{B^2L^2v}{R}\]
+\[\implies F_B =\frac{BLv}{R}LB = \frac{B^2L^2v}{R}\]
 If we want the conductor to move at a constant velocity then we need to apply an external force equal in magnitude and opposite in direction to the magnetic force:
 \[F_{\text{app}} =F_B= \frac{B^2L^2v}{R}\]
 The power supplied by this external force is:
 \[P_{\text{app}} = F_{\text{app}} v = \frac{B^2L^2v^2}{R}\]
 There is no change in kinetic energy of the conductor so all this power must be dissipated as heat in the resistor. We can verify this by calculating the power dissipated in the resistor:
 \[P_R = I^2 R = \left(\frac{BLv}{R}\right)^2 R = \frac{B^2L^2v^2}{R}\]
-\underline{Note:} Even though there is also current in the upper and lower rails, and thus a magnetic force, these forces cancel out since they point in opposite directions, so they do not contribute to the net force on the conductor.\\\\
-Also note that as a result of Lenz's law, regardless of the direction of motion of the conductor, there will be a magnetic force opposing the motion and thus requiring the external force to do \textit{positive} work to keep the conductor moving at a constant velocity. 
+\underline{Note:} Even though there is also current in the upper and lower rails, and thus a magnetic force, these forces cancel out since they point in opposite directions, so they do not contribute to the net force on the moving conductor.\\\\
+Also note that as a result of Lenz's law, regardless of the direction of motion of the conductor, there will always be a magnetic force opposing the motion and thus requiring the external force to do \textit{positive} work to keep the conductor moving at a constant velocity. 
 \newpage\noindent
 \textbf{Eddy Currents}\\
 Suppose that we move a solid conducting plate out of a region with a uniform magnetic field $\vec{B}$ pointing into the page. Similar to the motional emf example, the relative motion of the field and the conductor will induce a current and thus a magnetic force that opposes the motion. However, since the conductor solid, the conduction electrons will not follow a single path, but rather will swirl about within the plate, forming eddy currents. However, we can represent the effect of these eddy currents \textit{as if} it were a single induced current loop around the edge of the plate.
@@ -700,7 +702,7 @@ If the plate in the example was longer, it will enclose 2 regions of changing ma
 \end{figure}
 \end{multicols}
 \begin{multicols}{2}
-Like in the motional emf example, the interaction between the magnetic field and the eddy currents produces a magnetic force that opposes the motion of the plate. This causes energy to be lost as heat in the conductor due to the resistance of the material, thereby slowing down the motion of the conducting plate. This effect is used in electromagnetic braking systems.
+From in the motional emf example, we know that the interaction between the magnetic field and the eddy currents produces a magnetic force that opposes the motion of the plate. This causes energy to be lost as heat in the conductor due to the resistance of the material, thereby slowing down the motion of the conducting plate. This effect is used in electromagnetic braking systems.
 \columnbreak
 \begin{figure}[H]
     \centering
@@ -715,16 +717,16 @@ Sometimes we want to minimize the energy loss from eddy current such as in trans
     \includegraphics[width=0.4\textwidth]{Lam.png}
 \end{figure} 
 \textbf{Revisiting Electric Potential}\\
-In electrostatics, we were able to define an electric potential $V$ as a scalar field from the electric field produced by \textit{static charges}, however, we cannot define an electric potential for electric fields induced by changing magnetic fluxes. This is because the induced electric fields are non-conservative, meaning that the work done by the field around a closed loop is non-zero. As a result, there is no unique scalar potential around a closed loop because the induced electric field is non-conservative ($\oint \vec{E}\cdot d\vec{l}\neq0$), so the work done by the field over one full loop is nonzero and is equal to the emf.\\\\
-However, laws such as Ohm's law remain valid in circuits with induced emfs, provided that the induced emf is treated as an effective \textit{potential difference}, like a battery that adds or removes energy from charges as they move around the circuit. Since Ohm's law relates the current to the voltage drop across a resistor, it remains applicable in this case.
+In electrostatics, we were able to define an electric potential $V$ as a scalar field from the electric field produced by \textit{static charges}, however, we cannot define a unique electric potential from the circulating electric fields induced by a changing magnetic flux. This is because the induced electric fields are non-conservative as the work done by the field around a closed loop is non-zero ($\oint \vec{E}\cdot d\vec{l}\neq0$).\\\\
+However, it is still valid to consider the induced emf as a type of \textit{potential difference}, similar to a battery that adds or removes energy from charges as they move around a circuit. Thus, equations such as Ohm's law, $V=Ed$, $P=IV$, etc. are applicable in circuits with induced emfs.
     \item Apply Lenz's law to determine the sign of induced currents or electromotive forces.\\\\
 \textbf{Lenz's Law}\\
-Lenz's law states that the induced current around a loop will flow in a direction that produces a secondary magnetic field that will \textit{oppose} the \textit{change} in the magnetic flux in the loop. Note that Lenz's law still holds if there is no conducting wire to actually produce the secondary magnetic field, the direction is the same regardless.
+Lenz's law states that the induced current around a loop will flow in a direction that produces a secondary magnetic field that \textit{opposes} the \textit{change} in the magnetic flux in through the loop. Note that Lenz's law still holds even if there is no conducting wire to actually produce the secondary magnetic field, the direction is the same regardless.
 \newpage
     \item Define inductance and be able to calculate the self or mutual inductance for various (usually simple) current distributions. Know and use the reciprocity relation for mutual inductances.\\\\
 \textbf{Inductance}\\
-Inductance measures the ability of a conductor to induce an emf in itself (self-inductance) or in another conductor (mutual inductance) as a result of a changing current. The inductance depends only on the geometry of the conductors and the magnetic permeability of the medium. For an inductor carrying current $I$ with $N$ turns, the \textbf{inductance} is defined as:
-\[\boxed{L=\frac{N\Phi_B}{I}}\]
+Inductance measures the ability of a conductor to induce an emf in itself (self-inductance) or in another conductor (mutual inductance) as a result of a changing current. The inductance depends on only geometry and other constants. For an inductor carrying current $I$ with $N$ turns, the \textbf{inductance} is defined as:
+\[\boxed{L=N\frac{\Phi_B}{I}}\]
 Where $\phi_B$ is the magnetic flux through a single turn of the inductor. The units for inductance are Henry (H), where
 \[1\, \text{H} = 1\,\text{T}\cdot \text{m}^2/\text{A}\]
 \textbf{Self Inductance of a Solenoid}\\
@@ -743,16 +745,16 @@ We can rewrite emf in terms of inductance:
 \[\boxed{\mathcal{E} = -L \frac{dI}{dt}}\]
 This self-induced emf opposes changes in current, thus an increasing current induces a negative emf (opposing the increase), and this is sometimes called the \textit{back emf}.
 \newpage\noindent
-We can also define a self-induced potential difference $V_L$ across the inductor (outside the region of changing magnetic flux). For an \textit{ideal} inductor, the magnitude of $V_L$ is equal to the magnitude of the self-induced emf. For \textit{non-ideal} inductors, we can treat it as an ideal inductor in series with a resistor (to account for energy loss due to resistance).\\\\
+We can also define a self-induced potential difference $V_L$ across the inductor (outside the region of changing magnetic flux). For an \textit{ideal} inductor, the magnitude of $V_L$ is equal to the magnitude of the self-induced emf. For \textit{non-ideal} inductors, we can model it as an ideal inductor in series with a resistor (to account for energy loss due to resistance).\\\\
 \textbf{Mutual Induction}\\
 Suppose we have two inductors (coils of wire) placed close to each other, such that the current in one coil will produce a magnetic flux that passes through the other coil. If the current in coil 1 changes, the changing magnetic flux through coil 2 will induce an emf in coil 2. This is called \textbf{mutual induction} and is defined by the \textbf{mutual inductance} $M_{21}$ of coil 2 with respect to coil 1 as:
 \[\boxed{M_{21} = \frac{N_2 \Phi_{B2}}{I_1}}\]
 Note that the mutual inductance is \textit{symmetric}, meaning that
 \[M_{21} = M_{12}\]
 This is very useful in cases where it is easier to find the flux through one coil than the other.\\\\
-Similar to self-induction, the emf induced in coil 2 due to a changing current in coil 1 is given by:
+Similar to self-induction, the emf induced in coil 2 due to a changing current in coil 1:
 \[\boxed{\mathcal{E}_2 = -M_{21} \frac{dI_1}{dt}}\]
-If the current in coil 2 changes, it will also induce an emf in coil 1 given by:
+If the current in coil 2 changes, it will induce an emf in coil 1:
 \[\boxed{\mathcal{E}_1 = -M_{12} \frac{dI_2}{dt}}\]
 \newpage\noindent
 \textbf{Mutual Induction of a Transformer}\\
@@ -786,14 +788,14 @@ The energy stored in the inductor is then:
 \[P=\frac{dU}{dt} \implies \int dU = \int_0^I I L dI = \frac{1}{2} L I^2\]
 \[\boxed{U = \frac{1}{2} L I^2}\]
 \textbf{Energy Density of a Magnetic Field}\\
-Similar to finding the energy density of an electric field, we can find the energy density of a magnetic field by dividing the total energy stored in the magnetic field by the volume over which the field exists. This is assuming that the magnetic field is uniform over that volume.\\\\
+Similar to finding the energy density of an electric field, we can find the energy density of a magnetic field by dividing the total energy stored in the magnetic field by the volume over which the field exists. Assuming that the magnetic field is uniform over that volume.\\\\
 For a solenoid with length $l$ and cross-sectional area $A$, its volume is $V = Al$, and it stores an energy of:
 \[U = \frac{1}{2} L I^2, \quad L_{\text{solenoid}}=\mu_0 \frac{N^2}{l}A=\mu_0 n^2 A l\]
 The energy density of the magnetic field is then:
 \[u_B = \frac{U}{V} = \frac{\frac{1}{2} (\mu_0 n^2 A l) I^2}{A l} = \frac{1}{2} \mu_0 n^2 I^2\]
 Since the magnetic field inside the solenoid is $B = \mu_0 n I$, we can rewrite the energy density as:
 \[\boxed{u_B = \frac{1}{2\mu_0} B^2}\]
-Like how we found the generalized electric field energy density using a parallel plate capacitor. This equation is valid for any magnetic field, not just the uniform field inside a solenoid.\\\\
+Like how we found the general electric field energy density using a parallel plate capacitor. This equation is valid for any magnetic field, not just the uniform field inside a solenoid.\\\\
 Using the magnetic field energy density, we can find the total energy stored in any magnetic field by integrating the energy density over the volume of the field.
 \newpage
     \item Describe the principle of operation of a generator and a motor.\\\\
@@ -811,7 +813,7 @@ The emf induced in the coil is then:
 \[\mathcal{E} = -\frac{d}{dt}(AB\cos(\omega t)) = AB\omega \sin(\omega t)\]
 \[\boxed{\mathcal{E} = AB\omega \sin(\omega t)}\]
 This is the principle of operation of an AC generator, where mechanical energy is converted into electrical energy by rotating a coil in a magnetic field. It is AC because the direction of the induced current changes from ccw to cw as the coil continues to rotate.\\\\
-Similarly, a motor works in reverse by supplying an AC current to a coil in a magnetic field, which produces a torque on the coil that causes it to rotate, thereby converting electrical energy into mechanical energy.
+Similarly, a motor works in reverse by supplying an AC current to a coil in a magnetic field, which produces a torque on the coil that causes it to rotate, converting electrical energy into mechanical energy.
 \end{enumerate}
 \newpage
 \section*{Chapter 32 - Maxwell's Equations}
@@ -852,7 +854,7 @@ Similarly, a motor works in reverse by supplying an AC current to a coil in a ma
 \begin{enumerate}
     \item Describe Gauss's law for Magnetism and its applications.\\\\
 Gauss's law for magnetism states that the net magnetic flux through any closed surface is zero. This is because there only exists magnetic dipoles, so no matter how much or how little magnetic material is enclosed, the net magnetic flux will be zero. \\\\
-\underline{Note:} Even if you split a magnet into pieces, new north and south poles will form on each piece, so there are still no magnetic monopoles. Thus, even if you enclose a section of a magnet, Gauss's law for magnetism still holds.
+Even if you split a magnet into pieces, new north and south poles will form on each piece, so there are still no magnetic monopoles. Thus, even if you enclose a section of a magnet, Gauss's law for magnetism still holds.
     \item Describe the Ampere-Maxwell law, the displacement current, and calculate the magnetic field in a charging or discharging capacitor.\\\\
 Consider the following charging capacitor with rectangular plates of area $A$ and separation distance $d$. Since it is not fully charged, there is current $I$ in the wires, inducing a magnetic field.
 \begin{figure}[H]
@@ -875,7 +877,8 @@ The electric flux through a circular amperian loop that fully encloses the plate
 \[\Phi_E = \int \vec{E}\cdot \hat{n} dA = EA = \frac{Q}{\varepsilon_0 A} A = \frac{Q}{\varepsilon_0}\]
 The displacement current is then:
 \[I_d = \varepsilon_0 \frac{d\Phi_E}{dt} = \varepsilon_0 \frac{d}{dt}\left(\frac{Q}{\varepsilon_0}\right) = \frac{dQ}{dt} = I\]
-Thus, the magnetic field between the plates can be found using the Ampere-Maxwell law:
+\underline{Note:} $Q$ refers to the charge on each plate of the capacitor. The rate at which this charge changes is equal to the current $I$ by conservation of charge.\\\\
+Thus, the magnetic field around the plates can be found using the Ampere-Maxwell law:
 \[\oint \vec{B}\cdot d\vec{l}=\mu_0 \varepsilon_0 \frac{d\Phi_E}{dt}\]
 \[B(2\pi r) = \mu_0 I \implies \boxed{B = \frac{\mu_0 I}{2\pi r}}\]
 This is the same magnetic field as outside the plates, showing that the magnetic field is continuous across the capacitor.
