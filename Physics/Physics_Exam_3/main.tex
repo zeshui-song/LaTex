@@ -288,10 +288,10 @@ The minimum potential energy ($-\mu B$) occurs when $\vec{\mu}$ is aligned with 
 \end{figure}
 \underline{Note:} The work done by an external torque to rotate the dipole is $W_{ext}=\Delta U = U_f - U_i$. If the dipole is stationary before and after the rotation.\\\\
 We will later see that there is an energy stored in the external magnetic field. The potential energy of the magnetic dipole is related to the change in the energy stored in the magnetic field when the dipole is rotated.\\\\
-\textbf{(WORK IN PROGRESS)}\\\\
-A bar magnet and a rotating sphere of charge are magnetic dipoles as well, and we can approximate the Earth as a big magnetic dipole. Most subatomic particles (like electrons, protons, and neutrons) also have intrinsic magnetic dipole moments due to their spin and charge. Thus, we can model their interactions with magnetic fields using the same equations as above.
+\underline{Note:} This idea of a change in energy will have to consider the system including the current loop that produces the external magnetic field. Thus, there will be mutual inductance effect as well.
 \end{enumerate}
 \newpage\noindent
+A bar magnet and a rotating sphere of charge are magnetic dipoles as well, and we can approximate the Earth as a big magnetic dipole. Most subatomic particles (like electrons, protons, and neutrons) also have intrinsic magnetic dipole moments due to their spin and charge. Thus, we can model their interactions with magnetic fields using the same equations as above.\\\\
 When a magnet exerts a magnetic force on a current-carrying wire, Newton’s third law requires that the wire exert an equal and opposite force back on the magnet. The only way the wire can interact with the magnet is through magnetic fields, so the wire must itself produce a magnetic field...
 \section*{Chapter 29 - Magnetic Fields due to Currents}
 \begin{enumerate}
@@ -385,6 +385,7 @@ d\vec{l}\times\vec{r}&=
 &=(Rzcos\theta d\theta)\hat{\imath}+(Rzsin\theta d\theta)\hat{\jmath}+(R^2 sin^2\theta d\theta+R^2cos^2 \theta d\theta)\hat{k}\\
 &=(Rzcos\theta d\theta)\hat{\imath}+(Rzsin\theta d\theta)\hat{\jmath}+(R^2 d\theta)\hat{k}
 \end{align*}
+\vspace{-2em}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{loop 2.png}
@@ -405,12 +406,12 @@ The angle between $d\vec{l}$ and $\vec{r}$ is always $90^\circ$ for a circular a
 \[d\vec{B}=\frac{\mu_0}{4\pi} \frac{ I dl}{R^2} \hat{k},\quad \text{(Direction found by RHR)}\]
 \[\vec{B}=\int_{0}^{R \phi}\frac{\mu_0}{4\pi} \frac{ I dl}{R^2} \hat{k}\]
 \[\boxed{\vec{B}=\frac{\mu_0 I\phi}{4\pi R} \hat{k} \quad \text{(circular arc of wire)}}\]
-\newpage
     \item Describe Ampere's law and the conditions under which it can be used to solve for a magnetic field from a given current distribution. Use Ampere's law to find the field in those situations with sufficient symmetry to apply it. e.g., a long wire.\\\\
 \textbf{Ampere's Law}\\
 Ampere's Law states that the circulation of the magnetic field $\vec{B}$ around a closed \textbf{Amperian loop} is proportional to the net current $I_{\text{enc}}$ piercing the surface bounded by that loop.
 \[\boxed{\int \vec{B}\cdot d\vec{l}=\mu_0 I_{\text{enc}}}\]
-We can arbitrarily choose a direction for integration around the Amperian loop and assume that the magnetic field $\vec{B}$ is along this direction. If the resulting value of $\vec{B}$ is negative, then the true direction of the magnetic field is opposite to the assumed direction.\\\\
+We can arbitrarily choose a direction for integration around the Amperian loop and assume that the magnetic field $\vec{B}$ is along this direction. If the resulting value of $\vec{B}$ is negative, then the true direction of the magnetic field is opposite to the assumed direction.
+\newpage\noindent
 The sign for the current enclosed can be determined using the right-hand rule:
 \begin{multicols}{2}
 \begin{figure}[H]
@@ -431,7 +432,8 @@ Ampere's law is most useful for finding magnetic fields in situations with high 
     \item Toroidal solenoid (cylindrical symmetry)
     \item Infinite sheet of current (planar symmetry)
 \end{itemize}
-In these cases, the magnetic field is uniform along the Amperian loop, allowing us to take $\vec{B}$ outside the integral.\\\\
+In these cases, the magnetic field is uniform along the Amperian loop, allowing us to take $\vec{B}$ outside the integral.
+\newpage\noindent
 \textbf{Magnetic Field of a Long Straight Wire with Current}\\
 \textbf{Outside wire:}
 \begin{figure}[H]
@@ -974,13 +976,156 @@ The electromagnetic wave vector $\vec{k}$ has magnitude $k$ and points in the di
 \[\boxed{\vec{k} = k (\hat{E}\times\hat{B})}\]
 \textbf{Relationship between $\vec{E}$ and $\vec{B}$}\\
 Recall that the magnitudes of the electric and magnetic fields in an electromagnetic wave are related by $E=cB$.
-    \item Define the Poynting vector or Poynting flux and be able to use it to calculate the energy carried by electromagnetic fields.
+    \item Define the Poynting vector or Poynting flux and be able to use it to calculate the energy carried by electromagnetic fields.\\\\
+The \textbf{Poynting vector} $\vec{S}$ describes the \textit{rate} of energy transfer (power) per unit area carried by an electromagnetic wave. We can define it by examining the energy density of the electric and magnetic fields in an electromagnetic wave.\\\\
+\textit{What is the rate of energy passing through the face of the box?}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Poynting.jpg}
+\end{figure}
+The energy density of the electric and magnetic fields are:
+\[u_E = \frac{1}{2} \varepsilon_0 E^2, \quad u_B = \frac{1}{2\mu_0} B^2\]
+\[\implies u_{\text{Tot}} = u_E + u_B = \frac{1}{2} \varepsilon_0 E^2 + \frac{1}{2\mu_0} B^2\]
+Using the relation $E=cB$, we can rewrite the magnetic energy density in terms of $E$:
+\[u_{\text{Tot}}=\frac{1}{2}\varepsilon_0 E^2 + \frac{1}{2\mu_0}\frac{E^2}{c^2}, \quad \frac{1}{c^2}=\mu_0\varepsilon_0\]
+\[u_{\text{Tot}}=\frac{1}{2}\varepsilon_0 E^2 + \frac{1}{2\mu_0} E^2 \mu_0 \varepsilon_0 = \varepsilon_0 E^2\]
+\newpage\noindent
+In time $\Delta t$, the wave travels a distance $\Delta x = c \Delta t$. Thus, the amount of energy passing through area $A$ will be equal to the energy contained in a volume $A \Delta x$. 
+\[\Delta U = u_{\text{Tot}} A (c \Delta t)\]
+The rate of energy transfer per unit area is then:
+\[S= \frac{\Delta U}{A \Delta t} = u_{\text{Tot}} c = \varepsilon_0 c E^2 \quad \left(\frac{\text{energy/time}}{\text{area}}\right)\]
+We define the Poynting vector with magnitude equal to this rate of energy transfer per unit area, and direction given by the direction of wave propagation $\hat{S} = \hat{E}\times\hat{B}$. Thus,
+\[S = \varepsilon_0 EBc^2 = \frac{1}{\mu_0}EB, \quad E=cB\]
+\[\boxed{\vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B}}\]
+Its units are Watts per square meter (W/m$^2$).\\\\
+\textbf{Wave Intensity}\\
+By substituting the sinusoidal expression for $E = E_m sin(kx-\omega t)$ into the Poynting vector, we can find the rate of energy transfer as a function of time. However, the \textbf{intensity} $I$ (the time-averaged magnitude of the Poynting vector) is usually more useful.
+\[I = S_{\text{avg}}\]
+\[I =\frac{1}{c\mu_0}\left[E^2\right]_{\text{avg}}=\frac{1}{c\mu_0}\left[E_m^2 sin^2(kx-\omega t)\right]_{\text{avg}}\]
+Over a full cycle, the average value of $sin^2$ is $\frac{1}{2}$, thus:
+\[I = \frac{E_m^2}{2c\mu_0}\]
+\[\boxed{I = \frac{1}{c\mu_0}E^2_{\text{rms}}}\]
+Where $E_{\text{rms}} = E_m/\sqrt{2}$ is the root-mean-square value of the electric field.\\\\
+\underline{Note:} The energy density of the electric and magnetic fields are exactly equal in an electromagnetic wave.\\\\
+If we treat the source of the electromagnetic radiation as a point source that emits radiation isotropically (equally in all directions), the intensity at a distance $r$ from the source is:
+\[I = \frac{P}{A} = \frac{P}{4\pi r^2}\]
+Where $P$ is the total power emitted by the source.\\\\
+\textbf{Radiation Pressure}\\
+Assuming a beam of electromagnetic radiation hits the surface of an unconstrained object over time $\Delta t$ and the object absorbs all the radiation, then the object will gain an energy $\Delta U$ and momentum $\Delta p$ from the radiation. Since electromagnetic radiation carries momentum, the momentum transferred to the object is:
+\[\Delta p = \frac{\Delta U}{c} \quad \text{(total absorption)}\]
+If the radiation is reflected instead of absorbed, the momentum transferred to the object is:
+\[\Delta p = \frac{2\Delta U}{c} \quad \text{(total reflection)}\]
+The radiation pressure $P$ is defined as the force per unit area exerted on the object by the radiation, and the force is given by:
+\[F = \frac{\Delta p}{\Delta t}\]
+Note that we can express the energy $\Delta U$ in terms of the intensity $I$ of the radiation and the area $A$ of the object (where the area is perpendicular to the incident ray):
+\[\Delta U = I A \Delta t\]
+Thus the pressure exerted on the object is:
+\[F = \frac{IA}{c} \implies P = \frac{I}{c} \quad \text{(total absorption)}\]
+\[F = \frac{2IA}{c} \implies P = \frac{2I}{c} \quad \text{(total reflection)}\]
     \item Qualitatively describe how electromagnetic waves are generated. For an accelerating charge, identify the directions in which one will see the largest/smallest electric fields and describe the polarization of the electric field vector.
 \end{enumerate}
-
+\newpage
 \section*{Chapters 27, 30.12, \& 31 - Circuits}
+\textbf{Circuit Components}
+\begin{itemize}
+    \item \textbf{emf device}:\\
+    \begin{minipage}{0.2\textwidth}
+    \includegraphics[width=\linewidth]{Battery.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.75\textwidth}
+    A "charge pump" that does work on charges by maintaining a potential difference (voltage) between its terminals. Examples include batteries and generators.\\\\
+    \underline{Note:} A non-ideal emf device has internal resistance and is modeled as an ideal emf device in series with a resistor.
+    \end{minipage}    
+    \item \textbf{Resistor}:\\
+    \begin{minipage}{0.2\textwidth}
+    \includegraphics[width=\linewidth]{Resistor.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.75\textwidth}
+    Opposes the flow of current, converting electrical energy into heat. The voltage across a resistor is proportional to the current through it, following Ohm's law: $V=IR$.
+    \end{minipage}\\\\
+    \textit{Resistors in series}\\
+    Two resistors are in series if the \textit{same current} flows through both resistors.
+    \[\boxed{R_{\text{eq}} = R_1 + R_2 + \cdots \quad \text{(series resistors)}}\]
+    \textit{Resistors in parallel}\\
+    Two resistors are in parallel if they have the \textit{same voltage} across both resistors.
+    \[\boxed{\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots \quad \text{(parallel resistors)}}\]
+    \item \textbf{Capacitor}:\\
+    \begin{minipage}{0.2\textwidth}
+    \includegraphics[width=\linewidth]{Capacitor.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.75\textwidth}
+    Stores electrical energy in an electric field between its plates. The voltage across a capacitor is proportional to the charge stored on its plates: $V=\frac{Q}{C}$.
+    \end{minipage}\\\\
+    \textit{Capacitors in series}\\
+    Two capacitors are in series if they have the \textit{same charge} on both capacitors.
+    \[\boxed{\frac{1}{C_{\text{eq}}} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots \quad \text{(series capacitors)}}\]
+    \textit{Capacitors in parallel}\\
+    Two capacitors are in parallel if they have the \textit{same voltage} across both capacitors.
+    \[\boxed{C_{\text{eq}} = C_1 + C_2 + \cdots \quad \text{(parallel capacitors)}}\]      
+    \item \textbf{Inductor}:\\
+    \begin{minipage}{0.2\textwidth}
+    \includegraphics[width=\linewidth]{Battery.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.75\textwidth}
+    Stores energy in a magnetic field created by the current flowing through it. The voltage across an inductor is proportional to the rate of change of current through it: $V=L\frac{dI}{dt}$.
+    \end{minipage}\\\\
+    \textit{Inductors in Series}\\
+    Inductors are in series when the \textit{same current} flows through each inductor.
+    \[\boxed{L_{\text{eq}} = L_1 + L_2 + \cdots \quad \text{(series inductors)}}\]
+    \textit{Inductors in Parallel}\\
+    Inductors are in parallel when they share the \textit{same voltage} across their terminals. 
+    \[\boxed{\frac{1}{L_{\text{eq}}} = \frac{1}{L_1} + \frac{1}{L_2} + \cdots \quad \text{(parallel inductors)}}\]    
+    \underline{Note:} The equivalent inductance gets more complicated when mutual inductance is involved. There, it adds or subtracts based on the orientation of the inductors.    
+\end{itemize}
+\textbf{Grounding a circuit}\\
+    \begin{minipage}{0.2\textwidth}
+    \includegraphics[width=\linewidth]{Ground.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.75\textwidth}
+Grounding a circuit means connecting a point in the circuit to the Earth, which is considered to be at zero potential. This provides a reference point for measuring voltages in the circuit. Note that even though voltage is zero, this doesn't mean that current will be zero. In fact, current can flow to or from ground depending on the circuit configuration.
+    \end{minipage}\\\\
+\textbf{Ammeter}\\
+\textbf{Voltmeter}\\
+\newpage
 \begin{enumerate}
-    \item Know and be able to apply the Voltage Loop Rule and the Current Node Rule (conservation of energy and conservation of charge, respectively) to analyze a circuit. A good example is to prove the rules for adding resistors in series or in parallel.
+    \item Know and be able to apply the Voltage Loop Rule and the Current Node Rule (conservation of energy and conservation of charge, respectively) to analyze a circuit. A good example is to prove the rules for adding resistors in series or in parallel.\\\\
+\textbf{Kirchohoff's Loop Rule (Conservation of Energy)}\\
+The algebraic sum of all the potential differences (voltages) around any closed loop in a circuit must equal zero (no work is done in a complete circuit).\\\\
+We can start at any point in the loop and add the voltages we encounter as we traverse the loop.\\\\
+\underline{Resistance rule}\\
+Moving across a resistor in the direction of the current results in a voltage drop ($-\Delta V$), moving against the current results in a voltage rise ($+\Delta V$).\\\\
+\underline{emf rule}\\
+When we from the negative end to the positive end of an emf device, we have a voltage rise ($+\mathcal{E}$). Moving from the positive end to the negative end results in a voltage drop ($-\mathcal{E}$).\\\\
+Consider the following example:
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Circuit.jpg}
+\end{figure}
+\vspace{-1em}
+The emf device is non-ideal so it has an internal resistance $r$. We can \textit{potential difference between two points} $a$ and $b$ in the circuit by traversing a loop from $a$ to $b$ and summing the voltages encountered:
+\[(a \to b):\quad V_a + \mathcal{E} - Ir = V_b\]
+\newpage\noindent
+The current can be found using the loop rule:
+\[\mathcal{E}-Ir-IR = 0 \implies I = \frac{\mathcal{E}}{R+r}\]
+Thus, the potential difference between points $a$ and $b$ is:
+\[V_b-V_a= \mathcal{E}-Ir = \mathcal{E}-\frac{\mathcal{E}}{R+r}r\]
+\[\boxed{V_b - V_a = \mathcal{E}\left(\frac{R}{R+r}\right)}\]
+\underline{Note:} The direction and path taken to traverse the loop does not matter, as long as you are consistent with the signs of the voltages encountered.\\\\
+We can see how the potential differences change when moving through the circuit:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Circuit voltages.jpg}
+\end{figure}
+\underline{Note:} In a circuit with multiple emf devices, we can arbitrarily assign a direction for the current. If we find that the current is negative, it simply means that the actual current flows in the opposite direction.\\\\
+\textbf{Kirchhoff's Junction Rule (Conservation of Charge)}\\
+At any junction (node) in an electrical circuit, the sum of currents flowing into that junction must equal the sum of currents flowing out of that junction.\\\\
+\underline{Note:} Current flowing into the junction is positive, current flowing out of the junction is negative.
     \item Know the relation between current and voltage for the basic circuit elements of resistor, capacitor, and inductor.
     \item Write differential equations for RLC circuits (or RL, RC, LC). Understand qualitatively the behavior of resistors, inductors, and capacitors at high and low frequencies. Be able to describe how electromagnetic energy is stored, supplied, and dissipated in such circuits.
     \item Solve the differential equations for such circuits, identify characteristic timescales, frequencies, and resonances. If initial conditions are given, be able to find solutions that satisfy those initial conditions.
