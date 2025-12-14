@@ -883,16 +883,16 @@ The displacement current is then:
 Thus, the magnetic field around the plates can be found using the Ampere-Maxwell law:
 \[\oint \vec{B}\cdot d\vec{l}=\mu_0 \varepsilon_0 \frac{d\Phi_E}{dt}\]
 \[B(2\pi r) = \mu_0 I \implies \boxed{B = \frac{\mu_0 I}{2\pi r}}\]
-This is the same magnetic field as outside the plates, showing that the magnetic field is continuous across the capacitor.
+This is the same magnetic field as outside the plates, showing that the magnetic field is continuous across the capacitor.\\\\
+\textbf{Note:} The circulation of the magnetic field caused by a changing electric flux follows the right-hand rule. If the electric flux is increasing, the magnetic field circulates counterclockwise when viewed along the direction of the electric field, and clockwise if the flux is decreasing. Point your thumb in the direction of increasing $\vec{E}$ and your fingers curl in the direction of $\vec{B}$.
 \end{enumerate}
-
+\newpage
 \section*{Chapter 33 - Electromagnetic Waves}
 The key mechanism of an electromagnetic wave is given by Maxwell’s equations: a time-varying electric field induces a magnetic field through Faraday’s law, and a time-varying magnetic field induces an electric field through the Maxwell–Ampere law. This mutual induction allows the electric and magnetic fields to sustain each other and self-propagate through space as a wave.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{EM.png}
 \end{figure}
-\newpage\noindent
 \textbf{Properties of electromagnetic waves}
 \begin{itemize}
     \item Electromagnetic waves do not require a medium to propagate; they can travel through vacuum.
@@ -920,8 +920,7 @@ The pulse is in a vacuum without any external charges, thus $Q_{\text{enc}}=0$ a
 \[\int \vec{E}\cdot \hat{n} dA = \frac{{Q_{\text{enc}}}}{\varepsilon_0} = 0\]
 \[\int \vec{B}\cdot \hat{n} dA = 0\]
 \end{minipage}\\\\
-Therefore, Gauss's law for electricity and magnetism are satisfied.
-\newpage\noindent
+Therefore, Gauss's law for electricity and magnetism are satisfied.\\\\
 \textit{Does it satisfy Faraday's Law?}
 \begin{figure}[H]
     \centering
@@ -932,6 +931,7 @@ Therefore, Gauss's law for electricity and magnetism are satisfied.
 \[\int \vec{E}\cdot d\vec{l}=-Eh \quad \text{(CCW is positive, $\vec{E}$ is CW)}\]
 Thus,
 \[-Eh=-Bhv \implies \boxed{E = Bv, \quad v=c}\]
+\newpage\noindent
 \textit{Does it satisfy Ampere-Maxwell Law?}
 \begin{figure}[H]
     \centering
@@ -944,13 +944,12 @@ There is no enclosed current, so $I_{\text{enc}}=0$.
 \[\int \vec{B}\cdot d\vec{l}=Bh \quad \text{(CCW is positive, $\vec{B}$ is CCW)}\]
 Thus,
 \[Bh=\mu_0 \varepsilon_0 Ehv \implies \boxed{B = \mu_0 \varepsilon_0 E v, \quad v=c}\]
-\newpage\noindent
 To satisfy both Faraday's law and the Ampere-Maxwell law, the fields must satisfy:
 \[E = Bc, \qquad B = \mu_0 \varepsilon_0 E c\]
 \[\implies E = \mu_0 \varepsilon_0 c^2 E\]
 Thus,
 \[\boxed{c=\frac{1}{\sqrt{\mu_0\varepsilon_0}} \quad \text{(speed of light)}}\]
-\underline{Note:} We can also derive the wave equation for electromagnetic waves using the differential form of Maxwell's equations.
+\underline{Note:} We can also derive the wave equation for electromagnetic waves using the differential form of Maxwell's equations in a charge-free vacuum ($\rho=0$, $\vec{J}=0$).
 \[\vec{\nabla}\times\vec{E}=-\frac{d\vec{B}}{dt}\quad \text{(Faraday's law)}\]
 \[\vec{\nabla}\times\left(\vec{\nabla}\times\vec{E}\right)=\vec{\nabla}\times\left(-\frac{d\vec{B}}{dt}\right)\]
 Right hand side:
@@ -965,8 +964,7 @@ Thus we have:
 If we consider a plane electromagnetic wave traveling in the $+(\hat{E}\times\hat{B})$ direction, the electric and magnetic fields can be represented as:
 \[\vec{E}(x,t) = E_{m} \sin(kx - \omega t) \hat{E}\]
 \[\vec{B}(x,t) = B_{m} \sin(kx - \omega t) \hat{B}\]
-Where $k$ is the wave number, $\omega$ is the angular frequency, and $E_{m}$ and $B_{m}$ are the amplitudes of the fields, and $\hat{E}$ and $\hat{B}$ are unit vectors in the directions of the electric and magnetic fields, respectively.
-\newpage\noindent
+Where $k$ is the wave number, $\omega$ is the angular frequency, and $E_{m}$ and $B_{m}$ are the amplitudes of the fields, and $\hat{E}$ and $\hat{B}$ are unit vectors in the directions of the electric and magnetic fields, respectively.\\\\
 Recall that the phase velocity of a transverse wave is:
 \[v = \frac{\omega}{k}=\frac{\lambda}{T}=\lambda f\]
 \[v=c\]
@@ -976,6 +974,7 @@ The electromagnetic wave vector $\vec{k}$ has magnitude $k$ and points in the di
 \[\boxed{\vec{k} = k (\hat{E}\times\hat{B})}\]
 \textbf{Relationship between $\vec{E}$ and $\vec{B}$}\\
 Recall that the magnitudes of the electric and magnetic fields in an electromagnetic wave are related by $E=cB$.
+\newpage
     \item Define the Poynting vector or Poynting flux and be able to use it to calculate the energy carried by electromagnetic fields.\\\\
 The \textbf{Poynting vector} $\vec{S}$ describes the \textit{rate} of energy transfer (power) per unit area carried by an electromagnetic wave. We can define it by examining the energy density of the electric and magnetic fields in an electromagnetic wave.\\\\
 \textit{What is the rate of energy passing through the face of the box?}
@@ -983,13 +982,13 @@ The \textbf{Poynting vector} $\vec{S}$ describes the \textit{rate} of energy tra
     \centering
     \includegraphics[width=0.5\textwidth]{Poynting.jpg}
 \end{figure}
+\vspace{-1em}
 The energy density of the electric and magnetic fields are:
 \[u_E = \frac{1}{2} \varepsilon_0 E^2, \quad u_B = \frac{1}{2\mu_0} B^2\]
 \[\implies u_{\text{Tot}} = u_E + u_B = \frac{1}{2} \varepsilon_0 E^2 + \frac{1}{2\mu_0} B^2\]
 Using the relation $E=cB$, we can rewrite the magnetic energy density in terms of $E$:
 \[u_{\text{Tot}}=\frac{1}{2}\varepsilon_0 E^2 + \frac{1}{2\mu_0}\frac{E^2}{c^2}, \quad \frac{1}{c^2}=\mu_0\varepsilon_0\]
 \[u_{\text{Tot}}=\frac{1}{2}\varepsilon_0 E^2 + \frac{1}{2\mu_0} E^2 \mu_0 \varepsilon_0 = \varepsilon_0 E^2\]
-\newpage\noindent
 In time $\Delta t$, the wave travels a distance $\Delta x = c \Delta t$. Thus, the amount of energy passing through area $A$ will be equal to the energy contained in a volume $A \Delta x$. 
 \[\Delta U = u_{\text{Tot}} A (c \Delta t)\]
 The rate of energy transfer per unit area is then:
@@ -997,7 +996,30 @@ The rate of energy transfer per unit area is then:
 We define the Poynting vector with magnitude equal to this rate of energy transfer per unit area, and direction given by the direction of wave propagation $\hat{S} = \hat{E}\times\hat{B}$. Thus,
 \[S = \varepsilon_0 EBc^2 = \frac{1}{\mu_0}EB, \quad E=cB\]
 \[\boxed{\vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B}}\]
-Its units are Watts per square meter (W/m$^2$).\\\\
+Its units are Watts per square meter (W/m$^2$).
+\newpage\noindent
+\textit{Example with Poynting vector:} Power transfer into a cylindrical resistor
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Poynting ex.jpg}
+\end{figure}
+\vspace{-1em}
+Finding the Poynting flux at the surface of the resistor:
+\[\vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B}\]
+The electric field inside the resistor is given by Ohm's law:
+\[V=IR, \quad E = \frac{V}{d} = \frac{IR}{d}\]
+\[\implies \vec{E} = \frac{IR}{d}\hat{z}\]
+The magnetic field at the surface of the resistor is given by Ampere's law:
+\[\int \vec{B} \cdot d\vec{l}= \mu_0 I_{\text{enc}} \implies B = \frac{\mu_0 I}{2 \pi a}\]
+\[\implies \vec{B} = \frac{\mu_0 I}{2 \pi a} \hat{\theta}\] 
+Thus, the Poynting vector at the surface of the resistor is:
+\[\vec{S} = \frac{1}{\mu_0} \left(\frac{IR}{d}\hat{z}\right) \times \left(\frac{\mu_0 I}{2 \pi a} \hat{\theta}\right) = \frac{I^2R}{2 \pi a d} (-\hat{r})\]
+\underline{Note:} $\hat{\theta} = \left<-sin\theta,cos\theta\right>$\\\\
+The power flowing into the resistor is then:
+\[P = \int \vec{S} \cdot \hat{n} dA\]
+\[P =-2\pi ad \left(\frac{I^2R}{2 \pi a d}\right)= -I^2 R\]
+This makes sense because $P=-I^2R$ is the power entering the resistor via the electromagnetic fields. The resistor dissipates this same power as heat, and in steady state the fields are unchanged, so power in equals power out.
+\newpage\noindent
 \textbf{Wave Intensity}\\
 By substituting the sinusoidal expression for $E = E_m sin(kx-\omega t)$ into the Poynting vector, we can find the rate of energy transfer as a function of time. However, the \textbf{intensity} $I$ (the time-averaged magnitude of the Poynting vector) is usually more useful.
 \[I = S_{\text{avg}}\]
@@ -1022,10 +1044,21 @@ Note that we can express the energy $\Delta U$ in terms of the intensity $I$ of 
 Thus the pressure exerted on the object is:
 \[F = \frac{IA}{c} \implies P = \frac{I}{c} \quad \text{(total absorption)}\]
 \[F = \frac{2IA}{c} \implies P = \frac{2I}{c} \quad \text{(total reflection)}\]
-    \item Qualitatively describe how electromagnetic waves are generated. For an accelerating charge, identify the directions in which one will see the largest/smallest electric fields and describe the polarization of the electric field vector.
+    \item Qualitatively describe how electromagnetic waves are generated. For an accelerating charge, identify the directions in which one will see the largest/smallest electric fields and describe the polarization of the electric field vector.\\\\
+Consider how the electric field lines of a point charge change as it accelerates from rest from point 1 to point 2. As David Griffiths likes to say, “electromagnetic news travels at the speed of light.” For a distant observer, the electric field remains unchanged (light gray) until the disturbance in the field, the kink in the field lines, reaches them at the speed of light, shown by the expanding circle centered at point 2. Observers inside the circle see the new electric field (black) corresponding to the charge at point 2. This propagating kink in the electric field represents the radiated electromagnetic wave produced by the accelerating charge.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{EM Generation.jpg}
+\end{figure}
+\vspace{-1em}
+Notice that there is no change in the electric field along the line of motion of the charge, thus there is no electromagnetic radiation emitted in that direction. The maximum change in the electric field and thus the strongest radiation is observed in the plane perpendicular to the acceleration of the charge.
+\newpage\noindent
+Note that this change in electric field also induces a magnetic field according to Ampere-Maxwell law, with a direction consistent with the magnetic field produced by a moving charge (both out of the page).
+
 \end{enumerate}
 \newpage
-\section*{Chapters 27, 30.12, \& 31 - Circuits}
+\section*{Chapters 27 \& 30.9 - Circuits}
+This section with primarily cover steady state and time varying circuits with resistors, capacitors, and inductors. Oscillatory and AC circuits will be covered in the next section.\\\\
 \textbf{Circuit Components}
 \begin{itemize}
     \item \textbf{emf device}:\\
@@ -1067,11 +1100,11 @@ Thus the pressure exerted on the object is:
     \[\boxed{C_{\text{eq}} = C_1 + C_2 + \cdots \quad \text{(parallel capacitors)}}\]      
     \item \textbf{Inductor}:\\
     \begin{minipage}{0.2\textwidth}
-    \includegraphics[width=\linewidth]{Battery.jpg}
+    \includegraphics[width=\linewidth]{Inductor.jpg}
     \end{minipage}
     \hfill
     \begin{minipage}{0.75\textwidth}
-    Stores energy in a magnetic field created by the current flowing through it. The voltage across an inductor is proportional to the rate of change of current through it: $V=L\frac{dI}{dt}$.
+    Stores energy in a magnetic field created by the current flowing through it. The voltage across an inductor is proportional to the rate of change of current through it: $V=-L\frac{dI}{dt}$.
     \end{minipage}\\\\
     \textit{Inductors in Series}\\
     Inductors are in series when the \textit{same current} flows through each inductor.
@@ -1090,7 +1123,11 @@ Thus the pressure exerted on the object is:
 Grounding a circuit means connecting a point in the circuit to the Earth, which is considered to be at zero potential. This provides a reference point for measuring voltages in the circuit. Note that even though voltage is zero, this doesn't mean that current will be zero. In fact, current can flow to or from ground depending on the circuit configuration.
     \end{minipage}\\\\
 \textbf{Ammeter}\\
+An ammeter is used to measure the current flowing through a circuit by putting it in series with the circuit element whose current is to be measured. An ideal ammeter has zero resistance so that it does not affect the current it is measuring.\\\\
+Note that a non-ideal ammeter increases the total resistance of the circuit, which decreases the current flowing through the circuit according to Ohm's law.\\\\
 \textbf{Voltmeter}\\
+A voltmeter is used to measure the voltage across a circuit element by connecting it in parallel with that element. An ideal voltmeter has infinite resistance so that it does not draw any current from the circuit.\\\\
+Note that a non-ideal voltmeter decreases the total resistance of the circuit branch it is connected to (it is in parallel), which increases the current flowing through that branch according to Ohm's law.
 \newpage
 \begin{enumerate}
     \item Know and be able to apply the Voltage Loop Rule and the Current Node Rule (conservation of energy and conservation of charge, respectively) to analyze a circuit. A good example is to prove the rules for adding resistors in series or in parallel.\\\\
@@ -1110,7 +1147,6 @@ Consider the following example:
 \vspace{-1em}
 The emf device is non-ideal so it has an internal resistance $r$. We can \textit{potential difference between two points} $a$ and $b$ in the circuit by traversing a loop from $a$ to $b$ and summing the voltages encountered:
 \[(a \to b):\quad V_a + \mathcal{E} - Ir = V_b\]
-\newpage\noindent
 The current can be found using the loop rule:
 \[\mathcal{E}-Ir-IR = 0 \implies I = \frac{\mathcal{E}}{R+r}\]
 Thus, the potential difference between points $a$ and $b$ is:
@@ -1122,13 +1158,96 @@ We can see how the potential differences change when moving through the circuit:
     \centering
     \includegraphics[width=0.9\textwidth]{Circuit voltages.jpg}
 \end{figure}
+The voltage drops are linear across resistors since $V=IR$, $I$ is constant, and $R= \rho \frac{L}{A}$ is proportional to length $L$.\\\\
 \underline{Note:} In a circuit with multiple emf devices, we can arbitrarily assign a direction for the current. If we find that the current is negative, it simply means that the actual current flows in the opposite direction.\\\\
 \textbf{Kirchhoff's Junction Rule (Conservation of Charge)}\\
 At any junction (node) in an electrical circuit, the sum of currents flowing into that junction must equal the sum of currents flowing out of that junction.\\\\
-\underline{Note:} Current flowing into the junction is positive, current flowing out of the junction is negative.
+Current flowing into the junction is positive, current flowing out of the junction is negative.\\\\
+\underline{Note:} All the current in the circuit must equal the current from the emf device, as charge is conserved. Thus, if there are multiple branches in a circuit, the sum of the currents in each branch must equal the total current supplied by the emf device ($I_{\text{total}}=I_1 + I_2 + \cdots$). This is useful for circuits with resistors in parallel.
     \item Know the relation between current and voltage for the basic circuit elements of resistor, capacitor, and inductor.
-    \item Write differential equations for RLC circuits (or RL, RC, LC). Understand qualitatively the behavior of resistors, inductors, and capacitors at high and low frequencies. Be able to describe how electromagnetic energy is stored, supplied, and dissipated in such circuits.
-    \item Solve the differential equations for such circuits, identify characteristic timescales, frequencies, and resonances. If initial conditions are given, be able to find solutions that satisfy those initial conditions.
+    \newpage
+    \item Write differential equations for RL and RC circuits. Understand qualitatively the behavior of resistors, inductors, and capacitors in DC and transient regimes. Be able to describe how electromagnetic energy is stored, supplied, and dissipated in such circuits.\\\\
+\textbf{RC Circuits}\\
+In the following circuit, the capacitor is initially uncharged, and it begins to charge when the switch is closed at $a$. When the switch is moved to $b$, the capacitor then discharges through the resistor.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{RC.png}
+\end{figure}
+Using the loop rule, we can find the differential equations for the charging and discharging of the capacitor.\\\\
+\textit{Charging the capacitor:} (CW from the negative terminal of the battery)
+\[\mathcal{E}-IR-\frac{q}{C} = 0, \quad I = \frac{dq}{dt}\]
+\underline{Note:} When moving from the negative plate to the positive plate of a capacitor, there is a voltage rise. When moving from the positive plate to the negative plate, there is a voltage drop.
+\[\boxed{R\frac{dq}{dt} + \frac{q}{C} = \mathcal{E} \quad \text{(charging equation)}}\]
+The solution to this differential equation is:
+\[q(t) = C\mathcal{E}\left(1-e^{-\frac{t}{RC}}\right)\]
+\[I(t) = \frac{\mathcal{E}}{R}e^{-\frac{t}{RC}}\]
+We can define $RC$ as the \textbf{capacitive time constant} of the circuit.
+\[\boxed{\tau_C = RC \quad \text{(capacitive time constant)}}\]
+\newpage\noindent
+\textit{Discharging the capacitor} (CW from the left side of the resistor)
+\[-IR - \frac{q}{C} = 0, \quad I = \frac{dq}{dt}\]
+\[\boxed{R\frac{dq}{dt} + \frac{q}{C} = 0 \quad \text{(discharging equation)}}\]
+The solution to this differential equation is:
+\[q(t) = q_0 e^{-\frac{t}{RC}}\]
+\[I(t) = -\frac{q_0}{RC} e^{-\frac{t}{RC}}\]
+Note that $q_0$ is the initial charge on the capacitor as it begins to discharge ($q_0 = CV_0$). The negative sign in the current indicates that the current flows in the opposite direction during discharge.\\\\
+\textbf{RL Circuits}\\
+In the following circuit, the inductor initially has no current flowing through it. When the switch is closed at $a$, the current begins to increase through the inductor. When the switch is moved to $b$, the current then decreases as the energy stored in the magnetic field of the inductor is released through the resistor.\\\\
+\underline{Note:} The current will approach $\mathcal{E}/R$ as $t \to \infty$ when charging the inductor as steady state is reached (no change in current, so inductor acts like a short circuit). When discharging, the current will approach $0$ as $t \to \infty$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{RL.png}
+\end{figure}
+\vspace{-1em}
+Using the loop rule, we can find the differential equations for the charging and discharging of the inductor.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{RL charging.jpg}
+\end{figure}
+\newpage\noindent
+\textit{Charging the inductor:} (CW from the negative terminal of the battery)
+\[\mathcal{E}-IR-L\frac{dI}{dt} = 0\]
+\[\boxed{L\frac{dI}{dt} + IR = \mathcal{E} \quad \text{(charging equation)}}\]
+The solution to this differential equation is:
+\[I(t) = \frac{\mathcal{E}}{R}\left(1-e^{-\frac{R}{L}t}\right)\]
+We can define $L/R$ as the \textbf{inductive time constant} of the circuit.
+\[\boxed{\tau_L = \frac{L}{R} \quad \text{(inductive time constant)}}\]
+\textit{Discharging the inductor:} (CW from the left side of the resistor)
+\[-IR - L\frac{dI}{dt} = 0\]
+\underline{Note:} The voltage across the inductor \textit{in the direction of the current} is always $V_L = -L\frac{dI}{dt}$. In the charging case, the current is increasing, so $V_L$ is negative (voltage drop). In the discharging case, the current is decreasing, so $V_L$ is positive (voltage rise). We will keep the negative sign in the equation to account for the negative $dI/dt$ during discharge.
+\[\boxed{L\frac{dI}{dt} + IR = 0 \quad \text{(discharging equation)}}\]
+The solution to this differential equation is:
+\[I(t) = I_0 e^{-\frac{R}{L}t}\]
+Note that $I_0$ is the initial current through the inductor as it begins to discharge.\\\\
+\textbf{Energy and power}\\
+In DC and transient circuits, energy supplied by the emf device is stored in the
+electric fields of capacitors and the magnetic fields of inductors, and is dissipated as thermal energy in resistors. Therefore, the change of the total energy stored must be equal to the net power supplied by the emf device minus the power dissipated in resistors.
+\[\frac{dU_{\text{Tot}}}{dt} = P_{\text{emf}} - P_R\]
+Where:
+\begin{itemize}
+    \item $U_{\text{Tot}} = U_C + U_L = \frac{1}{2}CV_C^2 + \frac{1}{2}LI^2, \quad V_C= \frac{Q}{C}$
+    \item $P_{\text{emf}} = \mathcal{E}I$
+    \item $P_R = I^2 R$
+\end{itemize}
+\newpage\noindent
+    \item Solve the differential equations for such circuits and identify characteristic timescales. If initial conditions are given, be able to find solutions that satisfy those initial conditions.\\\\
+The time constant generally describe how quickly a circuit responds to changes. For RC circuits, the time constant $\tau_C = RC$ describes how quickly a capacitor charges or discharges. For RL circuits, the time constant $\tau_L = \frac{L}{R}$ describes how quickly the current through an inductor builds up or decays.\\\\
+\textbf{RC}
+\begin{itemize}
+    \item Charging: After a time $t=\tau_C$, the capacitor is about 63\% charged (where $Q_{\text{max}}=C\mathcal{E}$). After $t=5\tau_C$, the capacitor is 99\% charged.
+    \item Discharging: After a time $t=\tau_C$, the charge on the capacitor falls to about 37\% of its initial value ($Q_0$). After $t=5\tau_C$, the capacitor is fully discharged.
+\end{itemize}
+\textbf{RL}
+\begin{itemize}
+    \item Charging: After a time $t=\tau_L$, the current through the inductor is about 63\% of its maximum value ($I_{\text{max}}=\frac{\mathcal{E}}{R}$). After $t=5\tau_L$, the current is effectively at its maximum value.
+    \item Discharging: After a time $t=\tau_L$, the current through the inductor falls to about 37\% of its initial value ($I_0$). After $t=5\tau_L$, the current is effectively zero.
+\end{itemize}
+\end{enumerate}
+\section*{Chapter 31 - Oscillatory \& AC behavior}
+Notice that the differential equation for RL circuits are second order differential equations in terms of charge $q$ (since $I=dq/dt$). Thus, combining inductors and capacitors in circuits can lead to oscillatory behavior, similar to mass-spring systems.
+\begin{enumerate}
+    \item Write differential equations for LC and RLC circuits. Understand qualitatively the behavior of resistors, inductors, and capacitors at high and low frequencies. Be able to describe how electromagnetic energy is stored, supplied, and dissipated in such circuits.
+    \item Solve the differential equations for such circuits and identify characteristic frequencies and resonances. If initial conditions are given, be able to find solutions that satisfy those initial conditions.
     \item Know or be able to derive the complex impedances for resistors, capacitors, and inductors. Know or derive the rules for combining parallel and series impedances. Use those impedances to describe the relations among currents and voltages in circuits, both in magnitude and phase.
 \end{enumerate}
 \textbf{End Final Exam}

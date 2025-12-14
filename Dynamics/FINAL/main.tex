@@ -1,0 +1,331 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{amsmath, amsfonts, bm, graphicx}
+\usepackage{float,multicol}
+\geometry{margin=1in}
+\title{Dynamics Final Exam}
+\date{}
+\author{Zeshui Song}
+
+\begin{document}
+\maketitle
+\section*{Problem 1. Way Down Hadestown}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{P1.png}
+\end{figure}
+\textbf{a)} Given:
+\begin{itemize}
+    \item Path $ABC$ is a straight line a distance $d = 0.5 \,m$ from $O$
+    \item Path $CDA$ is an arc of radius $r = 2 \,m$
+    \item When Orpheus reaches point $A$, the turntable has $\omega = 0.5 \,rad/s$ and $\alpha = 0.1 \,rad/s^2$ (counterclockwise).
+    \item Orpheus starts from rest at point $A$ and walks with velocity $v=0.5 t \,m/s$ relative to the turntable, where $t$ is the time in seconds since he started walking.
+\end{itemize}
+Find:
+\begin{itemize}
+    \item His velocity and acceleration at point $B$
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{P1a.png}
+\end{figure}
+\textbf{Kinematics}\\\\
+Finding time $t$ when Orpheus reaches point $B$:\\
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.5\textwidth]{P1a1.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+\[x_{AB} = \sqrt{r^2-d^2} \implies x_{AB} = 1.9364m\]
+\end{minipage}
+\[\Delta x = x_{AB} = \int_{0}^{t} v dt'\]
+\[\int_{0}^{t} 0.5 t' dt' = \left[ 0.25 t'^2 \right]_{0}^{t} = 0.25 t^2\]
+\[1.9364m = 0.25 t^2 \implies t = 2.783s\]
+Finding $\theta_B$ when Orpheus reaches point $B$:
+\[\theta_B = \omega t + \frac{1}{2}\alpha t^2\]
+\[\theta_B = 0.5(2.783) + 0.5(0.1)(2.783)^2 = 1.7787 \,rad\]
+Finding $\omega$ at time $t$:
+\[\omega = \omega_0 + \alpha t = 0.5 + 0.1(2.783) = 0.7783 \,rad/s\]
+\newpage\noindent
+\textbf{Velocity}
+\[\mathbf{v_P}=\mathbf{v_B}+\mathbf{\Omega}\times\mathbf{r_{P/B}}+\left( \mathbf{{v}_{P/B}} \right)\]
+Where:
+\begin{itemize}
+    \item $\mathbf{v_P}$: Velocity of Orpheus relative to $XYZ$
+    \item $\mathbf{v_B}$: Velocity of point $B$ relative to $XYZ$
+    \[\mathbf{v_B}= \left< -d\omega sin\theta_B, d\omega cos\theta_B,0  \right> = \left< -0.5(0.7783) sin(1.7787), 0.5(0.7783) cos(1.7787),0  \right>\]
+    \[\mathbf{v_B}= \left< -0.3807, -0.0803,0 \right>\]
+    \item $\mathbf{\Omega}$: Angular velocity of turntable
+    \[\mathbf{\Omega} = \omega \mathbf{k}\]
+    \item $\mathbf{r_{P/B}}$: Position of Orpheus relative to point $B$
+    \[\mathbf{r_{P/B}} = \left< 0,0,0 \right>\]
+    \item $\mathbf{v_{P/B}}$: Velocity of Orpheus relative to turntable (point $B$)
+    \[\mathbf{v_{P/B}} = \left< 0,0.5t,0 \right>\]
+\end{itemize}
+Plugging in values:
+\[\mathbf{v_P}=\left< -0.3807, -0.0803,0  \right>+\left< 0,1.3915,0 \right>\]
+\[\boxed{\mathbf{v_P}=\left< -0.3807, 1.3112,0 \right> \,m/s}\]
+\newpage\noindent
+\textbf{Acceleration}
+\[\mathbf{a_P}=\mathbf{a_B}+\dot{\mathbf{\Omega}}\times \mathbf{r_{P/B}}+\mathbf{\Omega}\times(\mathbf{\Omega}\times\mathbf{r_{P/B}})+2\mathbf{\Omega}\times\left(\mathbf{v_{P/B}}\right)_{xyz}+\left(\mathbf{a_{P/B}}\right)_{xyz}\]
+\[\mathbf{a_P}=\mathbf{a_B}+2\mathbf{\Omega}\times\left(\mathbf{v_{P/B}}\right)_{xyz}+\left(\mathbf{a_{P/B}}\right)_{xyz}\]
+Find $\mathbf{a_B}$\\
+where the normal direction is $\hat{n} = \left< -cos\theta, -sin\theta \right>$ and the tangential direction is $\hat{t} = \left< -sin\theta, cos\theta \right>$:
+\[a_{Bn}= r\omega^2\]
+\[a_{Bt}= r\alpha\]
+Note that at $t = 2.783s$, $\omega = 0.7783 \,rad/s$ and $\alpha = 0.1 \,rad/s^2$:
+\[\mathbf{a_B} = (0.5)(0.7783)^2 \left< -cos\theta_B, -sin\theta_B,0 \right> + (0.5)(0.1) \left< -sin\theta_B, cos\theta_B,0 \right>\]
+\[\mathbf{a_B} = 0.3028 \left< -cos(1.7787), -sin(1.7787),0 \right> + 0.05 \left< -sin(1.7787), cos(1.7787),0 \right>\]
+\[\mathbf{a_B} = \left< 0.01357,-0.30659, 0 \right>\]
+Cross product:
+\[2\mathbf{\Omega}\times\left(\mathbf{v_{P/B}}\right)_{xyz} = 2(\omega \hat{k})\times(1.3915 \hat{\jmath}) = -2(0.7783)(1.3915 \hat{\imath}) = -2.166 \hat{\imath}\]
+Find $\left(\mathbf{a_{P/B}}\right)_{xyz}$:
+\[\left(\mathbf{a_{P/B}}\right)_{xyz} = \frac{d}{dt}v = \frac{d}{dt} 0.5 t = 0.5 \hat{\jmath}\]
+Plugging in values:
+\[\mathbf{a_P} = \left< 0.01357,-0.30659, 0 \right> + \left<-2.166,0,0 \right> + \left< 0, 0.5, 0 \right>\]
+\[\boxed{\mathbf{a_P} = \left< -2.1524,0.1934,0 \right> \,m/s^2}\]
+\newpage\noindent
+\textbf{b)} Given:
+\begin{itemize}
+    \item After point $B$ Orpheus continues walking along path $CDA$ at constant speed $v=1.5 \,m/s$ relative to the turntable.
+    \item At point $D$, the turntable has $\omega = 0.5 \,rad/s$ and $\alpha = 0.1 \,rad/s^2$ (counterclockwise).
+\end{itemize}
+Find:
+\begin{itemize}
+    \item His velocity and acceleration at point $D$
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{P1b.png}
+\end{figure}
+\textbf{Kinematics from point A to point D}\\
+From part A, we know that the distance $AB$ is 1.9364m. Thus, the distance $AC$ is $2(1.9364) = 3.8728m$. \\\\
+Also from part A, we can find the time $t_{AC}$ it takes for Orpheus to reach point $C$:
+\[3.8728 \,m = 0.25 t^2 \implies t_{AC} = 3.935 \,s\]
+To find the arc length $s_{CD}$ from point $C$ to point $D$, we need to find the angle in the sector $AOC$. Using the same triangle from part A:
+\[\theta_{AOC} = 2 \times \theta_{OAB} = 2 \times cos^{-1}\left(\frac{d}{r}\right) = 2 \times cos^{-1}\left(\frac{0.5}{2}\right) = 2.63623 \,rad\] 
+Thus the arclength $s_{CD}$ is:
+\[s_{CD} = r \theta_{AOC} = 2(2.63623) = 5.2724 \,m\]
+Finding the total time since Orpheus started walking from point $A$ to point $D$:
+\begin{itemize}
+    \item Time from $A$ to $C$: $t_{AC} = 3.935 \,s$
+    \item Time from $C$ to $D$:
+    \[s_{CD} = v_{CD} t_{CD} \implies t_{CD} = \frac{s_{CD}}{v_{CD}} = \frac{5.2724}{1.5} = 3.5149 \,s\]
+    \item Total time from $A$ to $D$:
+    \[t_{AD} = t_{AC} + t_{CD} = 3.935 + 3.5149 = 7.4499 \,s\]    
+\end{itemize}
+Finding $\theta_D$ when Orpheus reaches point $D$:
+\begin{itemize}
+    \item From $A$ to $D$:
+    \[\theta_D = \omega_0 t_{AD} + \frac{1}{2}\alpha t_{AD}^2\]
+    \[\theta_D = 0.5(7.4499) + 0.5(0.1)(7.4499)^2 = 6.5 \,rad\]
+\end{itemize}
+\textbf{Velocity}\\
+Using the same velocity equation from part A:
+\[\mathbf{v_P}=\mathbf{v_D}+\mathbf{\Omega}\times\mathbf{r_{P/D}}+\left( \mathbf{{v}_{P/D}} \right)\]
+Where:
+\begin{itemize}
+    \item $\mathbf{v_D}$: Velocity of point $D$ relative to $XYZ$
+    \[\mathbf{v_D} = \left< -r\omega sin\theta_D, r\omega cos\theta_D  \right>\]
+    \[\mathbf{v_D} = \left< -(2)(0.5) sin(6.5), (2)(0.5) cos(6.5)  \right>\]
+    \[\mathbf{v_D} = \left< -0.21511, 0.97658,0 \right>\]
+    \item $\mathbf{r_{P/D}}$: Position of Orpheus relative to point $D$ 
+    \[\mathbf{r_{P/D}} = \left< 0,0,0 \right>\]
+    \item $\mathbf{v_{P/D}}$: Velocity of Orpheus relative to turntable (point $D$)
+    \[\mathbf{v_{P/D}} = \left< 1.5 sin\theta_D, -1.5 cos\theta_D,0 \right>\]
+    \[\mathbf{v_{P/D}} = \left< 1.5 sin(6.5), -1.5 cos(6.5),0 \right> = \left<0.3226, -1.4648,0 \right>\]
+\end{itemize}
+Plugging in values:
+\[\mathbf{v_P}=\left< -0.21511, 0.97658,0 \right>+\left<0.3226, -1.4648,0 \right>\]
+\[\boxed{\mathbf{v_P}=\left< 0.10748, -0.48822,0 \right> \,m/s}\]
+\newpage\noindent
+\textbf{Acceleration}\\
+Using the same acceleration equation from part A:
+\[\mathbf{a_P}=\mathbf{a_D}+\dot{\mathbf{\Omega}}\times \mathbf{r_{P/D}}+\mathbf{\Omega}\times(\mathbf{\Omega}\times\mathbf{r_{P/D}})+2\mathbf{\Omega}\times\left(\mathbf{v_{P/D}}\right)_{xyz}+\left(\mathbf{a_{P/D}}\right)_{xyz}\]
+\[\mathbf{a_P}=\mathbf{a_D}+2\mathbf{\Omega}\times\left(\mathbf{v_{P/D}}\right)_{xyz}+\left(\mathbf{a_{P/D}}\right)_{xyz}\]
+Where:
+\begin{itemize}
+    \item $\mathbf{a_D}$: Acceleration of point $D$ relative to $XYZ$\\
+    where the normal direction is $\hat{n} = \left< -cos\theta, -sin\theta \right>$ and the tangential direction is $\hat{t} = \left< -sin\theta, cos\theta \right>$:
+\[a_{Dn}= r\omega^2\]
+\[a_{Dt}= r\alpha\]
+Note that at $D$, $\omega = 0.5 \,rad/s$ and $\alpha = 0.1 \,rad/s^2$:
+\[\mathbf{a_D} = (0.5)(0.5)^2 \left< -cos\theta_D, -sin\theta_D,0 \right> + (0.5)(0.1) \left< -sin\theta_D, cos\theta_D,0 \right>\]
+\[\mathbf{a_D} = 0.125 \left< -cos(6.5), -sin(6.5),0 \right> + 0.05 \left< -sin(6.5), cos(6.5),0 \right>\]
+\[\mathbf{a_D} = \left< -0.1328,0.021939, 0 \right>\]
+    \item $\mathbf{v_{P/D}}$: Velocity of Orpheus relative to turntable (point $D$)
+    \[\mathbf{v_{P/D}} = \left<0.3226, -1.4648,0 \right>\]
+    \item $\mathbf{a_{P/D}}$: Acceleration of Orpheus relative to turntable (point $D$)
+    \[\mathbf{a_{P/D}} = \left< 0,0,0 \right>\]
+\end{itemize}
+Cross product:
+\[2\mathbf{\Omega}\times\left(\mathbf{v_{P/D}}\right)_{xyz} = 2(\omega \hat{k})\times \left<0.3226, -1.4648,0 \right> = (2\omega\cdot1.4648) \hat{\imath} + (2\omega\cdot0.3226) \hat{j}\]
+\[2\mathbf{\Omega}\times\left(\mathbf{v_{P/D}}\right)_{xyz} = \left< 1.4648, 0.3226, 0 \right>\]
+Plugging in values:
+\[\mathbf{a_P} = \left< -0.1328,0.021939, 0 \right> + \left< 1.4648, 0.3226, 0 \right> + \left< 0, 0, 0 \right>\]
+\[\boxed{\mathbf{a_P} = \left< 1.332,0.3445,0 \right> \,m/s^2}\]
+\newpage
+\section*{Problem 2. Nervous Fidgeting}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{P2.png}
+\end{figure}
+Given:
+\begin{itemize}
+    \item The pencil is a uniform rod of density $\rho_p = 0.9 g/cm^3$ and the eraser is a rectangular prism of density $\rho_e = 1.4 g/cm^3$.
+    \item The coefficient of restitution between the pencil and finger is $e = 0.1$.
+    \item Impact is impulsive and the finger does not move, only hitting tangentially
+\end{itemize}
+\textbf{a)} Find the 3D center of mass of the pencil-eraser system.\\\\
+Finding the masses:
+\begin{itemize}
+    \item Mass of pencil:
+    \[v_p = \pi \left(\frac{.75}{2}\right)^2(19)= 8.3939 \, cm^3\]
+    \[m_p = \rho_p v_p = (0.9)(8.3939) = 7.5545 \, g\]
+    \item Mass of eraser:
+    \[v_e = (1)(4)(2) = 8 \, cm^3\]
+    \[m_e = \rho_e v_e = (1.4)(8) = 11.2 \, g\]
+\end{itemize}
+\newpage\noindent
+Finding the center of mass:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{P2a.png}
+\end{figure}
+\[\bar{x}= \frac{m_p(9.5)+m_e(20)}{m_p+m_e}\]
+\[\bar{x}= \frac{7.5545(9.5)+11.2(20)}{7.5545+11.2}=15.7704 \, cm\]
+\[\bar{z}= \frac{m_p(0)+m_e(0)}{m_p+m_e}=0 \, cm\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{P2a1.png}
+\end{figure}
+\[\bar{y}= \frac{m_p(0)+m_e(0)}{m_p+m_e}=0 \, cm\]
+\[\boxed{G_{\text{sys}}=\left< 15.7704, 0, 0 \right> \, cm}\]
+\newpage\noindent
+\textbf{b)} Calculate the moment of inertia of the pencil and eraser system about the
+relevant centroidal axis.\\\\
+Axis of rotation: z-axis through center of mass\\\\
+Using the parallel axis theorem:
+\[I_{G_{sys}} = I_{G_p} + m_p d_p^2 + I_{G_e} + m_e d_e^2\]
+Where:
+\begin{itemize}
+    \item $I_{G_p}$: Moment of inertia of pencil about its centroidal axis
+    \[I_{G_p} = \frac{1}{12} m_p L^2 = \frac{1}{12} (7.5545) (19^2) = 227.279 \, g\cdot cm^2\]
+    \item $d_p$: Distance from pencil centroid to system centroid
+    \[d_p = 15.7704 - 9.5 = 6.2704 \, cm\]
+    \item $I_{G_e}$: Moment of inertia of eraser about its centroidal axis
+    \[I_{G_e} = \frac{1}{12} m_e (b^2+ c^2) = \frac{1}{12} (11.2) (1^2 + 2^2) = 4.666 \, g\cdot cm^2\]
+    \item $d_e$: Distance from eraser centroid to system centroid
+    \[d_e = 20 - 15.7704 = 4.2296 \, cm\]
+\end{itemize}
+Plugging in values:
+\[I_{G_{sys}} = 227.279 + 7.5545(6.2704)^2 + 4.666 + 11.2(4.2296)^2\]
+\[\boxed{I_{G_{sys}} = 729.334 \, g\cdot cm^2}\]
+\newpage\noindent
+\textbf{c)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2c.png}
+\end{figure}\noindent
+\textbf{d)} After the pencil has fallen 1.5 m, it hits your finger. Find the angular velocity and the velocity of the center of mass just before and just after the impact.\\\\
+Finding velocity of center of mass just before impact:
+\[mgh = \frac{1}{2}mv^2\]
+\[v = \sqrt{2gh} = \sqrt{2(9.81)(1.5)} = 5.4249 \, m/s = 542.49 \, cm/s\]
+Distance from center of mass to point of impact:
+\[d = (21 - 3)cm - (15.7704)6cm = 2.2296\,cm\]
+Conservation of angular momentum about point of impact: 
+\[m_{\text{sys}}\bar{v}_i (2.2296) = -m_{\text{sys}}\bar{v}_f (2.2296) + \bar{I}_{\text{sys}}\omega_f\]
+\[41.815\bar{v}_i = -41.815\bar{v}_f + 729.334\omega_f\]
+\[22678.79 = -41.815\bar{v}_f + 729.334\omega_f\]
+Coefficient of restitution:
+\[v_B'-v_A' = e[v_A-v_B]\]
+\[-v_A' = (0.1)v_A\]
+\[\implies v_A' = -0.1 (-542.49), \quad v_A = \overline{v}\]
+\[v_A' = 54.249 \hat{\jmath}\]
+Kinematics:
+\[v_A' = \bar{v}_f+\omega\hat{k} \times r_{A/G}\]
+\[v_A' = \bar{v}_f+2.2296\omega \hat{\jmath}\]
+\[\implies \bar{v}_f = 54.249 \hat{\jmath} - 2.2296\omega \hat{\jmath}\]
+Plugging in $\bar{v}_f$ into the angular momentum equation:
+\[22678.79 = -41.815(54.249 - 2.2296\omega) + 729.334\omega\]
+\[\implies \boxed{\omega_f = 30.3285 \, rad/s}\]
+Finding $\bar{v}_f$:
+\[\bar{v}_f = 54.249 \hat{\jmath} - 2.2296(30.3285) \hat{\jmath}\]
+\[\boxed{\bar{v}_f = -13.3714 \,(cm/s)\,\hat{\jmath}}\]
+Recall that just before impact:
+\[\boxed{\bar{v}_i = -542.49 \,(cm/s)\,\hat{\jmath}\quad \omega_i = 0 \, rad/s}\]
+\section*{Problem 3: 41CS Elevator}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{P3.png}
+\end{figure}
+Given:
+\begin{itemize}
+    \item The cable does not slip
+    \item Each pulley has weight $W_p = 300 lbs$, radius $r_p = 1.25 ft$, and radius of gyration $k_G = 0.7 ft$
+    \item Elevator car weighs $W_e = 4100 lbs$
+    \item Counterweight weighs $W_c = 5000 lbs$
+    \item One of the pulleys is driven with torque $\tau$
+\end{itemize}
+\textbf{a)} Find the moment of inertia of each pulley about its axle.
+\[\bar{I}_P = m k_G^2\]
+\[\boxed{\bar{I}_P = \frac{300}{32.2} (0.7)^2 = 4.565 \, lb \cdot ft^2}\]
+\textbf{b)} Find the \textit{constant} torque required for the elevator car to have speed 10 $ft/s$ after moving up 15 $ft$ from the ground floor.\\\\
+Let the datum be at the ground floor and up be positive. Position 1 is at the ground floor and position 2 is at 15 ft above the ground floor. Assuming at position 1, the elevator car and the pulleys are at rest and the counterweight is at $y_0$ ft above the ground floor.
+\[T_1 + V_{g1}+V_{e1}+U^{NC}_{1\to2}=T_2+V_{g2}+V_{e2}\]
+\[m_{c}gy_0 + \tau \Delta \theta =\frac{1}{2}m_e v_f ^2 +\frac{1}{2}m_c v_f^2 + 2\left(\frac{1}{2}I_p\omega_f^2 \right)+m_e g (15 \, ft) +m_cg(y_0-15 \, ft) \]
+\[ \tau \Delta \theta =\frac{1}{2}m_e (10 \, ft/s) ^2+\frac{1}{2}m_c (10 \, ft/s) ^2 + I_p\omega_f^2 +m_e g (15 \, ft) +m_cg(-15 \, ft) \]
+Kinematics:
+\[\Delta y_e = -\Delta y_c \implies v_{e} = -v_{c}\]
+\[v = 10 \, ft/s = \omega_f r \quad \text{(cable does not slip)}\]
+\[\implies \omega_f = \frac{10}{1.25} = 8 \, rad/s\]
+Finding $\Delta \theta$:
+\[\Delta \theta = \frac{\Delta y}{r} = \frac{15 \, ft}{1.25 \, ft} = 12 \, rad\]
+Plugging in values:
+\[\tau (12) = 
+\frac{1}{2}\left(\frac{4100}{32.2}\right)(10)^2+
+\frac{1}{2}\left(\frac{5000}{32.2}\right)(10)^2+
+4.565(8^2)+
+(4100)(15) +
+(5000)(-15)\]
+\[\implies \boxed{\tau = 76.8828 \, lb \cdot ft}\]
+\newpage
+\section*{Problem 4: The Swinging Sticks}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{P4.png}
+\end{figure}
+Given:
+\begin{itemize}
+    \item Rod BAC has mass $m_1 = 64g$
+    \item Rod BD has mass $m_2 = 43g$
+    \item BAC has center at C, BD has center at D
+    \item At the instant, rod BAC has angular velocity $\omega_1 = 2 \, rad/s$ (CCW) and rod BD has no angular velocity $\omega_2 = 0 \, rad/s$
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
