@@ -3,13 +3,15 @@
 \usepackage{geometry}
 \usepackage{amsmath, amsfonts, bm, graphicx}
 \usepackage{float,multicol}
+\usepackage{pdfpages}
 \geometry{margin=1in}
-\title{Dynamics Final Exam}
+\title{}
 \date{}
-\author{Zeshui Song}
+\author{}
 
 \begin{document}
-\maketitle
+\includepdf[pages=1-2]{ME200_FinalExam_Fall2025.pdf}
+
 \section*{Problem 1. Way Down Hadestown}
 \begin{figure}[H]
     \centering
@@ -299,26 +301,208 @@ Plugging in values:
 \end{figure}
 Given:
 \begin{itemize}
-    \item Rod BAC has mass $m_1 = 64g$
-    \item Rod BD has mass $m_2 = 43g$
+    \item Rod BAC has mass $m_1 = 64g = 0.064 \, kg$
+    \item Rod BD has mass $m_2 = 43g = 0.043 \, kg$
     \item BAC has center at C, BD has center at D
     \item At the instant, rod BAC has angular velocity $\omega_1 = 2 \, rad/s$ (CCW) and rod BD has no angular velocity $\omega_2 = 0 \, rad/s$
 \end{itemize}
+\textbf{a)} Full system FBD
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{P4aa.png}
+\end{figure}
+\newpage\noindent
+Rod BD KD:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{P4a1.png}
+\end{figure}
+Rod BAC KD:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P4a2.png}
+\end{figure}
+\newpage\noindent
+\textbf{b)} Moments of intertia about center of mass:
+\begin{itemize}
+    \item Rod BD:
+    \[\bar{I_2} = \frac{1}{12} m_2 L_2^2 = \frac{1}{12} (0.043)(0.2^2) = 1.4333 \times 10^{-4} \, kg \cdot m^2\]
+    \item Rod BAC:
+    \[\bar{I_1} = \frac{1}{12} m_1 L_1^2 = \frac{1}{12} (0.064)(0.3^2) = 4.8 \times 10^{-4} \, kg \cdot m^2\]
+\end{itemize}
+Rod BD force balances:
+\begin{align*}
+    \sum{F_x} &: B_x = m_{2}\bar{a}_{2x} \\
+    \sum{F_y} &: B_y - m_{2}g = m_{2}\bar{a}_{2y} \\
+    \sum{M_D} &: B_x (0.01 \, m) = \bar{I_{2}}\alpha_2 \\
+\end{align*}
+Rod BAC force balances:
+\begin{align*}
+    \sum{F_x} &: -B_x + A_x = m_{1}\bar{a}_{1x} \\
+    \sum{F_y} &: -B_y +A_y - m_{1}g = m_{1}\bar{a}_{1y} \\
+    \sum{M_C} &: B_y (0.15 \, m) - A_y (0.07 \, m)  = \bar{I_{1}}\alpha_1 \\
+\end{align*}
+\noindent
+Kinematics diagram:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{P4b.png}
+\end{figure}
+\vspace{-1em}
+\noindent
+Velocities:
+\begin{align*}
+    \mathbf{v_B}=&\mathbf{v_A}+ \omega_1 \hat{k} \times \mathbf{r_{B/A}}\\
+    =& (2) \hat{k} \times (-0.08 \hat{\imath})\\
+    =& -0.16 \, (m/s) \, \hat{\jmath}
+\end{align*}
+Since rod BD is not rotating at the instant, point D and point B have the same velocity:
+\[\mathbf{v_D} = \mathbf{v_B} = -0.16 \, (m/s) \, \hat{\jmath}\]
+Accelerations:
+\begin{align*}
+    \mathbf{a_B}=&\mathbf{a_A}+\alpha_1 \hat{k}\times \mathbf{r_{B/A}} - \omega_1^2 \mathbf{r_{B/A}}\\
+    =&\alpha_1 \hat{k}\times (-0.08 \hat{\imath}) - (2)^2 (-0.08 \hat{\imath})\\
+    =& \left<0.32, -0.08\alpha_1, 0 \right>\\
+\end{align*}
+\vspace{-3em}
+\begin{align*}
+    \mathbf{a_C}=&\mathbf{a_A}+\alpha_1 \hat{k}\times \mathbf{r_{C/A}} - \omega_1^2 \mathbf{r_{C/A}}\\
+    =&\alpha_1 \hat{k}\times (0.07 \hat{\imath}) - (2)^2 (0.07 \hat{\imath})\\
+    =& \left<-0.28, 0.07\alpha_1, 0 \right>\\
+    \implies \mathbf{a_C} =&\, \mathbf{\bar{a}_1} = \left<-0.28, 0.07\alpha_1, 0 \right>
+\end{align*}
+\vspace{-2em}
+\begin{align*}
+    \mathbf{a_D}=&\mathbf{a_B}+\alpha_2 \hat{k}\times \mathbf{r_{D/B}} - \omega_2^2 \mathbf{r_{D/B}}\\
+    =&\left<0.32, -0.08\alpha_1, 0 \right> + \alpha_2 \hat{k}\times (-0.01 \hat{\jmath})\\
+    =& \left<0.32, -0.08\alpha_1, 0 \right>+ \left<0.01\alpha_2, 0, 0 \right>\\
+    =& \left<0.32 + 0.01\alpha_2, -0.08\alpha_1, 0 \right>\\
+    \implies \mathbf{a_D} =&\, \mathbf{\bar{a}_2} = \left<0.32 + 0.01\alpha_2, -0.08\alpha_1, 0 \right>\\
+\end{align*}
+\textbf{Rewriting system of equations using kinematics}\\
+Rod BD force balances:
+\begin{align}
+    \sum F_x &: B_x = m_{2}(0.32 + 0.01\alpha_2) \tag{1} \\
+    \sum F_y &: B_y - m_{2}g = m_{2}(-0.08\alpha_1) \tag{2} \\
+    \sum M_D &: B_x (0.01 \, \text{m}) = \bar{I}_{2}\alpha_2 \tag{3}
+\end{align}
 
+Rod BAC force balances:
+\begin{align}
+    \sum F_x &: -B_x + A_x = m_{1}(-0.28) \tag{4} \\
+    \sum F_y &: -B_y + A_y - m_{1}g = m_{1}(0.07\alpha_1) \tag{5} \\
+    \sum M_C &: B_y (0.15 \, \text{m}) - A_y (0.07 \, \text{m}) = \bar{I}_{1}\alpha_1 \tag{6}
+\end{align}
+Unknowns: $A_x, A_y, B_x, B_y, \alpha_1, \alpha_2$ (6 unknowns and 6 equations)
+\newpage\noindent
+\textbf{c)} Find the velocity and acceleration of point C at this instant. Leave in terms of $\mathbf{\alpha_{BD}}$ and $\mathbf{\alpha_{BAC}}$.\\\\
+Using the kinematics derived in part b, where $\alpha_1 = \alpha_{BAC}$ and $\alpha_2 = \alpha_{BD}$:
+\[\boxed{\mathbf{a_C} = \left<-0.28, 0.07\alpha_{BAC}, 0 \right> \, m/s^2}\]
+Velocity of point C:
+\vspace{-1em}
+\begin{align*}
+    \mathbf{v_C}=&\mathbf{v_A}+ \omega_1 \hat{k} \times \mathbf{r_{C/A}}\\
+    =& (2) \hat{k} \times (0.07 \hat{\imath})\\
+    =& 0.14 \, (m/s) \, \hat{\jmath}
+\end{align*}
+\[\boxed{\mathbf{v_C}= \left<0, 0.14, 0 \right> \, m/s}\]
+\textbf{d)} Find the velocity and acceleration of point D at this instant. Leave in terms of $\mathbf{\alpha_{BD}}$ and $\mathbf{\alpha_{BAC}}$.\\\\
+Using the kinematics derived in part b, where $\alpha_1 = \alpha_{BAC}$ and $\alpha_2 = \alpha_{BD}$:
+\[\boxed{\mathbf{a_D} = \left<0.32 + 0.01\alpha_{BD}, -0.08\alpha_{BAC}, 0 \right> \, m/s^2}\]
+Velocity of point D:
+\[\boxed{\mathbf{v_D} = \mathbf{v_B} = -0.16 \, (m/s) \, \hat{\jmath}}\]
+\textbf{e)} Setting up the equations in part b into matrix form to solve for the unknowns.\\\\
+Rod BD force balances:
+\begin{align}
+    \sum F_x &: 0A_x + 0A_y + B_x + 0B_y + 0\alpha_1 - 0.01m_{2}\alpha_2= 0.32m_{2} \tag{1} \\
+    \sum F_y &: 0A_x + 0A_y + 0B_x + B_y +0.08m_{2}\alpha_1 + 0\alpha_2  = m_{2}g \tag{2} \\
+    \sum M_D &: 0A_x + 0A_y + 0.01B_x +0B_y+ 0\alpha_1 -\bar{I}_{2}\alpha_2 = 0 \tag{3}
+\end{align}
+Rod BAC force balances:
+\begin{align}
+    \sum F_x &:  A_x + 0A_y -B_x +0B_y +0\alpha_1 +0\alpha_2 = -0.28m_{1} \tag{4} \\
+    \sum F_y &:  0A_x + A_y + 0B_x -B_y -0.07m_{1}\alpha_1 + 0\alpha_2=  m_{1}g \tag{5} \\
+    \sum M_C &: 0A_x - 0.07A_y + 0B_x +0.15B_y - \bar{I}_{1}\alpha_1 + 0\alpha_2=0  \tag{6}
+\end{align}
+Matrix:
+\[
+\begin{bmatrix}
+0 & 0 & 1 & 0 & 0 & -0.01 m_2 \\
+0 & 0 & 0 & 1 & 0.08 m_2 & 0 \\
+0 & 0 & 0.01 & 0 & 0 & -\bar{I}_2 \\
+1 & 0 & -1 & 0 & 0 & 0 \\
+0 & 1 & 0 & -1 & -0.07 m_1 & 0 \\
+0 & -0.07 & 0 & 0.15 & -\bar{I}_1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+A_x \\ A_y \\ B_x \\ B_y \\ \alpha_1 \\ \alpha_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0.32 m_2 \\
+m_2 g \\
+0 \\
+-0.28 m_1 \\
+m_1 g \\
+0
+\end{bmatrix}.
+\]
+\newpage\noindent
+Python code to solve the matrix:
+\begin{verbatim}
+    import numpy as np
+# --------------------------------------------------
+# Constants
+# --------------------------------------------------
+m1 = 0.064 #rod BAC kg
+m2 = 0.043 #rod BD kg
+I1 = 4.8e-4 #rod BAC kg*m^2
+I2 = 1.4333e-4 #rod BD kg*m^2
+g = 9.81 #m/s^2
 
+# Coefficient matrix
+A = np.array([
+    [0,     0,     1,     0,     0,        -0.01*m2],
+    [0,     0,     0,     1,     0.08*m2,   0],
+    [0,     0,     0.01,  0,     0,        -I2],
+    [1,     0,    -1,     0,     0,         0],
+    [0,     1,     0,    -1,    -0.07*m1,   0],
+    [0,    -0.07,  0,     0.15, -I1,     0]
+])
 
+# Righ hand side
+b = np.array([
+    0.32*m2,
+    m2*g,
+    0.0,
+    -0.28*m1,
+    m1*g,
+    0.0
+])
 
+# Solve the system
+x = np.linalg.solve(A, b)
 
+# Unpack results
+Ax, Ay, Bx, By, alpha1, alpha2 = x
 
-
-
-
-
-
-
-
-
-
+# Print results
+print(f"A_x = {Ax:.4g} N")
+print(f"A_y = {Ay:.4g} N")
+print(f"B_x = {Bx:.4g} N")
+print(f"B_y = {By:.4g} N")
+print(f"alpha_1 = {alpha1:.4g} rad/s^2")
+print(f"alpha_2 = {alpha2:.4g} rad/s^2")
+\end{verbatim}
+\textbf{Solutions:}
+\begin{itemize}
+    \item $A_x = -0.003734 \, N$
+    \item $A_y = 1.04 \, N$
+    \item $B_x = 0.01419 \, N$
+    \item $B_y = 0.4547 \, N$
+    \item $\alpha_{BAC} = \alpha_1 = -9.546 \, rad/s^2$
+    \item $\alpha_{BD} = \alpha_2 = 0.9897 \, rad/s^2$
+\end{itemize}
 
 
 
