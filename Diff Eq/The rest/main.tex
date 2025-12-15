@@ -166,6 +166,10 @@ Meaning that a convolution in the time domain corresponds to multiplication in t
 \textbf{Laplace Transform of Periodic Functions}\\
 If $f(t)$ is piecewise continuous on $[0,\infty)$, of exponential order, and periodic with period $T$, then its Laplace transform is given by
 $$\boxed{\mathscr{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^Te^{-st}f(t)dt}$$
+\underline{\textbf{Thm: Laplace Transform of an Integral}}\\
+Like how the laplace transform of a derivative turns differentiation into multiplication by $s$, the laplace transform of an integral turns integration into division by $s$. If $f(t)$ is piecewise continuous on $[0,\infty)$ and of exponential order, then
+$$\boxed{\mathscr{L}\left\{\int_0^t f(\tau) \ d\tau \right\}=\frac{1}{s}F(s)}$$
+where $F(s)=\mathscr{L}\{f(t)\}$.
 \newpage
 \section*{7.5 Dirac Delta Function}
 The Dirac delta function models an instantaneous impulse, where there is a very large force applied over a very short time interval, resulting in a sharp peak at a specific point in time. It is not a function in the traditional sense, but rather a distribution. \\\\
