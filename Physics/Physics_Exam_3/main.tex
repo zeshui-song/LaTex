@@ -496,7 +496,9 @@ Suppose an Amperian loop with side length $L$ that encloses $N$ loops of wire, e
 \[B_{\text{inside}}=\frac{\mu_0 NI}{L}\]
 \[\boxed{B_{\text{inside}}=\mu_0 n I \quad \text{(infinite solenoid)}}\]
 Where $n=\frac{N}{L}$ is the number of loops per unit length.\\\\
-\underline{Note:} If the Amperian loop encloses both ends of the loop, the net current enclosed is zero, so the magnetic field outside the solenoid is zero as well.\newpage\noindent
+\underline{Note:} If the Amperian loop encloses both ends of the loop, the net current enclosed is zero, so the magnetic field outside the solenoid is zero as well.\\\\
+We can also use the right-hand rule to find the direction of the magnetic field inside the solenoid. Curl fingers around the solenoid in the direction of the current, and your thumb will point in the direction of the magnetic field inside the solenoid (it will also point towards the North pole of the solenoid if it were a bar magnet).
+\newpage\noindent
 \textbf{Magnetic Field of a Toroidal Solenoid}
 \vspace{-1em}
 \begin{figure}[H]
@@ -1053,10 +1055,20 @@ Consider how the electric field lines of a point charge change as it accelerates
 \vspace{-1em}
 Notice that there is no change in the electric field along the line of motion of the charge, thus there is no electromagnetic radiation emitted in that direction. The maximum change in the electric field and thus the strongest radiation is observed in the plane perpendicular to the acceleration of the charge.
 \newpage\noindent
-Note that this change in electric field also induces a magnetic field according to Ampere-Maxwell law, with a direction consistent with the magnetic field produced by a moving charge (both out of the page).
-
+Note that this change in electric field also induces a magnetic field according to Ampere-Maxwell law, with a direction consistent with the magnetic field produced by a moving charge (both out of the page).\\\\
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{EM Wave B.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+By the Ampere-Maxwell law:
+\[\int \vec{B}\cdot d\vec{l} = \mu_0 \varepsilon_0 \frac{d\Phi_E}{dt}\]
+There will be a magnetic field pointing out of the page just like in the case with the electromagnetic wave pulse before.
+\end{minipage}\\\\
+\textbf{Polarization}\\
+Polarization is the property of light that describes the direction in which its electric field oscillates. Unpolarized light has electric fields oscillating randomly in all perpendicular directions, while polarized light has oscillations in a specific direction. Polarizing materials allow only one component of the electric field to pass, producing polarized light and reducing the intensity, basically filtering the light.
 \end{enumerate}
-\newpage
 \section*{Chapters 27 \& 30.9 - Circuits}
 This section with primarily cover steady state and time varying circuits with resistors, capacitors, and inductors. Oscillatory and AC circuits will be covered in the next section.\\\\
 \textbf{Circuit Components}
@@ -1081,6 +1093,7 @@ This section with primarily cover steady state and time varying circuits with re
     \textit{Resistors in series}\\
     Two resistors are in series if the \textit{same current} flows through both resistors.
     \[\boxed{R_{\text{eq}} = R_1 + R_2 + \cdots \quad \text{(series resistors)}}\]
+\newpage\noindent
     \textit{Resistors in parallel}\\
     Two resistors are in parallel if they have the \textit{same voltage} across both resistors.
     \[\boxed{\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots \quad \text{(parallel resistors)}}\]
@@ -1128,7 +1141,6 @@ Note that a non-ideal ammeter increases the total resistance of the circuit, whi
 \textbf{Voltmeter}\\
 A voltmeter is used to measure the voltage across a circuit element by connecting it in parallel with that element. An ideal voltmeter has infinite resistance so that it does not draw any current from the circuit.\\\\
 Note that a non-ideal voltmeter decreases the total resistance of the circuit branch it is connected to (it is in parallel), which increases the current flowing through that branch according to Ohm's law.
-\newpage
 \begin{enumerate}
     \item Know and be able to apply the Voltage Loop Rule and the Current Node Rule (conservation of energy and conservation of charge, respectively) to analyze a circuit. A good example is to prove the rules for adding resistors in series or in parallel.\\\\
 \textbf{Kirchohoff's Loop Rule (Conservation of Energy)}\\
@@ -1137,7 +1149,8 @@ We can start at any point in the loop and add the voltages we encounter as we tr
 \underline{Resistance rule}\\
 Moving across a resistor in the direction of the current results in a voltage drop ($-\Delta V$), moving against the current results in a voltage rise ($+\Delta V$).\\\\
 \underline{emf rule}\\
-When we from the negative end to the positive end of an emf device, we have a voltage rise ($+\mathcal{E}$). Moving from the positive end to the negative end results in a voltage drop ($-\mathcal{E}$).\\\\
+When we from the negative end to the positive end of an emf device, we have a voltage rise ($+\mathcal{E}$). Moving from the positive end to the negative end results in a voltage drop ($-\mathcal{E}$).
+\newpage\noindent
 Consider the following example:
 \vspace{-1em}
 \begin{figure}[H]
@@ -1165,7 +1178,6 @@ At any junction (node) in an electrical circuit, the sum of currents flowing int
 Current flowing into the junction is positive, current flowing out of the junction is negative.\\\\
 \underline{Note:} All the current in the circuit must equal the current from the emf device, as charge is conserved. Thus, if there are multiple branches in a circuit, the sum of the currents in each branch must equal the total current supplied by the emf device ($I_{\text{total}}=I_1 + I_2 + \cdots$). This is useful for circuits with resistors in parallel.
     \item Know the relation between current and voltage for the basic circuit elements of resistor, capacitor, and inductor.
-    \newpage
     \item Write differential equations for RL and RC circuits. Understand qualitatively the behavior of resistors, inductors, and capacitors in DC and transient regimes. Be able to describe how electromagnetic energy is stored, supplied, and dissipated in such circuits.\\\\
 \textbf{RC Circuits}\\
 In the following circuit, the capacitor is initially uncharged, and it begins to charge when the switch is closed at $a$. When the switch is moved to $b$, the capacitor then discharges through the resistor.
@@ -1183,7 +1195,6 @@ The solution to this differential equation is:
 \[I(t) = \frac{\mathcal{E}}{R}e^{-\frac{t}{RC}}\]
 We can define $RC$ as the \textbf{capacitive time constant} of the circuit.
 \[\boxed{\tau_C = RC \quad \text{(capacitive time constant)}}\]
-\newpage\noindent
 \textit{Discharging the capacitor} (CW from the left side of the resistor)
 \[-IR - \frac{q}{C} = 0, \quad I = \frac{dq}{dt}\]
 \[\boxed{R\frac{dq}{dt} + \frac{q}{C} = 0 \quad \text{(discharging equation)}}\]
@@ -1204,7 +1215,6 @@ Using the loop rule, we can find the differential equations for the charging and
     \centering
     \includegraphics[width=0.7\textwidth]{RL charging.jpg}
 \end{figure}
-\newpage\noindent
 \textit{Charging the inductor:} (CW from the negative terminal of the battery)
 \[\mathcal{E}-IR-L\frac{dI}{dt} = 0\]
 \[\boxed{L\frac{dI}{dt} + IR = \mathcal{E} \quad \text{(charging equation)}}\]
@@ -1229,7 +1239,6 @@ Where:
     \item $P_{\text{emf}} = \mathcal{E}I$
     \item $P_R = I^2 R$
 \end{itemize}
-\newpage\noindent
     \item Solve the differential equations for such circuits and identify characteristic timescales. If initial conditions are given, be able to find solutions that satisfy those initial conditions.\\\\
 The time constant generally describe how quickly a circuit responds to changes. For RC circuits, the time constant $\tau_C = RC$ describes how quickly a capacitor charges or discharges. For RL circuits, the time constant $\tau_L = \frac{L}{R}$ describes how quickly the current through an inductor builds up or decays.\\\\
 \textbf{RC}
@@ -1244,11 +1253,194 @@ The time constant generally describe how quickly a circuit responds to changes. 
 \end{itemize}
 \end{enumerate}
 \section*{Chapter 31 - Oscillatory \& AC behavior}
-Notice that the differential equation for RL circuits are second order differential equations in terms of charge $q$ (since $I=dq/dt$). Thus, combining inductors and capacitors in circuits can lead to oscillatory behavior, similar to mass-spring systems.
+Notice that the differential equation for RL circuits are second order differential equations in terms of charge $q$ (since $I=dq/dt$). Thus, combining inductors and capacitors in circuits can lead to oscillatory behavior, similar to mass-spring systems.\\\\
+Consider the following LC circuit where the capacitor starts fully charged. As the circuit oscillates, energy is exchanged between the electric field of the capacitor and the magnetic field of the inductor, but the total amount is conserved.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{LC.png}
+\end{figure}
 \begin{enumerate}
-    \item Write differential equations for LC and RLC circuits. Understand qualitatively the behavior of resistors, inductors, and capacitors at high and low frequencies. Be able to describe how electromagnetic energy is stored, supplied, and dissipated in such circuits.
-    \item Solve the differential equations for such circuits and identify characteristic frequencies and resonances. If initial conditions are given, be able to find solutions that satisfy those initial conditions.
-    \item Know or be able to derive the complex impedances for resistors, capacitors, and inductors. Know or derive the rules for combining parallel and series impedances. Use those impedances to describe the relations among currents and voltages in circuits, both in magnitude and phase.
+    \item Write differential equations for LC and RLC circuits. Understand qualitatively the behavior of resistors, inductors, and capacitors at high and low frequencies. Be able to describe how electromagnetic energy is stored, supplied, and dissipated in such circuits.\\\\
+\textbf{LC Circuits}\\
+Using the loop rule, we can find the differential equation for the LC circuit. (CW from the positive plate of the capacitor)
+\[-\frac{q}{C} - L\frac{dI}{dt} = 0, \quad I = \frac{dq}{dt}\]
+\[\boxed{L\frac{d^2 q}{dt^2} + \frac{q}{C} = 0 \quad \text{(LC oscillations)}}\]
+We can also derive this differential equation using energy conservation, since the total energy in the LC circuit is conserved:
+\[U_{Tot}=U_B+U_E = \frac{1}{2}LI^2 + \frac{1}{2}\frac{q^2}{C} = \text{(Constant)}\]
+\[\frac{dU_{Tot}}{dt} = \frac{d}{dt}\left(\frac{1}{2}LI^2 + \frac{1}{2}\frac{q^2}{C}\right) = 0\]
+\[\implies LI \frac{dI}{dt} + \frac{q}{C} \frac{dq}{dt} = 0, \quad I = \frac{dq}{dt}\]
+Thus,
+\[L\frac{d^2q}{dt^2} + \frac{q}{C} = 0\]
+\textbf{RLC Circuits}\\
+Consider the following RLC circuit where each component is in series with a time varying emf device.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{RLC.jpg}
+\end{figure}
+\vspace{-1em}
+Using the loop rule, we can find the differential equation for the RLC circuit. (CW from the negative terminal of the emf device)
+\[V(t) - IR - L\frac{dI}{dt} - \frac{q}{C} = 0, \quad I = \frac{dq}{dt}\]
+\[\boxed{L\frac{d^2 q}{dt^2} + R\frac{dq}{dt} + \frac{q}{C} = V(t) \quad \text{(RLC equation)}}\]
+If we differentiate this equation with respect to time, we can also express it in terms of current $I$:
+\[L\frac{d^2 I}{dt^2} + R\frac{dI}{dt} + \frac{I}{C} = \frac{dV(t)}{dt}\]
+Notice that by introducing a driving voltage ($V(t)$), the differential equation becomes non-homogeneous.
+\newpage\noindent
+We can also derive this differential equation using energy, however now the total energy is not conserved due to the resistor dissipating energy as heat and the emf device supplying energy to the circuit. Thus, the \textit{change} in total energy stored must equal the net power supplied by the emf device minus the power dissipated in the resistor.
+\[P_{\text{in}} = IV(t), \quad P_{\text{out}}=I^2R\]
+\[\implies P_{\text{Tot}} = IV(t) - I^2R\]
+Like before, the total energy in the circuit is stored in the capacitor and inductor, therefore
+\[\frac{d}{dt}\left(\frac{1}{2}LI^2 + \frac{1}{2}\frac{q^2}{C}\right) = IV(t) - I^2R\]
+\[\implies LI \frac{dI}{dt} + \frac{q}{C} \frac{dq}{dt} = IV(t) - I^2R, \quad I = \frac{dq}{dt}\]
+Rearranging gives:
+\[L\frac{d^2 q}{dt^2} + R\frac{dq}{dt} + \frac{q}{C} = V(t)\]
+\textbf{The Electrical–Mechanical Analogy}\\
+Notice that the differential equations for LC and RLC circuits are mathematically analogous to the differential equations for mass-spring systems where
+\begin{itemize}
+    \item The inductance $L$ is the inertia of the system, analogous to mass $m$.
+    \item The resistance $R$ is the damping in the system, analogous to the damping coefficient.
+    \item The inverse capacitance $\frac{1}{C}$ is the restoring force of the system, analogous to the spring constant $k$.
+    \item The charge $q$ is analogous to the displacement $x$ of the mass.
+    \item The driving voltage $V(t)$ is analogous to the driving force $F(t)$ on the mass.
+\end{itemize}
+    \item Solve the differential equations for such circuits and identify characteristic frequencies and resonances. If initial conditions are given, be able to find solutions that satisfy those initial conditions.\\\\
+To solve the differential equations for driven and undriven LC and RLC circuits we must first understand how these circuits behave at its \textit{natural frequency}.\\\\
+\textbf{Undriven LC Circuit}\\
+Differential equation:
+\[L\frac{d^2 q}{dt^2} + \frac{q}{C} = 0\]
+Solving the characteristic equation for this second order homogeneous differential equation for the general solution:
+\[Lr^2 + \frac{1}{C} = 0 \implies r^2 = -\frac{1}{LC}\]
+\[r = \pm  \frac{1}{\sqrt{LC}} i, \quad \text{let } \omega = \frac{1}{\sqrt{LC}}\]
+\[ \implies q(t) = c_1 \cos(\omega t) + c_2 \sin(\omega t)\]
+Since $c_1$ and $c_2$ are two arbitrary constants that together form a vector in a two-dimensional solution space, they may be parameterized by a magnitude and an angle, allowing the general solution to be written as a single cosine with a phase shift.
+\[Q_m \cos(\omega t + \phi) = Q_m \cos\phi \cos(\omega t) - Q_m \sin\phi \sin(\omega t)\]
+Thus the general solution for the undriven LC circuit is:
+\[\boxed{q(t) = Q_m \cos(\omega t + \phi)}\]
+\[\boxed{I(t) = \frac{dq}{dt} = -\omega Q_m \sin(\omega t + \phi)}\]
+Where $\omega$ is the natural frequency of the circuit:
+\[\boxed{\omega = \frac{1}{\sqrt{LC}} \quad \text{(natural frequency of LC circuit)}}\]
+\textbf{Undriven RLC Circuit}\\
+Differential equation:
+\[L\frac{d^2 q}{dt^2} + R\frac{dq}{dt} + \frac{q}{C} = 0\]
+Solving the characteristic equation for this second order homogeneous differential equation for the general solution:
+\[Lr^2 + Rr + \frac{1}{C} = 0\]
+Using the quadratic formula:
+\[r = \frac{-R \pm \sqrt{R^2 - \frac{4L}{C}}}{2L}\]
+There are three cases to consider based on the discriminant:
+\begin{itemize}
+    \item \textbf{Overdamped} ($R^2 > 4\frac{L}{C}$): Two distinct real roots, leading to an exponentially decaying solution without oscillations.
+    \item \textbf{Critically damped} ($R^2 = 4\frac{L}{C}$): Repeated roots, leading to the fastest return to equilibrium without oscillations.
+    \item \textbf{Underdamped} ($R^2 < 4\frac{L}{C}$): Complex roots, leading to oscillatory behavior with an exponentially decaying amplitude.
+\end{itemize}
+Looking at the underdamped case, we can express the roots as:
+\[r = \frac{-R}{2L} \pm i \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}\]
+\[\implies q(t) = e^{-\frac{R}{2L}t} \left( c_1 \cos\left(\sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}} \,t\right) + c_2 \sin\left(\sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}} \,t\right) \right)\]
+Like before, we can express the general solution as a single cosine with a phase shift.
+\[\boxed{q(t) = Q_m e^{-\frac{R}{2L}t} \cos\left(\omega' t + \phi\right)}\]
+Where $\omega'$ is the damped natural frequency of the circuit:
+\[\boxed{\omega' = \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}} \quad \text{(damped natural frequency of RLC circuit)}}\]
+Note that as we set $R = 0$ we recover the natural frequency and general solution for the undriven LC circuit.
+    \item Know or be able to derive the complex impedances for resistors, capacitors, and inductors. Know or derive the rules for combining parallel and series impedances. Use those impedances to describe the relations among currents and voltages in circuits, both in magnitude and phase.\\\\
+Suppose that we have a sinusoidally varying emf device that drives an LC or RLC circuit: 
+\[V(t) = V_m \sin(\omega_d t)\]
+Where $\omega_d$ is the \textbf{driving frequency} of the emf device.\\\\
+Under \textit{forced oscillation} from the driving emf device, charge, current, and voltages will always occur at the driving frequency $\omega_d$ instead of the natural frequency $\omega$ or damped natural frequency $\omega'$. However, there may be a phase difference between the driving voltage and the response of the circuit.\\\\
+Because of this property of forced oscillations, where all quantities oscillate at the same frequency, we can use \textbf{complex impedances} to analyze the circuit. Physically, impedance describes how the circuit responds to a driving voltage at a specified driving frequency, giving the amplitude and phase of the steady-state response.\\\\
+\underline{Note:} In steady state, transient behavior has decayed, and the circuit oscillates only at the driving frequency. Thus in cases such as RLC circuits, we can ignore the homogeneous solution (representing the transient behavior) and focus only on the particular solution (representing the steady-state forced oscillation).\\\\
+\textbf{Reactance and Impedance}\\
+The \textbf{reactance} of a circuit element describes its opposition to alternating current (AC) due to energy storage in electric or magnetic fields. Unlike resistance, reactance depends on the driving frequency and causes the voltage and current to be out of phase. Reactance has units of ohms ($\Omega$) and may be positive or negative depending on the type of circuit element.\\\\
+The \textbf{impedance} of a circuit is a complex quantity that combines resistance and reactance, representing the total opposition to AC current flow. It is defined as
+\[Z = R + iX\]
+where $R$ is the resistance and $X$ is the reactance.\\\\
+For a resistor,
+\[\boxed{Z_R = R}\]
+For an inductor,
+\[\boxed{Z_L = i\omega L \implies X_L = \omega L}\]
+For a capacitor,
+\[\boxed{Z_C = -\frac{i}{\omega C} \implies X_C = -\frac{1}{\omega C}}\]
+The magnitude of the impedance satisfies $|Z| = \frac{|V|}{|I|}$. Thus, a higher impedance results in a lower current for a given voltage amplitude.\\\\
+This allows us to understand the behavior of capacitors and inductors at different frequencies in AC circuits:
+\begin{itemize}
+    \item At low frequencies
+    \begin{itemize}
+        \item Capacitive reactance is large ($X_C = \frac{1}{\omega C}$): the capacitor behaves like an open circuit, since charge has time to accumulate and oppose current flow.
+        \item Inductive reactance is small ($X_L = \omega L$): the inductor behaves like a short circuit, since slowly varying currents induce only small opposing emf \\($\mathcal{E}=-L \frac{dI}{dt}$).
+    \end{itemize}
+    \item At high frequencies
+    \begin{itemize}
+        \item Capacitive reactance is small: the capacitor behaves like a short circuit due to rapid charge and discharge with little voltage buildup.
+        \item Inductive reactance is large: the inductor behaves like an open circuit, since rapidly changing currents induce large opposing emf.
+    \end{itemize}
+\end{itemize}
+\newpage\noindent
+\textbf{Phasors}\\
+We can graphically represent the relationship between voltages and currents in AC circuits using vectors in the complex plane called \textbf{phasors}. Phasors rotate counterclockwise at the driving frequency $\omega_d$, with magnitude equal to the amplitude of the alternating quantity (voltage or current) and angle equal to its phase at a time $t$. Its projection onto the real or imaginary axis gives the instantaneous value of the quantity (depending on whether sine or cosine is used).\\\\
+Let's look at the phase relationships for each circuit element when driven by a sinusoidal voltage source:
+\[V(t) = V_m \sin(\omega_d t)\]
+\begin{itemize}
+    \item \textbf{Resistive Load}: in a circuit with only a resistor, the voltage and current are in phase $\phi =0$. We see this by Ohm's law:
+    \[I(t) = \frac{V(t)}{R} = \frac{V_m}{R} \sin(\omega_d t)\]
+    \vspace{-2em}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Resistor phasor.png}
+    \end{figure}
+    \item \textbf{Capacitive Load}: in a circuit with only a capacitor, the current leads the voltage by 90 degrees. Using the loop rule:
+    \[v_C = V_C \sin(\omega_d t)\]
+    \[v_C = \frac{q_C}{C} \implies q_C = C V_C \sin(\omega_d t)\]
+    \[I(t) = \frac{dq_C}{dt} = \omega_d C V_C \cos(\omega_d t) = \omega_d C V_C \sin\left(\omega_d t + 90^\circ\right)\]
+    \[I(t) = \frac{V_C}{X_C} \sin\left(\omega_d t + 90^\circ\right), \quad X_C = \frac{1}{\omega_d C}\]
+    \vspace{-2em}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Capacitor phasor.png}
+    \end{figure}
+    \item \textbf{Inductive Load}: in a circuit with only an inductor, the current lags the voltage by 90 degrees. Using the loop rule:
+    \[v_L = V_L \sin(\omega_d t)\]
+    \[v_L = L \frac{dI}{dt} \implies \frac{dI}{dt} = \frac{V_L}{L} \sin(\omega_d t)\]
+    \[I(t) = \int \frac{V_L}{L} \sin(\omega_d t)\, dt = -\frac{V_L}{\omega_d L} \cos(\omega_d t) = \frac{V_L}{\omega_d L} \sin\left(\omega_d t - 90^\circ\right)\]
+    \[I(t) = \frac{V_L}{X_L} \sin\left(\omega_d t - 90^\circ\right), \quad X_L = \omega_d L\]
+    \vspace{-2em}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Inductor phasor.png}
+    \end{figure}
+\end{itemize}
+Note that even though we found the phase relationships using isolated circuit elements, these relationships hold true when the elements are combined in circuits as well. 
+\newpage\noindent
+Putting it all together in a RLC circuit:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{RLC phasor.png}
+\end{figure}
+\begin{minipage}{0.4\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Loop rule.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+By the loop rule, the magnitude of the driving voltage $\mathcal{E}$ is the resultant of the voltages for each circuit element:
+\[|\mathcal{E}| = \sqrt{\left(V_R\right)^2 + \left(V_L - V_C\right)^2}\]
+\[\mathcal{E} = \sqrt{\left(IR\right)^2 + \left(IX_L - IX_C\right)^2}\]
+\end{minipage}\\\\
+Thus,
+\[I = \frac{\mathcal{E}}{\sqrt{\left(IR\right)^2 + \left(IX_L - IX_C\right)^2}} = \frac{\mathcal{E}}{Z}\]
+The angle $\phi$ between the current phasor and the voltage phasor is given by:
+\[\tan\phi = \frac{V_L - V_C}{V_R} = \frac{IX_L - IX_C}{IR} = \frac{X_L - X_C}{R}\]
+Note that if $X_L > X_C$, then $\phi > 0$ and the current lags behind the voltage (inductive behavior). If $X_C > X_L$, then $\phi < 0$ and the current leads the voltage (capacitive behavior). If $X_L = X_C$, then $\phi = 0$ and the current and voltage are in phase (resonance).\\\\
+\newpage\noindent
+Finally let us discuss how to solve circuits using impedances. The rules for combining impedances in series and parallel are the same as for resistors:
+\begin{itemize}
+    \item \textbf{Series impedances}:
+    \[\boxed{Z_{\text{eq}} = Z_1 + Z_2 + \cdots \quad \text{(series impedances)}}\]
+    \item \textbf{Parallel impedances}:
+    \[\boxed{\frac{1}{Z_{\text{eq}}} = \frac{1}{Z_1} + \frac{1}{Z_2} + \cdots \quad \text{(parallel impedances)}}\]
+\end{itemize}
+We can then use Ohm's law in phasor form to relate voltages and currents in the circuit $\widetilde{V} = Z \widetilde{I}$ where $\widetilde{V}$ and $\widetilde{I}$ are the phasor representations (complex amplitudes) of the voltage and current, respectively. \\\\
+\underline{Note:} Just like using phasors for waves, we can convert back to time domain by taking the real part or imaginary part of $\widetilde{I}$ depending on whether we used sine or cosine for the driving voltage.\\\\
+\textbf{Driven LC Circuit}\\
+Consider a driven LC circuit with a sinusoidal voltage source in series with the inductor and capacitor.:
+\[V(t) = V_m \cos(\omega t)\]
+
 \end{enumerate}
 \textbf{End Final Exam}
 \end{document}

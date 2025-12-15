@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  13 DEC 2025 12:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  14 DEC 2025 23:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -650,7 +650,12 @@ File: Solenoid.jpg Graphic file (type jpg)
 Package pdftex.def Info: Solenoid.jpg  used on input line 491.
 (pdftex.def)             Requested size: 234.8775pt x 159.17705pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 497--501
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--501
 
  []
 
@@ -658,17 +663,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 497--499
 <Toroid.png, id=127, 1174.3875pt x 607.26875pt>
 File: Toroid.png Graphic file (type png)
 <use Toroid.png>
-Package pdftex.def Info: Toroid.png  used on input line 504.
+Package pdftex.def Info: Toroid.png  used on input line 506.
 (pdftex.def)             Requested size: 328.82707pt x 170.03409pt.
 <Inf Sheet 1.jpg, id=128, 1942.25626pt x 931.48pt>
 File: Inf Sheet 1.jpg Graphic file (type jpg)
 <use Inf Sheet 1.jpg>
-Package pdftex.def Info: Inf Sheet 1.jpg  used on input line 515.
+Package pdftex.def Info: Inf Sheet 1.jpg  used on input line 517.
 (pdftex.def)             Requested size: 234.8775pt x 112.63977pt.
 <Inf Sheet.jpg, id=129, 1894.07625pt x 1478.52374pt>
 File: Inf Sheet.jpg Graphic file (type jpg)
 <use Inf Sheet.jpg>
-Package pdftex.def Info: Inf Sheet.jpg  used on input line 521.
+Package pdftex.def Info: Inf Sheet.jpg  used on input line 523.
 (pdftex.def)             Requested size: 187.89914pt x 146.66533pt.
 
 Overfull \vbox (8.42604pt too high) has occurred while \output is active []
@@ -677,20 +682,20 @@ Overfull \vbox (8.42604pt too high) has occurred while \output is active []
 <parallel wire.png, id=134, 669.702pt x 456.5055pt>
 File: parallel wire.png Graphic file (type png)
 <use parallel wire.png>
-Package pdftex.def Info: parallel wire.png  used on input line 533.
+Package pdftex.def Info: parallel wire.png  used on input line 535.
 (pdftex.def)             Requested size: 187.89914pt x 128.0784pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--534
+Underfull \hbox (badness 10000) in paragraph at lines 531--536
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--543
+Underfull \hbox (badness 10000) in paragraph at lines 542--545
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--545
+Underfull \hbox (badness 10000) in paragraph at lines 545--547
 
  []
 
@@ -698,20 +703,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 543--545
 <dipole.jpg, id=139, 3219.02625pt x 1467.4825pt>
 File: dipole.jpg Graphic file (type jpg)
 <use dipole.jpg>
-Package pdftex.def Info: dipole.jpg  used on input line 554.
+Package pdftex.def Info: dipole.jpg  used on input line 556.
 (pdftex.def)             Requested size: 422.77664pt x 192.72752pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--555
+Underfull \hbox (badness 10000) in paragraph at lines 550--557
 
  []
 
 <dipole 1.jpg, id=140, 2987.16pt x 1549.79pt>
 File: dipole 1.jpg Graphic file (type jpg)
 <use dipole 1.jpg>
-Package pdftex.def Info: dipole 1.jpg  used on input line 569.
+Package pdftex.def Info: dipole 1.jpg  used on input line 571.
 (pdftex.def)             Requested size: 234.8775pt x 121.85742pt.
 
-Overfull \hbox (19.68735pt too wide) in paragraph at lines 569--570
+Overfull \hbox (19.68735pt too wide) in paragraph at lines 571--572
  [][] 
  []
 
@@ -719,33 +724,33 @@ Overfull \hbox (19.68735pt too wide) in paragraph at lines 569--570
 Overfull \vbox (5.53705pt too high) has occurred while \output is active []
 
  [25 <./dipole.jpg> <./dipole 1.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 572--575
+Underfull \hbox (badness 10000) in paragraph at lines 574--577
 
  []
 
 <Fields_in_magnetic_bottles.jpg, id=145, 650.43pt x 355.3275pt>
 File: Fields_in_magnetic_bottles.jpg Graphic file (type jpg)
 <use Fields_in_magnetic_bottles.jpg>
-Package pdftex.def Info: Fields_in_magnetic_bottles.jpg  used on input line 580.
+Package pdftex.def Info: Fields_in_magnetic_bottles.jpg  used on input line 582.
 (pdftex.def)             Requested size: 234.8775pt x 128.31358pt.
 [26 <./Fields_in_magnetic_bottles.jpg>]
 <Magnetic bottle.png, id=149, 916.6245pt x 392.667pt>
 File: Magnetic bottle.png Graphic file (type png)
 <use Magnetic bottle.png>
-Package pdftex.def Info: Magnetic bottle.png  used on input line 616.
+Package pdftex.def Info: Magnetic bottle.png  used on input line 618.
 (pdftex.def)             Requested size: 234.8775pt x 100.61707pt.
  [27 <./Magnetic bottle.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 622--625
+Underfull \hbox (badness 10000) in paragraph at lines 624--627
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 636--638
+Underfull \hbox (badness 10000) in paragraph at lines 638--640
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--648
+Underfull \hbox (badness 10000) in paragraph at lines 647--650
 
  []
 
@@ -753,10 +758,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 645--648
 <Motional emf.jpg, id=157, 1978.39125pt x 1408.26125pt>
 File: Motional emf.jpg Graphic file (type jpg)
 <use Motional emf.jpg>
-Package pdftex.def Info: Motional emf.jpg  used on input line 657.
+Package pdftex.def Info: Motional emf.jpg  used on input line 659.
 (pdftex.def)             Requested size: 234.8775pt x 167.17903pt.
  [29 <./Motional emf.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 686--689
+Underfull \hbox (badness 10000) in paragraph at lines 688--691
 
  []
 
@@ -764,56 +769,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 686--689
 <Eddy.png, id=164, 502.87875pt x 418.56375pt>
 File: Eddy.png Graphic file (type png)
 <use Eddy.png>
-Package pdftex.def Info: Eddy.png  used on input line 695.
+Package pdftex.def Info: Eddy.png  used on input line 697.
 (pdftex.def)             Requested size: 140.92793pt x 117.29922pt.
 <Eddy 2.png, id=165, 963.6pt x 539.01375pt>
 File: Eddy 2.png Graphic file (type png)
 <use Eddy 2.png>
-Package pdftex.def Info: Eddy 2.png  used on input line 703.
+Package pdftex.def Info: Eddy 2.png  used on input line 705.
 (pdftex.def)             Requested size: 187.89914pt x 105.10313pt.
 <Eddy Brake.png, id=166, 963.6pt x 650.43pt>
 File: Eddy Brake.png Graphic file (type png)
 <use Eddy Brake.png>
-Package pdftex.def Info: Eddy Brake.png  used on input line 711.
+Package pdftex.def Info: Eddy Brake.png  used on input line 713.
 (pdftex.def)             Requested size: 187.89914pt x 126.82837pt.
  [31 <./Eddy.png> <./Eddy 2.png> <./Eddy Brake.png>]
 <Lam.png, id=174, 1204.5pt x 574.145pt>
 File: Lam.png Graphic file (type png)
 <use Lam.png>
-Package pdftex.def Info: Lam.png  used on input line 719.
+Package pdftex.def Info: Lam.png  used on input line 721.
 (pdftex.def)             Requested size: 187.89914pt x 89.561pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 721--724
+Underfull \hbox (badness 10000) in paragraph at lines 723--726
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 724--727
+Underfull \hbox (badness 10000) in paragraph at lines 726--729
 
  []
 
 [32 <./Lam.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 728--731
+Underfull \hbox (badness 10000) in paragraph at lines 730--733
 
  []
 
 
-Overfull \hbox (6.0456pt too wide) in paragraph at lines 728--731
+Overfull \hbox (6.0456pt too wide) in paragraph at lines 730--733
 \OT1/cmr/m/n/12 Inductance mea-sures the abil-ity of a con-duc-tor to in-duce an emf in it-self (self-inductance)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--745
+Underfull \hbox (badness 10000) in paragraph at lines 743--747
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 749--753
+Underfull \hbox (badness 10000) in paragraph at lines 751--755
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 755--758
+Underfull \hbox (badness 10000) in paragraph at lines 757--760
 
  []
 
@@ -821,20 +826,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 755--758
 <Transformer.jpg, id=185, 2229.32875pt x 1311.90125pt>
 File: Transformer.jpg Graphic file (type jpg)
 <use Transformer.jpg>
-Package pdftex.def Info: Transformer.jpg  used on input line 766.
+Package pdftex.def Info: Transformer.jpg  used on input line 768.
 (pdftex.def)             Requested size: 234.8775pt x 138.2041pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 782--785
+Underfull \hbox (badness 10000) in paragraph at lines 784--787
 
  []
 
 [35 <./Transformer.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 791--795
+Underfull \hbox (badness 10000) in paragraph at lines 793--797
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 799--802
+Underfull \hbox (badness 10000) in paragraph at lines 801--804
 
  []
 
@@ -842,50 +847,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 799--802
 <Motor.jpg, id=192, 3146.75626pt x 857.2025pt>
 File: Motor.jpg Graphic file (type jpg)
 <use Motor.jpg>
-Package pdftex.def Info: Motor.jpg  used on input line 807.
+Package pdftex.def Info: Motor.jpg  used on input line 809.
 (pdftex.def)             Requested size: 375.80544pt x 102.36282pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 803--808
+Underfull \hbox (badness 10000) in paragraph at lines 805--810
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 816--819
+Underfull \hbox (badness 10000) in paragraph at lines 818--821
 
  []
 
 [37 <./Motor.jpg>] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 857--860
+Underfull \hbox (badness 10000) in paragraph at lines 859--862
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 857--860
+Underfull \hbox (badness 10000) in paragraph at lines 859--862
 
  []
 
 <Charging cap.jpg, id=200, 2669.975pt x 1039.885pt>
 File: Charging cap.jpg Graphic file (type jpg)
 <use Charging cap.jpg>
-Package pdftex.def Info: Charging cap.jpg  used on input line 864.
+Package pdftex.def Info: Charging cap.jpg  used on input line 866.
 (pdftex.def)             Requested size: 234.8775pt x 91.47525pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 860--865
+Underfull \hbox (badness 10000) in paragraph at lines 862--867
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 868--871
+Underfull \hbox (badness 10000) in paragraph at lines 870--873
 
  []
 
 [39 <./Charging cap.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 881--884
+Underfull \hbox (badness 10000) in paragraph at lines 883--886
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 885--888
+Underfull \hbox (badness 10000) in paragraph at lines 887--890
 
  []
 
@@ -893,45 +898,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 885--888
 <EM.png, id=207, 2569.6pt x 634.37pt>
 File: EM.png Graphic file (type png)
 <use EM.png>
-Package pdftex.def Info: EM.png  used on input line 894.
+Package pdftex.def Info: EM.png  used on input line 896.
 (pdftex.def)             Requested size: 281.85587pt x 69.57764pt.
 <EM pulse.jpg, id=208, 1590.94376pt x 1387.1825pt>
 File: EM pulse.jpg Graphic file (type jpg)
 <use EM pulse.jpg>
-Package pdftex.def Info: EM pulse.jpg  used on input line 910.
+Package pdftex.def Info: EM pulse.jpg  used on input line 912.
 (pdftex.def)             Requested size: 140.92793pt x 122.87253pt.
 
-Overfull \hbox (13.03024pt too wide) in paragraph at lines 906--911
+Overfull \hbox (13.03024pt too wide) in paragraph at lines 908--913
 []\OT1/cmr/m/n/12 Test whether a given ar-range-ment of prop-a-gat-ing elec-tro-mag-netic fields sat-is-fies Maxwell's
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 906--911
+Underfull \hbox (badness 10000) in paragraph at lines 908--913
 
  []
 
 <EM Gauss.jpg, id=209, 2354.7975pt x 1140.26pt>
 File: EM Gauss.jpg Graphic file (type jpg)
 <use EM Gauss.jpg>
-Package pdftex.def Info: EM Gauss.jpg  used on input line 916.
+Package pdftex.def Info: EM Gauss.jpg  used on input line 918.
 (pdftex.def)             Requested size: 234.8775pt x 113.7195pt.
 <EM Faraday.jpg, id=210, 1826.825pt x 1453.43pt>
 File: EM Faraday.jpg Graphic file (type jpg)
 <use EM Faraday.jpg>
-Package pdftex.def Info: EM Faraday.jpg  used on input line 927.
+Package pdftex.def Info: EM Faraday.jpg  used on input line 929.
 (pdftex.def)             Requested size: 187.89914pt x 149.47653pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 913--928
+Underfull \hbox (badness 10000) in paragraph at lines 915--930
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 913--928
+Underfull \hbox (badness 10000) in paragraph at lines 915--930
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 913--928
+Underfull \hbox (badness 10000) in paragraph at lines 915--930
 
  []
 
@@ -939,15 +944,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 913--928
 <EM Ampere.jpg, id=218, 2233.34375pt x 1808.7575pt>
 File: EM Ampere.jpg Graphic file (type jpg)
 <use EM Ampere.jpg>
-Package pdftex.def Info: EM Ampere.jpg  used on input line 938.
+Package pdftex.def Info: EM Ampere.jpg  used on input line 940.
 (pdftex.def)             Requested size: 187.89914pt x 152.15538pt.
  [43 <./EM Ampere.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 963--965
+Underfull \hbox (badness 10000) in paragraph at lines 965--967
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 966--969
+Underfull \hbox (badness 10000) in paragraph at lines 968--971
 
  []
 
@@ -955,15 +960,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 966--969
 <Poynting.jpg, id=226, 2376.88pt x 1202.4925pt>
 File: Poynting.jpg Graphic file (type jpg)
 <use Poynting.jpg>
-Package pdftex.def Info: Poynting.jpg  used on input line 983.
+Package pdftex.def Info: Poynting.jpg  used on input line 985.
 (pdftex.def)             Requested size: 234.8775pt x 118.8251pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 978--984
+Underfull \hbox (badness 10000) in paragraph at lines 980--986
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 978--984
+Underfull \hbox (badness 10000) in paragraph at lines 980--986
 
  []
 
@@ -971,25 +976,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 978--984
 <Poynting ex.jpg, id=230, 3149.7675pt x 998.73125pt>
 File: Poynting ex.jpg Graphic file (type jpg)
 <use Poynting ex.jpg>
-Package pdftex.def Info: Poynting ex.jpg  used on input line 1004.
+Package pdftex.def Info: Poynting ex.jpg  used on input line 1006.
 (pdftex.def)             Requested size: 328.82707pt x 104.25267pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1016--1019
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1021
 
  []
 
 [46 <./Poynting ex.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1029--1033
+Underfull \hbox (badness 10000) in paragraph at lines 1031--1035
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1029--1033
+Underfull \hbox (badness 10000) in paragraph at lines 1031--1035
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1033--1037
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1039
 
  []
 
@@ -997,240 +1002,380 @@ Underfull \hbox (badness 10000) in paragraph at lines 1033--1037
 <EM Generation.jpg, id=237, 2457.18pt x 2527.4425pt>
 File: EM Generation.jpg Graphic file (type jpg)
 <use EM Generation.jpg>
-Package pdftex.def Info: EM Generation.jpg  used on input line 1051.
+Package pdftex.def Info: EM Generation.jpg  used on input line 1053.
 (pdftex.def)             Requested size: 234.8775pt x 241.57503pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1047--1052
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1054
 
  []
 
-[48 <./EM Generation.jpg>] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 1061--1063
+[48 <./EM Generation.jpg>]
+<EM Wave B.jpg, id=241, 1264.725pt x 852.18375pt>
+File: EM Wave B.jpg Graphic file (type jpg)
+<use EM Wave B.jpg>
+Package pdftex.def Info: EM Wave B.jpg  used on input line 1061.
+(pdftex.def)             Requested size: 187.89914pt x 126.59973pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1071
 
  []
 
-<Battery.jpg, id=245, 1716.4125pt x 1201.48875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1071
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1073--1075
+
+ []
+
+<Battery.jpg, id=242, 1716.4125pt x 1201.48875pt>
 File: Battery.jpg Graphic file (type jpg)
 <use Battery.jpg>
-Package pdftex.def Info: Battery.jpg  used on input line 1066.
+Package pdftex.def Info: Battery.jpg  used on input line 1078.
 (pdftex.def)             Requested size: 93.94957pt x 65.76125pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1072
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1084
 
  []
 
 
-Underfull \hbox (badness 2302) in paragraph at lines 1070--1072
+Underfull \hbox (badness 2302) in paragraph at lines 1082--1084
 []$ \OT1/cmr/m/n/12 A non-ideal emf de-vice has in-ter-nal re-sis-tance and is
  []
 
 
-Overfull \hbox (8.49658pt too wide) in paragraph at lines 1064--1073
+Overfull \hbox (8.49658pt too wide) in paragraph at lines 1076--1085
 []$  $[]$ 
  []
 
-<Resistor.jpg, id=246, 1997.4625pt x 596.2275pt>
+<Resistor.jpg, id=243, 1997.4625pt x 596.2275pt>
 File: Resistor.jpg Graphic file (type jpg)
 <use Resistor.jpg>
-Package pdftex.def Info: Resistor.jpg  used on input line 1075.
+Package pdftex.def Info: Resistor.jpg  used on input line 1087.
 (pdftex.def)             Requested size: 93.94957pt x 28.03906pt.
 
-Overfull \hbox (8.49658pt too wide) in paragraph at lines 1073--1083
+Overfull \hbox (8.49658pt too wide) in paragraph at lines 1085--1095
 []$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1073--1083
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1095
 
  []
 
-<Capacitor.jpg, id=247, 2132.96875pt x 764.8575pt>
+[49 <./EM Wave B.jpg> <./Battery.jpg> <./Resistor.jpg>]
+<Capacitor.jpg, id=248, 2132.96875pt x 764.8575pt>
 File: Capacitor.jpg Graphic file (type jpg)
 <use Capacitor.jpg>
-Package pdftex.def Info: Capacitor.jpg  used on input line 1089.
+Package pdftex.def Info: Capacitor.jpg  used on input line 1102.
 (pdftex.def)             Requested size: 93.94957pt x 33.68184pt.
 
-Overfull \hbox (8.49658pt too wide) in paragraph at lines 1087--1097
+Overfull \hbox (8.49658pt too wide) in paragraph at lines 1100--1110
 []$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1087--1097
+Underfull \hbox (badness 10000) in paragraph at lines 1100--1110
 
  []
 
-<Inductor.jpg, id=248, 2252.415pt x 683.55376pt>
+<Inductor.jpg, id=249, 2252.415pt x 683.55376pt>
 File: Inductor.jpg Graphic file (type jpg)
 <use Inductor.jpg>
-Package pdftex.def Info: Inductor.jpg  used on input line 1103.
+Package pdftex.def Info: Inductor.jpg  used on input line 1116.
 (pdftex.def)             Requested size: 93.94957pt x 28.50566pt.
 
-Overfull \hbox (8.49658pt too wide) in paragraph at lines 1101--1111
+Overfull \hbox (8.49658pt too wide) in paragraph at lines 1114--1124
 []$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1101--1111
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1124
 
  []
 
-[50 <./Battery.jpg> <./Resistor.jpg> <./Capacitor.jpg> <./Inductor.jpg>]
-<Ground.jpg, id=252, 809.0225pt x 940.51375pt>
+<Ground.jpg, id=250, 809.0225pt x 940.51375pt>
 File: Ground.jpg Graphic file (type jpg)
 <use Ground.jpg>
-Package pdftex.def Info: Ground.jpg  used on input line 1119.
+Package pdftex.def Info: Ground.jpg  used on input line 1132.
 (pdftex.def)             Requested size: 93.94957pt x 109.21161pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1117--1131
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1117--1131
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1117--1131
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1117--1131
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1144
 
  []
 
-[51 <./Ground.jpg>]
-<Circuit.jpg, id=256, 3129.6925pt x 1242.6425pt>
+[50 <./Capacitor.jpg> <./Inductor.jpg> <./Ground.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1153
+
+ []
+
+[51]
+<Circuit.jpg, id=257, 3129.6925pt x 1242.6425pt>
 File: Circuit.jpg Graphic file (type jpg)
 <use Circuit.jpg>
-Package pdftex.def Info: Circuit.jpg  used on input line 1145.
+Package pdftex.def Info: Circuit.jpg  used on input line 1158.
 (pdftex.def)             Requested size: 234.8775pt x 93.25104pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1133--1146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1133--1146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1133--1146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1133--1146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1133--1146
-
- []
-
-<Circuit voltages.jpg, id=257, 3276.24pt x 1302.8675pt>
+<Circuit voltages.jpg, id=258, 3276.24pt x 1302.8675pt>
 File: Circuit voltages.jpg Graphic file (type jpg)
 <use Circuit voltages.jpg>
-Package pdftex.def Info: Circuit voltages.jpg  used on input line 1159.
+Package pdftex.def Info: Circuit voltages.jpg  used on input line 1172.
 (pdftex.def)             Requested size: 422.77664pt x 168.12627pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1154--1160
-
- []
-
-[52 <./Circuit.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1161--1167
+Underfull \hbox (badness 10000) in paragraph at lines 1167--1173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1161--1167
+Underfull \hbox (badness 10000) in paragraph at lines 1174--1180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1161--1167
+Underfull \hbox (badness 10000) in paragraph at lines 1174--1180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1161--1167
+Underfull \hbox (badness 10000) in paragraph at lines 1174--1180
 
  []
 
-[53 <./Circuit voltages.jpg>]
-<RC.png, id=264, 428.19975pt x 251.13824pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1174--1180
+
+ []
+
+[52 <./Circuit.jpg> <./Circuit voltages.jpg>]
+<RC.png, id=262, 428.19975pt x 251.13824pt>
 File: RC.png Graphic file (type png)
 <use RC.png>
-Package pdftex.def Info: RC.png  used on input line 1174.
+Package pdftex.def Info: RC.png  used on input line 1186.
 (pdftex.def)             Requested size: 187.89914pt x 110.20227pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1169--1175
+Underfull \hbox (badness 10000) in paragraph at lines 1181--1187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1176--1178
+Underfull \hbox (badness 10000) in paragraph at lines 1188--1190
 
  []
 
-[54 <./RC.png>]
-<RL.png, id=270, 437.83575pt x 277.035pt>
+[53 <./RC.png>]
+<RL.png, id=267, 437.83575pt x 277.035pt>
 File: RL.png Graphic file (type png)
 <use RL.png>
-Package pdftex.def Info: RL.png  used on input line 1199.
+Package pdftex.def Info: RL.png  used on input line 1210.
 (pdftex.def)             Requested size: 187.89914pt x 118.89023pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1192--1200
+Underfull \hbox (badness 10000) in paragraph at lines 1203--1211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1192--1200
+Underfull \hbox (badness 10000) in paragraph at lines 1203--1211
 
  []
 
-<RL charging.jpg, id=271, 2960.05875pt x 1015.795pt>
+[54]
+<RL charging.jpg, id=272, 2960.05875pt x 1015.795pt>
 File: RL charging.jpg Graphic file (type jpg)
 <use RL charging.jpg>
-Package pdftex.def Info: RL charging.jpg  used on input line 1205.
+Package pdftex.def Info: RL charging.jpg  used on input line 1216.
 (pdftex.def)             Requested size: 328.82707pt x 112.83827pt.
-[55 <./RL.png> <./RL charging.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1220--1225
+ [55 <./RL.png> <./RL charging.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1230--1235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1245
+
+ []
+
+<LC.png, id=278, 737.75626pt x 469.755pt>
+File: LC.png Graphic file (type png)
+<use LC.png>
+Package pdftex.def Info: LC.png  used on input line 1260.
+(pdftex.def)             Requested size: 469.75502pt x 299.10825pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1256--1261
 
  []
 
 [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1233--1236
+Underfull \hbox (badness 10000) in paragraph at lines 1263--1266
+
+ []
+
+[57 <./LC.png>]
+<RLC.jpg, id=286, 3029.3175pt x 1554.80875pt>
+File: RLC.jpg Graphic file (type jpg)
+<use RLC.jpg>
+Package pdftex.def Info: RLC.jpg  used on input line 1278.
+(pdftex.def)             Requested size: 281.85587pt x 144.6479pt.
+ [58 <./RLC.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1305--1309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1233--1236
+Underfull \hbox (badness 10000) in paragraph at lines 1305--1309
 
  []
 
-[57] (main.aux)
+[59] [60]
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1344
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1344--1352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1344--1352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1344--1352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1344--1352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1344--1352
+
+ []
+
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 1352--1355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
+
+ []
+
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 1374--1378
+
+ []
+
+<Resistor phasor.png, id=303, 781.7205pt x 443.85825pt>
+File: Resistor phasor.png Graphic file (type png)
+<use Resistor phasor.png>
+Package pdftex.def Info: Resistor phasor.png  used on input line 1385.
+(pdftex.def)             Requested size: 281.85587pt x 160.03943pt.
+<Capacitor phasor.png, id=304, 767.86874pt x 431.211pt>
+File: Capacitor phasor.png Graphic file (type png)
+<use Capacitor phasor.png>
+Package pdftex.def Info: Capacitor phasor.png  used on input line 1395.
+(pdftex.def)             Requested size: 281.85587pt x 158.28226pt.
+[63 <./Resistor phasor.png>]
+<Inductor phasor.png, id=309, 693.18974pt x 490.2315pt>
+File: Inductor phasor.png Graphic file (type png)
+<use Inductor phasor.png>
+Package pdftex.def Info: Inductor phasor.png  used on input line 1405.
+(pdftex.def)             Requested size: 281.85587pt x 199.3281pt.
+ [64 <./Capacitor phasor.png> <./Inductor phasor.png>]
+<RLC phasor.png, id=315, 1022.01825pt x 438.438pt>
+File: RLC phasor.png Graphic file (type png)
+<use RLC phasor.png>
+Package pdftex.def Info: RLC phasor.png  used on input line 1413.
+(pdftex.def)             Requested size: 281.85587pt x 120.91534pt.
+<Loop rule.png, id=316, 592.01175pt x 367.97475pt>
+File: Loop rule.png Graphic file (type png)
+<use Loop rule.png>
+Package pdftex.def Info: Loop rule.png  used on input line 1417.
+(pdftex.def)             Requested size: 187.89914pt x 116.78857pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1415--1426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1428--1430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1428--1430
+
+ []
+
+[65 <./RLC phasor.png> <./Loop rule.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1438--1442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1438--1442
+
+ []
+
+[66] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3878 strings out of 474486
- 59976 string characters out of 5743755
+ 3934 strings out of 474486
+ 61137 string characters out of 5743755
  1937542 words of memory out of 5000000
- 26126 multiletter control sequences out of 15000+600000
+ 26182 multiletter control sequences out of 15000+600000
  568334 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,65p,755b,407s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (57 pages, 23099883 bytes).
+Output written on main.pdf (66 pages, 24639572 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
+ 377 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 326 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 
