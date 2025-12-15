@@ -1354,16 +1354,16 @@ where $R$ is the resistance and $X$ is the reactance.\\\\
 For a resistor,
 \[\boxed{Z_R = R}\]
 For an inductor,
-\[\boxed{Z_L = i\omega L \implies X_L = \omega L}\]
+\[\boxed{Z_L = i\omega_d L \implies X_L = \omega_d L}\]
 For a capacitor,
-\[\boxed{Z_C = -\frac{i}{\omega C} \implies X_C = -\frac{1}{\omega C}}\]
+\[\boxed{Z_C = -\frac{i}{\omega_d C} \implies X_C = -\frac{1}{\omega_d C}}\]
 The magnitude of the impedance satisfies $|Z| = \frac{|V|}{|I|}$. Thus, a higher impedance results in a lower current for a given voltage amplitude.\\\\
 This allows us to understand the behavior of capacitors and inductors at different frequencies in AC circuits:
 \begin{itemize}
     \item At low frequencies
     \begin{itemize}
-        \item Capacitive reactance is large ($X_C = \frac{1}{\omega C}$): the capacitor behaves like an open circuit, since charge has time to accumulate and oppose current flow.
-        \item Inductive reactance is small ($X_L = \omega L$): the inductor behaves like a short circuit, since slowly varying currents induce only small opposing emf \\($\mathcal{E}=-L \frac{dI}{dt}$).
+        \item Capacitive reactance is large ($X_C = \frac{1}{\omega_d C}$): the capacitor behaves like an open circuit, since charge has time to accumulate and oppose current flow.
+        \item Inductive reactance is small ($X_L = \omega_d L$): the inductor behaves like a short circuit, since slowly varying currents induce only small opposing emf \\($\mathcal{E}=-L \frac{dI}{dt}$).
     \end{itemize}
     \item At high frequencies
     \begin{itemize}
@@ -1378,7 +1378,8 @@ Let's look at the phase relationships for each circuit element when driven by a 
 \[V(t) = V_m \sin(\omega_d t)\]
 \begin{itemize}
     \item \textbf{Resistive Load}: in a circuit with only a resistor, the voltage and current are in phase $\phi =0$. We see this by Ohm's law:
-    \[I(t) = \frac{V(t)}{R} = \frac{V_m}{R} \sin(\omega_d t)\]
+    \[I(t) = \frac{V_R}{R} = \frac{V_R}{R} \sin(\omega_d t)\]
+    \[\implies V_R = I_R R \quad \text{(Relating the amplitudes)}\]
     \vspace{-2em}
     \begin{figure}[H]
         \centering
@@ -1389,6 +1390,7 @@ Let's look at the phase relationships for each circuit element when driven by a 
     \[v_C = \frac{q_C}{C} \implies q_C = C V_C \sin(\omega_d t)\]
     \[I(t) = \frac{dq_C}{dt} = \omega_d C V_C \cos(\omega_d t) = \omega_d C V_C \sin\left(\omega_d t + 90^\circ\right)\]
     \[I(t) = \frac{V_C}{X_C} \sin\left(\omega_d t + 90^\circ\right), \quad X_C = \frac{1}{\omega_d C}\]
+    \[\implies V_C = I_C X_C \quad \text{(Relating the amplitudes)}\]
     \vspace{-2em}
     \begin{figure}[H]
         \centering
@@ -1399,6 +1401,7 @@ Let's look at the phase relationships for each circuit element when driven by a 
     \[v_L = L \frac{dI}{dt} \implies \frac{dI}{dt} = \frac{V_L}{L} \sin(\omega_d t)\]
     \[I(t) = \int \frac{V_L}{L} \sin(\omega_d t)\, dt = -\frac{V_L}{\omega_d L} \cos(\omega_d t) = \frac{V_L}{\omega_d L} \sin\left(\omega_d t - 90^\circ\right)\]
     \[I(t) = \frac{V_L}{X_L} \sin\left(\omega_d t - 90^\circ\right), \quad X_L = \omega_d L\]
+    \[\implies V_L = I_L X_L \quad \text{(Relating the amplitudes)}\]
     \vspace{-2em}
     \begin{figure}[H]
         \centering
@@ -1408,6 +1411,7 @@ Let's look at the phase relationships for each circuit element when driven by a 
 Note that even though we found the phase relationships using isolated circuit elements, these relationships hold true when the elements are combined in circuits as well. 
 \newpage\noindent
 Putting it all together in a RLC circuit:
+\vspace{-1em}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{RLC phasor.png}
@@ -1427,7 +1431,11 @@ Thus,
 The angle $\phi$ between the current phasor and the voltage phasor is given by:
 \[\tan\phi = \frac{V_L - V_C}{V_R} = \frac{IX_L - IX_C}{IR} = \frac{X_L - X_C}{R}\]
 Note that if $X_L > X_C$, then $\phi > 0$ and the current lags behind the voltage (inductive behavior). If $X_C > X_L$, then $\phi < 0$ and the current leads the voltage (capacitive behavior). If $X_L = X_C$, then $\phi = 0$ and the current and voltage are in phase (resonance).\\\\
+This makes sense!! In a capacitive circuit, current must first charge the capacitor before a voltage can build up across it, so current leads voltage. In an inductive circuit, the inductor resists changes in current, so a voltage must first be applied across it to change the current, meaning voltage leads current.\\\\
+We also see that when the reactances are equal ($X_L = X_C$), the impedance is purely resistive ($Z=R$) and the circuit is in resonance. This cancellation only occurs when the driving frequency matches the natural frequency of the circuit ($\omega_d = \omega = \frac{1}{\sqrt{LC}}$). At resonance, the current is maximized because the source is not fighting against any reactance.\\\\
+\textbf{Main takeaway:} Phasors allow us to understand the behavior of voltage and current across circuit elements in AC circuits. This is what gives rise to reactance and impedance, and why they let us analyze AC circuits algebraically using vector arithmetic instead of solving differential equations.
 \newpage\noindent
+\textbf{Solving AC Driven Circuits}\\
 Finally let us discuss how to solve circuits using impedances. The rules for combining impedances in series and parallel are the same as for resistors:
 \begin{itemize}
     \item \textbf{Series impedances}:
@@ -1435,12 +1443,101 @@ Finally let us discuss how to solve circuits using impedances. The rules for com
     \item \textbf{Parallel impedances}:
     \[\boxed{\frac{1}{Z_{\text{eq}}} = \frac{1}{Z_1} + \frac{1}{Z_2} + \cdots \quad \text{(parallel impedances)}}\]
 \end{itemize}
-We can then use Ohm's law in phasor form to relate voltages and currents in the circuit $\widetilde{V} = Z \widetilde{I}$ where $\widetilde{V}$ and $\widetilde{I}$ are the phasor representations (complex amplitudes) of the voltage and current, respectively. \\\\
+We can then use Ohm's law in phasor form to relate voltages and currents in the circuit $\widetilde{V} = Z \widetilde{I}$ where $\widetilde{V}$ and $\widetilde{I}$ are the phasor representations (complex amplitudes) of the voltage and current, respectively at an instant in time. \\\\
 \underline{Note:} Just like using phasors for waves, we can convert back to time domain by taking the real part or imaginary part of $\widetilde{I}$ depending on whether we used sine or cosine for the driving voltage.\\\\
 \textbf{Driven LC Circuit}\\
 Consider a driven LC circuit with a sinusoidal voltage source in series with the inductor and capacitor.:
-\[V(t) = V_m \cos(\omega t)\]
-
+\[V(t) = V_m \cos(\omega_d t) \implies V(t) = \Re\!\left\{\widetilde{V}\, e^{i\omega_d t}\right\} =\Re\!\left\{ V_m\, e^{i\omega_d t} \right\}\]
+Finding the equivalent impedance:
+\[Z_{\text{eq}} = Z_L + Z_C = i\omega_d L - \frac{i}{\omega_d C} = i\left(\omega_d L - \frac{1}{\omega_d C}\right)\]
+We can write this as a phasor with a magnitude and a phase $Z = ||Z||e^{i\phi}$:\\
+\begin{minipage}{0.4\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Phasor LC.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+Assuming that $\omega_dL > \frac{1}{\omega_d C}$,
+\[||Z|| = \sqrt{\left(\omega_d L - \frac{1}{\omega_d C}\right)^2}\]
+\[\phi = \tan^{-1}\left(\frac{\omega_d L - \frac{1}{\omega_d C}}{0}\right) = +90^\circ\]
+\[\implies Z_{\text{eq}} = ||Z|| e^{i\phi}\]
+\end{minipage}\\\\
+Using Ohm's law in phasor form to find the current phasor:
+\[\widetilde{I} = \frac{\widetilde{V}}{Z_{\text{eq}}} = \frac{V_m e^{i0}}{||Z||e^{i\phi}}  \implies \widetilde{I} = \frac{V_m}{||Z||} e^{-i\phi}\]
+To find current in the time domain, we take the real part, noting that the phasor rotates at the driving frequency $\omega_d$:
+\[I(t) = \Re\!\left\{\widetilde{I}e^{i\omega_d t}\right\} = \Re\!\left\{\frac{V_m}{||Z||} e^{-i\phi}e^{i\omega_d t}\right\} = \frac{V_m}{||Z||} \cos(\omega_d t - \phi)\]
+Since $\phi = +90^\circ$, $cos(\omega_d t - 90^\circ) = \sin(\omega_d t)$, thus:
+\[I(t) = \frac{V_m}{\left(\omega_d L - \frac{1}{\omega_d C}\right)} \sin(\omega_d t)\]
+\textbf{However,} this solution only describes the steady-state forced oscillation of the circuit. The complete solution must also include the free oscillation of the circuit, which is represented by the homogeneous solution we found earlier: 
+\[I_h = I_0 \sin(\omega_0 t + \phi_0)\]
+Where $\omega_0 = \frac{1}{\sqrt{LC}}$ is the natural frequency of the circuit, and $I_0$ and $\phi_0$ are constants determined by the initial conditions of the circuit. Note that $\phi_0$ is different from $\phi$ used in the phasor representation.\\\\
+Thus, the complete solution for the driven LC circuit is ($I = I_h + I_p$):
+\[\boxed{I(t) = I_0 \sin(\omega_0 t + \phi_0) + \frac{V_m}{\left(\omega_d L - \frac{1}{\omega_d C}\right)} \sin(\omega_d t)}\]
+\underline{Note:} This solution is valid when the circuit is not in resonance ($\omega_d \neq \omega_0$). At resonance, the current amplitude would blow up to infinity (there is no reactance or resistance). In a real circuit, there would still be some internal resistance that would limit the current.\\\\
+\textbf{Driven RLC Circuit}\\
+Consider a driven RLC circuit with a sinusoidal voltage source in series with the resistor, inductor, and capacitor:
+\[V(t) = V_m \cos(\omega_d t) \implies V(t) = \Re\!\left\{\widetilde{V}\, e^{i\omega_d t}\right\} =\Re\!\left\{ V_m\, e^{i\omega_d t} \right\}\]
+Finding the equivalent impedance:
+\[Z_{\text{eq}} = Z_R + Z_L + Z_C = R + i\omega_d L - \frac{i}{\omega_d C} = R + i\left(\omega_d L - \frac{1}{\omega_d C}\right)\]
+\newpage\noindent
+We can write this as a phasor with a magnitude and a phase $Z = ||Z||e^{i\phi}$:\\
+\begin{minipage}{0.4\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Phasor RLC.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+Assuming that $\omega_dL > \frac{1}{\omega_d C}$,
+\[||Z|| = \sqrt{R^2 + \left(\omega_d L - \frac{1}{\omega_d C}\right)^2}\]
+\[\phi = \tan^{-1}\left(\frac{\omega_d L - \frac{1}{\omega_d C}}{R}\right)\]
+\[\implies Z_{\text{eq}} = ||Z|| e^{i\phi}\]
+\end{minipage}\\\\
+Using Ohm's law in phasor form to find the current phasor:
+\[\widetilde{I} = \frac{\widetilde{V}}{Z_{\text{eq}}} = \frac{V_m e^{i0}}{||Z||e^{i\phi}}  \implies \widetilde{I} = \frac{V_m}{||Z||} e^{-i\phi}\]
+To find current in the time domain, we take the real part, noting that the phasor rotates at the driving frequency $\omega_d$:
+\[I(t) = \Re\!\left\{\widetilde{I}e^{i\omega_d t}\right\} = \Re\left\{\frac{V_m}{||Z||} e^{-i\phi}e^{i\omega_d t}\right\} = \frac{V_m}{\sqrt{R^2 + \left(\omega_d L - 1/\omega_d C\right)^2}} \cos(\omega_d t - \phi)\]
+Unlike the driven LC circuit, this solution describes the complete steady-state behavior of the driven RLC circuit because the transient free oscillations decay over time due to the resistor dissipating energy as heat. Thus, the complete solution for the driven RLC circuit is:
+\[\boxed{I(t) = \frac{V_m}{\sqrt{R^2 + \left(\omega_d L - 1/\omega_d C\right)^2}} \cos(\omega_d t - \phi)}\]
 \end{enumerate}
+Some last things to note about oscillating circuits:\\\\
+\textbf{Energy and Power}\\
+Once we have found the charge and current in the circuit, we can find the energy stored in the capacitor and inductor at any time:
+\[U_C = \frac{1}{2} C V_C^2 = \frac{1}{2} \frac{q^2}{C}, \quad U_L = \frac{1}{2} L I^2\]
+For RLC circuits, suppose that we found that the current in the circuit is:
+\[I(t) = I_m \sin(\omega_d t - \phi)\]
+Since it is oscillatory, we must use the \textbf{root mean square (rms)} value of the current to find the average power dissipated in the resistor:
+\[\boxed{I_{\text{rms}} = \frac{I_m}{\sqrt{2}}}\]
+\[\boxed{P_{\text{avg}} = I_{\text{rms}}^2 R = \frac{I_m^2 R}{2}}\]
+This gives the average power dissipated as heat in the resistor over one full cycle of oscillation.\\\\
+We can also find other RMS values:
+\[V_{\text{rms}} = \frac{V_m}{\sqrt{2}}, \quad \mathcal{E}_{\text{rms}} = \frac{\mathcal{E}_m}{\sqrt{2}}\]
+From Ohm's law we can see that:
+\[V_{\text{rms}} = I_{\text{rms}} Z\]
+Thus we can redefine the average power dissipated in the resistor as:
+\[P_{\text{avg}} = I_{\text{rms}} V_{\text{rms}} \cos\phi\]
+Where $\cos\phi$ is called the \text{power factor} of the circuit. \\\\
+\textbf{Transformers}\\
+To deliver large amounts of power while minimizing losses, electricity can be transmitted at high voltage and low current through power lines, then stepped down with a transformer to increase the current for safe use in homes.
+\[P_{\text{delivered}} = P_{\text{in}} - P_{\text{loss}} = IV - I^2 R\]
+The ideal transformer consists of a primary coil with $N_p$ turns and a secondary coil with $N_s$ turns wound around an iron core. It operates using Faraday's law of induction with an AC voltage source connected to the primary coil, creating a time-varying magnetic flux that induces an emf in the secondary coil.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Transformer Ideal.png}
+\end{figure}
+Suppose the emf source is $\mathcal{E} = \mathcal{E}_{m} \sin(\omega t)$. This would cause a sinusoidal current in the primary coil, creating a time-varying magnetic flux $\Phi_B$ through both coils and thus inducing an emf in each turn.
+\[\mathcal{E}_{\text{turn}} = \frac{d\Phi_B}{dt}\]
+The change in magnetic flux in the primary and secondary are the \textit{same}, thus the total emf in each coil is proportional to the number of turns:
+\[\mathcal{E}_{\text{turn}} = \frac{V_p}{N_p} = \frac{V_s}{N_s}\]
+\[\boxed{V_s = V_p \frac{N_s}{N_p}}\]
+Note that if $N_s > N_p$, then $V_s > V_p$ and the transformer is a step-up transformer. If $N_s < N_p$, then $V_s < V_p$ and the transformer is a step-down transformer.\\\\
+Using the conservation of energy (ideal transformer has no losses), the power input to the primary coil must equal the power output from the secondary coil:
+\[P_p = P_s \implies I_p V_p = I_s V_s\]
+\[\boxed{I_s = I_p \frac{N_p}{N_s}}\]
+Since the secondary current has a resistor load $R$ connected to it, the current in the secondary coil is determined by Ohm's law:
+\[I_s = \frac{V_s}{R} = \frac{V_p}{R} \frac{N_s}{N_p}\]
+\[\implies I_p = \frac{V_p}{R} \left(\frac{N_s}{N_p}\right)^2\]
+This equation has the form $V_p = I_p R_{eq}$ where 
+\[R_{eq} = R \left(\frac{N_p}{N_s}\right)^2\]
 \textbf{End Final Exam}
+% LORD HAVE MERCY ON ME, IT IS SO OVER.
 \end{document}

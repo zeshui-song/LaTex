@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1765773092.13853 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1765773095.72874 0
+["pdflatex"] 1765817551.04525 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1765817554.38704 0
   "Ampere long wire 1.jpg" 1764381714 548044 3871289a16e610092f82177bf01a4499 ""
   "Ampere long wire.jpg" 1764381407 552932 ef50b3429c5c89c2600996df695893a6 ""
   "Arc.jpg" 1764368519 384206 f7e0c810b9e75975865708362cd0890f ""
@@ -120,6 +120,8 @@
   "Mass Spec.jpg" 1763865956 507788 1c073a5b3d38fcab8fd0e6327ffb5dd0 ""
   "Motional emf.jpg" 1764612714 397081 d308c4effa0e24bd0b624d5aebb0046d ""
   "Motor.jpg" 1764708463 374667 9bb538b50e73264da225a49f5c6cdf12 ""
+  "Phasor LC.jpg" 1765813051 238598 1cf32e5eec4fa48cd69ae3117d807f9b ""
+  "Phasor RLC.jpg" 1765814726 439410 0422e830dc38016027108f4050a45ab1 ""
   "Potential.png" 1764010143 46826 6929bfea707b9997d2adef6ab7fbc43d ""
   "Poynting ex.jpg" 1765643915 480769 84b67ddce6c0b6226efff90b26030865 ""
   "Poynting.jpg" 1765478827 404232 a80350ce1bdb8e7acfd1dfa8ee7385ae ""
@@ -140,16 +142,17 @@
   "Toroid.png" 1764529685 409650 538892f313bd24ae209e6e1d401b8742 ""
   "Torque 1.jpg" 1764007883 634566 27410bfcbe5ccdda03cd06226c8eb1b2 ""
   "Torque.png" 1764006283 234866 8c480b0c18bcaebd6ad34e0ad8f49ca0 ""
+  "Transformer Ideal.png" 1765816678 84316 3d9d2d115d53034f4aba3a181db193b7 ""
   "Transformer.jpg" 1764782327 425166 10943fe43dd7d1303c6202cc25f8d21d ""
   "Unit circle.jpg" 1764106555 495623 94cc6174fee3e8bc27f65bfa724c6372 ""
   "Wien.jpg" 1763864678 415470 e8f4a7c4b2ea19f763708a5c6629a939 ""
   "Wire.png" 1764003347 167991 2aaa8892e5e406f77e20e3958a469c85 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1765773091 106120 32688637b5c7e5a5865fad00c464f03c ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1765817550 115109 ec6aac5623513da56c34b8c80ac4ae8f ""
   "dipole 1.jpg" 1764469396 644097 e0da1d86f82e7a71e4d32e5078303458 ""
   "dipole.jpg" 1764470092 769402 09050178e898d09fe0e7c4ba311f0ac7 ""
   "loop 2.png" 1764467603 75215 f1b718bd8715b6adf9598804b860085c ""
-  "main.aux" 1765773095 33 3910d53c6f552ef0b207c9297ccf55b3 "pdflatex"
-  "main.tex" 1765773091 106120 32688637b5c7e5a5865fad00c464f03c ""
+  "main.aux" 1765817554 33 82f0706dc5a9c66958b53a828a04f804 "pdflatex"
+  "main.tex" 1765817550 115109 ec6aac5623513da56c34b8c80ac4ae8f ""
   "parallel wire.png" 1764369126 168511 0158ddf80d4c8b0354f6651a32f4f5a5 ""
   (generated)
   "main.aux"
