@@ -1,53 +1,103 @@
-\documentclass[12pt]{article}
+\documentclass[10pt]{article}
 \usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{amsmath, amsfonts, bm, graphicx}
-\usepackage{float,multicol}
+\usepackage{float,multicol,caption}
 \geometry{margin=1in}
-\title{Dynamics Final Project Report}
+\title{}
 \date{}
-\author{Zeshui Song, Roy He, Ryan Lee}
-
+\author{}
 \begin{document}
-\maketitle
-\section*{Introduction to project}
-\section*{Assumptions}
-\section*{Constraints: Kinematics}
-Our goal is to find the angles $\theta_2$, $\theta_3$, $\theta_4$, and $\theta_5$ given the input angle $\theta_1$ and the lengths $l_1$, $l_2$, $l_3$, $l_4$, and $l_5$. We can use two methods to solve for these angles: the vector loop method and the circle intersection method.
+\begin{center}
+    \section*{Dynamics Final Project Report} 
+Zeshui Song, Roy He, Ryan Lee
 \vspace{-1em}
+\end{center}
+\subsection*{Introduction to project}
+In all modern cars, the suspension system helps absorb forces from bumps, steering, and acceleration/braking. The behavior of the car under these forces is called vehicle dynamics. The goal of this project is to characterize the dynamic response of the Cooper Union FSAE car’s suspension. By analyzing the system’s free vibration following an initial displacement, we aim to quantify critical parameters such as the damping ratio and natural frequency. We will validate our model by comparing it to video tracking of the suspension spring's motion after being released from a compressed state.
+\vspace{-1em}
+\subsection*{Assumptions}
+\begin{minipage}{0.6\textwidth}
+    \setlength{\parindent}{15pt}
+For this model, we assume a massless suspension system where the wheel remains fixed while the chassis moves. This assumption can be made because the weight of all the suspension components, calculated by multiplying the linear density of the 0.5” steel rod by the total length (about 2.9’), using a density of steel of 0.284 lb/cubic inch, comes out to under 2 lb. The actual weight of the suspension is lower due to the rods being hollow, so 2 lb is the very upper bound of this value. The car itself weighs over 500 lb when fully loaded, therefore the mass of the suspension is less than 0.4\% of the weight of the car, making their inertial effects negligible for these simulations.
+
+Furthermore, the kinematic analysis is restricted to the upper control arm, pushrod, shock mount, and shock absorber. While the lower control arm is critical for determining vehicle behavior during driving, it does not govern the linear displacement of the shock or the vertical travel of the wheel for the specific purposes of this load simulation. Therefore, we can simplify the suspension system to a four-bar linkage system, as shown in Figure~\ref{fig:kinematics1}.
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Kinematics1.png}
+    \captionof{figure}{Four-bar linkage model of the suspension system, composed of the upper control arm ($l_1$), the pushrod ($l_2$), and the shock mount ($l_3$ and $l_5$). The chassis ($l_4$) serves as the fixed ground link.}
+    \label{fig:kinematics1}
+\end{minipage}
+\subsection*{Geometric Solution for Linkage Kinematics}
+Our objective is to determine the angles $\theta_2, \theta_3, \theta_4, \text{and } \theta_5$ given the input angle $\theta_1$. While vector loops can be used, a geometric approach finding the intersection of circles centered at pivots $A$ and $C$ is computationally more efficient. Referring to Figure \ref{fig:geometry}, we outline the steps below.\\\\
+\begin{minipage}{0.75\textwidth}
+First, we define the positions of the known pivots $A$ and $C$ and the vector $\vec{d}$ connecting them:
+\begin{align*}
+    \vec{A} &= \langle l_1 \cos \theta_1, l_1 \sin \theta_1 \rangle \\
+    \vec{C} &= \langle 0, l_4 \rangle \\
+    \vec{d} &= \vec{C} - \vec{A}, \quad d = \|\vec{d}\|
+\end{align*}
+We solve for point $B$ by viewing $\triangle ABC$ as two right triangles sharing a height $h$. The projection $a$ of link $l_2$ onto vector $\vec{d}$ and the orthogonal height $h$ are:
+\[a = \frac{l_2^2 - l_3^2 + d^2}{2d}, \quad h = \sqrt{l_2^2 - a^2}\]
+\end{minipage}
+\hfill
+\begin{minipage}{0.2\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Geometry.png}
+    \captionof{figure}{Geometry of the linkage variables.}
+    \label{fig:geometry}
+\end{minipage}\\
+Point $B$ is located by traversing distance $a$ along the unit vector $\hat{d}$ and distance $h$ along the perpendicular vector $\hat{d}_\perp$:
+\[\vec{B} = \vec{A} + a \hat{d} + h \hat{d}_\perp \quad \text{where} \quad \hat{d}_\perp = \left\langle -\frac{d_y}{d}, \frac{d_x}{d} \right\rangle\]
+With coordinates for $A$, $B$, and $C$ known, vectors $\vec{l_2}$ and $\vec{l_3}$ are fully defined. Point $D$ is then found using the normal vector of \(\vec{l_3}\) and using the length \(l_5\). With points \(D\) and \(E\), we have fully defined the system and can find all the angles using trigonometry.
+\subsection*{Suspension Load Calculations}
+We will determine the forces in each link using rigid-body static equilibrium, based on the assumption that the suspension is massless. As seen in Figure~\ref{fig:FBD}, there are 9 unknowns ($A_x, A_y, B_x,B_y,C_x,C_y,O_x,O_y,N$) and we have the following 9 equations:\\\\
+\begin{minipage}{0.6\textwidth}
+\begin{itemize}
+    \item Sum of forces and moments in the shock mount:
+\[\sum F_x = F_s cos\theta_5 +C_x -B_x = 0\]
+\[\sum F_y = F_s sin\theta_5 +C_y -B_y = 0\]
+\[\sum M_C = l_5F_s sin (\theta_5 - \theta_4) - l_3 B_y cos\theta_3 +L_3B_x sin\theta_3 = 0\]
+        \item Sum of forces and moments in the upper control arm ($l_1$):
+\[\sum F_x = O_x + A_x =0\]
+\[\sum F_y = O_y + A_y =0\]
+\[\sum M_O = -l_1 A_x sin\theta_1 + l_1 A_y cos\theta_1 =0\]
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{FBD.png}
+    \captionof{figure}{FBDs of disassembled suspension components. Where $N$ is the normal reaction force on the pushrod, and $F_s$ is the force from the shock absorber.}
+    \label{fig:FBD}
+\end{minipage}
+\begin{itemize}
+    \item Sum of forces and moments in the pushrod ($l_2$):
+\[\sum F_x = B_x - A_x =0\]
+\[\sum F_y = B_y - A_y + N =0\]
+\[\sum M_B = -l_2 B_x sin\theta_2 + l_2 B_y cos\theta_2 =0\]
+\end{itemize}
+Forming a matrix from these 9 equations allows us to solve for the unknown forces in the suspension system. Particularly, we are interested in the normal reaction force $N$ acting on the pushrod shown in Figure~\ref{fig:N-Plot}, which will be used to calculate the effective spring constant of the suspension.
+\subsection*{Effective Spring Constant Calculation}
+Since the suspension geometry changes with wheel displacement, the system does not obey a linear Hooke's Law ($F=ky$). Instead, we calculate the effective spring constant as the derivative of the vertical force ($N$) with respect to vertical displacement of the wheel ($dN/dy$). Numerically solving for $dN/dy$ yields the effective spring constant plot shown in Figure~\ref{fig:K-Plot}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{Kinematics.png}
+        \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{N Plot.png}
+        \caption{Normal reaction force $N$ on the pushrod as a function of wheel displacement.}
+        \label{fig:N-Plot}
+    \end{minipage}
+    \hfill    
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Keff.png}
+        \caption{Effective spring constant $k_{eff} = dN/dy$ as a function of wheel displacement.}
+        \label{fig:K-Plot}
+    \end{minipage}
 \end{figure}
-\noindent
-We found that it is faster and cleaner to use geometry to find the angles. To do that, we just need to find the coordinate of point $B$.
-\vspace{-1em}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.3\textwidth]{Geometry.png}
-\end{figure}
-\vspace{-2em}
-\noindent
-We know the coordinates of point \(A\) and point \(C\):
-\[\vec{l_1} = \langle l_1 \cos \theta_1, l_1 \sin \theta_1 \rangle, \quad \vec{l_4} = \langle 0, l_4 \rangle\]
-\[A=\vec{O}+\vec{l_1}, \quad C=\vec{O}+\vec{l_4}\]
-We can define the vector from point \(A\) to point \(C\) and its magnitude \(d\):
-\[\vec{d} = \vec{l_4} - \vec{l_1}, \quad d = \|\vec{d}\|\]
-By the pythagorean theorem, we can find the height \(h\) from point \(P\) to point \(B\):
-\[h^2 = l_2^2 - a^2\]
-By law of cosines for triangle \(ABP\)
-\[l_2^2 = a^2 + h^2 - a h \cos \theta_p, \quad \theta_p = 90^\circ\]
-\[l_2^2 = a^2 + h^2 \quad (1)\]
-By law of cosines for triangle \(CPB\)
-\[l_3^2 = (d - a)^2 + h^2 - (d - a) h \cos \theta_p, \quad \theta_p = 90^\circ\]
-\[l_3^2 = (d - a)^2 + h^2 \quad (2)\]
-Solving for \(a\) using (1) and (2)
-\[l_3^2 - l_2^2 + a^2 = d^2 - 2ad + a^2\]
-\[a = \frac{l_3^2 - l_2^2 - d^2}{-2d}\]
-Knowing \(a\) and \(h\), we can find the coordinates of point \(B\):
-\[\vec{B} = \vec{A} + a \hat{d} + h \hat{d}_\perp\]
-\[\hat{d} = \frac{\vec{d}}{d}\]
-\[\hat{d}_\perp = \left\langle -\frac{d_y}{d}, \frac{d_x}{d} \right\rangle\]
-Finally, we can define vectors \(\vec{l_2}\) and \(\vec{l_3}\) using points \(A\), \(B\), and \(C\). From there, we can find point $D$ by numerically finding the normal vector of \(\vec{l_3}\) and using the length \(l_5\). With points \(D\) and \(E\), we have fully defined the system and can find all the angles using trigonometry.
+
 \newpage
 \end{document}
