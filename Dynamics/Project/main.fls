@@ -133,6 +133,21 @@ INPUT .\Keff.png
 INPUT .\Keff.png
 INPUT .\Keff.png
 INPUT .\Keff.png
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+INPUT .\Simulation.png
+INPUT .\Simulation.png
+INPUT .\Simulation.png
+INPUT .\Simulation.png
+INPUT .\Simulation.png
+INPUT .\Simulation.png
+INPUT .\Simulation.png
+INPUT .\Validation.png
+INPUT .\Validation.png
+INPUT .\Validation.png
+INPUT .\Validation.png
+INPUT .\Validation.png
+INPUT .\Validation.png
+INPUT .\Validation.png
 INPUT main.aux
 INPUT C:\Users\zsong\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\zsong\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
@@ -152,3 +167,5 @@ INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
