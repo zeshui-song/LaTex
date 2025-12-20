@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1760209960.96016 "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/main.tex" "main.pdf" "main" 1760209961.69644 0
+["pdflatex"] 1766203861.00314 "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Quiz 1/main.tex" "main.pdf" "main" 1766203862.05006 0
   "3d cylindrical.png" 1760108886 39186 416222e1df6c8dd4a9ab1d1f8ed61ed0 ""
-  "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1760040110 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+  "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1766171745 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1759836066 11548 baaa13199b628aa9d9a6f4d7312163cb ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
@@ -81,12 +81,12 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1736608268 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1700599895 13231 2c742011581e2bf297e33520567d9464 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1700599895 32515 51caec75eda9c8890135f12f1a4eddc3 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/main.tex" 1760209960 6834 2e2cda8764a47fd04fb63a854bbe8058 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Quiz 1/main.tex" 1760209960 6834 2e2cda8764a47fd04fb63a854bbe8058 ""
   "central force.png" 1760110772 22949 2172c8aeb1c4f2edfcd26d5d837c7dc1 ""
   "conditions.png" 1760113614 159679 52b0b22fb57c9b7f8c8fb7b542bb7ec7 ""
   "cylindrical.png" 1760108385 46973 939874344421108320573ffea8ba405c ""
   "eccentricity.png" 1760113364 84549 3fc9dc2456721b4ba6747f52daec17cb ""
-  "main.aux" 1760209961 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
+  "main.aux" 1766203861 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
   "main.tex" 1760209960 6834 2e2cda8764a47fd04fb63a854bbe8058 ""
   "normal and tangential.png" 1760108081 52376 c4079f5a6d4a778bc924aa47fc9773b4 ""
   "orbital.png" 1760113041 78634 574225545cabd29f4d4aeb6b4967b0f4 ""

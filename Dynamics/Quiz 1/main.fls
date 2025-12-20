@@ -1,6 +1,6 @@
-PWD c:\Users\zsong\OneDrive\Desktop\LaTex\Dynamics
+PWD c:\Users\zsong\OneDrive\Desktop\LaTex\Dynamics\Quiz 1
 INPUT C:\Users\zsong\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\zsong\OneDrive\Desktop\LaTex\Dynamics\main.tex
+INPUT c:\Users\zsong\OneDrive\Desktop\LaTex\Dynamics\Quiz 1\main.tex
 OUTPUT main.log
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls

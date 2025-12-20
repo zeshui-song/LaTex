@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1766203012.62367 "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" "main.pdf" "main" 1766203013.38802 0
+["pdflatex"] 1766204323.06991 "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" "main.pdf" "main" 1766204323.83506 0
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1766171745 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1759836066 11548 baaa13199b628aa9d9a6f4d7312163cb ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
@@ -48,6 +48,7 @@
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty" 1686931788 4474 b811654f4bf125f11506d13d13647efb ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty" 1686931788 2444 0d0c1ee65478277e8015d65b86983da2 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls" 1705273579 20144 147463a6a579f4597269ef9565205cfe ""
+  "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/base/fleqn.clo" 1705273579 4807 4a9ac821b9dc64f850693df4c0259635 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1705273578 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty" 1696169587 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty" 1696169587 72619 ee90b6612147680fd73c3b1406a74245 ""
@@ -71,9 +72,9 @@
   "N Plot.png" 1766202319 33080 cc7acd92467063f241695d58b59f3f43 ""
   "Simulation.png" 1766180822 53427 08bc782aab10a419acf2232b63587c0c ""
   "Validation.png" 1766180425 41031 2799a141a13e61743c494538371f3655 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" 1766203012 11565 eed02cc4376433b0202b8371e268a002 ""
-  "main.aux" 1766203013 1895 cad04eb566fdd1e23fd72aa9f3448c83 "pdflatex"
-  "main.tex" 1766203012 11565 eed02cc4376433b0202b8371e268a002 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" 1766204322 11958 64b7b1fa6b461abb4ddf785a0df9a189 ""
+  "main.aux" 1766204323 1895 cad04eb566fdd1e23fd72aa9f3448c83 "pdflatex"
+  "main.tex" 1766204322 11958 64b7b1fa6b461abb4ddf785a0df9a189 ""
   (generated)
   "main.aux"
   "main.log"

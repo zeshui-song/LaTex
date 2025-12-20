@@ -1,8 +1,9 @@
-\documentclass[10pt]{article}
+\documentclass[10pt,fleqn]{article}
 \usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{amsmath, amsfonts, bm, graphicx}
 \usepackage{float,multicol,caption}
+\setlength{\mathindent}{0pt} 
 \geometry{margin=1in}
 \title{}
 \date{}
@@ -13,6 +14,9 @@
 Zeshui Song, Roy He, Ryan Lee
 \vspace{-1em}
 \end{center}
+\makeatletter
+\@fleqnfalse
+\makeatother
 \subsection*{Introduction to project}
 In all modern cars, the suspension system helps absorb forces from bumps, steering, and acceleration/braking. The behavior of the car under these forces is called vehicle dynamics. The goal of this project is to characterize the dynamic response of the Cooper Union FSAE car’s suspension. We will model the system’s free oscillation following an initial displacement, and validate our model by comparing it to video tracking of the suspension spring's motion after being released from a compressed state.
 \vspace{-1em}
@@ -52,18 +56,26 @@ We solve for point $B$ by viewing $\triangle ABC$ as two right triangles sharing
 Point $B$ is located by traversing distance $a$ along the unit vector $\hat{d}$ and distance $h$ along the perpendicular vector $\hat{d}_\perp$:
 \[\vec{B} = \vec{A} + a \hat{d} + h \hat{d}_\perp \quad \text{where} \quad \hat{d}_\perp = \left\langle -\frac{d_y}{d}, \frac{d_x}{d} \right\rangle\]
 With coordinates for $A$, $B$, and $C$ known, vectors $\vec{l_2}$ and $\vec{l_3}$ are fully defined. Point $D$ is then found using the normal vector of \(\vec{l_3}\) and using the length \(l_5\). With points \(D\) and \(E\), we have fully defined the system and can find all the angles using trigonometry.
+
+\makeatletter
+\@fleqntrue
+\makeatother
 \subsection*{Suspension Load Calculations}
 We will determine the forces in each link using rigid-body static equilibrium, based on the assumption that the suspension is massless. As seen in Figure~\ref{fig:FBD}, there are 9 unknowns ($A_x, A_y, B_x,B_y,C_x,C_y,O_x,O_y,N$) and we have the following 9 equations:\\\\
 \begin{minipage}{0.6\textwidth}
 \begin{itemize}
     \item Sum of forces and moments in the shock mount:
-\[\sum F_x = F_s cos\theta_5 +C_x -B_x = 0\]
-\[\sum F_y = F_s sin\theta_5 +C_y -B_y = 0\]
-\[\sum M_C = l_5F_s sin (\theta_5 - \theta_4) - l_3 B_y cos\theta_3 +L_3B_x sin\theta_3 = 0\]
-        \item Sum of forces and moments in the upper control arm ($l_1$):
-\[\sum F_x = O_x + A_x =0\]
-\[\sum F_y = O_y + A_y =0\]
-\[\sum M_O = -l_1 A_x sin\theta_1 + l_1 A_y cos\theta_1 =0\]
+\begin{equation}\sum F_x = F_s cos\theta_5 +C_x -B_x = 0\end{equation}
+\begin{equation}\sum F_y = F_s sin\theta_5 +C_y -B_y = 0\end{equation}
+\begin{equation}\sum M_C = l_5F_s sin (\theta_5 - \theta_4) - l_3 B_y cos\theta_3 +L_3B_x sin\theta_3 = 0\end{equation}
+    \item Sum of forces and moments in the upper control arm ($l_1$):
+\begin{equation}\sum F_x = O_x + A_x =0\end{equation}
+\begin{equation}\sum F_y = O_y + A_y =0\end{equation}
+\begin{equation}\sum M_O = -l_1 A_x sin\theta_1 + l_1 A_y cos\theta_1 =0\end{equation}
+    \item Sum of forces and moments in the pushrod ($l_2$):
+\begin{equation}\sum F_x = B_x - A_x =0\end{equation}
+\begin{equation}\sum F_y = B_y - A_y + N =0\end{equation}
+\begin{equation}\sum M_B = -l_2 B_x sin\theta_2 + l_2 B_y cos\theta_2 =0\end{equation}
 \end{itemize}
 \end{minipage}
 \hfill
@@ -72,14 +84,12 @@ We will determine the forces in each link using rigid-body static equilibrium, b
     \includegraphics[width=\textwidth]{FBD.png}
     \captionof{figure}{FBDs of disassembled suspension components. Where $N$ is the normal reaction force on the pushrod, and $F_s$ is the force from the shock absorber.}
     \label{fig:FBD}
-\end{minipage}
-\begin{itemize}
-    \item Sum of forces and moments in the pushrod ($l_2$):
-\[\sum F_x = B_x - A_x =0\]
-\[\sum F_y = B_y - A_y + N =0\]
-\[\sum M_B = -l_2 B_x sin\theta_2 + l_2 B_y cos\theta_2 =0\]
-\end{itemize}
+\end{minipage}\\\\
 Forming a matrix from these 9 equations allows us to solve for the unknown forces in the suspension system. Particularly, we are interested in the normal reaction force $N$ acting on the pushrod shown in Figure~\ref{fig:N-Plot}, which will be used to calculate the effective spring constant of the suspension.
+
+\makeatletter
+\@fleqnfalse
+\makeatother
 \subsection*{Effective Spring Constant Calculation}
 Since the suspension geometry changes with wheel displacement, the system does not obey a linear Hooke's Law ($F=ky$). Instead, we calculate the effective spring constant as the derivative of the vertical force ($N$) with respect to vertical displacement of the wheel ($dN/dy$). This method was based on the approach for finding the wheel rate in a moving suspension system by Milliken and Milliken~\cite{milliken1995}. Numerically solving for $dN/dy$ yields the effective spring constant plot shown in Figure~\ref{fig:K-Plot}.
 \begin{figure}[H]
@@ -100,8 +110,8 @@ Since the suspension geometry changes with wheel displacement, the system does n
 \end{figure}
 \subsection*{Spring Mass Simulation and Validation}
 Knowing the effective spring constant as a function of wheel displacement, we can simulate the free oscillation of the car chassis as a mass-spring system using the ODE:
-\[m \frac{d^2y}{dt^2} + c \frac{dy}{dt}+k_{\text{eff}}(y)\cdot(y-y_{\text{eq}}) = 0\]
-Determining the initial conditions $y(0) = -0.0233 \,\text{m}$, $y'(0) = 0 \,\text{m/s}$, and $y_{\text{eq}} = -0.0295 \,\text{m}$ from video analysis of the actual suspension oscillation, we numerically solved this ODE using Python's \texttt{solve\_ivp} function. The mass and damping coefficient were tuned to best fit the experimental data, resulting in $m = 1000 \, \text{kg}$ and $c = 1500 \,\text{Ns/m}$. The simulation models the vertical displacement of the car chassis over time, which is shown in Figure~\ref{fig:Simulation}.
+\begin{equation}m \frac{d^2y}{dt^2} + c \frac{dy}{dt}+k_{\text{eff}}(y)\cdot(y-y_{\text{eq}}) = 0\end{equation}
+Determining the initial conditions $y(0) = -0.0233 \,\text{m}$, $y'(0) = 0 \,\text{m/s}$, and $y_{\text{eq}} = -0.0295 \,\text{m}$ from video analysis of the actual suspension oscillation, we numerically solved this ODE using Python's \texttt{solve\_ivp} function. The mass and damping coefficient were tuned to best fit the experimental data, resulting in $m = 1000 \, \text{kg}$ and $c = 4000 \,\text{Ns/m}$. The simulation models the vertical displacement of the car chassis ($y$) over time, which is shown in Figure~\ref{fig:Simulation}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Simulation.png}

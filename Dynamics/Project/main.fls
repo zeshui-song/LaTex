@@ -4,6 +4,9 @@ INPUT c:\Users\zsong\OneDrive\Desktop\LaTex\Dynamics\Project\main.tex
 OUTPUT main.log
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\fleqn.clo
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\fleqn.clo
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\fleqn.clo
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
