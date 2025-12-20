@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  19 DEC 2025 21:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  19 DEC 2025 22:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -364,11 +364,11 @@ File: N Plot.png Graphic file (type png)
 <use N Plot.png>
 Package pdftex.def Info: N Plot.png  used on input line 89.
 (pdftex.def)             Requested size: 225.4804pt x 168.3941pt.
-<Keff.png, id=18, 431.4519pt x 312.2064pt>
+<Keff.png, id=18, 432.1746pt x 312.2064pt>
 File: Keff.png Graphic file (type png)
 <use Keff.png>
 Package pdftex.def Info: Keff.png  used on input line 96.
-(pdftex.def)             Requested size: 225.4804pt x 163.16289pt.
+(pdftex.def)             Requested size: 225.4804pt x 162.88658pt.
 [2 <./FBD.png>]
 <Simulation.png, id=26, 714.7503pt x 425.6703pt>
 File: Simulation.png Graphic file (type png)
@@ -380,7 +380,7 @@ File: Validation.png Graphic file (type png)
 <use Validation.png>
 Package pdftex.def Info: Validation.png  used on input line 113.
 (pdftex.def)             Requested size: 281.85587pt x 216.27486pt.
- [3 <./N Plot.png> <./Keff.png> <./Simulation.png>] [4 <./Validation.png>] (main.aux)
+ [3 <./N Plot.png> <./Keff.png> <./Simulation.png>] [4 <./Validation.png>] [5] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -393,11 +393,11 @@ Here is how much of TeX's memory you used:
  27051 multiletter control sequences out of 15000+600000
  564584 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,973b,379s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,11n,65p,778b,379s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (4 pages, 354271 bytes).
+Output written on main.pdf (5 pages, 352189 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 88 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
