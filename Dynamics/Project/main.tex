@@ -81,7 +81,7 @@ We will determine the forces in each link using rigid-body static equilibrium, b
 \end{itemize}
 Forming a matrix from these 9 equations allows us to solve for the unknown forces in the suspension system. Particularly, we are interested in the normal reaction force $N$ acting on the pushrod shown in Figure~\ref{fig:N-Plot}, which will be used to calculate the effective spring constant of the suspension.
 \subsection*{Effective Spring Constant Calculation}
-Since the suspension geometry changes with wheel displacement, the system does not obey a linear Hooke's Law ($F=ky$). Instead, we calculate the effective spring constant as the derivative of the vertical force ($N$) with respect to vertical displacement of the wheel ($dN/dy$). Numerically solving for $dN/dy$ yields the effective spring constant plot shown in Figure~\ref{fig:K-Plot}.
+Since the suspension geometry changes with wheel displacement, the system does not obey a linear Hooke's Law ($F=ky$). Instead, we calculate the effective spring constant as the derivative of the vertical force ($N$) with respect to vertical displacement of the wheel ($dN/dy$). This method was based on the approach for finding the wheel rate in a moving suspension system by Milliken and Milliken~\cite{milliken1995}. Numerically solving for $dN/dy$ yields the effective spring constant plot shown in Figure~\ref{fig:K-Plot}.
 \begin{figure}[H]
     \centering
         \begin{minipage}{0.48\textwidth}
@@ -124,5 +124,9 @@ Additionally, the simulated mass of 1000 kg is significantly higher than the act
 R. L. Norton, 
 \textit{Design of Machinery: An Introduction to the Synthesis and Analysis of Mechanisms and Machines}, 
 2nd ed., New York, NY: McGraw-Hill, 1999, pp. 152--153.
+\bibitem{milliken1995}
+W. F. Milliken and D. L. Milliken,
+\textit{Race Car Vehicle Dynamics},
+Warrendale, PA, USA: SAE International, 1995.
 \end{thebibliography}
 \end{document}
