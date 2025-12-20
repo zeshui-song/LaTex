@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1766204323.06991 "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" "main.pdf" "main" 1766204323.83506 0
+["pdflatex"] 1766204649.19459 "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" "main.pdf" "main" 1766204650.0352 0
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1766171745 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1759836066 11548 baaa13199b628aa9d9a6f4d7312163cb ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
@@ -71,10 +71,11 @@
   "Kinematics1.png" 1765077413 36766 f376896a45769385a6ea63d62490b784 ""
   "N Plot.png" 1766202319 33080 cc7acd92467063f241695d58b59f3f43 ""
   "Simulation.png" 1766180822 53427 08bc782aab10a419acf2232b63587c0c ""
+  "Suspension.png" 1764642616 991898 9415fa1a7989f52e26e2cd185d579c10 ""
   "Validation.png" 1766180425 41031 2799a141a13e61743c494538371f3655 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" 1766204322 11958 64b7b1fa6b461abb4ddf785a0df9a189 ""
-  "main.aux" 1766204323 1895 cad04eb566fdd1e23fd72aa9f3448c83 "pdflatex"
-  "main.tex" 1766204322 11958 64b7b1fa6b461abb4ddf785a0df9a189 ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Dynamics/Project/main.tex" 1766204648 12233 e7893da0f72f9138c853d7d9c2788225 ""
+  "main.aux" 1766204649 2088 47ca8e6b7e29581518053b706e04d2e8 "pdflatex"
+  "main.tex" 1766204648 12233 e7893da0f72f9138c853d7d9c2788225 ""
   (generated)
   "main.aux"
   "main.log"

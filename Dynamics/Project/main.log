@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  19 DEC 2025 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  19 DEC 2025 23:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -322,96 +322,107 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Kinematics1.png, id=1, 516.12825pt x 422.7795pt>
-File: Kinematics1.png Graphic file (type png)
-<use Kinematics1.png>
-Package pdftex.def Info: Kinematics1.png  used on input line 33.
-(pdftex.def)             Requested size: 164.41711pt x 134.67934pt.
+<Suspension.png, id=1, 421.575pt x 310.66063pt>
+File: Suspension.png Graphic file (type png)
+<use Suspension.png>
+Package pdftex.def Info: Suspension.png  used on input line 28.
+(pdftex.def)             Requested size: 140.92793pt x 103.85034pt.
 
-Underfull \hbox (badness 1248) in paragraph at lines 34--34
-[]\OT1/cmr/m/n/10 Figure 1: |Four-bar link-age model
+Underfull \hbox (badness 10000) in paragraph at lines 21--32
+
  []
 
-<Geometry.png, id=3, 227.04825pt x 352.31625pt>
+<Kinematics1.png, id=3, 516.12825pt x 422.7795pt>
+File: Kinematics1.png Graphic file (type png)
+<use Kinematics1.png>
+Package pdftex.def Info: Kinematics1.png  used on input line 42.
+(pdftex.def)             Requested size: 164.41711pt x 134.67934pt.
+
+Underfull \hbox (badness 1248) in paragraph at lines 43--43
+[]\OT1/cmr/m/n/10 Figure 2: |Four-bar link-age model
+ []
+
+<Geometry.png, id=4, 227.04825pt x 352.31625pt>
 File: Geometry.png Graphic file (type png)
 <use Geometry.png>
-Package pdftex.def Info: Geometry.png  used on input line 52.
+Package pdftex.def Info: Geometry.png  used on input line 61.
 (pdftex.def)             Requested size: 93.94957pt x 145.78381pt.
 
-Underfull \hbox (badness 1371) in paragraph at lines 53--53
+Underfull \hbox (badness 1371) in paragraph at lines 62--62
 \OT1/cmr/m/n/10 of the link-age vari-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--57
+Underfull \hbox (badness 10000) in paragraph at lines 47--66
 
  []
 
 [1
 
-{C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Kinematics1.png> <./Geometry.png>]
-<FBD.png, id=16, 578.91281pt x 536.0025pt>
+{C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Suspension.png> <./Kinematics1.png>]
+<FBD.png, id=15, 578.91281pt x 536.0025pt>
 File: FBD.png Graphic file (type png)
 <use FBD.png>
-Package pdftex.def Info: FBD.png  used on input line 84.
+Package pdftex.def Info: FBD.png  used on input line 93.
 (pdftex.def)             Requested size: 164.41711pt x 152.23068pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--89
+Underfull \hbox (badness 10000) in paragraph at lines 73--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--89
+Underfull \hbox (badness 10000) in paragraph at lines 73--98
 
  []
 
-<N Plot.png, id=17, 570.933pt x 426.393pt>
+[2 <./Geometry.png> <./FBD.png>]
+<N Plot.png, id=26, 570.933pt x 426.393pt>
 File: N Plot.png Graphic file (type png)
 <use N Plot.png>
-Package pdftex.def Info: N Plot.png  used on input line 99.
+Package pdftex.def Info: N Plot.png  used on input line 108.
 (pdftex.def)             Requested size: 225.4804pt x 168.3941pt.
-<Keff.png, id=18, 432.1746pt x 312.2064pt>
+<Keff.png, id=27, 432.1746pt x 312.2064pt>
 File: Keff.png Graphic file (type png)
 <use Keff.png>
-Package pdftex.def Info: Keff.png  used on input line 106.
+Package pdftex.def Info: Keff.png  used on input line 115.
 (pdftex.def)             Requested size: 225.4804pt x 162.88658pt.
-[2 <./FBD.png>]
-<Simulation.png, id=26, 714.7503pt x 425.6703pt>
+<Simulation.png, id=28, 714.7503pt x 425.6703pt>
 File: Simulation.png Graphic file (type png)
 <use Simulation.png>
-Package pdftex.def Info: Simulation.png  used on input line 117.
+Package pdftex.def Info: Simulation.png  used on input line 126.
 (pdftex.def)             Requested size: 375.80544pt x 223.818pt.
-<Validation.png, id=27, 428.5611pt x 328.8285pt>
+ [3 <./N Plot.png> <./Keff.png>]
+<Validation.png, id=35, 428.5611pt x 328.8285pt>
 File: Validation.png Graphic file (type png)
 <use Validation.png>
-Package pdftex.def Info: Validation.png  used on input line 123.
+Package pdftex.def Info: Validation.png  used on input line 132.
 (pdftex.def)             Requested size: 281.85587pt x 216.27486pt.
- [3 <./N Plot.png> <./Keff.png> <./Simulation.png>] [4 <./Validation.png>] [5] (main.aux)
+ [4 <./Simulation.png> <./Validation.png>] [5] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4810 strings out of 474486
- 77930 string characters out of 5743755
- 1938542 words of memory out of 5000000
- 27059 multiletter control sequences out of 15000+600000
+ 4818 strings out of 474486
+ 78096 string characters out of 5743755
+ 1940542 words of memory out of 5000000
+ 27067 multiletter control sequences out of 15000+600000
  564584 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,778b,379s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (5 pages, 352259 bytes).
+Output written on main.pdf (5 pages, 1638716 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
+ 90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
