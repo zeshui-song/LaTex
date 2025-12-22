@@ -644,7 +644,7 @@ The induced electric field has the following properties:
     \item Is a non-conservative field, meaning that the work done by the field around a closed loop is non-zero (and thus cannot be described by a potential energy function)
 \end{itemize}
 In the case where there is a coil of wire with $N$ turns, and the coil is tightly wound so that each turn experiences the same magnetic flux, then the total emf induced in the coil is:
-\[\boxed{\mathcal{E}=-N\frac{d\phi_B}{dt} \quad \text{(coil of N turns)}}\]
+\[\boxed{\mathcal{E}=-N\frac{d\Phi_B}{dt} \quad \text{(coil of N turns)}}\]
 \underline{Note:} Typically, we don't need to think too hard about the direction of the induced electric field, and just need to consider the magnitude of the induced emf. The direction can be determined using Lenz's law.\\\\
 By examining the terms in Faraday's law, we can see that there are a few ways to induce an emf in a loop:
 \begin{itemize}
@@ -834,7 +834,7 @@ Similarly, a motor works in reverse by supplying an AC current to a coil in a ma
     \[\int \vec{B}\cdot\hat{n}dA=0\]
     \item \textbf{Ampere-Maxwell Law}\\
     Relates the magnetic circulation around a closed Amperian loop to the enclosed current and changing electric flux through the surface bounded by the loop.
-    \[\oint \vec{B}\cdot d\vec{l}=\mu_0 \left[I_{\text{enc}}+\varepsilon_0 \frac{d\Phi_E}{dt}\right],\quad \Phi_E=\int \vec{E}\cdot \hat{n}\,dA\]
+    \[\oint \vec{B}\cdot d\vec{l}=\mu_0 \left(I_{\text{enc}}+\varepsilon_0 \frac{d\Phi_E}{dt}\right),\quad \Phi_E=\int \vec{E}\cdot \hat{n}\,dA\]
     \item \textbf{Faraday's Law of Induction}\\
     Relates the electric circulation around a closed Faradian loop to the changing magnetic flux through the surface bounded by the loop.    
     \[\oint \vec{E}\cdot d\vec{l}=-\frac{d\Phi_B}{dt}, \quad \Phi_B = \int \vec{B}\cdot \hat{n}\,dA\]
@@ -873,7 +873,6 @@ To fix this, we have the Ampere-Maxwell law  with an additional term called the 
 \[I_d = \varepsilon_0 \frac{d\Phi_E}{dt}, \quad \Phi_E = \int \vec{E}\cdot \hat{n} dA\]
 Thus, the Ampere-Maxwell law is:
 \[\oint \vec{B}\cdot d\vec{l}=\mu_0 \left(I_{\text{enc}} + \varepsilon_0 \frac{d\Phi_E}{dt}\right)\]
-\newpage\noindent
 To find the magnetic field between the plates, we first know that the electric field between the plates is:
 \[E = \frac{V}{d}, \qquad V = \frac{Q}{C}, \qquad C = \varepsilon_0 \frac{A}{d}\]
 \[E = \frac{1}{d}Q\frac{d}{\varepsilon_0 A} = \frac{Q}{\varepsilon_0 A}\]
@@ -881,6 +880,7 @@ The electric flux through a circular amperian loop that fully encloses the plate
 \[\Phi_E = \int \vec{E}\cdot \hat{n} dA = EA = \frac{Q}{\varepsilon_0 A} A = \frac{Q}{\varepsilon_0}\]
 The displacement current is then:
 \[I_d = \varepsilon_0 \frac{d\Phi_E}{dt} = \varepsilon_0 \frac{d}{dt}\left(\frac{Q}{\varepsilon_0}\right) = \frac{dQ}{dt} = I\]
+ This displacement current is \textit{equal} to the conventional current going into the capacitor!\\\\
 \underline{Note:} $Q$ refers to the charge on each plate of the capacitor. The rate at which this charge changes is equal to the current $I$ by conservation of charge.\\\\
 Thus, the magnetic field around the plates can be found using the Ampere-Maxwell law:
 \[\oint \vec{B}\cdot d\vec{l}=\mu_0 \varepsilon_0 \frac{d\Phi_E}{dt}\]
@@ -923,15 +923,17 @@ The pulse is in a vacuum without any external charges, thus $Q_{\text{enc}}=0$ a
 \[\int \vec{B}\cdot \hat{n} dA = 0\]
 \end{minipage}\\\\
 Therefore, Gauss's law for electricity and magnetism are satisfied.\\\\
-\textit{Does it satisfy Faraday's Law?}
+\textit{Does it satisfy Faraday's Law?}\\
+Picking CCW around the Faradian loop as positive (positive flux is out of the page).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\linewidth]{EM Faraday.jpg}
 \end{figure}
 \vspace{-2em}
-\[\Phi_B = \int \vec{B}\cdot \hat{n} dA = Bhx \implies \frac{d\Phi_B}{dt}=-Bhv \quad \text{(flux is decreasing)}\]
-\[\int \vec{E}\cdot d\vec{l}=-Eh \quad \text{(CCW is positive, $\vec{E}$ is CW)}\]
+\[\Phi_B = \int \vec{B}\cdot \hat{n} dA = Bhx \implies \frac{d\Phi_B}{dt}= Bhv \quad \text{(flux is increasing)}\]
+\[\int \vec{E}\cdot d\vec{l}= -Eh \quad \text{(CCW is positive, $\vec{E}$ is CW)}\]
 Thus,
+\[\int \vec{E}\cdot d\vec{l} = \frac{d\Phi_B}{dt}\]
 \[-Eh=-Bhv \implies \boxed{E = Bv, \quad v=c}\]
 \newpage\noindent
 \textit{Does it satisfy Ampere-Maxwell Law?}
@@ -1027,16 +1029,15 @@ By substituting the sinusoidal expression for $E = E_m sin(kx-\omega t)$ into th
 \[I = S_{\text{avg}}\]
 \[I =\frac{1}{c\mu_0}\left[E^2\right]_{\text{avg}}=\frac{1}{c\mu_0}\left[E_m^2 sin^2(kx-\omega t)\right]_{\text{avg}}\]
 Over a full cycle, the average value of $sin^2$ is $\frac{1}{2}$, thus:
-\[I = \frac{E_m^2}{2c\mu_0}\]
-\[\boxed{I = \frac{1}{c\mu_0}E^2_{\text{rms}}}\]
+\[I = \frac{E_m^2}{2c\mu_0} \implies \boxed{I = \frac{1}{c\mu_0}E^2_{\text{rms}}}\]
 Where $E_{\text{rms}} = E_m/\sqrt{2}$ is the root-mean-square value of the electric field.\\\\
 \underline{Note:} The energy density of the electric and magnetic fields are exactly equal in an electromagnetic wave.\\\\
 If we treat the source of the electromagnetic radiation as a point source that emits radiation isotropically (equally in all directions), the intensity at a distance $r$ from the source is:
 \[I = \frac{P}{A} = \frac{P}{4\pi r^2}\]
-Where $P$ is the total power emitted by the source.\\\\
+Where $P$ is the total power emitted by the source, and the area is the surface area of a sphere with radius $r$.\\\\
 \textbf{Radiation Pressure}\\
 Assuming a beam of electromagnetic radiation hits the surface of an unconstrained object over time $\Delta t$ and the object absorbs all the radiation, then the object will gain an energy $\Delta U$ and momentum $\Delta p$ from the radiation. Since electromagnetic radiation carries momentum, the momentum transferred to the object is:
-\[\Delta p = \frac{\Delta U}{c} \quad \text{(total absorption)}\]
+\[\Delta p = \frac{\Delta U}{c} \quad \text{(total absorption)}\]This is hard to derive, but can be shown using relativistic arguments\\\\
 If the radiation is reflected instead of absorbed, the momentum transferred to the object is:
 \[\Delta p = \frac{2\Delta U}{c} \quad \text{(total reflection)}\]
 The radiation pressure $P$ is defined as the force per unit area exerted on the object by the radiation, and the force is given by:

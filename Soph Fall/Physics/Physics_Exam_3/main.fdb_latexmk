@@ -1,11 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1765817551.04525 "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1765817554.38704 0
+["pdflatex"] 1766431342.70078 "c:/Users/zsong/OneDrive/Desktop/LaTex/Soph Fall/Physics/Physics_Exam_3/main.tex" "main.pdf" "main" 1766431346.34448 0
   "Ampere long wire 1.jpg" 1764381714 548044 3871289a16e610092f82177bf01a4499 ""
   "Ampere long wire.jpg" 1764381407 552932 ef50b3429c5c89c2600996df695893a6 ""
   "Arc.jpg" 1764368519 384206 f7e0c810b9e75975865708362cd0890f ""
   "Battery.jpg" 1765484289 286928 bf63a3f7028f25451b545b81d9166386 ""
   "Biot Savart.jpg" 1764099585 942767 e3fdb08d5f8a9497acc58352f4a13a5f ""
-  "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1765730286 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+  "C:/Users/zsong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1766171745 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758289669 14064 f1b79be56b30e5d452b3bce564671b21 ""
   "C:/Users/zsong/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758289211 24225046 93fab31cee048cd2ef0f58bac36106e4 ""
   "C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
@@ -147,12 +147,12 @@
   "Unit circle.jpg" 1764106555 495623 94cc6174fee3e8bc27f65bfa724c6372 ""
   "Wien.jpg" 1763864678 415470 e8f4a7c4b2ea19f763708a5c6629a939 ""
   "Wire.png" 1764003347 167991 2aaa8892e5e406f77e20e3958a469c85 ""
-  "c:/Users/zsong/OneDrive/Desktop/LaTex/Physics/Physics_Exam_3/main.tex" 1765817550 115109 ec6aac5623513da56c34b8c80ac4ae8f ""
+  "c:/Users/zsong/OneDrive/Desktop/LaTex/Soph Fall/Physics/Physics_Exam_3/main.tex" 1766431341 115474 11f7626776172a9875e9b71894d3d0e1 ""
   "dipole 1.jpg" 1764469396 644097 e0da1d86f82e7a71e4d32e5078303458 ""
   "dipole.jpg" 1764470092 769402 09050178e898d09fe0e7c4ba311f0ac7 ""
   "loop 2.png" 1764467603 75215 f1b718bd8715b6adf9598804b860085c ""
-  "main.aux" 1765817554 33 82f0706dc5a9c66958b53a828a04f804 "pdflatex"
-  "main.tex" 1765817550 115109 ec6aac5623513da56c34b8c80ac4ae8f ""
+  "main.aux" 1766431346 33 82f0706dc5a9c66958b53a828a04f804 "pdflatex"
+  "main.tex" 1766431341 115474 11f7626776172a9875e9b71894d3d0e1 ""
   "parallel wire.png" 1764369126 168511 0158ddf80d4c8b0354f6651a32f4f5a5 ""
   (generated)
   "main.aux"
