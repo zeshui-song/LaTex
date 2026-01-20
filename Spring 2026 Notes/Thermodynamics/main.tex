@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{amsmath, amsfonts, bm, graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs} 
+\usepackage{float}
+\geometry{margin=1in}
+
+\title{}
+\date{}
+\author{}
+
+\begin{document}
+
+\begin{center}
+    \section*{\LARGE\underline{Ch 1: Intro and Basic Concepts}}
+\end{center}
+
+\section*{Thermodynamics and Energy}
+\textit{Thermodynamics} is the science of energy.\\\\
+The \textbf{First Law of Thermodynamics} states energy is conserved and can be stored in thermodynamic systems as a state property. A state property is a thermodynamic quantity whose value depends only on the current equilibrium state of the system and not on the path taken to reach that state.\\\\
+The \textbf{Second Law of Thermodynamics} states while energy is conserved, irreversible processes increase entropy and reduce the amount of energy available to do useful work.
+
+\section*{Systems and Control Volumes}
+A \textit{system} is a quantity of matter or a region in space chosen for study. The \textit{surroundings} is everything outside the system. The \text{boundary} is the real or imaginary surface that separates the system from its surroundings (note that boundary is the contact surface between the system and its surroundings).\\\\
+A \textbf{closed system} (or \textit{control mass}) encloses a fixed amount of matter, and no mass crosses its boundary. A \textbf{open system} (or \textit{control volume}) encloses a region in space through which mass may flow through its boundary.\\\\
+A \textbf{isolated system} is a special type of closed system that does not exchange either mass or energy with its surroundings.\\\\
+\underline{Note}: In both closed and open systems, energy (in the form of heat or work) may cross the system boundary.\\\\
+\underline{Ex}: Piston and cylinder device (closed system) and nozzle(open system)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Piston.png}
+    \hspace{0.05\textwidth}
+    \includegraphics[width=0.3\textwidth]{Nozzle.png}
+\end{figure}\noindent
+\textbf{Control surfaces} are the boundaries of control volumes. They may be real or imaginary, fixed or moving.
+
+\section*{State and Equilibrium}
+The \textbf{state} of a system is defined by the complete set of its properties at a given moment. At a fixed state, all properties have definite values, and a change in any property results in a change of state.\\\\
+Thermodynamics deals with \textbf{equilibrium states}, which are states of balance in which no unbalanced driving forces exist.
+\begin{itemize}
+\item \textbf{Thermal equilibrium} exists when there is a uniform temperature throughout the system. 
+\item \textbf{Mechanical equilibrium} exists when there are no unbalanced forces within the system or between the system and its surroundings, typically related to pressure (it is in mechanical equilibrium if no change in pressure at any point in the system over time). 
+\item \textbf{Phase equilibrium} exists when different phases of a system (solid, liquid, gas) are in equilibrium with no changes in mass. 
+\item \textbf{Chemical equilibrium} exists when there are no changes in the chemical composition of a system over time (no chemical reactions).
+\end{itemize}
+The \textbf{state} of a system is defined by its properties, but it is not necessary to specify all properties to fix the state. Once a sufficient number of properties are specified, all remaining properties are determined automatically. This principle is expressed by the \textbf{state postulate}:
+
+\begin{quote}
+\textbf{State Postulate:} The state of a \emph{simple compressible system} is completely specified by two independent, intensive properties.
+\end{quote}\noindent
+A \textbf{simple compressible system} is one in which electrical, magnetic, gravitational, motion, and surface tension effects are negligible. If any of these effects are significant, an additional property must be specified for each effect.\\\\
+The two properties used to fix the state must be \textbf{independent}, meaning that one property can be varied while the other is held constant. For single-phase systems, temperature and pressure are independent properties, whereas in multiphase systems they are dependent and cannot fully specify the state.
+
+\section*{Processes and Cycles}
+Any change that a system undergoes from one equilibrium state to another is called a \textbf{process}, and the series of states through which a system passes during a process is called the \textbf{path} of the process.\\\\
+\underline{Note}: To fully define a process, the initial and final states must be specified, as well as the path taken between these states and the interactions with the surroundings.\\\\
+A \textbf{cycle} is a special type of process in which a system returns to its initial state at the end of the process. In a cycle, all properties of the system return to their original values, and the net change in any property over the cycle is zero.\\\\
+When a process occurs very slowly, allowing the system to remain in near-equilibrium states throughout, it is called a \textbf{quasi-static} or \textbf{quasi-equilibrium} process. Quasi-static processes are idealized processes that help in analyzing thermodynamic systems, as they allow the use of equilibrium thermodynamics to describe the system's behavior. \\\\
+\underline{Ex}: $P-V$ diagram of a compression process
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Process.png}
+\end{figure}
+
+
+
+
+
+
+\end{document}
