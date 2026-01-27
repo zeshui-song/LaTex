@@ -1,0 +1,178 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{amsmath, amsfonts, bm, graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs} 
+\usepackage{float}
+\geometry{margin=1in}
+
+\title{}
+\date{}
+\author{}
+
+\begin{document}
+\section*{1-58}
+\vspace{-1em}
+\begin{minipage}[t]{0.6\textwidth} \vspace{0pt}
+\centering
+\includegraphics[width=\textwidth]{1-58.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth} \vspace{0pt}
+Given:
+\begin{itemize}
+    \item Spring force, $F_{s} = 150\,\text{N}$
+    \item Mass of piston, $m = 3.2\,\text{kg}$
+    \item Area of piston, $A = 35\,\text{cm}^2$
+    \item Atmospheric pressure, $P_{atm} = 95\,\text{kPa}$
+\end{itemize}
+Find: 
+\begin{itemize}
+    \item Pressure of gas inside cylinder, $P_{gas}$
+\end{itemize}
+\end{minipage}\\\\
+\textbf{Drawing a FBD of the piston:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{1-58_1.png}
+\end{figure}\noindent
+Using the formula for pressure: $\boxed{P = F/A}$, we can find the force exerted by the gas on the piston and write the vertical force balance:
+\[\sum F_y = P_{gas}A - F_{s} - mg - P_{atm}A = 0\]
+\[\implies P_{gas} = \frac{F_{s} + mg}{A} + P_{atm}\]
+Plugging in the values:
+\[
+P_{\text{gas}}
+= \frac{
+[150\,\text{N}]
++ [3.2\,\text{kg}]\,[9.81\,\text{m/s}^2]\,
+\left[\frac{\text{N}}{\text{kg}\cdot\text{m/s}^2}\right]
+}{
+[35\,\text{cm}^2]\left[\frac{(10^{-2} \text{m})^2}{\text{cm}^2}\right]
+}
++ [95\,\text{kPa}]\left[\frac{10^3 \text{Pa}}{\text{kPa}}\right]
+= 146826.28\,\text{Pa}
+\approx \boxed{147\,\text{kPa}}
+\]
+
+\section*{1-70}
+\vspace{-1em}
+\begin{minipage}[t]{0.6\textwidth} \vspace{0pt}
+\centering
+\includegraphics[width=\textwidth]{1-70.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth} \vspace{0pt}
+Given:
+\begin{itemize}
+    \item The gauge pressure of blood is measured with a column of mercury of height \[h_{Hg} = 120\,\text{mm}\]
+    \item $\rho_{blood} = 1050\,\text{kg/m}^3$
+    \item $\rho_{Hg} = 13600\,\text{kg/m}^3$
+\end{itemize}
+Find: 
+\begin{itemize}
+    \item Height of blood column, $h_{blood}$
+\end{itemize}
+\end{minipage}
+\vspace{-2.5em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{1-70_1.png}
+\end{figure}\vspace{-1em}\noindent
+For a given gauge pressure, we can find the height/depth of a fluid column using the hydrostatic pressure formula:
+\[P= \rho gh\]
+Since the pressure $P$ exerted by the blood is the same regardless of whether we measure it using a column of mercury or a column of blood, we can set the two hydrostatic pressure equations equal to each other:
+\[P = \rho_{Hg}gh_{Hg} = \rho_{blood}gh_{blood}\]
+\[\implies h_{blood} = \frac{\rho_{Hg}h_{Hg}}{\rho_{blood}}\]
+Plugging in the values:
+\[h_{blood} = \frac{[13600\,\text{kg/m}^3][0.12\,\text{m}]}{[1050\,\text{kg/m}^3]} = 1.554\,\text{m} \approx \boxed{1.55\,\text{m}}\]
+\underline{Note:} The pressures are gauge pressures because they are measured relative to atmospheric pressure, so we don't have to account for atmospheric pressure in our calculations.
+
+\section*{1-90}
+\vspace{-1em}
+\begin{minipage}[t]{0.6\textwidth} \vspace{0pt}
+\centering
+\includegraphics[width=\textwidth]{1-90.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth} \vspace{0pt}
+Given:
+\begin{itemize}
+    \item $m_1 = 25\,\text{kg}$
+    \item $m_2 = 1900\,\text{kg}$
+    \item $D_1 = 10\,\text{cm}$
+\end{itemize}
+Find: 
+\begin{itemize}
+    \item $D_2$ such that $m_1$ lifts $m_2$
+\end{itemize}
+\end{minipage}\\\\
+\textbf{Pascal's Principle} states that the pressure applied to a confined fluid increases the pressure throughout the fluid by the same amount. Thus, the pressure applied on piston 1 is equal to the pressure applied on piston 2 ($P_1 = P_2$). Solving this equation will give us the minimum diameter $D_2$ such that $m_1$ can lift $m_2$.
+\[P_1 = \frac{F_1}{A_1} = \frac{m_1 g}{\frac{1}{4}\pi D_1^2}, \quad P_2 = \frac{F_2}{A_2} = \frac{m_2 g}{\frac{1}{4}\pi D_2^2}\]
+\[\implies \frac{m_1 g}{\frac{1}{4}\pi D_1^2} = \frac{m_2 g}{\frac{1}{4}\pi D_2^2}\]
+\[\implies D_2 = D_1 \sqrt{\frac{m_2}{m_1}}\]
+Plugging in the values:
+\[D_2 = [10\,\text{cm}] \sqrt{\frac{[1900\,\text{kg}]}{[25\,\text{kg}]}} = 87.177\,\text{cm} \approx \boxed{87.2\,\text{cm}}\]
+
+\section*{1-105}
+\vspace{-1em}
+\begin{minipage}[t]{0.6\textwidth} \vspace{0pt}
+\centering
+\includegraphics[width=\textwidth]{1-105.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth} \vspace{0pt}
+Given:
+\begin{itemize}
+    \item Gauge pressure inside pressure cooker, $P_{in,gauge} = 100\,\text{kPa}$
+    \item The opening area of the valve, $A = 4\,\text{mm}^2$
+    \item Atmospheric pressure, $P_{atm} = 101\,\text{kPa}$
+\end{itemize}
+Find: 
+\begin{itemize}
+    \item Mass of petcock required to open at pressure $P_{in,gauge}$
+\end{itemize}
+Assuming that the atmospheric pressure acts on an area equal to $A$.
+\end{minipage}\\\\
+FBD of the petcock:
+\vspace{-2em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{1-105_1.png}
+\end{figure}\vspace{-1em}\noindent
+\underline{Recall:} 
+$P_{gauge} = P_{abs} - P_{atm} \implies P_{abs} = P_{gauge} + P_{atm}$\\\\
+The vertical force balance on the petcock is:
+\[\sum F_y = P_{in,abs}A - P_{atm}A - mg = 0\]
+\[\implies (P_{in,gauge} + P_{atm})A - P_{atm}A - mg = 0\]
+\[ \implies P_{in,gauge} A - mg = 0 \implies m = \frac{P_{in,gauge} A}{g}\]
+Plugging in the values:
+\[m = \frac{[100\,\text{kPa}]\left[\frac{10^3 \text{Pa}}{\text{kPa}}\right][4\,\text{mm}^2]\left[\frac{(10^{-3} \text{m})^2}{\text{mm}^2}\right]}{[9.81\,\text{m/s}^2]} = 0.04077\,\text{kg} \approx \boxed{40.8\,\text{g}}\]
+
+\section*{1-110}
+\vspace{-1em}
+\begin{minipage}[t]{0.6\textwidth} \vspace{0pt}
+\centering
+\includegraphics[width=\textwidth]{1-110.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth} \vspace{0pt}
+Given:
+\begin{itemize}
+    \item 
+\end{itemize}
+Find: 
+\begin{itemize}
+    \item 
+\end{itemize}
+\end{minipage}\\\\
+
+\section*{1-118}
+\vspace{-1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{1-118.png}
+\end{figure}
+
+\end{document}

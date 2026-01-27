@@ -19,15 +19,15 @@
 \end{center}
 
 \section*{Thermodynamics and Energy}
-\textit{Thermodynamics} is the science of energy.\\\\
-The \textbf{First Law of Thermodynamics} states energy is conserved and can be stored in thermodynamic systems as a state property. A state property is a thermodynamic quantity whose value depends only on the current equilibrium state of the system and not on the path taken to reach that state.\\\\
-The \textbf{Second Law of Thermodynamics} states while energy is conserved, irreversible processes increase entropy and reduce the amount of energy available to do useful work.
+\textit{Thermodynamics} is the science of energy, the transformation of energy, and the accompanying change in the state of matter. Classical thermodynamics methods look at end conditions or \textit{states} where these states are in equilibrium.\\\\
+The \textbf{First Law of Thermodynamics} states energy is conserved and the energy of the universe stays constant.\\\\
+The \textbf{Second Law of Thermodynamics} states that while the total energy of the universe remains constant, every time a process occurs (we do something with the energy, like to get work), we reduce the amount of \textit{usable} energy. \textbf{Entropy} is a measure of this loss of usable energy.
 
 \section*{Systems and Control Volumes}
 A \textit{system} is a quantity of matter or a region in space chosen for study. The \textit{surroundings} is everything outside the system. The \text{boundary} is the real or imaginary surface that separates the system from its surroundings (note that boundary is the contact surface between the system and its surroundings).\\\\
 A \textbf{closed system} (or \textit{control mass}) encloses a fixed amount of matter, and no mass crosses its boundary. A \textbf{open system} (or \textit{control volume}) encloses a region in space through which mass may flow through its boundary.\\\\
-A \textbf{isolated system} is a special type of closed system that does not exchange either mass or energy with its surroundings.\\\\
 \underline{Note}: In both closed and open systems, energy (in the form of heat or work) may cross the system boundary.\\\\
+A \textbf{isolated system} is a special type of closed system that does not exchange either mass or energy with its surroundings.\\\\
 \underline{Ex}: Piston and cylinder device (closed system) and nozzle(open system)
 \begin{figure}[H]
     \centering
@@ -63,7 +63,64 @@ When a process occurs very slowly, allowing the system to remain in near-equilib
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{Process.png}
-\end{figure}
+\end{figure}\noindent
+The prefix \textit{iso-} denotes a process in which a particular property remains constant. For example, an 
+\begin{itemize}
+\item \textbf{Isothermal} process has constant temperature $T$
+
+\item \textbf{Isobaric} process has constant pressure $P$
+
+\item \textbf{Isochoric} (or \textbf{Isometric}) process has constant specific volume $V$
+\end{itemize}
+\newpage
+
+\section*{The Steady-Flow Process}
+\textit{Steady} means no change in time.\\\\
+\textit{Unsteady} or \textit{transient} means change in time.\\\\
+\textit{Uniform} means no change in space.\\\\
+Many engineering devices operate for long periods under consistent conditions and are classified as \textit{steady-flow devices}. 
+A \textbf{steady-flow process} is one in which a fluid flows through a control volume steadily: properties may vary throughout the region, but at any fixed point they remain constant in time.\\\\
+Consequently, the volume $V$, mass $m$, and total energy $E$ of the control volume remain constant during the process.\\\\
+Steady-flow conditions are closely approximated in devices intended for continuous operation, such as turbines, pumps, boilers, condensers, heat exchangers, power plants, and refrigeration systems.\\\\
+\underline{Note:} Cyclic devices like reciprocating engines or compressors, where flow pulsates, can be analyzed as steady-flow by using time-averaged properties.
+
+\section*{Pressure}
+\textbf{Pressure} is defined as a normal force exerted by a fluid per unit area. In solids, it is referred to as \textit{normal stress}. Note that stress is a tensor while pressure is a scalar.\\\\
+Pressure has units of \textbf{pascals} where 1 Pa = 1 $\text{N/m}^2$.
+\begin{itemize}
+    \item 1 bar = $1 \times 10^5$ Pa
+    \item 1 atm = 101.325 kPa = 1.01325 bar = 14.696 psi
+    \item 1 kgf/cm$^2$ = 9.807 N/cm$^2$ = 98.07 kPa
+    \item 1 kgf/cm$^2$ = 0.96784 atm
+    \item 1 kgf/cm$^2$ = 0.9807 bar
+    \item 1 psi = 1 pound-force/in$^2$ = 6894.76 Pa = 6.89476 kPa
+\end{itemize}
+The actual pressure relative to absolute vacuum is called \textbf{absolute pressure} $P_{abs}$. Pressure measured relative to atmospheric pressure is called \textbf{gauge pressure} $P_{gauge}$. Pressure lower than atmospheric pressure is called \textbf{vacuum pressure} $P_{vacuum}$. The relationships between these pressures are:\\\\
+\begin{align*}
+    P_{gauge} &= P_{abs} - P_{atm} \\
+    P_{vacuum} &= P_{atm} - P_{abs}
+\end{align*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Gauge pressure.png}
+\end{figure}\noindent
+Hydrostatic pressure is the pressure exerted by a fluid at rest due to the force of gravity. It increases with depth in the fluid and is given by the equation:\\\\
+$P = P_0 + \rho g h$ or $P = P_0 + \gamma_s h$\\\\
+where:
+\begin{itemize}
+    \item $P$ = pressure at depth $h$ (Pa)
+    \item $P_0$ = pressure at the surface of the fluid (Pa)
+    \item $\rho$ = density of the fluid (kg/m$^3$)
+    \item $g$ = acceleration due to gravity (m/s$^2$)
+    \item $h$ = depth below the surface (m)
+    \item $\gamma_s = \rho g$ = specific weight of the fluid (N/m$^3$)
+\end{itemize}
+\underline{Note:} This can also be used to find pressure differences between two points in a static fluid by using the difference in height between the two points and replacing $P_0$ with the pressure at the higher point.\\\\
+In cases where density varies with depth, the pressure difference can be calculated using the integral form:\\\\
+\[P_2 - P_1 = -\int_{h_1}^{h_2} \rho g \, dh\]
+The integral is negative because pressure increases with depth (as $h$ decreases).\\\\
+\textbf{Pascal's Law}\\
+Pascal's law states that a change in pressure applied to a confined fluid increases the pressure throughout the fluid by the same amount. Meaning that pressure is uniform regardless of location in a static fluid. 
 
 
 
