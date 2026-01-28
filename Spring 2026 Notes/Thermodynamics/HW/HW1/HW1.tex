@@ -6,6 +6,7 @@
 \usepackage{tabularx}
 \usepackage{booktabs} 
 \usepackage{float}
+\usepackage{enumitem}
 \geometry{margin=1in}
 
 \title{}
@@ -151,6 +152,31 @@ Plugging in the values:
 \[m = \frac{[100\,\text{kPa}]\left[\frac{10^3 \text{Pa}}{\text{kPa}}\right][4\,\text{mm}^2]\left[\frac{(10^{-3} \text{m})^2}{\text{mm}^2}\right]}{[9.81\,\text{m/s}^2]} = 0.04077\,\text{kg} \approx \boxed{40.8\,\text{g}}\]
 
 \section*{1-110}
+\textbf{How measuring with a manometer works:}
+\begin{itemize}
+    \item \textbf{Basic single fluid manometer:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{Manometer.png}
+    \end{figure}
+    The pressure in a fluid does not change with horizontal position (equal depth), so the pressure at points 1 and 2 are equal:
+    \[P_1 = P_2\]
+    Where we use the hydrostatic pressure formula to express the pressures at points 1 and 2:
+    \[P_1 = P_{gas}, \quad P_2 = P_{atm} + \rho g h\]
+    \item \textbf{Pressure with multiple layers of fluid:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{Stacked Fluid.png}
+    \end{figure}
+    We use the following rules to find the pressure at different points in a fluid with multiple layers:
+    \begin{enumerate}
+        \item The pressure change across a fluid layer is given by the hydrostatic pressure formula: $\Delta P = \rho g h$
+        \item Pressure increases downward (+) and decreases upward (-).
+        \item The pressure at points of equal depth in a fluid are equal (Pascal's Principle).
+    \end{enumerate}
+    Ex: At point 1 in the figure, $P_1 = P_{atm}+\rho_1g h_1+\rho_2 g h_2 + \rho_3 g h_3$
+\end{itemize}
+\textbf{Solving 1-110:}\\
 \vspace{-1em}
 \begin{minipage}[t]{0.6\textwidth} \vspace{0pt}
 \centering
@@ -160,13 +186,46 @@ Plugging in the values:
 \begin{minipage}[t]{0.4\textwidth} \vspace{0pt}
 Given:
 \begin{itemize}
-    \item 
+    \item $P_{gauge} = 370\,\text{kPa}$
+    \item Specific gravities
+    \begin{itemize}
+        \item Oil: $SG_{oil} = 0.79$
+        \item Mercury: $SG_{Hg} = 13.6$
+        \item Gasoline: $SG_{gas} = 0.70$
+    \end{itemize}
+    \item Height differences:
+    \begin{itemize}
+        \item $h_{water} = 45\,\text{cm}$
+        \item $h_{oil} = 50\,\text{cm}$
+        \item $h_{Hg} = 10\,\text{cm}$
+        \item $h_{gas} = 22\,\text{cm}$
+    \end{itemize}
 \end{itemize}
 Find: 
 \begin{itemize}
-    \item 
+    \item Gauge pressure of gas line.
 \end{itemize}
-\end{minipage}\\\\
+\end{minipage}\\\\\\
+\textbf{Specific gravity} is defined as a relative density compared to water (at 4$^\circ$C) where $\rho_{water} = 1000\,\text{kg/m}^3$:
+\[\boxed{SG = \frac{\rho_{fluid}}{\rho_{water}} \implies \rho_{fluid} = SG \cdot \rho_{water}}\]
+We will apply the pressure rules for multiple layers of fluid to the manometer:
+\begin{enumerate}
+    \item We will begin at a known pressure point (gauge or atmospheric pressure) and follow the fluid layers to the unknown pressure point.
+    \item Sign convention: add when going down, subtract when going up.
+    \item \textbf{Horizontal jump:} We can "jump" horizontally across bends in the tube if both sides of the jump are within the \textbf{same continuous fluid}. This is because pressure is identical at the same horizontal level within a single static fluid. \textit{Any pressure decrease from moving upward is perfectly balanced by an equal pressure increase when moving back down to that same level on the other side.}
+    \item Thus, we only calculate vertical heights between \textbf{interfaces}.
+\end{enumerate}
+Therefore:
+\[P_{gauge} - \rho_{water}gh_{water} + \rho_{oil}gh_{oil} - \rho_{Hg}gh_{Hg} - \rho_{gas}gh_{gas} = P_{gas}\]
+\[\implies P_{gas} = P_{gauge} + \rho_{water}g(-h_{water} + SG_{oil}h_{oil} - SG_{Hg}h_{Hg} - SG_{gas}h_{gas})\]
+Plugging in the values:
+\[P_{gas} = [370\,\text{kPa}]+[1000\,\text{kg/m}^3][9.81\,\text{m/s}^2]\bigg(-[0.45\,\text{m}] + [0.79][0.5\,\text{m}] - [13.6][0.1\,\text{m}] - [0.70][0.22\,\text{m}]\bigg)\]
+\[P_{gas} = [370\,\text{kPa}]-
+\left[15391.89\,\frac{kg}{m\cdot s^2}\right]
+\left[\frac{N}{kg \cdot m/s^2}\right]
+\left[\frac{Pa}{N/m^2}\right]\]
+\[= [370\,\text{kPa}]-
+[15.391\,\text{kPa}] = 354.609\,\text{kPa} \approx \boxed{354.6\,\text{kPa}}\]
 
 \section*{1-118}
 \vspace{-1em}
@@ -174,5 +233,23 @@ Find:
     \centering
     \includegraphics[width=0.6\textwidth]{1-118.png}
 \end{figure}
-
+\textbf{List of relevant temperature conversions:}
+\begin{itemize}[label=\textbullet]
+    \item Absolute temperature conversions
+    \begin{itemize}[label=\textopenbullet]
+        \item $T_{K} = T_{^\circ C} + 273.15$
+        \item $T_{^\circ R} = T_{^\circ F} + 459.67$
+        \item $T_{^\circ F} = \frac{9}{5}T_{^\circ C} + 32$
+        \item $T_{^\circ R} = \frac{9}{5}T_{K}$
+    \end{itemize}
+    \item Temperature difference conversions
+    \begin{itemize}[label=\textopenbullet]
+        \item $\Delta K = \Delta ^\circ C$
+        \item $\Delta ^\circ R = \Delta ^\circ F$
+        \item $\Delta ^\circ F = \frac{9}{5}\Delta ^\circ C$
+        \item $\Delta ^\circ R = \frac{9}{5}\Delta K$
+    \end{itemize}
+\end{itemize}
+\underline{Note:} Fahrenheit and Celsius are relative temperature scales (based on the freezing/boiling points of water), while Rankine and Kelvin are absolute temperature scales (starting at absolute zero).\\\\
+Plug and chug for 1-118 gives \boxed{d)\,18\,R}
 \end{document}

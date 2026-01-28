@@ -1,6 +1,6 @@
-PWD c:\Users\zsong\Desktop\LaTex\Spring 2026 Notes\Thermodynamics\HW
+PWD c:\Users\zsong\Desktop\LaTex\Spring 2026 Notes\Thermodynamics\HW\HW1
 INPUT C:\Users\zsong\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\zsong\Desktop\LaTex\Spring 2026 Notes\Thermodynamics\HW\HW1.tex
+INPUT c:\Users\zsong\Desktop\LaTex\Spring 2026 Notes\Thermodynamics\HW\HW1\HW1.tex
 OUTPUT HW1.log
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -55,6 +55,8 @@ INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.s
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT .\HW1.aux
@@ -155,6 +157,20 @@ INPUT .\1-105_1.png
 INPUT .\1-105_1.png
 INPUT .\1-105_1.png
 INPUT .\1-105_1.png
+INPUT .\Manometer.png
+INPUT .\Manometer.png
+INPUT .\Manometer.png
+INPUT .\Manometer.png
+INPUT .\Manometer.png
+INPUT .\Manometer.png
+INPUT .\Manometer.png
+INPUT .\Stacked Fluid.png
+INPUT .\Stacked Fluid.png
+INPUT .\Stacked Fluid.png
+INPUT .\Stacked Fluid.png
+INPUT .\Stacked Fluid.png
+INPUT .\Stacked Fluid.png
+INPUT .\Stacked Fluid.png
 INPUT .\1-110.png
 INPUT .\1-110.png
 INPUT .\1-110.png
@@ -162,6 +178,7 @@ INPUT .\1-110.png
 INPUT .\1-110.png
 INPUT .\1-110.png
 INPUT .\1-110.png
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT .\1-118.png
 INPUT .\1-118.png
 INPUT .\1-118.png
@@ -192,3 +209,5 @@ INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Users\zsong\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb

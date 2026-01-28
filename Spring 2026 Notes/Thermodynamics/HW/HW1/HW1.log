@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  27 JAN 2026 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.19)  27 JAN 2026 22:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/zsong/Desktop/LaTex/Spring 2026 Notes/Thermodynamics/HW/HW1.tex"
-(c:/Users/zsong/Desktop/LaTex/Spring 2026 Notes/Thermodynamics/HW/HW1.tex
+**"c:/Users/zsong/Desktop/LaTex/Spring 2026 Notes/Thermodynamics/HW/HW1/HW1.tex"
+(c:/Users/zsong/Desktop/LaTex/Spring 2026 Notes/Thermodynamics/HW/HW1/HW1.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -187,27 +187,35 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box55
 \@float@everytoks=\toks27
 \@floatcapt=\box56
+) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip55
+\enit@outerparindent=\dimen180
+\enit@toks=\toks28
+\enit@inbox=\box57
+\enit@count@id=\count282
+\enitdp@description=\count283
 ) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count282
-\l__pdf_internal_box=\box57
+\l__color_backend_stack_int=\count284
+\l__pdf_internal_box=\box58
 ) (HW1.aux)
 \openout1 = `HW1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -245,17 +253,17 @@ LaTeX Font Info:    ... okay on input line 15.
 
 (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count283
-\scratchdimen=\dimen180
-\scratchbox=\box58
-\nofMPsegments=\count284
-\nofMParguments=\count285
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count286
-\MPscratchDim=\dimen181
-\MPnumerator=\count287
-\makeMPintoPDFobject=\count288
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count285
+\scratchdimen=\dimen181
+\scratchbox=\box59
+\nofMPsegments=\count286
+\nofMParguments=\count287
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count288
+\MPscratchDim=\dimen182
+\MPnumerator=\count289
+\makeMPintoPDFobject=\count290
+\everyMPtoPDFconversion=\toks30
 ) (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -265,43 +273,43 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 <1-58.png, id=1, 416.757pt x 349.305pt>
 File: 1-58.png Graphic file (type png)
 <use 1-58.png>
-Package pdftex.def Info: 1-58.png  used on input line 20.
+Package pdftex.def Info: 1-58.png  used on input line 21.
 (pdftex.def)             Requested size: 281.85587pt x 236.23973pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
  (C:\Users\zsong\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <1-58_1.png, id=3, 196.93575pt x 181.27725pt>
 File: 1-58_1.png Graphic file (type png)
 <use 1-58_1.png>
-Package pdftex.def Info: 1-58_1.png  used on input line 39.
+Package pdftex.def Info: 1-58_1.png  used on input line 40.
 (pdftex.def)             Requested size: 140.92793pt x 129.73119pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 18--40
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 19--41
 []  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--40
+Underfull \hbox (badness 10000) in paragraph at lines 19--41
 
  []
 
 <1-70.png, id=4, 411.33675pt x 363.15675pt>
 File: 1-70.png Graphic file (type png)
 <use 1-70.png>
-Package pdftex.def Info: 1-70.png  used on input line 63.
+Package pdftex.def Info: 1-70.png  used on input line 64.
 (pdftex.def)             Requested size: 281.85587pt x 248.85507pt.
 <1-70_1.png, id=5, 202.95825pt x 215.6055pt>
 File: 1-70_1.png Graphic file (type png)
 <use 1-70_1.png>
-Package pdftex.def Info: 1-70_1.png  used on input line 81.
+Package pdftex.def Info: 1-70_1.png  used on input line 82.
 (pdftex.def)             Requested size: 140.92793pt x 149.71214pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 61--82
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 62--83
 []  []
  []
 
@@ -311,15 +319,15 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 61--82
 <1-90.png, id=23, 412.54124pt x 344.487pt>
 File: 1-90.png Graphic file (type png)
 <use 1-90.png>
-Package pdftex.def Info: 1-90.png  used on input line 96.
+Package pdftex.def Info: 1-90.png  used on input line 97.
 (pdftex.def)             Requested size: 281.85587pt x 235.36241pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 94--112
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 95--113
 []  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--112
+Underfull \hbox (badness 10000) in paragraph at lines 95--113
 
  []
 
@@ -327,72 +335,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--112
 <1-105.png, id=29, 371.58826pt x 458.9145pt>
 File: 1-105.png Graphic file (type png)
 <use 1-105.png>
-Package pdftex.def Info: 1-105.png  used on input line 122.
+Package pdftex.def Info: 1-105.png  used on input line 123.
 (pdftex.def)             Requested size: 281.85587pt x 348.1134pt.
 <1-105_1.png, id=30, 149.358pt x 223.43475pt>
 File: 1-105_1.png Graphic file (type png)
 <use 1-105_1.png>
-Package pdftex.def Info: 1-105_1.png  used on input line 142.
+Package pdftex.def Info: 1-105_1.png  used on input line 143.
 (pdftex.def)             Requested size: 117.43875pt x 175.68987pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 120--143
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 121--144
 []  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--143
+Underfull \hbox (badness 10000) in paragraph at lines 121--144
 
  []
 
 [3 <./1-90.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 143--147
+Underfull \hbox (badness 10000) in paragraph at lines 144--148
 
  []
 
 [4 <./1-105.png> <./1-105_1.png>]
-<1-110.png, id=40, 356.532pt x 269.20575pt>
+<Manometer.png, id=40, 418.56375pt x 354.123pt>
+File: Manometer.png Graphic file (type png)
+<use Manometer.png>
+Package pdftex.def Info: Manometer.png  used on input line 160.
+(pdftex.def)             Requested size: 140.92793pt x 119.22766pt.
+<Stacked Fluid.png, id=41, 257.16075pt x 322.20375pt>
+File: Stacked Fluid.png Graphic file (type png)
+<use Stacked Fluid.png>
+Package pdftex.def Info: Stacked Fluid.png  used on input line 169.
+(pdftex.def)             Requested size: 140.92793pt x 176.57347pt.
+ [5 <./Manometer.png> <./Stacked Fluid.png>]
+<1-110.png, id=47, 356.532pt x 269.20575pt>
 File: 1-110.png Graphic file (type png)
 <use 1-110.png>
-Package pdftex.def Info: 1-110.png  used on input line 157.
+Package pdftex.def Info: 1-110.png  used on input line 183.
 (pdftex.def)             Requested size: 281.85587pt x 212.83861pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 155--170
-[]  [] 
+Overfull \hbox (7.18047pt too wide) in paragraph at lines 179--210
+ []  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--170
+Underfull \hbox (badness 10000) in paragraph at lines 179--210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--170
+Underfull \hbox (badness 10000) in paragraph at lines 179--210
 
  []
 
-<1-118.png, id=41, 373.99725pt x 73.4745pt>
+[6 <./1-110.png>]
+Overfull \hbox (23.06133pt too wide) detected at line 222
+\OML/cmm/m/it/12 P[] \OT1/cmr/m/n/12 = [370 []] + [1000 [][]][9\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 81 [][]][] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 45 []] + [0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 79][0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5 []] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 [13\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 6][0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 1 []] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 70][0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 22 []][]
+ []
+
+<1-118.png, id=53, 373.99725pt x 73.4745pt>
 File: 1-118.png Graphic file (type png)
 <use 1-118.png>
-Package pdftex.def Info: 1-118.png  used on input line 175.
+Package pdftex.def Info: 1-118.png  used on input line 234.
 (pdftex.def)             Requested size: 281.85587pt x 55.37592pt.
-[5 <./1-110.png> <./1-118.png>] (HW1.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+[7 <./1-118.png>] (HW1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3520 strings out of 474486
- 52494 string characters out of 5743755
- 1934542 words of memory out of 5000000
- 25768 multiletter control sequences out of 15000+600000
- 566426 words of font info for 66 fonts, out of 8000000 for 9000
+ 3871 strings out of 474486
+ 58703 string characters out of 5743755
+ 1935542 words of memory out of 5000000
+ 26114 multiletter control sequences out of 15000+600000
+ 566773 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,442b,237s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on HW1.pdf (5 pages, 540685 bytes).
+ 57i,7n,65p,528b,349s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\zsong\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/zsong/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on HW1.pdf (7 pages, 609049 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
