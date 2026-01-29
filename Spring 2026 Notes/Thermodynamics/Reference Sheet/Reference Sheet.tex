@@ -43,7 +43,8 @@
 &= 760 \text{ Torr} \\
 &= 760 \text{ mmHg} \\
 &= 29.92 \text{ inHg} \\
-&= 14.696 \text{ psi}
+&= 14.696 \text{ psi}\\
+&= 10.33 \text{ m H}_2\text{O (at 4$^\circ$C)} \\
 \end{aligned}\]
 \textbf{Pressure Conversions}
 \[1\,\text{Pa} = 1\,\text{N/m}^2\]
@@ -137,20 +138,22 @@ Entropy: $S$ & Specific Entropy: $s = S / m$ \\
 \[\svol = \frac{\vol}{m} = \frac{1}{\rho} \quad \text{(specific volume)}\]
 \textbf{Specific gravity} is defined as a relative density compared to water (at 4$^\circ$C) where $\rho_{water} = 1000\,\text{kg/m}^3$:
 \[\boxed{SG = \frac{\rho_{fluid}}{\rho_{water}} \implies \rho_{fluid} = SG \cdot \rho_{water}}\]
+\textbf{Specific Weight}
+\[\gamma_s = \rho g \quad \text{(specific weight)}\]
+Where hydrostatic pressure can be written as $P = \gamma_s h$
 \section*{Ideal Gas Law}
 \[
-P \, \vol = m \, \bar{R} \, T, \quad
-\bar{R} = \frac{R_u}{M} \quad \text{(specific gas constant)}
+P \, \svol = R \, T, \quad
+R = \frac{\bar{R}}{M} \quad \text{(specific gas constant, J/kg·K)}
 \]
 Where:
 \begin{itemize}[label=\textbullet]
     \item $P$ = \textit{absolute} pressure (Pa)
-    \item $\vol$ = volume (m$^3$)
+    \item $\svol$ = specific volume (m$^3$/kg)
     \item $m$ = mass of gas (kg)
     \item $T$ = \textit{absolute} temperature (K)
-    \item Universal gas constant: $R_u = 8.314$ J/(mol·K)
+    \item Universal gas constant: $\bar{R} = 8.314$ J/(mol·K)
     \item $M$ = molar mass of gas (kg/mol)
-    \item $\bar{R}$ = specific gas constant (J/kg·K)
 \end{itemize}
 
 \end{document}
