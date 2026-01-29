@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb, amsmath, amsfonts, bm, graphicx, geometry}
+\usepackage{tabularx, booktabs, float, enumitem}
+\geometry{margin=1in}
+
+\title{PH-214 Modern Physics Notes}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+\vspace{-6em}
+\section*{Useful Math}
+\begin{itemize}
+    \item Taylor series expansions:
+\begin{flalign*}
+\sin x &= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} 
+       = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots & \\[6pt]
+\cos x &= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} 
+       = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots & \\[6pt]
+\tan x &= \sum_{n=1}^{\infty} \frac{B_{2n} (-4)^n (1-4^n)}{(2n)!}\,x^{2n-1} 
+       = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} + \cdots & \\[6pt]
+(1+x)^m &= \sum_{n=0}^{\infty} \binom{m}{n} x^n 
+       = 1 + mx + \frac{m(m-1)}{2}x^2 + \frac{m(m-1)(m-2)}{6}x^3 + \cdots &
+\end{flalign*}
+\underline{Note:} For small x, higher order terms reduce to zero
+
+    \item Use complex exponentials to manipulate complicated trig functions (Euler's Identity).
+\[e^{ix} = \cos x + i \sin x\]
+\end{itemize}
+\textbf{Del Operator:}
+
+\newpage
+\section*{Unit 1: Electromagnetic Waves}
+\textbf{Maxwell's Equations}
+\begin{enumerate}
+    \item \textbf{Gauss's Law for Electricity}\\
+    Relates the electric flux through a closed 3D Gaussian surface to the total charge enclosed within that surface.
+    \[\oint_S \vec{E}\cdot\,d\vec{a}=\frac{q_{\text{enc}}}{\varepsilon_0}\]
+     There exists a diverging electric field if there exists a non-zero charge density at that point.
+    \[\vec{\nabla}\cdot\vec{E}=\frac{\rho}{\varepsilon_0}\]
+
+    \item \textbf{Gauss's Law for Magnetism}\\
+    Any 3D Gaussian surface will have zero net magnetic flux (no magnetic monopoles).
+    \[\oint_S \vec{B}\cdot\,d\vec{a}=0\]
+    There exists no diverging magnetic field at any point in space because there are no magnetic monopoles.
+    \[\vec{\nabla}\cdot\vec{B}=0\]
+
+    \item \textbf{Faraday's Law of Induction}\\
+    Relates the electric circulation around a closed Faradian loop to the changing magnetic flux through the surface bounded by the loop.    
+    \[\oint_P \vec{E}\cdot d\vec{l}=-\frac{d\Phi_B}{dt}, \quad \Phi_B = \oint_S \vec{B}\cdot\,d\vec{a}\]
+    \underline{Note:} For coils with $N$ turns, multiply the flux by $N$.\\\\
+    A changing magnetic field induces a circulating (curling) electric field.
+    \[\vec{\nabla}\times\vec{E}=-\frac{\partial \vec{B}}{\partial t}\]
+
+    \item \textbf{Ampere-Maxwell Law}\\
+    Relates the magnetic circulation around a closed Amperian loop to the enclosed current and changing electric flux through the surface bounded by the loop.
+    \[\oint_P \vec{B}\cdot d\vec{l}= \mu_0I_{\text{enc}}+\mu_0\varepsilon_0 \frac{d\Phi_E}{dt},\quad \Phi_E=\oint_S \vec{E}\cdot\,d\vec{a}\]
+    Both a changing electric field and a non-zero current density induce a circulating (curling) magnetic field.
+    \[\vec{\nabla}\times\vec{B}= \mu_0\vec{J}+\mu_0\varepsilon_0 \frac{\partial \vec{E}}{\partial t}, \quad I_{\text{enc}}=\oint_S \vec{J}\cdot d\vec{a}\]
+\end{enumerate}
+
+
+
+\end{document}

@@ -1,0 +1,156 @@
+\documentclass[10pt, fleqn]{article}
+\usepackage[a4paper,margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath, amssymb}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{amsfonts, bm, graphicx}
+\usepackage{enumitem}
+\usepackage[font=small, skip=4pt]{caption}
+
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{4pt}
+
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+
+\setlength{\mathindent}{0pt}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+% Uppercase Volume - Wrapped in \mathord to prevent shifting
+\newcommand{\vol}{\mathord{\text{\ooalign{\hidewidth $V$\hidewidth\cr\kern-1.0pt--}}}}
+
+% Lowercase Volume - Adjusted for math mode stability
+\newcommand{\svol}{\mathord{\text{\ooalign{\hidewidth $v$\hidewidth\cr\kern-0.2pt\raisebox{-0.1ex}{--}}}}}
+\begin{document}
+
+\begin{center}
+    \Large \textbf{Thermodynamics Formula Sheet} \\
+    \normalsize Chapter 1
+\end{center}
+
+\begin{multicols}{2}
+
+\section*{Pressure}
+\textbf{Constants}
+\[\begin{aligned}
+1 \text{ atm} &= 101.325 \text{ kPa} \\
+&= 1.01325 \text{ bar} \\
+&= 760 \text{ Torr} \\
+&= 760 \text{ mmHg} \\
+&= 29.92 \text{ inHg} \\
+&= 14.696 \text{ psi}
+\end{aligned}\]
+\textbf{Pressure Conversions}
+\[1\,\text{Pa} = 1\,\text{N/m}^2\]
+\[1\, \text{ bar} = 10^{5}\, \text{ Pa}\]
+\[1\, \text{ psi} = 6.89476 \times 10^{3}\, \text{ Pa}\]
+\[1\, \text{ Torr} = 133.322\, \text{ Pa}\]
+\[1\, \text{ mmHg} = 133.322\, \text{ Pa}\]
+\[1\, \text{ inHg} = 3.38639 \times 10^{3}\, \text{ Pa}\]
+\textbf{Gauge vs Absolute Pressure}
+\[P_{\text{gauge}} = P_{\text{absolute}} - P_{\text{atmospheric}}\]
+\[P_{\text{vacuum}} = P_{\text{atmospheric}} - P_{\text{absolute}}\]
+\underline{Note:} Generally, gauge pressures already account for atmospheric pressure, and thus reads zero when open to the atmosphere.\\
+\textbf{Formulas}
+\[P=F/A\]
+\[P = \rho g h\quad \text{(hydrostatic pressure)}\]
+\textbf{Multi-fluid Manometer}
+\begin{enumerate}
+    \item Begin at a known pressure point (gauge or atmospheric pressure) and follow the fluid layers to the unknown pressure point.
+    \item Sign convention: add when going down, subtract when going up.
+    \item \textbf{Horizontal jump:} We can "jump" horizontally across bends in the tube if both sides of the jump are within the \textbf{same continuous fluid}. This is because pressure is identical at the same horizontal level within a single static fluid. \textit{Any pressure decrease from moving upward is perfectly balanced by an equal pressure increase when moving back down to that same level on the other side.}
+    \item The pressure at each end of the manometer equals the total pressure obtained by summing the contributions of all fluid columns along the vertical path.
+\end{enumerate}
+\textbf{Pascal's Principle}\\
+The pressure applied to a confined fluid increases the pressure throughout the fluid by the same amount.
+\newcolumn
+\section*{Temperature}
+\textbf{Temperature Conversions}
+\begin{itemize}[label=\textbullet]
+    \item Absolute temperature conversions
+    \begin{itemize}[label=\textopenbullet]
+        \item $T_{K} = T_{^\circ C} + 273.15$
+        \item $T_{^\circ R} = T_{^\circ F} + 459.67$
+        \item $T_{^\circ F} = \frac{9}{5}T_{^\circ C} + 32$
+        \item $T_{^\circ R} = \frac{9}{5}T_{K}$
+    \end{itemize}
+    \item Temperature difference conversions
+    \begin{itemize}[label=\textopenbullet]
+        \item $\Delta K = \Delta ^\circ C$
+        \item $\Delta ^\circ R = \Delta ^\circ F$
+        \item $\Delta ^\circ F = \frac{9}{5}\Delta ^\circ C$
+        \item $\Delta ^\circ R = \frac{9}{5}\Delta K$
+    \end{itemize}
+\end{itemize}
+\underline{Note:} Fahrenheit and Celsius are relative temperature scales (based on the freezing/boiling points of water), while Rankine and Kelvin are absolute temperature scales (starting at absolute zero).
+\section*{SI Prefixes}
+\makeatletter
+\@fleqnfalse
+\makeatother
+\[\begin{aligned}
+\text{femto (f)}  &= 10^{-15} \\
+\text{pico (p)}   &= 10^{-12} \\
+\text{nano (n)}   &= 10^{-9} \\
+\text{micro ($\mu$)}  &= 10^{-6} \\
+\text{milli (m)}  &= 10^{-3} \\
+\text{centi (c)}  &= 10^{-2} \\
+\text{deci (d)}   &= 10^{-1} \\
+\text{deca (da)}  &= 10^{1} \\
+\text{hecto (h)}  &= 10^{2} \\
+\text{kilo (k)}   &= 10^{3} \\
+\text{mega (M)}   &= 10^{6} \\
+\text{giga (G)}   &= 10^{9} \\
+\text{tera (T)}   &= 10^{12} \\
+\text{peta (P)}   &= 10^{15} \\
+\end{aligned}\]
+\makeatletter
+\@fleqntrue
+\makeatother
+\underline{Note:} $1\text{Angstrom}\,(\text{\AA}) = 10^{-10}$ m
+\end{multicols}\noindent
+\underline{Note: $1\,\text{lbf} = 32.174\,\text{lbm} \cdot \text{ft/s}^2$}
+\newpage
+\makeatletter
+\@fleqnfalse
+\makeatother
+\section*{System Properties}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Extensive Properties} & \textbf{Intensive Properties} \\
+\hline
+Temperature: $T$ & $T$ \\
+Pressure: $P$ & $P$ \\
+Volume: $\vol$ & Specific Volume: $\svol = \vol / m$ \\
+Internal Energy: $U$ & Specific Internal Energy: $u = U / m$ \\
+Entropy: $S$ & Specific Entropy: $s = S / m$ \\
+\hline
+\end{tabular}
+\end{center}
+\section*{Density and Specific Gravity}
+\[\rho = \frac{m}{\vol}\quad \text{(density)}\]
+\[\svol = \frac{\vol}{m} = \frac{1}{\rho} \quad \text{(specific volume)}\]
+\textbf{Specific gravity} is defined as a relative density compared to water (at 4$^\circ$C) where $\rho_{water} = 1000\,\text{kg/m}^3$:
+\[\boxed{SG = \frac{\rho_{fluid}}{\rho_{water}} \implies \rho_{fluid} = SG \cdot \rho_{water}}\]
+\section*{Ideal Gas Law}
+\[
+P \, \vol = m \, \bar{R} \, T, \quad
+\bar{R} = \frac{R_u}{M} \quad \text{(specific gas constant)}
+\]
+Where:
+\begin{itemize}[label=\textbullet]
+    \item $P$ = \textit{absolute} pressure (Pa)
+    \item $\vol$ = volume (m$^3$)
+    \item $m$ = mass of gas (kg)
+    \item $T$ = \textit{absolute} temperature (K)
+    \item Universal gas constant: $R_u = 8.314$ J/(mol·K)
+    \item $M$ = molar mass of gas (kg/mol)
+    \item $\bar{R}$ = specific gas constant (J/kg·K)
+\end{itemize}
+
+\end{document}
