@@ -4,8 +4,11 @@
 \usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
 \usepackage{siunitx}  % Eases typesetting of numbers and units
 \usepackage{soul}
+\usepackage{mathrsfs}
 
 \geometry{margin=1in}
+
+\newcommand{\vol}{\mathord{\text{\ooalign{\hidewidth $V$\hidewidth\cr\kern-0.5pt\raisebox{0.8ex}{\rule[0pt]{1em}{0.5pt}}}}}}
 
 \begin{document}
 
@@ -124,28 +127,135 @@ Anyway, the analysis follows the same approach as the trapezoidal pressure prism
 
 \section*{\fbox{2.10 Hydrostatic force on a curved surface}}
 So far, we have only considered plane surfaces. What about curved surfaces? The resultant force on a curved surface can be determined by decomposing the force into horizontal and vertical components.\\\\
-For example, consider the following curved surface:
+For example, consider the following curved surface $BC$:
 \begin{center}
     \includegraphics[width=0.7\textwidth]{2.10 Curved Surface.jpg}
 \end{center}
+Start by isolating a volume of fluid that is bounded by the surface of interest (b). Next, we determine the forces in the free-body diagram of the isolated fluid (c). 
+\begin{itemize}
+    \item $F_1$: Force by fluid pressure on the \textit{planar surface} $AB$. This can be determined using the methods from sections 2.8 and 2.9.
+    \item $F_2$: Force by fluid pressure on the \textit{planar surface} $AC$. This can also be determined using the methods from sections 2.8 and 2.9.
+    \item $\mathcal{W}$: \hl{Weight of the enclosed fluid volume}. This can be determined by multiplying the volume of the fluid by its specific weight and acts through the center of gravity of the volume.
+    \item $F_H$ and $F_V$: \hl{The horizontal and vertical reaction forces from the tank on the fluid.}
+\end{itemize}
+Since the fluid is at static equilibrium, the sum of forces in both the horizontal and vertical directions must be zero. 
+\[\sum F_{\text{horiz}} = 0 = F_2 - F_H \implies F_H = F_2\]
+\[\sum F_{\text{vert}} = 0 = F_1 + \mathcal{W} - F_V \implies F_V = F_1 + \mathcal{W}\]
+Additionally, \hl{for a body under three non-parallel forces to be in equilibrium, the lines of action of the three forces must intersect at a common point} (otherwise there would be a non-zero moment). Therefore, we can say that the resultant force $F_R$ passes through the common intersection point of the lines of action of $F_H$ and $F_V$, $O$.
+\[F_R = \sqrt{F_H^2 + F_V^2}\]
+$O$ can be determined by summing moments to find the lines of action of $F_H$ and $F_V$, and then finding their intersection.\\\\
+\underline{Note:} The vertical component of the resultant force can actually be solved two ways:
+\begin{enumerate}
+    \item Instead of isolating a small fluid region around the surface, we can isolate the entire fluid column above it. Then, the vertical hydrostatic force on the surface is just the weight of the fluid column above it:
+    \[F_V = \mathcal{W} = \gamma \vol\]
+    \item Or alternatively, the procedure described before can be used, where we isolate a local fluid region around the surface. In that case, the vertical hydrostatic force on the surface is the sum of the weight of the fluid region and the vertical component of the hydrostatic force:
+    \[F_V = F_1 + \mathcal{W}\]
+\end{enumerate}
+\section*{\fbox{2.11 Buoyancy, flotation, and stability}}
+\subsection*{Archimedes' Principle}
+The buoyant force on a body submerged in a fluid is equal to the weight of the fluid displaced by the body. 
+\[F_{\text{Buoyant}} = \gamma \vol\]
+\textbf{Line of Action for the Buoyant Force}\\
+The point through which the buoyant force acts is called the \textit{center of buoyancy}. \hl{The buoyant force passes through the centroid of the displaced volume.}\\\\
+For partially submerged bodies, \hl{if the specific weight of the fluid above the liquid surface is very small compared to the displaced fluid, the center of buoyancy can be approximated as the centroid of the submerged volume}. This is a common approximation when the fluid above the surface is air.\\\\
+If a body is submerged in a fluid of varying specific weight, such as a layered fluid, the magnitude of the buoyant force remains equal to the weight of the displaced fluid. However, the \hl{center of buoyancy is located at the center of gravity of the displaced fluid}.\\\\
+\underline{Note:} The buoyant force is a special application of the hydrostatic pressure forces acting on the surfaces of a body. In other words, both buoyancy and hydrostatic pressure forces arise from the same physical phenomenon. Therefore, when performing calculations, use either the resultant buoyant force or the individual hydrostatic pressure forces, but do not include both.
+\subsection*{Stability}
+A body is said to be in stable equilibrium if it returns to its original position after being slightly disturbed, and in unstable equilibrium if it moves to a new equilibrium position instead.\\\\
+Stability of a \hl{submerged body} can be determined by comparing the center of gravity of the body and the center of buoyancy:
+\begin{figure}[h]
+    \centering
 
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2.11 Stable.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2.11 Unstable.jpg}
+    \end{minipage}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\end{figure}\\
+The body is in stable equilibrium if the center of gravity is below the center of buoyancy, and in unstable equilibrium if the center of gravity is above the center of buoyancy.\\\\
+\textbf{Floating Body Stability}\\
+For a floating body, the center of buoyancy (which is approximately the centroid of the submerged volume) \textit{moves as the body is tilted}. Thus, it is possible for a wide floating body to be in stable equilibrium even if its center of gravity is above the center of buoyancy as seen below:
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{2.11 Floating Body.jpg}
+\end{center}
+However, a narrow floating body may be in unstable equilibrium if its center of gravity is above the center of buoyancy since the center of buoyancy may not move enough to counteract the tilt.
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{2.11 Narrow Floating Body.jpg}
+\end{center}
+\section*{\fbox{2.12 Pressure variation in a fluid with rigid-body motion}}
+Recall that the general equation of motion for a fluid with no shearing stresses is given by:
+\[-\nabla p - \gamma \hat{k} = \rho \vec{a}\]
+\[\implies -\frac{\partial p}{\partial x} = \rho a_x , \quad -\frac{\partial p}{\partial y} = \rho a_y , \quad -\frac{\partial p}{\partial z} = \gamma +\rho a_z \]
+Problems involving fluids in motion but having no shearing stresses occur when the fluid undergoes rigid-body motion. In this case, the acceleration of all fluid particles is the same (after some transient sloshing dies down). For example, if a container of fluid accelerates along a straight path, the fluid will move as a rigid mass, and the fluid would not deform (i.e., no shearing stresses).\\\\
+By using the equation of motion for a fluid with no shearing stresses, we can determine the pressure distribution in a fluid in motion.
+\newpage
+\subsection*{Linear Motion}
+Consider an open container of fluid that is moving with a constant acceleration $a$ along a straight path.
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{2.12 Linear Motion.png}
+\end{center}
+Since $a_x = 0$ it implies that $\partial p/\partial x = 0$, and thus the pressure is constant along the $x$ direction. Additionally, in the $y$ and $z$ directions, the pressure distribution is given by:
+\[\frac{\partial p}{\partial y} = - \rho a_y\]
+\[\frac{\partial p}{\partial z} = - \gamma - \rho a_z = -\rho(g+a_z)\]
+The change in pressure between two closely spaced points in the fluid at $(x,y,z)$ and $(x,y+dy,z+dz)$ is given by the first-order Taylor series expansion:
+\[dp = \frac{\partial p}{\partial y}dy + \frac{\partial p}{\partial z}dz\]
+Plugging in the expressions for $\partial p/\partial y$ and $\partial p/\partial z$, we get:
+\[dp = -\rho a_y dy - \rho(g+a_z) dz\]
+Along a line of \hl{constant pressure}, $dp = 0$ by definition, thus the equation above can be rearranged to give the slope of the constant pressure line:
+\[\frac{dz}{dy} = -\frac{a_y}{g+a_z}\]
+Note that for any accelerating fluid, $a_y \neq 0$ and thus $dz/dy \neq 0$, which means that the free surface of the fluid will have a non-zero slope. Additonally, ALL lines of constant pressure will be parallel to the free surface (with the same slope).
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{2.12 Constant Pressure Lines.jpg}
+\end{center}
+\textbf{Vertical Acceleration}\\
+For the special case of pure vertical acceleration where $a_y = 0$ and $a_z \neq 0$, the slope of the free surface is zero, and the free surface remains horizontal. However, the pressure distribution is NOT hydrostatic but is given by:
+\[\frac{dp}{dz} = -\rho(g+a_z)\]
+In other words, the pressure distribution is still linear but now includes a term for the vertical acceleration: 
+\[p = p_0 - \rho(g+a_z)z\]
+\underline{Note:} Pressure still increases with depth, but here $z$ is defined as positive upwards. So, $z<0$ below the free surface.\\\\
+It can also be seen that if the fluid is in free fall, $a_z = -g$, then $dp/dz = 0$, and the pressure is constant throughout the fluid.
+\subsection*{Rigid-body rotation}
+Consider a container of fluid that is rotating about a vertical axis with a constant angular velocity $\omega$.
+\begin{center}
+    \includegraphics[width=\textwidth]{2.12 Rotation.jpg}
+\end{center}
+Since the paths of all fluid particles are circular, the acceleration of a fluid particle a distance $r$ from the axis of rotation is given by $r\omega^2$, and it is more convenient to use cylindrical coordinates $(r,\theta,z)$ instead of Cartesian coordinates $(x,y,z)$. The gradient operator in cylindrical coordinates is given by:
+\[\nabla = \frac{\partial}{\partial r}\hat{e}_r + \frac{1}{r}\frac{\partial}{\partial \theta}\hat{e}_\theta + \frac{\partial}{\partial z}\hat{e}_z\]
+Thus the equation of motion for a fluid with no shearing stresses in cylindrical coordinates is given by:
+\begin{eqnarray*}
+    -\nabla p - \gamma \hat{e}_z &=& \rho \vec{a}\\
+    -\frac{\partial p}{\partial r}\hat{e}_r - \frac{1}{r}\frac{\partial p}{\partial \theta}\hat{e}_\theta - \left(\frac{\partial p}{\partial z} + \gamma \right)\hat{e}_z &=& \rho a_r \hat{e}_r + \rho a_\theta \hat{e}_\theta + \rho a_z \hat{e}_z 
+\end{eqnarray*}
+Since the accelerations in the cylindrical coordinate system are given by:
+\[\vec{a}_r = -r\omega^2\,\hat{e}_r,\quad \vec{a}_\theta = 0,\quad \vec{a}_z = 0\]
+Thus, setting components equal:
+\[\frac{\partial p}{\partial r} = \rho r\omega^2,\quad \frac{1}{r}\frac{\partial p}{\partial \theta} = 0,\quad \frac{\partial p}{\partial z} = -\gamma\]
+Since there are two non-zero components, the pressure distribution is in terms of two variables, $r$ and $z$. Again with the first order Taylor series expansion, the change in pressure between two closely spaced points in the fluid at $(r,\theta,z)$ and $(r+dr,\theta,d\theta,z+dz)$ is given by:
+\[dp = \frac{\partial p}{\partial r}dr +  \frac{\partial p}{\partial z}dz\quad \implies \quad dp = \rho r\omega^2 dr - \gamma dz\]
+For a \hl{surface of constant pressure}, $dp = 0$, and using $\gamma = \rho g$, the slope of the constant pressure surface is given by:
+\[\frac{dz}{dr} = \frac{r\omega^2}{g}\]
+Integrating this differential equation gives the equation of the free surface of the fluid as a parabolic surface:
+\[z(r) = \frac{\omega^2}{2g}r^2 + \text{constant}\]
+\textbf{Pressure Distribution}\\
+Integrating the equation for $dp$ gives the pressure distribution in the fluid:
+\[\int dp = \int \rho r\omega^2 dr - \int \gamma dz\]
+\[\implies p(r,z) = \frac{1}{2}\rho\omega^2 r^2 - \gamma z + \text{constant}\]
+\newpage
+These relations show that
+\begin{itemize}
+    \item The free surface of a fluid in rigid-body rotation is parabolic.
+    \item While the pressure distribution of a fluid in rigid-body rotation depends on both $r$ and $z$, at a fixed radius $r$, the pressure distribution is linear with depth $z$.
+\end{itemize}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{2.12 Pressure of rotating.jpg}
+\end{center}
+\underline{Note:} Once again note that positive $z$ is defined as upward, so $z$ is negative below the free surface.\\\\
+Also \hl{note that when calculating the pressure \textit{difference}, the constant of integration cancels out.} Otherwise, the constant of integration can be determined by applying a boundary condition, such as the pressure at the free surface.
 
 
 
