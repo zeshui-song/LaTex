@@ -77,7 +77,7 @@ It has units of
     \item SI system: $[\gamma] = \unit{\newton\per\cubic\meter}$
 \end{itemize}
 \textbf{Specific Gravity}\\
-Defined as the ratio of fluid density to water at room temperature (4 \unit{\celsius} or 39.2 $^\circ$F):
+Defined as the ratio of fluid density to water at 4 \unit{\celsius} or 39.2 $^\circ$F:
 \[\text{SG} = \frac{\rho}{\rho_{H_2O\,@ 4^\circ \text{C}}}\]
 The density of water at room temperature, $\rho_{H_2O\,@ 4^\circ \text{C}}$ is:
 \begin{itemize}
@@ -114,7 +114,7 @@ For example, processes within a \hl{rigid container} ($\vol,R$, and $m$ are cons
 \subsection*{Pressure}
 Pressure is defined as force per unit area and has units of
 \begin{itemize}
-    \item BG system: $[\text{pressure}] = \unit{\lbf\per\cubic\foot}$ (psf)
+    \item BG system: $[\text{pressure}] = \unit{\lbf\per\square\foot}$ (psf)
     \item EE system: $[\text{pressure}] = \unit{\lbf\per\inch\squared}$ (psi)
     \item SI system: $[\text{pressure}] = \unit{\pascal} = \unit{\newton\per\meter\squared}$ (Pa)
 \end{itemize}
@@ -266,7 +266,7 @@ The weight of the liquid column is given by: $\gamma \pi R^2 h$ where $h$ is the
 Setting the two forces equal at equilibrium to determine the height of the liquid column as a function of surface tension and tube geometry:
 \[\sum F_y = 0 = 2\pi R \sigma \cos \theta - \gamma \pi R^2 h\]
 \[\implies h = \frac{2\sigma \cos \theta}{\gamma R}\]
-Note that $\theta$ is dependent on both the liquid and tube material properties. $\theta = 90^\circ$ for water in clean glass.
+Note that $\theta$ is dependent on both the liquid and tube material properties. $\theta \approx 0^\circ$ for water in clean glass.
 \section*{\fbox{2.1 Pressure at a Point}}
 Pressure is defined as the normal force per unit area at a given point acting on a given plane. However, does the orientation of the plane matter? In other words, at the same point, does pressure depend on the orientation/direction of the plane?\\\\
 Consider the following small triangular wedge of fluid mass. \textit{Since there are no shearing stresses, the only external forces acting on the mass is pressure and gravity}. (Note that the forces in the $x$ direction is not shown for simplicity)
@@ -411,7 +411,7 @@ For an isothermal process, $T=T_0$ is constant, and the integral can be solved a
 \[p_2 = p_1\, \text{exp}\left[-\frac{g(z_2-z_1)}{RT_0}\right]\]
 \section*{\fbox{2.4 Standard Atmosphere}}
 The variation of temperature \hl{within the troposphere (extends to an altitude of about 11 km or $\approx$ 36,000 ft)} is of the form
-\[T=T_a - \beta a\]
+\[T=T_a - \beta z\]
 Where 
 \begin{itemize}
     \item $T_a$ is the temperature at sea level ($z=0$)
@@ -438,7 +438,7 @@ This can be derived by a force balance on the mercury column:
 Assuming the vapor pressure is negligible: $p_{atm} \approx \gamma h$. 
 \section*{\fbox{2.6 Man-O-Meters}}
 Oh boy my favorite.\\\\
-Man-O-Meters or manometers user vertical or inclined liquid columns to measure pressure based on the same principle equation as the barometer $p = \gamma h + p_0$.\\\\
+Man-O-Meters or manometers uses vertical or inclined liquid columns to measure pressure based on the same principle equation as the barometer $p = \gamma h + p_0$.\\\\
 To solve manometer problems, we can use the following "rules":
 \begin{enumerate}
     \item Write pressure at either end of manometer
@@ -643,7 +643,7 @@ However, a narrow floating body may be in unstable equilibrium if its center of 
 Recall that the general equation of motion for a fluid with no shearing stresses is given by:
 \[-\nabla p - \gamma \hat{k} = \rho \vec{a}\]
 \[\implies -\frac{\partial p}{\partial x} = \rho a_x , \quad -\frac{\partial p}{\partial y} = \rho a_y , \quad -\frac{\partial p}{\partial z} = \gamma +\rho a_z \]
-Problems involving fluids in motion but having no shearing stresses occur when the fluid undergoes rigid-body motion. In this case, the acceleration of all fluid particles is the same (after some transient sloshing dies down). For example, if a container of fluid accelerates along a straight path, the fluid will move as a rigid mass, and the fluid would not deform (i.e., no shearing stresses).\\\\
+Problems involving fluids in motion but having no shearing stresses occur when the fluid undergoes rigid-body motion. Under rigid-body motion, fluid particles maintain fixed positions relative to one another, so there is no deformation/shearing (after some transient sloshing dies down). For example, if a container of fluid accelerates along a straight path, the fluid will move as a rigid mass, and the fluid would not deform (i.e., no shearing stresses).\\\\
 By using the equation of motion for a fluid with no shearing stresses, we can determine the pressure distribution in a fluid in motion.
 \newpage
 \subsection*{Linear Motion}
@@ -660,7 +660,7 @@ Plugging in the expressions for $\partial p/\partial y$ and $\partial p/\partial
 \[dp = -\rho a_y dy - \rho(g+a_z) dz\]
 Along a line of \hl{constant pressure}, $dp = 0$ by definition, thus the equation above can be rearranged to give the slope of the constant pressure line:
 \[\frac{dz}{dy} = -\frac{a_y}{g+a_z}\]
-Note that for any accelerating fluid, $a_y \neq 0$ and thus $dz/dy \neq 0$, which means that the free surface of the fluid will have a non-zero slope. Additonally, ALL lines of constant pressure will be parallel to the free surface (with the same slope).
+Note that for any fluid with a nonzero horizontal acceleration component, $a_y \neq 0$ and thus $dz/dy \neq 0$, which means that the free surface of the fluid will have a non-zero slope. Additonally, ALL lines of constant pressure will be parallel to the free surface (with the same slope).
 \begin{center}
     \includegraphics[width=0.35\textwidth]{2.12 Constant Pressure Lines.jpg}
 \end{center}
