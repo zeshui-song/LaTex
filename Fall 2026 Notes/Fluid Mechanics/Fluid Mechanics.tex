@@ -3,12 +3,41 @@
 \usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
 \usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
 \usepackage{siunitx}  % Eases typesetting of numbers and units
+
+% US customary units
+\DeclareSIUnit{\inch}{in}
+\DeclareSIUnit{\foot}{ft}
+\DeclareSIUnit{\yard}{yd}
+\DeclareSIUnit{\mile}{mi}
+
+\DeclareSIUnit{\slug}{slug}
+\DeclareSIUnit{\lbm}{lbm}
+\DeclareSIUnit{\lbf}{lbf}
+
+\DeclareSIUnit{\psi}{psi}
+\DeclareSIUnit{\psf}{psf}
+
+\DeclareSIUnit{\gallon}{gal}
+\DeclareSIUnit{\quart}{qt}
+\DeclareSIUnit{\fahrenheit}{\degree F}
+\sisetup{
+    per-mode = fraction
+}
 \usepackage{soul}
 \usepackage{mathrsfs}
 
 \geometry{margin=1in}
 
+% Uppercase Volume with thicker, higher line
 \newcommand{\vol}{\mathord{\text{\ooalign{\hidewidth $V$\hidewidth\cr\kern-0.5pt\raisebox{0.8ex}{\rule[0pt]{1em}{0.5pt}}}}}}
+
+% Lowercase Volume with built-in shifts
+\newcommand{\svol}{%
+  \mathord{\text{\ooalign{%
+    \hfil$v$\hfil\cr
+    \hfil\rule[0.6ex]{0.8em}{0.5pt}\hfil
+  }}}%
+}
 
 \begin{document}
 
@@ -17,6 +46,200 @@
 \end{center}
 \hrule
 \vspace{1.5em}
+\begin{center}
+    {\LARGE\bfseries Introduction\par}
+\end{center}
+\section*{\fbox{1.4 Measures of Fluid Mass and Weight}}
+\textbf{Density}\\
+Density is defined as the mass per unit volume of a substance.
+\begin{itemize}
+    \item BG system: $[\rho] = \unit{\slug\per\cubic\foot}$
+    \item EE system: $[\rho] = \unit{\lbm\per\cubic\foot}$
+    \item SI system: $[\rho] = \unit{\kilogram\per\cubic\meter}$
+\end{itemize}
+Density of fluids are dependent on both temperature and pressure but for liquids, variations in temperature and pressure have a negligible effect on density. For gases, however, density is highly dependent on both temperature and pressure.\\\\
+\textbf{Specific Volume}\\
+Defined as volume per unit mass of a substance, and is the reciprocal of density:
+\[\svol = \frac{1}{\rho} = \frac{\vol}{m}\]
+More common in thermodynamics (see spring 2026 with KAMAU WRIGHT) than fluid mechanics.\\\\
+\textbf{Specific Weight}\\
+Defined as weight per unit volume of a substance:
+\[\gamma = \rho g\]
+Where $g$ is the \textit{local} acceleration of gravity:
+\begin{itemize}
+    \item $g = 32.174\,\unit{\foot\per\second\squared}$ (BG)
+    \item $g = 9.807\,\unit{\meter\per\second\squared}$ (SI)
+\end{itemize}
+It has units of 
+\begin{itemize}
+    \item BG system: $[\gamma] = \unit{\lbf\per\cubic\foot}$
+    \item SI system: $[\gamma] = \unit{\newton\per\cubic\meter}$
+\end{itemize}
+\textbf{Specific Gravity}\\
+Defined as the ratio of fluid density to water at room temperature (4 \unit{\celsius} or 39.2 $^\circ$F):
+\[\text{SG} = \frac{\rho}{\rho_{H_2O\,@ 4^\circ \text{C}}}\]
+The density of water at room temperature, $\rho_{H_2O\,@ 4^\circ \text{C}}$ is:
+\begin{itemize}
+    \item BG system: $\rho_{H_2O\,@ 4^\circ \text{C}} = 1.94\,\unit{\slug\per\cubic\foot}$
+    \item SI system: $\rho_{H_2O\,@ 4^\circ \text{C}} = 1000\,\unit{\kilogram\per\cubic\meter}$
+\end{itemize}
+\begin{center}
+\fbox{%
+    \begin{minipage}{0.92\textwidth}
+        \textbf{Conversions:}
+        \begin{itemize}
+            \item $1\,\unit{\slug} = 32.174\,\unit{\lbm}$
+            \item $1\,\unit{\lbf} = 1\,\unit{\slug\foot\per\second\squared}$
+            \item $1\,\unit{\slug} = 14.5939\,\unit{\kilogram}$
+            \item $1\,\unit{\meter} = 3.28084\,\unit{\foot}$
+        \end{itemize}
+    \end{minipage}%
+}
+\end{center}
+\section*{\fbox{1.5 Ideal Gas Law (Equation of State)}}
+\[p\svol = RT\]
+Where:
+\begin{itemize}
+    \item $p$: \hl{absolute pressure} of the gas
+    \item $\svol$: specific volume of the gas
+    \item $R$: Gas constant for the gas
+    \item $T$: \hl{absolute temperature} of the gas
+\end{itemize}
+Alternative form:
+\[p = \rho RT\]
+\textbf{Constant Volume Process}\\
+For example, processes within a \hl{rigid container} ($\vol,R$, and $m$ are constant):
+\[\frac{P_1}{T_1} = \frac{P_2}{T_2}\]
+\subsection*{Pressure}
+Pressure is defined as force per unit area and has units of
+\begin{itemize}
+    \item BG system: $[\text{pressure}] = \unit{\lbf\per\cubic\foot}$ (psf)
+    \item EE system: $[\text{pressure}] = \unit{\lbf\per\inch\squared}$ (psi)
+    \item SI system: $[\text{pressure}] = \unit{\pascal} = \unit{\newton\per\meter\squared}$ (Pa)
+\end{itemize}
+\textbf{Absolute vs Gage Pressure}\\
+Measured relative to absolute zero pressure (perfect vacuum). While gage pressure is measured relative to atmospheric pressure. Thus, the relationship between absolute and gage pressure is:
+\[\text{(Gage Pressure)} + \text{(Atmospheric Pressure)} = \text{(Absolute Pressure)}\]
+\newpage
+Where atmospheric pressure is:
+\begin{itemize}
+    \item EE system: $p_{atm} = 14.7\,\unit{\psi}$
+    \item SI system: $p_{atm} = 101\,\unit{\kilo\pascal}$
+\end{itemize}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{1.5 gage pressure.png}
+\end{center}
+\section*{\fbox{1.6 Viscosity}}
+Viscosity describes the "fluidity" of a fluid, or how easily a fluid flows. It is a measure of the internal resistance of a fluid to flow. The higher the viscosity, the more resistant the fluid is to flow.\\\\
+Consider the following set up with two parallel plates where the bottom plate is fixed, and the top plate is pulled by a load $P$. In between the plates is a solid (ie. steel) fixed to both plates.
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{1.6 solid.jpg}
+\end{center}
+Under the load $P$, the steel will deform, and the top plate will be displaced a small $\delta a$. $AB$ will be rotated by a small angle $\delta \beta$ to $AB'$. We call $\delta \beta$ the \hl{shearing strain}.
+\newpage
+Now consider if a \textit{fluid} is placed in between the plates instead of a solid. When a load $P$ is applied, the top will now move continuously with a velocity $U$ instead of stopping after a displacement $\delta a$. This is due to the property of fluids that they cannot resist a shearing stress, and thus they will \hl{deform continuously} under a shearing stress.
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{1.6 fluid.jpg}
+\end{center}
+The fluid in contact with the upper plate has the same velocity $U$ and the fluid in contact with the lower plate has zero velocity. Thus, in between the plates, the fluid has a linear velocity profile:
+\[u(y) = \frac{U}{b}y\]
+The fluid effectively "sticks" to the solid boundaries, this is known as the \hl{no-slip condition}.\\\\
+The velocity gradient is then defined by:
+\[\frac{du}{dy}\]
+\subsection*{Rate of Shearing Strain}
+In a small time increment $\delta t$, the top plate moves a distance $\delta a$ and the line $AB$ rotates by a small angle $\delta \beta$. The shearing strain is then defined as:
+\[\delta \beta \approx \tan\delta\beta = \frac{\delta a}{b}\quad \text{(by the small angle approx)}\]
+Since $\delta a = U \delta t$, we can express the shearing strain as:
+\[\delta \beta = \frac{U \delta t}{b}\]
+Notice that $\delta \beta$ is a function of the velocity $U$ (which is dependent on $P$) and time.\\\\
+The \hl{rate of shearing strain} $\dot{\gamma}$ is then defined as the limit as $\delta t \to 0$:
+\[\dot{\gamma} = \lim_{\delta t \to 0} \frac{\delta \beta}{\delta t}\]
+For the linear velocity profile given in the example above, the rate of shearing strain is $\dot{\gamma} = \frac{U}{b} = \frac{du}{dy}$.
+\subsection*{Viscosity (omg that's the section name)}
+Further experimentation would find that the shearing stress $\tau$ is proportional to the rate of shearing strain $\dot{\gamma}$. Thus, for common fluids (such as water, oil, gasoline, and air), we can state the relationship:
+\[\tau = \mu \dot{\gamma}\]
+Where $\mu$ is the \hl{dynamic/absolute viscosity} of the fluid.\\\\
+\textbf{Units of Viscosity}\\
+The units of dynamic viscosity are FTL$^{-2}$:
+\begin{itemize}
+    \item BG \& EE system: $[\mu] = \unit{\lbf\second\per\foot\squared}$
+    \item SI system: $[\mu] = \unit{\pascal\second} = \unit{\newton\second\per\meter\squared}$
+\end{itemize}
+\textbf{Types of Fluid}\\
+Different types of fluids can be classified based on the relationship between shearing stress and rate of shearing strain:
+\begin{itemize}
+    \item \textbf{Newtonian Fluids} have a linear relationship between shearing stress and rate of shearing strain $du/dy$. (Ex: water, air, gasoline, and oil)
+    \item \textbf{Shear-Thinning Fluids} have a non-linear relation with the rate of shearing strain, where the \hl{apparent viscosity} decreases as shear rate increases. In other words, $\mu$ is not constant. (Ex: latex paint, not yummy...)
+    \item \textbf{Shear-Thickening Fluids} have a non-linear relation with the rate of shearing strain, where the apparent viscosity increases as shear rate increases. (Ex: cornstarch in water, crunchy)
+    \item \textbf{Bingham Plastics} behave like a solid at low shear stress, but flow like a fluid at high shear stress. It doesn't flow until yield stress is exceeded. (Ex: toothpaste, ketchup, and mayonnaise) 
+\end{itemize}
+\textbf{Effect of Temperature on Viscosity}\\
+The effect of temperature on viscosity can be approximated by the following empirical relationship called the \hl{\textit{Sutherland Equation} for gases}:
+\[\mu = \frac{CT^{3/2}}{T+S}\]
+Where $C$ and $S$ are constants for a given gas and $T$ is the absolute temperature.\\\\
+For \hl{liquids}, the empirical relationship that is used is the \hl{\textit{Andrade Equation}}:
+\[\mu = De^{B/T}\]
+Where $D$ and $B$ are constants for a given liquid and $T$ is the absolute temperature.
+\subsection*{Kinematic Viscosity}
+The kinematic viscosity $\nu$ is defined as the ratio of dynamic viscosity to density. Often dynamic viscosity appears in fluid flow problems together with density, thus it is convenient to define a placeholder variable for this ratio:
+\[\nu = \frac{\mu}{\rho}\]
+It has units of L$^2$/T
+\subsection*{Reynold's Number}
+This is a dimensionless number that describes the ratio of inertial forces to viscous forces in a fluid flow:
+\[\text{Re} = \frac{\rho V D}{\mu}\]
+Where
+\begin{itemize}
+    \item $\rho$: density of the fluid
+    \item $V$: mean velocity of the fluid
+    \item $D$: characteristic length (such as diameter of a pipe)
+    \item $\mu$: dynamic viscosity of the fluid
+\end{itemize}
+\section*{\fbox{1.7 Compressibility of Fluids}}
+\section*{\fbox{1.9 Surface Tension}}
+\section*{\fbox{2.1 Pressure at a Point}}
+\section*{\fbox{2.2 Basic Equation for Pressure Field}}
+\section*{\fbox{2.3 Pressure Variation at Rest}}
+\section*{\fbox{2.4 Standard Atmosphere}}
+\section*{\fbox{2.5 Measurement of Pressure}}
+\section*{\fbox{2.6 Man-O-Meters}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\begin{center}
+    {\LARGE\bfseries Hydrostatics\par}
+\end{center}
 
 \section*{\fbox{2.8 Hydrostatic force on a plane surface}}
 For fluid at rest, fluid pressure acts perpendicular to any surface because there is no shear stress present in a static fluid.\\\\
