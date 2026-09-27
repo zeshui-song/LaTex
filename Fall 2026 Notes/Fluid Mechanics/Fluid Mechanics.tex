@@ -19,7 +19,8 @@
 
 \DeclareSIUnit{\gallon}{gal}
 \DeclareSIUnit{\quart}{qt}
-\DeclareSIUnit{\fahrenheit}{\degree F}
+\DeclareSIUnit{\fahrenheit}{F}
+\DeclareSIUnit{\rankine}{R}
 \sisetup{
     per-mode = fraction
 }
@@ -129,6 +130,17 @@ Where atmospheric pressure is:
 \begin{center}
     \includegraphics[width=0.5\textwidth]{1.5 gage pressure.png}
 \end{center}
+\begin{center}
+\fbox{%
+    \begin{minipage}{0.92\textwidth}
+        \textbf{Conversions:}
+        \begin{itemize}
+            \item $\unit{\kelvin} = \unit{\celsius} + 273.15$
+            \item $\unit{\rankine} = \unit{\degree\fahrenheit} + 460$
+        \end{itemize}
+    \end{minipage}%
+}
+\end{center}
 \section*{\fbox{1.6 Viscosity}}
 Viscosity describes the "fluidity" of a fluid, or how easily a fluid flows. It is a measure of the internal resistance of a fluid to flow. The higher the viscosity, the more resistant the fluid is to flow.\\\\
 Consider the following set up with two parallel plates where the bottom plate is fixed, and the top plate is pulled by a load $P$. In between the plates is a solid (ie. steel) fixed to both plates.
@@ -195,47 +207,264 @@ Where
     \item $\mu$: dynamic viscosity of the fluid
 \end{itemize}
 \section*{\fbox{1.7 Compressibility of Fluids}}
+\subsection*{Bulk Modulus $E_\nu$}
+Describes how easily the volume of a fluid can be compressed. Keeping mass constant, this also describes how easily the density of a fluid can be changed under a change in pressure applied. It is defined as
+\[E_\nu = -\frac{d p}{d \vol/\vol}\]
+Or alternatively, in terms of density. Since $\vol = m/\rho$, a decrease in volume corresponds to an increase in density:
+\[E_\nu = \frac{dp}{d \rho/\rho}\]
+Where $dp$ is the change in pressure to cause a $d\vol$ change in volume, or a $d\rho$ change in density. The first equation is negative since an increase in pressure results in a decrease in volume.
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{1.7 dp dv.png}
+\end{center}
+\textbf{Units}\\
+It has units of pressure FL$^{-2}$\\\\
+For a large bulk modulus, the fluid is \hl{incompressible}, and for a small bulk modulus, the fluid is \hl{compressible}.
+\subsection*{Gas Compression and Expansion Processes}
+\textbf{Constant Temperature Process (Isothermal)}\\
+Derived from the ideal gas law:
+\[\frac{p}{\rho} = \text{constant}\]
+\textbf{Constant Entropy Process (Isentropic)}\\
+For a frictionless process with no heat exchange with surroundings:
+\[\frac{p}{\rho^k} = \text{constant}\]
+Where $k$ is the ratio of specific heats $k = c_p/c_{\vol}$. $c_p$ is the specific heat at constant pressure, and $c_{\vol}$ is the specific heat at constant volume. Additionally, the specific heats are related by the gas constant $R$:
+\[R = c_p - c_{\vol}\]
+\textbf{Rewriting Bulk Modulus Relations}\\
+Given the above relations between density and pressure for isothermal and isentropic processes, we can rewrite the bulk modulus as:
+\[E_\nu = p\quad \text{(Isothermal)}\]
+\[E_\nu = kp\quad \text{(Isentropic)}\]
+Note: Since the pressure and density relations were derived from the ideal gas law, these relations are only valid for ideal gases and pressures are always absolute pressures.
+\subsection*{Speed of Sound $c$}
+As a result of the compressibility in fluids, localized pressure disturbances require non-zero time to propagate through the fluid and travels at a finite speed. This is known as the speed of sound $c$ and is related to the bulk modulus and density of the fluid:
+\[c =\sqrt{\frac{dp}{d\rho}} = \sqrt{\frac{E_\nu}{\rho}}\]
+Since the disturbance is a small change in pressure and density, there is negligible heat transfer so it can be approximated as an isentropic process where $p/\rho^k = \text{constant}$. Thus, the speed of sound can be expressed as:
+\[c = \sqrt{\frac{kp}{\rho}} = \sqrt{kRT} \quad \text{(Ideal Gas Law)}\]
+Additionally, the \hl{mach number} relates the speed of sound to an object moving through the fluid at velocity $V$:
+\[\text{Ma} = \frac{V}{c}\]
 \section*{\fbox{1.9 Surface Tension}}
+Surface tension exists at a liquid-gas interface.\\\\
+Surface tension $\sigma$ has units of force per unit length (FL$^{-1}$):
+\begin{itemize}
+    \item BG system $[\sigma] = \unit{\lbf\per\foot}$
+    \item SI system $[\sigma] = \unit{\newton\per\meter}$
+\end{itemize}
+\subsection*{Surface Tension and Pressure Within a Drop of Fluid}
+Consider the following free-body diagram of a cross-section of a spherical drop of fluid. The surface tension acts along the edge to shrink the drop's surface area while the pressure within the drop acts to expand the drop's surface area. At equilibrium, the two forces are equal:
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{1.9 pressure in a drop.jpg}
+\end{center}
+Force due to surface tension: $2\pi R \sigma$\\
+Force due to pressure within the drop: $\Delta p \pi R^2$ where $\Delta p$ is the pressure difference across the drop's surface ($p_{\text{inside}} - p_{\text{outside}}$)\\\\
+Setting the two forces equal:
+\[2\pi R \sigma = \Delta p \pi R^2 \implies \Delta p = p_i-p_o = \frac{2\sigma}{R}\]
+\subsection*{Capillary Action in smoll Tubes}
+In the figure below, (a) shows a rise in liquid level for a liquid that wets the tub (hydrophilic) and (c) shows a drop in liquid level for a nonwetting liquid (hydrophobic). The rise or drop in liquid level is due to the surface tension acting along the circumference of the tube. The free body diagram of the liquid for case (a) is shown in (b).
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{1.9 capillary.jpg}
+\end{center}
+Since surface tension exists along the circumference, its magnitude is given by: $2\pi R \sigma$. With a vertical component of $2\pi R \sigma \cos \theta$ Where $\theta$ is the contact angle between the liquid and the tube.\\\\
+The weight of the liquid column is given by: $\gamma \pi R^2 h$ where $h$ is the height of the liquid column.\\\\
+Setting the two forces equal at equilibrium to determine the height of the liquid column as a function of surface tension and tube geometry:
+\[\sum F_y = 0 = 2\pi R \sigma \cos \theta - \gamma \pi R^2 h\]
+\[\implies h = \frac{2\sigma \cos \theta}{\gamma R}\]
+Note that $\theta$ is dependent on both the liquid and tube material properties. $\theta = 90^\circ$ for water in clean glass.
 \section*{\fbox{2.1 Pressure at a Point}}
+Pressure is defined as the normal force per unit area at a given point acting on a given plane. However, does the orientation of the plane matter? In other words, at the same point, does pressure depend on the orientation/direction of the plane?\\\\
+Consider the following small triangular wedge of fluid mass. \textit{Since there are no shearing stresses, the only external forces acting on the mass is pressure and gravity}. (Note that the forces in the $x$ direction is not shown for simplicity)
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{2.1 Pressure at Point.jpg}
+\end{center}
+Note that:
+\begin{itemize}
+    \item The forces due to pressure are defined as the \hl{average pressure in each direction} multiplied by the area of the surface in that direction. (Ex: $F_x = p_y A_y = p_y \delta x \delta z$)
+    \item The weight of the fluid mass is given by $W = \gamma \vol = \gamma \left(\frac{\delta x \delta y \delta z}{2}\right)$. Where volume is the volume of the triangular wedge.
+    \item The resultant force on the cut plane is given by $F_s = p_s A_s = p_s \delta s \delta x$. Where $\delta s$ is the length of the cut plane.
+\end{itemize}
+By Newton's second law in the $y$ and $z$ directions, we can write the following equations:
+\[\sum F_y = p_y \delta z \delta z - p_s \delta x \delta s \sin\theta = \rho\left(\frac{\delta x \delta y \delta z}{2}\right) a_y\]
+\[\sum F_z = p_z \delta x \delta y -p_s \delta x \delta s \cos\theta - \gamma \left(\frac{\delta x \delta y \delta z}{2}\right) = \rho \left(\frac{\delta x \delta y \delta z}{2}\right) a_z\]
+It follows from geometry that
+\[\delta y = \delta s \cos\theta,\quad \delta z = \delta s \sin\theta\]
+So the equations of motion is rewritten as:
+\[p_y - p_s = \rho a_y \frac{\delta y}{2}\]
+\[p_z - p_s = (\rho a_z + \gamma)\frac{\delta z}{2}\]
+To determine the pressure distribution at a point, we take the limit as $\delta y, \delta z \to 0$, keeping $\theta$ constant. Thus, the right-hand side of both equations goes to zero, and we get:
+\[p_y = p_s,\quad p_z = p_s\implies p_x = p_y = p_z \quad \text{(if we had also considered $p_x$)}\]
+Therefore, since $\theta$ is arbitrary, \hl{the pressure at a point in a fluid at rest, or in motion, is independent of direction as long as there are no shearing stresses present.} This is known as \textbf{Pascal's Law}.\\\\
+\underline{Note:} The version of Pascal's law that states that \textit{a change in pressure at any point in a continuous fluid is transmitted to all points in the fluid} is mainly a result of the hydrostatic pressure distribution when we neglect elevation differences across a fluid. (Same Pascal, different law?)
 \section*{\fbox{2.2 Basic Equation for Pressure Field}}
+Now that we know that pressure is independent of direction at a point, we should now ask how pressure varies across points in a fluid (ie. find the pressure distribution). Consider a small rectangular fluid element with dimensions $\delta x, \delta y, \delta z$ in a fluid without shearing stresses. 
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{2.2 body element.jpg}
+\end{center}
+For simplicity, the forces in the $x$ direction are not shown. \\\\
+There are two main forces acting on the element: \hl{surface forces due to pressure, and body force due to weight}.\\\\
+We define the pressure at the center of the element $(x,y,z)$ as $p$. \hl{The average pressure on each face is approximated using a first-order Taylor expansion of $p$ about the center of the element, evaluated a distance $\delta/2$ away in the corresponding coordinate direction.}\\\\
+The sum of surface forces in the $y$ direction is
+\[
+\delta F_y
+=
+\left(
+p-\frac{\partial p}{\partial y}\frac{\delta y}{2}
+\right)\delta x\,\delta z
+-
+\left(
+p+\frac{\partial p}{\partial y}\frac{\delta y}{2}
+\right)\delta x\,\delta z
+\]
+or
+\[
+\delta F_y
+=
+-\frac{\partial p}{\partial y}\,
+\delta x\,\delta y\,\delta z
+\]
+Similarly, for the $x$ and $z$ directions, the sum of surface forces are
+\[
+\delta F_x
+=
+-\frac{\partial p}{\partial x}\,
+\delta x\,\delta y\,\delta z,
+\qquad
+\delta F_z
+=
+-\frac{\partial p}{\partial z}\,
+\delta x\,\delta y\,\delta z
+\]
+The resultant surface force acting on the element due to pressure can be expressed in vector form as
+\[
+\delta \vec{F}_s
+=
+\delta F_x \hat{{i}}
++
+\delta F_y \hat{{j}}
++
+\delta F_z \hat{{k}}
+\]
+or
+\[
+\delta \vec{F}_s
+=
+-
+\left(
+\frac{\partial p}{\partial x}\hat{{i}}
++
+\frac{\partial p}{\partial y}\hat{{j}}
++
+\frac{\partial p}{\partial z}\hat{{k}}
+\right)
+\delta x\,\delta y\,\delta z
+\] 
+where $\hat{{i}}$, $\hat{{j}}$, and $\hat{{k}}$ are the unit vectors along the coordinate axes.\\\\
+This can be rewritten in terms of the \hl{gradient operator} $\nabla$ as:
+\[
+\frac{\delta \vec{F}_s}{\delta x\,\delta y\,\delta z}
+=
+-\nabla p,
+\qquad
+\nabla p
+=
+\frac{\partial p}{\partial x}\hat{i}
++
+\frac{\partial p}{\partial y}\hat{j}
++
+\frac{\partial p}{\partial z}\hat{k}
+\]
+\textbf{Combining Surface Forces with Body Forces}\\
+To describe all the forces acting on the element, we need to include the body force due to weight. This is given by:
+\[-\delta \mathcal{W} \hat{k} = -\gamma \delta x\,\delta y\,\delta z \hat{k}\]
+The total force acting on the element is then given by:
+\[\sum \delta \vec{F} = \delta \vec{F}_s - \delta \mathcal{W} \hat{k} = \delta m \vec{a}, \quad \text{where } \delta m = \rho \delta x\,\delta y\,\delta z\]
+\[\implies \boxed{-\nabla p - \gamma \hat{k} = \rho \vec{a}}\]
+This is the general equation of motion for a fluid with no shearing stresses. Note that for a fluid at rest, $\vec{a} = 0$, and the equation reduces to:
+\[\nabla p = -\gamma \hat{k} \implies \frac{\partial p}{\partial z} = -\gamma\]
+Which once integrated, gives the hydrostatic pressure distribution:
+\[p = -\gamma z + p_0\]
+Where $z$ is defined as upwards positive.
 \section*{\fbox{2.3 Pressure Variation at Rest}}
+For a fluid at rest, $\vec{a} = 0$, and the equation of motion reduces to:
+\[-\nabla p - \gamma \hat{k} = 0\]
+\[\implies \frac{\partial p}{\partial x} = 0, \quad \frac{\partial p}{\partial y} = 0, \quad \frac{\partial p}{\partial z} = -\gamma\]
+Thus, pressure only changes with depth in the $z$ direction.
+\subsection*{Incompressible Fluid}
+By definition, $\gamma = \rho g$, since changes in $g$ is negligible for most cases, the main factor that affects $\gamma$ is the density $\rho$. For an incompressible fluid, $\rho$ is constant.\\\\
+For a constant $\rho$, and thus $\gamma$, we can integrate the equation for pressure variation with depth:
+\[\int_{p_1}^{p_2} dp = \int_{z_1}^{z_2} -\gamma dz\]
+\[\implies p_2 - p_1 = -\gamma (z_2 - z_1)\]
+If we let $h= z_2-z_1$, then we can express the pressure at a depth $h$ below a reference point as:
+\[p_1 = p_2 + \gamma h\]
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{2.3 hydrostatic.jpg}
+\end{center}
+This is called a \textbf{hydrostatic distribution}.\\\\
+\textbf{Pressure Head}\\
+We can rewrite the hydrostatic distribution in terms of a height of a fluid column of specific weight $\gamma$ and height $h$ that would produce the same pressure difference:
+\[h= \frac{p_1-p_2}{\gamma}\]
+\underline{Note:} Often, we use the free surface of the fluid with reference pressure $p_0$, and thus set $p_2 = p_0$ to find pressures at depth $h$ below the free surface.
+\subsection*{Compressible Fluids}
+Compressible fluids such as gases tend to have varying density when variations in heights/elevation is very large. Thus, combining the ideal gas law ($p=\rho RT$) with the equation of motion for a fluid at rest ($\partial p/\partial z = -\gamma$), we can derive the pressure distribution for a compressible fluid.
+\[\frac{dp}{dz} = -\gamma = -\rho g = -\frac{pg}{RT} \]
+Integrating both sides, assuming $g$ and $R$ are constant,
+\[\int_{p_1}^{p_2} \frac{dp}{p} = -\frac{g}{R}\int_{z_1}^{z_2} \frac{1}{T} dz\]
+\hl{Before solving the integral, we must consider how temperature varies in z!}\\\\
+\textbf{Isothermal Process}\\
+For an isothermal process, $T=T_0$ is constant, and the integral can be solved as:
+\[p_2 = p_1\, \text{exp}\left[-\frac{g(z_2-z_1)}{RT_0}\right]\]
 \section*{\fbox{2.4 Standard Atmosphere}}
+The variation of temperature \hl{within the troposphere (extends to an altitude of about 11 km or $\approx$ 36,000 ft)} is of the form
+\[T=T_a - \beta a\]
+Where 
+\begin{itemize}
+    \item $T_a$ is the temperature at sea level ($z=0$)
+    \item $\beta$ is the temperature lapse rate (rate of change of $\Delta T$ with respect to $\Delta z$). For standard atmosphere in the troposphere, \hl{$\beta = 0.0065\,\unit{\kelvin\per\meter}$ or $0.00357\,\unit{\rankine\per\foot}$}
+\end{itemize}
+Integrating the equation for pressure variation with depth for a compressible fluid from 2.3, we have:
+\[\int_{p_a}^{p} \frac{dp}{p} = -\frac{g}{R}\int_{0}^{z} \frac{1}{T} dz\]
+\[p = p_a\,\left(1-\frac{\beta z}{T_a}\right)^{g/(R\beta)}\]
+For varying temperature in the troposphere.
 \section*{\fbox{2.5 Measurement of Pressure}}
+Mentioned before in 1.5, absolute pressure is relative to vacuum (absolute zero), gage is relative to \hl{local} atmospheric pressure, and vacuum/suction is a negative gage pressure.
+\[p_{abs} = p_{gage} + p_{atm}\]
+\subsection*{Barometer}
+A way to measure atmospheric pressure using a column of liquid in terms of head (ex: mmHg) is by using a barometer. Consider the following barometer with a column of mercury. 
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{2.5 barometer.png}
+\end{center}
+For the mercury column to be at equilibrium, the pressure at the bottom of the column must be equal to the atmospheric pressure:
+\[p_{atm} = \gamma h + p_{vapor}\]
+\underline{Note:} The vapor pressures can be found in tables 1.5 and 1.6 for different liquids at different temperatures.\\\\
+This can be derived by a force balance on the mercury column:
+\[\sum F_z = p_{atm} A_{tube} - \gamma A_{tube} h - p_{vapor} A_{tube} =0\]
+\[\implies p_{atm} = \gamma h + p_{vapor}\]
+Assuming the vapor pressure is negligible: $p_{atm} \approx \gamma h$. 
 \section*{\fbox{2.6 Man-O-Meters}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Oh boy my favorite.\\\\
+Man-O-Meters or manometers user vertical or inclined liquid columns to measure pressure based on the same principle equation as the barometer $p = \gamma h + p_0$.\\\\
+To solve manometer problems, we can use the following "rules":
+\begin{enumerate}
+    \item Write pressure at either end of manometer
+    \item Move through manometer and add $\gamma h$ with increasing depth and subtract $\gamma h$ with decreasing depth
+    \item When stopping at any point, the sum is equal to the local pressure at that point
+\end{enumerate}
+\hl{Make horizontal jumps without adding since the pressure is constant along a horizontal line.}\\\\
+For example, the following is a man-ohh-meter:
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{2.6 manohhhhh.jpg}
+\end{center}
+If we start from the open end:
+\[p_{atm} + \gamma_2h_2 - \gamma_1h_1 = p_A\]
+\subsection*{Inclined-tube Manometer}
+If we want to be fancy and physically add more resolution to our manometer, we can incline the tube. This allows for a longer column of liquid to measure the same pressure difference. See the following example:
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{2.6 inclined manometer.jpg}
+\end{center}
+The pressure difference $p_A - p_B$ can be determined by moving through the manometer starting from $p_A$:
+\[
+p_A + \gamma_1 h_1 - \gamma_2 \ell_2 \sin\theta - \gamma_3 h_3 = p_B
+\]
+\[\implies 
+p_A - p_B = \gamma_2 \ell_2 \sin\theta + \gamma_3 h_3 - \gamma_1 h_1
+\]
+The same manometer rules applies but be careful to use the vertical height instead of the length of the inclined tube. The vertical height is given by $\ell_2 \sin\theta$.
 \newpage
 \begin{center}
     {\LARGE\bfseries Hydrostatics\par}
