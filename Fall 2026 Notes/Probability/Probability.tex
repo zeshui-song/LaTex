@@ -464,6 +464,63 @@ Similar to PIE for 2 events, we need to first subtract the pairwise intersection
     \includegraphics[width=0.6\textwidth]{1.2 PIE for 3.png}
 \end{center}
 \end{theorem}
+\subsection*{Generalizing the Principle of Inclusion-Exclusion}
+The Principle of Inclusion-Exclusion (PIE) can be generalized to any number of events. For events
+\[
+A_1,A_2,\ldots,A_n,
+\]
+we want every outcome in the union to be counted exactly once.
+\begin{enumerate}
+    \item First, add the probabilities of all individual events:
+    \[
+    \sum_{i=1}^{n} P(A_i).
+    \]
+    An outcome contained in two events is now counted twice, so we must correct for this overcounting.\\\\
+    \item Subtract all 2-way intersections:
+    \[
+    \sum_{1\leq i<j\leq n} P(A_i\cap A_j).
+    \]
+    There are
+    \[
+    \binom{n}{2}
+    \]
+    possible 2-way intersections. For an outcome contained in exactly two events, its count becomes
+    \[
+    2-\binom{2}{2}=2-1=1.
+    \]
+    \item Next, consider an outcome contained in three events. It was added once by each of the three individual events, but then subtracted once for each pair:
+    \[
+    3-\binom{3}{2}=3-3=0.
+    \]
+    Since it should be counted once, we must add the 3-way intersections:
+    \[
+    \sum_{1\leq i<j<k\leq n}
+    P(A_i\cap A_j\cap A_k).
+    \]
+    \item For an outcome contained in four events, its count after the first three steps is
+    \[
+    4-\binom{4}{2}+\binom{4}{3}
+    =4-6+4=2.
+    \]
+    Since it should be counted once, we must subtract the 4-way intersections.
+    \item The same logic continues for higher-order intersections. At each stage, consider an outcome contained in all \(k\) events and choose the sign that makes its total count equal to \(1\).
+\end{enumerate}
+Thus, the signs alternate:
+\[
++,-,+,-,\ldots
+\]
+In general,
+\[
+P\left(\bigcup_{i=1}^{n} A_i\right)
+=
+\sum_i P(A_i)
+-\sum_{i<j}P(A_i\cap A_j)
++\sum_{i<j<k}P(A_i\cap A_j\cap A_k)
+-\cdots
++(-1)^{n+1}P(A_1\cap\cdots\cap A_n).
+\]
+The intuition is that each correction fixes how many times an outcome lying in multiple events has been counted, so that every outcome in the union is counted exactly once.
+
 \subsection*{\fbox{Counting! (1.3)}}
 \subsection*{\underline{1.3 Methods of Enumeration}}
 The main focus of this section is to learn how to count the number of possible outcomes for a random experiment. This is VERY important because the probability of an event is defined as the ratio of the number of favorable outcomes to the total number of possible outcomes! But first some definitions:
@@ -619,7 +676,7 @@ Generally, given a counting problem, we can use the following flowchart to deter
 \section*{\fbox{Conditional probability and independence (1.4-1.5)}}
 \subsection*{\underline{1.4 Conditional Probability}}
 Conditional probability is one of the most important concepts in probability. It allows us to update our probability of an event based on new information. In other words, for the probability of an event $A$ given that $B$ occurred, instead of calculating the probability of an event $A$ in the entire sample space $S$, we can calculate the probability of $A$ in a smaller sample space $B$, and thus refining our probability of $A$.
-\newpage
+
 \begin{definition}{Conditional Probability}
     Given events $A$ and $B$ in a sample space $S$, the conditional probability of $A$ given that $B$ has occurred is defined as:
     \[P(A|B) = \frac{P(A \cap B)}{P(B)}, \]
@@ -688,7 +745,7 @@ Then:
 The probability that all 3 balls are red is:
 \[P(A \cap B \cap C) = \frac{3}{5} \cdot \frac{2}{4} \cdot \frac{1}{3} =  \frac{1}{10}\]
 \end{theorem}
-\newpage
+
 \begin{theorem}{Law of Total Probability}
     Given $B_1, B_2, \ldots, B_n$ are mutually exclusive and exhaustive events in a sample space $S$ (i.e., they form a partition of $S$) and $A$ is any event in $S$, then the probability of $A$ is given by:
     \[P(A) = P(A \cap B_1) + P(A \cap B_2) + \cdots + P(A \cap B_n)=\sum_{i=1}^n P(A \cap B_i)\]
@@ -727,7 +784,12 @@ The probability that all 3 balls are red is:
     \[P(B_i|A) = \frac{P(A|B_i)P(B_i)}{\sum_{i=1}^n P(A|B_i)P(B_i)}\]
     Recall that \hl{the numerator is just another form of $P(B_i \cap A)$ by the multiplication rule, and the denominator is just $P(A)$ by the law of total probability!}
 \end{theorem}
-\newpage
+\underline{Note:} When finding probabilities by dividing the number of favorable outcomes by the total number of outcomes, we must use the same method of counting for both the numerator and denominator. 
+\begin{itemize}
+    \item If the denominator is $\binom{n}{r}$, the numerator should also count the \textit{unordered} selections with combinations
+    \item If the denominator uses $_nP_r$ or something along the lines of the multiplication principle, the numerator should also count the \textit{ordered} selections with permutations or multiplication principle
+\end{itemize}
+
 \subsection*{\underline{1.5 Independent Events}}
 Once we started using conditional probability, we started relating events to each other. In other words, we started thinking about how the occurrence of one event affects the probability of another event. However, there are some events that are completely unrelated to each other, not influenced by each other at all. These events are called independent events.\\\\
 \begin{definition}{Independent Events}
@@ -755,7 +817,7 @@ Note that independence and mutually exclusive are two different ideas.\\\\
 \textbf{Mutually Exclusive}\\
 Two events are mutually exclusive if they cannot occur together, so no overlap between the two events. 
 \[P(A \cap B) = 0\]
-\textbf{Independent}\\
+\textbf{Independence}\\
 Our independence condition is:
 \[P(A \cap B) = P(A)P(B)\]
 Now note that if $A$ and $B$ are mutually exclusive, but both $P(A)$ and $P(B)$ are non-zero, then they are NOT independent because
