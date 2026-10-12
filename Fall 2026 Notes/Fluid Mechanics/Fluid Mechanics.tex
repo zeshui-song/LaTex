@@ -1076,14 +1076,14 @@ Since the streamlines are straight at the nozzle exit, $\mathscr{R} \to \infty$,
 \[\frac{\partial p}{\partial n} = 0 \]
 \[p = \text{constant across the nozzle exit}\]
 We know that the pressure at the surface of the jet is atmospheric, and since pressure is \textit{constant across the nozzle exit}, the pressure at the center of the jet must also be atmospheric. Thus, $p_2 = 0$ (gage pressure).\\\\
-\underline{Note:} For a horizontal streamline, $z$ is no longer constant and $dz/dn \neq 0$. Thus, the pressure at the center of the jet should be given by the hydrostatic pressure distribution $p + \gamma z = C$. However, since the top and bottom of the jet are exposed to the atmosphere, and the exit nozzle diameter is small (small changes in $z$), the pressure at the center of the jet is approx equal to the atmospheric pressure.\\\\
+\underline{Note:} For straight horizontal streamlines, $z$ is constant along each streamline, but varies across streamlines, so $dz/dn \neq 0$. Thus, the pressure across the jet follows the hydrostatic pressure distribution $p + \gamma z = C$. However, since the top and bottom of the jet are exposed to the atmosphere and the nozzle diameter is small (small changes in $z$), the pressure at the center of the jet is approximately equal to atmospheric pressure.\\\\
 We can see this in how the streamlines of a horizontal free jet will tend to bend downwards due to gravity, thus resulting in a finite $\mathscr{R}$ even if the pressure is constant (zero pressure gradient $\partial p/\partial n = 0$).\\\\
 \textbf{Ven Contracta Effect}\\
 Continuing our lovely discussion on horizontal free jets, consider the following example:
 \begin{center}
     \includegraphics[width=0.4\textwidth]{3.6 horz free jet.jpeg}
 \end{center}
-The fluid velocity across the jet is not uniform with $V_1 < V_2 < V_3$, where $V_2$ is the velocity at the center of the jet. This is due to increasing pressure as a result of elevation changes across the jet. In general, since $d<<h$, we can call $V_2$ the approximate \hl{average velocity} of the jet.\\\\
+The fluid velocity across the jet is not uniform with $V_1 < V_2 < V_3$, where $V_2$ is the velocity at the center of the jet. This is due to elevation changes across the jet. In general, since $d<<h$, we can call $V_2$ the approximate \hl{average velocity} of the jet.\\\\
 If the exit is not a smooth, well-contoured nozzle, but rather a sharp-edged opening, the diameter of the jet $d_j$ will be smaller than the diameter of the hole $d_h$. This is known as the \textbf{vena contracta effect}. This is a \hl{result of the inability of the fluid to make sharp right turns, and instead needing to follow a curved path}.
 \begin{center}
     \includegraphics[width=0.4\textwidth]{3.6 Vena Contracta.jpeg}
@@ -1210,7 +1210,7 @@ Thus, the vertical distance between the streamline elevation and the hydraulic g
 \end{center}
 \subsection*{How the lines are measured}
 \begin{itemize}
-    \item Pitot-static tube: measures stagnation pressure, allowing the energy line elevation to be determined
+    \item Pitot-static tube: measures stagnation pressure vs elevation, allowing the energy line elevation to be determined
     \item Piezometer tube: measures static pressure head, allowing the hydraulic grade line elevation to be determined
 \end{itemize}
 \textbf{Example:}
@@ -1225,7 +1225,7 @@ We are super familiar with the Bernoulli equation for steady, inviscid, incompre
 While assuming incompressible flow is valid for most liquids, it is generally not valid for gasses where density can change significantly with pressure.\\\\
 From the definition of the bulk modulus $E_\nu$:
 \[\frac{d\rho}{\rho} = \frac{dp}{E_\nu}\]
-For a finite change in density, we can write:
+For a small local change in density, we can write:
 \[\frac{\Delta \rho}{\rho} = \frac{\Delta p}{E_\nu}\]
 \hl{If we define the (arbitrary) criteria that an 4.5\% density change is significant,} we can model the fluid as incompressible when:
 \[\frac{\Delta \rho}{\rho} \leq 0.045\]
@@ -1241,7 +1241,7 @@ For air, $k = 1.4$:
 Note that the Bernoulli equation derived for steady, inviscid flow \hl{is an isentropic process!} Thus, we can relate the difference in pressure (with negligible elevation change) to the fluid velocity:
 \[\Delta p = \frac{1}{2}\rho V^2\]
 \[\implies \frac{\rho V^2}{p} \leq 0.126\]
-For air at standard conditions, this corresponds to a velocity of $V \leq 102 \unit{\meter\per\second} \approx 350 \unit{\foot \per \second}$ or $\text{Ma} \leq 0.3$. Thus, the incompressible flow assumption is valid for air at standard conditions when it is moving at subsonic speeds.\\\\
+For air at standard conditions, this corresponds to a velocity of $V \leq 102 \unit{\meter\per\second} \approx 350 \unit{\foot \per \second}$ or $\text{Ma} \leq 0.3$. Thus, the incompressible flow assumption is valid for air at standard conditions when it is moving sufficiently slow compared to the speed of sound.\\\\
 \underline{Note}: \hl{USE ABSOLUTE PRESSURES, THESE ARE IN TERMS OF IDEAL GASES}
 \subsection*{Unsteady Effects}
 Recall the full streamwise acceleration is given as:
