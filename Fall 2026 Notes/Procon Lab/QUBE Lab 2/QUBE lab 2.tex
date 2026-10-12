@@ -200,7 +200,8 @@ Plugging in the values for $\tau$ and $K$:
 The lab says that an overshoot of less than $20\%$ corresponds to a damping ratio of $\zeta > 0.5$. Thus:
 \[\zeta  =\frac{1+Kk_p}{2\sqrt{\tau Kk_i}} > 0.5\]
 \[1+Kk_p > \sqrt{\tau Kk_i}\]
-\[\boxed{k_p > \frac{\sqrt{\tau Kk_i}-1}{K}}\]
+\[k_p > \frac{\sqrt{\tau Kk_i}-1}{K} = \frac{\sqrt{[0.0997~\mathrm{s}][23.809~\mathrm{(rad/s)/V}][0.339~\mathrm{V/rad}]}-1}{[23.809~\mathrm{(rad/s)/V}]}\]
+\[\boxed{k_p > -0.00432\mathrm{Vs/rad}}\]
 \textbf{Steady State Error}\\
 The error transfer function is
 \[\frac{E(s)}{R(s)} = \frac{1}{1+C(s)P(s)}=\frac{1}{1+\frac{K(k_p s+k_i)}{s(\tau s+1)}} = \frac{s(\tau s+1)}{s(\tau s+1)+K(k_p s+k_i)}\]
@@ -229,33 +230,34 @@ Now let us implement proportional control with the $k_p$ values calculated in th
 \[
 k_i=0.
 \]
-Discuss how the response changes as you increase $k_p$ and whether you are able to meet the specifications for (i)--(iii).
+Discuss how the response changes as you increase $k_p$ and whether you are able to meet the specifications for (i)--(iii).\\\\
+For a reference input of $50~\mathrm{rad/s}$:
 \begin{itemize}
     \item $k_p = 0.098~\mathrm{V/(rad/s)}$ for $30\%$ steady-state error:
     \begin{itemize}
-        \item Rise time (s):
-        \item Overshoot (\%):
-        \item Steady-state error (\%):
+        \item Rise time (s): $93.516$ ms
+        \item Steady-state error (\%): $30.422\%$
     \end{itemize}    
     \item $k_p=0.378~\mathrm{V/(rad/s)}$ for $10\%$ steady-state error:
     \begin{itemize}
-        \item Rise time (s):
-        \item Overshoot (\%):
-        \item Steady-state error (\%):
+        \item Rise time (s): $18.792$ ms
+        \item Steady-state error (\%): $10.222\%$
     \end{itemize} 
-    
+    \newpage
     \item $k_p=4.158~\mathrm{V/(rad/s)}$ for $1\%$ steady-state error:
     \begin{itemize}
-        \item Rise time (s):
-        \item Overshoot (\%):
-        \item Steady-state error (\%):
+        \item Rise time (s): $22.255$ ms
+        \item Overshoot (\%): $17.28\%$
+        \item Steady-state error (\%): Oscillatory but the mean steady-state error is about $1\%$
     \end{itemize} 
-    
 \end{itemize}
+    Generally, because the closed loop system is first-order for proportional control, there was zero overshoot for all the lower $k_p$ values where there were no oscillations. Increasing the gain $k_p$ decreased the rise time and steady-state error, however this is not the case for high $k_p$ values. It actually amplified the noise and caused oscillations in the response.\\\\
 \textbf{8.} Verify in an experiment whether you can meet all design specifications (i)--(iv).\\\\
 The noise in the input signal, the applied motor voltage, should be small. The spread of the amplitude with respect to the mean signal should be less than $0.25$ volts.\\\\
-Do the controllers operate as you expect? Why or why not?
-\vspace{10cm}
+Do the controllers operate as you expect? Why or why not?\\\\
+\textbf{Response}\\
+For a proportional gain of $k_p = 4.158~\mathrm{V/(rad/s)}$, the value corresponding to $1\%$ steady-state error, the rise time and overshoot specifications were met. However, the oscillations were not given enough time to stabilize, as was seen with values close to $4.158~\mathrm{V/(rad/s)}$. Additionally, the mean signal spread of the input signal was $204.305~\mathrm{V}$, which is much larger than the desired $0.25~\mathrm{V}$. The noise in the input signal was amplified by the high $k_p$ gain, which caused oscillations in the response. Particularly, we saw sharp spikes in the input voltage at the beginning and end of the signal.\\\\
+This was unexpected because, theoretically, the closed-loop system is first-order and should not exhibit oscillations. However, the effect of noise in the system was more significant than anticipated.
 \newpage
 \subsection*{Integral Control Implementation}
 Next, we consider integral control only, i.e.
@@ -272,8 +274,17 @@ t_r \leq 0.2~\mathrm{s},
 \]
 less than $1\%$ steady-state error, and overshoot less than $20\%$.\\\\
 The noise in the input signal, the applied motor voltage, is desired to be small. The spread of the amplitude with respect to the mean signal should be less than $0.25$ volts.\\\\
-Can you meet all design specifications (i)--(iv)? Why or why not? Do the controllers operate as you expect based on your theoretical model?
-\vspace{11cm}
+Can you meet all design specifications (i)--(iv)? Why or why not? Do the controllers operate as you expect based on your theoretical model?\\\\
+\textbf{Response}\\
+For an integral gain of $k_i = 0.42~\mathrm{V/rad}$, we found the following system time specifications:
+\begin{itemize}
+    \item Rise time (s): $170.024$ ms
+    \item Overshoot (\%): $29.87\%$
+    \item Steady-state error (\%): $0.26\%$
+    \item Voltage spread (V): $2.23~\mathrm{V}$
+\end{itemize}
+Thus, the controller was able to meet the rise time and steady-state error specifications, but it did not meet the overshoot or input signal spread specifications. The large input signal spread could potentially be due to noise in the system, as with proportional control, although integral control was much better at limiting the input signal spread. The overshoot was higher than desired, which is consistent with the fact that the system becomes second-order with integral control and can exhibit an underdamped response.\\\\
+The controller operated close to as expected, but differences between the actual system and the theoretical model were mainly due to noise and other effects in the physical system that were not accounted for in the theoretical model.
 \newpage
 \subsection*{Proportional-Integral Control Implementation}
 Now, let us implement the proportional-integral controller.\\\\
@@ -281,16 +292,23 @@ Now, let us implement the proportional-integral controller.\\\\
 Vary both gains to see if you can meet the specifications from (i)--(iv).\\\\
 The noise in the input signal, the applied motor voltage, should be small. The spread of the amplitude with respect to the mean signal should be less than $0.25$ volts.\\\\
 How can $k_p$ and $k_i$ be traded off with each other to achieve the desired system behavior?\\\\
-List your final $k_p$ and $k_i$ and whether you were able to meet all the specifications.
+List your final $k_p$ and $k_i$ and whether you were able to meet all the specifications.\\\\
+\textbf{Response}
 \[
-k_p =
+k_p = 0.08~\mathrm{V/(rad/s)}
 \]
 \[
-k_i =
+k_i = 0.42~\mathrm{V/rad}
 \]
-
-\vspace{11cm}
-
+We found the following system time specifications:
+\begin{itemize}
+    \item Rise time (s): $208.04$ ms
+    \item Overshoot (\%): $\approx 0\%$
+    \item Steady-state error (\%): $0.018\%$
+    \item Voltage spread (V): $3.09~\mathrm{V}$
+\end{itemize}
+This controller was able to meet the overshoot and steady-state error specifications, getting very close to the rise time specification. However, the input signal spread was still larger than desired. The closed loop response behaved closer to a first order system with oscillations appearing with higher $k_p$ gains. Potentially, it is due to the non-zero $k_p$ gain that resulted in a larger input signal spread than with purely integral control.\\\\
+Overall, the gains $k_p$ and $k_i$ can be traded off to achieve a similar system response. This can be seen mathematically since the damping ratio $\zeta$ is dependent on both $k_p$ and $k_i$, while the natural frequency $\omega_n$ is dependent only on $k_i$. Thus, the closed-loop response became more heavily damped as $k_p$ increased, as predicted by the theoretical model. However, higher values of $k_p$ also produced greater high-frequency oscillations in the experimental response. This was likely due to the proportional gain amplifying noise and other effects that were not included in the theoretical model.
 \newpage
 
 \section{Effect of Pole Location on Response}
@@ -308,12 +326,10 @@ The root-locus design method uses the open-loop transfer function, in this case 
 Either with hand calculations or using MATLAB, root locus branches can be plotted which show the locations of all possible closed-loop poles as you vary one parameter in the system, usually a controller gain, between $0$ and $\infty$.\\\\
 Try using the $k_p$ value corresponding to $1\%$ error from Question 4. The value of the closed-loop pole should agree with your calculations in Question 4.\\\\
 \textbf{Root Locus Plot:}
-
-\vspace{5cm}
-\textbf{Response / Discussion:}
-
-\vspace{5cm}
-
+\begin{center}
+    \includegraphics[width=0.65\textwidth]{locus 11.png}
+\end{center}
+This checks out since the open loop pole marked with an $\times$ is at $s=-\frac{1}{\tau} = -10.03~\mathrm{rad/s}$, and the closed-loop pole marked with an $\circ$ is at $s=-\frac{1+k_p K}{\tau} = -10002.98~\mathrm{s}^{-1}$, which agrees with the calculations in Question 4.\\\\
 \textbf{12.} Add MATLAB code or modify the system to plot the root locus for the system with I-control.\\\\
 Remember to use the open-loop transfer function
 \[
@@ -322,39 +338,30 @@ Remember to use the open-loop transfer function
 Sketch or turn in a MATLAB plot of the root locus for the system with I-control.\\\\
 Do not include the $k_i$ gain, as this is the parameter being varied in the root locus plot.\\\\
 \textbf{Root Locus Plot:}
-
-\vspace{5cm}
-
-\textbf{Response / Discussion:}
-
-\vspace{5cm}
-
+\begin{center}
+    \includegraphics[width=0.65\textwidth]{locus 12.png}
+\end{center}
 \textbf{13.} What happens to the root loci branches and corresponding closed-loop poles as you increase $k_i$ and how does this affect the closed-loop time response characteristics?\\\\
 Determine the controller gain corresponding to a $k_i$ that meets the specifications
 \[
 t_r \leq 0.2~\mathrm{s},
 \]
 less than $1\%$ steady-state error, and overshoot less than $20\%$.\\\\
-In theory, there should be a range of possible $k_i$ gains that meet specifications (i)--(iii).
-
-
-
-
-\newpage
+In theory, there should be a range of possible $k_i$ gains that meet specifications (i)--(iii).\\\\
+\textbf{Root Locus Plot:}
+\begin{center}
+    \includegraphics[width=0.65\textwidth]{locus 13.png}
+\end{center}
+Where the yellow regions are where the time specifications are not satisfied. The closed loop poles are shown as $\circ$ for the $k_i$ gain that met the specifications (found in problem 9). It lies within the region on the imaginary axis where the time specifications are satisfied.
 \section{Lab Discussion}
-\textbf{14.} Why do we need a model of the motor-speed control system, or plant?
-
-\vspace{6cm}
-\textbf{15.} What are the advantages of a P-controller? What are its disadvantages? Similarly, for an I-controller?
-
-\vspace{8cm}
-\textbf{16.} What are the advantages of a PI-controller? Justify your answer based on your experimental results.
-
-\vspace{8cm}
-
-\textbf{17.} Why are the choices for the gains limited in practice?
-
-\vspace{7cm}
+\textbf{14.} Why do we need a model of the motor-speed control system, or plant?\\\\
+We need a model of the plant in order to get an accurate transfer function for the system's closed and open loop responses. This allows us to design a controller that meets the desired time specifications. The transfer function can be used to predict the system's response to different inputs and to analyze the stability of the system.\\\\
+\textbf{15.} What are the advantages of a P-controller? What are its disadvantages? Similarly, for an I-controller?\\\\
+The P-controller was able to increase the speed of the system's response (decreases rise time) without any overshoot (except in cases of high $k_p$ gain). However, it is not able to eliminate steady-state error without high gains which introduced oscillation in the system. The I-controller was able to eliminate steady-state error, but it introduced overshoot and oscillations in the system's response.\\\\
+\textbf{16.} What are the advantages of a PI-controller? Justify your answer based on your experimental results.\\\\
+The PI-controller was able to eliminate steady-state error while also reducing overshoot and oscillations in the system's response. It was able to balance the trade-off between rise time, overshoot, and steady-state error by adjusting the $k_p$ and $k_i$ gains. However, the effect of $k_p$ gain on the input signal spread was still greater than desired as shown by the input signal spread of $3.09~\mathrm{V}$ for the final $k_p$ and $k_i$ gains.\\\\
+\textbf{17.} Why are the choices for the gains limited in practice?\\\\
+They are limited by external disturbances and noise in the system, which can be amplified by high gains and result in instabilities in the system's response. Additionally, the physical limitations of the system, such as saturation of the actuator or sensor limits, can also limit the range of gains that can be used in practice.
 
 \newpage
 
@@ -370,23 +377,26 @@ s+\frac{1}{T_r}
 \right)
 \]
 and plot the root locus showing the location of the closed-loop poles for your $k_p$ and $k_i$ gains, and corresponding $K_c$ and $T_r$ values.\\\\
-Compare the Control System Design response to your response. Does it meet the specifications?
-\[
-K_c =
-\]
-\[
-T_r =
-\]
-
-\vspace{10cm}
-
+Compare the Control System Design response to your response. Does it meet the specifications?\\\\
+\textbf{Response:}
+\[C(s) = k_p + \frac{k_i}{s} = \frac{k_p s + k_i}{s} = \frac{k_p}{s}\left(s + \frac{k_i}{k_p}\right)\]
+Thus, $K_c = k_p$ and $T_r = \frac{k_p}{k_i}$.\\\\
+\[K_c = 0.08, \quad T_r = 0.19\]
+\begin{center}
+    \includegraphics[width=0.65\textwidth]{locus ex.png}
+\end{center}
+The theoretical system response with the $K_c$ and $T_r$ values from the PI-controller design has the following time specifications:
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{ex time.png}
+\end{center}
+Thus it has a rise time of $0.259~\mathrm{s}$, overshoot of $0.0\%$, and steady-state error of $0\%$. Generally, the response is similar to the experimental response.\\\\
 \textbf{19.} Build a Simulink block diagram to track a sinusoidal signal with a frequency of
 \[
 1~\mathrm{rad/s}.
 \]
 How does your controller perform?
-
-
-\vspace{9cm}
-
+\begin{center}
+    \includegraphics[width=0.65\textwidth]{ex.png}
+\end{center}
+The controller tracks the sinusoidal signal well, with only a phase lag. Where the blue plot is the reference input and the yellow plot is the output.
 \end{document}

@@ -6,6 +6,7 @@
 \usepackage{mathrsfs}
 \usepackage{amsthm}
 \usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
 
 \geometry{margin=1in}
 \newtcolorbox{definition}[1]{
@@ -50,6 +51,7 @@ Probability is not statistics! Probability is the study of random events and how
 \section*{\fbox{Introduction to and properties of
 probability (1.1-1.2)}}
 \subsection*{\underline{1.1 Basic Concepts}}
+\addcontentsline{toc}{section}{1.1 Basic Concepts}
 \begin{definition}{Random Experiment}
 A random experiment is an experiment whose outcome cannot be predicted with certainty \textit{before it is performed}.\\\\
 \underline{Ex:} Flipping a coin is a random experiment. The possible outcomes are heads or tails, but you cannot predict which one will occur before the coin is flipped.
@@ -172,6 +174,7 @@ As the number of trials $n$ increases, the relative frequency histogram $h(x)$ a
 \end{definition}
 
 \subsection*{\underline{1.2 Properties of Probability}}
+\addcontentsline{toc}{section}{1.2 Properties of Probability}
 \begin{definition}{Event}
 An event is a \hl{subset of the sample space}. It is a collection of one or more outcomes of a random experiment that satisfies a certain condition.\\\\
 When the random experiment is performed and the outcome of the experiment is in $A$, we say that the event $A$ has occurred.\\\\
@@ -523,6 +526,7 @@ The intuition is that each correction fixes how many times an outcome lying in m
 
 \subsection*{\fbox{Counting! (1.3)}}
 \subsection*{\underline{1.3 Methods of Enumeration}}
+\addcontentsline{toc}{section}{1.3 Methods of Enumeration}
 The main focus of this section is to learn how to count the number of possible outcomes for a random experiment. This is VERY important because the probability of an event is defined as the ratio of the number of favorable outcomes to the total number of possible outcomes! But first some definitions:
 \begin{definition}{Ordered sample}
     An ordered sample is a selection in which the order of the selected objects matters. In other words, different arrangements of the same objects are considered different outcomes.\\\\
@@ -675,6 +679,7 @@ Generally, given a counting problem, we can use the following flowchart to deter
 
 \section*{\fbox{Conditional probability and independence (1.4-1.5)}}
 \subsection*{\underline{1.4 Conditional Probability}}
+\addcontentsline{toc}{section}{1.4 Conditional Probability}
 Conditional probability is one of the most important concepts in probability. It allows us to update our probability of an event based on new information. In other words, for the probability of an event $A$ given that $B$ occurred, instead of calculating the probability of an event $A$ in the entire sample space $S$, we can calculate the probability of $A$ in a smaller sample space $B$, and thus refining our probability of $A$.
 
 \begin{definition}{Conditional Probability}
@@ -791,6 +796,7 @@ The probability that all 3 balls are red is:
 \end{itemize}
 
 \subsection*{\underline{1.5 Independent Events}}
+\addcontentsline{toc}{section}{1.5 Independent Events}
 Once we started using conditional probability, we started relating events to each other. In other words, we started thinking about how the occurrence of one event affects the probability of another event. However, there are some events that are completely unrelated to each other, not influenced by each other at all. These events are called independent events.\\\\
 \begin{definition}{Independent Events}
     Two events $A$ and $B$ are independent if the occurrence of one event does not affect the probability of the other event. In other words, $A$ and $B$ are independent if:
@@ -907,4 +913,5 @@ P(A_1)P(A_2)P(A_3)P(A_4)
 \end{itemize}
 
 \end{definition}
+\underline{Note:} Section 1.6 in the textbook is Bayes' theorem which is already covered in section 1.4.
 \end{document}

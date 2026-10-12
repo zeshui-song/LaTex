@@ -267,6 +267,10 @@ Setting the two forces equal at equilibrium to determine the height of the liqui
 \[\sum F_y = 0 = 2\pi R \sigma \cos \theta - \gamma \pi R^2 h\]
 \[\implies h = \frac{2\sigma \cos \theta}{\gamma R}\]
 Note that $\theta$ is dependent on both the liquid and tube material properties. $\theta \approx 0^\circ$ for water in clean glass.
+\newpage
+\begin{center}
+    {\LARGE\bfseries Fluid Statics\par}
+\end{center}
 \section*{\fbox{2.1 Pressure at a Point}}
 Pressure is defined as the normal force per unit area at a given point acting on a given plane. However, does the orientation of the plane matter? In other words, at the same point, does pressure depend on the orientation/direction of the plane?\\\\
 Consider the following small triangular wedge of fluid mass. \textit{Since there are no shearing stresses, the only external forces acting on the mass is pressure and gravity}. (Note that the forces in the $x$ direction is not shown for simplicity)
@@ -719,19 +723,559 @@ In reality there are no inviscid fluids, since every fluid experiences shear str
 For an inviscid fluid, the only forces acting on a fluid particle are body forces (gravity) and surface forces (pressure). So the net force on a fluid particle is given by:
 \[\text{(Net pressure force on particle)} + \text{(Net gravity on particle) = \text{(Particle mass)}}\cdot\text{(Particle acceleration)}\]
 \subsection*{Coordinate System}
-
-
-
-
-
-
-
-
-
-
-
-
-
+The rectangular and cylindrical coordinate systems are commonly used.
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{3.1 Coordinate.png}
+\end{center}
+For \textbf{steady flow} (where there are no time dependences), fluid particles follow fixed \textbf{streamlines}. In other words, successive particles that pass through the same point in space will follow the same fixed path. Thus, the velocity vector of a fluid particle is always tangent to the streamline it is on.\\\\
+It is then more convenient to use a \textbf{streamline coordinate system} in terms of:
+\begin{itemize}
+    \item $s=s(t)$: the distance along the streamline from some reference point
+    \item $n$: the perpendicular distance \hl{from a reference streamline}
+    \item $\mathscr{R} = \mathcal{R}(s)$: the local radius of curvature of the streamline at $s$
+\end{itemize}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{3.1 Streamline.png}
+\end{center}
+\subsection*{Velocity and Acceleration}
+In terms of streamline coordinates, the velocity of a fluid particle is given by:
+\[\vec{V} = \frac{ds}{dt}\hat{e}_s\]
+Where $\hat{e}_s$ is the unit vector tangent to the streamline.\\\\
+The acceleration of a fluid particle in 2D flow would have two components: along the streamline $a_s$ and perpendicular to the streamline $a_n$. By definition, the streamwise acceleration is given by:
+\[a_s = \frac{dV}{dt}\]
+Generally, velocity can depend on both position and time $V = V(s,n,t)$. The multivariable chain rule gives:
+\[\frac{dV}{dt} = \frac{\partial V}{\partial t} + \frac{\partial V}{\partial s}\frac{ds}{dt} + \frac{\partial V}{\partial n}\frac{dn}{dt}\]
+However, for steady flow $\partial V/\partial t = 0$, and since we are looking at the acceleration along the streamline, $dn/dt = 0$ since the particle is not moving between streamlines. Thus, the streamwise acceleration is given by:
+\[\boxed{a_s = V\frac{\partial V}{\partial s}}\]
+The normal acceleration is given by the centripetal acceleration of the particle as it moves along a curved path:
+\[\boxed{a_n = \frac{V^2}{\mathscr{R}}}\]
+\begin{center}
+    \includegraphics[width=\textwidth]{3.1 streamline Accel.png}
+\end{center}
+Intuitively, when streamlines converge, velocity increases (by conservation of mass), and thus the streamwise acceleration is positive. When streamlines diverge, velocity decreases, and thus the streamwise acceleration is negative.
+\newpage
+\section*{\fbox{3.2 $F = ma$ along a streamline (Bernoulli Equation)}}
+Consider a small fluid particle of size $\delta s$ by $\delta n$ along a streamline and $\delta y$ normal to the plane of the streamline. 
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.2 FBD.jpeg}
+\end{center}
+Newton's second law along the streamline gives:
+\[\sum \delta F_s = \delta m\, a_s  = \delta m \,V\frac{\partial V}{\partial s} = \rho \delta \vol\, V \frac{\partial V}{\partial s}\]
+Where $\delta \vol = \delta s \delta n \delta y$ is the volume of the fluid particle. Note that this equation is valid for both compressible and incompressible fluids since the density $\rho$ is not assumed to be constant.
+\subsection*{Sum of Forces along a streamline}
+For inviscid flow, the only forces acting on a fluid particle are body forces (gravity) and surface forces (pressure). Shear forces are zero ($\tau \delta s\delta y = 0$).\\\\
+The weight of the fluid particle is given by:
+\[\delta \mathcal{W} = \rho g \delta \vol = \gamma \delta \vol\]
+\[\implies \delta \mathcal{W}_s = -\delta \mathcal{W}\sin\theta = -\gamma \delta \vol \sin\theta\]
+Where $\theta$ is the angle between the streamline and the horizontal.\\\\
+Suppose the pressure at the center of the particle is $p(s,n)=p$. Thus, the pressure at the front and back of the particle (located at $s\pm \delta s/2$) are given by a small change in pressure $\delta p_s$: $p(s\pm \delta s/2, n) = p \pm \delta p_s$:
+\[p(s + \Delta s) \approx p(s) + \frac{\partial p}{\partial s}\Delta s \quad \text{(first order taylor series approx)}\]
+\[\implies \delta p_s = \frac{\partial p}{\partial s}\frac{\delta s}{2}\]
+Thus the net pressure force on the particle along the streamline is given by:
+\[\delta F_{ps} = (p - \delta p_s)\delta n \delta y - (p + \delta p_s)\delta n \delta y = -2\delta p_s \delta n \delta y=  - \frac{\partial p}{\partial s} \delta s \delta n \delta y \]
+\[\implies \delta F_{ps} = -\frac{\partial p}{\partial s} \delta \vol\]
+Note that \hl{it is the pressure gradient, not the pressure itself, that produces a net force on the fluid particle.} $\nabla p = \partial p/\partial s\,\hat{e}_s + \partial p/\partial n\,\hat{e}_n$
+\begin{itemize}
+    \item $\partial p/ \partial s\,> 0$: pressure increases along the streamline, producing a force opposite to the direction of flow
+    \item $\partial p/ \partial s\,< 0$: pressure decreases along the streamline, producing a force in the direction of flow
+\end{itemize}
+Combining both the gravity and pressure forces along the streamline, we get:
+\[\sum \delta F_s = \delta \mathcal{W}_s + \delta F_{ps} = \left(-\gamma \sin\theta - \frac{\partial p}{\partial s}\right)\delta \vol\]
+Setting the sum of forces equal to the mass times acceleration, we get:
+\[\left(-\gamma \sin\theta - \frac{\partial p}{\partial s}\right)\delta \vol = \rho \delta \vol\, V \frac{\partial V}{\partial s}\]
+\[\boxed{-\gamma \sin\theta - \frac{\partial p}{\partial s}= \rho \, V \frac{\partial V}{\partial s}}\]
+Recall that $a_s = V \partial V/\partial s$ is the streamwise acceleration of the fluid particle. 
+\subsection*{Derivation of the Bernoulli Equation}
+Starting from the $F=ma$ equation along a streamline, we want to rewrite the equation in terms of differentials so that we can integrate it along a streamline $ds$.
+\[-\gamma \sin\theta - \frac{\partial p}{\partial s}= \rho \, V \frac{\partial V}{\partial s}\]
+We can do the following:
+\begin{itemize}
+    \item From the FBD before where $z$ is the vertical axis.
+    \[\sin\theta = \frac{dz}{ds}\]
+    \item From the total differential of pressure $p(s,n)$:
+    \[dp = \frac{\partial p}{\partial s}ds + \frac{\partial p}{\partial n}dn\]
+    \begin{itemize}
+        \item Recall that the multivariable chain rule gives:
+        \[\frac{dp}{dt} = \frac{\partial p}{\partial s}\frac{ds}{dt} + \frac{\partial p}{\partial n}\frac{dn}{dt}\]
+        \item Multiplying both sides by $dt$ gives:
+        \[dp = \frac{\partial p}{\partial s}ds + \frac{\partial p}{\partial n}dn\]
+        \[\frac{ds}{dt} dt = ds,\quad \frac{dn}{dt} dt = dn\]
+    \end{itemize}
+    Along a streamline $n$ is constant, so $dn = 0$, and thus
+    \[dp = \frac{\partial p}{\partial s}ds \implies \frac{dp}{ds} = \frac{\partial p}{\partial s}\]
+        \item Similarly, velocity is a multivariable function $v(s,n)$ and along a streamline $n$ is constant, so we can write:
+        \[\frac{dV}{dt} = \frac{\partial V}{\partial s}\frac{ds}{dt} + \frac{\partial V}{\partial n}\frac{dn}{dt}\]
+        Since $dn = 0$ along a streamline, we get:
+        \[\frac{dV}{ds} = \frac{\partial V}{\partial s}\]
+        Thus, we can rewrite the streamwise acceleration as:
+    \[a_s = V\frac{\partial V}{\partial s} = V\frac{dV}{ds}=\frac{1}{2}\frac{d}{ds}(V^2)\]
+\end{itemize}
+\textbf{Differential form of the Bernoulli Equation}\\
+Putting it all together, we can write the differential form of the Bernoulli Equation as:
+\[-\gamma \frac{dz}{ds} - \frac{dp}{ds} = \frac{1}{2}\rho \frac{d(V^2)}{ds}\]
+Multiplying through by $ds$ gives:
+\[\boxed{dp + \frac{1}{2}\rho d(V^2) + \gamma dz = 0}\]
+\underline{Note:} To get to this point we had to make the following assumptions:
+\begin{itemize}
+    \item Net forces: no shear stresses (inviscid flow), only pressure and gravity forces
+    \item Streamwise acceleration: steady flow $\partial V/\partial t = 0$
+    \item Along a streamline: $dn = 0$ (no motion between streamlines)
+\end{itemize}
+\newpage
+\textbf{Integral form of the Bernoulli Equation}\\
+Divide the differential form by $\rho$, the indefinite integral gives:
+\[\int \frac{dp}{\rho} + \int \frac{1}{2} d(V^2) + \int g dz = C\]
+\[\boxed{\int \frac{dp}{\rho} + \frac{1}{2} V^2 +  gz = C}\]
+We generally can't get rid of the integral $\int dp/\rho$ since $\rho$ is not a constant. For example, for an ideal gas, $\rho = p/RT$.\\\\
+However, for an \hl{incompressible fluid}, $\rho$ is constant, and thus we can write:
+\[\boxed{p + \frac{1}{2}\rho V^2 + \gamma z = \text{constant along a streamline}}\]
+\section*{\fbox{3.3 $F = ma$ normal to a streamline}}
+In section 3.2, we looked at how forces along a streamline affects a fluid particle's speed. In this section, we will apply the same Newton's second law approach to explain how forces normal to a streamline \textit{changes the direction of a fluid particle's velocity}.\\\\
+Recall from section 3.1 that the normal acceleration of a fluid particle for steady flow is given by:
+\[a_n = \frac{V^2}{\mathscr{R}}\]
+with a direction towards the center of curvature of the streamline.
+\begin{center}
+    \includegraphics[width=0.2\textwidth]{3.3 normal accel.png}
+\end{center}
+Then Newton says:
+\[\sum \delta F_n = \delta m \frac{V^2}{\mathscr{R}} = \rho \delta \vol \frac{V^2}{\mathscr{R}}\]
+\newpage
+\subsection*{Sum of Forces normal to a streamline}
+Consider the same FBD of a fluid particle as in section 3.2:
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.2 FBD.jpeg}
+\end{center}
+Again, assuming inviscid flow, the only forces acting on the fluid particle are gravity and pressure forces.\\\\
+The component of the weight in the normal direction is given by:
+\[\delta \mathcal{W}_n = -\delta \mathcal{W}\cos\theta  = -\gamma \delta \vol \cos\theta \]
+Similarly to the previous section, letting the pressure at the center of the particle be $p(s,n) = p$, the pressure at the top and bottom of the particle (located at $n\pm \delta n/2$) are given by a small change in pressure $\delta p_n$: $p(s,n\pm \delta n/2) = p \pm \delta p_n$:
+\[p(s,n + \Delta n) \approx p(s,n) + \frac{\partial p}{\partial n}\Delta n \quad \text{(first order taylor series approx)}\]
+\[\implies \delta p_n = \frac{\partial p}{\partial n}\frac{\delta n}{2}\]
+Thus the net pressure force on the particle in the normal direction is given by:
+\[\delta F_{pn} = (p - \delta p_n)\delta s \delta y - (p + \delta p_n)\delta s \delta y = -2\delta p_n \delta s \delta y=  - \frac{\partial p}{\partial n} \delta s \delta n \delta y \]
+\[\delta F_{pn} = -\frac{\partial p}{\partial n} \delta \vol\]
+The sum of forces in the normal direction is then given by:
+\[\sum \delta F_n = \delta \mathcal{W}_n + \delta F_{pn} = \left(-\gamma \cos\theta - \frac{\partial p}{\partial n}\right)\delta \vol\]
+Setting the sum of forces equal to the mass times acceleration, we get:
+\[\left(-\gamma \cos\theta - \frac{\partial p}{\partial n}\right)\delta \vol = \rho \delta \vol \frac{V^2}{\mathscr{R}}\]
+Canceling $\delta \vol$ and substituting $\cos\theta = dz/dn$ gives:
+\[\boxed{-\gamma \frac{dz}{dn} - \frac{\partial p}{\partial n} = \rho \frac{V^2}{\mathscr{R}}}\]
+This is the \textbf{normal equation of motion} for steady inviscid flow. It shows the pressure gradient and gravitational force that is required to keep a fluid particle moving along a curved streamline.
+\subsection*{Special Case}
+In the case where gravity is negligible compared to pressure forces (often the case for gases), $\gamma \approx 0$. Alternatively, if the flow is horizontal, $dz/dn = 0$, and gravity has no component normal to the streamline. In either case, the normal equation of motion reduces to:
+\[\frac{\partial p}{\partial n} = - \rho \frac{V^2}{\mathscr{R}}\]
+\textbf{Horizontal Flow}\\
+Horizontal flow is interesting because it explains the pressure distribution required to sustain curved fluid motion, such as in vortexes.\\\\
+Consider a top-down view of the fluid motion of a vortex at a constant height $z$. Because $V$, $\rho$, and $\mathscr{R}$ are all positive, this means that $\partial p/\partial n < 0$, and thus the pressure decreases as $n$ increases (as we move towards the center of curvature). This is why the pressure inside a tornado tends to be lower than the pressure outside the tornado.
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.3 Horiz Flow.png}
+\end{center}
+\subsection*{Integrating across streamlines}
+Like before in section 3.2 we can integrate the Newton's second law equation by writing it in terms of differentials. Starting from:
+\[-\gamma \frac{dz}{dn} - \frac{\partial p}{\partial n} = \rho \frac{V^2}{\mathscr{R}}\]
+Using the total differential of pressure, now with $s$ constant ($ds = 0$), we can say that
+\[\frac{\partial p}{\partial n} = \frac{dp}{dn}\]
+Thus, we can write the normal equation of motion in terms of differentials as:
+\[-\gamma dz - dp = \rho \frac{V^2}{\mathscr{R}}dn\]
+The indefinite integral gives:
+\[\boxed{\int \frac{dp}{\rho} + \int \frac{V^2}{\mathscr{R}}dn + gz = \text{constant across the streamline}}\]
+\underline{Note:} To get to this point we had to make the following assumptions:
+\begin{itemize}
+    \item Net forces: no shear stresses (inviscid flow), only pressure and gravity forces
+    \item Normal acceleration: steady flow $\partial V/\partial t = 0$
+    \item Across a streamline: $ds = 0$ (only motion between streamlines)
+\end{itemize}
+For an \hl{incompressible fluid}, $\rho$ is constant, and thus we can write:
+\[\boxed{p + \rho \int \frac{V^2}{\mathscr{R}}dn + \gamma z = \text{constant across the streamline}}\]
+We cannot get rid of the integral $\int V^2/\mathscr{R} dn$ since $V$ and $\mathscr{R}$ are not constant across streamlines.\\\\
+Duck:
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{duck.png}
+\end{center}
+\newpage
+\section*{\fbox{\parbox{0.9\textwidth}{3.4 Physical interpretations and alternate forms of the Bernoulli equation}}}
+In sections 3.2 and 3.3, we have derived the basic governing equations for inviscid flow along and across streamlines.
+\begin{figure}[h]
+    \centering
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \[
+        p+\frac{1}{2}\rho V^2+\gamma z
+        =\text{constant along the streamline}
+        \]
+        \vspace{1cm}
+        \[
+        p+\rho\int\frac{V^2}{\mathscr{R}}\,dn+\gamma z
+        =\text{constant across the streamline}
+        \]
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{3.4 gov eqns.png}
+    \end{minipage}
+\end{figure}
+Both require \hl{steady, inviscid, incompressible flow}
+\subsection*{Bernoulli's equation as the work-energy principle}
+Recall the work-energy principle:
+\[W_\text{net} = \Delta KE\]
+The work done on a mass by a net force is equal to the change in kinetic energy of the mass.\\\\
+When we integrated the Newton's second law equation along a streamline, we essentially found the net work since $W = \int \vec{F}\cdot d\vec{s}$. The work done by the pressure and gravity forces on a fluid particle is equal to the change in kinetic energy of the fluid particle.
+\[p+\frac{1}{2}\rho V^2+\gamma z =\text{constant along the streamline}\]
+Dividing through by $\rho$ gives:
+\[\frac{p}{\rho}+\frac{V^2}{2}+gz =\text{constant along the streamline}\]
+Each term now has units of \hl{energy per unit mass}:
+\[\left[\unit{\joule\per\kilogram}\right]= \left[\unit{\meter\squared\per\second\squared}\right]\]
+\newpage
+Where:
+\begin{itemize}
+    \item $p/\rho$ is the pressure related work per unit mass
+    \item $V^2/2$ is the kinetic energy per unit mass
+    \item $gz$ is the gravitational potential energy per unit mass
+\end{itemize}
+Alternatively, we can divide through by $\gamma$ to get:
+\[\frac{p}{\gamma} +\frac{V^2}{2g} + z = \text{constant along the streamline}\]
+Each term now has units of energy per unit weight: $LF/F = L$ (\textit{\hl{head} in units of length})\\\\
+Where:
+\begin{itemize}
+    \item \textbf{Pressure head}: the height of a fluid column that would produce the pressure $p$ at the base of the column
+    \[\frac{p}{\gamma} = h_p\]
+    \item \textbf{Velocity head}: the height through which a fluid must fall to reach a final speed of $V$ (neglecting frictional effects)
+    \[\frac{V^2}{2g} = h_v\]
+    \item \textbf{Elevation head}: the height of the fluid particle relative to some reference point/datum
+    \item \textbf{Total head}: the sum of the pressure, velocity, and elevation heads
+    \[h_\text{total} = h_p + h_v + z\]
+\end{itemize}
+\subsection*{Physical interpretation of the normal equation of motion}
+Unlike the Bernoulli equation along a streamline, the normal equation of motion describes the pressure and gravity needed to maintain a curved streamline. 
+\[p+\rho\int\frac{V^2}{\mathscr{R}}\,dn+\gamma z =\text{constant across the streamline}\]
+\textbf{Special case: Straight streamlines}\\
+If the streamlines are straight, then $\mathscr{R} \to \infty$, and thus the integral term goes to zero $V^2/\mathscr{R} \to 0$.\\\\
+The normal equation of motion reduces to:
+\[p+\gamma z = \text{constant across the streamline}\] 
+Or in between two points across streamlines:
+\[p_1 + \gamma z_1 = p_2 + \gamma z_2\]
+This is just the hydrostatic pressure distribution, even though the fluid is moving!\\\\
+This happens because when there is no normal acceleration, the net force in the normal direction is zero, and thus the pressure gradient must balance the gravitational force.
+\section*{\fbox{\parbox{0.9\textwidth}{3.5 Static, stagnation, dynamic, and total pressure}}}
+This section introduces different types of pressure associated with fluid motion, explains how kinetic energy can be converted into a pressure rise, and shows how Pitot-static tubes measure fluid velocity.
+\subsection*{Types of pressure}
+Recall Bernoulli's equation along a streamline:
+\[p + \frac{1}{2}\rho V^2 + \gamma z = \text{constant along the streamline}\]
+We have the following pressures:
+\begin{itemize}
+    \item \textbf{Static pressure}: the actual pressure of the fluid at a point in space
+    \[p\]
+    \item \textbf{Dynamic pressure}: the pressure representing the kinetic energy per unit volume of the fluid. It is also equivalent to the \hl{pressure rise} that would occur if the fluid were brought to rest without frictional losses (isentropically).
+    \[\frac{1}{2}\rho V^2\]
+    \item \textbf{Stagnation pressure}: the pressure at a point in the fluid where the velocity is zero (stagnation point). It is the sum of the static and dynamic pressures.
+    \[p_0 = p + \frac{1}{2}\rho V^2\]
+    \item \textbf{Total pressure}: the sum, or the total ... pressure... (yeah)
+    \[p + \frac{1}{2}\rho V^2 + \gamma z\]
+\end{itemize}
+All four pressures have units of ... pressure ... (force per unit area).\\\\
+\begin{minipage}[c]{0.65\textwidth}
+    Note that for any stationary body placed into a flowing liquid, there would be a stagnation point that divides where the flow splits into two paths around the body.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{3.5 Stagnation point.png}
+\end{minipage}
+\newpage
+\hl{If elevation effects are negligible ($\gamma z \approx 0$), then the stagnation pressure would be the largest possible pressure along a given streamline.} This is because it represents the conversion of all the kinetic energy into a pressure rise.\\\\
+\textbf{Note on Static Pressure Measurement}\\
+Consider the following set up where we measure the static pressure within a flowing fluid using a \textbf{piezometer tube}:
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{3.5 static pressure.jpeg}
+\end{center}
+To find the static pressure at point 1, we can use the following manometer relations:
+\begin{itemize}
+\item From 3.4, we know that for straight streamlines, the pressure distribution is hydrostatic, thus
+\[p_1 = p_3 + \gamma h_{3-1}\]
+\item Using manometer rules, we know that the pressure at point 3 is given by:
+\[p_3 = \gamma h_{4-3}, \quad \text{(gage pressure)}\]
+\item Thus, putting it together:
+\[p_1 = \gamma h_{4-3} + \gamma h_{3-1} = \gamma h\]
+Where $h$ is the height from point 1 to the free surface of the piezometer tube.
+\end{itemize}
+\underline{Note:} The piezometer tube must have a smooth hole with no burrs or imperfections. Otherwise, some of the fluid's kinetic energy will be converted into a pressure rise at the point of measurement.
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.5 Pressure taps.jpeg}
+\end{center}
+\textbf{Static vs Dynamic Pressure}\\
+The static and dynamic pressure can be visualized below:
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.5 Dynamic Pressure.png}
+\end{center}
+Note that the height difference (using notation from the previous example) between the static pressure and stagnation pressure is given by:
+\[H-h = \frac{V^2}{2g}\]
+This is the velocity head from section 3.4 !
+\subsection*{Pitot-static tube}
+By knowing both the static and stagnation pressures, we can calculate the velocity of the fluid at a point. It is composed of \hl{two concentric tubes}, whose pressures $p_3$ and $p_4$ are measured separately or as a difference $p_3-p_4$ with a differential gage.
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{3.5 Pitot.png}
+\end{center}
+\newpage
+Unrelated to the problem set up shown previously, this shows the two concentric tubes of a Pitot-static tube a bit better:
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{3.5 Pitot ex.jpg}
+\end{center}
+Back to the problem. Assuming negligible elevation changes between points 1,2,3,4:\\\\
+The center tube measures the stagnation pressure at point 2. 
+\[p_3  = p + \frac{1}{2}\rho V^2\]
+Where $p$ and $V$ are the static pressure and velocity of the \hl{fluid upstream from point 2}.\\\\
+The outer tube is made of several holes at an appropriate distance from the tip (so that the streamlines are straight) to measure the static pressure at point 1. 
+\[p_4 = p_1 = p\]
+Assuming negligible elevation changes and properly positioned static pressure holes, the measured static pressure equals the undisturbed upstream static pressure.\\\\
+Combining the two equations gives:
+\[p_3 - p_4 = \frac{1}{2}\rho V^2\]
+\[\boxed{V = \sqrt{\frac{2(p_3 - p_4)}{\rho}}}\]
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.5 Pitot distribution.jpeg}
+\end{center}
+\subsection*{Directional Pitot Tubes}
+Since we are finding the stagnation pressure at a point along the streamline, the Pitot tube must be aligned with the flow. Typically, yaw angles up to $12-20^\circ$ depending on the design of the Pitot tube are acceptable (<1\% error). However, for larger yaw angles, the Pitot tube must be aligned with the flow to get an accurate measurement of the stagnation pressure.\\\\
+Consider the following example of a directional Pitot tube:
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.5 Directional Pitot.jpeg}
+\end{center}
+This can be rotated to align with the flow \hl{until the side hole pressures are equal}: $p_1 = p_3$. When the center hole faces the flow, the flow and pressure distribution are symmetric about the centerline (stagnation point).\\\\
+Having found the angle such that $\theta = 0$, we can then calculate the velocity of the flow like before.
+\section*{\fbox{{3.6 Examples of use of the Bernoulli equation}}}
+This section applies Bernoulli's equation to three major types of flow: free jets, confined flows, and flow rate measurement. It also introduces the vena contracta effect, cavitation, and the continuity equation.\\\\
+The general approach for a steady, inviscid, incompressible flow along a streamline is to apply Bernoulli's equation between two points along the streamline:
+\[p_1 + \frac{1}{2}\rho V_1^2 + \gamma z_1 = p_2 + \frac{1}{2}\rho V_2^2 + \gamma z_2\]
+Typically, we need to use additional equations to solve for the unknowns, such as the continuity equation (conservation of mass). More importantly, we need to be able to identify two convenient points along a streamline and identifying which terms can be simplified or neglected.
+\subsection*{Free Jets}
+A free jet is fluid discharged into a surrounding medium, typically the atmosphere, without being confined by solid walls.
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.6 Free Jet.jpeg}
+\end{center}
+Applying Bernoulli's equation between points 1 (free surface) and 2 (nozzle exit), we have the following simplifications:
+\begin{itemize}
+    \item Both points are exposed to the atmosphere, so $p_1 = p_2 = 0$ (gage pressure)
+    \item The reservoir area is much larger than the nozzle area, so the velocity at the free surface is negligible $V_1 \approx 0$
+    \item Define the nozzle exit as the elevation datum, so $z_1= h$ and $z_2 = 0$
+\end{itemize}
+Thus, Bernoulli's equation reduces to:
+\[\gamma h = \frac{1}{2}\rho V_2^2 \implies \boxed{V_2 = \sqrt{2gh}}\]
+This is also known as Torricelli's law. This is also the same result found by converting the potential energy of the fluid in the reservoir into kinetic energy at the nozzle exit.\\\\
+\underline{Note:} The velocity at the nozzle exit can also be found using points 2 and 3. Using the following:
+\begin{itemize}
+    \item $z_3 = \ell$
+    \item $V_3 = 0$ since it is far from the nozzle exit. Near the nozzle, streamlines converge and the fluid accelerates. Farther away, the flow is much slower.
+    \item $p_3 = \gamma (h-\ell)$ from hydrostatic pressure distribution
+\end{itemize}
+\textbf{Why is exit pressure atmospheric?}\\
+Consider the normal equation of motion from section 3.3:
+\[-\gamma \frac{dz}{dn}-\frac{\partial p}{\partial n} = \rho \frac{V^2}{\mathscr{R}}\]
+or its integral form:
+\[p+ \rho \int \frac{V^2}{\mathscr{R}}\,dn + \gamma z = \text{constant across the streamline}\]
+Since the streamlines are straight at the nozzle exit, $\mathscr{R} \to \infty$, and thus the integral term goes to zero. Also, the height $z$ is constant across the nozzle exit, so $dz/dn = 0$ and $\gamma z = \text{constant}$. Thus, the normal equation of motion reduces to:
+\[\frac{\partial p}{\partial n} = 0 \]
+\[p = \text{constant across the nozzle exit}\]
+We know that the pressure at the surface of the jet is atmospheric, and since pressure is \textit{constant across the nozzle exit}, the pressure at the center of the jet must also be atmospheric. Thus, $p_2 = 0$ (gage pressure).\\\\
+\underline{Note:} For a horizontal streamline, $z$ is no longer constant and $dz/dn \neq 0$. Thus, the pressure at the center of the jet should be given by the hydrostatic pressure distribution $p + \gamma z = C$. However, since the top and bottom of the jet are exposed to the atmosphere, and the exit nozzle diameter is small (small changes in $z$), the pressure at the center of the jet is approx equal to the atmospheric pressure.\\\\
+We can see this in how the streamlines of a horizontal free jet will tend to bend downwards due to gravity, thus resulting in a finite $\mathscr{R}$ even if the pressure is constant (zero pressure gradient $\partial p/\partial n = 0$).\\\\
+\textbf{Ven Contracta Effect}\\
+Continuing our lovely discussion on horizontal free jets, consider the following example:
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{3.6 horz free jet.jpeg}
+\end{center}
+The fluid velocity across the jet is not uniform with $V_1 < V_2 < V_3$, where $V_2$ is the velocity at the center of the jet. This is due to increasing pressure as a result of elevation changes across the jet. In general, since $d<<h$, we can call $V_2$ the approximate \hl{average velocity} of the jet.\\\\
+If the exit is not a smooth, well-contoured nozzle, but rather a sharp-edged opening, the diameter of the jet $d_j$ will be smaller than the diameter of the hole $d_h$. This is known as the \textbf{vena contracta effect}. This is a \hl{result of the inability of the fluid to make sharp right turns, and instead needing to follow a curved path}.
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{3.6 Vena Contracta.jpeg}
+\end{center}
+Since the streamlines at the exit hole are curved (finite $\mathscr{R}$), the pressure across them is not constant. Recall the normal equation of motion:
+\[-\gamma \frac{dz}{dn}-\frac{\partial p}{\partial n} = \rho \frac{V^2}{\mathscr{R}}\]
+For negligible graviatational effects, $\gamma \approx 0$, and thus the pressure gradient is given by:
+\[\frac{\partial p}{\partial n} = - \rho \frac{V^2}{\mathscr{R}}\]
+It can be seen that it would take an infinite pressure gradient across the streamlines to make the fluid turn a sharp right angle. \[\mathscr{R} \to 0 \implies a_n = \frac{V^2}{\mathscr{R}} \to \infty \implies \bigg|\frac{\partial p}{\partial n}\bigg| \to \infty\]
+Thus, a finite pressure gradient cannot produce the infinite acceleration needed for an instantaneous sharp turn. The streamlines must curve.\\\\
+\textbf{Why is pressure highest at the centerline?}\\
+At the exit, there is a finite radius of curvature $\mathscr{R}$, with corresponding centers of curvature outside the jet. Similar to the argument for horizontal flow in section 3.3, the pressure gradient is negative, and thus for increasing $n$ (towards the center of curvature, away from the centerline), the pressure decreases. Thus, the pressure is highest at the centerline of the jet ($p_2$). The lowest pressure is at the edge of the jet, where the pressure is equal to the atmospheric pressure ($p_1=p_3=0$).
+This is consistent with our argument for \textit{straight horizontal streamlines}, where the pressure distribution is hydrostatic, and the pressure is highest at the centerline.\\\\
+\textbf{What happens at the vena contracta?}\\
+Further downstream, after section $a-a$, the streamlines straighten out and reaches its minimum diameter $d_j$. The radius of curvature $\mathscr{R} \to \infty$, and thus the pressure gradient across the streamlines goes to zero, leaving only the gravitational effects $\gamma dz/dn$. Neglecting gravitational effects, the pressure across the streamlines is constant.\\\\
+\textbf{Contraction Coefficient}\\
+Okay, enough with the theory. Let's quantify the vena contracta effect. The contraction coefficient $C_c$ is defined as the ratio of the cross-sectional area of the jet at the vena contracta $A_j$ to the hole $A_h$:
+\[\boxed{C_c = \frac{A_j}{A_h}}\]
+For circular cross-sections, this can be expressed in terms of diameters:
+\[\boxed{C_c = \frac{d_j^2}{d_h^2}}\]
+Experimentally, the coefficients were found for some common geometries:
+\begin{center}
+    \includegraphics[width=\textwidth]{3.6 contraction coefficient.png}
+\end{center}
+\subsection*{Confined Flows}
+Unlike free jets, confined flows are constrained by solid walls, such as in pipes and nozzles. For these situations it is necessary to use the conservation of mass (the continuity equation) along with the Bernoulli equation.\\\\
+\textbf{Conservation of mass: Continuity equation}\\
+The continuity equation states that the mass flow rate into and out of a control volume must be equal for steady flow (no accumulation of mass, everything that goes in must come out). The \hl{mass flowrate} is given by:
+\[\dot{m} = \rho \dot{\vol}=\rho A V\]
+Where $[\dot{m}] = \unit{\slug \per \second},\, \unit{\lbm \per \second},\, \unit{\kg \per \second}$ and $[\dot{\vol}] = \unit{\cubic\foot\per\second},\, \unit{\cubic\meter\per\second}$ are the mass and volumetric flowrates, respectively.\\\\
+$A$ is the cross-sectional area of the flow, and $V$ is the average velocity of the flow normal to the cross-section.\\\\
+For steady flow with one inlet and one outlet:
+\[\boxed{\rho_1 A_1 V_1 = \rho_2 A_2 V_2}\]
+\newpage
+For incompressible flow, $\rho_1 = \rho_2$, and thus we can write:
+\[\boxed{A_1 V_1 = A_2 V_2}\]
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.6 Continuity.png}
+\end{center}
+Physically, this means that if the cross-sectional area of the flow decreases, the average velocity must increase to maintain a constant mass flowrate. Recalling the Bernoulli equation along a streamline for horizontal flow ($z_1 = z_2$):
+\[p_1 + \frac{1}{2}\rho V_1^2 = p_2 + \frac{1}{2}\rho V_2^2\]
+\hl{If the velocity increases, the pressure must decrease!} So smaller flow area produces higher velocity and lower static pressure (total energy is conserved or smth).\\\\
+\textbf{Cavitation}\\
+Since an increase in velocity results in a decrease in pressure, if the differences in velocity are considerable, then the differences in pressure can be considerable as well (big). For gasses, this could lead to compressibility effects, but for liquids, this could lead to cavitation.\\\\
+\hl{Cavitation occurs when the liquid pressure drops below the vapor pressure and the liquid "boils".}\\\\
+When the fluid then moves into a higher pressure region (lower velocity), the vapor bubbles can collapse violently, causing damage to the surrounding solid surfaces.
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{3.6 Cavitation.jpeg}
+\end{center}
+\hl{\textbf{IMPORTANT}: Use absolute pressure when comparing a liquid's pressure with its vapor pressure!}
+\subsection*{Flowrate measurement}
+Flowmeters use the relationship between velocity and pressure to measure the flowrate through a pipe. One such device is the pitot-static tube from section 3.5.\\\\
+A different approach to the pitot-static tube is to instead place some type of restriction within the pipe and to measure the pressure difference between the low-velocity, high-pressure upstream section (1) and the high-velocity, low-pressure downstream section (2). Below are some common types of flowmeters that use this approach:
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{3.6 Flowmeters.jpeg}
+\end{center}
+\textbf{Flowmeter Equation}\\
+For horizontal flow, we can apply Bernoulli's equation between points 1 and 2:
+\[p_1 + \frac{1}{2}\rho V_1^2 = p_2 + \frac{1}{2}\rho V_2^2\]
+Rearranging gives:
+\[p_1 - p_2 = \frac{1}{2}\rho (V_2^2 - V_1^2)\]
+From the continuity equation:
+\[V_1 = \frac{A_2}{A_1} V_2\]
+Plug in:
+\[p_1 - p_2 = \frac{1}{2}\rho V_2^2\left(1 - \frac{A_2^2}{A_1^2}\right)\]
+Solve for $V_2$ and use $\dot{\vol} = Q = A_2 V_2$ to get the flowrate:
+\[\boxed{Q = A_2 V_2 = A_2 \sqrt{\frac{2(p_1 - p_2)}{\rho\left(1 - \left(\frac{A_2}{A_1}\right)^2\right)}}}\]
+Thus, the ideal flowmeter for a fixed geometry and fluid density has the relationship: \hl{$Q \propto \sqrt{\Delta p}$}.
+\subsection*{Flowrate measurement in open channels}
+We can also derive the flowrate relationship for open channel flow (not quite free jet or confined flow). Two of these devices, the sluice gate and the sharp-crested weir, are discussed next under the assumption of steady, inviscid, incompressible flow.\\\\
+\textbf{Sluice Gate}
+\begin{center}
+    \includegraphics[width=0.55\textwidth]{3.6 Sluice.jpeg}
+\end{center}
+Applying Bernoulli's equation between free surfaces at 1 and 2:
+\[p_1 + \frac{1}{2}\rho V_1^2 + \gamma z_1= p_2 + \frac{1}{2}\rho V_2^2 + \gamma z_2\]
+If the gate and channel width are equal, then $A_1 = bz_1$ and $A_2 = bz_2$, and thus from the continuity equation:
+\[Q = A_1 V_1 = A_2 V_2 \implies bV_1z_1 = bV_2z_2\]
+With $p_1=p_2 = 0$ (gage pressure), we get:
+\[\boxed{Q = z_2 b \sqrt{\frac{2g(z_1 - z_2)}{1 - \left(\frac{z_2}{z_1}\right)^2}}}\]
+If $z_1 >> z_2$, then $z_2/z_1 \approx 0$, and thus we can simplify to:
+\[\boxed{Q \approx z_2 b \sqrt{2g(z_1 - z_2)}}\]
+\underline{Note:} \hl{The downstream depth $z_2$, not the gate opening $a$ was used because of the vena contracta effect.} $C_c = z_2/a \approx 0.61$ for a sluice gate, this is valid for the range $0< a/z_1< 0.2$.\\\\
+\textbf{Weird Weir}
+\begin{center}
+    \includegraphics[width=0.55\textwidth]{3.6 Weir.jpeg}
+\end{center}
+Its weird, so we cannot calculate the flowrate accurately, what can ya do?\\\\
+Instead, we can assume that weir flow is similar to free jet flow, where the \textit{average} velocity is proportional to $V_{avg} \propto \sqrt{2gH}$ and the flow area for this rectangular weir to be $A = bH$. Thus, we can write:
+\[Q = C_1 Hb \sqrt{2gH} = C_1 b \sqrt{2g} \,H^{3/2}\]
+Where $C_1$ is an unknown constant. (So fucking weird)
+\section*{\fbox{{3.7 The energy line and the hydraulic grade line}}}
+This section introduces two graphical interpretations of Bernoulli's equation: the energy line (EL) and the hydraulic grade line (HGL).
+\subsection*{Definitions}
+\begin{itemize}
+    \item \textbf{Energy line (EL)}: a line that represents the total energy of the fluid at a point in space, the same as the total head in Bernoulli's equation. 
+    \[EL = H = \frac{p}{\gamma} + \frac{V^2}{2g} + z\]
+    \item \textbf{Hydraullic grade line (HGL)}: a line that represents the pressure and elevation heads of the fluid at a point in space. It is the energy line minus the velocity head.
+    \[HGL = \frac{p}{\gamma} + z\]
+\end{itemize}
+\[EL - HGL = \frac{V^2}{2g}\]
+\subsection*{Energy Line}
+For steady, inviscid, incompressible flow along a streamline, the energy line is constant ($H = \text{constant}$).\\\\
+However, viscous losses (friction) and other energy losses can cause the energy line to drop along the streamline.
+\subsection*{Hydraullic Grade Line}
+Rewriting for hydraulic grade line in terms of the energy line:
+\[HGL = EL - \frac{V^2}{2g}\]
+Since the energy line is constant for an ideal flow, the hydraulic grade line is dependent on the velocity head. Thus:
+\begin{itemize}
+    \item Increasing velocity lowers the HGL
+    \item Decreasing velocity raises the HGL
+    \item Constant velocity keeps the HGL a constant offset below the EL, assuming ideal flow
+\end{itemize}
+Rewriting for pressure along a streamline in terms of the hydraulic grade line:
+\[\frac{p}{\gamma} = HGL - z\]
+Thus, the vertical distance between the streamline elevation and the hydraulic grade line is equal to the pressure head. This means that:
+\begin{itemize}
+    \item If streamline is below the HGL, then $p>0$
+    \item If streamline is on the HGL, then $p=0$
+    \item If streamline is above the HGL, then $p<0$
+\end{itemize}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.7 HGL.jpeg}
+\end{center}
+\subsection*{How the lines are measured}
+\begin{itemize}
+    \item Pitot-static tube: measures stagnation pressure, allowing the energy line elevation to be determined
+    \item Piezometer tube: measures static pressure head, allowing the hydraulic grade line elevation to be determined
+\end{itemize}
+\textbf{Example:}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{3.7 example EL HGL.jpeg}
+\end{center}
+\underline{Note:} Review Example 3.7.1
+\section*{\fbox{{3.8 Restrictions on use of the Bernoulli equation}}}
+We are super familiar with the Bernoulli equation for steady, inviscid, incompressible flow along a streamline:
+\[p + \frac{1}{2}\rho V^2 + \gamma z = C\]
+\subsection*{Compressibility}
+While assuming incompressible flow is valid for most liquids, it is generally not valid for gasses where density can change significantly with pressure.\\\\
+From the definition of the bulk modulus $E_\nu$:
+\[\frac{d\rho}{\rho} = \frac{dp}{E_\nu}\]
+For a finite change in density, we can write:
+\[\frac{\Delta \rho}{\rho} = \frac{\Delta p}{E_\nu}\]
+\hl{If we define the (arbitrary) criteria that an 4.5\% density change is significant,} we can model the fluid as incompressible when:
+\[\frac{\Delta \rho}{\rho} \leq 0.045\]
+\textbf{Isothermal Flow}\\
+When the temperature of an ideal gas is constant along a streamline, $E_\nu = p$, and thus the incompressible flow assumption is valid when:
+\[\frac{\Delta \rho}{\rho} = \frac{\Delta p}{p} \leq 0.045\]
+\hl{This criterion should be used with caution because most isothermal flows are accompanied by viscous effects.}\\\\
+\textbf{Isentropic Flow}\\
+When an ideal gas has constant entropy along a streamline (no heat transfer or friction), $E_\nu = kp$, where $k$ is the ratio of specific heats. Thus, the incompressible flow assumption is valid when:
+\[\frac{\Delta \rho}{\rho} = \frac{\Delta p}{kp} \leq 0.045\]
+For air, $k = 1.4$:
+\[\implies \frac{\Delta p}{p} \leq (0.045)(1.4) = 0.063\]
+Note that the Bernoulli equation derived for steady, inviscid flow \hl{is an isentropic process!} Thus, we can relate the difference in pressure (with negligible elevation change) to the fluid velocity:
+\[\Delta p = \frac{1}{2}\rho V^2\]
+\[\implies \frac{\rho V^2}{p} \leq 0.126\]
+For air at standard conditions, this corresponds to a velocity of $V \leq 102 \unit{\meter\per\second} \approx 350 \unit{\foot \per \second}$ or $\text{Ma} \leq 0.3$. Thus, the incompressible flow assumption is valid for air at standard conditions when it is moving at subsonic speeds.\\\\
+\underline{Note}: \hl{USE ABSOLUTE PRESSURES, THESE ARE IN TERMS OF IDEAL GASES}
+\subsection*{Unsteady Effects}
+Recall the full streamwise acceleration is given as:
+\[a_s = \frac{\partial V}{\partial t} + V \frac{\partial V}{\partial s}\]
+For steady flow,
+\[\frac{\partial V}{\partial t} = 0\]
+However, for unsteady flow, we will need to account for the local acceleration term $\partial V/\partial t$. Thus, if we repeat the derivation for Newton's second law along a streamline keeping the local acceleration term, we will get a modified Bernoulli equation:
+\[\rho \frac{\partial V}{\partial t} ds + dp+\frac{1}{2}\rho\,d(V^2)+ \gamma dz = 0 \quad \text{(along a streamline)}\]
+For an incompressible flow between two points along a streamline, we can integrate to get:
+\[p_1 + \frac{1}{2}\rho V_1^2 + \gamma z_1 = p_2 + \frac{1}{2} \rho V_2^2 + \gamma z_2+ \rho \int_{s_1}^{s_2} \frac{\partial V}{\partial t} \,ds  \quad \text{(along a streamline)}\]
+\underline{Note:} 
+\begin{itemize}
+    \item If flow conditions change slowly with time, then the local acceleration term is negligible, and steady flow is a good approximation.
+    \item Reference frame: a flow that is unsteady in one reference frame may be steady in another reference frame. Look at example 3.8.2 
+\end{itemize}
+\subsection*{Rotational Effects}
+Care must be used in applying the Bernoulli equation across streamlines.\\\\
+For steady, inviscid, incompressible flow, Bernoulli applies along an individual streamline (our old friend):
+\[p + \frac{1}{2}\rho V^2 + \gamma z = C\]
+\hl{However, different streamlines may have different constants}
+\[C_1 \neq C_2\]
+(so we cannot apply Bernoulli across streamlines without additional considerations).\\\\
+If the flow is also \hl{irrotational} (the fluid particles do not "spin" as they move), the Bernoulli constant is the same throughout the connected flow region:
+\[C_1 = C_2=C\]
+However, if the flow is rotational (the fluid particles spin as they move), then the Bernoulli equation is restricted to flow along a streamline.\\\\
+Mathematically, the flow is irrotational if the curl of the velocity field is zero:
+\[\nabla \times \vec{V} = 0\]
+\subsection*{Other Restrictions}
+\textbf{Viscous Effects}\\
+Mentioned briefly previously for energy line in section 3.7, when viscous effects are significant, mechanical energy is dissipated and the total head is not constant along a streamline. 
+\[H_1 \neq H_2\]
+\textbf{Pumps and Turbines}\\
+Like the issue with viscous effects, pumps and turbines add or remove energy from the flow, and thus the total head is not constant along a streamline.\\\\
+Pumps add energy to the flow, and thus the total head increases along a streamline. Turbines extract energy from the flow, and thus the total head decreases along a streamline.
 
 
 
