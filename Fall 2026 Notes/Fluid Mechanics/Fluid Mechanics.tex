@@ -3,6 +3,7 @@
 \usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
 \usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
 \usepackage{siunitx}  % Eases typesetting of numbers and units
+\usepackage[hidelinks]{hyperref}
 
 % US customary units
 \DeclareSIUnit{\inch}{in}
@@ -51,6 +52,7 @@
     {\LARGE\bfseries Introduction\par}
 \end{center}
 \section*{\fbox{1.4 Measures of Fluid Mass and Weight}}
+\addcontentsline{toc}{section}{1.4 Measures of Fluid Mass and Weight}
 \textbf{Density}\\
 Density is defined as the mass per unit volume of a substance.
 \begin{itemize}
@@ -98,6 +100,7 @@ The density of water at room temperature, $\rho_{H_2O\,@ 4^\circ \text{C}}$ is:
 }
 \end{center}
 \section*{\fbox{1.5 Ideal Gas Law (Equation of State)}}
+\addcontentsline{toc}{section}{1.5 Ideal Gas Law (Equation of State)}
 \[p\svol = RT\]
 Where:
 \begin{itemize}
@@ -142,6 +145,7 @@ Where atmospheric pressure is:
 }
 \end{center}
 \section*{\fbox{1.6 Viscosity}}
+\addcontentsline{toc}{section}{1.6 Viscosity}
 Viscosity describes the "fluidity" of a fluid, or how easily a fluid flows. It is a measure of the internal resistance of a fluid to flow. The higher the viscosity, the more resistant the fluid is to flow.\\\\
 Consider the following set up with two parallel plates where the bottom plate is fixed, and the top plate is pulled by a load $P$. In between the plates is a solid (ie. steel) fixed to both plates.
 \begin{center}
@@ -207,6 +211,7 @@ Where
     \item $\mu$: dynamic viscosity of the fluid
 \end{itemize}
 \section*{\fbox{1.7 Compressibility of Fluids}}
+\addcontentsline{toc}{section}{1.7 Compressibility of Fluids}
 \subsection*{Bulk Modulus $E_\nu$}
 Describes how easily the volume of a fluid can be compressed. Keeping mass constant, this also describes how easily the density of a fluid can be changed under a change in pressure applied. It is defined as
 \[E_\nu = -\frac{d p}{d \vol/\vol}\]
@@ -241,6 +246,7 @@ Since the disturbance is a small change in pressure and density, there is neglig
 Additionally, the \hl{mach number} relates the speed of sound to an object moving through the fluid at velocity $V$:
 \[\text{Ma} = \frac{V}{c}\]
 \section*{\fbox{1.9 Surface Tension}}
+\addcontentsline{toc}{section}{1.9 Surface Tension}
 Surface tension exists at a liquid-gas interface.\\\\
 Surface tension $\sigma$ has units of force per unit length (FL$^{-1}$):
 \begin{itemize}
@@ -272,6 +278,7 @@ Note that $\theta$ is dependent on both the liquid and tube material properties.
     {\LARGE\bfseries Fluid Statics\par}
 \end{center}
 \section*{\fbox{2.1 Pressure at a Point}}
+\addcontentsline{toc}{section}{2.1 Pressure at a Point}
 Pressure is defined as the normal force per unit area at a given point acting on a given plane. However, does the orientation of the plane matter? In other words, at the same point, does pressure depend on the orientation/direction of the plane?\\\\
 Consider the following small triangular wedge of fluid mass. \textit{Since there are no shearing stresses, the only external forces acting on the mass is pressure and gravity}. (Note that the forces in the $x$ direction is not shown for simplicity)
 \begin{center}
@@ -296,6 +303,7 @@ To determine the pressure distribution at a point, we take the limit as $\delta 
 Therefore, since $\theta$ is arbitrary, \hl{the pressure at a point in a fluid at rest, or in motion, is independent of direction as long as there are no shearing stresses present.} This is known as \textbf{Pascal's Law}.\\\\
 \underline{Note:} The version of Pascal's law that states that \textit{a change in pressure at any point in a continuous fluid is transmitted to all points in the fluid} is mainly a result of the hydrostatic pressure distribution when we neglect elevation differences across a fluid. (Same Pascal, different law?)
 \section*{\fbox{2.2 Basic Equation for Pressure Field}}
+\addcontentsline{toc}{section}{2.2 Basic Equation for Pressure Field}
 Now that we know that pressure is independent of direction at a point, we should now ask how pressure varies across points in a fluid (ie. find the pressure distribution). Consider a small rectangular fluid element with dimensions $\delta x, \delta y, \delta z$ in a fluid without shearing stresses. 
 \begin{center}
     \includegraphics[width=0.7\textwidth]{2.2 body element.jpg}
@@ -385,6 +393,7 @@ Which once integrated, gives the hydrostatic pressure distribution:
 \[p = -\gamma z + p_0\]
 Where $z$ is defined as upwards positive.
 \section*{\fbox{2.3 Pressure Variation at Rest}}
+\addcontentsline{toc}{section}{2.3 Pressure Variation at Rest}
 For a fluid at rest, $\vec{a} = 0$, and the equation of motion reduces to:
 \[-\nabla p - \gamma \hat{k} = 0\]
 \[\implies \frac{\partial p}{\partial x} = 0, \quad \frac{\partial p}{\partial y} = 0, \quad \frac{\partial p}{\partial z} = -\gamma\]
@@ -414,6 +423,7 @@ Integrating both sides, assuming $g$ and $R$ are constant,
 For an isothermal process, $T=T_0$ is constant, and the integral can be solved as:
 \[p_2 = p_1\, \text{exp}\left[-\frac{g(z_2-z_1)}{RT_0}\right]\]
 \section*{\fbox{2.4 Standard Atmosphere}}
+\addcontentsline{toc}{section}{2.4 Standard Atmosphere}
 The variation of temperature \hl{within the troposphere (extends to an altitude of about 11 km or $\approx$ 36,000 ft)} is of the form
 \[T=T_a - \beta z\]
 Where 
@@ -426,6 +436,7 @@ Integrating the equation for pressure variation with depth for a compressible fl
 \[p = p_a\,\left(1-\frac{\beta z}{T_a}\right)^{g/(R\beta)}\]
 For varying temperature in the troposphere.
 \section*{\fbox{2.5 Measurement of Pressure}}
+\addcontentsline{toc}{section}{2.5 Measurement of Pressure}
 Mentioned before in 1.5, absolute pressure is relative to vacuum (absolute zero), gage is relative to \hl{local} atmospheric pressure, and vacuum/suction is a negative gage pressure.
 \[p_{abs} = p_{gage} + p_{atm}\]
 \subsection*{Barometer}
@@ -441,6 +452,7 @@ This can be derived by a force balance on the mercury column:
 \[\implies p_{atm} = \gamma h + p_{vapor}\]
 Assuming the vapor pressure is negligible: $p_{atm} \approx \gamma h$. 
 \section*{\fbox{2.6 Man-O-Meters}}
+\addcontentsline{toc}{section}{2.6 Man-O-Meters}
 Oh boy my favorite.\\\\
 Man-O-Meters or manometers uses vertical or inclined liquid columns to measure pressure based on the same principle equation as the barometer $p = \gamma h + p_0$.\\\\
 To solve manometer problems, we can use the following "rules":
@@ -475,6 +487,7 @@ The same manometer rules applies but be careful to use the vertical height inste
 \end{center}
 
 \section*{\fbox{2.8 Hydrostatic force on a plane surface}}
+\addcontentsline{toc}{section}{2.8 Hydrostatic force on a plane surface}
 For fluid at rest, fluid pressure acts perpendicular to any surface because there is no shear stress present in a static fluid.\\\\
 For example, the pressure and force distribution on an open tank is shown below:
 \begin{center}
@@ -542,6 +555,7 @@ Together, $x_R$ and $y_R$ define the \textit{center of pressure}, which is the p
 \end{center}
 \newpage
 \section*{\fbox{2.9 Pressure Prism}}
+\addcontentsline{toc}{section}{2.9 Pressure Prism}
 This section doesn't introduce any new concepts, but rather provides a graphical approach to solving for the resultant force and center of pressure on a plane surface. \hl{This approach is often convenient for rectangular surfaces, where the centroid and volume of the pressure prism can be easily determined.}\\\\
 Consider the following pressure prism on a vertical plane surface with constant width $b$:
 \begin{center}
@@ -582,6 +596,7 @@ Anyway, the analysis follows the same approach as the trapezoidal pressure prism
 \[\text{(Average pressure)}\cdot\text{(Area in contact with fluid)}\]
 
 \section*{\fbox{2.10 Hydrostatic force on a curved surface}}
+\addcontentsline{toc}{section}{2.10 Hydrostatic force on a curved surface}
 So far, we have only considered plane surfaces. What about curved surfaces? The resultant force on a curved surface can be determined by decomposing the force into horizontal and vertical components.\\\\
 For example, consider the following curved surface $BC$:
 \begin{center}
@@ -608,6 +623,7 @@ $O$ can be determined by summing moments to find the lines of action of $F_H$ an
     \[F_V = F_1 + \mathcal{W}\]
 \end{enumerate}
 \section*{\fbox{2.11 Buoyancy, flotation, and stability}}
+\addcontentsline{toc}{section}{2.11 Buoyancy, flotation, and stability}
 \subsection*{Archimedes' Principle}
 The buoyant force on a body submerged in a fluid is equal to the weight of the fluid displaced by the body. 
 \[F_{\text{Buoyant}} = \gamma \vol\]
@@ -644,6 +660,7 @@ However, a narrow floating body may be in unstable equilibrium if its center of 
     \includegraphics[width=0.6\textwidth]{2.11 Narrow Floating Body.jpg}
 \end{center}
 \section*{\fbox{2.12 Pressure variation in a fluid with rigid-body motion}}
+\addcontentsline{toc}{section}{2.12 Pressure variation in a fluid with rigid-body motion}
 Recall that the general equation of motion for a fluid with no shearing stresses is given by:
 \[-\nabla p - \gamma \hat{k} = \rho \vec{a}\]
 \[\implies -\frac{\partial p}{\partial x} = \rho a_x , \quad -\frac{\partial p}{\partial y} = \rho a_y , \quad -\frac{\partial p}{\partial z} = \gamma +\rho a_z \]
@@ -716,6 +733,7 @@ Also \hl{note that when calculating the pressure \textit{difference}, the consta
     {\LARGE\bfseries Elementary Fluid Dynamics—The Bernoulli Equation\par}
 \end{center}
 \section*{\fbox{3.1 Newton's Second Law}}
+\addcontentsline{toc}{section}{3.1 Newton's Second Law}
 The Bernoulli equation is one of the most used and abused equations in fluid mechanics. It is derived from Newton's second law on a fluid particle as it behaves in an "ideal" manner. Note that we must respect the assumptions of the Bernoulli equation, otherwise it is not valid.\\\\
 Let's define a \textbf{fluid particle} to be a small volume of fluid that is large enough to contain a sufficient number of molecules. As the fluid particle moves, it usually experiences an acceleration and thus the net force on the particle is non-zero: $\vec{F} = m\vec{a}$.\\\\
 We will \hl{consider fluid motion while neglecting frictional effects due to shear stresses in a flowing fluid.} To do this, we will consider a fluid that has \hl{no viscosity, called an \textbf{inviscid fluid}}. The resulting flow is called \textbf{inviscid flow}.\\\\
@@ -755,6 +773,7 @@ The normal acceleration is given by the centripetal acceleration of the particle
 Intuitively, when streamlines converge, velocity increases (by conservation of mass), and thus the streamwise acceleration is positive. When streamlines diverge, velocity decreases, and thus the streamwise acceleration is negative.
 \newpage
 \section*{\fbox{3.2 $F = ma$ along a streamline (Bernoulli Equation)}}
+\addcontentsline{toc}{section}{3.2 $F = ma$ along a streamline (Bernoulli Equation)}
 Consider a small fluid particle of size $\delta s$ by $\delta n$ along a streamline and $\delta y$ normal to the plane of the streamline. 
 \begin{center}
     \includegraphics[width=0.7\textwidth]{3.2 FBD.jpeg}
@@ -830,6 +849,7 @@ We generally can't get rid of the integral $\int dp/\rho$ since $\rho$ is not a 
 However, for an \hl{incompressible fluid}, $\rho$ is constant, and thus we can write:
 \[\boxed{p + \frac{1}{2}\rho V^2 + \gamma z = \text{constant along a streamline}}\]
 \section*{\fbox{3.3 $F = ma$ normal to a streamline}}
+\addcontentsline{toc}{section}{3.3 $F = ma$ normal to a streamline}
 In section 3.2, we looked at how forces along a streamline affects a fluid particle's speed. In this section, we will apply the same Newton's second law approach to explain how forces normal to a streamline \textit{changes the direction of a fluid particle's velocity}.\\\\
 Recall from section 3.1 that the normal acceleration of a fluid particle for steady flow is given by:
 \[a_n = \frac{V^2}{\mathscr{R}}\]
@@ -894,6 +914,7 @@ Duck:
 \end{center}
 \newpage
 \section*{\fbox{\parbox{0.9\textwidth}{3.4 Physical interpretations and alternate forms of the Bernoulli equation}}}
+\addcontentsline{toc}{section}{3.4 Physical interpretations and alternate forms of the Bernoulli equation}
 In sections 3.2 and 3.3, we have derived the basic governing equations for inviscid flow along and across streamlines.
 \begin{figure}[h]
     \centering
@@ -958,6 +979,7 @@ Or in between two points across streamlines:
 This is just the hydrostatic pressure distribution, even though the fluid is moving!\\\\
 This happens because when there is no normal acceleration, the net force in the normal direction is zero, and thus the pressure gradient must balance the gravitational force.
 \section*{\fbox{\parbox{0.9\textwidth}{3.5 Static, stagnation, dynamic, and total pressure}}}
+\addcontentsline{toc}{section}{3.5 Static, stagnation, dynamic, and total pressure}
 This section introduces different types of pressure associated with fluid motion, explains how kinetic energy can be converted into a pressure rise, and shows how Pitot-static tubes measure fluid velocity.
 \subsection*{Types of pressure}
 Recall Bernoulli's equation along a streamline:
@@ -1043,6 +1065,7 @@ Consider the following example of a directional Pitot tube:
 This can be rotated to align with the flow \hl{until the side hole pressures are equal}: $p_1 = p_3$. When the center hole faces the flow, the flow and pressure distribution are symmetric about the centerline (stagnation point).\\\\
 Having found the angle such that $\theta = 0$, we can then calculate the velocity of the flow like before.
 \section*{\fbox{{3.6 Examples of use of the Bernoulli equation}}}
+\addcontentsline{toc}{section}{3.6 Examples of use of the Bernoulli equation}
 This section applies Bernoulli's equation to three major types of flow: free jets, confined flows, and flow rate measurement. It also introduces the vena contracta effect, cavitation, and the continuity equation.\\\\
 The general approach for a steady, inviscid, incompressible flow along a streamline is to apply Bernoulli's equation between two points along the streamline:
 \[p_1 + \frac{1}{2}\rho V_1^2 + \gamma z_1 = p_2 + \frac{1}{2}\rho V_2^2 + \gamma z_2\]
@@ -1176,6 +1199,7 @@ Instead, we can assume that weir flow is similar to free jet flow, where the \te
 \[Q = C_1 Hb \sqrt{2gH} = C_1 b \sqrt{2g} \,H^{3/2}\]
 Where $C_1$ is an unknown constant. (So fucking weird)
 \section*{\fbox{{3.7 The energy line and the hydraulic grade line}}}
+\addcontentsline{toc}{section}{3.7 The energy line and the hydraulic grade line}
 This section introduces two graphical interpretations of Bernoulli's equation: the energy line (EL) and the hydraulic grade line (HGL).
 \subsection*{Definitions}
 \begin{itemize}
@@ -1219,6 +1243,7 @@ Thus, the vertical distance between the streamline elevation and the hydraulic g
 \end{center}
 \underline{Note:} Review Example 3.7.1
 \section*{\fbox{{3.8 Restrictions on use of the Bernoulli equation}}}
+\addcontentsline{toc}{section}{3.8 Restrictions on use of the Bernoulli equation}
 We are super familiar with the Bernoulli equation for steady, inviscid, incompressible flow along a streamline:
 \[p + \frac{1}{2}\rho V^2 + \gamma z = C\]
 \subsection*{Compressibility}
