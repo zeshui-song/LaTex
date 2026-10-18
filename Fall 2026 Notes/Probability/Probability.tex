@@ -334,7 +334,7 @@ Some of the sets above can be visualized using a Venn diagram:
     \]
     In other words, the complement flips the union and intersections of a finite number of sets.
     \begin{center}
-    \includegraphics[width=0.7\textwidth]{1.2 demorgans.png}
+    \includegraphics[width=0.6\textwidth]{1.2 demorgans.png}
     \end{center}
 \end{theorem}
 
@@ -389,8 +389,10 @@ Their union is the entire set:
 \begin{definition}{Probability Measure}
     A probability measure is a function $P$ that assigns a probability (a real number) $P(A)$ to each event $A\subset S$ in a sample space $S$ such that it satisfies the following axioms:
     \begin{enumerate}
-        \item $0 \leq P(A)$ for any event $A$ in $S$. (The probability of any event is non-negative)
-        \item $P(S) = 1$. (\textit{Something} has to happen)\\\\
+        \item The probability of any event is non-negative:
+        \[0 \leq P(A) \text{  for any event  } A \text{ in } S\]
+        \item \textit{Something} has to happen:
+        $$P(S) = 1$$
         This naturally places the upper bound of the probability of any event at 1, since $A\subset S$ implies $P(A)\leq P(S)=1$.
         \item For a finite set of events $A_1, A_2, \ldots, A_n$, we can sum their probabilities the following way \hl{if they are mutually exclusive (no overlaps: no double counting!)}:
         \[
@@ -676,7 +678,26 @@ Generally, given a counting problem, we can use the following flowchart to deter
 \begin{center}
     \includegraphics[width=\textwidth]{1.3 flowchart.png}
 \end{center}
-
+\underline{Ex:} MATHEMATICS\\
+How many different ways can we arrange the letters in the word "MATHEMATICS"?\\\\
+There are 11 letters consisting of:
+\begin{itemize}
+    \item M appears 2 times
+    \item A appears 2 times
+    \item T appears 2 times
+    \item H, E, I, C, S each appear once
+\end{itemize}
+Using the multiplication principle:
+\begin{itemize}
+    \item Ways to select 2 positions out of 11 for the two M's $\binom{11}{2}$
+    \item Ways to choose 2 positions out of remaining 9 for the two A's $\binom{9}{2}$
+    \item Ways to choose 2 positions out of remaining 7 for the two T's $\binom{7}{2}$
+    \item Ways to arrange the 5 remaining distinct letters $5!$
+\end{itemize}
+\[\binom{11}{2}\binom{9}{2}\binom{7}{2}5! = \frac{11!}{2!2!2!}\]
+\underline{Note:} We could also arrive at the same count using multinomials. In any arrangement of the 11 letters, 2 positions are occupied by M's, 2 by A's, 2 by T's, and the remaining 5 by H, E, I, C, S. Since order within each group of identical letters does not matter, we can use the multinomial coefficient:
+\[\binom{11}{2,2,2,1,1,1,1,1}=\frac{11!}{2!2!2!1!1!1!1!1!}=\frac{11!}{2!2!2!}\]
+The groupings are determined by letter identity, where identical letters belong to the same group, and each distinct letter forms its own group.
 \section*{\fbox{Conditional probability and independence (1.4-1.5)}}
 \subsection*{\underline{1.4 Conditional Probability}}
 \addcontentsline{toc}{section}{1.4 Conditional Probability}
@@ -914,4 +935,67 @@ P(A_1)P(A_2)P(A_3)P(A_4)
 
 \end{definition}
 \underline{Note:} Section 1.6 in the textbook is Bayes' theorem which is already covered in section 1.4.
+
+\section*{\fbox{Discrete Random Variables and Expected Value (2.1-2.2)}}
+\subsection*{\underline{2.1 Discrete Random Variables}}
+\addcontentsline{toc}{section}{2.1 Discrete Random Variables}
+Recall from Section 1.1 that a random variable is a \textit{function} that maps outcomes in the sample space to real numbers. A probability mass function (p.m.f.) then maps the values of a random variable to their corresponding probabilities. In essence, we are simply adding a layer of abstraction to the sample space. Instead of working with the sample space directly, we can work with a random variable, allowing us to study the \textit{probability distribution} of an experiment.\\\\
+Also recall that a \textit{discrete random variable} is a random variable whose possible values are finite or countably infinite.\\\\
+\underline{Note:} \hl{Countably infinite} means that the values can be listed individually, even if the list never ends. Ex: $\{1,2,3,\dots\}$ is countably infinite, while $\{1,2,3,\dots,10\}$ is finite.
+\begin{theorem}{Properties of a Discrete Probability Mass Function (p.m.f.)}
+A p.m.f. $f(x)$ of a discrete random variable $X$ satisfies the following properties:
+\begin{enumerate}
+    \item For any value $x$ in the sample space $S$, the p.m.f. is non-negative (probabilities cannot be negative):
+    \[f(x) > 0,\quad x \in S\]
+    \item The possible values of the random variable $X$ accounts for all possible outcomes, \textit{something must happen}: 
+    \[\sum_{x \in S} f(x) = 1\]
+    \item The probability of an event $A$ (a subset of the sample space) is the sum of the probabilities of the individual values:
+    \[P(X \in A) = \sum_{x \in A} f(x)\]
+\end{enumerate}
+\underline{Note:}
+\begin{itemize}
+    \item $X$ is a random variable, a function that maps outcomes to numbers.
+    \item $x$ is a specific value that $X$ can take.
+    \item $A$ is a set of possible values of $X$.
+    \item $P(X=x)=f(x)$ is the probability that $X$ takes the value $x$.
+    \item $P(X\in A)=\sum_{x\in A}f(x)$ is the probability that $X$ takes any value in $A$.
+\end{itemize}
+
+\underline{Ex:} Roll a fair 6-sided die. Let $X$ represent the number rolled, with $S_X=\{1,2,3,4,5,6\}$. Define $A=\{2,3,4,5\}$ as the event that the number is between 2 and 5. By property 3,
+\[P(X\in A)=f(2)+f(3)+f(4)+f(5)=\frac{4}{6}\]
+\end{theorem}
+
+\begin{definition}{Discrete Uniform Distribution}
+    A discrete random variable $X$ has a uniform distribution if its p.m.f. is constant for all values $x\in S$.\\\\
+    For the first $m$ positive integers, the p.m.f. is given by:
+    \[f(x) = \frac{1}{m}, \quad x \in \{1,2,\dots,m\}\]
+    All possible values are equally likely, so total probability is divided equally among them.
+\end{definition}
+
+\begin{definition}{Hypergeometric Distribution}
+The hypergeometric distribution gives the probability of selecting exactly $x$ objects of a particular type when randomly sampling $n$ objects without replacement from a population containing two types of objects. Essentially, the event of interest requires two selections: $x$ objects of the first type AND $n-x$ objects of the second type.\\\\
+For example, we have $N$ total objects consisting of:
+\begin{itemize}
+    \item $m$ red objects
+    \item $N-m$ black objects
+\end{itemize}
+If we pick a sample of $n$ objects without replacement, let $X$ be the number of red objects selected. Then the p.m.f. of $X$ is given by:
+\[\boxed{f(x) = \frac{\binom{m}{x}\binom{N-m}{n-x}}{\binom{N}{n}}}\]
+This is just the multiplication principle where:
+\begin{itemize}
+    \item Total ways to select $n$ objects out of $N$ where order does not matter (combination):
+    \[\binom{N}{n}\]
+    \item Favorable outcomes:
+    \[\text{(Ways to choose $x$ red obj)}\cdot\text{(Ways to choose $n-x$ black objects)}\]
+    \[\binom{m}{x}\binom{N-m}{n-x}\]
+\end{itemize}
+\end{definition}
+
+
+
+
+
+
+
+
 \end{document}
