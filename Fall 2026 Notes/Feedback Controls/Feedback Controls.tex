@@ -312,8 +312,194 @@ Notice that the state equation is nonlinear due to the $\sin(\theta)$ term, whil
     \[C = \frac{\partial \underline{h}}{\partial \underline{x}}\bigg|_{(\underline{\bar{x}}, \underline{\bar{u}})}, \quad D = \frac{\partial \underline{h}}{\partial \underline{u}}\bigg|_{(\underline{\bar{x}}, \underline{\bar{u}})}\]
 \end{itemize}
 \textbf{Example: Pendulum System on Steroids}\\
+Consider a similar pendulum system but now with a nonlinear torque input $T = k_\tau \sin(u_1)$ and force input $F = k_F \sin(u_2)$, where $u_1$ and $u_2$ are independent inputs:
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{pendulum+.png}
+\end{center}
+The equation of motion is given by:
+\[\sum \tau = I \ddot{\theta} \quad \implies \quad m\ell \ddot{\theta} = -mg\ell\sin\theta + k_\tau \sin(u_1) + \ell k_F \sin(u_2)\]
+Define $\omega = \dot{\theta}$ and the state vector:
+\[\underline{x} = \begin{pmatrix} \theta \\ \omega \end{pmatrix},\quad \underline{u} = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}\]
+Then, the nonliner state-space representation of the system is:
+\[\dot{\underline{x}} = \begin{pmatrix} \omega \\ -\frac{g}{\ell}\sin\theta + \frac{k_\tau}{m\ell^2}\sin(u_1) + \frac{k_F}{m\ell}\sin(u_2) \end{pmatrix} \quad \iff \quad \underline{\dot{x}} = \underline{f}(\underline{x}, \underline{u})\]
+With an output of $y = \theta$:
+\[y=\begin{pmatrix}
+    1 & 0
+\end{pmatrix} \underline{x} \quad \iff \quad y = \underline{h}(\underline{x}, \underline{u})\]
+\newpage
+Linearization procedure:
+\begin{itemize}
+    \item[I.] Define operating point \& incremental variables:\\
+    Let $(\underline{\bar{x}}, \underline{\bar{u}})$ be the operating point, define incremental variables:
+    \[\underline{x} = \underline{\bar{x}} + \underline{\hat{x}},\quad \underline{u} = \underline{\bar{u}} + \underline{\hat{u}},\quad \underline{y} = \underline{\bar{y}} + \underline{\hat{y}}\]
+    Linearize the nonlinear state equation using the first order Taylor expansion with Jacobian matrices evaluated at the operating point:
+    \[\underline{f}(\underline{x},\underline{u}) \approx \underline{f}(\underline{\bar{x}}, \underline{\bar{u}}) + \frac{\partial \underline{f}}{\partial \underline{x}}\bigg|_{(\underline{\bar{x}}, \underline{\bar{u}})} \underline{\hat{x}} + \frac{\partial \underline{f}}{\partial \underline{u}}\bigg|_{(\underline{\bar{x}}, \underline{\bar{u}})} \underline{\hat{u}}\]
+    Calculate the Jacobian matrices:
+    \begin{itemize}
+        \item State Jacobian $[A]$:
+        \[\renewcommand{\arraystretch}{1.8}
+        [A] = \left.\begin{pmatrix}
+\frac{\partial f_1}{\partial \theta} & \frac{\partial f_1}{\partial \omega} \\
+\frac{\partial f_2}{\partial \theta} & \frac{\partial f_2}{\partial \omega}
+\end{pmatrix}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}=
+\begin{pmatrix}
+0 & 1 \\
+-\frac{g}{\ell}\cos\bar{\theta} & 0
+\end{pmatrix}\]
+        \item Input Jacobian $[B]$:
+\[
+\renewcommand{\arraystretch}{1.8}
+[B] =
+\left.
+\begin{pmatrix}
+\dfrac{\partial f_1}{\partial u_1} & \dfrac{\partial f_1}{\partial u_2} \\
+\dfrac{\partial f_2}{\partial u_1} & \dfrac{\partial f_2}{\partial u_2}
+\end{pmatrix}
+\right|_{(\underline{\bar{x}}, \underline{\bar{u}})} =
+\begin{pmatrix}
+0 & 0 \\
+\dfrac{k_{\tau}}{m\ell^2}\cos\bar{u}_1 &
+\dfrac{k_F}{m\ell}\cos\bar{u}_2
+\end{pmatrix}\]
+    \end{itemize}
+    \item [II.] Find operating (equilibrium) point:\\
+    At equilibrium, $\dot{\underline{\bar{x}}} = \underline{f}(\underline{{\bar{x}}},\underline{\bar{u}}) = 0$. Thus,
+    \[\dot{\underline{x}}\big|_{(\underline{\bar{x}}, \underline{\bar{u}})} = \begin{pmatrix} \bar{\omega} \\ -\frac{g}{\ell}\sin\bar{\theta} + \frac{k_\tau}{m\ell^2}\sin(\bar{u_1}) + \frac{k_F}{m\ell}\sin(\bar{u_2}) \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}\]
+    Solving these conditions would fully determine the operating point $(\underline{\bar{x}}, \underline{\bar{u}})$. However, we can leave it symbolic for now.
+    \item [III.] Replace with linearized terms and apply equilibrium condition:\\
+    \[\big(\underline{\dot{\bar{x}}}+\underline{\dot{\hat{x}}}\big)\approx \underline{f}(\underline{{\bar{x}}},\underline{\bar{u}})+ A \underline{\hat{x}}\ + B \underline{\hat{u}}\]
+    Applying the equilibrium condition $\underline{f}(\underline{{\bar{x}}},\underline{\bar{u}}) = 0$ gives the linearized state equation:
+    \[\underline{\dot{\hat{x}}} = A \underline{\hat{x}} + B \underline{\hat{u}}\]
+    Finally substituting the Jacobian matrices $[A]$ and $[B]$ gives:
+    \[
+\renewcommand{\arraystretch}{2}
+\boxed{
+\underbrace{
+\begin{pmatrix}
+\dot{\hat{\theta}} \\
+\dot{\hat{\omega}}
+\end{pmatrix}
+}_{\dot{\hat{x}}}
+=
+\underbrace{
+\begin{pmatrix}
+0 & 1 \\
+-\dfrac{g}{\ell}\cos\bar{\theta} & 0
+\end{pmatrix}
+}_{A}
+\underbrace{
+\begin{pmatrix}
+\hat{\theta} \\
+\hat{\omega}
+\end{pmatrix}
+}_{\hat{x}}
++
+\underbrace{
+\begin{pmatrix}
+0 & 0 \\
+\dfrac{k_{\tau}}{m\ell^2}\cos\bar{u}_1 &
+\dfrac{k_F}{m\ell}\cos\bar{u}_2
+\end{pmatrix}
+}_{B}
+\underbrace{
+\begin{pmatrix}
+\hat{u}_1 \\
+\hat{u}_2
+\end{pmatrix}
+}_{\hat{u}}
+}
+\]
+\end{itemize}
+We can linearize the output equation by calculating the remaining Jacobian matrices:
+\[
+C = \left.\frac{\partial h}{\partial x}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}
+=\left.\begin{pmatrix} \frac{\partial h}{\partial \theta} & \frac{\partial h}{\partial \omega} \end{pmatrix}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}
+= \begin{pmatrix} 1 & 0 \end{pmatrix}
+\]
+\[
+D = \left.\frac{\partial h}{\partial u}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}
+=\left.\begin{pmatrix} \frac{\partial h}{\partial u_1} & \frac{\partial h}{\partial u_2} \end{pmatrix}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}
+= \begin{pmatrix} 0 & 0 \end{pmatrix}
+\]
+Thus,
+\[
+\hat{y} = C\hat{x} + D\hat{u}
+= \begin{pmatrix} 1 & 0 \end{pmatrix}\hat{x}
+\]
 \section*{Laplace Transforms}
+Alas, it is time to move from the time domain to the Laplace domain. It turns differentiation and integration into algebraic operations, which makes it easier to analyze the system behavior.\\\\
+\underline{Definition:} The Laplace transform of a function $f(t)$ is defined as:
+\[F(s) = \mathcal{L}\{f(t)\} = \int_{0^-}^\infty f(t)e^{-st}dt\]
+Where $s$ is a complex variable.\\\\
+\underline{Note:} We use $0^-$ as the lower limit of integration to account for any impulses which may occur at $t=0$.\\\\
+With \textit{zero initial conditions}, differentiation becomes multiplication by $s$ in the Laplace domain:
+\[\frac{d}{dt} \leftrightarrow s\]
+and integration becomes division by $s$:
+\[\int (\,)\, dt \leftrightarrow \frac{1}{s}\]
+\subsection*{Useful Properties of Laplace Transforms}
+\begin{itemize}
+    \item \textbf{Linearity:} \[\mathcal{L} \{\alpha f(t) + \beta g(t)\} = \alpha F(s) + \beta G(s)\]
+    \item \textbf{Differentiation:}\\
+    First derivative: \[\mathcal{L} \left\{\frac{d}{dt}f(t)\right\} = sF(s) - f(0^-)\]
+    Second derivative: \[\mathcal{L} \left\{\frac{d^2}{dt^2}f(t)\right\} = s^2F(s) - sf(0^-) - f'(0^-)\]
+    $n^th$ derivative: \[\mathcal{L} \left\{\frac{d^n}{dt^n}f(t)\right\} = s^nF(s) - s^{n-1}f(0^-) - s^{n-2}f'(0^-) - \cdots - f^{(n-1)}(0^-)\]
+    For zero initial conditions in transfer function analysis, we get the nice simplification:
+    \[\mathcal{L} \left\{\frac{d^n}{dt^n}f(t)\right\} = s^nF(s)\]
+    \item \textbf{Integration:}
+    \[\mathcal{L}\left\{\int_{0^-}^t f(\tau)d\tau\right\} = \frac{1}{s}F(s)\]
+    \item \textbf{Time Shift:}\\
+    The unit-step function (Heaviside function) is defined as:
+    \[u_s(t) = \begin{cases} 0 & t < 0 \\ 1 & t \geq 0 \end{cases}\]
+    Thus, it is zero up to $t=0$ and one for $t\geq 0$. The shifted unit-step function $u_s(t-T)$ is then zero up to $t=T$ and one for $t\geq T$.\\\\
+    The Laplace transform of a function shifted in time is a multiplication by an exponential in the Laplace domain:
+    \[\mathcal{L}\{f(t-T)u_s(t-T)\} = e^{-sT}F(s)\]
+    Note that
+    \[f(t-T)u_s(t-T) = \begin{cases} 0 & t < T \\ f(t-T) & t \geq T \end{cases}\]
+    \hl{A pure time delay thus has the transfer function $G(s) = e^{-sT}$.}
+    \item \textbf{Convolution:}\\
+    Convolution by itself isn't very useful in its time domain form, since it is defined as:
+    \[(f * g)(t) = \int_{0}^{t} f(\tau)g(t - \tau)d\tau\]
+    \[\mathcal{L}\{f(t) * g(t)\} = F(s)G(s)\]
+    This property becomes more interesting once we define $h(t)$ as the output of a linear time-invariant system subjected to a unit impulse input $\delta(t)$, assuming zero initial conditions. Thus, convolution can be used to find the output of a system subjected to \hl{any arbitrary input $u(t)$}:
+\[
+y(t)=h(t)*u(t)
+\]
+Intuitively, this convolution treats an arbitrary input $u(t)$ as a continuous sum of time-shifted impulses, kind of like modeling a collection of time-shifted initial-condition responses. \hl{By linearity, the total output at time $t$ is the superposition of the individual responses produced by all impulses applied between $0$ and $t$.} (This sum is represented by the convolution integral!)\\\\
+\textit{Sound familiar?} This is exactly the fundamental principle behind the transfer function representation of a system where
+\[\mathcal{L}\{h(t)\} = G(s)\]
+\[\implies G(s) = \frac{Y(s)}{U(s)} \quad \text{(transfer function definition)}\]
+\textit{See the "Impulse Response of a Linear System" PDF for more detailed info}
+\end{itemize}
+\subsection*{Essential Laplace Transform Pairs}
+\begin{itemize}
+    \item An impulse input $\delta(t)$ has a Laplace transform of $1$:
+    \[\mathcal{L}\{\delta(t)\} = 1\]
+    \item A unit step input $u_s(t)$ has a Laplace transform of $\frac{1}{s}$:
+    \[\mathcal{L}\{1\} = \frac{1}{s}, \quad t\geq 0\]
+    \item A ramp input $t u_s(t)$ has a Laplace transform of $\frac{1}{s^2}$:
+    \[\mathcal{L}\{t\} = \frac{1}{s^2}, \quad t\geq 0\]
+    \item Poles of a transfer function generate exponentials in the time domain:
+    \[\mathcal{L}\{e^{at}\} = \frac{1}{s-a}, \quad t\geq 0\]
+    (Will be covered in more detail in the upcoming sections)
+\end{itemize}
+\subsection*{Initial/Final Value Theorems}
+We can determine the initial and final values of a system's response by just looking at the transfer function without having to find the full time domain response.\\\\
+\textbf{Initial Value Theorem}
+\[\boxed{\lim_{t \to {0^+}} f(t) = \lim_{s \to \infty} sF(s)}\]
+Note that the initial value theorem applies to the right handed limit $t \to 0^+$, and does not contain an impulse that may occur at $t=0$. Thus, the two-sided limits $t \to 0^-$ and $t \to 0^+$ do not need to be equal if there is an impulse at $t=0$.\\
+\textbf{Final Value Theorem}
+\[\boxed{\lim_{t \to \infty} f(t) = \lim_{s \to 0} sF(s)}\]
 \section*{Transfer Function Representation}
+Transfer functions relate input to output in the Laplace domain, \textit{assuming zero initial conditions}. It is defined as:
+\[G(s) = \frac{Y(s)}{R(s)}\]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Transfer Function.png}
+\end{center}
+Transfer functions \textit{don't capture the time domain response of the system}, because the input function is undefined. However, once we define an input function (step function, impulse, etc.), we can find the time domain response by taking the inverse Laplace transform of $Y(s) = G(s)R(s)$.\\\\
+Since the transfer function assumes zero initial conditions, it captures only the \textbf{steady state response} of the system, which is the response due to the input function.\\\\
+\underline{Note:} When writing out the equations of motion (time domain), write it in the form
+\[\text{(output)} = \text{(input)}\]
+\[\text{(dep. variables LHS)} = \text{(input RHS)}\]
 \subsection*{Transfer Function Matrices}
 Like how we can derive transfer functions in the Laplace domain from the equations of motion, we can do the same in state space representation using matrix arithmetic. Starting with:
 \[\begin{aligned}
@@ -331,6 +517,7 @@ Substitute $\underline{X}$ into the Output Equation:
 \[\underline{Y} = [C]\underbrace{\left( [sI - A]^{-1}[B]\underline{U} \right)}_{\text{Sub for } \underline{X}} + [D]\underline{U}\]
 Factor out $\underline{U}$ for the Transfer Function:
 \[\boxed{\frac{\underline{Y}}{\underline{U}} = [C][sI - A]^{-1}[B] + [D]}\]
+Note that this ins't super important to memorize but its good to have available as a reference.\\\\
 \underline{Recall:} We can invert a 2x2 matrix using the formula:
 \[
 A =
@@ -344,8 +531,99 @@ d & -b \\
 -c & a
 \end{pmatrix},
 \quad \text{if } ad - bc \neq 0.\]
+\section*{Block Diagram Algebra}
+This section will mostly review block diagram elements and algebraic manipulations to simplify block diagrams.
+\subsection*{Elements}
+\begin{itemize}
+    \item \textbf{Signals}: time varying quantities that represent inputs and outputs of the system. Inputs are arrows pointing into the system, while outputs are arrows pointing out of the system.
+    \begin{center}
+    \includegraphics[width=0.15\textwidth]{Signal.png}
+    \end{center}
+    \item \textbf{Systems}: represent the equations of motion that relate inputs to outputs, often represented as blocks containing the transfer function of a system component
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{Block Diagram.png}
+    \end{center}
+    \[Y(s) = H(s)U(s)\]
+    \item \textbf{Summing Junctions}: adds together signals with sign indicated by the arrowheads. Signals can be added together in both the time domain and the Laplace domain.
+    \begin{center}
+    \includegraphics[width=0.25\textwidth]{Summing Junction.png}
+    \end{center}
+    \[y(t) = u(t) +d(t)-x(t) \implies Y(s) = U(s)+D(s)-X(s)\]
+\end{itemize}
+\subsection*{Loop Transfer Functions}
+Consider the following general closed-loop feedback system:
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{CLFB.png}
+\end{center}
+Note the following signals:
+\begin{itemize}
+    \item $R(s)$: reference input
+    \item $E(s) = R(s) - Y(s)$: error signal
+    \item $Y(s)$: output signal
+\end{itemize}
+Also, $H(s)$ is the \hl{feedback transfer function} where $H(s) = 1$ for unity feedback.\\\\
+Some useful transfer functions to know are:
+\begin{itemize}
+    \item \textbf{Feedforward Transfer Function}\\
+    Multiply the gains of the forward path (aka forward gain)
+    \[\frac{Y(s)}{E(s)}=C(s)P(s)\]
+    \item \textbf{Open Loop Transfer Function}\\
+    Multiply the gains around the loop (aka loop gain)
+    \[\frac{Y(s)}{E(s)}=C(s)P(s)H(s)\]
+    \item \textbf{Closed Loop Transfer Function}\\
+    Relates the output to the reference input
+    \[\frac{Y(s)}{U(s)} = \frac{C(s)P(s)}{1+C(s)P(s)H(s)} = \frac{\text{"Forward Gain"}}{1+\text{ "Loop Gain"}}\]
+\end{itemize}
+\subsection*{General Block Diagram Algebra}
+Generally, given a block diagram, we can find its transfer functions by introducing suitable signal definitions and tracing the paths.\\\\
+\underline{For example:}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{Ex Block.png}
+\end{center}
+Block diagram algebra gives the following relationships:
+\[Y=PU,\quad U=A+B,\quad A=C_{ff}R,\quad B=C_{fb}E,\quad E=R-Y\]
+Substituting these relationships into each other gives:
+\[\frac{Y(s)}{R(s)} = \frac{P(s)[C_{ff}(s)+C_{fb}(s)]}{1+P(s)C_{fb}(s)}\]
+\subsection*{Equivalent Block Diagrams}
+\textbf{Series}
+\vspace{-1em}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{Series.png}
+\end{center}
+\textbf{Parallel}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{Parallel.png}
+\end{center}
+\textbf{Feedback}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{Feedback.png}
+\end{center}
+Some other (potentially) useful simplifications by moving blocks around:\\\\
+\textbf{Rule 1}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{Rule 1.png}
+\end{center}
+\textbf{Rule 2}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{Rule 2.png}
+\end{center}
+\textbf{Rule 3}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{Rule 3.png}
+\end{center}
+\textbf{Rule 4}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{Rule 4.png}
+\end{center}
+\textbf{Rule 5}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{Rule 5.png}
+\end{center}
 
-\section*{Block Diagrams and System Interconnections}
+\newpage
+
+
+
 \begin{center}
     {\LARGE\bfseries \fbox{System Behavior and Feedback Control}\par}
 \end{center}
