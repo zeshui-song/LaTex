@@ -155,7 +155,8 @@ v
 \underbrace{f(t)}_{\underline{u}}
 \]
 Check that the matrix multiplication (dot product between rows and columns) correctly reproduces the rewritten equations of motion and that the dimensions are consistent.\\\\
-The output matrix is often either a matrix that selects certain state variables as outputs, or a matrix that operates on the state variables to produce the output (ie. momentum is a velocity state variable multiplied by mass). The direct transmission matrix is often zero, but it can be non-zero if the output is directly related to the input (ie. if we want to output/read the input voltage in an electrical system).
+The output matrix is often either a matrix that selects certain state variables as outputs, or a matrix that operates on the state variables to produce the output (ie. momentum is a velocity state variable multiplied by mass). The direct transmission matrix is often zero, but it can be non-zero if the output is directly related to the input (ie. if we want to output/read the input voltage in an electrical system).\\\\
+\hl{Note that the state space representation is \textbf{not unique} since we can define state variables differently (e.g., shifting, rescaling state variables) and still describe the same system.}
 \section*{Linearization of Nonlinear Systems}
 The intuition for linearization is the as from ESC-251 Systems Engineering: Generally, we do this by approximating the \textit{local} behavior of a non-linear system around an equilibrium point (operating point) using the first order Taylor expansion.\\\\
 Defining the operating point as $\bar{x}$ and the incremental variable as $\hat{x}$, we can see graphically how the linearization process works:
@@ -326,7 +327,6 @@ With an output of $y = \theta$:
 \[y=\begin{pmatrix}
     1 & 0
 \end{pmatrix} \underline{x} \quad \iff \quad y = \underline{h}(\underline{x}, \underline{u})\]
-\newpage
 Linearization procedure:
 \begin{itemize}
     \item[I.] Define operating point \& incremental variables:\\
@@ -496,7 +496,7 @@ Transfer functions relate input to output in the Laplace domain, \textit{assumin
 \includegraphics[width=0.3\textwidth]{Transfer Function.png}
 \end{center}
 Transfer functions \textit{don't capture the time domain response of the system}, because the input function is undefined. However, once we define an input function (step function, impulse, etc.), we can find the time domain response by taking the inverse Laplace transform of $Y(s) = G(s)R(s)$.\\\\
-Since the transfer function assumes zero initial conditions, it captures only the \textbf{steady state response} of the system, which is the response due to the input function.\\\\
+Recall that transfer function analysis assumes zero initial conditions.\\\\
 \underline{Note:} When writing out the equations of motion (time domain), write it in the form
 \[\text{(output)} = \text{(input)}\]
 \[\text{(dep. variables LHS)} = \text{(input RHS)}\]
@@ -572,7 +572,7 @@ Some useful transfer functions to know are:
     \[\frac{Y(s)}{E(s)}=C(s)P(s)H(s)\]
     \item \textbf{Closed Loop Transfer Function}\\
     Relates the output to the reference input
-    \[\frac{Y(s)}{U(s)} = \frac{C(s)P(s)}{1+C(s)P(s)H(s)} = \frac{\text{"Forward Gain"}}{1+\text{ "Loop Gain"}}\]
+    \[\frac{Y(s)}{R(s)} = \frac{C(s)P(s)}{1+C(s)P(s)H(s)} = \frac{\text{"Forward Gain"}}{1+\text{ "Loop Gain"}}\]
 \end{itemize}
 \subsection*{General Block Diagram Algebra}
 Generally, given a block diagram, we can find its transfer functions by introducing suitable signal definitions and tracing the paths.\\\\
@@ -627,20 +627,312 @@ Some other (potentially) useful simplifications by moving blocks around:\\\\
 \begin{center}
     {\LARGE\bfseries \fbox{System Behavior and Feedback Control}\par}
 \end{center}
-\section*{Poles and Zeros of Transfer Functions}
-\section*{System Stability}
-\section*{First- and Second-Order System Responses}
-\begin{itemize}
-    \item Step Response
-    \item Impulse Response
-    \item Frequency Response
-\end{itemize}
-\section*{Time Domain Specifications}
-\section*{Initial/Final Value Theorems}
 \section*{DC Gain and Steady-State Error}
-\section*{Feedback Control and Closed-Loop Transfer Functions}
+\subsection*{DC Gain}
+The DC gain of a system is the steady-state gain of the system when subjected to a unit step input. It is derived using the final value theorem:
+\[K_{DC} = \lim_{s\to 0} s Y(s)\]
+Given a unit step input $R(s) = \frac{1}{s}$, the DC gain can be expressed in terms of the transfer function $G(s)$:
+\[K_{DC} = \lim_{s\to 0} s Y(s) = \lim_{s\to 0} s \cdot G(s) \cdot \frac{1}{s} = \lim_{s\to 0} G(s)\]
+\[\implies K_{DC} = G(0)\]
+\underline{Note:} This definition is valid only for stable systems where all the poles of $sY(s)$ are in the left half plane.
+\subsection*{Steady-State Error}
+The steady-state error of a system is the difference between the desired output and the reference input as time approaches infinity. It can be derived using the final value theorem and the error transfer function $E(s)/R(s)$:
+\[e_{ss} = \lim_{s\to 0} s E(s)\]
+Note that the steady state error could differ depending on the type of reference input (step, ramp, etc.).
+\section*{Poles and Zeros of Transfer Functions}
+The transfer function of any system modeled by ordinary differential equations can be expressed as a ratio of polynomials in $s$. Once factored, the transfer function can be expressed in terms of its poles and zeros:
+\[G(s) = \frac{(s - z_1)(s - z_2)\cdots(s - z_m)}{(s - p_1)(s - p_2)\cdots(s - p_n)}\]
+There are $m$ zeros and $n$ poles, where $m \leq n$:
+\begin{itemize}
+    \item Zeros: $z_1, z_2, \ldots, z_m$ are the roots of the numerator. 
+    \item Poles: $p_1, p_2, \ldots, p_n$ are the roots of the denominator.
+\end{itemize}
+\hl{Poles provide information on the stability and frequency response of the system.}
+\section*{System Stability}
+As mentioned previously, the poles of a system provide information on the stability of the system.
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{Stability.png}
+\end{center}
+\begin{itemize}
+    \item \textbf{Stable System:}\\
+    A system is stable if its output to every bounded input is also bounded, instead of growing to infinity. This is satisfied if all the poles of the system are in the left half plane (LHP), having negative real parts \(\text{Re}(p_i) < 0\).
+    \item \textbf{Unstable System:}\\
+    A system is unstable if its output to a bounded input grows to infinity. This is satisfied if any of the poles of the system are in the right half plane (RHP), having positive real parts \(\text{Re}(p_i) > 0\).
+    \item \textbf{Marginally Stable System:}\\
+    A typical example of a marginally stable system is pure oscillation, where the output neither grows nor decays. This is satisfied if the system's poles are purely imaginary, having zero real parts \(\text{Re}(p_i) = 0\).
+\end{itemize}
+\section*{System Response and Time Domain Specifications}
+\subsection*{First Order System}
+The general characteristic equation of a first order system is given by:
+\[\tau \dot{y} + y = K u \quad \leftrightarrow \quad G(s) = \frac{Y(s)}{U(s)}=\frac{K}{\tau s + 1}\]
+\begin{itemize}
+    \item \textbf{Time Constant \(\tau\)}: \\
+    Describes how quickly the system reaches steady state (shorter time constant means faster response). At $1\tau$, the system reaches $63.3\%$ of its final value, at $2\tau$ it is $86.5\%$, at $3\tau$ it is $95\%$, and at $4\tau$ it is $98.2\%$. Thus, the system is considered to have reached steady state after $4\tau$.
+    \item \textbf{Steady State Gain \(K\)}: \\
+    As defined earlier, the steady state gain here is the DC gain of the system, which describes how the output scales with respect to the input.
+\end{itemize}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{first_order_response.png}
+\end{center}
+\subsection*{Second Order System}
+\textbf{Standard Second-Order Equation}\\
+Consider the standard second-order homogenous differential equation:
+\[\ddot{y} + 2\zeta\omega_n\dot{y} + \omega_n^2 y = 0\]
+This describes the free response of the system. Here:
+\[\omega_n = \text{ (natural frequency)},\quad \zeta = \text{ (damping ratio)}\]
+The natural frequency sets the characteristic timescale of the response, while the damping ratio determines whether the system is oscillatory and how quickly it decays.\\\\
+\textbf{Standard Second-Order Transfer Function}\\
+Now consider the forced response of the system with a non-zero input $b u(t)$:
+\[\ddot{y} + 2\zeta\omega_n\dot{y} + \omega_n^2 y = b u(t)\]
+Taking the Laplace transform of both sides, we get:
+\[\left(s^2 + 2\zeta\omega_n s + \omega_n^2\right) Y(s) = b U(s)\]
+Therefore, the transfer function is:
+\[G(s) = \frac{Y(s)}{U(s)} = \frac{b}{s^2 + 2\zeta\omega_n s + \omega_n^2}\]
+Assuming a system with a DC gain of $1$, we find that $b = \omega_n^2$:
+\[G(0) = \frac{b}{\omega_n^2} = 1 \quad \implies \quad b = \omega_n^2\]
+\underline{Consider the standard second-order transfer function}
+\[\boxed{G(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}}\]
+For a unit step input $U(s) = \frac{1}{s}$, the output is:
+\[Y(s) = G(s)U(s) = \frac{\omega_n^2}{s(s^2 + 2\zeta\omega_n s + \omega_n^2)}\]
+For the \hl{underdamped case $0 < \zeta < 1$}, the poles are complex conjugates and result in an oscillatory response. Define the damped natural frequency and and phase angle as:
+\[\boxed{\omega_d = \omega_n\sqrt{1 - \zeta^2}, \quad \phi = \cos^{-1}(\zeta)}\]
+The unit-step response in the time domain is then given by:
+\[y(t) = 1 - \frac{1}{\sqrt{1-\zeta^2}} e^{-\zeta\omega_n t} \sin(\omega_d t + \phi)\]
+\textbf{Poles, Natural Responses, and Damping Cases}\\
+The poles of the second-order system are given by setting the denominator of the transfer function (the characteristic equation) to zero:
+\[s^2 + 2\zeta\omega_n s + \omega_n^2 = 0\]
+\[\implies s_{1,2} = \frac{-2\zeta \omega_n \pm \sqrt{(2\zeta \omega_n)^2 - 4 \omega_n^2}}{2} = -\zeta \omega_n \pm \omega_n \sqrt{\zeta^2 -1}\]
+Note that the stability of the system, and the locations of the poles, depend entirely on the damping ratio $\zeta$:
+\begin{itemize}
+    \item \textbf{Undamped Case \(\zeta = 0\)}: Poles are purely imaginary, resulting in pure oscillation with no decay. The system is marginally stable.
+    \[s_{1,2} = \pm \hat{\imath}\omega_n\]
+    Where $\hat{\imath} = \sqrt{-1}$ is the imaginary number.\\\\
+    The time domain response is:
+    \[y(t) = C_1 e^{\hat{\imath}\omega_n t} + C_2 e^{-\hat{\imath}\omega_n t} \quad \leftrightarrow\quad \boxed{y(t) = A \cos(\omega_n t) + B \sin(\omega_n t) \quad \text{(Euler's Identity)}}\]
+    \item \textbf{Underdamped Case $0<\zeta<1$}: Poles are complex conjugates with negative real parts, resulting in oscillatory decay. The system is stable.\\\\
+    For $0<\zeta<1$, the square root term is imaginary:
+    \[\sqrt{\zeta^2 -1} = \hat{\imath}\sqrt{1-\zeta^2}\]
+    \[\implies s_{1,2} = -\zeta \omega_n \pm \hat{\imath}\omega_n\sqrt{1-\zeta^2} = -\zeta \omega_n \pm \hat{\imath}\omega_d\]
+    Where $\omega_d = \omega_n\sqrt{1-\zeta^2}$ is the damped natural frequency.\\\\
+    The time domain response is:
+    \[\boxed{y(t) = e^{-\zeta\omega_n t} \left[A \cos(\omega_d t) + B \sin(\omega_d t)\right]}\]
+    The system oscillates at a frequency of $\omega_d$ while decaying at in an exponential envelope of $e^{-\zeta\omega_n t}$.
+    \item \textbf{Critically Damped Case \(\zeta = 1\)}: Poles are real and repeated, resulting in a non-oscillatory (exponential) response. The system is stable.
+    \[s_{1,2} = -\omega_n\]
+    The time domain response is:
+    \[\boxed{y(t) = (C_1 + C_2t)e^{-\omega_n t}}\]
+    \textit{Recall from differential equations that the repeated root solution has to be multiplied by $t$ to get a second linearly independent solution.}\\\\
+    Critical damping represents the boundary between oscillatory and non-oscillatory behavior, and is the fastest response.
+    \item \textbf{Overdamped Case \(\zeta > 1\)}: Poles are real and distinct, resulting in a non-oscillatory (exponential) response. The system is stable.
+    \[s_{1,2} = -\omega_n \left(\zeta \mp \sqrt{\zeta^2 -1}\right)\]
+    The time domain response is:
+    \[\boxed{y(t) = C_1 e^{s_1 t} + C_2 e^{s_2 t}}\]
+    The system decays exponentially with no oscillation. One pole lies closer to the origin and thus decays slower than the other (the dominant pole). \hl{Increasing damping far beyond critical damping thus slows down the response of the system.}
+\end{itemize}
+\underline{For example:} The mass-spring-damper system is a classic second-order system.
+\[m\ddot{x} + b\dot{x} + kx = 0 \quad \leftrightarrow \quad \ddot{x} + \frac{b}{m}\dot{x} + \frac{k}{m}x = 0\]
+Comparing to the standard form gives:
+\[\omega_n = \sqrt{\frac{k}{m}},\quad \zeta = \frac{b}{2\sqrt{km}}\]
+\hl{Define the critical damping coefficient as}
+\[b_{\text{crit}} = 2\sqrt{km}\]
+Thus, the damping ratio can be expressed as relative to the amount required for critically damped behavior (i.e. $\zeta = 1$):
+\[\zeta = \frac{b}{b_{\text{crit}}}\]
+\textbf{Step Response and Time-Domain Specifications}\\
+\hl{The following time domain specifications are defined for the underdamped case $0<\zeta<1$ under a unit step input.}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.48\textwidth}
+        Recall that the time domain response of a second-order system to a unit step input is given by:
+        \[
+        y(t) = 1 - \frac{1}{\sqrt{1-\zeta^2}}
+        e^{-\zeta\omega_n t}
+        \sin(\omega_d t + \phi)
+        \]
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Time specs.png}
+    \end{minipage}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Rise Time \(t_r\)}:\\
+    The rise time is the time required for the response to first reach its steady state value: $y(t_r) = 1$. This occurs when the sine term is equal to $0$:
+    \[\sin(\omega_d t_r + \phi) = 0\quad \implies \quad \omega_d t_r + \phi = n\pi, \quad n=1,2,3,\ldots\]
+    Therefore:
+    \[\boxed{t_r = \frac{\pi -\phi}{\omega_d}=\frac{\pi-\cos^{-1}(\zeta)}{\omega_n\sqrt{1-\zeta^2}\quad\text{(0-100\% rise)}}}\]
+    Another common convention is to define the 10-90\% rise time, which is approximately:
+    \[\boxed{t_r \approx \frac{1.8}{\omega_n}\quad\text{(10-90\% rise)}}\]
+    \textit{This is valid for $\zeta \approx 0.5$}
+    \item \textbf{Peak Time \(t_p\)}:\\
+    The first peak occurs when $\dot{y}(t_p) = 0$. This gives the condition:
+    \[\omega_d t_p = \pi\]
+    Thus, the peak time is:
+    \[\boxed{t_p = \frac{\pi}{\omega_d} = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}}}\]
+    Increasing the natural frequency decreases the peak time, moving the peak earlier in time.
+    \item \textbf{Maximum Overshoot \(M_p\)}:\\
+    The max overshoot is the amount by which the first peak exceeds the steady state value. It is defined as:
+    \[M_p = \frac{y_\text{peak} - y_{\text{ss}}}{y_{\text{ss}}}\]
+    For the standard second-order system, 
+    \[\boxed{M_p = e^{-(\pi\zeta)/\sqrt{1-\zeta^2}}\times 100 \quad [\%]}\]
+    Notice that the max overshoot depends ONLY on the damping ratio $\zeta$, thus \hl{an overshoot requirement immediately gives a minimum damping ratio requirement.}
+    \[\boxed{\zeta = \frac{-\ln(M_p)}{\sqrt{\pi^2 +[\ln(M_p)]^2 }}}\]
+    \item \textbf{Settling Time \(t_s\)}:\\
+    The settling time is the time required for the response to be within a certain percentage of the steady state value. Recall that the responses is bounded by the exponential envelope $e^{-\zeta\omega_n t}$. Thus, define the exponential decay rate as:
+    \[\boxed{\sigma = \zeta\omega_n}\]
+    The settling time is then approximately:
+    \[\boxed{t_s \approx \frac{4}{\zeta\omega_n}\quad\text{(2\% criterion)}}\]
+    \[\boxed{t_s \approx \frac{3.6}{\zeta\omega_n}\quad\text{(5\% criterion)}}\]
+\end{itemize}
+\newpage
+\textbf{Pole Locations and Performance}\\
+We can relate the time domain specifications to the pole locations of the system. But first, the poles can be graphically represented in the complex plane as:
+\begin{itemize}
+    \item \textbf{Magnitude}:
+    \[s_{1,2} = -\zeta \omega_n \pm \hat{\imath}\omega_n\sqrt{1-\zeta^2} = -\sigma \pm \hat{\imath}\omega_d\]
+    \[|s_1| = |s_2| = \sqrt{\sigma^2 + \omega_d^2} = \sqrt{(\zeta \omega_n)^2+\omega_n^2(1-\zeta^2)} = \omega_n\]
+    \item \textbf{Phase Angle}:
+    \[\phi = \cos^{-1}\left(\frac{\sigma}{|s_{1,2}|}\right) = \cos^{-1}\left(\frac{\zeta\omega_n}{\omega_n}\right) = \cos^{-1}(\zeta)\]
+\end{itemize}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{2nd order poles.png}
+\end{center}
+This gives a direct connection between time domain specifications and pole locations.
+\begin{itemize}
+    \item \textbf{Rise Time \(t_r\)}:\\
+    Using the 10-90\% rise time approximation: $t_r \approx \frac{1.8}{\omega_n}$. Thus, for a minimum rise time requirement, we can find the minimum natural frequency:
+    \[t_r \leq t_{r,\text{max}} \quad \implies \quad \omega_n \geq \frac{1.8}{t_{r,\text{max}}}\]
+    Graphically, this corresponds to a circle of radius $\omega_n$ in the complex plane.
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{rise time spec.png}
+    \end{center}
+    \item \textbf{Settling Time \(t_s\)}:\\
+    Using the 2\% settling time approximation: $t_s \approx \frac{4}{\zeta\omega_n} = \frac{4}{\sigma}$. Thus, for a maximum allowable settling time requirement, we can find the minimum exponential decay rate required:
+    \[t_s \leq t_{s,\text{max}} \quad \implies \quad \sigma \geq \frac{4}{t_{s,\text{max}}}\]
+    Graphically, this corresponds to a vertical line in the complex \(s\)-plane at \\
+    \(\operatorname{Re}(s)=-\frac{4}{t_{s,\max}}\), since the real part of the pole is \(\operatorname{Re}(s)=-\sigma\).
+    \[Re(s) \leq -\frac{4}{t_{s,\text{max}}}\]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{settle time spec.png}
+    \end{center}
+    \item \textbf{Maximum Overshoot \(M_p\)}:\\
+    For a maximum allowable overshoot requirement, we can find the minimum damping ratio required:
+    \[\% M_p \leq \% M_{p,\text{max}}\]
+    This defines a minimum damping ratio requirement, which corresponds to a minimum phase angle in the complex plane:
+    \[\zeta \geq \zeta_{\text{min}} \quad \implies \quad \phi \leq \cos^{-1}(\zeta_{\text{min}})\]
+    Note that the inequality flips because $\cos^{-1}(x)$ is a decreasing function.\\
+    \noindent
+\begin{minipage}[c]{0.40\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{overshoot spec.png}
+\end{minipage}
+\hspace{0.5em}
+\begin{minipage}[c]{0.4\textwidth}
+    Lines of constant $\zeta$ are rays from the origin in the left half plane. Thus, an overshoot specification defines an \hl{angular region in which the poles must lie.} Less overshoot corresponds to a larger damping ratio!
+\end{minipage}
+\item \textbf{Peak Time $t_p$}:\\
+For a maximum allowable peak time requirement where $t_p = \frac{\pi}{\omega_d}$, we can find the minimum damped natural frequency required:
+\[t_p \leq t_{p,\text{max}} \quad \implies \quad \omega_d \geq \frac{\pi}{t_{p,\text{max}}}\]
+Since $\omega_d = |\operatorname{Im}(s)|$, this corresponds to a horizontal line in the complex plane at\\ \(\operatorname{Im}(s) = \pm\frac{\pi}{t_{p,\max}}\).
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{peak time spec.png}
+\end{center}
+\end{itemize}
 \section*{PID Controllers}
+PID controllers have the following general form, letting the error signal be $e(t) = r(t) - y(t)$:
+\[u(t) = k_p e(t) + k_i \int_0^t e(\tau) d\tau + k_d \frac{d\,e(t)}{dt} \]
+\[U(s) = (k_p + k_i \frac{1}{s} + k_d s)E(s)\]
+Where the PID controller transfer function is:
+\[\boxed{C(s) = k_p + k_i \frac{1}{s} + k_d s}\]
+Notice that the derivative term adds a zero to the system, while the integral term adds a pole to the system. With integral control, we can eliminate steady-state error.
+\begin{itemize}
+    \item $k_p$ is the proportional gain which acts like a spring, changing how sensitive the system is to error.
+    \item $k_d$ is the derivative gain which acts like a damper, changing how quickly the system responds to changes in error.
+    \item $k_i$ is the integral gain which improves tracking, contributing to the control effort based on the accumulated error over time. 
+\end{itemize}
 \section*{Root Locus Plots}
+For a negative unity feedback system, the closed-loop transfer function is given by:
+\[\frac{Y(s)}{R(s)} = \frac{C(s)P(s)}{1+ C(s)P(s)}\]
+The denominator of the closed-loop transfer function is called the characteristic equation:
+\[1 + C(s)P(s) = 0\]
+\hl{The root locus describes how the closed-loop poles of a system move in the complex plane as a single parameter (usually the gain) is varied from $0$ to $\infty$.}\\\\
+\textbf{Standard Evans Form}\\
+Thus, we will \textit{factor out the gain of interest $K$} from the characteristic equation, giving us the \hl{standard Evans form}:
+\[\boxed{1+ K L_0 (s) =0, \quad K\geq 0}\]
+where $L_0(s)$ is the loop transfer function without the gain $K$.\\\\
+Because we are interested in the behavior of the closed-loop poles, instead of analyzing the full closed-loop transfer function, we can analyze the poles and zeros of the loop transfer function \(L_0(s)\) to determine the locations \(s\) that satisfy the characteristic equation. \hl{These locations $s$ exactly correspond to the closed-loop poles of the system.}\\\\
+Defining the loop transfer function as a ratio of polynomials, where $z_j$ and $p_i$ are the zeros and poles of the loop transfer function, respectively:
+\[
+L_0(s)=k_0\frac{\displaystyle\prod_{j=1}^{m}(s-z_j)}{\displaystyle\prod_{i=1}^{n}(s-p_i)}
+\]
+where \hl{$k_0$ is the ratio of the leading coefficients of the numerator and denominator polynomials.}\\\\
+Rewriting the closed-loop pole condition (the characteristic equation):
+\[1+ K L_0 (s) =0 \quad \leftrightarrow \quad KL_0(s) = -1\]
+Putting this into magnitude and phase form gives the magnitude condition and the phase condition:
+\[\boxed{|K L_0(s)| = 1 \quad \text{(magnitude condition)}}\]
+For positive $K>0$, the phase condition is:
+\[ \boxed{\angle{L_0(s)} = (2\ell+1)\pi,\quad \ell \in \mathbb{Z}\quad \text{(phase condition)}}\]
+Therefore, a point $s$ in the complex plane is on the root locus if it satisfies the phase condition, and the corresponding gain $K$ can be found by evaluating the loop function at that point via the magnitude condition.
+\[K = \frac{1}{|L_0(s)|}\]
+\subsection*{Evans Rules}
+\begin{itemize}
+    \item \textbf{Rule 0: Symmetry of the Root Locus}\\
+    For systems with real coefficients, all complex poles and zeros occur in complex conjugate pairs. Thus,
+    \[\boxed{\text{The root locus is symmetric about the real axis}}\]
+    \item \textbf{Rule 1: Start and End Points of the Root Locus} \\
+    We call the poles of $L_0(s)$ the open loop poles, and the zeros of $L_0(s)$ the open loop zeros. 
+    \begin{center}
+\fbox{\parbox{0.65\textwidth}{\centering
+Branches of the root locus start at the poles of $L_0(s)$\\
+and end at the zeros of $L_0(s)$ or at infinity.
+}}
+\end{center}
+Letting $n$ be the number of poles and $m$ be the number of zeros, define \hl{relative degree as $r = n - m$}. Then there are $r$ branches of the root locus that go to infinity (asymptotes) while the remaining $m$ branches go to the open-loop zeros.
+\item \textbf{Rule 2: Real Axis Segments of the Root Locus} \\
+Let $N_R$ be the total number of open-loop poles AND zeros to the right of a candidate point $s$ on the real axis. Then, a point $s$  on the real axis lies on the root locus if 
+\[
+\boxed{
+\begin{aligned}
+k_0 > 0 &: \quad N_R \text{ is odd}\\
+k_0 < 0 &: \quad N_R \text{ is even}
+\end{aligned}
+}
+\]
+\underline{Note:} We will see that while $k_0$ is usually positive, if it is negative, the phase condition will be slightly different (\textit{see HW2 solutions}) which will result in a different set of real axis segments for the root locus.
+\item \textbf{Rule 3: Asymptotes and Centroid of the Root Locus} \\
+All asymptotes of the root locus intersect/originate at the centroid, which is given by:
+\[
+\boxed{
+\alpha = \frac{\displaystyle\sum_{i=1}^{n} p_i - \displaystyle\sum_{j=1}^{m} z_j}{r},\quad r = n - m
+}
+\]
+The number and directions of the asymptotes are given by:
+\[
+\boxed{
+\theta_q =
+\begin{cases}
+\dfrac{(2q+1)\pi}{r}, & k_0 > 0 \\[6pt]
+\dfrac{2q\pi}{r}, & k_0 < 0
+\end{cases}
+\qquad q=0,1,\ldots,r-1
+}
+\]
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{center}
     {\LARGE\bfseries \fbox{Frequency Response Analysis (Bode Plots)}\par}
 \end{center}
