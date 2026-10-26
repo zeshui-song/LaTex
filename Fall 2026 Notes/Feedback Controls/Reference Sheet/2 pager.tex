@@ -1,0 +1,408 @@
+
+\documentclass[10pt, fleqn]{article}
+
+% Page Layout
+\usepackage[a4paper, margin=0.5in]{geometry}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[font=small, skip=4pt]{caption}
+
+% Mathematics
+\usepackage{amsmath, amssymb, amsfonts, mathtools, bm, mathrsfs}
+
+% Figures and Tables
+\usepackage{graphicx}
+\usepackage{tabularx, booktabs}
+
+% Additional Formatting
+\usepackage{siunitx}
+\usepackage{soul}
+\usepackage[hidelinks]{hyperref}
+
+% US Customary Units
+\DeclareSIUnit{\inch}{in}
+\DeclareSIUnit{\foot}{ft}
+\DeclareSIUnit{\yard}{yd}
+\DeclareSIUnit{\mile}{mi}
+
+\DeclareSIUnit{\slug}{slug}
+\DeclareSIUnit{\lbm}{lbm}
+\DeclareSIUnit{\lbf}{lbf}
+
+\DeclareSIUnit{\psi}{psi}
+\DeclareSIUnit{\psf}{psf}
+
+\DeclareSIUnit{\gallon}{gal}
+\DeclareSIUnit{\quart}{qt}
+\DeclareSIUnit{\fahrenheit}{F}
+\DeclareSIUnit{\rankine}{R}
+
+\sisetup{
+    per-mode = fraction
+}
+
+% Equation Spacing
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{4pt}
+\setlength{\mathindent}{0pt}
+
+% Figure and Table Spacing
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+
+% Section Formatting
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+
+\begin{document}
+
+\begin{center}
+    \Large \textbf{Feedback Controls Formula Sheet} \\
+    \normalsize Exam 1
+\end{center}
+    \section*{System Modeling and Analysis}
+    \vspace{-1em}
+\begin{multicols*}{2}\noindent
+\textbf{State Space Representation}\\
+\[\begin{aligned}
+\dot{\underline{x}} &= [A]{\underline{x}} + [B]\underline{u} \\
+\underline{y} &= [C]{\underline{x}} + [D]\underline{u}
+\end{aligned}\]
+\underline{Mass-Spring-Damper System:}
+\[m\ddot{x}+ b\dot{x} + kx = f(t)\]
+Define the state variables to "kill the dots":
+\[x = x,\quad v=\dot{x}\]
+Rewrite the equation of motion as a system of first order differential equations: $m\dot{v}+ bv + kx = f(t)$
+\begin{eqnarray*}
+\dot{x} &=& v \\
+\dot{v} &=& -\frac{k}{m}x - \frac{b}{m}v + \frac{1}{m}f(t)
+\end{eqnarray*}
+In state space form,
+\[
+\underbrace{
+\begin{bmatrix}
+\dot{x}\\
+\dot{v}
+\end{bmatrix}
+}_{\dot{\underline{x}}}
+=
+\underbrace{
+\begin{bmatrix}
+0 & 1\\
+-\frac{k}{m} & -\frac{b}{m}
+\end{bmatrix}
+}_{[A]}
+\underbrace{
+\begin{bmatrix}
+x\\
+v
+\end{bmatrix}
+}_{\underline{x}}
++
+\underbrace{
+\begin{bmatrix}
+0\\
+\frac{1}{m}
+\end{bmatrix}
+}_{[B]}
+\underbrace{f(t)}_{\underline{u}}
+\]
+\[
+\underbrace{y}_{\underline{y}}
+=
+\underbrace{
+\begin{bmatrix}
+1 & 0
+\end{bmatrix}
+}_{[C]}
+\underbrace{
+\begin{bmatrix}
+x\\
+v
+\end{bmatrix}
+}_{\underline{x}}
++
+\underbrace{0}_{[D]}
+\underbrace{f(t)}_{\underline{u}}
+\]
+\textbf{Transfer Function Matrix from State Space}
+\[\frac{\underline{Y}}{\underline{U}} = [C][sI - A]^{-1}[B] + [D]\]
+\underline{Recall:} We can invert a 2x2 matrix using the formula:
+\[
+A =
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}\]
+\[A^{-1} = \frac{1}{ad - bc}
+\begin{pmatrix}
+d & -b \\
+-c & a
+\end{pmatrix},
+\quad \text{if } ad - bc \neq 0.\]
+\textbf{Linearization (Jacobian Method)}\\
+Nonlinear pendulum: torque input $T = k_\tau \sin(u_1)$ and force input $F = k_F \sin(u_2)$, where $u_1$ and $u_2$ are independent inputs:
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{C:/Users/zsong/Desktop/LaTex/Fall 2026 Notes/Feedback Controls/pendulum+.png}
+\end{center}
+The equation of motion is given by:
+\[\sum \tau = I \ddot{\theta} \implies m\ell^2 \ddot{\theta} = -mg\ell\sin\theta + k_\tau \sin(u_1) + \ell k_F \sin(u_2)\]
+Define $\omega = \dot{\theta}$ and the state vector:
+\[\underline{x} = \begin{pmatrix} \theta \\ \omega \end{pmatrix},\quad \underline{u} = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}\]
+Nonlinear state-space representation:
+\[\dot{\underline{x}} = \begin{pmatrix} \omega \\ -\frac{g}{\ell}\sin\theta + \frac{k_\tau}{m\ell^2}\sin(u_1) + \frac{k_F}{m\ell}\sin(u_2) \end{pmatrix} \iff \underline{\dot{x}} = \underline{f}(\underline{x}, \underline{u})\]
+\[y=\begin{pmatrix}
+    1 & 0
+\end{pmatrix} \underline{x} \quad \iff \quad y = \underline{h}(\underline{x}, \underline{u})\quad \text{(output $y = \theta$)}\]
+Linearization procedure:
+\begin{itemize}
+    \item[I.] Define operating point $(\underline{\bar{x}}, \underline{\bar{u}})$ \& incremental variables:
+    \[\underline{x} = \underline{\bar{x}} + \underline{\hat{x}},\quad \underline{u} = \underline{\bar{u}} + \underline{\hat{u}},\quad \underline{y} = \underline{\bar{y}} + \underline{\hat{y}}\]
+    Linearize the nonlinear state equation:
+    \[\underline{f}(\underline{x},\underline{u}) \approx \underline{f}(\underline{\bar{x}}, \underline{\bar{u}}) + \frac{\partial \underline{f}}{\partial \underline{x}}\bigg|_{(\underline{\bar{x}}, \underline{\bar{u}})} \underline{\hat{x}} + \frac{\partial \underline{f}}{\partial \underline{u}}\bigg|_{(\underline{\bar{x}}, \underline{\bar{u}})} \underline{\hat{u}}\]
+    \begin{itemize}
+        \item State Jacobian $[A]$:
+        \[\renewcommand{\arraystretch}{1.8}
+        [A] = \left.\begin{pmatrix}
+\frac{\partial f_1}{\partial \theta} & \frac{\partial f_1}{\partial \omega} \\
+\frac{\partial f_2}{\partial \theta} & \frac{\partial f_2}{\partial \omega}
+\end{pmatrix}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}=
+\begin{pmatrix}
+0 & 1 \\
+-\frac{g}{\ell}\cos\bar{\theta} & 0
+\end{pmatrix}\]
+        \item Input Jacobian $[B]$:
+\[
+\renewcommand{\arraystretch}{1.8}
+[B] =
+\left.
+\begin{pmatrix}
+\dfrac{\partial f_1}{\partial u_1} & \dfrac{\partial f_1}{\partial u_2} \\
+\dfrac{\partial f_2}{\partial u_1} & \dfrac{\partial f_2}{\partial u_2}
+\end{pmatrix}
+\right|_{(\underline{\bar{x}}, \underline{\bar{u}})} =
+\begin{pmatrix}
+0 & 0 \\
+\dfrac{k_{\tau}}{m\ell^2}\cos\bar{u}_1 &
+\dfrac{k_F}{m\ell}\cos\bar{u}_2
+\end{pmatrix}\]
+    \end{itemize}
+    \item [II.] Find operating point: $\dot{\underline{\bar{x}}} = \underline{f}(\underline{{\bar{x}}},\underline{\bar{u}}) = 0$
+    \[\dot{\underline{x}}\big|_{(\underline{\bar{x}}, \underline{\bar{u}})} = \begin{pmatrix} \bar{\omega} \\ -\frac{g}{\ell}\sin\bar{\theta} + \frac{k_\tau}{m\ell^2}\sin(\bar{u_1}) + \frac{k_F}{m\ell}\sin(\bar{u_2}) \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}\]
+    Solving these conditions define $(\underline{\bar{x}}, \underline{\bar{u}})$. Leave it symbolic for now.
+    \item [III.] Substitute linearized terms into state equation and apply equilibrium condition:
+    \[\big(\underline{\dot{\bar{x}}}+\underline{\dot{\hat{x}}}\big)\approx \underline{f}(\underline{{\bar{x}}},\underline{\bar{u}})+ A \underline{\hat{x}}\ + B \underline{\hat{u}}\]
+    Equilibrium condition $\underline{f}(\underline{{\bar{x}}},\underline{\bar{u}}) = 0$ gives:
+    \[\underline{\dot{\hat{x}}} = A \underline{\hat{x}} + B \underline{\hat{u}}\]
+\[
+\resizebox{0.95\columnwidth}{!}{$\displaystyle
+\renewcommand{\arraystretch}{2}
+\boxed{
+\underbrace{
+\begin{pmatrix}
+\dot{\hat{\theta}} \\
+\dot{\hat{\omega}}
+\end{pmatrix}
+}_{\dot{\hat{x}}}
+=
+\underbrace{
+\begin{pmatrix}
+0 & 1 \\
+-\dfrac{g}{\ell}\cos\bar{\theta} & 0
+\end{pmatrix}
+}_{A}
+\underbrace{
+\begin{pmatrix}
+\hat{\theta} \\
+\hat{\omega}
+\end{pmatrix}
+}_{\hat{x}}
++
+\underbrace{
+\begin{pmatrix}
+0 & 0 \\
+\dfrac{k_{\tau}}{m\ell^2}\cos\bar{u}_1 &
+\dfrac{k_F}{m\ell}\cos\bar{u}_2
+\end{pmatrix}
+}_{B}
+\underbrace{
+\begin{pmatrix}
+\hat{u}_1 \\
+\hat{u}_2
+\end{pmatrix}
+}_{\hat{u}}
+}
+$}
+\]
+\end{itemize}
+Output can be linearized in a similar manner:
+\[
+C = \left.\frac{\partial h}{\partial x}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}
+=\left.\begin{pmatrix} \frac{\partial h}{\partial \theta} & \frac{\partial h}{\partial \omega} \end{pmatrix}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}
+= \begin{pmatrix} 1 & 0 \end{pmatrix}
+\]
+\[
+D = \left.\frac{\partial h}{\partial u}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}
+=\left.\begin{pmatrix} \frac{\partial h}{\partial u_1} & \frac{\partial h}{\partial u_2} \end{pmatrix}\right|_{(\underline{\bar{x}}, \underline{\bar{u}})}
+= \begin{pmatrix} 0 & 0 \end{pmatrix}
+\]
+\[
+\implies \hat{y} = C\hat{x} + D\hat{u}
+= \begin{pmatrix} 1 & 0 \end{pmatrix}\hat{x}
+\]
+\underline{Note:} For a scalar nonlinear system, linearization is simply a first-order Taylor expansion about the operating point:
+\[
+f(x)\approx f(\bar{x})+\left.\frac{df}{dx}\right|_{x=\bar{x}}(x-\bar{x})
+\]
+\newpage
+
+\textbf{Laplace Transforms}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}ll@{}}
+\midrule
+$\delta(t)$ & $1$ \\
+$1$ & $1/s$ \\
+$t$ & $1/s^2$ \\
+$e^{at}$ & $1/(s-a)$ \\
+$\dot{f}(t)$ & $sF(s)-f(0^-)$ \\
+$\ddot{f}(t)$ & $s^2F(s)-sf(0^-)-\dot{f}(0^-)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Initial and Final Value Theorems:}
+\[
+\boxed{f(0^+)=\lim_{s\to\infty}sF(s)}
+\qquad
+\boxed{f(\infty)=\lim_{s\to 0}sF(s)}
+\]
+\textbf{Transfer Functions and Block Diagrams}\\
+\[G(s) = \frac{Y(s)}{U(s)} = \frac{\text{"Forward Gain"}}{1+\text{"Loop Gain"}}\]
+Series Blocks: $G(s) = G_1(s)G_2(s)$ \\
+Parallel Blocks: $G(s) = G_1(s)+G_2(s)$ 
+\section*{System Behavior and Root Locus}
+    \vspace{-1em}
+\textbf{DC Gain and Steady State Error}
+\[K_{DC} = \lim_{s \to 0} sY(s) = \lim_{s \to 0} G(s) \quad \text{(For unit step input)}\]
+\[e_{ss} = \lim_{s \to 0} sE(s),\quad e(t) = r(t) - y(t)\]
+\textbf{First Order System}
+\[\tau \dot{y} + y = K u\leftrightarrow G(s) = \frac{K}{\tau s + 1}\]
+\[y(t) = K(1 - e^{-t/\tau}) \quad \text{(For unit step input)}\]
+\textbf{Second Order System}
+\[\ddot{y} + 2\zeta\omega_n\dot{y} + \omega_n^2 y = \omega_n^2 u\leftrightarrow G(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}\]
+\[\sigma = \zeta\omega_n \quad \text{(exponential damping rate)}\]
+\[\omega_d = \omega_n\sqrt{1 - \zeta^2} \quad \text{(damped frequency)}\]
+Poles:
+$s_{1,2} = -\zeta\omega_n \pm \omega_n\sqrt{\zeta^2 - 1} = -\sigma \pm \hat{\imath}\omega_d $
+\[\phi = \cos^{-1}\left(\frac{\sigma}{|s_{1,2}|}\right) = \cos^{-1}\left(\frac{\zeta\omega_n}{\omega_n}\right) = \cos^{-1}(\zeta)\]
+\begin{center}
+    \includegraphics[width=0.25\textwidth]{C:/Users/zsong/Desktop/LaTex/Fall 2026 Notes/Feedback Controls/2nd order poles.png}
+\end{center}
+For unit step input, the time response is given by:
+ \[\implies y(t) = 1 - \frac{1}{\sqrt{1-\zeta^2}} e^{-\zeta\omega_n t} \sin(\omega_d t + \phi)\]
+ \newcolumn
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}ll@{}}
+\midrule
+Undamped ($\zeta=0$)
+& $A\cos(\omega_n t)+B\sin(\omega_n t)$ \\
+
+Underdamped ($0<\zeta<1$)
+& $e^{-\zeta\omega_n t}[A\cos(\omega_d t)+B\sin(\omega_d t)]$ \\
+
+Critically Damped ($\zeta=1$)
+& $(C_1+C_2t)e^{-\omega_n t}$ \\
+
+Overdamped ($\zeta>1$)
+& $C_1e^{s_1t}+C_2e^{s_2t}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Time-Domain Specs}\\
+For second order underdamped system given unit step input:
+\vspace{-2em}
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{C:/Users/zsong/Desktop/LaTex/Fall 2026 Notes/Feedback Controls/Time specs.png}
+\end{center}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{@{}ll@{}}
+\midrule
+Rise Time (0--100\%)
+& $\displaystyle t_r=\frac{\pi-\phi}{\omega_d}
+=\frac{\pi-\cos^{-1}(\zeta)}{\omega_n\sqrt{1-\zeta^2}}$ \\
+
+Rise Time (10--90\%)
+& $\displaystyle t_r\approx\frac{1.8}{\omega_n}$ \\
+
+Peak Time
+& $\displaystyle t_p=\frac{\pi}{\omega_d}
+=\frac{\pi}{\omega_n\sqrt{1-\zeta^2}}$ \\
+
+Max. Overshoot
+& $\displaystyle M_p=e^{-\frac{\pi\zeta}{\sqrt{1-\zeta^2}}}\times100\%$ \\
+
+
+& $\implies \displaystyle \zeta=\frac{-\ln(M_p)}
+{\sqrt{\pi^2+[\ln(M_p)]^2}}$ \\
+
+Settling Time (2\%)
+& $\displaystyle t_s\approx\frac{4}{\zeta\omega_n}$ \\
+
+Settling Time (5\%)
+& $\displaystyle t_s\approx\frac{3.6}{\zeta\omega_n}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Evans Root Locus Rules}\\
+\[1 + KL_0(s) = 0,\quad K \geq 0\quad \text{(Evans Form)}\]
+\[\boxed{|K L_0(s)| = 1\implies K = \frac{1}{|L_0(s)|} \quad \text{(magnitude condition)}}\]
+\[ \boxed{\angle{L_0(s)} = (2\ell+1)\pi,\quad \ell \in \mathbb{Z}\quad \text{(phase condition)}}\]
+Rule 0: The root locus is symmetric about the real axis. \\\\
+Rule 1: Branches of the root locus start at the poles of $L_0(s)$ and end at the zeros of $L_0(s)$ or infinity (Asymptotes). \\\\
+Rule 2: A point $s$ on the real axis is part of the root locus if
+$k_0 > 0 : \quad N_R \text{ is odd},\quad 
+k_0 < 0 : \quad N_R \text{ is even}$
+where $N_R$ is the number of poles and zeros to the right of $s$. \\\\
+Rule 3: All asymptotes intersect at the centroid $\alpha$ with direction $\theta_q$, let relative degree $r = $  number of poles $-$ number of zeros:
+{\scriptsize
+\[
+\boxed{\alpha=\frac{\sum p_i-\sum z_j}{r}}
+\quad
+\boxed{\theta_q=
+\begin{cases}
+(2q+1)\pi/r,&k_0>0\\
+2q\pi/r,&k_0<0
+\end{cases}
+\quad q=0,\ldots,r-1}
+\]
+}
+
+
+
+
+
+
+
+
+
+
+\end{multicols*}
+
+
+
+
+
+
+
+
+
+\end{document}

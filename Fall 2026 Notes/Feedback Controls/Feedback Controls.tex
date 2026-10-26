@@ -318,7 +318,7 @@ Consider a similar pendulum system but now with a nonlinear torque input $T = k_
     \includegraphics[width=0.45\textwidth]{pendulum+.png}
 \end{center}
 The equation of motion is given by:
-\[\sum \tau = I \ddot{\theta} \quad \implies \quad m\ell \ddot{\theta} = -mg\ell\sin\theta + k_\tau \sin(u_1) + \ell k_F \sin(u_2)\]
+\[\sum \tau = I \ddot{\theta} \quad \implies \quad m\ell^2 \ddot{\theta} = -mg\ell\sin\theta + k_\tau \sin(u_1) + \ell k_F \sin(u_2)\]
 Define $\omega = \dot{\theta}$ and the state vector:
 \[\underline{x} = \begin{pmatrix} \theta \\ \omega \end{pmatrix},\quad \underline{u} = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}\]
 Then, the nonliner state-space representation of the system is:
@@ -665,6 +665,8 @@ As mentioned previously, the poles of a system provide information on the stabil
 \subsection*{First Order System}
 The general characteristic equation of a first order system is given by:
 \[\tau \dot{y} + y = K u \quad \leftrightarrow \quad G(s) = \frac{Y(s)}{U(s)}=\frac{K}{\tau s + 1}\]
+The corresponding time domain response to a unit step input is:
+\[y(t) = K\left(1 - e^{-\frac{t}{\tau}}\right)\]
 \begin{itemize}
     \item \textbf{Time Constant \(\tau\)}: \\
     Describes how quickly the system reaches steady state (shorter time constant means faster response). At $1\tau$, the system reaches $63.3\%$ of its final value, at $2\tau$ it is $86.5\%$, at $3\tau$ it is $95\%$, and at $4\tau$ it is $98.2\%$. Thus, the system is considered to have reached steady state after $4\tau$.
