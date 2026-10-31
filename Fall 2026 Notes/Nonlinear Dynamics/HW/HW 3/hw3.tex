@@ -96,22 +96,22 @@ If possible, describe how or perform the finding of the normal form for each.
         \begin{itemize}
             \item $r<0$:
             \begin{itemize}
-                \item $x^* = 0:$ $f(x^*)<0$ (stable)
-                \item $x^* = \frac{1}{r}-1$: $f(x^*)<0$ (stable)
+                \item $x^* = 0:$ $f'(x^*)<0$ (stable)
+                \item $x^* = \frac{1}{r}-1$: $f'(x^*)<0$ (stable)
             \end{itemize}
             \item $0<r<1$: 
             \begin{itemize}
-                \item $x^* = 0:$ $f(x^*)<0$ (stable)
-                \item $x^* = \frac{1}{r}-1$: $f(x^*)>0$ (unstable)
+                \item $x^* = 0:$ $f'(x^*)<0$ (stable)
+                \item $x^* = \frac{1}{r}-1$: $f'(x^*)>0$ (unstable)
             \end{itemize}
             \item $r = 1$:
             \begin{itemize}
-                \item $x^*=0:$ $f(x^*)=0$ (inconclusive)
+                \item $x^*=0:$ $f'(x^*)=0$ (inconclusive)
             \end{itemize}
             \item $r>1$:
             \begin{itemize}
-                \item $x^* = 0:$ $f(x^*)>0$ (unstable)
-                \item $x^* = \frac{1}{r}-1:$ $f(x^*)<0$ (stable)
+                \item $x^* = 0:$ $f'(x^*)>0$ (unstable)
+                \item $x^* = \frac{1}{r}-1:$ $f'(x^*)<0$ (stable)
             \end{itemize}
             Note that $r\to0$ causes $x^*= \frac{1}{r}-1 \to \infty$. Also, the original equation is not defined at $x=-1$.\\\\
             \underline{This is a transcritical bifurcation at $x^* =0,\,r=1$}
@@ -263,7 +263,7 @@ If possible, describe how or perform the finding of the normal form for each.
         For the nonzero fixed points to be real, we need $-r/(1+r) \geq 0 \implies -1<r<0$.
         \item Vary parameter $r$ and find bifurcation points:
         \begin{itemize}
-            \item $r<-1$: One fixed point at $x^*=0$  
+            \item $r\leq-1$: One fixed point at $x^*=0$  
             \item $-1<r<0$: Three fixed points at $x^*=0,\quad x^* = \pm \sqrt{\frac{-r}{1+r}}$
             \item $r=0$: One fixed point at $x^*=0$ 
             \item $r>0$: One fixed point at $x^*=0$ 
@@ -273,17 +273,34 @@ If possible, describe how or perform the finding of the normal form for each.
         \[f'(0) = r\]
         \[f'\left(\pm \sqrt{\frac{-r}{1+r}}\right) = -2r(1+r)\]
             \begin{itemize}
-            \item $r<-1$: One fixed point at $x^*=0$  
-            \item $-1<r<0$: Three fixed points at $x^*=0,\quad x^* = \pm \sqrt{\frac{-r}{1+r}}$
+            \item $r<-1$: 
+            \begin{itemize}
+                \item $x^* = 0$: $f'(x^*)<0$ (stable)
+            \end{itemize} 
+            \item $-1<r<0$: 
+            \begin{itemize}
+                \item $x^* = 0$: $f'(x^*)<0$ (stable)
+                \item $x^* = \pm \sqrt{\frac{-r}{1+r}}$: $f'(x^*)>0$ (unstable)
+            \end{itemize} 
             \item $r=0$: One fixed point at $x^*=0$ 
+            \begin{itemize}
+                \item $x^* = 0$: $f'(x^*)=0$ (inconclusive)
+            \end{itemize}
             \item $r>0$: One fixed point at $x^*=0$ 
+            \begin{itemize}
+                \item $x^* = 0$: $f'(x^*)>0$ (unstable)
+            \end{itemize}
         \end{itemize}
+        Since we go from 3 fixed points to 1 fixed point, where the two symmetrical fixed points are unstable while the middle one is stable, this is a \uline{subcritical pitchfork bifurcation at $x^*=0,\,r=0$}
         \newpage
         \item Bifurcation diagram:
         \begin{center}
-            \includegraphics[width=0.5\textwidth]{p1a.png}
+            \includegraphics[width=0.5\textwidth]{p1f.png}
         \end{center}
-        \item Normal form: 
+        \item Normal form: $\dot{x} = rx + \frac{x^3}{1+x^2}$. Rewriting using a taylor series around the bifurcation point $x^*=0$ and $r=0$, we have:
+        \[\dot{x} = rx + \frac{x^3}{1+x^2} \approx rx +x^3 (1-x^2+x^4-\ldots)\]
+        Neglecting higher order terms, we have
+        \[\dot{x} \approx rx + x^3\]
     \end{itemize}
 \end{enumerate}
 
@@ -292,13 +309,47 @@ If possible, describe how or perform the finding of the normal form for each.
 \textbf{Subcritical Pitchfork.} Consider the system $\dot{x} = rx + x^3 - x^5$, which exhibits a subcritical pitchfork bifurcation (hint: you may want to read about subcritical pitchforks in the book; we did not say much about these in class).
 \begin{enumerate}
     \item[(a)] Find algebraic expressions for all the fixed points as $r$ varies.
-    \paragraph{Solution}\mbox{} % Write solution here.
-
+    \paragraph{Solution}\mbox{} 
+    Find fixed points:
+    \[\dot{x} = f(x)\quad \implies f(x^*)=0\]
+    \[rx^* + x^{*3} - x^{*5} = 0\quad \implies x^*(r+x^{*2}-x^{*4})=0\]
+    One fixed point at $\boxed{x^*=0}$. Solve quadratic in terms of $y=x^{*2}$ to find the other fixed points:
+    \[-y^2+y+r=0\quad \implies y = \frac{-1\pm \sqrt{1-4(-1)(r)}}{-2}=\frac{1\pm \sqrt{1+4r}}{2}\]
+    The remaining fixed points are at
+    \[\boxed{x^* = \pm \sqrt{\frac{1\pm \sqrt{1+4r}}{2}}}\]
+    Find number of fixed points as $r$ varies. For the fixed points to be real, $r$ is constrained:
+    \begin{itemize}
+        \item $x^* = \pm \sqrt{\frac{1+ \sqrt{1+4r}}{2}}$
+        \[1+ \sqrt{1+4r}\geq 0\quad \implies 1+4r\geq 0\quad \implies r\geq -\frac{1}{4}\]
+        \item $x^* = \pm \sqrt{\frac{1- \sqrt{1+4r}}{2}}$
+        \[1- \sqrt{1+4r}\geq 0\quad \implies 1\geq \sqrt{1+4r}\quad \implies 1\geq 1+4r \quad \implies r\leq 0\]
+    \end{itemize}
+    For
+    \begin{itemize}
+        \item $r<\frac{-1}{4}$: One fixed point, $x^*=0$
+        \item $r = \frac{-1}{4}$: Three fixed points, $x^* = 0, \pm \frac{1}{\sqrt{2}}$
+        \item $\frac{-1}{4}<r<0$: Five fixed points, $x^*=0, \pm \sqrt{\frac{1+ \sqrt{1+4r}}{2}}, \pm \sqrt{\frac{1- \sqrt{1+4r}}{2}}$
+        \item $r=0$: Three fixed points, $x^*=0, \pm 1$
+        \item $r>0$: Three fixed points, $x^*=0, \pm \sqrt{\frac{1+ \sqrt{1+4r}}{2}}$
+    \end{itemize}
     \item[(b)] Sketch the vector fields as $r$ varies. Be sure to indicate all the fixed points and their stability.
-    \paragraph{Solution}\mbox{} % Write solution here.
-
+    \paragraph{Solution}\mbox{} 
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{p2b.png}
+    \end{center}
     \item[(c)] Calculate $r_s$, the parameter value at which the nonzero fixed points are born in a saddle-node bifurcation.
-    \paragraph{Solution}\mbox{} % Write solution here.
+    \paragraph{Solution}\mbox{} 
+    At a saddle node bifurcation, where $\dot{x} = f(x,r)$:
+    \[f(x_c,r_c) = 0,\quad \frac{df}{dx}\bigg|_{(x_c,r_c)} = 0\]
+    Thus we get the system of equations:
+    \[f(x_c,r_c) = 0 \quad \implies r_cx_c + x_c^{3} - x_c^{5} = 0\quad \implies r_c + x_c^{2} - x_c^{4} = 0,\quad x_c \neq 0\]
+    \[\frac{df}{dx}\bigg|_{(x_c,r_c)} = 0 \quad \implies r_c+3x_c^2-5x_c^4=0\]
+    Subtracting
+    \[2x_c^2-4x_c^4=0\quad \implies 2-4x_c^2=0,\quad x_c \neq 0\]
+    \[x_c = \pm\frac{1}{\sqrt{2}}\]
+    Plugging into $ r_c + x_c^{2} - x_c^{4} = 0$ to find $r_c$:
+    \[r_c + \left(\frac{1}{2}\right) - \left(\frac{1}{4}\right) = 0\]
+    \[\boxed{r_c = r_s = -\frac{1}{4}}\]
 \end{enumerate}
 
 \subsection*{Problem 3}
@@ -306,7 +357,7 @@ What can be said about the stability of a fixed point when the derivative at tha
 \[f'(x^*) = \frac{df}{dx}(x^*) = 0\,?\]
 
 \paragraph{Solution}
-% Write solution here.
+For small perturbations around a bifurcation point, the linear stability analysis is inconclusive for $f'(x^*) = 0$. In this case, we would need to either consider the first non-zero higher order derivative of $f(x)$ at $x^*$ or plot the vector field to determine the stability of the fixed point.
 
 \subsection*{Problem 4}
 Show that the first-order system
@@ -314,6 +365,19 @@ Show that the first-order system
 undergoes a transcritical bifurcation at $x=0$ when the parameters $a,b$ satisfy a certain equation, to be determined. (This equation defines a bifurcation curve in the $(a,b)$ parameter space.) Then find an approximate formula for the fixed point that bifurcates from $x=0$, assuming that the parameters are close to the bifurcation curve.
 
 \paragraph{Solution}
-% Write solution here.
-
+I will show that the first order system undergoes a transcritical bifurcation at $x=0$ by putting it into normal form. The normal form for a transcritical bifurcation is $\dot{x} = \mu x - x^2$. We can rewrite the original system as a Taylor series expansion around the bifurcation point $x^*=0$:
+\[\dot{x} = x(1-x^2) - a(1-e^{-bx})=x-x^3-a+ae^{-bx}\]
+\[\dot{x}\approx x-x^3-a+a\left(1-bx+\frac{b^2x^2}{2}-\frac{b^3x^3}{6}+\cdots\right)\]
+Neglecting higher order terms, and rewriting:
+\[\dot{x}\approx (1-ab)x+\frac{ab^2}{2}x^2\]
+This matches the form of a transcritical bifurcation by rescaling $x$ and defining $\mu = 1-ab$.\\\\
+For a bifurcation to occur at $x=0$, we have the condition that $\dot{x} = f(x) = 0$ at $x=0$. That is, the bifurcation point must also be a fixed point.
+\[(1-ab)x+\frac{ab^2}{2}x^2 = 0 \quad \text{at } x=0\]
+It also has to satisfy the condition that the derivative at the bifurcation point is zero such that the stability of the fixed point changes at the bifurcation point.
+\[f'(0) = 1-ab = 0 \quad \implies \quad \boxed{ab = 1}\]
+Finally, solving for the fixed points:
+\[f(x*) = 0 \quad \implies (1-ab)x^*+\frac{ab^2}{2}x^{*2} = 0\]
+Fixed point at $\boxed{x^*=0}$ and another fixed point at
+\[(1-ab)+\frac{ab^2}{2}x^{*} = 0\]
+\[\boxed{x^* = \frac{2(ab-1)}{ab^2}}\]
 \end{document}
