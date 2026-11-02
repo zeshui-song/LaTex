@@ -990,11 +990,376 @@ This is just the multiplication principle where:
     \[\binom{m}{x}\binom{N-m}{n-x}\]
 \end{itemize}
 \end{definition}
-
-
-
-
-
+\newpage
+\subsection*{\underline{2.2 Mathematical Expectation}}
+\addcontentsline{toc}{section}{2.2 Mathematical Expectation}
+\begin{definition}
+    The expectation value (or expected value) represents the average value of a \textit{function of a random variable} over many trials of an experiment.\\\\
+    For a discrete random variable $X$ with p.m.f. $f(x)$, the expected value of $X$ is given by:
+    \[E(X) = \sum_{x \in S} x f(x)\]
+    Intuitively, each possible outcome $x$ is weighted by its probability $f(x)$, where more likely outcomes contribute more to the expected value. Note that the expected value does not have to equal a possible outcome, since it can be thought of as a weighted average.\\\\
+    We can also define the expected value of a function of a random variable $u(X)$ as:
+    \[E(u(X)) = \sum_{x \in S} u(x) f(x)\]
+    \underline{Ex 1}: Let the random variable $X$ represent the number of heads when flipping a fair coin 4 times. Then the expected value of $X$ is:
+    \[E(X) = 0\binom{4}{0} \left(\frac{1}{2}\right)^4 + 1\binom{4}{1} \left(\frac{1}{2}\right)^4 + 2\binom{4}{2} \left(\frac{1}{2}\right)^4 + 3\binom{4}{3} \left(\frac{1}{2}\right)^4 + 4\binom{4}{4} \left(\frac{1}{2}\right)^4\]
+    Where the probability of each outcome is given by the binomial distribution.
+    \[P(X=x) = \binom{4}{x} \left(\frac{1}{2}\right)^4\]
+    $\binom{4}{x}$ is the number of different ways to get $x$ heads in 4 flips, and $\left(\frac{1}{2}\right)^4$ is the probability of any specific sequence of 4 flips.\\\\
+    Now suppose we want to find the expected value of the square of the number of heads, $u(X) = X^2$. Then we have:
+    \begin{eqnarray*}
+    E(X^2) &=& \sum_{x\in S} x^2 f(x)\\
+    &=& 0^2\binom{4}{0} \left(\frac{1}{2}\right)^4 + 1^2\binom{4}{1} \left(\frac{1}{2}\right)^4 + 2^2\binom{4}{2} \left(\frac{1}{2}\right)^4 + 3^2\binom{4}{3} \left(\frac{1}{2}\right)^4 + 4^2\binom{4}{4} \left(\frac{1}{2}\right)^4
+    \end{eqnarray*}
+\end{definition}
+ \underline{Note:} The definition of expected value requires that the sum converges absolutely, 
+\[\sum_{x \in S} |x|f(x) < \infty.\]
+If this condition is not satisfied, the expected value does not exist. However, for most applications considered, we can assume that the sum converges absolutely.
+\begin{theorem}{Properties of Expected Value}
+When the expected value exists, it satisfies the following properties:
+\begin{enumerate}
+    \item [(a)] Expectation of a constant $c$
+    \[E(c) = c\]
+    \item [(b)] If $c$ is a constant and $u$ is a function of a random variable $X$, then
+    \[E(c + u(X)) = c + E(u(X))\]
+    \item [(c)] If $c_1$ and $c_2$ are constants and $u_1$ and $u_2$ are functions of a random variable $X$, then
+    \[E(c_1 u_1(X) + c_2 u_2(X)) = c_1 E(u_1(X)) + c_2 E(u_2(X))\]
+\end{enumerate}
+All of these properties can be referred to as the \hl{Linearity of Expectation.}\\\\
+Let $X_1, X_2, \ldots, X_n$ be random variables. Then for any constants $c_1, c_2, \ldots, c_n$, we have:
+\[E\left(\sum_{i=1}^n c_i X_i\right) = \sum_{i=1}^n c_i E(X_i)\]
+\hl{Thus, if we can split up a random variable into a sum of simpler random variables, we can break it up into the sum of their expected values!}
+\end{theorem}
+\subsection*{Expectation of a \hl{Hypergeometric Random Variable}}
+Recall that a hypergeometric random variable $X$ counts the number of successes in a sample size of $n$ drawn without replacement from a total population of $N$ objects containing $m$ successes:
+\[
+P(X=i)=\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}
+\]
+By definition of expectation:
+\[
+E(X)=\sum_{i=0}^{n}iP(X=i) =\sum_{i=0}^{n}i\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}
+\]
+We can simplify this sum by doing the following (summarized):
+\begin{itemize}
+    \item For $i=0$, the summand is zero, so we can start the sum at $i=1$ instead of $i=0$.
+    \item Use the definition of the binomial coefficient to rewrite $\binom{m}{i}$ as $\frac{m}{i}\binom{m-1}{i-1}$.
+    \item Factor out $\frac{m}{\binom{N}{n}}$
+    \item Use the identity $\binom{N}{n}=\frac{N}{n}\binom{N-1}{n-1}$ to rewrite $\frac{1}{\binom{N}{n}}$ as $\frac{n}{N}\frac{1}{\binom{N-1}{n-1}}$.
+\end{itemize}
+This results in the following:
+\[
+\begin{aligned}
+E(X)
+&=\sum_{i=0}^{n}i\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}\\[6pt]
+&=\frac{mn}{N}\sum_{i=1}^{n}
+\underbrace{\frac{\binom{m-1}{i-1}\binom{N-m}{n-i}}{\binom{N-1}{n-1}}}_{\text{Hypergeometric p.m.f.}}[6pt]
+\end{aligned}
+\]
+By definition, a valid probability mass function sums to 1, so the sum in the above expression is equal to 1. Finally, we have:
+\[\boxed{E(X) = \frac{mn}{N} \quad \text{(Hypergeometric r.v.)}}\]
+\begin{definition}{Indicator Random Variable}
+    An indicator random variable $I_A$ is a random variable that takes the value 1 if event $A$ occurs and 0 otherwise:
+    \[I_A = \begin{cases}
+    1, & \text{if } A \text{ occurs}\\
+    0, & \text{if } A \text{ does not occur}
+    \end{cases}\]
+    The expected value of an indicator random variable is equal to the probability of the event:
+    \[E(I_A) = 1P(A) + 0 [1-P(A)] = P(A)\]
+\end{definition}
+\section*{\fbox{Variance (2.3)}}
+\subsection*{\underline{2.3 The Mean, Variance, and Standard Deviation}}
+\addcontentsline{toc}{section}{2.3 The Mean, Variance, and Standard Deviation}
+\begin{definition}{Support of a Random Variable}
+    The support $S$ of a random variable $X$ is the set of all inputs $x$ such that the p.m.f. is non-zero:
+    \[P(X=x) \neq 0,\quad x \in S\]
+\end{definition}
+\begin{definition}{Mean}
+    The mean is the expected value of a random variable $X$:
+    \[\mu = E(X) = \sum_{x \in S} x f(x)\]
+    \underline{Mechanical Analogy:} If probabilities $P(X=x)$ were treated as weights placed at their corresponding values $x$, then the mean is the centroid or balance point of the distribution.\\\\
+    \underline{Note:} the first moment of a random variable $X$ about the mean $\mu$ is zero:
+    \[E(X-\mu) = E(X) - \mu = 0\]
+\end{definition}
+\begin{definition}{Variance and Standard Deviation}
+    While the mean describes the center of a distribution, the variance and standard deviation describe how spread out the distribution is.
+    \newpage
+    \textbf{Variance}\\
+    The variance of a random variable $X$ is the expected squared deviation from the mean:
+    \[
+\boxed{\sigma^2=\operatorname{Var}(X)=E[(X-\mu)^2]}
+\]
+Expanding and applying the linearity of expectation, we can rewrite the variance as:
+\[\boxed{\operatorname{Var}(X) = E(X^2) - [E(X)]^2}\]
+\underline{Intuition:} Squaring the deviations from the mean prevents positive and negative deviations from canceling each other out. It also has the property that larger deviations are weighted more heavily than smaller deviations (square of a number less than 1 is pushed closer to 0, while square of a number greater than 1 is pushed further away from 0).\\\\
+\textbf{Standard Deviation}\\
+The standard deviation is the square root of the variance:
+\[\boxed{\sigma = \sqrt{\operatorname{Var}(X)}}\]
+\underline{General Behavior of Variance:}
+\begin{itemize}
+    \item An offset in the random variable does not change the variance (spread of the distribution): $$\operatorname{Var}(X+b) = \operatorname{Var}(X)$$
+    \item Scaling the random variable by a constant $c$ scales the variance by $c^2$: $$\operatorname{Var}(cX) = c^2\operatorname{Var}(X)$$
+\end{itemize}
+\end{definition}
+\begin{definition}{Moments of a Distribution}
+    Given a random variable $X$ and positive integer $n$, then the \hl{$n$-th moment of $X$ about the origin} is defined as:
+    \[E(X^n) = \sum_{x \in S} x^n f(x)\]
+    The \hl{$n$-th moment of $X$ about the mean} is defined as:
+    \[E[(X-\mu)^n] = \sum_{x \in S} (x-\mu)^n f(x)\]
+    The \hl{$r$-th factorial moment of $X$} is defined as:
+    \[E[(X)_r] = E[X(X-1)(X-2)\cdots(X-r+1)]\]
+\end{definition}
+\subsection*{Special Cases for Moments of a Distribution}
+\begin{itemize}
+    \item The first moment about the origin is the mean: \[E(X)=\mu\]
+    \item The first moment about the mean is zero: \[E(X-\mu)=0\]
+    \item The second moment about the mean is the variance: \[E[(X-\mu)^2]=\sigma^2\]
+    \item The second factorial moment is related to the variance: \[E[(X)_2]=E[X(X-1)]=E(X^2)-E(X)=\sigma^2+\mu^2-\mu\]
+    \[\boxed{\implies \operatorname{Var}(X) = E[X(X-1)] + E(X) - [E(X)]^2}\] 
+\end{itemize}
+\subsection*{Mean and Variance of a \hl{Hypergeometric Random Variable}}
+As covered in section 2.2, the mean of a hypergeometric random variable $X$ is:
+\[\boxed{\mu = E(X) = \frac{mn}{N}}\]
+Where $N$ is the total population size, $m$ is the number of successes in the population, and $n$ is the sample size.\\\\
+\textbf{Variance}\\
+Using the second factorial moment, we can compute the variance of a hypergeometric random variable $X$ as follows:
+\[\operatorname{Var}(X) = E[X(X-1)] + E(X) - [E(X)]^2\]
+Since we know $E(X) = \frac{mn}{N}$, we just need to compute $E[X(X-1)]$. By definition of expectation:
+\[
+E[X(X-1)]=\sum_{i=0}^{n}i(i-1)\frac{\binom mi\binom{N-m}{n-i}}{\binom Nn}
+\]
+We can simplify this sum by doing the following (summarized):
+\begin{itemize}
+    \item For $i=0$ and $i=1$, the summand is zero, so we can start the sum at $i=2$.
+    \item Use the identity
+    $i(i-1)\binom{m}{i}=m(m-1)\binom{m-2}{i-2}$.
+    \item Factor out $\dfrac{m(m-1)}{\binom{N}{n}}$.
+    \item Use the identity
+    $\binom{N}{n}=\dfrac{N(N-1)}{n(n-1)}\binom{N-2}{n-2}$
+    to rewrite the denominator.
+\end{itemize}
+This results in the following:
+\[
+\begin{aligned}
+E[X(X-1)]
+&=\sum_{i=0}^{n}i(i-1)
+\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}\\[6pt]
+&=\frac{m(m-1)n(n-1)}{N(N-1)}
+\sum_{i=2}^{n}
+\underbrace{
+\frac{\binom{m-2}{i-2}\binom{N-m}{n-i}}
+{\binom{N-2}{n-2}}
+}_{\text{Hypergeometric p.m.f.}}
+\end{aligned}
+\]
+By definition, a valid probability mass function sums to 1, so the sum in the above expression is equal to 1. Thus,
+\[
+E[X(X-1)]=\frac{m(m-1)n(n-1)}{N(N-1)}.
+\]
+Substituting into the variance formula,
+\[
+\begin{aligned}
+\operatorname{Var}(X)
+&=E[X(X-1)]+E(X)-[E(X)]^2\\[6pt]
+&=\frac{m(m-1)n(n-1)}{N(N-1)}
++\frac{mn}{N}-\left(\frac{mn}{N}\right)^2\\[6pt]
+&=\boxed{n\left(\frac{m}{N}\right)
+\left(1-\frac{m}{N}\right)
+\left(\frac{N-n}{N-1}\right)}.
+\end{aligned}
+\]
+\begin{definition}{\textit{Sample} Mean and Variance}
+    Instead of defining the mean and variance of a random variable, knowing its p.m.f., we can also define the mean and variance of a \textit{sample} of $n$ observations from some experiment (statistics).
+    \[
+\boxed{\bar{x}=\frac1n\sum_{i=1}^{n}x_i\quad \text{(Sample Mean)}}
+\]
+\[
+\boxed{s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2 \quad \text{(Sample Variance)}}
+\]
+The sample standard deviation is the square root of the sample variance:
+\[\boxed{s=\sqrt{s^2} \quad \text{(Sample Standard Deviation)}}\]
+\underline{Note:} the variance of the empirical distribution is 
+\[\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2\]
+Empirical variance describes the spread of the data, while sample variance describes the population.
+\end{definition}
+\section*{\fbox{Binomial distribution (2.4)}}
+\subsection*{\underline{2.4 Bernoulli Trials and the Binomial Distribution}}
+\addcontentsline{toc}{section}{2.4 Bernoulli Trials and the Binomial Distribution}
+\begin{definition}{Bernoulli Trials \& Bernoulli Random Variable}
+    A Bernoulli trial for a random experiment has exactly two possible outcomes: success and failure. The probability of success is denoted by $p$, and the probability of failure is denoted by $q=1-p$.\\\\
+    The \hl{Bernoulli random variable $X$} is defined like an indicator random variable, where
+    \[X = \begin{cases}
+    1, & \text{if the trial is a success}\\
+    0, & \text{if the trial is a failure}
+    \end{cases}\]
+    The p.m.f. of a Bernoulli random variable is given by:
+    \[f(x) = \begin{cases}
+    p, & x=1\\
+    1-p, & x=0\\
+    0, & \text{otherwise}
+    \end{cases}\]
+    \[\implies f(x)= p^x(1-p)^{1-x}, \quad x=0,1\]
+    \textbf{Expected Value}\\
+    Like an indicator random variable, the expected value of a Bernoulli random variable is equal to the probability of success:
+    \[E(X) = 1\cdot p + 0\cdot(1-p) = p\]
+    \textbf{Variance}\\
+    The variance of a Bernoulli random variable is given by:
+    \[\sigma^2 = \operatorname{Var}(x) = E(X^2) - [E(X)]^2\]
+    \[\sigma^2 = p(1-p) = pq\]
+\end{definition}
+\begin{definition}{Binomial Distribution}
+    A binomial experiment satisfies the following conditions:
+    \begin{enumerate}
+        \item The experiment consists of $n$ trials
+        \item Each trial is independent
+        \item Each trial has exactly two possible outcomes: success and failure
+        \item The probability of success $p$ is the same for each trial
+    \end{enumerate}
+    \hl{The binomial random variable $X$ counts the number of successes for $n$ trials.}\\\\
+    A binomial random variable $X$ is denoted by:
+    \[X \sim Bin(n,p)\]
+    The p.m.f. of a binomial random variable is given by:
+    \[\boxed{P(X=x) = \binom{n}{x} p^x (1-p)^{n-x}, \quad x=0,1,2,\ldots,n}\]
+    This is similar to Ex 1 in section 2.2, where
+    \begin{itemize}
+        \item $p^x$ is the probability of $x$ successes
+        \item $(1-p)^{n-x}$ is the probability of $n-x$ failures
+        \item $\binom{n}{x}$ is the number of different ways to arrange $x$ successes in $n$ trials
+    \end{itemize}
+    \textbf{Expected Value}\\
+    The intuition is that for $n$ trials, each with equal probability $p$ of success, then the expected number of successes is $np$:
+    \[E(X) = np\]
+    \textbf{Variance}\\
+    Using the formula for variance using the second factorial moment, we have:
+    \[\operatorname{Var}(X) = E[X(X-1)] + E(X) - [E(X)]^2\]
+    The second factorial moment is given by:
+    \[E[X(X-1)]=n(n-1)p^2\]
+    Thus, the variance of a binomial random variable is given by:
+    \[
+\begin{aligned}
+\operatorname{Var}(X)
+&=n(n-1)p^2+np-(np)^2\\
+&=\boxed{np(1-p)}
+\end{aligned}
+\]
+\end{definition}
+\begin{definition}{Cumulative Distribution Function (c.d.f.)}
+    The cumulative distribution function gives the probability that \(X\) is less than or equal to some value \(x\).
+    \[\boxed{F(x)=P(X\leq x)}\]
+    Some properties of the c.d.f. are:
+    \begin{itemize}
+        \item $0 \leq F(x) \leq 1$ for all $x$
+        \item $F(x)$ is always weakly increasing (can stay constant or increase, but never decrease)
+        \item The total probability of all outcomes is 1. As \(x\) increases, the c.d.f. accumulates more probability, approaching 1. Conversely, as \(x\) decreases, fewer outcomes satisfy \(X\leq x\), so the accumulated probability approaches 0. Thus, the limits of the c.d.f. are:
+        \[\lim_{x \to -\infty} F(x) = 0 \quad \text{and} \quad \lim_{x \to \infty} F(x) = 1\]
+    \end{itemize}
+\end{definition}
+\subsection*{Relationship Between p.m.f. and c.d.f.}
+Generally, the c.d.f. of $X$ is just the sum of the p.m.f. of $X$ for all values less than or equal to $x$:
+\[F(x) = \sum_{i=0}^{\lfloor x \rfloor} p(i)\]
+Following this relationship, the p.m.f. can be derived from the c.d.f. as follows:
+\[f(x) = F(x) - F(x-1)\]
+Application wise, the c.d.f. is useful for calculating probabilities of ranges of values. For example:
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\textbf{Probability Requested} & \textbf{Calculation} \\
+\hline
+At most $k$    & $P(X \leq k) = F(k)$ \\
+Fewer than $k$ & $P(X < k) = F(k-1)$ \\
+At least $k$   & $P(X \geq k) = 1-F(k-1)$ \\
+More than $k$  & $P(X > k) = 1-F(k)$ \\
+Exactly $k$    & $P(X = k) = F(k)-F(k-1)$ \\
+\hline
+\end{tabular}
+\end{center}
+To minimize calculations, sum the probabilities over the shorter tail of the distribution, using the complement rule $P(X> x)=1-P(X\leq x)$ when the upper tail is shorter.
+\section*{\fbox{Moment generating functions and
+Poisson distribution (2.5-2.6)}}
+\subsection*{\underline{2.5 Moment Generating Functions}}
+\addcontentsline{toc}{section}{2.5 Moment Generating Functions}
+The moment generating function m.g.f. provides a way to calculate the moments of a probability distribution instead of calculating them directly from the p.m.f.
+\begin{definition}{Moment Generating Function (m.g.f.)}
+    The moment generating function $M(t)$ of a random variable $X$ is defined such that its derivatives evaluated at $t=0$ give the moments of the distribution:
+    \[\frac{dM}{dt}\bigg|_{t=0} = E(X),\quad \frac{d^2M}{dt^2}\bigg|_{t=0} = E(X^2),\quad \ldots,\quad \frac{d^nM}{dt^n}\bigg|_{t=0} = E(X^n)\]
+    Thus, the m.g.f. is defined as:
+    \[\boxed{M(t)=E(e^{tX})=\sum_{x\in S}e^{tx}f(x)}\]
+    Knowing the m.g.f. is therefore equivalent to knowing the distribution of a random variable, since the m.g.f. can be used to calculate all moments of the distribution.\\\\
+    \underline{Note:} An immediate property of the m.g.f. is that $M(0)=1$, since $e^{0X}=1$ and the sum of the p.m.f. is 1.\\\\
+    \textbf{Mean and Variance in terms of the m.g.f.}
+    \[
+\boxed{\mu=M'(0)}
+\]
+\[
+\boxed{\sigma^2=M''(0)-[M'(0)]^2}
+\]
+\end{definition}
+\subsection*{Example: m.g.f. of the Binomial Distribution}
+Recall that the p.m.f. of a binomial random variable $X$ is given by:
+\[
+P(X=k)=\binom nk p^k(1-p)^{n-k}
+\]
+By definition,
+\[
+M(t)=\sum_{k=0}^{n}e^{tk}\binom nk p^k(1-p)^{n-k}
+\]
+Combining \(e^{tk}p^k=(e^t p)^k\),
+\[
+M(t)=\sum_{k=0}^{n}\binom nk(e^t p)^k(1-p)^{n-k}
+\]
+From the binomial theorem, we know that $(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^k b^{n-k}$.
+\[
+\boxed{M(t)=(e^tp+1-p)^n}
+\]
+\begin{definition}{Negative Binomial Distribution}
+    Unlike the binomial distribution, which counts the number of successes in a fixed number of trials, \hl{the negative binomial distribution counts the number of trials needed to reach a certain number of successes.}\\\\
+    Let $X$ be the number of trials needed to achieve $r$ successes, where each trial is independent and has a probability of success $p$. Then the p.m.f. of $X$ is given by:
+    \[\boxed{f(x)=\binom{x-1}{r-1}p^r(1-p)^{x-r},\quad x=r,r+1,\ldots}\]
+    For the $r$-th success to occur on the $x$-th trial:
+    \begin{itemize}
+        \item The first $x-1$ trials must contain exactly $r-1$ successes
+        \item The $x$-th trial must be a success
+        \item We need at least $r$ trials to achieve $r$ successes, so $x \geq r$
+    \end{itemize}
+    Thus, the number of ways to arrange $r-1$ successes in $x-1$ trials is $\binom{x-1}{r-1}$, with each arrangement having probability $p^{r-1}(1-p)^{x-r}$.\\\\
+    \textbf{m.g.f.}\\
+    The derivation is kinda nasty so its given as:
+    \[M(t) = \left(\frac{pe^t}{1-(1-p)e^t}\right)^r\]
+    \textbf{Expected Value}\\
+    \[E(X) = M'(0) = \frac{r}{p}\]
+    \textbf{Variance}\\
+    \[\operatorname{Var}(X) = M''(0) - [M'(0)]^2 = \frac{r(1-p)}{p^2}\]
+\end{definition}
+\begin{definition}{Geometric Distribution (Neg. Binomial Distribution with $r=1$)}
+The geometric distribution is a special case of the negative binomial distribution where $r=1$, meaning we are counting the number of trials needed to achieve the first success. The p.m.f. of a geometric random variable $X$ is given by:
+\[f(x) = p(1-p)^{x-1}, \quad x = 1, 2, 3, \ldots\]
+\textbf{c.d.f.}\\
+The cumulative distribution function of a geometric random variable is given by:
+\begin{eqnarray*}
+    F(k) = P(X \leq k) &=& \sum_{x=1}^{k} p(1-p)^{x-1} \\
+    &=& 1 - \sum_{x=k+1}^{\infty} p(1-p)^{x-1} 
+\end{eqnarray*}
+Since the probability of success $p\leq 1$, the common ratio of the geometric series is \\$(1-p)<1$, so the series converges and we can rewrite the sum:
+\[F(k) = 1 - \frac{p(1-p)^k}{1-(1-p)} = \boxed{1 - (1-p)^k}\]
+\textbf{Mean and Variance}\\
+Plugging in $r=1$ into the formulas for the negative binomial distribution, we have:
+\[
+\boxed{\mu=\frac1p,\qquad \operatorname{Var}(X)=\frac{1-p}{p^2}}
+\]
+\end{definition}
+\subsection*{\hl{Summary of the Types of Random Variables so Far}}
+They all count success and failures in some way, but they differ in what we are counting and when we stop:
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\textbf{Distribution} & \textbf{What does $X$ represent?} & \textbf{When to use it} \\
+\hline
+Hypergeometric & Number of successes & Fixed $n$ draws without replacement \\
+Bernoulli & Success (1) or failure (0) & A single trial \\
+Binomial & Number of successes & Fixed $n$ independent trials with constant $p$ \\
+Negative Binomial & Trials until the $r$th success & Keep trying until $r$ successes \\
+Geometric & Trials until the first success & Keep trying until 1 success \\
+\hline
+\end{tabular}
+\end{center}
 
 
 
