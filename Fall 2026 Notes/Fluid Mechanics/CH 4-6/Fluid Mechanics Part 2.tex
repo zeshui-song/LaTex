@@ -1,0 +1,312 @@
+﻿\documentclass[12pt]{article}
+\usepackage{amssymb, amsmath, amsfonts, bm, graphicx, geometry}
+\usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
+\usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
+\usepackage{siunitx}  % Eases typesetting of numbers and units
+\usepackage[hidelinks]{hyperref}
+
+% US customary units
+\DeclareSIUnit{\inch}{in}
+\DeclareSIUnit{\foot}{ft}
+\DeclareSIUnit{\yard}{yd}
+\DeclareSIUnit{\mile}{mi}
+
+\DeclareSIUnit{\slug}{slug}
+\DeclareSIUnit{\lbm}{lbm}
+\DeclareSIUnit{\lbf}{lbf}
+
+\DeclareSIUnit{\psi}{psi}
+\DeclareSIUnit{\psf}{psf}
+
+\DeclareSIUnit{\gallon}{gal}
+\DeclareSIUnit{\quart}{qt}
+\DeclareSIUnit{\fahrenheit}{F}
+\DeclareSIUnit{\rankine}{R}
+\sisetup{
+    per-mode = fraction
+}
+\usepackage{soul}
+\usepackage{mathrsfs}
+
+\geometry{margin=1in}
+
+% Uppercase Volume with thicker, higher line
+\newcommand{\vol}{\mathord{\text{\ooalign{\hidewidth $V$\hidewidth\cr\kern-0.5pt\raisebox{0.8ex}{\rule[0pt]{1em}{0.5pt}}}}}}
+
+% Lowercase Volume with built-in shifts
+\newcommand{\svol}{%
+  \mathord{\text{\ooalign{%
+    \hfil$v$\hfil\cr
+    \hfil\rule[0.6ex]{0.8em}{0.5pt}\hfil
+  }}}%
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE ESC-340 Fluid Mechanics \& Flow Systems Notes\par}
+\end{center}
+\hrule
+\vspace{1.5em}
+\begin{center}
+    {\LARGE\bfseries Fluid Kinematics\par}
+\end{center}
+In this chapter, we will study fluid motion without considering the forces that causes the motion. In other words, we will only look at the velocity and acceleration of a fluid but not the pressure or other forces that causes it. In other words, its fluid kinematics.
+\section*{\fbox{4.1 The velocity field}}
+\vspace{-2em}
+\addcontentsline{toc}{section}{4.1 The velocity field}
+\begin{minipage}[c]{0.5\textwidth}
+    A fluid's motion can be described by its \textit{velocity field}, which defines the velocity of a fluid at every position and time:
+    \[\vec{V}=u(x,y,z,t)\hat{\imath} + v(x,y,z,t)\hat{\jmath} + w(x,y,z,t)\hat{k}\]
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{velocity vector.jpeg}
+\end{minipage}
+For example, the velocity field at a specific instant (constant $t$) can be shown as:
+\begin{center}
+    \includegraphics[width=0.6\linewidth]{velocity field.jpeg}
+\end{center}
+\subsection*{Eulerian and Lagrangian Flow Descriptions}
+There are two general approaches for analyzing fluid mechanics problems:
+\begin{itemize}
+    \item \textbf{Eulerian Method:}\\
+    The Eulerian method focuses on fixed regions in space through which the fluid flows. In this approach, we visualize the fluid motion by using fields of velocity, pressure, and other properties at specific points in space. For example, we can analyze the pressure field in a fixed region around an airfoil:
+    \begin{center}
+        \includegraphics[width=0.25\linewidth]{eulerian.jpeg}
+    \end{center}
+    \item \textbf{Lagrangian Method:}\\
+    Unlike the Eulerian method, the Lagrangian method tracks individual fluid particles as they move through space and time. In this approach, we follow the trajectory of a specific fluid particle and analyze its properties along its path. For example, to analyze the behavior of smoke exiting a chimney:
+    \begin{center}
+        \includegraphics[width=0.4\linewidth]{lagrangian.jpeg}
+    \end{center}
+    The Eulerian method would involve measuring the temperature with a thermometer at a fixed point $0 = (x_0, y_0)$, obtaining $T(x_0, y_0, t)$, while the Lagrangian method would involve following a specific smoke particle $A$ and measuring its temperature along its path, obtaining $T_A(t)$.
+\end{itemize}
+It is important to note that both approaches are valid and are interchangeable, but generally the Eulerian method is more convenient.
+\subsection*{Steady and Unsteady Flows}
+In the previous sections, we typically assumed steady flow, where the velocity at a given point does not vary with time ($\partial \vec{V}/\partial t = 0$). Some types of unsteady flows include:
+\begin{itemize}
+    \item \textbf{Non-periodic flow:} unsteady flow that does not repeat cyclically, such as water accelerating in a pipe when a valve is opened.
+    \item \textbf{Periodic flow:} unsteady flow that repeats cyclically
+    \item \textbf{Random flow:} unsteady flow that is unpredictable, such as turbulent flow.
+\end{itemize}
+Note that steady flow does not mean constant fluid velocity, as it can still vary across space, just not with time.
+\subsection*{Streamlines, Streaklines, and Pathlines}
+These are ways to help in the visualization of fluid motion. Typically streamlines are used often in analytical work, while streaklines and pathlines are used in experimental work.
+\begin{itemize}
+    \item \textbf{Streamline:}\\
+    A streamline is a line that is everywhere tangent to the velocity vector of the flow. \textit{If the flow is steady, the streamlines are fixed lines in space.} For unsteady flows the streamlines may change shape with time.\\
+    \begin{minipage}[c]{0.6\textwidth}
+    For two-dimensional flow, the streamlines can be defined by the equation:
+    \[\frac{dy}{dx} = \frac{v}{u}\]
+    By definition, the velocity vector is tangent to the streamline, so the slope of the streamline is equal to the ratio of the velocity components \textit{at every point}.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.25\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{streamline.jpeg}
+\end{minipage}
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{streamline 1.png}
+\end{center}
+\item \textbf{Streakline:}\\
+A streakline consists of all the particles in a flow that \hl{have passed through the same point in space.} Experimentally, streaklines can be visualized by continuously injecting dye into the flow at a fixed point and observing the path of the dye particles.
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{Streakline.png}
+\end{center}
+\item \textbf{Pathline:}\\
+A pathline is the line traced out by a given particle as it flows from one point to another. The pathline is a Lagrangian concept that can be produced in the laboratory by marking a fluid particle (dyeing a small fluid element) and taking a time exposure photograph of its motion. (Like taking a long exposure photo of a light moving in the dark.)
+\end{itemize}
+For steady flow, the streamlines, streaklines, and pathlines are identical. For unsteady flow, they are different.
+\newpage
+\section*{\fbox{4.2 The Acceleration Field}}
+\addcontentsline{toc}{section}{4.2 The Acceleration Field}
+For the infrequently used Lagrangian method, the acceleration of a fluid particle is the same as in solid body mechanics: $\vec{a} = \vec{a} (t)$. For the Eulerian method, we describe the \textit{acceleration field}, just like the velocity field previously.
+\subsection*{Acceleration Field}
+Consider the velocity of a single fluid particle $A$ moving along its pathline, where $\vec{r}_A$ is the position vector of the particle $A$ at time $t$. The velocity of the particle is given by:
+\[\vec{V}_A = \vec{V}_{A}(\vec{r}_A,t) = \vec{V}_{A}\big(\,x_A(t), y_A(t), z_A(t),t\,\big)\]
+\begin{center}
+    \includegraphics[width=0.7\linewidth]{velocity of particle.jpeg}
+\end{center}
+By definition, the acceleration of the fluid particle is the time derivative of its velocity:
+\[\vec{a}_A = \frac{d\vec{V}_A}{dt}\]
+By chain rule:
+\[\frac{d\vec{V}_A}{dt}=\frac{\partial\vec{V}_A}{\partial t}+\frac{\partial\vec{V}_A}{\partial x}\frac{dx_A}{dt}+\frac{\partial\vec{V}_A}{\partial y}\frac{dy_A}{dt}+\frac{\partial\vec{V}_A}{\partial z}\frac{dz_A}{dt}\]
+Using the velocity components given by $u_A = dx_A/dt$, $v_A = dy_A/dt$, and $w_A = dz_A/dt$, we can rewrite the acceleration as:
+\[\vec{a}_A = \frac{\partial\vec{V}_A}{\partial t} + u_A\frac{\partial\vec{V}_A}{\partial x} + v_A\frac{\partial\vec{V}_A}{\partial y} + w_A\frac{\partial\vec{V}_A}{\partial z}\]
+\hl{This statement is valid for any particle, we can drop the subscript $A$ and define the acceleration field as:}
+\[\boxed{\vec{a} = \frac{\partial\vec{V}}{\partial t} + u\frac{\partial\vec{V}}{\partial x} + v\frac{\partial\vec{V}}{\partial y} + w\frac{\partial\vec{V}}{\partial z}}\]
+\newpage
+With the corresponding scalar components:
+\begin{align*}
+a_x &= \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z}\\
+a_y &= \frac{\partial v}{\partial t} + u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} + w\frac{\partial v}{\partial z}\\
+a_z &= \frac{\partial w}{\partial t} + u\frac{\partial w}{\partial x} + v\frac{\partial w}{\partial y} + w\frac{\partial w}{\partial z}
+\end{align*}
+Note that the equation for the acceleration field describes two different sources of acceleration:
+\[\vec{a}=\underbrace{\frac{\partial\vec{V}}{\partial t}}_{\text{Local acceleration}}+\underbrace{u\frac{\partial\vec{V}}{\partial x}+v\frac{\partial\vec{V}}{\partial y}+w\frac{\partial\vec{V}}{\partial z}}_{\text{Convective acceleration}}\]
+Where:
+\begin{itemize}
+    \item \textbf{Local acceleration} describes velocity changes with time, \hl{which is only present in unsteady flows}.
+    \begin{center}
+        \includegraphics[width=0.3\linewidth]{local acceleration.png}
+    \end{center}
+    \item \textbf{Convective acceleration} describes velocity changes with position, which is present in both steady and unsteady flows.
+    \begin{center}
+        \includegraphics[width=0.3\linewidth]{convective acceleration.png}
+    \end{center}
+\end{itemize}
+\newpage
+\subsection*{Material Derivative Defined}
+The equation for the acceleration field can be expressed in a more compact form by defining the \textit{material derivative}:
+\[\vec{a} = \frac{D\vec{V}}{Dt}\]
+Where the material derivative is a differential operator defined as:
+\[\boxed{\frac{D()}{Dt}\equiv\frac{\partial()}{\partial t}+u\frac{\partial()}{\partial x}+v\frac{\partial()}{\partial y}+w\frac{\partial()}{\partial z}}\]
+Or shorthand notation:
+\[\boxed{\frac{D()}{Dt}=\frac{\partial()}{\partial t}+(\vec{V}\cdot\vec{\nabla})()}\]
+Note that the gradient operator $\vec{\nabla}$ is defined as:
+\[\vec{\nabla}()=\frac{\partial()}{\partial x}\hat{\imath}+\frac{\partial()}{\partial y}\hat{\jmath}+\frac{\partial()}{\partial z}\hat{k}\]
+So 
+\[\vec{V}\cdot\vec{\nabla}()=u\frac{\partial()}{\partial x}+v\frac{\partial()}{\partial y}+w\frac{\partial()}{\partial z}\]
+\hl{The material derivative is not just for the acceleration field, it can be applied to any flow property, such as pressure, temperature, or density.} The material derivative of any variable is the rate at which that variable changes with time for a given particle \textit{as seen by one moving along with the fluid}.\\\\
+For example, the material derivative of temperature $T$ describes how temperature changes with time as a fluid particle moves along its pathline in the candle flame:
+\begin{center}
+    \includegraphics[width=0.3\linewidth]{material deriv of temp.png}
+\end{center}
+\newpage
+\subsection*{Acceleration with Streamline Coordinates}
+As defined previously in section 3.1, the streamline coordinate system is defined by the unit vectors $\hat{s}$ along the streamline and $\hat{n}$ normal to the streamline:
+\begin{center}
+    \includegraphics[width=0.7\linewidth]{streamline coords.png}
+\end{center}
+Where $\vec{V} = V\hat{s}$ for steady, 2D flow. Taking the material derivative of the velocity vector:
+\[\vec{a}=\frac{D(V\hat{s})}{Dt}=\frac{DV}{Dt}\hat{s}+V\frac{D\hat{s}}{Dt}\]
+\[\vec{a}=\left(\frac{\partial V}{\partial t}+\frac{\partial V}{\partial s}\frac{ds}{dt}+\frac{\partial V}{\partial n}\frac{dn}{dt}\right)\hat{s}+V\left(\frac{\partial\hat{s}}{\partial t}+\frac{\partial\hat{s}}{\partial s}\frac{ds}{dt}+\frac{\partial\hat{s}}{\partial n}\frac{dn}{dt}\right)\]
+Applying the chain rule to both terms, and noting that for steady flow:
+\begin{itemize}
+    \item $\partial V/\partial t = \partial \hat{s}/\partial t=0$: for steady flow.
+    \item $ds/dt=V$: the particle moves along the streamline at speed $V$.
+    \item $dn/dt=0$: the particle remains on its streamline ($n =$ constant).
+\end{itemize}
+The acceleration simplifies to
+\[\vec{a}=\underbrace{V\frac{\partial V}{\partial s}\hat{s}}_{\text{Tangential acceleration}}+\underbrace{V^2\frac{\partial\hat{s}}{\partial s}}_{\text{Normal acceleration}}\]
+Since the rate of change of the tangent unit vector along a curved streamline is
+\[\frac{\partial\hat{s}}{\partial s}=\frac{1}{\mathscr{R}}\hat{n}\]
+\hl{This is the same result as in section 3.1}
+\newpage
+\section*{\fbox{4.3 Control Volume and System Representations}}
+\addcontentsline{toc}{section}{4.3 Control Volume and System Representations}
+First a note on terminology between systems and control volumes in thermodynamics and fluid mechanics:
+\begin{center}
+\begin{tabular}{lll}
+    \hline
+    \textbf{Concept} & \textbf{Thermodynamics} & \textbf{Fluid Mechanics} \\
+    \hline
+    Fixed amount of matter & Closed system (control mass) & System \\[8pt]
+    \begin{tabular}[t]{@{}l@{}}
+        Specified region in space where\\
+        mass can enter or exit
+    \end{tabular}
+    & Open system (control volume) & Control volume \\
+    \hline
+\end{tabular}
+\end{center}
+\textit{A system follows the matter, while a control volume follows a region in space.}
+\subsection*{Types of Control Volumes}
+Some typical control volumes used in fluid mechanics are shown below. (a) is a fixed control volume within a pipe with fluid flowing through it. (b) is a moving control volume that remains fixed relative to a moving object, in this case, a jet engine. Note that the fluid initially contained within the control volume at $t_1$ is not necessarily the same fluid contained within it at $t_2$, since fluid continuously enters and leaves the engine. (c) is a deforming control volume that contains the fluid within a deflating balloon.
+\begin{center}
+    \includegraphics[width=0.75\linewidth]{control volumes.jpeg}
+\end{center}
+Ideally, when approaching a control volume problem, we want to define the control volume such that \hl{the parameters along the control surface are either known, reasonably approximated, or are the unknowns we wish to determine}, while allowing us to neglect complex internal effects.
+\begin{center}
+    \includegraphics[width=0.75\linewidth]{control volumes 2.png}
+\end{center}
+A \textbf{control surface} is the boundary of a control volume, which can be real or imaginary, just like in thermodynamics.
+\newpage
+\section*{\fbox{4.4 The Reynolds Transport Theorem}}
+\addcontentsline{toc}{section}{4.4 The Reynolds Transport Theorem}
+In a single line, \hl{the Reynolds Transport Theorem is an analytical tool that connects changes in the system (control mass) with changes in the control volume.} This allows us to analyze fluid effects on a particular object or volume in space, such as force of a water jet on a plate.\\\\
+Conservation laws, such as Newton's second law, are typically expressed in terms of a system (with fixed mass). However, most fluid mechanics problems are more easily analyzed using a control volume, so we use the Reynolds Transport Theorem to convert system equations into control volume equations.\\\\
+Recall that a system \textit{follows} a fixed mass of fluid (or a fixed collection of particles) as it moves through space and time.
+\subsection*{Intensive vs Extensive Fluid Properties}
+Recall from thermodynamics that extensive properties depend on the size or mass of a system, while intensive properties do not. \hl{By normalizing an extensive property $B$ by mass, we obtain an intensive (or specific) property $b=B/m$}, which is intensive and independent of the amount of matter present.\\\\
+This is very useful for control volume analysis, \hl{where mass flows across the control surface, carrying its associated properties with it.} Thus, we can determine the rate at which a property is transported by multiplying the specific property by the mass flow rate.\\\\
+\underline{Note:} Some properties, such as temperature and pressure, are already intensive since they are independent of the amount of matter present. However, other properties, such as momentum and energy, are extensive and can be normalized by mass to obtain intensive properties.\\\\
+Thus, we can say that the \textit{total amount of some property $B$ within a system is}
+\[B_{\text{sys}} = \int_{\text{sys}} b \, dm = \int_{\text{sys}} \rho b\,d\vol\]
+Where $b$ is the intensive property associated with the extensive property $B$, $\rho$ is the fluid density, and $d\vol$ is an infinitesimal volume element. \hl{The limits of integration cover the entire system (sums over all the particles in the system). \textit{This is usually a moving volume.}}\\\\
+\underline{Note:} The parameters $B$ and $b$ can be both vector or scalar quantities!\\\\
+\textbf{Time Rate of Change of a System Property}\\
+Most laws governing the fluid motion are expressed in terms of the time rate of change of a system property. For example, the rate of change of momentum is equal to the net force acting on the system, or the rate of change in mass is equal to the net mass flow into or out of the system.
+\newpage
+Thus, defining the time rate of change of an extensive property $B$ \textit{within a system} using the intensive property $b$:
+    \[\frac{dB_{\text{sys}}}{dt} =  \frac{d}{dt}\left(\int_{\text{sys}} \rho b\,d\vol\right)\]
+Equivalently, we can make a similar statement for the time rate of change of an extensive property $B$ \hl{within a control volume}:
+\[\frac{dB_{C\vol}}{dt} =  \frac{d}{dt}\left(\int_{C\vol} \rho b\,d\vol\right)\]
+While the forms of the equations are similar, \hl{they have mathematically different limits of integration!} This is because typically, the control volume is fixed in space, while the system is a moving volume that follows a fixed collection of fluid particles. Furthermore, \hl{the control volume can have mass entering or leaving it, while the system has a fixed mass,} so the time rates of change would not necessarily be equal. \textit{Reynold's transport theorem gives us a way to relate these two derivatives!}\\\\
+\underline{Example:}\\
+Consider the system to be the fluid contained within a tank at $t=0$ when the valve is opened. The control volume is the fixed volume of the tank.
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{control volume example.png}
+\end{center}
+If mass is conserved, then the time rate of change of mass within the system is zero:
+\[\frac{d}{dt}\left(\int_{\text{sys}} \rho b\,d\vol\right) =0\]
+But since mass has exited the control volume, the time rate of change of mass within the control volume is negative:
+\[\frac{d}{dt}\left(\int_{C\vol} \rho b\,d\vol\right) < 0\]
+\noindent
+\begin{minipage}[c]{0.8\textwidth}
+    \textit{Intuitively, this is all obvious stuff, but it's very important to know the difference between the two definitions. Otherwise, Reynolds would be sad...}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.15\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{sad reynold.png}
+\end{minipage}
+\newpage
+\subsection*{Derivation of the Reynolds Transport Theorem}
+The goal of the Reynolds Transport Theorem is to \hl{relate the rate of change of a property of a moving system to the changes occurring within a control volume}.\\\\
+To do this, we can initially define a system that is \textit{entirely contained within and coincides with the control volume}. If the fluid particles that make up the system have some velocity, then the system will move relative to the \textit{fixed} control volume over a small time interval. By accounting for the fluid entering and leaving the control volume, we can express the rate of change of the system's property.\\\\
+\underline{Note:} While we initially derive the Reynolds Transport Theorem for one-dimensional flow through a fixed control volume, we can generalize the resulting equation to account for arbitrary flow directions and nonuniform flow across the control surface.\\\\
+Consider the following system and control volume of a fluid flowing through a variable area pipe:
+\begin{center}
+    \includegraphics[width=0.85\linewidth]{reynolds transport theorem.png}
+\end{center}
+\begin{itemize}
+    \item The control volume is fixed between sections (1) and (2), while the fluid velocity normal to the control surfaces is $V_1$ and $V_2$ respectively.
+    \item The system of fluid particles is initially contained inside the control volume at initial time $t$.
+\end{itemize}
+A short time later, at time $t+\delta t$, the system has moved slightly to the right of the control volume:
+\begin{itemize}
+    \item The fluid particles initially at section (1) have moved a distance $\delta \ell_1 = V_1 \delta t$ to the right
+    \item The fluid particles initially at section (2) have moved a distance $\delta \ell_2 = V_2 \delta t$ to the right
+\end{itemize}
+Thus, we define the following volumes of the fluid at time $t+\delta t$:
+\begin{itemize}
+    \item \textbf{C$\vol$}: The volume of the fixed control volume, which is the same as at time $t$.
+    \item \textbf{II}: The volume of fluid that exited the control volume (the outflow through section (2)) during the time interval $\delta t$.
+    \item \textbf{I}: The volume of fluid that entered the control volume (the inflow through section (1)) during the time interval $\delta t$.
+\end{itemize}
+The system at time $t+\delta t$ is now composed of the following three volumes as shown in the diagram previously:
+\[\text{SYS} = (\text{C$\vol$} - \text{I}) +\text{II}\]
+The control volume is fixed, so C$\vol$ = C$\vol$.\\\\
+Now, we find the relationships of the extensive property $B$ for the system and control volume at time $t+\delta t$:
+\begin{itemize}
+    \item By definition, the extensive property $B$ at time $t$ is equal for both the system and control volume:
+    \[B_{\text{sys}}(t) = B_{C\vol}(t)\]
+    \item The extensive property $B$ at time $t+\delta t$ for the system can be expressed by the sum of the extensive properties of the three volumes:
+    \[B_{\text{sys}}(t+\delta t) = B_{C\vol}(t+\delta t) - B_{\text{I}}(t+\delta t) + B_{\text{II}}(t+\delta t)\]
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
