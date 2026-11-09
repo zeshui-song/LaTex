@@ -1,6 +1,11 @@
 ﻿\documentclass[12pt]{article}
 \usepackage{amssymb, amsmath, amsfonts, bm, graphicx, geometry}
 \usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=$\bullet$}
+\setlist[itemize,2]{label=--}
+\setlist[itemize,3]{label=$\circ$}
+\setlist[itemize,4]{label=$\cdot$}
 \usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
 \usepackage{siunitx}  % Eases typesetting of numbers and units
 \usepackage[hidelinks]{hyperref}
@@ -169,7 +174,7 @@ Note that the gradient operator $\vec{\nabla}$ is defined as:
 \[\vec{\nabla}()=\frac{\partial()}{\partial x}\hat{\imath}+\frac{\partial()}{\partial y}\hat{\jmath}+\frac{\partial()}{\partial z}\hat{k}\]
 So 
 \[\vec{V}\cdot\vec{\nabla}()=u\frac{\partial()}{\partial x}+v\frac{\partial()}{\partial y}+w\frac{\partial()}{\partial z}\]
-\hl{The material derivative is not just for the acceleration field, it can be applied to any flow property, such as pressure, temperature, or density.} The material derivative of any variable is the rate at which that variable changes with time for a given particle \textit{as seen by one moving along with the fluid}.\\\\
+\hl{The material derivative is not just for the acceleration field, it can be applied to any flow property, such as pressure, temperature, or density.} The material derivative of any variable is the rate at which that variable changes with time for a given particle \hl{\textit{as seen by one moving along with the fluid}}.\\\\
 For example, the material derivative of temperature $T$ describes how temperature changes with time as a fluid particle moves along its pathline in the candle flame:
 \begin{center}
     \includegraphics[width=0.3\linewidth]{material deriv of temp.png}
@@ -180,7 +185,7 @@ As defined previously in section 3.1, the streamline coordinate system is define
 \begin{center}
     \includegraphics[width=0.7\linewidth]{streamline coords.png}
 \end{center}
-Where $\vec{V} = V\hat{s}$ for steady, 2D flow. Taking the material derivative of the velocity vector:
+Where $\vec{V}=V\hat{s}$ for steady, 2D flow. \hl{Since we are following a fluid particle along its streamline, we use the material derivative to determine the acceleration experienced by the particle as it moves through the flow.} Taking the material derivative of the velocity vector:
 \[\vec{a}=\frac{D(V\hat{s})}{Dt}=\frac{DV}{Dt}\hat{s}+V\frac{D\hat{s}}{Dt}\]
 \[\vec{a}=\left(\frac{\partial V}{\partial t}+\frac{\partial V}{\partial s}\frac{ds}{dt}+\frac{\partial V}{\partial n}\frac{dn}{dt}\right)\hat{s}+V\left(\frac{\partial\hat{s}}{\partial t}+\frac{\partial\hat{s}}{\partial s}\frac{ds}{dt}+\frac{\partial\hat{s}}{\partial n}\frac{dn}{dt}\right)\]
 Applying the chain rule to both terms, and noting that for steady flow:
@@ -272,6 +277,7 @@ Consider the following system and control volume of a fluid flowing through a va
 \begin{center}
     \includegraphics[width=0.85\linewidth]{reynolds transport theorem.png}
 \end{center}
+\textbf{Derivation Set up}
 \begin{itemize}
     \item The control volume is fixed between sections (1) and (2), while the fluid velocity normal to the control surfaces is $V_1$ and $V_2$ respectively.
     \item The system of fluid particles is initially contained inside the control volume at initial time $t$.
@@ -290,6 +296,7 @@ Thus, we define the following volumes of the fluid at time $t+\delta t$:
 The system at time $t+\delta t$ is now composed of the following three volumes as shown in the diagram previously:
 \[\text{SYS} = (\text{C$\vol$} - \text{I}) +\text{II}\]
 The control volume is fixed, so C$\vol$ = C$\vol$.\\\\
+\textbf{Using changes in fluid volume to derive statements of $B$}\\
 Now, we find the relationships of the extensive property $B$ for the system and control volume at time $t+\delta t$:
 \begin{itemize}
     \item By definition, the extensive property $B$ at time $t$ is equal for both the system and control volume:
@@ -297,8 +304,154 @@ Now, we find the relationships of the extensive property $B$ for the system and 
     \item The extensive property $B$ at time $t+\delta t$ for the system can be expressed by the sum of the extensive properties of the three volumes:
     \[B_{\text{sys}}(t+\delta t) = B_{C\vol}(t+\delta t) - B_{\text{I}}(t+\delta t) + B_{\text{II}}(t+\delta t)\]
 \end{itemize}
+\textbf{Finding the time rate of change in $B$}\\
+Now, let's find the time rate of change of the extensive property $B$ for the system. Starting with a forward finite difference approximation and then substituting the previous eqns:
+\[
+\frac{\delta B_{\mathrm{sys}}}{\delta t}
+= \frac{B_{\mathrm{sys}}(t+\delta t)-B_{\mathrm{sys}}(t)}{\delta t}
+= \frac{\big[B_{\mathrm{c\vol}}(t+\delta t)-B_{\mathrm{I}}(t+\delta t)+B_{\mathrm{II}}(t+\delta t)\big]-\big[B_{C\vol}(t)\big]}{\delta t}
+\]
+Rearranging the terms, we have:
+\[\frac{\delta B_{\mathrm{sys}}}{\delta t} = \frac{B_{\mathrm{c\vol}}(t+\delta t)-B_{C\vol}(t)}{\delta t} - \frac{B_{\mathrm{I}}(t+\delta t)}{\delta t} + \frac{B_{\mathrm{II}}(t+\delta t)}{\delta t}\]
+\underline{Important Note:} This is a key step in the derivation, relating changes in the system's property to those in the control volume. The system's change equals the change within the control volume, minus the property entering and plus the property leaving with the fluid.\hl{ Intuitively, this makes sense because extensive properties depend on the amount of matter present, which can be related to the volume it occupies. Thus, we can understand changes in these properties through the volumes of fluid entering and leaving the control volume.}
+\newpage
+Taking the limit as $\delta t \to 0$:
+\begin{itemize}
+    \item Left-hand side:
+    \[\lim_{\delta t \to 0} \frac{\delta B_{\mathrm{sys}}}{\delta t} = \frac{DB_{\mathrm{sys}}}{Dt}\]
+    Note that mathematically, the limit gives the first-order time derivative of $B_{\mathrm{sys}}$. \hl{However, we use the material derivative notation to emphasize that the derivative describes the rate of change of $B$ as seen by an observer that moves with the fluid particles that constitute the system.}
+    \item Right-hand side (first term):
+    \[
+\lim_{\delta t \to 0}\frac{B_{\mathrm{C\vol}}(t+\delta t)-B_{\mathrm{C\vol}}(t)}{\delta t}=\frac{\partial B_{\mathrm{C\vol}}}{\partial t}
+\]
+\[\frac{\partial B_{\mathrm{C\vol}}}{\partial t} = \frac{\partial}{\partial t}\left(\int_{C\vol} \rho b\, d\vol\right)\]
+Note that the integral $\int_{C\vol} \rho b\, d\vol$ represents the total amount of property $B$ within the fixed control volume. \hl{Since the control volume is fixed, its boundaries don't change, so the limits of integration are constant.} Therefore, the time derivative $\partial B_{\mathrm{C\vol}}/\partial t$ is positive when the total amount of $B$ within the control volume increases, or in other words, when the integral "accumulates" more of the property $B$ over time.
+\begin{itemize}
+    \item Examples for when $\rho$ is increasing:
+    \begin{itemize}
+        \item \textbf{Mass ($B=M$, $b=1$):} Air is pumped into a rigid tank, increasing its density $\rho$ and therefore its total mass.
+        \item \textbf{Momentum ($B=\vec{P}$, $b=\vec{V}$):} Air is compressed while maintaining its velocity, increasing $\rho$ and therefore its total momentum.
+    \end{itemize}
 
+    \item Examples for when $b$ is increasing:
+    \begin{itemize}
+        \item \textbf{Momentum ($B=\vec{P}$, $b=\vec{V}$):} Fluid accelerates within a pipe, increasing its velocity $\vec{V}$ and therefore its momentum.
+        \item \textbf{Energy ($B=E$, $b=e$):} Water is heated, increasing its specific energy $e$ and therefore its total energy.
+    \end{itemize}
 
+    \item Example for when fluid occupies an increasing portion of the control volume:
+    \begin{itemize}
+        \item \textbf{Mass ($B=M$, $b=1$):} Water fills an initially empty tank, increasing the volume occupied by water and therefore its total mass, even though the water's density remains constant.
+
+Consider a fixed control volume consisting of a tank, with constant cross-sectional area $A$, total height $H$, and water level $h(t)$. The water density field is defined as:
+\[
+\rho(z,t)=
+\begin{cases}
+\rho_{\text{water}}, & 0\leq z\leq h(t)\\
+0, & h(t)<z\leq H
+\end{cases}
+\]
+Integrating over the fixed control volume:
+\begin{align*}
+M_{\mathrm{water}}(t)
+&= \int_{\mathrm{C\vol}}\rho(z,t)\,(1)\,d\vol\\
+&= A\int_0^H\rho(z,t)\,dz\\
+&= A\left[\int_0^{h(t)}\rho_{\mathrm{water}}\,dz+\int_{h(t)}^H0\,dz\right]\\
+&= \rho_{\mathrm{water}}Ah(t) = \rho_{\mathrm{water}}\vol_{\mathrm{water}}(t)
+\end{align*}
+Therefore, the rate of accumulation inside the control volume is:
+\[
+\frac{dM_{\mathrm{water}}}{dt}
+=\rho_{\mathrm{water}} A\frac{dh}{dt}
+=\rho_{\mathrm{water}}\frac{d\vol_{\mathrm{water}}}{dt}>0
+\]
+Although the control volume and its integration limits remain fixed, the density field $\rho(z,t)$ changes with time as water occupies an increasing portion of the tank.
+    \end{itemize}
+\end{itemize}
+\item  Right-hand side (second term): \textit{sorry for getting sidetracked}
+\[\frac{B_{\mathrm{I}}(t+\delta t)}{\delta t}\]
+$B_{\mathrm{I}}(t+\delta t)$ represents the total amount of $B$ that has entered the control volume through section (1) during the time interval $\delta t$ (represented by the volume of fluid I).\\\\
+Thus, this can be expressed as the product of the amount of $B$ per unit volume ($\rho_1 b_1$) and the volume of fluid in region I ($\delta \vol_1 = A_1 \delta \ell_1 = A_1 (V_1 \delta t)$):
+\[B_{\mathrm{I}}(t+\delta t) = (\rho_1 b_1) (\delta \vol_1) = \rho_1 b_1 A_1 V_1 \delta t\]
+Thus, the instantaaneous time rate of change of $B$ entering the control volume is:
+\[\dot{B}_{\text{in}} = \lim_{\delta t \to 0} \frac{B_{\mathrm{I}}(t+\delta t)}{\delta t} = \rho_1 b_1 A_1 V_1\]
+\item Right-hand side (third term): 
+\[\frac{B_{\mathrm{II}}(t+\delta t)}{\delta t}\]
+Similarly, we can express the total amount of $B$ that has \textit{exited} the control volume through section (2) during the time interval $\delta t$ and the product of the amount of $B$ per unit volume ($\rho_2 b_2$) and the volume of fluid in region II ($\delta \vol_2 = A_2 \delta \ell_2 = A_2 (V_2 \delta t)$):
+\[B_{\mathrm{II}}(t+\delta t) = (\rho_2 b_2) (\delta \vol_2) = \rho_2 b_2 A_2 V_2 \delta t\]
+Thus, the instantaneous time rate of change of $B$ exiting the control volume is:
+\[\dot{B}_{\text{out}} = \lim_{\delta t \to 0} \frac{B_{\mathrm{II}}(t+\delta t)}{\delta t} = \rho_2 b_2 A_2 V_2\]
+\newpage
+This is illustrated by the following diagram:
+\begin{center}
+    \includegraphics[width=0.4\linewidth]{outflow of B.png}
+\end{center}
+\end{itemize}
+\textbf{Putting it all together}\\
+Substituting the previous results into the forward finite difference approximation of the time rate of change of $B$ for the system:
+\[\frac{\delta B_{\mathrm{sys}}}{\delta t} = \frac{B_{\mathrm{c\vol}}(t+\delta t)-B_{C\vol}(t)}{\delta t} - \frac{B_{\mathrm{I}}(t+\delta t)}{\delta t} + \frac{B_{\mathrm{II}}(t+\delta t)}{\delta t}\]
+We get:
+\[\boxed{\frac{DB_\text{sys}}{Dt} = \frac{\partial B_{C\vol}}{\partial t} - \dot{B}_{\text{in}} + \dot{B}_{\text{out}}}\]
+Or equivalently:
+\[\boxed{\frac{DB_\text{sys}}{Dt} = \frac{\partial B_{C\vol}}{\partial t} - (\rho_1 b_1 A_1 V_1) + (\rho_2 b_2 A_2 V_2)}\]
+\hl{This is the \textbf{restrictive form of Reynolds transport theorem} valid for a fixed control volume with one inlet and one outlet, uniform flow properties across each section, and velocity normal to the inlet and outlet surfaces.} We will generalize this equation in the following section.
+\subsection*{Generalized Reynold's Transport Theorem}
+So far, we have derived the Reynolds Transport Theorem for uniform flow perpendicular to the inlet and outlet surfaces. However, in general, the flow properties may vary across the control surface and the flow may not be perpendicular to it.\\\\
+Thus, we can start by considering a small area element $\delta A$ on the control surface. The fluid velocity normal to this surface is 
+\[V_n = V\cos\theta = \vec{V} \cdot \hat{n}\]
+Where $\hat{n}$ is the outward unit normal vector to the control surface and $\theta$ is the angle between the velocity vector and the outward normal.
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{inflow outflow.png}
+\end{center}
+The volume that crosses this area element during a small time interval $\delta t$ is:
+\[\delta \vol = V_n \delta t \delta A\]
+Following the same logic as previously, the rate at which the extensive property $B$ crosses this area element is:
+\[\delta B = \rho b \delta \vol = \rho b V_n \delta t \delta A\]
+\[\implies \delta \dot{B} = \rho b V_n \delta A\]
+Thus, integrating over the outflow portion of the control surface, 
+we can express the total rate of outflow of $B$ as:
+\[\dot{B}_{\text{out}} = \int_{CS_{\text{out}}} \rho b (\vec{V}\cdot \hat{n}) \, dA\]
+Similarly, the total rate of inflow of $B$ is:
+\[\dot{B}_{\text{in}} = \int_{CS_{\text{in}}} \rho b (\vec{V}\cdot \hat{n}) \,dA\]
+We can combine these two integrals into a single flux integral over the entire control surface:
+\[\dot{B}_{\mathrm{out}}-\dot{B}_{\mathrm{in}}=\int_{CS}\rho b(\vec{V}\cdot\hat{n})\,dA\]
+This is analogous to Gauss's law in electromagnetism, where a single surface integral over a closed surface represents the net flux of a vector field. Here, the dot product with $\hat{n}$ automatically accounts for the \hl{positive contributions from outflow and negative contributions from inflow (sign convention)}.\\\\
+Combining these results, and substituting $B_{C\vol}= \int_{C\vol} \rho b \, d\vol$ we can express the generalized Reynolds Transport Theorem as:
+\[\frac{DB_{\text{sys}}}{Dt} = \frac{\partial}{\partial t} \int_{C\vol} \rho b \, d\vol + \int_{CS} \rho b (\vec{V}\cdot \hat{n}) \, dA\]
+Now, this equation is valid for any fixed control volume, with arbitrary flow directions and nonuniform flow across the control surface. \hl{But we can push the generalization even further by allowing the control volume to move and deform with time!}\\\\
+We simply do this by considering the \hl{relative velocity of the fluid with respect to the control surface}, which results in our grand finale:
+\[\boxed{\frac{DB_{\text{sys}}}{Dt} = \frac{\partial}{\partial t} \int_{C\vol} \rho b \, d\vol + \int_{CS} \rho b (\vec{V}_{\text{rel}}\cdot \hat{n}) \, dA}\]
+Where $\vec{V}_{\text{rel}} = \vec{V} - \vec{V}_{CS}$ is the relative velocity of the fluid velocity with respect to the control surface velocity. For example:
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{moving cv.png}
+\end{center}
+\hl{In summary, the Reynolds Transport Theorem relates the rate of change of an extensive property $B$ (which depends on the mass of the system) as we follow a fluid system along its pathlines to its accumulation within a chosen control volume and its \textit{net transport} across the control surface.} The volume integral represents the accumulation of $B$ within the control volume, while the surface integral represents its net outward flux, with outflow positive and inflow negative by sign convention.\\\\
+\textbf{Note on the Rate of Change of the Volume Integral}\\
+The first term on the right-hand side of the Reynolds Transport Theorem represents the time rate of change of the extensive property $B$ within the control volume. There are a few notable ways for this term to be nonzero:
+\begin{itemize}
+\item The control volume is fixed, but the fluid properties $\rho$ and/or $b$ change with time. Since the integration region is constant, we can bring the partial derivative inside:
+\[\frac{\partial}{\partial t} \int_{C\vol} \rho b \, d\vol = \int_{C\vol} \frac{\partial(\rho b)}{\partial t} \, d\vol = \int_{C\vol} b\frac{\partial\rho}{\partial t} \, d\vol + \int_{C\vol} \rho\frac{\partial b}{\partial t} \, d\vol\]
+The amount of property per unit volume changes with time, even though the control volume remains fixed.
+\item The control volume deforms, changing its total volume with time, while the fluid properties $\rho$ and $b$ remain constant. Since the integration region itself changes with time, we use the total derivative:
+\[\frac{d}{dt} \int_{C\vol(t)} \rho b \, d\vol = \rho b \frac{d}{dt} \int_{C\vol(t)} d\vol = \rho b \frac{d\vol_{C\vol}}{dt}\]
+\end{itemize}
+Note that both of these cases can occur simultaneously, in which case we would generally need to evaluate a time-dependent triple integral to account for all the changing variables. However, in most applications, we can make reasonable assumptions about the control volume or fluid properties to simplify the analysis. Typically, we can choose a fixed control volume such that the accumulation term vanishes under steady-flow conditions.\\\\
+Also note that there are special cases where the surface integral equals zero (equal rates of inflow and outflow), but the volume integral is nonzero (unsteady flow).\\\\
+\textbf{Choosing a Control Volume}\\
+Choosing a control volume is analogous to choosing a free-body diagram to analyze in mechanics. Any control valid is theoretically valid, but a good choice can simplify the analysis.\\\\
+Generally we want to choose a control volume such that
+\begin{itemize}
+    \item \textbf{Place unknowns on the control surface,} rather than inside the control volume so that they appear explicitly in the surface integral terms.
+    \item \textbf{Choose control surfaces perpendicular to the flow at inlets and outlets,} so that the dot product $\vec{V}\cdot\hat{n}$ simplifies to $\pm V$.
+    \item Use simple geometries and surfaces to simplify the evaluation of the integrals.
+\end{itemize}
+The intuition is to choose a control volume so that the unknown quantities appear naturally in the equations while minimizing the complexity of everything else.
+\begin{center}
+    {\LARGE\bfseries Finite Control Volume Analysis\par}
+\end{center}
+In this chapter, we will explore the ways to apply the Reynolds Transport Theorem to analyze fluid flow through a control volume. The big idea is to use laws of conservation where the material derivative of an extensive property $B$ has a known equality, such as $DM/Dt=0$ for mass conservation, $D\vec{P}/Dt=\sum \vec{F}$ for momentum conservation and then solve the right-hand side of the Reynolds Transport Theorem to determine the unknowns.
+\section*{\fbox{5.1 Conservation of Mass (Continuity Equation)}}
+\addcontentsline{toc}{section}{5.1 Conservation of Mass (Continuity Equation)}
 
 
 
