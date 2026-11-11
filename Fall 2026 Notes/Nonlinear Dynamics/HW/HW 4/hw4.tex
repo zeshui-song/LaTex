@@ -115,18 +115,78 @@ Plotting the phase portrait of $\frac{d\phi}{d\tau}$ vs $\phi$ for different val
 \subsection*{Problem 2}
 For the following two figures, please invent a system that could produce them, giving it both in mathematical form and as a model of something (be creative, tell me a story).\\\\
 \noindent\textbf{(a)}
+\vspace{-2em}
 \begin{center}
     \includegraphics[width=0.38\textwidth]{p2a.png}
 \end{center}
-\noindent\textbf{Solution}
+\noindent\textbf{Solution} The cusp catastrophe system is given by the following equation:
+\[\dot{x} = h + rx -x^3\]
+Intuitively, each term in the equation can have the following impact on the dynamics of the system:
+\begin{itemize}
+    \item $h$: a constant driving influence that is independent of the state variable $x$. It can represent an external force or input that pushes the system in a certain direction.
+    \item $rx$: a linear term that represents feedback proportional to the current state of the system. It could represent a correction that increases the change of $x$ in the same direction as $x$ itself (ie. positive feedback: larger $x$ pushes the system to grow even faster).
+    \item $-x^3$: a nonlinear term that represents a limiting effect that becomes stronger as $x$ increases. It can represent a slowing down of the system's growth as it approaches a certain threshold, and isn't noticeable for small values of $x$.
+\end{itemize}
+It has the bifurcation diagram of:
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{bifurcations.png}
+\end{center}
+\underline{Story}\\
+On May 26, 2025, me, Sikder, Ahikara, and Lixiang went on a hike from Cold Spring to Beacon, NY. As we were finishing the hike, the sun started setting and the forest was getting dark, fast.\\\\
+Let $x$ be the deviation from our average hiking speed:
+\[x = v - v_{avg}\]
+Such that:
+\begin{itemize}
+    \item $x<0$: we are hiking slower than usual
+    \item $x=0$: we are hiking at our average speed
+    \item $x>0$: we are hiking faster than usual
+\end{itemize}
+For a cusp catastrophe model:
+\begin{itemize}
+    \item $h$: constant urgency to make it out of the forest before the sun sets, which pushes $\dot{x}$ in the positive direction (corresponding to an increase in hiking speed).
+    \item $rx$: positive feedback as we hike faster than usual, covering more ground and motivating us to hike even faster.
+    \item $-x^3$: fatigue and exhaustion that sets in if we hike too fast, slowing us down and preventing us from reaching a very high speed.
+\end{itemize}
 
-\vspace{2em}
+Looking at the bifurcation diagram for $h\neq 0$:
+\begin{itemize}
+    \item For $r<0$, increasing our hiking pace produces negative feedback, discouraging us from going too fast. However, due to the urgency of the setting sun ($h>0$), we settle into a stable pace slightly faster than usual.
 
+    \item For $r>0$, as positive feedback increases, the positive stable branch continues to rise, representing an increase in our hiking pace. However, two additional branches appear at negative fixed points. The unstable fixed point approaches $x^*=0$, corresponding to our usual hiking speed. Any small disturbance from this unstable equilibrium pushes us toward one of the two stable branches, depending on whether our pace increases or decreases. The negative stable branch represents a slower-than-usual hiking pace, perhaps because we are too tired to maintain a faster pace.
+\end{itemize}
+Referencing our actual Strava data from the hike below, it can be seen that our hiking pace does increase as we approach the end of the hike, with deviations as a result of elevation gain slowing down our pace at certain points.
+\begin{center}
+    \includegraphics[width=\textwidth]{strava data.png}
+\end{center}
 \noindent\textbf{(b)}
+\vspace{-2em}
 \begin{center}
     \includegraphics[width=0.38\textwidth]{p2b.png}
 \end{center}
-\noindent\textbf{Solution}
-
+\noindent\textbf{Solution} This is a 2D phase portrait of a system with a stable spiral fixed point. The general form of this would be:
+\[\dot{\vec{x}} = [A]\vec{x}\]
+The eigenvalues of the matrix $[A]$ are given by solving:
+\[\det([A]-\lambda I) = 0\]
+For a stable spiral, the eigenvalues must be complex with negative real parts.\\\\
+Intuitively, a system that produces a stable spiral fixed point can be thought of the phase portrait of a damped harmonic oscillator ($\dot{x}$ vs $x$), with the equation of motion given by:
+\[m\ddot{x}+b\dot{x}+kx = 0\]
+where $m$ is the mass, $b$ is the damping coefficient, and $k$ is the spring constant. The system can be rewritten as a first-order system, letting $v = \dot{x}$:
+\[\begin{bmatrix}\dot{x} \\ \dot{v}\end{bmatrix} = \begin{bmatrix}0 & 1 \\ -\frac{k}{m} & -\frac{b}{m}\end{bmatrix} \begin{bmatrix}x \\ v\end{bmatrix}\]
+The eigenvalues of the matrix are given by:
+\[\lambda = \frac{-b \pm \sqrt{b^2 - 4mk}}{2m}\]
+For a stable spiral, we require $4mk > b^2$.\\\\
+\underline{Story}\\
+Drawing inspiration from the plot on the board before one of our classes:
+\begin{center}
+    \includegraphics[width=\textwidth]{board.jpg}
+\end{center}
+I will model the mental state of Cooper Union students from freshman year to graduation as an underdamped harmonic oscillator. Let $x$ represent the students' emotional well-being, where $x=0$ represents burnout, negative values represent high levels of stress and unhappiness, and positive values represent happiness and relaxation.
+\begin{itemize}
+    \item $m$: Represents the inertia of the system, which can be interpreted as the students' resistance to sudden changes in their emotional state caused by external stressors.
+    \item $b$: Represents the damping coefficient, which models how students gradually become less emotionally reactive to fluctuations in their academic workload as they adapt to college (but also having less happiness as they approach graduation).
+    \item $k$: Represents the restoring force toward the equilibrium mental state. When students are particularly happy or stressed, their academic workload and coping mechanisms tend to bring them back toward their usual state of burnout.
+\end{itemize}
+Assuming the system is underdamped, the students' mental state oscillates between periods of happiness and stress, with the amplitude gradually decreasing as they approach burnout.\\\\
+However, this isn't a perfect model since the damping would also decrease the students' stress over time, which is not really the case (shown by the plot on the board).
 
 \end{document}
