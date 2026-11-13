@@ -1,6 +1,7 @@
 ﻿\documentclass[12pt]{article}
 \usepackage{amssymb, amsmath, amsfonts, bm, graphicx, geometry}
 \usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
+\usepackage[most]{tcolorbox}
 \usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
 \usepackage{siunitx}  % Eases typesetting of numbers and units
 \usepackage[hidelinks]{hyperref}
@@ -920,22 +921,77 @@ The number and directions of the asymptotes are given by:
 }
 \]
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \begin{center}
     {\LARGE\bfseries \fbox{Frequency Response Analysis (Bode Plots)}\par}
 \end{center}
+\section*{Frequency Response}
+Consider a stable linear time-invariant (LTI) system with transfer function $G(s)$. When subject to a purely sinusoidal input $u(t) = A \cos(\omega t)$, the output will also be sinusoidal with the same frequency $\omega$, but with a different amplitude and phase. \begin{center}
+    \includegraphics[width=0.6\textwidth]{Freq Response.png}
+\end{center}
+We define the amplitude and phase change of the system as the \hl{frequency response} of the system, which is given by evaluating the transfer function at $s = \hat{\imath}\omega$:
+\begin{itemize}
+    \item \textbf{Magnitude (gain):} 
+    \[M = \frac{\text{(Output Amplitude B)}}{\text{(Input Amplitdue A)}} = |G(\hat{\imath}\omega)|\]
+    \item \textbf{Phase:}
+    \[\phi = \angle G(\hat{\imath}\omega)\]
+\end{itemize}
+
+\begin{tcolorbox}[breakable, colback=white, colframe=black]
+\textbf{Proof:}\\
+From block diagram algebra, we have:
+\[Y(s) = G(s)U(s)\]
+Where
+\[u(t) = A \cos(\omega t)\quad \implies \quad U(s) = A \frac{s}{s^2 + \omega^2}\]
+Therefore, the output in the Laplace domain is:
+\[Y(s) = G(s)U(s) = \frac{A\,sG(s)}{(s-\hat{\imath}\omega)(s+\hat{\imath}\omega)}\]
+Using partial fraction decomposition, we can write:
+\[Y(s) = \frac{C_1}{s-\hat{\imath}\omega} + \frac{C_2}{s+\hat{\imath}\omega} + \text{(transient terms)}\]
+Note that when doing the partial fraction decomposition, we need to also consider the terms that come from the poles of $G(s)$. However, since the system is stable, all poles of $G(s)$ lie in the left half-plane. Consequently, the corresponding terms in the time-domain response will decay to zero. \hl{Thus, we can ignore these transient terms when considering the steady-state response.}
+\newpage
+\underline{Solve for $C_1$ \& $C_2$ using the cover-up method}
+\[C_1=\lim_{s\to \hat{\imath}\omega}(s-\hat{\imath}\omega)Y(s)=\left.\frac{AsG(s)}{s+\hat{\imath}\omega}\right|_{s=\hat{\imath}\omega}\]
+\[C_1=\frac{A}{2}G(\hat{\imath}\omega)\]
+Similarly,
+\[C_2=\lim_{s\to -\hat{\imath}\omega}(s+\hat{\imath}\omega)Y(s)=\left.\frac{AsG(s)}{s-\hat{\imath}\omega}\right|_{s=-\hat{\imath}\omega}\]
+\[C_2=\frac{A}{2}G(-\hat{\imath}\omega)\]
+\underline{Taking the inverse Laplace transform}\\
+Substituting the coefficients and ignoring the transient terms, we have the steady-state response in the Laplace domain:
+\[Y_{ss}(s)=\frac{AG(\hat{\imath}\omega)}{2(s-\hat{\imath}\omega)}+\frac{AG(-\hat{\imath}\omega)}{2(s+\hat{\imath}\omega)}\]
+Taking the inverse Laplace transform:
+\[y_{ss}(t)=\frac{A}{2}\left[G(\hat{\imath}\omega)e^{\hat{\imath}\omega t}+G(-\hat{\imath}\omega)e^{-\hat{\imath}\omega t}\right]\]
+\underline{Simplifying the response}\\
+A property of rational functions with real coefficients is that $G(-\hat{\imath}\omega)=G(\hat{\imath}\omega)^*$. In other words, evaluating the function at complex conjugate inputs produces complex conjugate outputs.\\
+Thus, we can use the property of complex conjugates, $x+x^*=2\operatorname{Re}\{x\}$, to simplify the expression:
+\[\begin{aligned}
+y_{ss}(t)&=\frac{A}{2}\left[G(\hat{\imath}\omega)e^{\hat{\imath}\omega t}+G(-\hat{\imath}\omega)e^{-\hat{\imath}\omega t}\right]\\
+&=\frac{A}{2}\left[G(\hat{\imath}\omega)e^{\hat{\imath}\omega t}+\left(G(\hat{\imath}\omega)e^{\hat{\imath}\omega t}\right)^*\right]\\
+&=A\operatorname{Re}\left\{G(\hat{\imath}\omega)e^{\hat{\imath}\omega t}\right\}
+\end{aligned}\]
+Next, we express $G(\hat{\imath}\omega)$ in polar form, where $|G(\hat{\imath}\omega)|$ is its magnitude and $\angle G(\hat{\imath}\omega)$ is its phase:
+\[G(\hat{\imath}\omega)=|G(\hat{\imath}\omega)|e^{\hat{\imath}\angle G(\hat{\imath}\omega)}\]
+Substituting into our expression:
+\[y_{ss}(t)=A\operatorname{Re}\left\{|G(\hat{\imath}\omega)|e^{\hat{\imath}\angle G(\hat{\imath}\omega)}e^{\hat{\imath}\omega t}\right\}\]
+Since the magnitude is real, we can pull it outside the real-part operator. Combining the exponentials:
+\[y_{ss}(t)=A|G(\hat{\imath}\omega)|\operatorname{Re}\left\{e^{\hat{\imath}(\omega t+\angle G(\hat{\imath}\omega))}\right\}\]
+Recall Euler's formula:
+\[e^{\hat{\imath}\theta}=\cos\theta+\hat{\imath}\sin\theta\]
+Thus, taking the real part leaves only the cosine term:
+\[\boxed{y_{ss}(t)=A|G(\hat{\imath}\omega)|\cos(\omega t+\angle G(\hat{\imath}\omega))}\]
+Comparing this to the general sinusoidal steady-state output:
+\[y_{ss}(t)=B\cos(\omega t+\phi)\]
+We obtain:
+\[\boxed{\frac{B}{A}=|G(\hat{\imath}\omega)|,\qquad \phi=\angle G(\hat{\imath}\omega)}\]
+\textbf{In summary:} \hl{The steady-state response of a stable LTI system to a sinusoidal input is another sinusoid of the same frequency, but with a potentially different amplitude and phase, where the amplitude and phase change are given by evaluating the transfer function at $s = \hat{\imath}\omega$.}
+\end{tcolorbox}
+\section*{Decibel Definition}
+For a positive amplitude $A$, its equivalent decibel (dB) magnitude is defined as:
+\[\boxed{A_{dB} = 20 \log_{10}(A)}\]
+Note some common conversions:
+\begin{itemize}
+    \item +20 dB corresponds to a factor of 10 in amplitude.
+    \item +6 dB corresponds to a factor of approx 2 in amplitude.
+    \item -20 dB corresponds to a factor of 1/10 in amplitude.
+    \item -6 dB corresponds to a factor of approx 1/2 in amplitude.
+\end{itemize}
+
 \end{document}

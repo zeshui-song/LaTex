@@ -523,6 +523,26 @@
 \end{center}
 
 
+Frequency response
+\begin{center}
+\begin{tikzpicture}[>=Stealth]
+
+    % Transfer function block
+    \node[draw, rectangle, minimum width=2cm,
+          minimum height=1cm] (G) at (0,0) {$G(s)$};
+
+    % Input
+    \draw[->] (-3.5,0) -- (G.west);
+    \node[above] at (-2.5,0) {Input};
+    \node[below] at (-2.5,0) {$A\cos(\omega t)$};
+
+    % Output
+    \draw[->] (G.east) -- (3.5,0);
+    \node[above] at (3,0) {Steady-state output};
+    \node[below] at (3,0) {$B\cos(\omega t+\phi)$};
+
+\end{tikzpicture}
+\end{center}
 
 
 \end{document}
