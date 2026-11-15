@@ -41,6 +41,34 @@
   }}}%
 }
 
+\usepackage[most]{tcolorbox}
+
+% Minimal boxes: no colored title bars or rounded corners
+\newtcolorbox{examplebox}[1][Example]{
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=black!30,
+    boxrule=0.4pt,
+    arc=0pt,
+    left=7pt, right=7pt,
+    top=5pt, bottom=5pt,
+    before upper={\textbf{Example: #1}\par\smallskip}
+}
+
+
+\newtcolorbox{notebox}[1][Side Note]{
+    enhanced,
+    breakable,
+    colback=black!2,
+    colframe=black!20,
+    boxrule=0.3pt,
+    arc=0pt,
+    left=7pt, right=7pt,
+    top=5pt, bottom=5pt,
+    before upper={\textit{Side Note:} \textbf{#1}\par\smallskip}
+}
+
 \begin{document}
 
 \begin{center}
@@ -64,7 +92,9 @@ Density of fluids are dependent on both temperature and pressure but for liquids
 \textbf{Specific Volume}\\
 Defined as volume per unit mass of a substance, and is the reciprocal of density:
 \[\svol = \frac{1}{\rho} = \frac{\vol}{m}\]
-More common in thermodynamics (see spring 2026 with KAMAU WRIGHT) than fluid mechanics.\\\\
+\begin{notebox}
+More common in thermodynamics (see spring 2026 with KAMAU WRIGHT) than fluid mechanics.
+\end{notebox}
 \textbf{Specific Weight}\\
 Defined as weight per unit volume of a substance:
 \[\gamma = \rho g\]
@@ -111,9 +141,10 @@ Where:
 \end{itemize}
 Alternative form:
 \[p = \rho RT\]
-\textbf{Constant Volume Process}\\
+\begin{examplebox}[Constant Volume Process]
 For example, processes within a \hl{rigid container} ($\vol,R$, and $m$ are constant):
 \[\frac{P_1}{T_1} = \frac{P_2}{T_2}\]
+\end{examplebox}
 \subsection*{Pressure}
 Pressure is defined as force per unit area and has units of
 \begin{itemize}
@@ -181,7 +212,7 @@ The units of dynamic viscosity are FTL$^{-2}$:
     \item BG \& EE system: $[\mu] = \unit{\lbf\second\per\foot\squared}$
     \item SI system: $[\mu] = \unit{\pascal\second} = \unit{\newton\second\per\meter\squared}$
 \end{itemize}
-\textbf{Types of Fluid}\\
+\begin{notebox}[Types of Fluid]
 Different types of fluids can be classified based on the relationship between shearing stress and rate of shearing strain:
 \begin{itemize}
     \item \textbf{Newtonian Fluids} have a linear relationship between shearing stress and rate of shearing strain $du/dy$. (Ex: water, air, gasoline, and oil)
@@ -189,6 +220,7 @@ Different types of fluids can be classified based on the relationship between sh
     \item \textbf{Shear-Thickening Fluids} have a non-linear relation with the rate of shearing strain, where the apparent viscosity increases as shear rate increases. (Ex: cornstarch in water, crunchy)
     \item \textbf{Bingham Plastics} behave like a solid at low shear stress, but flow like a fluid at high shear stress. It doesn't flow until yield stress is exceeded. (Ex: toothpaste, ketchup, and mayonnaise) 
 \end{itemize}
+\end{notebox}
 \textbf{Effect of Temperature on Viscosity}\\
 The effect of temperature on viscosity can be approximated by the following empirical relationship called the \hl{\textit{Sutherland Equation} for gases}:
 \[\mu = \frac{CT^{3/2}}{T+S}\]
@@ -300,8 +332,10 @@ So the equations of motion is rewritten as:
 \[p_z - p_s = (\rho a_z + \gamma)\frac{\delta z}{2}\]
 To determine the pressure distribution at a point, we take the limit as $\delta y, \delta z \to 0$, keeping $\theta$ constant. Thus, the right-hand side of both equations goes to zero, and we get:
 \[p_y = p_s,\quad p_z = p_s\implies p_x = p_y = p_z \quad \text{(if we had also considered $p_x$)}\]
-Therefore, since $\theta$ is arbitrary, \hl{the pressure at a point in a fluid at rest, or in motion, is independent of direction as long as there are no shearing stresses present.} This is known as \textbf{Pascal's Law}.\\\\
-\underline{Note:} The version of Pascal's law that states that \textit{a change in pressure at any point in a continuous fluid is transmitted to all points in the fluid} is mainly a result of the hydrostatic pressure distribution when we neglect elevation differences across a fluid. (Same Pascal, different law?)
+Therefore, since $\theta$ is arbitrary, \hl{the pressure at a point in a fluid at rest, or in motion, is independent of direction as long as there are no shearing stresses present.} This is known as \textbf{Pascal's Law}.
+\begin{notebox}[Pascal's Law Clarification]
+The version of Pascal's law that states that \textit{a change in pressure at any point in a continuous fluid is transmitted to all points in the fluid} is mainly a result of the hydrostatic pressure distribution when we neglect elevation differences across a fluid. (Same Pascal, different law?)
+\end{notebox}
 \section*{\fbox{2.2 Basic Equation for Pressure Field}}
 \addcontentsline{toc}{section}{2.2 Basic Equation for Pressure Field}
 Now that we know that pressure is independent of direction at a point, we should now ask how pressure varies across points in a fluid (ie. find the pressure distribution). Consider a small rectangular fluid element with dimensions $\delta x, \delta y, \delta z$ in a fluid without shearing stresses. 
@@ -451,6 +485,7 @@ This can be derived by a force balance on the mercury column:
 \[\sum F_z = p_{atm} A_{tube} - \gamma A_{tube} h - p_{vapor} A_{tube} =0\]
 \[\implies p_{atm} = \gamma h + p_{vapor}\]
 Assuming the vapor pressure is negligible: $p_{atm} \approx \gamma h$. 
+\newpage
 \section*{\fbox{2.6 Man-O-Meters}}
 \addcontentsline{toc}{section}{2.6 Man-O-Meters}
 Oh boy my favorite.\\\\
@@ -461,15 +496,19 @@ To solve manometer problems, we can use the following "rules":
     \item Move through manometer and add $\gamma h$ with increasing depth and subtract $\gamma h$ with decreasing depth
     \item When stopping at any point, the sum is equal to the local pressure at that point
 \end{enumerate}
-\hl{Make horizontal jumps without adding since the pressure is constant along a horizontal line.}\\\\
+\hl{Make horizontal jumps without adding since the pressure is constant along a horizontal line.}
+\begin{examplebox}[]
 For example, the following is a man-ohh-meter:
 \begin{center}
     \includegraphics[width=0.4\textwidth]{2.6 manohhhhh.jpg}
 \end{center}
 If we start from the open end:
 \[p_{atm} + \gamma_2h_2 - \gamma_1h_1 = p_A\]
+\end{examplebox}
 \subsection*{Inclined-tube Manometer}
-If we want to be fancy and physically add more resolution to our manometer, we can incline the tube. This allows for a longer column of liquid to measure the same pressure difference. See the following example:
+If we want to be fancy and physically add more resolution to our manometer, we can incline the tube. This allows for a longer column of liquid to measure the same pressure difference. 
+\newpage
+\begin{examplebox}[]
 \begin{center}
     \includegraphics[width=0.6\textwidth]{2.6 inclined manometer.jpg}
 \end{center}
@@ -480,12 +519,11 @@ p_A + \gamma_1 h_1 - \gamma_2 \ell_2 \sin\theta - \gamma_3 h_3 = p_B
 \[\implies 
 p_A - p_B = \gamma_2 \ell_2 \sin\theta + \gamma_3 h_3 - \gamma_1 h_1
 \]
+\end{examplebox}
 The same manometer rules applies but be careful to use the vertical height instead of the length of the inclined tube. The vertical height is given by $\ell_2 \sin\theta$.
-\newpage
 \begin{center}
     {\LARGE\bfseries Hydrostatics\par}
 \end{center}
-
 \section*{\fbox{2.8 Hydrostatic force on a plane surface}}
 \addcontentsline{toc}{section}{2.8 Hydrostatic force on a plane surface}
 For fluid at rest, fluid pressure acts perpendicular to any surface because there is no shear stress present in a static fluid.\\\\
@@ -1039,10 +1077,12 @@ By knowing both the static and stagnation pressures, we can calculate the veloci
     \includegraphics[width=0.8\textwidth]{3.5 Pitot.png}
 \end{center}
 \newpage
+\begin{notebox}[]
 Unrelated to the problem set up shown previously, this shows the two concentric tubes of a Pitot-static tube a bit better:
 \begin{center}
     \includegraphics[width=0.4\textwidth]{3.5 Pitot ex.jpg}
 \end{center}
+\end{notebox}
 Back to the problem. Assuming negligible elevation changes between points 1,2,3,4:\\\\
 The center tube measures the stagnation pressure at point 2. 
 \[p_3  = p + \frac{1}{2}\rho V^2\]
@@ -1237,11 +1277,12 @@ Thus, the vertical distance between the streamline elevation and the hydraulic g
     \item Pitot-static tube: measures stagnation pressure vs elevation, allowing the energy line elevation to be determined
     \item Piezometer tube: measures static pressure head, allowing the hydraulic grade line elevation to be determined
 \end{itemize}
-\textbf{Example:}
+\begin{examplebox}[Energy line and hydraulic grade line]
 \begin{center}
     \includegraphics[width=0.7\textwidth]{3.7 example EL HGL.jpeg}
 \end{center}
 \underline{Note:} Review Example 3.7.1
+\end{examplebox}
 \section*{\fbox{{3.8 Restrictions on use of the Bernoulli equation}}}
 \addcontentsline{toc}{section}{3.8 Restrictions on use of the Bernoulli equation}
 We are super familiar with the Bernoulli equation for steady, inviscid, incompressible flow along a streamline:
@@ -1294,6 +1335,7 @@ If the flow is also \hl{irrotational} (the fluid particles do not "spin" as they
 However, if the flow is rotational (the fluid particles spin as they move), then the Bernoulli equation is restricted to flow along a streamline.\\\\
 Mathematically, the flow is irrotational if the curl of the velocity field is zero:
 \[\nabla \times \vec{V} = 0\]
+\newpage
 \subsection*{Other Restrictions}
 \textbf{Viscous Effects}\\
 Mentioned briefly previously for energy line in section 3.7, when viscous effects are significant, mechanical energy is dissipated and the total head is not constant along a streamline. 

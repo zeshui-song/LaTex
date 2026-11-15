@@ -46,6 +46,33 @@
   }}}%
 }
 
+\usepackage[most]{tcolorbox}
+
+% Minimal boxes: no colored title bars or rounded corners
+\newtcolorbox{examplebox}[1][Example]{
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=black!30,
+    boxrule=0.4pt,
+    arc=0pt,
+    left=7pt, right=7pt,
+    top=5pt, bottom=5pt,
+    before upper={\textbf{Example: #1}\par\smallskip}
+}
+
+\newtcolorbox{notebox}[1][Side Note]{
+    enhanced,
+    breakable,
+    colback=black!2,
+    colframe=black!20,
+    boxrule=0.3pt,
+    arc=0pt,
+    left=7pt, right=7pt,
+    top=5pt, bottom=5pt,
+    before upper={\textit{Side Note:} \textbf{#1}\par\smallskip}
+}
+
 \begin{document}
 
 \begin{center}
@@ -174,11 +201,13 @@ Note that the gradient operator $\vec{\nabla}$ is defined as:
 \[\vec{\nabla}()=\frac{\partial()}{\partial x}\hat{\imath}+\frac{\partial()}{\partial y}\hat{\jmath}+\frac{\partial()}{\partial z}\hat{k}\]
 So 
 \[\vec{V}\cdot\vec{\nabla}()=u\frac{\partial()}{\partial x}+v\frac{\partial()}{\partial y}+w\frac{\partial()}{\partial z}\]
-\hl{The material derivative is not just for the acceleration field, it can be applied to any flow property, such as pressure, temperature, or density.} The material derivative of any variable is the rate at which that variable changes with time for a given particle \hl{\textit{as seen by one moving along with the fluid}}.\\\\
+\hl{The material derivative is not just for the acceleration field, it can be applied to any flow property, such as pressure, temperature, or density.} The material derivative of any variable is the rate at which that variable changes with time for a given particle \hl{\textit{as seen by one moving along with the fluid}}.
+\begin{examplebox}[Temperature Along a Pathline]
 For example, the material derivative of temperature $T$ describes how temperature changes with time as a fluid particle moves along its pathline in the candle flame:
 \begin{center}
     \includegraphics[width=0.3\linewidth]{material deriv of temp.png}
 \end{center}
+\end{examplebox}
 \newpage
 \subsection*{Acceleration with Streamline Coordinates}
 As defined previously in section 3.1, the streamline coordinate system is defined by the unit vectors $\hat{s}$ along the streamline and $\hat{n}$ normal to the streamline:
@@ -249,8 +278,8 @@ Thus, defining the time rate of change of an extensive property $B$ \textit{with
     \[\frac{dB_{\text{sys}}}{dt} =  \frac{d}{dt}\left(\int_{\text{sys}} \rho b\,d\vol\right)\]
 Equivalently, we can make a similar statement for the time rate of change of an extensive property $B$ \hl{within a control volume}:
 \[\frac{dB_{C\vol}}{dt} =  \frac{d}{dt}\left(\int_{C\vol} \rho b\,d\vol\right)\]
-While the forms of the equations are similar, \hl{they have mathematically different limits of integration!} This is because typically, the control volume is fixed in space, while the system is a moving volume that follows a fixed collection of fluid particles. Furthermore, \hl{the control volume can have mass entering or leaving it, while the system has a fixed mass,} so the time rates of change would not necessarily be equal. \textit{Reynold's transport theorem gives us a way to relate these two derivatives!}\\\\
-\underline{Example:}\\
+While the forms of the equations are similar, \hl{they have mathematically different limits of integration!} This is because typically, the control volume is fixed in space, while the system is a moving volume that follows a fixed collection of fluid particles. Furthermore, \hl{the control volume can have mass entering or leaving it, while the system has a fixed mass,} so the time rates of change would not necessarily be equal. \textit{Reynold's transport theorem gives us a way to relate these two derivatives!}
+\begin{examplebox}[Draining Tank]
 Consider the system to be the fluid contained within a tank at $t=0$ when the valve is opened. The control volume is the fixed volume of the tank.
 \begin{center}
     \includegraphics[width=0.5\linewidth]{control volume example.png}
@@ -259,7 +288,8 @@ If mass is conserved, then the time rate of change of mass within the system is 
 \[\frac{d}{dt}\left(\int_{\text{sys}} \rho b\,d\vol\right) =0\]
 But since mass has exited the control volume, the time rate of change of mass within the control volume is negative:
 \[\frac{d}{dt}\left(\int_{C\vol} \rho b\,d\vol\right) < 0\]
-\noindent
+\end{examplebox}
+\begin{notebox}[]
 \begin{minipage}[c]{0.8\textwidth}
     \textit{Intuitively, this is all obvious stuff, but it's very important to know the difference between the two definitions. Otherwise, Reynolds would be sad...}
 \end{minipage}%
@@ -268,7 +298,7 @@ But since mass has exited the control volume, the time rate of change of mass wi
     \centering
     \includegraphics[width=\linewidth]{sad reynold.png}
 \end{minipage}
-\newpage
+\end{notebox}
 \subsection*{Derivation of the Reynolds Transport Theorem}
 The goal of the Reynolds Transport Theorem is to \hl{relate the rate of change of a property of a moving system to the changes occurring within a control volume}.\\\\
 To do this, we can initially define a system that is \textit{entirely contained within and coincides with the control volume}. If the fluid particles that make up the system have some velocity, then the system will move relative to the \textit{fixed} control volume over a small time interval. By accounting for the fluid entering and leaving the control volume, we can express the rate of change of the system's property.\\\\
@@ -326,6 +356,7 @@ Taking the limit as $\delta t \to 0$:
 \]
 \[\frac{\partial B_{\mathrm{C\vol}}}{\partial t} = \frac{\partial}{\partial t}\left(\int_{C\vol} \rho b\, d\vol\right)\]
 Note that the integral $\int_{C\vol} \rho b\, d\vol$ represents the total amount of property $B$ within the fixed control volume. \hl{Since the control volume is fixed, its boundaries don't change, so the limits of integration are constant.} Therefore, the time derivative $\partial B_{\mathrm{C\vol}}/\partial t$ is positive when the total amount of $B$ within the control volume increases, or in other words, when the integral "accumulates" more of the property $B$ over time.
+\begin{examplebox}[Types of "Accumulation" of $B$ within a Control Volume]
 \begin{itemize}
     \item Examples for when $\rho$ is increasing:
     \begin{itemize}
@@ -368,6 +399,7 @@ Therefore, the rate of accumulation inside the control volume is:
 Although the control volume and its integration limits remain fixed, the density field $\rho(z,t)$ changes with time as water occupies an increasing portion of the tank.
     \end{itemize}
 \end{itemize}
+\end{examplebox}
 \item  Right-hand side (second term): \textit{sorry for getting sidetracked}
 \[\frac{B_{\mathrm{I}}(t+\delta t)}{\delta t}\]
 $B_{\mathrm{I}}(t+\delta t)$ represents the total amount of $B$ that has entered the control volume through section (1) during the time interval $\delta t$ (represented by the volume of fluid I).\\\\
@@ -425,8 +457,8 @@ Where $\vec{V}_{\text{rel}} = \vec{V} - \vec{V}_{CS}$ is the relative velocity o
 \begin{center}
     \includegraphics[width=0.8\linewidth]{moving cv.png}
 \end{center}
-\hl{In summary, the Reynolds Transport Theorem relates the rate of change of an extensive property $B$ (which depends on the mass of the system) as we follow a fluid system along its pathlines to its accumulation within a chosen control volume and its \textit{net transport} across the control surface.} The volume integral represents the accumulation of $B$ within the control volume, while the surface integral represents its net outward flux, with outflow positive and inflow negative by sign convention.\\\\
-\textbf{Note on the Rate of Change of the Volume Integral}\\
+\hl{In summary, the Reynolds Transport Theorem relates the rate of change of an extensive property $B$ (which depends on the mass of the system) as we follow a fluid system along its pathlines to its accumulation within a chosen control volume and its \textit{net transport} across the control surface.} The volume integral represents the accumulation of $B$ within the control volume, while the surface integral represents its net outward flux, with outflow positive and inflow negative by sign convention.
+\begin{notebox}[Rate of Change of the Volume Integral]
 The first term on the right-hand side of the Reynolds Transport Theorem represents the time rate of change of the extensive property $B$ within the control volume. There are a few notable ways for this term to be nonzero:
 \begin{itemize}
 \item The control volume is fixed, but the fluid properties $\rho$ and/or $b$ change with time. Since the integration region is constant, we can bring the partial derivative inside:
@@ -436,7 +468,8 @@ The amount of property per unit volume changes with time, even though the contro
 \[\frac{d}{dt} \int_{C\vol(t)} \rho b \, d\vol = \rho b \frac{d}{dt} \int_{C\vol(t)} d\vol = \rho b \frac{d\vol_{C\vol}}{dt}\]
 \end{itemize}
 Note that both of these cases can occur simultaneously, in which case we would generally need to evaluate a time-dependent triple integral to account for all the changing variables. However, in most applications, we can make reasonable assumptions about the control volume or fluid properties to simplify the analysis. Typically, we can choose a fixed control volume such that the accumulation term vanishes under steady-flow conditions.\\\\
-Also note that there are special cases where the surface integral equals zero (equal rates of inflow and outflow), but the volume integral is nonzero (unsteady flow).\\\\
+Also note that there are special cases where the surface integral equals zero (equal rates of inflow and outflow), but the volume integral is nonzero (unsteady flow).
+\end{notebox}
 \textbf{Choosing a Control Volume}\\
 Choosing a control volume is analogous to choosing a free-body diagram to analyze in mechanics. Any control valid is theoretically valid, but a good choice can simplify the analysis.\\\\
 Generally we want to choose a control volume such that
