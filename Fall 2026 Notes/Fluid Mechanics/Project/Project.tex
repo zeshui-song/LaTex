@@ -254,6 +254,164 @@ Now, we would have an equation for lift in terms of only geometry and flow rate.
 \begin{center}
     \includegraphics[width = 0.8\textwidth]{inconsistency.png}
 \end{center}
+\section*{Non-Dimensionalization}
+Identify number of parameters:
+\[\vec{F}_\text{net} = f(\rho, Q, R_{\mathrm{in}}, R_1, R_{\mathrm{out}}, h)\]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c c}
+        \hline
+        Parameter & Dimensions \\
+        \hline
+        $\vec{F}_\text{net}$ & $MLT^{-2}$ \\
+        $\rho$ & $ML^{-3}$ \\
+        $Q$ & $L^3T^{-1}$ \\
+        $p_0$ & $ML^{-1}T^{-2}$ \\
+        $R_{\mathrm{in}}, R_1, R_{\mathrm{out}}, h$ & $L$ \\
+        \hline
+    \end{tabular}
+\end{table}
+Construct the dimensional matrix:
+\[
+\begin{array}{c|cccccccc}
+ & \vec{F}_\text{net} & \rho & Q & p_0
+ & R_{\mathrm{in}} & R_1 & R_{\mathrm{out}} & h \\
+\hline
+M & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+L & 1 & -3 & 3 & -1 & 1 & 1 & 1 & 1 \\
+T & -2 & 0 & -1 & -2 & 0 & 0 & 0 & 0
+\end{array}
+\]
+By Buckingham Pi theorem, we can form $8-3=5$ dimensionless groups.\\\\
+Choosing $\rho, Q, R_\text{in}$ as repeating variables, checking for linear independence:
+\[
+\begin{array}{c|ccc}
+ & \rho & Q & R_{\mathrm{in}} \\
+\hline
+M & 1 & 0 & 0 \\
+L & -3 & 3 & 1 \\
+T & 0 & -1 & 0
+\end{array}
+\]
+Since $\det(D_r)=1\neq 0$, the three columns are linearly independent and are valid repeating variables.\\\\
+The five dimensionless groups are found by solving for the exponents of the repeating variables such that each group is dimensionless. Let $X$ represent each non-repeating variable, then
+\[
+\boxed{\Pi=X\rho^a Q^b R_{\mathrm{in}}^c [=] [X] (ML^{-3})^a (L^3T^{-1})^b (L)^c }
+\]
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{2.5}
+    \setlength{\extrarowheight}{3pt}
+    \begin{tabular}{c c c c c c}
+        \hline
+        Group & Non-repeating variable & $a$ & $b$ & $c$ & Dimensionless group \\
+        \hline
+        $\Pi_1$ & $F_{\mathrm{net}}$ & $-1$ & $-2$ & $2$ &
+        $\displaystyle\frac{F_{\mathrm{net}}R_{\mathrm{in}}^2}{\rho Q^2}$ \\
+
+        $\Pi_2$ & $p_0$ & $-1$ & $-2$ & $4$ &
+        $\displaystyle\frac{p_0R_{\mathrm{in}}^4}{\rho Q^2}$ \\
+
+        $\Pi_3$ & $R_1$ & $0$ & $0$ & $-1$ &
+        $\displaystyle\frac{R_1}{R_{\mathrm{in}}}$ \\
+
+        $\Pi_4$ & $R_{\mathrm{out}}$ & $0$ & $0$ & $-1$ &
+        $\displaystyle\frac{R_{\mathrm{out}}}{R_{\mathrm{in}}}$ \\
+
+        $\Pi_5$ & $h$ & $0$ & $0$ & $-1$ &
+        $\displaystyle\frac{h}{R_{\mathrm{in}}}$ \\
+        \hline
+    \end{tabular}
+\end{table}
+\hl{For our optimization, we will be holding $\rho, Q, p_0, R_\text{in}$ as constants}, therefore $\Pi_2$ is constant and we can optimize $\Pi_1$ as a function of $\Pi_3, \Pi_4, \Pi_5$:
+\[
+\Pi_1=f(\Pi_3,\Pi_4,\Pi_5)
+\]
+\underline{Nondimensionalization of Lifting Force:}\\
+Starting with the previously derived force equation, substitute the expression for $p_1$ and simplify.
+\[
+F_{\mathrm{net}}=-\pi p_0R_1^2-\frac{\rho Q^2}{2\pi}\left(\frac{R_1^2}{R_{\mathrm{in}}^4}+\frac{1}{R_1^2}\right)+\frac{\rho Q^2}{4\pi h^2}\left[\ln\left(\frac{R_{\mathrm{out}}}{R_1}\right)-\frac{R_{\mathrm{out}}^2-R_1^2}{2R_{\mathrm{out}}^2}\right]
+\]
+From Buckingham Pi, we defined $\Pi_1=F_{\mathrm{net}}R_{\mathrm{in}}^2/(\rho Q^2)$. Multiplying the entire equation by $R_{\mathrm{in}}^2/(\rho Q^2)$:
+\[
+\Pi_1=-\frac{\pi p_0R_1^2R_{\mathrm{in}}^2}{\rho Q^2}-\frac{1}{2\pi}\left(\frac{R_1^2}{R_{\mathrm{in}}^2}+\frac{R_{\mathrm{in}}^2}{R_1^2}\right)+\frac{R_{\mathrm{in}}^2}{4\pi h^2}\left[\ln\left(\frac{R_{\mathrm{out}}}{R_1}\right)-\frac{R_{\mathrm{out}}^2-R_1^2}{2R_{\mathrm{out}}^2}\right]
+\]
+Substituting the remaining dimensionless groups and simplifying:
+\[
+\boxed{\Pi_1=-\pi\Pi_2\Pi_3^2-\frac{1}{2\pi}\left(\Pi_3^2+\frac{1}{\Pi_3^2}\right)+\frac{1}{4\pi\Pi_5^2}\left[\ln\left(\frac{\Pi_4}{\Pi_3}\right)-\frac{\Pi_4^2-\Pi_3^2}{2\Pi_4^2}\right]}
+\]
+Since $\rho$, $Q$, $p_0$, and $R_{\mathrm{in}}$ are fixed, $\Pi_2$ is constant. Thus, maximizing the lifting force is equivalent to maximizing $\Pi_1$ with respect to the three dimensionless geometric parameters:
+\[
+\boxed{\max_{\Pi_3,\Pi_4,\Pi_5}\Pi_1(\Pi_3,\Pi_4,\Pi_5)}
+\]
+\section*{MatLab Optimization}
+First defining the fixed parameters (\textit{Note: these are all estimates, we need to confirm the actual values and/or refine these values}):
+\begin{itemize}
+    \item $\rho = 1.225$ kg/m$^3$ (air density)
+    \item $Q = 0.02$ m$^3$/s (volumetric flow rate, about the flow rate of an average hair dryer/handheld fan)
+    \item $p_0 = 15$ cm H$_2$O $\approx 1471$ Pa (inlet pressure)
+    \item $R_\text{in} = 0.04$ m (inlet radius, estimated 40 mm)
+\end{itemize}
+Additionally, defining physical bounds for the geometric parameters:
+\begin{itemize}
+    \item $R_1$: 0.005 m to 0.01 m
+    \item $R_\text{out}$: 0.0508 m to 0.0889 m (based on the dimensions of a standard 3.5 x 2 inch business card)
+    \item $h$: 0.001 m to 0.01 m
+\end{itemize}
+In MatLab, these physical bounds are coverted to bounds for the dimensionless parameters $\Pi_3, \Pi_4, \Pi_5$:
+\begin{lstlisting}
+Pi3 = linspace(0.125, 0.25, 80);   % R1/Rin
+Pi4 = linspace(1.27, 2.2225, 80);   % Rout/Rin
+Pi5 = linspace(0.025, 0.25, 40);   % h/Rin
+\end{lstlisting}
+This creates a grid of 80 x 80 x 40 = 256,000 combinations of $\Pi_3, \Pi_4, \Pi_5$ to evaluate. The optimization will evaluate the dimensionless lifting force $\Pi_1$ for each combination and find the maximum value.
+\begin{lstlisting}
+% Generate all geometries
+[A,B,C] = ndgrid(Pi3,Pi4,Pi5);
+
+% Dimensionless lifting force (Pi1)
+Pi1 = -pi*Pi2.*A.^2 ...
+    - (A.^2 + 1./A.^2)/(2*pi) ...
+    + 1./(4*pi*C.^2).* ...
+    (log(B./A) - (B.^2-A.^2)./(2*B.^2));
+
+% Exclude invalid geometries, Rout > R1 which is the same as Pi4 > Pi3
+
+Pi1(B <= A) = -Inf;
 
 
+% Find maximum dimensionless lifting force
+[Pi1max,idx] = max(Pi1(:));
+
+% Convert linear index to indices in the 3D grid
+[i,j,k] = ind2sub(size(Pi1),idx);
+
+% Recover dimensionless parameters at the maximum
+Pi3_opt = Pi3(i);    % R1/Rin
+Pi4_opt = Pi4(j);    % Rout/Rin
+Pi5_opt = Pi5(k);    % h/Rin
+
+% Convert back to physical dimensions (m)
+R1_opt = Pi3_opt*Rin;
+Rout_opt = Pi4_opt*Rin;
+h_opt = Pi5_opt*Rin;
+\end{lstlisting}
+This results in the following optimal geometry:
+\[
+\boxed{
+\begin{gathered}
+R_1 = 5.00\ \mathrm{mm} \\
+R_{\mathrm{out}} = 88.90\ \mathrm{mm} \\
+h = 1.00\ \mathrm{mm} \\[4pt]
+F_{\mathrm{lift,max}} = 89.55\ \mathrm{N}
+\end{gathered}
+}
+\]
+\textbf{Important Limitation:} These "optimal" values are only optimal within our prescribed geometric bounds and simplified model, which assumes ideal flow and fixed inlet pressure and flow rate. They do not necessarily represent the true physical optimum. \hl{Changing the fixed parameters ($\Pi_2$) will therefore change the optimal geometry.} Further analysis and testing is required to validate these results.
+\subsection*{Contour Plot at Optimal Height $h$ while varying $\Pi_3$ and $\Pi_4$}
+Plotting the dimensionless lifting force $\Pi_1$ as a function of $\Pi_3$ and $\Pi_4$ while holding $\Pi_5$ constant at its optimal value:
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{contour plot.png}
+\end{center}
+This shows a general trend that the "optimal" geometry tends towards the smallest possible $R_1$ and largest possible $R_{\mathrm{out}}$ within the bounds of our model. Although not shown, the optimal gap height $h$ is also at its smallest possible value. This suggests a general trend, but may not necessarily be very helpful in designing a diffuser, since testing at the smallest possible gap height may be difficult.
 \end{document}
