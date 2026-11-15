@@ -483,16 +483,492 @@ The intuition is to choose a control volume so that the unknown quantities appea
     {\LARGE\bfseries Finite Control Volume Analysis\par}
 \end{center}
 In this chapter, we will explore the ways to apply the Reynolds Transport Theorem to analyze fluid flow through a control volume. The big idea is to use laws of conservation where the material derivative of an extensive property $B$ has a known equality, such as $DM/Dt=0$ for mass conservation, $D\vec{P}/Dt=\sum \vec{F}$ for momentum conservation and then solve the right-hand side of the Reynolds Transport Theorem to determine the unknowns.
+\begin{notebox}[]
+In finite control volume analysis, the region of interest contains many fluid particles, and thus detailed information of distribution of fluid properties and velocity are not available. Instead, we can only determine the \textit{average} properties of the fluid within the control volume and across the control surface. In contrast, in \textit{differential flow analysis} (chapter 6), we will analyze flow at an infinitesimal region of space, allowing us to determine the local properties of the fluid and velocity at a point.
+\end{notebox}
+\newpage
 \section*{\fbox{5.1 Conservation of Mass (Continuity Equation)}}
 \addcontentsline{toc}{section}{5.1 Conservation of Mass (Continuity Equation)}
+Conservation of mass states that mass cannot be created or destroyed. In fluid systems, this means that there are 3 possibilities for control volume analysis:
+\begin{itemize}
+    \item[1)] More mass enters than exits, so mass accumulates within the control volume.
+    \item[2)] More mass exits than enters, so mass decreases within the control volume.
+    \item[3)] The mass entering equals the mass exiting, so the mass within the control volume remains constant.
+\end{itemize} 
+\subsection*{Conservation of Mass using the Reynolds Transport Theorem}
+Choosing the extensive property to be mass:
+\[B=M,\quad b=\frac{B}{m}=\frac{M}{m}=1\]
+Where the total mass of a system can be expressed as:
+\[M_{\text{sys}} = \int_{\text{sys}} \rho \,d\vol\]
+Therefore the generalized statement of mass conservation is (also known as the \textbf{continuity equation}):
+\[\boxed{\frac{DM_{\text{sys}}}{Dt} = 0 = \frac{\partial}{\partial t}\int_{C\vol} \rho \, dV + \int_{CS} \rho \vec{V}_{\text{rel}} \cdot \hat{n} \, dA\quad \text{(Conservation of Mass)}}\]
+Where $\vec{V}_{\text{rel}} = \vec{V} - \vec{V}_{CS}$ is the relative velocity of the fluid with respect to the control surface.\\\\
+Intuitively, each term in the equation represents the following
+\begin{align*}
+\frac{DM_{\text{sys}}}{Dt}
+= \frac{D}{Dt}\int_{\text{sys}}\rho\,d\vol
+&= \text{Rate of change of mass of the system}\\
+\frac{\partial}{\partial t}\int_{C\vol}\rho\,d\vol
+&= \text{Rate of mass accumulation within the CV}\\
+\int_{\mathrm{CS}}\rho\vec{V}\cdot\hat{n}\,dA
+&= \text{Net mass flow rate through the CS}
+\end{align*}
+\begin{notebox}[Scalar Nature of Mass Conservation]
+    \hl{The dot product $\vec{V}\cdot\hat{n}$ produces a \textbf{scalar}, not a vector!} It represents the velocity component normal to the control surface, with the sign indicating inflow or outflow.
+\end{notebox}
+\newpage
+The following diagram shows how the system interacts with the control volume at $t$ and $t\pm\delta t$:
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{conservation of mass.png}
+\end{center}
+\subsection*{Mass Flow Rate}
+Note that the surface integral term in the continuity equation is equivalent to the \textit{net mass flow rate} through the control surface, where the mass flow rate through a surface of area $A$ is defined as:
+\[\dot{m} = \int_{A} \rho \vec{V}\cdot \hat{n} \, dA\]
+In terms of average values of $\rho$ and $\bar{V}$ across the surface, we can express the mass flow rate as:
+\[\dot{m} = \rho \bar{V} A = \rho Q\]
+Where $Q=\bar{V}A$ is the \textit{volumetric flow rate}.\\\\
+\noindent
+\begin{minipage}[c]{0.85\textwidth}
+This gives a useful way to define the \hl{average fluid velocity} across a surface of area $A$ (in cases where there is a nonuniform velocity profile):
+\[
+\boxed{\bar{V} = \frac{\int_A \rho \vec{V}\cdot\hat{n}\,dA}{\rho A}}
+\]
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.1\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{average velocity.jpeg}
+\end{minipage}\\\\
+Additionally, for compressible flows, we will \hl{normally assume that density is uniform within each flow section but may vary between sections}.
+\begin{notebox}[When to use the Continuity Equation]
+    Most often, we use the conservation of mass equation to \hl{determine unknown flow rates or velocities by relating the mass entering and leaving a control volume.} By choosing an appropriate CV, we can also determine how velocity varies with position, such as the radial velocity $V(r)$ with a cylindrical control volume.\\\\
+    Use conservation of mass to relate fluid velocities and mass flow rates.
+\end{notebox}
+\newpage
+\section*{\fbox{5.2 Newton's Second Law -- Linear Momentum Equation}}
+\addcontentsline{toc}{section}{5.2 Newton's Second Law -- Linear Momentum Equation}
+Luchtenburg's friend, my friend, your friend, OUR friend, NEWTON, gave us his second law, which states that the net external force acting on a system equals the rate of change of its linear momentum.\\\\
+For a fluid system, this can be understood as the
+\hl{net external force acting on a fluid as it passes through a control volume causes a change in its momentum, either by accelerating the fluid within the control volume or by changing the momentum carried into and out of it.}
+\subsection*{Conservation of Linear Momentum using the Reynolds Transport Theorem}
+Choosing the extensive property to be linear momentum:
+\[B=\vec{P},\quad b=\frac{B}{m}=\frac{\vec{P}}{m}=\vec{V}\]
+Where the total linear momentum of a system can be expressed as:
+\[\vec{P}_\text{sys} = \int_{\text{sys}} \rho \vec{V} \, d\vol\]
+The generalized statement of linear momentum conservation is:
+\[\boxed{\frac{D\vec{P}_\text{sys}}{Dt} = \sum \vec{F}_{\text{ext}} = \frac{\partial}{\partial t}\int_{C\vol} \rho \vec{V} \, d\vol + \int_{CS} \rho \vec{V} (\vec{V}_{\text{rel}}\cdot \hat{n}) \, dA\quad \text{(Conservation of Linear Momentum)}}\]
+Where:
+\begin{itemize}
+    \item $\vec{V}$: \hl{Absolute fluid velocity, measured in an inertial frame.}
+    \item $\vec{V}_{\mathrm{rel}} = \vec{V} - \vec{V}_{\mathrm{CS}}$: Fluid velocity relative to the control surface.
+    \item $\hat{n}$: Outward facing normal unit vector.
+\end{itemize}
+Intuitively, each term in the equation represents the following:
+\[
+\begin{aligned}
+\frac{D\vec{P}_\text{sys}}{Dt} = \frac{D}{Dt}\int_{\mathrm{sys}}\rho\vec{V}\,d\vol
+&= \text{Rate of change of linear momentum of the system}\\[6pt]
+\frac{d}{dt}\int_{C\vol}\rho\vec{V}\,d\vol
+&= \text{Rate of change of linear momentum within the CV}\\[6pt]
+\int_{CS}\rho\vec{V}(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA
+&= \text{Net rate of linear momentum flow through the CS}
+\end{aligned}
+\]
+\begin{notebox}[Vector Nature of Linear Momentum Conservation]
+    Unlike the continuity equation, the linear momentum equation is a vector equation. The dot product $\vec{V}_{\mathrm{rel}}\cdot\hat{n}$ determines the rate and direction of mass flow across the control surface, while multiplying by $\vec{V}$ gives the momentum carried by that flow. Thus, the momentum flux vector represents both the magnitude and direction of momentum being transported across the control surface.\\\\
+    As such, there are cases where the surface integral term cancels to zero, even when fluid enters and leaves the control volume. To visualize this, imagine two momentum flux vectors of equal magnitude pointing in opposite directions. \hl{Their vector sum is zero, meaning there is no net momentum transported across the control surface,} even though momentum is flowing through individual sections. Therefore, momentum conservation must be considered separately in each coordinate direction.\\\\
+    \textit{For example, a uniform radial velocity flow through a cylindrical surface produces zero net momentum flux, since contributions from opposite sides cancel due to symmetry.}
+\end{notebox}
+Since linear momentum is a vector quantity, the equation can be separated into three independent scalar equations:
+\[
+\begin{aligned}
+\frac{d}{dt}\int_{C\vol}\rho V_x\,d\vol
++\int_{CS}\rho V_x(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA
+&=\sum F_x\\[8pt]
+\frac{d}{dt}\int_{C\vol}\rho V_y\,d\vol
++\int_{CS}\rho V_y(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA
+&=\sum F_y\\[8pt]
+\frac{d}{dt}\int_{C\vol}\rho V_z\,d\vol
++\int_{CS}\rho V_z(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA
+&=\sum F_z
+\end{aligned}
+\]
+Here, $V_x$, $V_y$, and $V_z$ are the components of the absolute fluid velocity $\vec{V}$. \hl{Note that while the momentum component changes depending on which component of velocity is used, the mass flow rate $\rho(\vec{V}_{\mathrm{rel}}\cdot\hat{n})$ remains the same for all three equations.}
+\subsection*{Force on Fluid vs Force on an Object (Newton's Third Law)}
+\textbf{Important:} The net external force $\sum \vec{F}_{\text{ext}}$ considered in the linear momentum equation represents the forces exerted \textit{on the contents of the control volume}. If the CV contains only fluid, these are the external forces acting \textit{on the fluid system}.\\\\
+Sometimes, we are interested in the force exerted \textit{on an object} by the fluid, such as a pipe wall or nozzle. If we define the CV to include only the fluid, the force exerted by the object on the fluid is an external force. \hl{We can use Newton's Third Law to relate the two forces:}
+\[
+\boxed{\vec{F}_{\mathrm{fluid\ on\ object}}=-\vec{F}_{\mathrm{object\ on\ fluid}}}
+\]
+However, if we define the CV to include both the fluid and the object, the forces they exert on each other become \textit{internal forces} and cancel in the net force balance. Instead, we must consider the external reaction forces acting on the combined system, such as support reactions, pressure forces, and weight.\\\\
+Therefore, \hl{the choice of control volume determines which forces are internal or external}, and consequently which forces must be included in $\sum \vec{F}_{\text{ext}}$.
+\begin{notebox}[]
+    Recall that generally we want to define control volumes such that the unknowns appear explicitly in the Reynolds Transport Theorem. In this case, we want to define the control volume such that the forces of interest appear as \textit{external forces} in the momentum equation. Conversely, we can avoid accounting for complex internal forces by enclosing the interacting components within the control volume, since internal forces cancel out.
+\end{notebox}
+\begin{examplebox}[Control Volume Choices]
+In the following example, we want to find the anchoring force (reaction forces) on a vane as a jet of water strikes it. In this case, it is more convenient to define the control volume to include both the vane and the fluid, so that the reaction forces $F_\text{Ax}, F_\text{Az}$ are external to the control volume:
+\begin{center}
+    \includegraphics[width=\linewidth]{momentum ex1.png}
+\end{center}
+Now, if the vane is free to move, we would instead define the control volume to include only the fluid, so that the force exerted by the vane on the fluid appears as an external force in the momentum equation. We can then use Newton's Third Law to determine the force exerted by the fluid on the vane!
+\begin{center}
+    \includegraphics[width=\linewidth]{momentum ex2.png}
+\end{center}
+\end{examplebox}
+\subsection*{Control Volume Choice for Linear Momentum Analysis}
+Recall that we can have a few types of control volumes:
+\begin{itemize}
+    \item \textbf{Fixed CV:} Stationary in space, with boundaries that do not move or change shape.
+    \item \textbf{Moving, nondeforming CV:} Moves relative to a stationary reference frame, but maintains its shape and volume.
+    \item \textbf{Deforming CV:} Its boundaries change shape or position relative to one another, causing its geometry or volume to change with time (like an amorphous blob).
+\end{itemize}
+Conservation of linear moment is most directly applicable to control volumes that either:
+\begin{itemize}
+    \item fixed in space and nondeforming
+    \item moving with a constant velocity and nondeforming (NO ACCELERATION)
+\end{itemize}
+Accelerating and deforming control volumes are more complex to analyze, and will not be covered in this chapter.
+\section*{\fbox{5.3 Newton's Second Law -- Angular Momentum Equation}}
+\addcontentsline{toc}{section}{5.3 Newton's Second Law -- Angular Momentum Equation}
+Analogous to linear momentum, Newton's second law also applies to angular momentum. The net external torque acting on a system equals the rate of change of its angular momentum.\\\\
+This is particularly useful for analyzing rotating mechanisms such as turbines, fans, and lawn sprinklers (grr), where the fluid enters and exits at \textit{different distances and directions relative to an axis of rotation.}\\\\
+Unlike linear momentum, angular momentum depends not only on the velocity of the fluid, but also on the position of the fluid relative to the axis of rotation or reference point!
+\subsection*{Defining Angular Momentum}
+The angular momentum of a particle about a reference point $O$ is defined as:
+\[\vec{H}_O = \vec{r}\times m\vec{V}\]
+where $\vec{r}$ is the position vector from the chosen reference point $O$ to the particle, and $\vec{V}$ is the absolute velocity of the particle.\\\\
+For an infinitesimal fluid element of mass $dm=\rho d\vol$, the angular momentum is:
+\[
+d\vec H_O=\vec r\times\vec V\,dm=\rho(\vec r\times\vec V)\,d\vol
+\]
+Thus, the total angular momentum of a system can be expressed as:
+\[
+\boxed{\vec H_{O,\mathrm{sys}}=\int_{\mathrm{sys}}\rho(\vec r\times\vec V)\,d\vol}
+\]
+\newpage
+\begin{notebox}[Magnitude of Angular Momentum]
+Recall that the magnitude of angular momentum can also be expressed as:
+    \begin{align*}
+        |\vec{H}_O| = |\vec{r}|\,|m\vec{V}|\sin\theta =& rmV_\perp,\quad \text{where } V_\perp = V\sin\theta\\
+        =& r_\perp mV,\quad \text{where } r_\perp = r\sin\theta
+    \end{align*}
+\begin{center}
+    \includegraphics[width=0.55\linewidth]{angular momentum.png}
+\end{center}
+\end{notebox}
+\begin{notebox}[Cylindrical Coordinates and Sign Conventions]
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+    \vspace{0pt}
+    Typically for rotating systems, cylindrical coordinates are most convenient, with the axis of rotation as the $z$-axis.\\\\
+    The velocity vector can be expressed in cylindrical coordinates as:
+    \[
+    \vec V=V_r\hat e_r+V_\theta\hat e_\theta+V_z\hat e_z
+    \]
+    The component of angular momentum about the $z$-axis is then:
+    \[
+    \boxed{m(\vec r\times\vec V)_z=mrV_\theta}
+    \]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=\linewidth]{cylindrical coords.png}
+\end{minipage}\\\\
+\textbf{Right-Hand Rule}\\
+Point fingers of right hand in the direction of $\vec{r}$, curl them toward $\vec{V}$, and your thumb points in the direction of $\vec{H}$.
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{rhr.png}
+\end{center}
+Where positive $z$ direction is defined as positive angular momentum, corresponding to counterclockwise rotation when viewed from above.
+\end{notebox}
+\subsection*{Conservation of Angular Momentum using the Reynolds Transport Theorem}
+Choosing the extensive property to be angular momentum:
+\[B=\vec{H}_O,\quad b=\frac{B}{m}=\frac{\vec{H}_O}{m} = \vec{r}\times\vec{V}\]
+Where the total angular momentum of a system can be expressed as:
+\[\vec{H}_{O,\text{sys}} = \int_{\text{sys}} \rho (\vec{r}\times\vec{V}) \, d\vol\]
+The generalized statement of angular momentum conservation is:
+\[
+\boxed{
+\begin{aligned}
+\frac{D\vec H_{O,\mathrm{sys}}}{Dt}=& \sum \vec{T}_{O,\mathrm{ext}}\\
+ =&
+\frac{\partial}{\partial t}\int_{\mathrm{C}\vol}\rho(\vec r\times\vec V)\,d\vol+\int_{\mathrm{CS}}\rho(\vec r\times\vec V)(\vec{V}_\text{rel}\cdot\hat n)\,dA,\quad \text{(Conservation of Angular Momentum)}
+\end{aligned}
+}
+\]
+Where:
+\begin{itemize}
+    \item $\vec{V}$: Absolute fluid velocity, measured in an inertial frame.
+    \item $\vec{V}_{\mathrm{rel}} = \vec{V} - \vec{V}_{\mathrm{CS}}$: Fluid velocity relative to the control surface.
+    \item $\hat{n}$: Outward facing normal unit vector.
+    \item $\vec{r}$: Position vector from the chosen reference point $O$ to the fluid element.
+\end{itemize}
+Intuitively, each term in the equation represents the following:
+\[
+\begin{aligned}
+\frac{D\vec{H}_{O,\mathrm{sys}}}{Dt}
+= \frac{D}{Dt}\int_{\mathrm{sys}}\rho(\vec r\times\vec V)\,d\vol
+&= \text{Rate of change of angular momentum of the system}\\[6pt]
+\frac{\partial}{\partial t}\int_{\mathrm{C}\vol}\rho(\vec r\times\vec V)\,d\vol
+&= \text{Rate of change of angular momentum within the CV}\\[6pt]
+\int_{\mathrm{CS}}\rho(\vec r\times\vec V)(\vec V_{\mathrm{rel}}\cdot\hat n)\,dA
+&= \text{Net rate of angular momentum flow through the CS}
+\end{aligned}
+\]
+\begin{notebox}[Similarity to Linear Momentum]
+\begin{itemize}
+    \item Like linear momentum, the angular momentum equation is a vector equation. The cross-product $\vec{r}\times\vec{V}$ determines the magnitude and direction of angular momentum, while the dot product $\vec{V}_{\mathrm{rel}}\cdot\hat{n}$ determines the rate and direction of mass flow across the control surface. Thus, we need to be careful to account for both direction and magnitude of angular momentum being transported across the control surface.
+    \item Also like linear momentum, the angular momentum equation gives a relationship between the net external torque ($\sum \vec{T}_{O,\mathrm{ext}}$) and the rate of change of angular momentum. Through careful choice of control volume, we can determine the torque exerted by the fluid on an object, or vice versa.
+\end{itemize}
+\end{notebox}
+\begin{examplebox}[Lawn Sprinkler Problem]
+We want to determine the resisting shaft torque $T_\text{shaft}$ required to maintain a constant rotational speed $\omega$ of a lawn sprinkler as water flows through it.\\\\
+Given:
+\begin{itemize}
+    \item $Q$: Total volumetric flow rate entering the sprinkler
+    \item $A_2$: Cross-sectional area of each of the two identical nozzles
+    \item $r_2$: Distance from the rotation axis to each nozzle
+    \item $\rho$: Fluid density
+    \item $\omega$: Angular velocity of the sprinkler
+\end{itemize}
+\textbf{Define Control Volume}\\
+We choose a \textit{fixed, nondeforming, disk-shaped} control volume (doesn't rotate with the sprinkler) that encloses BOTH the sprinkler and the water flowing through it. This way, the shaft torque would be external to the control volume and the control volume is stationary in an \textit{inertial frame}.
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{lawn sprinkler.jpeg}
+\end{center}
+By conservation of angular momentum:
+\[
+\begin{aligned}
+\frac{D\vec H_{O,\mathrm{sys}}}{Dt}=& \sum \vec{T}_{O,\mathrm{ext}}\\
+ =&
+\frac{\partial}{\partial t}\int_{\mathrm{C}\vol}\rho(\vec r\times\vec V)\,d\vol+\int_{\mathrm{CS}}\rho(\vec r\times\vec V)(\vec{V}_\text{rel}\cdot\hat n)\,dA
+\end{aligned}
+\]
+Since the control volume is fixed, its boundaries do not change with time:
+\[\vec{V}_\text{CS} = 0,\quad \vec{V}_\text{rel} = \vec{V}\]
+\textbf{Assume Periodic Flow, Steady in the Mean}\\
+The first term on the right-hand side, representing the rate of change of angular momentum within the control volume, can be rewritten for the axial component as:
+\[
+\frac{\partial}{\partial t}\int_{\mathrm{C}\vol}\rho rV_\theta\hat{k}\,d\vol
+\]
+For a fixed control volume, the region of integration is constant, so we can bring the partial derivative inside the integral. Assuming constant density, only the tangential velocity $V_\theta$ depends on time:
+\[
+\int_{\mathrm{C}\vol}\rho r\frac{\partial V_\theta}{\partial t}\hat{k}\,d\vol
+\]
+This makes sense, since as the sprinkler rotates, the nozzle outlet locations change with time, and thus the velocity field at fixed locations within the control volume changes as well.\\
 
+However, because the flow is \hl{periodic and steady in the mean}, the angular momentum stored within the control volume returns to its initial value after each full cycle. Therefore, \hl{the time-averaged rate of change of angular momentum is zero across a complete cycle}, even if the instantaneous angular momentum is not constant:
+\[
+\boxed{
+\left\langle
+\frac{\partial}{\partial t}
+\int_{\mathrm{C}\vol}\rho rV_\theta\hat{k}\,d\vol
+\right\rangle=0
+}
+\]
+Therefore, considering the time-averaged conservation of angular momentum, we have:
+\[
+\left\langle\sum\vec T_{O,\mathrm{ext}}\right\rangle
+=
+\left\langle
+\int_{\mathrm{CS}}\rho(\vec r\times\vec V)
+(\vec V\cdot\hat n)\,dA
+\right\rangle
+\]
+Now considering only the axial component, since we want torque about the $z$-axis:
+\[
+\boxed{
+\left\langle\sum T_{z,\mathrm{ext}}\right\rangle
+=
+\left\langle
+\int_{\mathrm{CS}}\rho rV_\theta
+(\vec V\cdot\hat n)\,dA
+\right\rangle,\quad (\vec r\times\vec V)_z=rV_\theta
+}
+\]
+\begin{notebox}[External Forces on Total Momentum within a Control Volume]
+A nonzero external torque does not necessarily mean that angular momentum within the control volume changes. The external torque changes the angular momentum of a fluid SYSTEM, but that fluid eventually leaves the CV, carrying its angular momentum with it, and is replaced by new fluid.\\\\
+This is similar to steady water flow through a pipe, where an external force changes the linear momentum of the fluid passing through, but the total momentum within the pipe remains constant as fluid continuously enters and leaves.\\\\
+Likewise, for the sprinkler, the external torque changes the angular momentum of the fluid passing through it. But even though the flow is unsteady, it is \hl{periodic and steady in the mean}, meaning the angular momentum stored within the CV returns to its initial value after each cycle. Thus, \hl{the time-averaged accumulation term is zero}, even though a nonzero torque acts on the fluid.
+\end{notebox}
+\textbf{Evaluate the Net Momentum Flux}\\
+Split the control surface into the inlet and outlet surfaces contributions:
+\[
+\left\langle\int_{CS}\rho rV_\theta(\vec V\cdot\hat n)\,dA\right\rangle=\left\langle\int_{CS_1}\rho rV_\theta(\vec V\cdot\hat n)\,dA\right\rangle+\left\langle\int_{CS_2}\rho rV_\theta(\vec V\cdot\hat n)\,dA\right\rangle
+\]
+\underline{At the inlet (surface 1):} The water enters along the axis of rotation so that $V_\theta=0$, thus
+\[
+\left\langle\int_{CS_1}\rho rV_\theta(\vec V\cdot\hat n)\,dA\right\rangle=0
+\]
+\underline{At the outlets (pierces through surface 2):} The water jets pass through a larger-radius cylindrical surface, so that it isn't purely tangent to the surface and $\vec{V}\cdot\hat{n}\neq 0$.\\\\
+Assuming uniform 1D flow through each nozzle ($r_2 V_{\theta 2}$ is uniform at each outlet), with negligable external torque on the exiting jets, we can say that the angular momentum at the outlets is equal to the angular momentum of the water as it leaves the control surface. Thus, we can bring the constants out of the integral:
+\[
+\left\langle\int_{CS_2}\rho rV_\theta(\vec V\cdot\hat n)\,dA\right\rangle
+=\left\langle r_2V_{\theta2}\int_{CS_2}\rho(\vec V\cdot\hat n)\,dA\right\rangle
+\]
+The magntidues $r_2$ and $V_{\theta2}$ are time independent, so we can bring them out of the time-averaged integral:
+\[
+=r_2V_{\theta2}\left\langle\int_{CS_2}\rho(\vec V\cdot\hat n)\,dA\right\rangle
+\]
+\newpage
+\hl{This integral represents the total mass flow exiting the control volume through both nozzles, which is equal to the total mass flow entering the control volume at the inlet (CONTINUITY):}
+\[
+\left\langle\int_{CS_2}\rho(\vec V\cdot\hat n)\,dA\right\rangle=\dot m=\rho Q
+\]
+\[
+\implies \boxed{\left\langle\sum T_{z,\mathrm{ext}}\right\rangle=\rho Q r_2V_{\theta2}}
+\]
+\textbf{Determine the absolute outlet velocity}\\
+The absolute velocity of the water exiting the nozzle is:
+\[
+\vec V_2=\vec V_{\mathrm{fluid,nozzle}}+\vec V_{\mathrm{nozzle,fixed}}
+\]
+From continuity, the volumetric flow rate through both nozzles is equal to the volumetric flow rate entering the sprinkler:
+\[
+Q=2A_2|\vec V_{\mathrm{fluid,nozzle}}| \quad\implies \quad |\vec V_{\mathrm{fluid,nozzle}}|=\frac{Q}{2A_2}
+\]
+The nozzle's tangential velocity is given by angular velocity
+\[
+\vec V_{\mathrm{nozzle,fixed}}=r_2\omega\hat e_\theta
+\]
+Taking the direction of sprinkler rotation as positive, the water exits backward relative to the nozzle:
+\[
+\vec V_{\mathrm{fluid,nozzle}}=-\frac{Q}{2A_2}\hat e_\theta
+\]
 
+Substituting into the original velocity relationship:
+\[
+\vec V_{\mathrm{fluid,fixed}}=-\frac{Q}{2A_2}\hat e_\theta+r_2\omega\hat e_\theta
+\]
 
+Therefore, the absolute tangential outlet velocity is
+\[
+\boxed{V_{\theta2}=r_2\omega-\frac{Q}{2A_2}}
+\]
 
+This is the quantity we substitute into the angular-momentum equation:
+\[
+\boxed{T_{\mathrm{shaft}}=\rho Qr_2\left(r_2\omega-\frac{Q}{2A_2}\right)}
+\]
+Here, a negative \(T_{\mathrm{shaft}}\) means the shaft torque opposes the chosen positive rotation direction.
+\begin{itemize}
+    \item To solve for freely rotating sprinkler, set \(T_{\mathrm{shaft}}=0\) and solve for \(\omega\)
+    \item To solve for stationary sprinkler, set \(\omega=0\) and solve for \(T_{\mathrm{shaft}}\)
+\end{itemize}
+\end{examplebox}
+\subsection*{Work done by Shaft}
+For a shaft rotating at angular velocity \(\omega\), the rate of rotational work is
+\[
+\boxed{\dot W_{\mathrm{shaft}}=T_{\mathrm{shaft}}\omega}
+\]
+Negative shaft power corresponds to mechanical power delivered out of the CV.
+\begin{examplebox}[Another Lawn Sprinkler Problem (with rotating CV)]
+\begin{center}
+    \includegraphics[width=0.55\linewidth]{sprinkler rotating CV.png}
+\end{center}
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+    \textbf{Given:}
+    \begin{itemize}
+        \item Inlet pressure: $p_1 = \SI{140}{\kilo\pascal}$
+        \item Volumetric flow rate: $Q = \SI{4.0}{\liter\per\minute}$
+        \item Relative outlet velocity: $V_{\mathrm{rel}} = \SI{17}{\meter\per\second}$
+        \item Nozzle angle: $\phi = 30^\circ$
+        \item Friction torque: $T_{\mathrm{fric}} = \SI{0.18}{\newton\meter}$
+    \end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\textwidth}
+    \textbf{Find:}\\
+    Steady-state rotational speed, $\omega$.
+\end{minipage}\\\\
+Approach:
+\begin{itemize}
+    \item Define a rotating, nondeforming control volume that encloses the sprinkler and water flow and is \hl{fixed relative to the sprinkler}.
+    \item Using conservation of (axial) angular momentum on the CV to relate the external torque to $\omega$.
+    \[\sum \vec{T}_{O,\mathrm{ext}} =
+\frac{\partial}{\partial t}\int_{\mathrm{C}\vol}\rho(\vec r\times\vec V)\,d\vol+\int_{\mathrm{CS}}\rho(\vec r\times\vec V)(\vec{V}_\text{rel}\cdot\hat n)\,dA\]
+\item Assume cyclical flow, so the flow is steady in the mean:
+\[\frac{\partial}{\partial t}\int_{\mathrm{C}\vol}\rho(\vec r\times\vec V)\,d\vol=0\]
+\item Resolve the absolute exit jet velocity in the inertial reference frame:
+    \[\vec{V}_{\mathrm{fluid,inertial}} = \vec{V}_{\mathrm{fluid,nozzle}} + \vec{V}_{\mathrm{nozzle,inertial}}\]
+    \[\vec{V}_2 = \vec{V}_{\mathrm{rel}} + \vec{V}_{\mathrm{nozzle}} = V_{\mathrm{rel}}(-\cos\phi\,\hat{e}_{\theta}+\sin\phi\,\hat{k})+R\omega\hat{e}_{\theta}\]
+\item We are interested in the axial ($\hat{k}$) component of angular momentum. The inlet contributes no axial angular momentum since $r=0$. At the outlets, $\vec{r}=R\hat{e}_r$, so only the tangential velocity component $V_{\theta_2}$ contributes to the axial angular momentum flux:
+\begin{align*}
+\vec r\times\vec V_2=&R\hat e_r\times(V_{\theta_2}\hat e_\theta+V_{z_2}\hat k)\\
+=&RV_{\theta_2}(\hat e_r\times\hat e_\theta)+RV_{z_2}(\hat e_r\times\hat k)\\
+=&RV_{\theta_2}\hat k-RV_{z_2}\hat e_\theta
+\end{align*}
+The axial component of angular momentum is then
+\[(r\times\vec V_2)_z = (r\times\vec V_2)\cdot\hat{k} = RV_{\theta_2}\]
+\[\int_{CS} \rho\left(\vec{r}\times\vec{V}\right)\cdot\hat{k}\left(\vec{V}_{\mathrm{rel}}\cdot\hat{n}\right)dA
+=0+\int_{CS_2}\rho RV_{\theta_2}\left(\vec{V}_{\mathrm{rel}}\cdot\hat{n}\right)dA
+=\sum T_z\]
 
+\item Substituting the tangential component of the absolute outlet velocity:
+\[\int_{CS_2} R(R\omega-V_{\mathrm{rel}}\cos\phi)\rho
+(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA
+=-T_{\mathrm{friction}}\]
+    \item Assuming uniform outlet velocity and identical nozzle geometry, $R$ and $V_{\theta_2}$ are constant across both outlets and can be taken outside the integral:
+\[R(R\omega-V_{\mathrm{rel}}\cos\phi)
+\underbrace{\int_{CS_2}\rho
+(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA}_{\dot{m}_2=\rho Q}
+=-T_{\mathrm{friction}}\]
+    \item Using mass conservation, the total outlet mass flow rate is $\dot{m}_2=\rho Q$. 
+    
+    Solving for the steady-state angular velocity:
+\[R(R\omega-V_{\mathrm{rel}}\cos\phi)\rho Q
+=-T_{\mathrm{friction}}\]
+\[\boxed{\omega=\frac{V_{\mathrm{rel}}\cos\phi}{R}
+-\frac{T_{\mathrm{friction}}}{\rho QR^2}}\]
+\textit{Note that the rotating vs fixed control volume approaches are both valid, the only difference is that the fixed CV reduces the $\vec{V}_{\mathrm{rel}}$ term to $\vec{V}$, while the rotating CV requires the relative velocity to be used.}
+\end{itemize}
+\end{examplebox}
+\newpage
+\section*{\fbox{Non-inertial Reference Frames}}
+\addcontentsline{toc}{section}{Non-inertial Reference Frames}
+This is not covered in the textbook.
+\subsection*{Conservation of Linear Momentum in a linearly accelerating CV}
+\[
+\frac{\partial}{\partial t}\int_{C\vol}\rho\vec{V}_{xyz}\,d\vol
++\int_{CS}\rho\vec{V}_{xyz}(\vec{V}_{rel}\cdot\hat{n}\,dA)
+=\sum\vec{F}_{external}-\int_{C\vol}\rho\vec{a}_{rf}\,d\vol
+\]
+Where:
+\[
+\vec{V}_{xyz}=\text{Fluid velocity relative to CV frame of reference}
+\]
+\[
+\vec{a}_{rf}=\text{Acceleration of CV ref frame}
+\]
+\subsection*{Conservation of Angular Momentum in a rotating CV}
 
+\[
+\frac{\partial}{\partial t}\int_{C\vol}\rho\vec{r}\times\vec{V}_{xyz}\,d\vol
++\int_{CS}\rho\vec{r}\times\vec{V}_{xyz}(\vec{V}_{rel}\cdot d\vec{A})
+=
+\]
 
-
-
-
+\[
+\sum\vec{T}_{external}
+-\int_{C\vol}\rho\vec{r}\times
+\left[
+2\vec{\omega}\times\vec{V}_{xyz}
++\vec{\omega}\times(\vec{\omega}\times\vec{r})
++\dot{\vec{\omega}}\times\vec{r}
+\right]d\vol
+\]
+Where
+\[
+\vec{\omega}=\text{CV Angular velocity}
+\]
+\[
+\dot{\vec{\omega}}=\text{CV Angular acceleration}
+\]
+\[
+\vec{V}_{xyz}=\text{Fluid velocity relative to rotating CV}
+\]
+The acceleration of the CV introduces additional correction terms to the momentum equations due to the non-inertial reference frame. These terms are often interpreted as fictitious forces, including the Coriolis and centrifugal forces.
 \end{document}
