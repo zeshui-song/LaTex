@@ -971,4 +971,77 @@ Where
 \vec{V}_{xyz}=\text{Fluid velocity relative to rotating CV}
 \]
 The acceleration of the CV introduces additional correction terms to the momentum equations due to the non-inertial reference frame. These terms are often interpreted as fictitious forces, including the Coriolis and centrifugal forces.
+\section*{\fbox{5.4 First law of thermodynamics—the energy equation}}
+\addcontentsline{toc}{section}{5.4 First law of thermodynamics—the energy equation}
+The first law of thermodynamics states that energy cannot be created or destroyed, but can be transferred through heat, work, and mass flow. For a fluid particle, its total stored energy is:
+\[
+\boxed{e=\tilde{u}+\frac{V^2}{2}+gz}
+\]
+Where ${\tilde{u}}$ is the specific internal energy, $\frac{V^2}{2}$ is the specific kinetic energy, and $gz$ is the specific potential energy.\\\\
+These are all mass normalized quantities, thus fluid crossing a control surface can also carry energy with it.
+\subsection*{Conservation of Energy using the Reynolds Transport Theorem}
+Choosing the total energy as the extensive property:
+\[
+B=E,\qquad b=\frac{E}{m}=e
+\]
+The total energy of a fluid system is
+\[
+E_{\mathrm{sys}}=\int_{\mathrm{sys}}\rho e\,d\vol
+\]
+By the first law, using the convention that \hl{heat and work entering the system is positive}:
+\[\boxed{\frac{DE_\text{sys}}{Dt} = \dot{Q}_\text{in} + \sum \dot{W}_{\text{in}}}\]
+Therefore, the generalized statement of energy conservation is:
+\[
+\boxed{\begin{aligned}
+\dot{Q}+\dot{W}_{Shaft,net\ in}-\dot{W}_{shear}+\dot{W}_{other,in}
+&=\frac{\partial}{\partial t}\int_{C\vol}\rho e\,d\vol
++\int_{CS}\rho\left[\tilde{u}+\frac{1}{2}V^2+\frac{p}{\rho}+gz\right]
+(\vec{V}_{rel}\cdot\hat{n}\,dA)\\
+&=\frac{\partial}{\partial t}\int_{C\vol}\rho e\,d\vol
++\int_{CS}\rho\left[\tilde{h}+\frac{1}{2}V^2+gz\right]
+(\vec{V}_{rel}\cdot\hat{n}\,dA)
+\end{aligned}}
+\]
+Where:
+\[\tilde{u} = \text{specific internal energy}\, \approx c_{\vol} T  \quad \text{(for ideal gases)}\]
+\[\tilde{h} = \text{specific enthalpy}\, \approx c_p T  \quad \text{(for ideal gases)}\]
+Recall that specific enthalpy is defined as $\tilde{h} = \tilde{u} + \frac{p}{\rho}$, and is just a simplification term.
+\textit{This section could be expanded more but it wasn't covered as much so I'm moving on}
+\section*{\fbox{5.5 Second law of thermodynamics—irreversible flow}}
+\addcontentsline{toc}{section}{5.5 Second law of thermodynamics—irreversible flow}
+The second law of thermodynamics is when our favorite topic, entropy $s$ comes in. It states that the amount of useful energy in a system decreases over time, and thus indicates irreversibility of a process. For example, viscous friction in a pipe converts organized mechanical energy into internal energy. The total energy is still conserved, but less mechanical energy is available to drive the flow or perform useful work.\\\\
+Like everything else, specific entropy is an extensive property,and so we can apply the Reynolds Transport Theorem to it.\\\\
+The second law states:
+\[
+\boxed{\frac{DS_\text{sys}}{Dt}=\frac{D}{Dt}\int_{\mathrm{sys}}\rho s\,d\vol\geq\sum\frac{\delta\dot Q_{\mathrm{in}}}{T}}
+\]
+Where $s$ is the specific entropy, and $T$ is the \hl{absolute temperature}.
+\subsection*{Applying Reynolds Transport Theorem}
+For a fixed control volume, the second law can be expressed as:
+\[
+\boxed{\frac{\partial}{\partial t}\int_{\mathrm{C}\vol}\rho s\,d\vol+\int_{\mathrm{CS}}\rho s(\vec V\cdot\hat n)\,dA\geq\sum\frac{\delta\dot Q_{\mathrm{in}}}{T}}
+\]
+The inequality reflects entropy generation from irreversible processes, such as viscous friction.
+\subsection*{Semi-infinitesimal control volume statement of the energy equation}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{entropy.png}
+\end{center}
+For steady, one-dimensional flow through a thin CV at approximately uniform temperature, the textbook obtains
+\[
+\boxed{T\,ds-\delta q_{\mathrm{net,in}}\geq0}
+\]
+Equality corresponds to reversible flow; strict inequality corresponds to irreversible flow.
+\subsection*{Relating to Bernoulli's Equation}
+Combining the first and second laws, the textbook derives an equation for steady flow through a differential streamtube without shaft work:
+\[
+\boxed{-\left[\frac{dp}{\rho}+d\left(\frac{V^2}{2}\right)+g\,dz\right]=\delta(\mathrm{loss})\geq0}
+\]
+For frictionless, reversible flow, the loss term vanishes:
+\[
+\frac{dp}{\rho}+d\left(\frac{V^2}{2}\right)+g\,dz=0
+\]
+That's the differential form of Bernoulli's equation.
+
+For irreversible flow, the mechanical-energy loss is positive, so the ideal Bernoulli relationship no longer holds without a loss term.\\\\
+\textit{This section is also very lacking in detail but we literally didn't cover it in class so I'm moving on.}
 \end{document}
