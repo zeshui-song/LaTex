@@ -1,0 +1,94 @@
+﻿\documentclass[12pt]{article}
+\usepackage{amssymb, amsmath, amsfonts, bm, graphicx, geometry}
+\usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
+\usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
+\usepackage{siunitx}  % Eases typesetting of numbers and units
+
+% US customary units
+\DeclareSIUnit{\inch}{in}
+\DeclareSIUnit{\foot}{ft}
+\DeclareSIUnit{\yard}{yd}
+\DeclareSIUnit{\mile}{mi}
+
+\DeclareSIUnit{\slug}{slug}
+\DeclareSIUnit{\lbm}{lbm}
+\DeclareSIUnit{\lbf}{lbf}
+
+\DeclareSIUnit{\psi}{psi}
+\DeclareSIUnit{\psf}{psf}
+
+\DeclareSIUnit{\gallon}{gal}
+\DeclareSIUnit{\quart}{qt}
+\DeclareSIUnit{\fahrenheit}{F}
+\DeclareSIUnit{\rankine}{R}
+\sisetup{
+    per-mode = fraction
+}
+\usepackage{soul}
+\usepackage{mathrsfs}
+
+\geometry{margin=1in}
+
+% Uppercase Volume with thicker, higher line
+\newcommand{\vol}{\mathord{\text{\ooalign{\hidewidth $V$\hidewidth\cr\kern-0.5pt\raisebox{0.8ex}{\rule[0pt]{1em}{0.5pt}}}}}}
+
+% Lowercase Volume with built-in shifts
+\newcommand{\svol}{%
+  \mathord{\text{\ooalign{%
+    \hfil$v$\hfil\cr
+    \hfil\rule[0.6ex]{0.8em}{0.5pt}\hfil
+  }}}%
+}
+
+\begin{document}
+\begin{center}
+    {\LARGE\bfseries Chapter 4: Fluid Kinematics\par}
+\end{center}
+Velocity and acceleration fields. Material derivatives (derived from chain rule on spatially and time dependent fields). Reynolds transport theorem.
+
+% ==========================================
+% CHAPTER 4: FLUID KINEMATICS
+% ==========================================
+
+\section*{\fbox{4.2 The Acceleration Field}}
+\textbf{Problem 4.8.27 (9th\#4.2.5: Acceleration Field)}\\
+\textbf{Problem 4.8.34 (9th\#4.2.12: Acceleration Field)}\\
+\textbf{Challenge Activity 4.2.2}\\
+
+% ==========================================
+% CHAPTER 5: FINITE CONTROL VOLUME ANALYSIS
+% ==========================================
+\begin{center}
+    {\LARGE\bfseries Chapter 5: Finite Control Volume Analysis\par}
+\end{center}
+Application of the Reynolds transport theorem to conservation laws and laws of thermodynamics.
+\section*{\fbox{5.1 Conservation of Mass}}
+\textbf{Problem 5.9.1 (9th\#5.1.1: Cons of Mass)}\\
+\textbf{Problem 5.9.3 (9th\#5.1.3: Fixed nondeforming)}\\
+
+\textbf{Problem 5.9.38 (9th\#5.2: Linear Momentum)}\\
+\textbf{Problem 5.9.45 (9th\#5.2.11: Linear Momentum)}\\
+\textbf{Problem 5.9.83 (9th\#5.2.49: Moment of Mom.)}\\
+\textbf{Problem 5.9.85 (9th\#5.2.51: Moment of Mom.)}\\
+\textbf{Challenge Activity 5.2.1}\\
+\textbf{Challenge Activity 5.2.2}\\
+
+\textbf{Problem 5.9.99 (9th\#5.3.9: Energy)}\\
+\textbf{Problem 5.9.107 (9th\#5.3.1: Energy)}\\
+
+% ==========================================
+% CHAPTER 6: DIFFERENTIAL ANALYSIS OF FLUID FLOW
+% ==========================================
+\begin{center}
+    {\LARGE\bfseries Chapter 6: Differential Analysis of Fluid Flow\par}
+\end{center}
+Application of Navier stokes equations.
+\textbf{Problem 6.14.12 (9th\#6.2.2: Cons. of Mass)}\\
+\textbf{Problem 6.14.23 (9th\#6.3.1: Linear Momentum)}\\
+\textbf{Problem 6.14.86 (9th\#6.9.16: Couette Flow)}\\
+\textbf{Challenge Activity 6.9.1}\\
+
+
+
+
+\end{document}
