@@ -1044,4 +1044,373 @@ That's the differential form of Bernoulli's equation.
 
 For irreversible flow, the mechanical-energy loss is positive, so the ideal Bernoulli relationship no longer holds without a loss term.\\\\
 \textit{This section is also very lacking in detail but we literally didn't cover it in class so I'm moving on.}
+\begin{center}
+    {\LARGE\bfseries Differential Analysis of Fluid Flow\par}
+\end{center}
+In this section, we will derive the differential forms of the governing equations of fluid flow, such as continuity and Navier Stokes.
+\section*{\fbox{6.1 Fluid Element Kinematics}}
+\addcontentsline{toc}{section}{6.1 Fluid Element Kinematics}
+Recall that for a velocity field:
+\[
+\vec V=u\hat i+v\hat j+w\hat k
+\]
+the acceleration field is given by the material derivative:
+\[
+\vec a=\frac{D\vec V}{Dt}=\frac{\partial\vec V}{\partial t}+(\vec V\cdot\nabla)\vec V
+\]
+An infinitesimal fluid element can undergo four different types of motion:
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{fluid element kinematics.png}
+\end{center}
+\begin{itemize}
+    \item \textbf{Translation} occurs if all points within a fluid element has the same velocity (no deformation or rotation). 
+    \item \textbf{Linear deformation} occurs when the velocity varies spatially and different portions of the fluid element move at different speeds, causing stretching or compression
+\end{itemize}
+\subsection*{Linear Motion and Deformation}
+Consider a small fluid element with dimensions $\delta x, \delta y, \delta z$. If the $x$-component of velocity $u$ varies with $x$, then the fluid element will stretch or compress in the $x$-direction.
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{linear deformation.png}
+\end{center}
+From a Taylor series expansion, the velocity at the right face of the element is:
+\[
+u(x+\delta x)\approx u(x)+\frac{\partial u}{\partial x}\delta x
+\]
+The velocity difference between the two faces $\frac{\partial u}{\partial x}\delta x$ causes the element to stretch or compress in the $x$-direction.\\\\
+Over a short time \(\delta t\), its change in length is
+\[
+\Delta(\delta x)=\frac{\partial u}{\partial x}\delta x\,\delta t
+\]
+Assuming the dimensions in the other two directions remain constant, the change in volume of the element is
+\[
+\Delta(\delta\vol)=\left(\frac{\partial u}{\partial x}\delta x\right)(\delta y\delta z)\delta t
+\]
+Dividing by the original volume \(\delta\vol=\delta x\delta y\delta z\) and taking the limit as \(\delta t\to 0\), we obtain the rate of change of volume:
+\[
+\frac{1}{\delta\vol}\frac{d(\delta\vol)}{dt}=\frac{\partial u}{\partial x}
+\]
+Now including deformation in all three directions gives the \textbf{volumetric dilation rate}
+\[
+\boxed{\frac{1}{\delta\vol}\frac{d(\delta\vol)}{dt}=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=\nabla\cdot\vec V}
+\]
+This represents the rate of change of volume per unit volume of a fluid element in a velocity field.\\\\
+\hl{For incompressible flow, the volume of a fluid element does not change, so the volumetric dilation rate is zero:}
+\[\nabla \cdot \vec{V} = 0\]
+\subsection*{Angular Motion and Deformation}
+Consider two initially perpendicular line segments, \(OA\) and \(OB\), forming a small fluid element in the \(xy\)-plane.\\\\
+Spatial velocity gradients cause the two lines to rotate through \textit{small angles} \(\delta\alpha\) and \(\delta\beta\).\\\\
+Using the small angle approximation, the rate of change of the angle between the two lines is:
+\[
+\frac{\delta\alpha}{\delta t}=\frac{\partial v}{\partial x},\qquad \frac{\delta\beta}{\delta t}=\frac{\partial u}{\partial y}
+\]
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{angular deformation.png}
+\end{center}
+\textbf{Rotation}\\
+Taking the counterclockwise direction as positive, the angular velocity of the fluid element is the \textit{average of the angular velocities of the two perpendicular lines.} Accounting for their opposite rotations, the angular velocity of the fluid element about the \(z\)-axis is:
+\[
+\omega_z=\frac12\left(\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)
+\]
+Similarly, the angular velocities about the \(x\) and \(y\) axes are:
+\[
+\omega_x=\frac12\left(\frac{\partial w}{\partial y}-\frac{\partial v}{\partial z}\right)
+\]
+\[
+\omega_y=\frac12\left(\frac{\partial u}{\partial z}-\frac{\partial w}{\partial x}\right)
+\]
+Combining the three components gives the rotation vector:
+\[
+\boxed{\vec\omega=\frac12\nabla\times\vec V}
+\]
+\begin{notebox}[Curl of a Vector Field]
+For a fluid velocity field,
+\[
+\vec V=u\hat i+v\hat j+w\hat k
+\]
+the curl is defined as
+\[
+\nabla\times\vec V=
+\begin{vmatrix}
+\hat i&\hat j&\hat k\\
+\frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
+u&v&w
+\end{vmatrix}
+\]
+Expanding the determinant:
+\[
+\nabla\times\vec V
+={}\left(\frac{\partial w}{\partial y}-\frac{\partial v}{\partial z}\right)\hat i
++\left(\frac{\partial u}{\partial z}-\frac{\partial w}{\partial x}\right)\hat j
++\left(\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)\hat k
+\]
+\end{notebox}
+The \textbf{vorticity} is defined as twice the rotation vector:
+\[
+\boxed{\vec\zeta=2\vec\omega=\nabla\times\vec V}
+\]
+\hl{For irrotational flow, the vorticity is zero:}
+\[\nabla \times \vec V=0\]
+\textbf{Angular deformation}\\
+Angular deformation describes the change in the original right angle between the two line segments.\\\\
+The textbook defines the shearing strain as the sum of the two small angles:
+\[
+\delta\gamma=\delta\alpha+\delta\beta
+\]
+where positive \(\delta\gamma\) corresponds to a \hl{decrease in the original right angle.}\\\\
+The rate of shearing strain, also called the \textbf{rate of angular deformation}, is therefore:
+\[
+\boxed{\dot\gamma=\frac{\partial v}{\partial x}+\frac{\partial u}{\partial y}}
+\]
+If
+\[
+\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}
+\]
+then \(\dot\gamma=0\), and the element rotates without angular deformation in the \(xy\)-plane.
+\section*{\fbox{6.2 Conservation of Mass}}
+\addcontentsline{toc}{section}{6.2 Conservation of Mass}
+The integral form of the conservation of mass is derived from the Reynolds Transport Theorem, using mass as the extensive property:
+\[\frac{DM_{\text{sys}}}{Dt} = 0 = \frac{\partial}{\partial t}\int_{C\vol} \rho \, dV + \int_{CS} \rho \vec{V}_{\text{rel}} \cdot \hat{n} \, dA\]
+\subsection*{Applying conservation of mass to a differential control volume}
+Consider a fixed, stationary control volume with infinitesimal dimensions \(\delta x, \delta y, \delta z\). 
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{Differential conservation of mass.png}
+\end{center}
+\textbf{Accumulation Term}\\
+For an infinitesimal control volume:
+\[
+\frac{\partial}{\partial t}\int_{CV}\rho\,d\vol\approx\frac{\partial\rho}{\partial t}\delta x\delta y\delta z
+\]
+\textbf{Net Mass Flux}\\
+Consider flow in only the $x$ direction with the fluid density and velocity defined at the center of the control volume. Thus, $\rho u$ can be approximated with a first order Taylor series expansion at the left and right faces of the control volume:
+\[
+\rho u\big|_{x\pm\delta x/2}\approx\rho u\pm\frac{\partial(\rho u)}{\partial x}\frac{\delta x}{2}
+\]
+Subtracting the inflow from outflow gives the net mass flux in the $x$ direction:
+\[
+\underbrace{\left[\rho u+\frac{\partial(\rho u)}{\partial x}\frac{\delta x}{2}\right]\delta y\,\delta z}_{\text{Outflow}}
+-
+\underbrace{\left[\rho u-\frac{\partial(\rho u)}{\partial x}\frac{\delta x}{2}\right]\delta y\,\delta z}_{\text{Inflow}}
+=
+\frac{\partial(\rho u)}{\partial x}\delta x\,\delta y\,\delta z
+\]
+Repeating for the \(y\)- and \(z\)-directions, the total net mass outflow is
+\[
+\left[\frac{\partial(\rho u)}{\partial x}+\frac{\partial(\rho v)}{\partial y}+\frac{\partial(\rho w)}{\partial z}\right]\delta x\delta y\delta z
+\]
+\textbf{Plugging into the Reynolds Transport Theorem}
+\[
+0=\left[\frac{\partial\rho}{\partial t}+\frac{\partial(\rho u)}{\partial x}+\frac{\partial(\rho v)}{\partial y}+\frac{\partial(\rho w)}{\partial z}\right]\delta x\delta y\delta z
+\]
+Dividing through by the differential volume gives the \textbf{differential continuity equation}
+\[
+\boxed{\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\vec V)=0\quad \text{(Differential Conservation of Mass)}}
+\]
+\newpage
+\textbf{Special Cases}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\setlength{\tabcolsep}{18pt}
+\begin{tabular}{ll}
+\toprule
+\textbf{Condition} & \textbf{Continuity Equation} \\
+\midrule
+Steady compressible & $\displaystyle \vec{\nabla}\cdot(\rho\vec{V})=0$ \\
+Incompressible & $\displaystyle \vec{\nabla}\cdot\vec{V}=0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+Note that for incompressible flow, the equation becomes
+\[
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=0
+\]
+which is the same as the volumetric dilation rate derived in section 6.1.
+\subsection*{Cylindrical Polar Coordinates}
+For cylindrical polar coordinates, the velocity field is expressed as:
+\[
+\vec V=v_r\hat e_r+v_\theta\hat e_\theta+v_z\hat e_z
+\]
+The differential continuity equation in cylindrical polar coordinates is:
+\[
+\boxed{\frac{\partial\rho}{\partial t}+\frac1r\frac{\partial(r\rho v_r)}{\partial r}+\frac1r\frac{\partial(\rho v_\theta)}{\partial\theta}+\frac{\partial(\rho v_z)}{\partial z}=0}
+\]
+For incompressible flow (steady or unsteady):
+\[
+\boxed{\frac1r\frac{\partial(rv_r)}{\partial r}+\frac1r\frac{\partial v_\theta}{\partial\theta}+\frac{\partial v_z}{\partial z}=0}
+\]
+The equations are different because the gradient operator is defined differently in cylindrical coordinates compared to Cartesian coordinates.
+\subsection*{The Stream Function}
+For \textit{steady, incompressible, planar two-dimensional flow,} continuity reduces to
+\[
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0
+\]
+Instead of dealing with two independent velocity components, we introduce a single scalar function called the \textbf{stream function} \(\psi\), defined such that:
+\[
+\boxed{u=\frac{\partial\psi}{\partial y},\qquad v=-\frac{\partial\psi}{\partial x}}
+\]
+\textit{In cylindrical polar coordinates:}
+\[
+\boxed{v_r=\frac1r\frac{\partial\psi}{\partial\theta},\qquad v_\theta=-\frac{\partial\psi}{\partial r}}
+\]
+\begin{notebox}[]
+    This process is similar to the Airy stress function in elasticity, or the moment generating function in probability, where the scalar function is defined such that its derivatives give the quantities of interest.
+\end{notebox}
+\textbf{The Steam Function automatically satisfies continuity}\\
+Substituting into continuity,
+\[
+\frac{\partial}{\partial x}\left(\frac{\partial\psi}{\partial y}\right)+\frac{\partial}{\partial y}\left(-\frac{\partial\psi}{\partial x}\right)=0
+\]
+\[
+\frac{\partial^2\psi}{\partial x\partial y}-\frac{\partial^2\psi}{\partial y\partial x}=0
+\]
+Thus, continuity is automatically satisfied when the mixed partial derivatives are equal.\\\\
+\hl{Mixed partial derivatives are only unequal if the function is not continuous, which is not the case for a stream function.}\\\\
+\textbf{Why is \(\psi\) called the stream function?}\\
+Recall from Chapter 4 that the slope of a streamline in 2D is
+\[
+\frac{dy}{dx}=\frac vu
+\]
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{streamline slope.png}
+\end{center}
+The total differential of the stream function is
+\[
+d\psi=\frac{\partial\psi}{\partial x}dx+\frac{\partial\psi}{\partial y}dy
+\]
+By definition of the stream function, we can substitute for the partial derivatives:
+\[
+d\psi=-v\,dx+u\,dy
+\]
+Along a constant stream function, $\psi = \text{constant}$, so $d\psi=0$. Thus,
+\[
+\frac{dy}{dx}=\frac vu
+\]
+this recovers the slope of a streamline, therefore:
+\[
+\boxed{\psi(x,y)=\text{constant along a streamline}}
+\]
+\textbf{Volumetric Flow Rate Between Streamlines}\\
+The volumetric flow rate per unit width between two nearby streamlines is
+\[
+dq=u\,dy-v\,dx=d\psi
+\]
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{flow btwn streamline.png}
+\end{center}
+Integrating between two streamlines gives the volumetric flow rate:
+\[
+\boxed{q=\psi_2-\psi_1}
+\]
+where $q$ is the \hl{signed volumetric flow rate per unit width} between the two streamlines. The sign of $q$ indicates the direction of flow between the two streamlines.
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{streamline flow direction.png}
+\end{center}
+\section*{\fbox{6.3 The Linear Momentum Equation}}
+\addcontentsline{toc}{section}{6.3 The Linear Momentum Equation}
+We will apply Newton's second law to an infinitesimal fluid element to obtain the differential equations of motion.\\\\
+Unlike section 6.2 we won't be using Reynolds Transport Theorem on an infinitesimal control volume, but instead we will Newton's second law directly on a fluid system because it simplifies the derivation.\\\\
+\textbf{Starting from Newton's Second Law}\\
+The linear momentum of a fluid system is
+\[
+\sum\vec F=\frac{D\vec P_{\mathrm{sys}}}{Dt}
+\]
+Where the total linear momentum of the system is
+\[
+\vec P=\int_{\mathrm{sys}}\vec V\,dm
+\]
+For differential analysis, consider a small fluid system of mass $\delta m$, acted upon by a net external force $\delta\vec F$. Here, $\delta$ denotes a small but finite quantity associated with the fluid element, whereas $dm$ denotes an infinitesimal mass used in integration.\\\\
+Since mass is constant for a fluid system:
+\[
+\sum\vec F=\frac{D\vec P_{\mathrm{sys}}}{Dt}\quad\implies\quad \delta\vec F=\frac{D(\vec V\delta m)}{Dt}=\delta m\frac{D\vec V}{Dt}
+\]
+Using the acceleration field from section 6.1, the external force $\delta\vec F$ is also equal to
+\[
+\delta\vec F=\delta m\vec a
+\]
+\subsection*{Description of Forces Acting on the Differential Element}
+As usual, there are two types of forces acting on the fluid element: body forces and surface forces.\\\\
+\textbf{Body Forces}\\
+Body forces act on the entire volume of the fluid element, we will typically consider gravitational body forces, where
+\[
+\boxed{\delta\vec F_b=\delta m\vec g=\rho\,\delta\vol\,\vec g}
+\]
+Here, $\vec g$ is the gravitational acceleration vector.\\\\
+In component form:
+\[
+\begin{aligned}
+\delta F_{bx} &= \delta m\,g_x \\
+\delta F_{by} &= \delta m\,g_y \\
+\delta F_{bz} &= \delta m\,g_z
+\end{aligned}
+\]
+\textbf{Surface Forces}\\
+Surface forces arise from the interaction of the fluid element with its surroundings, which are typically represented by stresses acting on the surfaces of the element.
+\newpage
+Like mechmat and elasticity, we will use the following notation to describe the normal and shear components:
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{stress notation.png}
+\end{center}
+\textbf{Net Surface Force}\\
+Considering only forces in the $x$-direction, the net surface force is a result of differences in stresses acting on opposite faces of the fluid element.\\\\
+Since the stresses are only defined at the center, we can use a first order Taylor series expansion to approximate the stresses at the faces of the element. For example, the normal stresses on the right and left faces in the $x$-direction are:
+\[
+\sigma_{xx,R}\approx\sigma_{xx}+\frac{\partial\sigma_{xx}}{\partial x}\frac{\delta x}{2}
+\]
+\[
+\sigma_{xx,L}\approx\sigma_{xx}-\frac{\partial\sigma_{xx}}{\partial x}\frac{\delta x}{2}
+\]
+the sum of forces in the $x$-direction due to normal stresses is then:
+\[
+\delta F_{sx}^{(\text{normal})}
+=\left[\sigma_{xx}+\frac{\partial\sigma_{xx}}{\partial x}\frac{\delta x}{2}\right]\delta y\,\delta z
+-\left[\sigma_{xx}-\frac{\partial\sigma_{xx}}{\partial x}\frac{\delta x}{2}\right]\delta y\,\delta z
+=\frac{\partial\sigma_{xx}}{\partial x}\delta x\,\delta y\,\delta z
+\]
+After a similar argument for shear stresses, the total net surface force in the $x$-direction is:
+\[
+\delta F_{sx}=\left(\frac{\partial\sigma_{xx}}{\partial x}+\frac{\partial\tau_{yx}}{\partial y}+\frac{\partial\tau_{zx}}{\partial z}\right)\delta\vol
+\]
+Similarly for the $y$- and $z$-directions, the net surface forces are:
+\[
+\delta F_{sy}=\left(\frac{\partial\tau_{xy}}{\partial x}+\frac{\partial\sigma_{yy}}{\partial y}+\frac{\partial\tau_{zy}}{\partial z}\right)\delta\vol
+\]
+\[
+\delta F_{sz}=\left(\frac{\partial\tau_{xz}}{\partial x}+\frac{\partial\tau_{yz}}{\partial y}+\frac{\partial\sigma_{zz}}{\partial z}\right)\delta\vol
+\]
+\subsection*{Equations of Motion}
+Substituting the expressions for body and surface forces into Newton's second law, we obtain the equations of motion:
+\[
+\delta\vec F=\delta\vec F_s+\delta\vec F_b=\delta m\vec a
+\]
+Since \(\delta m=\rho\delta\vol\), in the \(x\)-direction:
+\[
+\left(\frac{\partial\sigma_{xx}}{\partial x}+\frac{\partial\tau_{yx}}{\partial y}+\frac{\partial\tau_{zx}}{\partial z}+\rho g_x\right)\delta\vol=\rho\delta\vol\,a_x
+\]
+Canceling the differential volume and substituting the acceleration field from section 6.1 gives the \(x\)-component of the momentum equation:
+\[
+\rho g_x+\frac{\partial\sigma_{xx}}{\partial x}+\frac{\partial\tau_{yx}}{\partial y}+\frac{\partial\tau_{zx}}{\partial z}
+=
+\rho\underbrace{\left(\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}+w\frac{\partial u}{\partial z}\right)}_{a_x}
+\]
+Repeating the same procedure for the other directions gives the complete \textbf{Cauchy equations of motion}:
+\[
+\boxed{\begin{aligned}
+\rho\frac{Du}{Dt}&=\rho g_x+\frac{\partial\sigma_{xx}}{\partial x}+\frac{\partial\tau_{yx}}{\partial y}+\frac{\partial\tau_{zx}}{\partial z}
+\quad \text{($x$-direction)}\\[6pt]
+\rho\frac{Dv}{Dt}&=\rho g_y+\frac{\partial\tau_{xy}}{\partial x}+\frac{\partial\sigma_{yy}}{\partial y}+\frac{\partial\tau_{zy}}{\partial z}
+\quad \text{($y$-direction)}\\[6pt]
+\rho\frac{Dw}{Dt}&=\rho g_z+\frac{\partial\tau_{xz}}{\partial x}+\frac{\partial\tau_{yz}}{\partial y}+\frac{\partial\sigma_{zz}}{\partial z}
+\quad \text{($z$-direction)}
+\end{aligned}}
+\]
+These equations are simply Newton's second law applied to fluid motion at a point.
+
+They account for body forces, normal stresses, shear stresses, and fluid acceleration.
+
+However, we cannot solve these equations yet because we have not \hl{established relationships between the stresses and the fluid properties}. We will do this in the next two sections.
+\section*{\fbox{6.4 Inviscid Flow}}
+\addcontentsline{toc}{section}{6.4 Inviscid Flow}
+\section*{\fbox{6.8 Viscous Flow}}
+\addcontentsline{toc}{section}{6.8 Viscous Flow}
+\section*{\fbox{\parbox{0.9\linewidth}{6.9 Some simple solutions for laminar, viscous, incompressible flows}}}
+\addcontentsline{toc}{section}{6.9 Some simple solutions for laminar, viscous, incompressible flows}
 \end{document}
