@@ -3,7 +3,7 @@
 \usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
 \usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
 \usepackage{siunitx}  % Eases typesetting of numbers and units
-
+\usepackage{pdfpages}
 % US customary units
 \DeclareSIUnit{\inch}{in}
 \DeclareSIUnit{\foot}{ft}
@@ -13,7 +13,7 @@
 \DeclareSIUnit{\slug}{slug}
 \DeclareSIUnit{\lbm}{lbm}
 \DeclareSIUnit{\lbf}{lbf}
-
+\DeclareSIUnit{\rpm}{rpm}
 \DeclareSIUnit{\psi}{psi}
 \DeclareSIUnit{\psf}{psf}
 
@@ -51,10 +51,67 @@ Velocity and acceleration fields. Material derivatives (derived from chain rule 
 % ==========================================
 
 \section*{\fbox{4.2 The Acceleration Field}}
-\textbf{Problem 4.8.27 (9th\#4.2.5: Acceleration Field)}\\
-\textbf{Problem 4.8.34 (9th\#4.2.12: Acceleration Field)}\\
+\textbf{Problem 4.8.27 (Problem 4.2.5 in the 9th Edition)}\\
+A certain flow field has the velocity vector
+\[\vec{V}=-\frac{2xyz}{(x^2+y^2)^2}\hat{i}+\frac{(x^2-y^2)z}{(x^2+y^2)^2}\hat{j}+\frac{y}{x^2+y^2}\hat{k}\]
+(a) Find the acceleration vector for this flow.\\
+\textbf{Solution}
+\begin{itemize}
+    \item From the material derivative, the acceleration field is given by:
+    \[\vec{a}=\frac{D\vec{V}}{Dt}=\frac{\partial\vec{V}}{\partial t}+u\frac{\partial\vec{V}}{\partial x}+v\frac{\partial\vec{V}}{\partial y}+w\frac{\partial\vec{V}}{\partial z}\]
+    \item Since the velocity field is steady, $\partial\vec{V}/\partial t=0$. The velocity components are:
+    \[u=-\frac{2xyz}{(x^2+y^2)^2},\qquad v=\frac{(x^2-y^2)z}{(x^2+y^2)^2},\qquad w=\frac{y}{x^2+y^2}\]
+    \item Evaluating the acceleration components:
+    \[a_x=u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}+w\frac{\partial u}{\partial z}\]
+    \[=\boxed{-\frac{2x(y^2+z^2)}{(x^2+y^2)^3}}\]
+    \[a_y=u\frac{\partial v}{\partial x}+v\frac{\partial v}{\partial y}+w\frac{\partial v}{\partial z}\]
+    \[=\boxed{\frac{y(x^2-y^2-2z^2)}{(x^2+y^2)^3}}\]
+    \[a_z=u\frac{\partial w}{\partial x}+v\frac{\partial w}{\partial y}+w\frac{\partial w}{\partial z}\]
+    \[=\boxed{\frac{z}{(x^2+y^2)^2}}\]
+    \item Thus, the acceleration vector is:
+    \[\boxed{\vec{a}=-\frac{2x(y^2+z^2)}{(x^2+y^2)^3}\hat{i}+\frac{y(x^2-y^2-2z^2)}{(x^2+y^2)^3}\hat{j}+\frac{z}{(x^2+y^2)^2}\hat{k}}\]
+\end{itemize}
+\textbf{Problem 4.8.34 (Problem 4.2.12 in the 9th Edition)}\\
+The fluid velocity along the $x$ axis shown changes from $\SI{6}{\meter\per\second}$ at point $A$ to $\SI{18}{\meter\per\second}$ at point $B$. It is also known that the velocity is a linear function of distance along the streamline.\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{4-8-34.png}
+\end{center}
+(a) Determine the acceleration at points $A$, $B$, and $C$. Assume steady flow.\\
+\textbf{Solution}
+\begin{itemize}
+    \item Starting with the material derivative, the acceleration field is:
+    \[\vec{a}=\frac{D\vec{V}}{Dt}=\frac{\partial\vec{V}}{\partial t}+u\frac{\partial\vec{V}}{\partial x}+v\frac{\partial\vec{V}}{\partial y}+w\frac{\partial\vec{V}}{\partial z}\]
+    \item Since the flow is steady and the velocity is directed along the $x$ axis, the acceleration reduces to:
+    \[a_x=u\frac{du}{dx}\]
+    \item Since velocity varies linearly with distance along the streamline:
+    \[\frac{du}{dx}=\frac{u_B-u_A}{x_B-x_A}=\frac{\SI{18}{\meter\per\second}-\SI{6}{\meter\per\second}}{\SI{0.1}{\meter}}=\SI{120}{\per\second}\]
+    \item At point $A$:
+    \[a_A=u_A\frac{du}{dx}=(\SI{6}{\meter\per\second})(\SI{120}{\per\second})=\boxed{\SI{720}{\meter\per\second\squared}}\]
+    \item At point $B$:
+    \[a_B=u_B\frac{du}{dx}=(\SI{18}{\meter\per\second})(\SI{120}{\per\second})=\boxed{\SI{2160}{\meter\per\second\squared}}\]
+    \item At point $C$, located $\SI{0.05}{\meter}$ from $A$, the velocity is:
+    \[u_C=u_A+\frac{du}{dx}(x_C-x_A)=6+120(0.05)=\SI{12}{\meter\per\second}\]
+    \[a_C=u_C\frac{du}{dx}=(\SI{12}{\meter\per\second})(\SI{120}{\per\second})=\boxed{\SI{1440}{\meter\per\second\squared}}\]
+\end{itemize}
 \textbf{Challenge Activity 4.2.2}\\
-
+The velocity of the water in the pipe shown in the figure below is given by $V_1=0.64t\ \si{\meter\per\second}$ and $V_2=3.3t\ \si{\meter\per\second}$, where $t$ is in seconds.\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{4-2-2.png}
+\end{center}
+(a) Determine the local acceleration at point (1).\\
+(b) Determine the local acceleration at point (2).\\
+(c) Is the average convective acceleration between points (1) and (2) negative, zero, or positive?\\
+\textbf{Solution}
+\begin{itemize}
+    \item From the material derivative, the acceleration field is:
+    \[\vec{a}=\frac{D\vec{V}}{Dt}=\underbrace{\frac{\partial\vec{V}}{\partial t}}_{\text{Local acceleration}}+\underbrace{(\vec{V}\cdot\nabla)\vec{V}}_{\text{Convective acceleration}}\]
+    \item (a) The local acceleration at point (1) is:
+    \[\frac{\partial V_1}{\partial t}=\frac{\partial\left(0.64t\ \si{\meter\per\second}\right)}{\partial t}=\boxed{\SI{0.64}{\meter\per\second\squared}}\]
+    \item (b) The local acceleration at point (2) is:
+    \[\frac{\partial V_2}{\partial t}=\frac{\partial\left(3.3t\ \si{\meter\per\second}\right)}{\partial t}=\boxed{\SI{3.3}{\meter\per\second\squared}}\]
+    \item (c) Since $V_2>V_1$, $\dfrac{\partial V}{\partial x}>0$. Also, $V>0$ so that the convective acceleration $V\dfrac{\partial V}{\partial x}$ is $\boxed{\text{positive}}$.
+\end{itemize}
+\newpage
 % ==========================================
 % CHAPTER 5: FINITE CONTROL VOLUME ANALYSIS
 % ==========================================
@@ -63,18 +120,284 @@ Velocity and acceleration fields. Material derivatives (derived from chain rule 
 \end{center}
 Application of the Reynolds transport theorem to conservation laws and laws of thermodynamics.
 \section*{\fbox{5.1 Conservation of Mass}}
-\textbf{Problem 5.9.1 (9th\#5.1.1: Cons of Mass)}\\
-\textbf{Problem 5.9.3 (9th\#5.1.3: Fixed nondeforming)}\\
+\textbf{Problem 5.9.1 (Problem 5.1.1 in the 9th Edition)}\\
+(a) Use the Reynolds transport theorem (Eq. 4.16) with $B=\text{volume}$ and, therefore, $b=\text{volume}/\text{mass}=1/\text{density}$ to obtain the continuity equation for steady or unsteady incompressible flow through a fixed control volume: $\displaystyle\int_{CS}\vec{V}\cdot\hat{n}\,dA=0$.\\
+\textbf{Solution}
+\begin{itemize}
+    \item Starting with the generalized Reynolds transport theorem:
+    \[\frac{DB_{\mathrm{sys}}}{Dt}=\frac{\partial}{\partial t}\int_{C\vol}\rho b\,d\vol+\int_{CS}\rho b(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA\]
+    \item Since $B=\text{volume}$, the corresponding intensive property is:
+    \[b=\frac{B}{m}=\frac{\vol}{m}=\frac{1}{\rho}\]
+    \item Substituting $\rho b=1$ into the Reynolds transport theorem:
+    \[\frac{D\vol_{\mathrm{sys}}}{Dt}=\frac{\partial}{\partial t}\int_{C\vol}d\vol+\int_{CS}\vec{V}_{\mathrm{rel}}\cdot\hat{n}\,dA\]
+    \item For an incompressible fluid, the volume of a system of fixed mass remains constant:
+    \[\frac{D\vol_{\mathrm{sys}}}{Dt}=0\]
+    \item For a fixed control volume, $\vec{V}_{\mathrm{rel}}=\vec{V}$, and the control volume does not change with time:
+    \[\frac{\partial}{\partial t}\int_{C\vol}d\vol=0\]
+    \item Thus, the Reynolds transport theorem reduces to:
+    \[\boxed{\int_{CS}\vec{V}\cdot\hat{n}\,dA=0}\]
+    This equation is valid for both steady and unsteady incompressible flow through a fixed control volume.
+\end{itemize}
+\textbf{Problem 5.9.3 (Problem 5.1.3 in the 9th Edition)}\\
+Water flows steadily through the horizontal piping system shown below. The velocity is uniform at section (1), the mass flowrate is $\SI{10}{\slug\per\second}$ at section (2), and the velocity is nonuniform at section (3).\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{5-9-3.png}
+\end{center}
+\textbf{(a)} Determine the value of the quantity $\displaystyle\frac{D}{Dt}\int_{\mathrm{sys}}\rho\,d\vol$, where the system is the water contained in the pipe bounded by sections (1), (2), and (3).\\
+\textbf{Solution}
+\begin{itemize}
+    \item The integral represents the total mass of the system:
+    \[M_{\mathrm{sys}}=\int_{\mathrm{sys}}\rho\,d\vol\]
+    \item Since a system consists of a fixed amount of matter, conservation of mass requires:
+    \[\frac{DM_{\mathrm{sys}}}{Dt}=0\]
+    \item Therefore:
+    \[\boxed{\frac{D}{Dt}\int_{\mathrm{sys}}\rho\,d\vol=0}\]
+\end{itemize}
+\textbf{(b)} Determine the mean velocity at section (2).\\
+\textbf{Solution}
+\begin{itemize}
+    \item The mass flowrate through a section is defined by:
+    \[\dot{m}=\int_A\rho\vec{V}\cdot\hat{n}\,dA=\rho V_{\mathrm{avg}}A\]
+    \item Solving for the mean velocity at section (2), using $\rho=\SI{1.94}{\slug\per\foot\cubed}$ for water:
+    \[V_{2,\mathrm{avg}}=\frac{\dot{m}_2}{\rho A_2}=\frac{\SI{10}{\slug\per\second}}{(\SI{1.94}{\slug\per\foot\cubed})(\SI{0.3}{\foot\squared})}\]
+    \[\boxed{V_{2,\mathrm{avg}}=\SI{17.18}{\foot\per\second}}\]
+\end{itemize}
+\textbf{(c)} Determine, if possible, the value of the integral $\displaystyle\int_{(3)}\rho\vec{V}\cdot\hat{n}\,dA$ over section (3). If it is not possible, explain what additional information is needed to do so.\\
+\textbf{Solution}
+\begin{itemize}
+    \item Starting with the generalized Reynolds transport theorem:
+    \[\frac{DB_{\mathrm{sys}}}{Dt}=\frac{\partial}{\partial t}\int_{C\vol}\rho b\,d\vol+\int_{CS}\rho b(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA\]
+    \item For conservation of mass, $B=M$, $b=1$, and $DM_{\mathrm{sys}}/Dt=0$. Since the control volume is fixed and the flow is steady:
+    \[0=\int_{CS}\rho\vec{V}\cdot\hat{n}\,dA\]
+    \item Separating the control surface into sections (1), (2), and (3):
+    \[0=\int_{(1)}\rho\vec{V}\cdot\hat{n}\,dA+\int_{(2)}\rho\vec{V}\cdot\hat{n}\,dA+\int_{(3)}\rho\vec{V}\cdot\hat{n}\,dA\]
+    \item Section (1) is an inlet, while sections (2) and (3) are outlets. Therefore:
+    \[0=-\rho V_1A_1+\dot{m}_2+\int_{(3)}\rho\vec{V}\cdot\hat{n}\,dA\]
+    \item Rearranging and substituting the given values:
+    \[\int_{(3)}\rho\vec{V}\cdot\hat{n}\,dA=\rho V_1A_1-\dot{m}_2\]
+    \[=(\SI{1.94}{\slug\per\foot\cubed})(\SI{15}{\foot\per\second})(\SI{0.7}{\foot\squared})-\SI{10}{\slug\per\second}\]
+    \[\boxed{\int_{(3)}\rho\vec{V}\cdot\hat{n}\,dA=\SI{10.37}{\slug\per\second}}\]
+    \item The integral can be determined without knowing the nonuniform velocity distribution at section (3), since conservation of mass determines the total mass flowrate through that section.
+\end{itemize}
+\textbf{Problem 5.9.38 (Problem 5.2.4 in the 9th Edition)}\\
+Water flows through a horizontal bend and discharges into the atmosphere as shown below. When the pressure gage reads $\SI{10}{\psi}$, the resultant $x$-direction anchoring force, $F_{Ax}$, in the horizontal plane required to hold the bend in place is shown on the figure.\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{5-9-38.png}
+\end{center}
+(a) Determine the flowrate through the bend and the $y$-direction anchoring force, $F_{Ay}$, required to hold the bend in place. The flow is not frictionless.\\
+\textbf{Solution}
+\begin{itemize}
+    \item Define a fixed control volume containing the bend and the water within it. Starting with the generalized Reynolds transport theorem for linear momentum, $B=\vec{P}=m\vec{V}$ and $b=\vec{V}$:
+    \[\sum\vec{F}_{\mathrm{ext}}=\frac{\partial}{\partial t}\int_{C\vol}\rho\vec{V}\,d\vol+\int_{CS}\rho\vec{V}(\vec{V}\cdot\hat{n})\,dA\]
+    \item Assuming steady, incompressible flow with uniform velocities at the inlet and outlet, the accumulation term vanishes:
+    \[\sum\vec{F}_{\mathrm{ext}}=\dot{m}(\vec{V}_2-\vec{V}_1)\]
+    \item From conservation of mass:
+    \[\dot{m}=\rho Q=\rho V_1A_1=\rho V_2A_2\]
+    \[V_1=\frac{Q}{A_1},\qquad V_2=\frac{Q}{A_2}\]
+    \item Taking $+x$ to the right and $+y$ upward in the horizontal plane, the velocity vectors are:
+    \[\vec{V}_1=V_1\hat{i},\qquad \vec{V}_2=-V_2\cos45^\circ\hat{i}-V_2\sin45^\circ\hat{j}\]
+    \item Applying the linear momentum equation in the $x$ direction, with gage pressures $p_1=\SI{10}{\psi}$ and $p_2=0$:
+    \[\sum F_x=p_1A_1-F_{Ax}=\dot{m}(-V_2\cos45^\circ-V_1)\]
+    \[p_1A_1-F_{Ax}=-\rho Q^2\left(\frac{\cos45^\circ}{A_2}+\frac{1}{A_1}\right)\]
+    \item Solving for the volumetric flowrate:
+    \[Q=\sqrt{\frac{F_{Ax}-p_1A_1}{\rho\left(\dfrac{\cos45^\circ}{A_2}+\dfrac{1}{A_1}\right)}}\]
+    \item Using $\rho=\SI{1.94}{\slug\per\foot\cubed}$ for water and converting the inlet pressure:
+    \[p_1=\SI{10}{\lbf\per\inch\squared}\cdot\frac{\SI{144}{\inch\squared}}{\SI{1}{\foot\squared}}=\SI{1440}{\lbf\per\foot\squared}\]
+    \[Q=\sqrt{\frac{\SI{1440}{\lbf}-(\SI{1440}{\lbf\per\foot\squared})(\SI{0.2}{\foot\squared})}{(\SI{1.94}{\slug\per\foot\cubed})\left(\dfrac{\cos45^\circ}{\SI{0.1}{\foot\squared}}+\dfrac{1}{\SI{0.2}{\foot\squared}}\right)}}\]
+    \[\boxed{Q=\SI{7.01}{\foot\cubed\per\second}}\]
+    \item Applying the linear momentum equation in the $y$ direction, where there are no pressure forces in this direction:
+    \[\sum F_y=F_{Ay}=\dot{m}(-V_2\sin45^\circ)\]
+    \[F_{Ay}=-\rho Q^2\frac{\sin45^\circ}{A_2}\]
+    \item Substituting the known values:
+    \[F_{Ay}=-(\SI{1.94}{\slug\per\foot\cubed})(\SI{7.01}{\foot\cubed\per\second})^2\frac{\sin45^\circ}{\SI{0.1}{\foot\squared}}\]
+    \[\boxed{F_{Ay}\approx-\SI{674}{\lbf}}\]
+    \item Therefore, the required $y$-direction anchoring force is approximately $\SI{674}{\lbf}$ downward in the horizontal plane.
+\end{itemize}
+\textbf{Problem 5.9.45 (Problem 5.2.11 in the 9th Edition)}\\
+(a) Determine the magnitude and direction of the anchoring force needed to hold the horizontal elbow and nozzle combination shown below in place. Atmospheric pressure is $\SI{100}{\kilo\pascal}$ (abs). The gage pressure at section (1) is $\SI{100}{\kilo\pascal}$. At section (2), the water exits to the atmosphere.\\
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{5-9-45.png}
+\end{center}
+\textbf{Solution}
+\begin{itemize}
+    \item Define a fixed control volume containing the elbow, nozzle, and water within them. Starting with the generalized Reynolds transport theorem for linear momentum, where $B=\vec{P}=m\vec{V}$ and $b=\vec{V}$:
+    \[\sum\vec{F}_{\mathrm{ext}}=\frac{\partial}{\partial t}\int_{C\vol}\rho\vec{V}\,d\vol+\int_{CS}\rho\vec{V}(\vec{V}\cdot\hat{n})\,dA\]
+    \item Assuming steady, incompressible flow with uniform velocities at the inlet and outlet, the accumulation term vanishes:
+    \[\sum\vec{F}_{\mathrm{ext}}=\dot{m}(\vec{V}_2-\vec{V}_1)\]
+    \item From conservation of mass:
+    \[\dot{m}=\rho V_1A_1=\rho V_2A_2\]
+    \[V_2=V_1\frac{A_1}{A_2}=V_1\left(\frac{D_1}{D_2}\right)^2\]
+    \[=(\SI{2}{\meter\per\second})\left(\frac{\SI{300}{\milli\meter}}{\SI{160}{\milli\meter}}\right)^2=\boxed{\SI{7.031}{\meter\per\second}}\]
+    \item The mass flowrate is:
+    \[\dot{m}=\rho V_1A_1=(\SI{1000}{\kilogram\per\meter\cubed})(\SI{2}{\meter\per\second})\frac{\pi}{4}(\SI{0.3}{\meter})^2=\SI{141.37}{\kilogram\per\second}\]
+    \item Taking $+x$ to the right and $+y$ upward, the inlet and outlet velocity vectors are:
+    \[\vec{V}_1=V_1\hat{i},\qquad\vec{V}_2=-V_2\hat{i}\]
+    \item Using gage pressures, $p_1=\SI{100}{\kilo\pascal}$ and $p_2=0$, the pressure force at section (1) acts in the positive $x$ direction. Applying the linear momentum equation in the $x$ direction:
+    \[\sum F_x=F_{Ax}+p_1A_1=\dot{m}(-V_2-V_1)\]
+    \item Solving for the anchoring force:
+    \[F_{Ax}=-\dot{m}(V_2+V_1)-p_1A_1\]
+    \[=-(\SI{141.37}{\kilogram\per\second})(\SI{7.031}{\meter\per\second}+\SI{2}{\meter\per\second})-(\SI{100000}{\pascal})\frac{\pi}{4}(\SI{0.3}{\meter})^2\]
+    \[\boxed{F_{Ax}=-\SI{8345.5}{\newton}}\]
+    \item Applying the linear momentum equation in the $y$ direction, both inlet and outlet velocities have zero $y$ components. Since the elbow lies in a horizontal plane, its weight has no component in the $x$-$y$ plane:
+    \[\sum F_y=F_{Ay}=\dot{m}(V_{2y}-V_{1y})=0\]
+    \[\boxed{F_{Ay}=0}\]
+    \item Thus, the magnitude of the required anchoring force is:
+    \[F_A=\sqrt{F_{Ax}^2+F_{Ay}^2}=\boxed{\SI{8.35}{\kilo\newton}}\]
+    The anchoring force acts entirely in the negative $x$ direction (to the left).
+\end{itemize}
+\textbf{Problem 5.9.83 (Problem 5.2.49 in the 9th Edition)}\\
+Five liters/s of water enter the rotor shown in Video 5.3.1 and below along the axis of rotation. The cross-sectional area of each of the three nozzle exits normal to the relative velocity is $\SI{18}{\milli\meter\squared}$.\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{5-9-83.png}
+\end{center}
+(a) How large is the resisting torque required to hold the rotor stationary? How fast will the rotor spin steadily if the resisting torque is reduced to zero and (a) $\theta=0^\circ$, (b) $\theta=30^\circ$, (c) $\theta=60^\circ$?\\
+\textbf{Solution}
+\begin{itemize}
+    \item Define a control volume rotating with the rotor, with the rotation axis along $z$. Starting with the Reynolds transport theorem for angular momentum about the $z$ axis:
+    \[\sum T_{z,\mathrm{ext}}=\frac{\partial}{\partial t}\int_{C\vol}\rho(\vec{r}\times\vec{V})_z\,d\vol+\int_{CS}\rho(\vec{r}\times\vec{V})_z(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA\]
+    \item Assuming steady flow relative to the rotor, the accumulation term vanishes. The inlet is located along the axis of rotation, so its angular momentum about the $z$ axis is zero. With three identical outlets at radius $r$:
+    \[\sum T_{z,\mathrm{ext}}=\sum_{i=1}^{3}\dot{m}_i rV_{\theta,2}=\dot{m}rV_{\theta,2}\]
+    \item From continuity, the relative outlet velocity is:
+    \[Q=3A_2V_{\mathrm{rel}}\]
+    \[V_{\mathrm{rel}}=\frac{Q}{3A_2}=\frac{\SI{5}{\liter\per\second}\cdot\frac{\SI{0.001}{\meter\cubed}}{\SI{1}{\liter}}}{3(\SI{18}{\milli\meter\squared}\cdot\frac{\SI{0.000001}{\meter\squared}}{\SI{1}{\milli\meter\squared}})}=\SI{92.59}{\meter\per\second}\]
+    \item For the stationary rotor, $\omega=0$, so the absolute and relative outlet velocities are equal. Taking the positive tangential direction along the exiting jet:
+    \[V_{\theta,2}=V_{\mathrm{rel}}\cos\theta\]
+    \item The mass flowrate is:
+    \[\dot{m}=\rho Q=(\SI{1000}{\kilogram\per\meter\cubed})(\SI{0.005}{\meter\cubed\per\second})=\SI{5}{\kilogram\per\second}\]
+    \item Therefore, the magnitude of the resisting torque required to hold the rotor stationary is:
+    \[T_{\mathrm{res}}=\dot{m}rV_{\mathrm{rel}}\cos\theta\]
+    \[=(\SI{5}{\kilogram\per\second})(\SI{0.5}{\meter})(\SI{92.59}{\meter\per\second})\cos\theta\]
+    \[\boxed{T_{\mathrm{res}}=231.48\cos\theta\ \si{\newton\meter}}\]
+    The resisting torque acts in the direction of the exiting fluid's angular momentum, opposing the torque exerted by the fluid on the rotor.
+    \item When the resisting torque is reduced to zero, the rotor spins at a constant angular velocity $\omega$. The absolute outlet tangential velocity is the sum of the relative tangential velocity and nozzle velocity:
+    \[V_{\theta,2}=V_{\mathrm{rel}}\cos\theta-\omega r\]
+    Here, $\omega$ is taken positive in the direction of rotor rotation, opposite to the tangential direction of the exiting jets.
+    \item Since the external resisting torque is zero, the angular momentum equation gives:
+    \[0=\dot{m}rV_{\theta,2}\]
+    \[0=\dot{m}r(V_{\mathrm{rel}}\cos\theta-\omega r)\]
+    \item Solving for the steady angular velocity:
+    \[\omega=\frac{V_{\mathrm{rel}}\cos\theta}{r}=\frac{\SI{92.59}{\meter\per\second}\cos\theta}{\SI{0.5}{\meter}}\]
+    \[\boxed{\omega=185.19\cos\theta\ \si{\radian\per\second}}\]
+    \item For $\theta=0^\circ$:
+    \[\omega=185.19\cos0^\circ=\boxed{\SI{185.19}{\radian\per\second}}\]
+    \item For $\theta=30^\circ$:
+    \[\omega=185.19\cos30^\circ=\boxed{\SI{160.38}{\radian\per\second}}\]
+    \item For $\theta=60^\circ$:
+    \[\omega=185.19\cos60^\circ=\boxed{\SI{92.59}{\radian\per\second}}\]
+    \item The rotor spins opposite to the tangential direction of the exiting jets. The angular velocity decreases as $\theta$ increases because the tangential component of the relative outlet velocity decreases.
+\end{itemize}
+\textbf{Problem 5.9.85 (Problem 5.2.51 in the 9th Edition)}\\
+(a) The hydraulic turbine shown below has a $\SI{10}{\celsius}$ water flow rate of $\SI{36.4}{\meter\cubed\per\second}$, an inlet radius $R_1=\SI{1.0}{\meter}$, an outlet radius $R_2=\SI{0.50}{\meter}$, a blade depth (perpendicular to paper) $h=\SI{0.50}{\meter}$, and a rotational speed $N=\SI{360}{\rpm}$; $V_1=\SI{50}{\meter\per\second}$, $V_2=\SI{30}{\meter\per\second}$, $\alpha_1=13.4^\circ$, and $\alpha_2=40^\circ$. Calculate the power transferred by the fluid to the rotor, the inlet relative velocity $W_1$, and the direction $\overline{W}_1$ makes with the radius at the inlet.\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{5-9-85.png}
+\end{center}
+\textbf{Solution}
+\begin{itemize}
+    \item Define a control volume containing the fluid within the rotor. Starting with the Reynolds transport theorem for angular momentum about the axis of rotation:
+    \[\sum\vec{T}_{\mathrm{ext}}=\frac{\partial}{\partial t}\int_{C\vol}\rho(\vec{r}\times\vec{V})\,d\vol+\int_{CS}\rho(\vec{r}\times\vec{V})(\vec{V}_{\mathrm{rel}}\cdot\hat{n})\,dA\]
+    \item For steady operation, the angular momentum accumulation term vanishes. Assuming uniform flow at the inlet and outlet, the torque exerted by the fluid on the rotor is:
+    \[T=\dot{m}(R_1V_{\theta,1}-R_2V_{\theta,2})\]
+    \item From the velocity triangles, the absolute tangential velocity components are:
+    \[V_{\theta,1}=V_1\cos\alpha_1=(\SI{50}{\meter\per\second})\cos13.4^\circ=\SI{48.64}{\meter\per\second}\]
+    \[V_{\theta,2}=V_2\cos\alpha_2=(\SI{30}{\meter\per\second})\cos40^\circ=\SI{22.98}{\meter\per\second}\]
+    \item The mass flowrate is:
+    \[\dot{m}=\rho Q=(\SI{999.7}{\kilogram\per\meter\cubed})(\SI{36.4}{\meter\cubed\per\second})=\SI{36389}{\kilogram\per\second}\]
+    \item Substituting into the torque equation:
+    \[T=\rho Q(R_1V_1\cos\alpha_1-R_2V_2\cos\alpha_2)\]
+    \[=(\SI{999.7}{\kilogram\per\meter\cubed})(\SI{36.4}{\meter\cubed\per\second})[(\SI{1.0}{\meter})(\SI{50}{\meter\per\second})\cos13.4^\circ-(\SI{0.50}{\meter})(\SI{30}{\meter\per\second})\cos40^\circ]\]
+    \[\boxed{T=\SI{1.352e6}{\newton\meter}}\]
+    \item The angular velocity of the rotor is:
+    \[\omega=N\frac{2\pi}{60}=(\SI{360}{\per\minute})\left(\frac{2\pi\ \si{\radian}}{60\ \si{\second\per\minute}}\right)=\SI{37.70}{\radian\per\second}\]
+    \item The power transferred by the fluid to the rotor is:
+    \[\dot{W}=T\omega=(\SI{1.352e6}{\newton\meter})(\SI{37.70}{\radian\per\second})\]
+    \[\boxed{\dot{W}=\SI{50.96}{\mega\watt}}\]
+    \item To determine the inlet relative velocity, use the velocity relationship between the fluid and rotor:
+    \[\vec{V}_{\mathrm{rel},1}=\vec{V}_1-\vec{V}_{\mathrm{rotor},1}\]
+    \item The tangential speed of the rotor at the inlet is:
+    \[V_{\mathrm{rotor},1}=\omega R_1=(\SI{37.70}{\radian\per\second})(\SI{1.0}{\meter})=\SI{37.70}{\meter\per\second}\]
+    \item Resolving the relative velocity into tangential and radial components:
+    \[V_{\mathrm{rel},\theta,1}=V_1\cos\alpha_1-\omega R_1\]
+    \[=(\SI{50}{\meter\per\second})\cos13.4^\circ-\SI{37.70}{\meter\per\second}=\SI{10.94}{\meter\per\second}\]
+    \[V_{\mathrm{rel},r,1}=V_1\sin\alpha_1=(\SI{50}{\meter\per\second})\sin13.4^\circ=\SI{11.59}{\meter\per\second}\]
+    \item Therefore, the magnitude of the inlet relative velocity is:
+    \[V_{\mathrm{rel},1}=\sqrt{V_{\mathrm{rel},\theta,1}^2+V_{\mathrm{rel},r,1}^2}\]
+    \[=\sqrt{(\SI{10.94}{\meter\per\second})^2+(\SI{11.59}{\meter\per\second})^2}\]
+    \[\boxed{V_{\mathrm{rel},1}=\SI{15.94}{\meter\per\second}}\]
+    \item The direction of the relative velocity with respect to the inward radial direction is:
+    \[\tan\beta_1=\frac{V_{\mathrm{rel},\theta,1}}{V_{\mathrm{rel},r,1}}=\frac{V_1\cos\alpha_1-\omega R_1}{V_1\sin\alpha_1}\]
+    \[\beta_1=\tan^{-1}\left(\frac{\SI{10.94}{\meter\per\second}}{\SI{11.59}{\meter\per\second}}\right)\]
+    \[\boxed{\beta_1=43.35^\circ}\]
+    \item Thus, the inlet relative velocity has a magnitude of $\SI{15.94}{\meter\per\second}$ and makes an angle of $43.35^\circ$ with the inward radius, toward the direction of rotor rotation.
+\end{itemize}
+\textbf{Problem 5.9.99 (Problem 5.3.9 in the 9th Edition)}\\
+(a) A siphon is used to draw water at $70^\circ\mathrm{F}$ from a large container as indicated below. The inside diameter of the siphon line is $\SI{1}{\inch}$ and the pipe centerline rises $\SI{3}{\foot}$ above the essentially constant water level in the tank. Show that by varying the length of the siphon below the water level, $h$, the rate of flow through the siphon can be changed. Assuming frictionless flow, determine the maximum flowrate possible through the siphon. The limiting condition is the occurrence of cavitation in the siphon. Will the actual maximum flow be more or less than the frictionless value? Explain.\\
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{5-9-99.png}
+\end{center}
+\textbf{Solution}
+\begin{itemize}
+    \item Starting with the mechanical energy equation for a fixed control volume:
+    \[\frac{\partial}{\partial t}\int_{C\vol}\rho\left(\frac{V^2}{2}+gz\right)d\vol+\int_{CS}\rho\left(\frac{V^2}{2}+\frac{p}{\rho}+gz\right)(\vec{V}\cdot\hat{n})\,dA=\dot{W}_{\mathrm{shaft}}-\dot{E}_{\mathrm{loss}}\]
+    \item For steady, incompressible, frictionless flow with no shaft work, assuming uniform velocity at each section, the equation reduces to Bernoulli's equation:
+    \[\frac{p_1}{\gamma}+\frac{V_1^2}{2g}+z_1=\frac{p_2}{\gamma}+\frac{V_2^2}{2g}+z_2\]
+    \item First, apply Bernoulli's equation between the free surface of the tank (1) and the siphon outlet (2). Since the tank is large, $V_1\approx0$. Both points are exposed to atmospheric pressure, so $p_1=p_2=p_{\mathrm{atm}}$. Taking $z_1=0$ and $z_2=-h$:
+    \[\frac{p_{\mathrm{atm}}}{\gamma}+0+0=\frac{p_{\mathrm{atm}}}{\gamma}+\frac{V_2^2}{2g}-h\]
+    \[\frac{V_2^2}{2g}=h\implies V_2=\sqrt{2gh}\]
+    \item Thus, the volumetric flowrate through the siphon is:
+    \[Q=A_2V_2=\boxed{\frac{\pi D^2}{4}\sqrt{2gh}}\]
+    Therefore, increasing the length $h$ increases the flowrate through the siphon.
+    \item To determine the maximum flowrate, consider the pressure at the highest point of the siphon (3), located $\SI{3}{\foot}$ above the free surface. Cavitation occurs when the absolute pressure drops to the vapor pressure of water:
+    \[p_3=p_v\]
+    \item Applying Bernoulli's equation between the tank free surface (1) and the highest point of the siphon (3):
+    \[\frac{p_{\mathrm{atm}}}{\gamma}+\frac{V_1^2}{2g}+z_1=\frac{p_3}{\gamma}+\frac{V_3^2}{2g}+z_3\]
+    \item Since $V_1\approx0$, $z_1=0$, $z_3=\SI{3}{\foot}$, and the maximum velocity occurs when $p_3=p_v$:
+    \[\frac{p_{\mathrm{atm}}}{\gamma}=\frac{p_v}{\gamma}+\frac{V_{\max}^2}{2g}+\SI{3}{\foot}\]
+    \[V_{\max}=\sqrt{2g\left(\frac{p_{\mathrm{atm}}-p_v}{\gamma}-\SI{3}{\foot}\right)}\]
+    \item For water at $70^\circ\mathrm{F}$, use $\gamma=\SI{62.3}{\lbf\per\foot\cubed}$, $p_v\approx\SI{0.363}{\psi}$ (absolute), and standard atmospheric pressure $p_{\mathrm{atm}}=\SI{14.7}{\psi}$:
+    \[\frac{p_{\mathrm{atm}}-p_v}{\gamma}=\frac{(\SI{14.7}{\psi}-\SI{0.363}{\psi})\cdot\frac{\SI{144}{\inch\squared}}{\SI{1}{\foot\squared}}}{\SI{62.3}{\lbf\per\foot\cubed}}=\SI{33.14}{\foot}\]
+    \item Substituting into the maximum velocity equation:
+    \[V_{\max}=\sqrt{2(\SI{32.2}{\foot\per\second\squared})(\SI{33.14}{\foot}-\SI{3}{\foot})}\]
+    \[\boxed{V_{\max}\approx\SI{44.1}{\foot\per\second}}\]
+    \item The maximum volumetric flowrate is:
+    \[Q_{\max}=AV_{\max}=\frac{\pi D^2}{4}V_{\max}\]
+    \[=\frac{\pi}{4}\left(\SI{1}{\inch}\cdot\frac{\SI{1}{\foot}}{\SI{12}{\inch}}\right)^2(\SI{44.1}{\foot\per\second})\]
+    \[\boxed{Q_{\max}\approx\SI{0.240}{\foot\cubed\per\second}}\]
+    \item The corresponding maximum height $h$ below the free surface is found from:
+    \[h_{\max}=\frac{V_{\max}^2}{2g}=\frac{p_{\mathrm{atm}}-p_v}{\gamma}-\SI{3}{\foot}\]
+    \[\boxed{h_{\max}\approx\SI{30.14}{\foot}}\]
+    \item The actual maximum flowrate will be \textbf{less than the frictionless value}. In reality, viscous friction and other losses cause an additional pressure drop between the free surface and the highest point of the siphon. Therefore, the pressure at the highest point reaches the vapor pressure at a lower flow velocity than predicted by the frictionless model.
+\end{itemize}
+\textbf{Problem 5.9.107 (Problem 5.3.17 in the 9th Edition)}\\
+(a) The pumper truck shown below is to deliver $\SI{1.5}{\foot\cubed\per\second}$ to a maximum elevation of $\SI{60}{\foot}$ above the hydrant. The pressure at the 4-in.-diameter outlet of the hydrant is $10\ \mathrm{psi}$. If head losses are negligibly small, determine the power that the pump must add to the water.\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{5-9-107.png}
+\end{center}
+\textbf{Solution}
+\begin{itemize}
+    \item Starting with the mechanical energy equation between the hydrant outlet (1) and the maximum elevation of the water jet (2):
+    \[\frac{p_1}{\gamma}+\frac{V_1^2}{2g}+z_1+h_p=\frac{p_2}{\gamma}+\frac{V_2^2}{2g}+z_2+h_L\]
+    \item Assuming negligible head losses, $h_L=0$. At the maximum elevation of the jet, $V_2=0$, and since the jet is exposed to atmospheric pressure, $p_2=0$ (gage). Taking $z_1=0$ and $z_2=\SI{60}{\foot}$:
+    \[\frac{p_1}{\gamma}+\frac{V_1^2}{2g}+h_p=\SI{60}{\foot}\]
+    \item From continuity, the velocity at the hydrant outlet is:
+    \[Q=V_1A_1\implies V_1=\frac{Q}{A_1}=\frac{4Q}{\pi D_1^2}\]
+    \[V_1=\frac{4(\SI{1.5}{\foot\cubed\per\second})}{\pi\left(\SI{4}{\inch}\cdot\frac{\SI{1}{\foot}}{\SI{12}{\inch}}\right)^2}=\SI{17.19}{\foot\per\second}\]
+    \item The velocity head at the hydrant outlet is:
+    \[\frac{V_1^2}{2g}=\frac{(\SI{17.19}{\foot\per\second})^2}{2(\SI{32.2}{\foot\per\second\squared})}=\SI{4.59}{\foot}\]
+    \item Using $\gamma=62.4\ \mathrm{lbf/ft^3}$ for water, the pressure head at the hydrant outlet is:
+    \[\frac{p_1}{\gamma}=\frac{10\ \mathrm{lbf/in^2}\cdot\frac{144\ \mathrm{in^2}}{1\ \mathrm{ft^2}}}{62.4\ \mathrm{lbf/ft^3}}=\SI{23.08}{\foot}\]
+    \item Solving for the required pump head:
+    \[h_p=\SI{60}{\foot}-\frac{p_1}{\gamma}-\frac{V_1^2}{2g}\]
+    \[h_p=\SI{60}{\foot}-\SI{23.08}{\foot}-\SI{4.59}{\foot}=\boxed{\SI{32.33}{\foot}}\]
+    \item The power added to the water by the pump is:
+    \[\dot{W}_p=\rho gQh_p=\gamma Qh_p\]
+    \[\dot{W}_p=(62.4\ \mathrm{lbf/ft^3})(1.5\ \mathrm{ft^3/s})(32.33\ \mathrm{ft})\]
+    \[\dot{W}_p=3026\ \mathrm{ft\cdot lbf/s}\]
+    \item Converting to horsepower:
+    \[\dot{W}_p=3026\ \mathrm{ft\cdot lbf/s}\cdot\frac{1\ \mathrm{hp}}{550\ \mathrm{ft\cdot lbf/s}}\]
+    \[\boxed{\dot{W}_p=\SI{5.50}{\mathrm{hp}}}\]
+\end{itemize}
+\includepdf[pages=-]{ESC340 HW6.pdf}
 
-\textbf{Problem 5.9.38 (9th\#5.2: Linear Momentum)}\\
-\textbf{Problem 5.9.45 (9th\#5.2.11: Linear Momentum)}\\
-\textbf{Problem 5.9.83 (9th\#5.2.49: Moment of Mom.)}\\
-\textbf{Problem 5.9.85 (9th\#5.2.51: Moment of Mom.)}\\
-\textbf{Challenge Activity 5.2.1}\\
-\textbf{Challenge Activity 5.2.2}\\
-
-\textbf{Problem 5.9.99 (9th\#5.3.9: Energy)}\\
-\textbf{Problem 5.9.107 (9th\#5.3.1: Energy)}\\
 
 % ==========================================
 % CHAPTER 6: DIFFERENTIAL ANALYSIS OF FLUID FLOW
@@ -82,13 +405,138 @@ Application of the Reynolds transport theorem to conservation laws and laws of t
 \begin{center}
     {\LARGE\bfseries Chapter 6: Differential Analysis of Fluid Flow\par}
 \end{center}
-Application of Navier stokes equations.
-\textbf{Problem 6.14.12 (9th\#6.2.2: Cons. of Mass)}\\
-\textbf{Problem 6.14.23 (9th\#6.3.1: Linear Momentum)}\\
-\textbf{Problem 6.14.86 (9th\#6.9.16: Couette Flow)}\\
+Application of Navier stokes equations.\\\\
+\textbf{Problem 6.14.14 (Problem 6.2.4 in the 9th Edition)}\\
+The $x$-velocity profile in a certain laminar boundary layer is approximated as follows:
+\[u=U_0\sin\left(\frac{\pi}{2}\frac{y}{0.1\sqrt{x}}\right)\]
+(a) Determine the $y$-velocity, $v(x,y)$.\\
+\textbf{Solution}
+\begin{itemize}
+    \item Starting with the general differential equation for conservation of mass:
+    \[\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\vec{V})=0\]
+    \item Assuming steady, incompressible, two-dimensional flow, the continuity equation reduces to:
+    \[\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0\]
+    \item Rearranging to solve for the $y$-velocity:
+    \[\frac{\partial v}{\partial y}=-\frac{\partial u}{\partial x}\]
+    \item Taking the partial derivative of the given velocity profile with respect to $x$:
+    \[\frac{\partial u}{\partial x}=U_0\cos\left(\frac{\pi y}{0.2\sqrt{x}}\right)\frac{\partial}{\partial x}\left(\frac{\pi y}{0.2\sqrt{x}}\right)\]
+    \[=-\frac{\pi U_0y}{0.4x^{3/2}}\cos\left(\frac{\pi y}{0.2\sqrt{x}}\right)\]
+    \item Substituting into the continuity equation:
+    \[\frac{\partial v}{\partial y}=\frac{\pi U_0y}{0.4x^{3/2}}\cos\left(\frac{\pi y}{0.2\sqrt{x}}\right)\]
+    \item Integrating with respect to $y$:
+    \[v(x,y)=\frac{\pi U_0}{0.4x^{3/2}}\int y\cos\left(\frac{\pi y}{0.2\sqrt{x}}\right)\,dy+C(x)\]
+    \item Using integration by parts:
+    \[\int y\cos(ay)\,dy=\frac{y\sin(ay)}{a}+\frac{\cos(ay)}{a^2}\]
+    where $a=\dfrac{\pi}{0.2\sqrt{x}}$. Therefore:
+    \[v(x,y)=\frac{U_0y}{2x}\sin\left(\frac{\pi y}{0.2\sqrt{x}}\right)+\frac{0.1U_0}{\pi\sqrt{x}}\cos\left(\frac{\pi y}{0.2\sqrt{x}}\right)+C(x)\]
+    \item Applying the no-penetration boundary condition at the stationary wall, $v(x,0)=0$:
+    \[0=\frac{0.1U_0}{\pi\sqrt{x}}+C(x)\]
+    \[C(x)=-\frac{0.1U_0}{\pi\sqrt{x}}\]
+    \item Thus, the $y$-velocity distribution is:
+    \[\boxed{v(x,y)=\frac{U_0y}{2x}\sin\left(\frac{\pi y}{0.2\sqrt{x}}\right)+\frac{0.1U_0}{\pi\sqrt{x}}\left[\cos\left(\frac{\pi y}{0.2\sqrt{x}}\right)-1\right]}\]
+\end{itemize}
+\textbf{Problem 6.14.23 (Problem 6.3.1 in the 9th Edition)}\\
+A fluid with a density of $\SI{2000}{\kilogram\per\meter\cubed}$ flows steadily between two flat plates as shown below.\\
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{6-14-23.png}
+\end{center}
+The bottom plate is fixed and the top one moves at a constant speed in the $x$ direction. The velocity is $\vec{V}=0.20y\hat{i}\ \si{\meter\per\second}$ where $y$ is in meters. The acceleration of gravity is $\vec{g}=-9.8\hat{j}\ \si{\meter\per\second\squared}$. The only nonzero shear stresses, $\tau_{yx}=\tau_{xy}$, are constant throughout the flow with a value of $\SI{5}{\newton\per\meter\squared}$. The normal stress at the origin ($x=y=0$) is $\sigma_{xx}=-\SI{100}{\kilo\pascal}$.\\
+(a) Use the $x$ and $y$ components of the equations of motion (Eqs. 6.3l and 6.3m) to determine the normal stress throughout the fluid. Assume that $\sigma_{xx}=\sigma_{yy}$.\\
+\textbf{Solution}
+\begin{itemize}
+    \item Starting with the general differential equations of motion in the $x$ and $y$ directions:
+    \[\rho a_x=\frac{\partial\sigma_{xx}}{\partial x}+\frac{\partial\tau_{yx}}{\partial y}+\frac{\partial\tau_{zx}}{\partial z}+\rho g_x\]
+    \[\rho a_y=\frac{\partial\tau_{xy}}{\partial x}+\frac{\partial\sigma_{yy}}{\partial y}+\frac{\partial\tau_{zy}}{\partial z}+\rho g_y\]
+    \item The velocity field is steady and one-dimensional:
+    \[\vec{V}=u(y)\hat{i}=0.20y\hat{i}\]
+    \item From the material derivative, the acceleration field is:
+    \[\vec{a}=\frac{D\vec{V}}{Dt}=\frac{\partial\vec{V}}{\partial t}+u\frac{\partial\vec{V}}{\partial x}+v\frac{\partial\vec{V}}{\partial y}+w\frac{\partial\vec{V}}{\partial z}\]
+    \item Since $\partial\vec{V}/\partial t=0$, $\partial\vec{V}/\partial x=0$, and $v=w=0$:
+    \[\vec{a}=0\implies a_x=a_y=0\]
+    \item The shear stresses are constant throughout the flow, so their spatial derivatives vanish. Additionally, $g_x=0$ and $g_y=-\SI{9.8}{\meter\per\second\squared}$.
+    \item Applying the $x$-direction equation of motion:
+    \[0=\frac{\partial\sigma_{xx}}{\partial x}+0+0+0\]
+    \[\frac{\partial\sigma_{xx}}{\partial x}=0\]
+    Therefore, $\sigma_{xx}$ does not vary with $x$.
+    \item Applying the $y$-direction equation of motion:
+    \[0=0+\frac{\partial\sigma_{yy}}{\partial y}+0+\rho g_y\]
+    \[\frac{\partial\sigma_{yy}}{\partial y}=-\rho g_y=\rho g\]
+    \item Substituting the given values:
+    \[\frac{\partial\sigma_{yy}}{\partial y}=(\SI{2000}{\kilogram\per\meter\cubed})(\SI{9.8}{\meter\per\second\squared})=\SI{19600}{\pascal\per\meter}\]
+    \item Integrating with respect to $y$:
+    \[\sigma_{yy}=\rho gy+C\]
+    \item Since $\sigma_{xx}=\sigma_{yy}$ and $\sigma_{xx}(0,0)=-\SI{100}{\kilo\pascal}$, the boundary condition gives:
+    \[\sigma_{yy}(0,0)=-\SI{100000}{\pascal}=C\]
+    \item Therefore, the normal stress distribution throughout the fluid is:
+    \[\boxed{\sigma_{xx}=\sigma_{yy}=-100000+19600y\quad(\si{\pascal})}\]
+    where $y$ is measured in meters upward from the bottom plate.
+\end{itemize}
+\textbf{Problem 6.14.86 (Problem 6.9.16 in the 9th Edition)}\\
+A viscous fluid is contained between two long concentric cylinders. The geometry of the system is such that the flow between the cylinders is approximately the same as the laminar flow between two infinite parallel plates.\\
+\textbf{(a)} Determine an expression for the torque required to rotate the outer cylinder with an angular velocity $\omega$. The inner cylinder is fixed. Express your answer in terms of the geometry of the system, the viscosity of the fluid, and the angular velocity.\\
+\textbf{Solution}
+\begin{itemize}
+    \item Define the inner cylinder radius as $R_i$, outer cylinder radius as $R_o$, cylinder length as $L$, and gap thickness as $b=R_o-R_i$. Since the gap is small relative to the cylinder radii, the flow can be approximated as laminar flow between parallel plates.
+    \item Starting with Newton's law of viscosity for a Newtonian fluid:
+    \[\tau=\mu\frac{du}{dy}\]
+    \item Assuming steady, fully developed flow with no pressure gradient, the velocity profile between the cylinders is approximately linear. Applying the no-slip boundary conditions, $u(0)=0$ at the fixed inner cylinder and $u(b)=\omega R_o$ at the rotating outer cylinder:
+    \[u(y)=\frac{\omega R_o}{b}y=\frac{\omega R_o}{R_o-R_i}y\]
+    \item The velocity gradient and shear stress are:
+    \[\frac{du}{dy}=\frac{\omega R_o}{R_o-R_i}\]
+    \[\tau=\mu\frac{\omega R_o}{R_o-R_i}\]
+    \item The shear force acting on the outer cylinder is the shear stress multiplied by its wetted surface area:
+    \[F=\tau A=\tau(2\pi R_oL)\]
+    \item The torque required to rotate the cylinder is:
+    \[T=FR_o=\tau(2\pi R_oL)R_o\]
+    \item Substituting the shear stress:
+    \[T=\left(\mu\frac{\omega R_o}{R_o-R_i}\right)(2\pi R_oL)R_o\]
+    \[\boxed{T=\frac{2\pi\mu\omega R_o^3L}{R_o-R_i}}\]
+    \item This torque must be applied in the direction of rotation to overcome the viscous resistance of the fluid.
+\end{itemize}
+\textbf{(b)} For a small, rectangular element located at the fixed wall, determine an expression for the rate of angular deformation of this element (see Video 6.1.3).\\
+\textbf{Solution}
+\begin{itemize}
+    \item The rate of angular deformation for a two-dimensional fluid element is given by:
+    \[\dot{\gamma}_{xy}=\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}\]
+    \item Since the flow is approximately unidirectional and the velocity varies only across the gap, $v=0$ and $\partial v/\partial x=0$. Thus:
+    \[\dot{\gamma}_{xy}=\frac{du}{dy}\]
+    \item Using the linear velocity profile from part (a):
+    \[u(y)=\frac{\omega R_o}{R_o-R_i}y\]
+    \item Differentiating with respect to $y$:
+    \[\dot{\gamma}_{xy}=\frac{d}{dy}\left(\frac{\omega R_o}{R_o-R_i}y\right)\]
+    \[\boxed{\dot{\gamma}_{xy}=\frac{\omega R_o}{R_o-R_i}}\]
+    \item Therefore, the rate of angular deformation is constant throughout the gap, including at the fixed wall, despite the fluid velocity being zero at that wall.
+\end{itemize}
 \textbf{Challenge Activity 6.9.1}\\
-
-
-
-
+Two fixed, horizontal, parallel plates are spaced $\SI{0.8}{\inch}$ apart. A viscous liquid ($\mu=8\times10^{-3}\ \mathrm{lb\cdot s/ft^2}$, $SG=0.9$) flows between the plates with a mean velocity of $\SI{0.3}{\foot\per\second}$. The flow is laminar.\\
+\textbf{(a)} Determine the pressure drop per foot in the direction of flow.\\
+\textbf{Solution}
+\begin{itemize}
+    \item Starting with the Navier-Stokes equation for an incompressible Newtonian fluid:
+    \[\rho\frac{D\vec{V}}{Dt}=-\nabla p+\rho\vec{g}+\mu\nabla^2\vec{V}\]
+    \item For steady, fully developed, unidirectional flow between horizontal, fixed parallel plates, $\vec{V}=u(y)\hat{i}$ and $g_x=0$. The $x$ component reduces to:
+    \[0=-\frac{dp}{dx}+\mu\frac{d^2u}{dy^2}\]
+    \item Integrating twice and applying the no-slip boundary conditions at the plates gives the parabolic velocity profile:
+    \[u(y)=\frac{1}{2\mu}\frac{\Delta p}{l}(h^2-y^2)\]
+    where $h$ is half the plate spacing and $y=0$ is the channel centerline.
+    \item Averaging the velocity profile across the channel gives:
+    \[V=\frac{1}{2h}\int_{-h}^{h}u(y)\,dy=\frac{h^2}{3\mu}\frac{\Delta p}{l}\]
+    \item Rearranging for the pressure drop per unit length:
+    \[\frac{\Delta p}{l}=\frac{3\mu V}{h^2}\]
+    \item Since the plates are spaced $\SI{0.8}{\inch}$ apart, the half-spacing is $h=\SI{0.4}{\inch}$. Substituting:
+    \[\frac{\Delta p}{l}=\frac{3\left(8\times10^{-3}\ \mathrm{lb\cdot s/ft^2}\right)\left(0.3\ \mathrm{ft/s}\right)}{\left(0.4\ \mathrm{in}\cdot\frac{1\ \mathrm{ft}}{12\ \mathrm{in}}\right)^2}\]
+    \[=6.48\ \mathrm{lb/ft^2}\text{ per ft}\]
+    \[\boxed{\frac{\Delta p}{l}=6.48\ \mathrm{lb/ft^3}}\]
+\end{itemize}
+\textbf{(b)} What is the maximum velocity in the channel?\\
+\textbf{Solution}
+\begin{itemize}
+    \item From the parabolic velocity profile, the maximum velocity occurs at the centerline, $y=0$:
+    \[U_{\max}=\frac{h^2}{2\mu}\frac{\Delta p}{l}\]
+    \item Comparing with the mean velocity expression $V=\dfrac{h^2}{3\mu}\dfrac{\Delta p}{l}$:
+    \[U_{\max}=\frac{3}{2}V\]
+    \item Substituting the mean velocity:
+    \[U_{\max}=\frac{3}{2}\left(\SI{0.3}{\foot\per\second}\right)\]
+    \[\boxed{U_{\max}=\SI{0.450}{\foot\per\second}}\]
+\end{itemize}
 \end{document}
