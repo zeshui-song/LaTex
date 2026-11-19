@@ -444,7 +444,7 @@ Thus, integrating over the outflow portion of the control surface,
 we can express the total rate of outflow of $B$ as:
 \[\dot{B}_{\text{out}} = \int_{CS_{\text{out}}} \rho b (\vec{V}\cdot \hat{n}) \, dA\]
 Similarly, the total rate of inflow of $B$ is:
-\[\dot{B}_{\text{in}} = \int_{CS_{\text{in}}} \rho b (\vec{V}\cdot \hat{n}) \,dA\]
+\[\dot{B}_{\text{in}} = -\int_{CS_{\text{in}}} \rho b (\vec{V}\cdot \hat{n}) \,dA\]
 We can combine these two integrals into a single flux integral over the entire control surface:
 \[\dot{B}_{\mathrm{out}}-\dot{B}_{\mathrm{in}}=\int_{CS}\rho b(\vec{V}\cdot\hat{n})\,dA\]
 This is analogous to Gauss's law in electromagnetism, where a single surface integral over a closed surface represents the net flux of a vector field. Here, the dot product with $\hat{n}$ automatically accounts for the \hl{positive contributions from outflow and negative contributions from inflow (sign convention)}.\\\\
@@ -1010,7 +1010,7 @@ Recall that specific enthalpy is defined as $\tilde{h} = \tilde{u} + \frac{p}{\r
 \section*{\fbox{5.5 Second law of thermodynamics—irreversible flow}}
 \addcontentsline{toc}{section}{5.5 Second law of thermodynamics—irreversible flow}
 The second law of thermodynamics is when our favorite topic, entropy $s$ comes in. It states that the amount of useful energy in a system decreases over time, and thus indicates irreversibility of a process. For example, viscous friction in a pipe converts organized mechanical energy into internal energy. The total energy is still conserved, but less mechanical energy is available to drive the flow or perform useful work.\\\\
-Like everything else, specific entropy is an extensive property,and so we can apply the Reynolds Transport Theorem to it.\\\\
+Like everything else, entropy is an extensive property,and so we can apply the Reynolds Transport Theorem to it.\\\\
 The second law states:
 \[
 \boxed{\frac{DS_\text{sys}}{Dt}=\frac{D}{Dt}\int_{\mathrm{sys}}\rho s\,d\vol\geq\sum\frac{\delta\dot Q_{\mathrm{in}}}{T}}
