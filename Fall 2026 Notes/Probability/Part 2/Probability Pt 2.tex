@@ -1,0 +1,1175 @@
+﻿\documentclass[12pt]{article}
+\usepackage{amssymb, amsmath, amsfonts, bm, graphicx, geometry}
+\usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
+\usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
+\usepackage{siunitx, soul}  % Eases typesetting of numbers and units
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\geometry{margin=1in}
+\newtcolorbox{definition}[1]{
+    enhanced,
+    breakable,
+    lines before break=1,
+    colback=gray!5,
+    colframe=black!60,
+    boxrule=0.6pt,
+    arc=2mm,
+    left=1.5mm,
+    right=1.5mm,
+    top=1mm,
+    bottom=1mm,
+    fonttitle=\bfseries,
+    title={Definition: #1}
+}
+
+\newtcolorbox{theorem}[1]{
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=black,
+    boxrule=0.8pt,
+    borderline west={2pt}{0pt}{black},
+    arc=1mm,
+    left=2mm,
+    right=1.5mm,
+    top=1mm,
+    bottom=1mm,
+    fonttitle=\bfseries,
+    title={Theorem: #1}
+}
+
+\usepackage[most]{tcolorbox}
+
+% Minimal boxes: no colored title bars or rounded corners
+\newtcolorbox{notebox}[1][Side Note]{
+    enhanced,
+    breakable,
+    colback=black!2,
+    colframe=black!20,
+    boxrule=0.3pt,
+    arc=0pt,
+    left=7pt, right=7pt,
+    top=5pt, bottom=5pt,
+    before upper={\textit{Side Note:} \textbf{#1}\par\smallskip}
+}
+
+\begin{document}
+\textit{For my chapter 2 notes, I will organize is slightly differently from the textbook chapters. Instead, I will present the fundamental equations and definitions in Part I, keeping the various discrete distributions separate in Part II.}
+\section*{\fbox{Part I: Fundamentals of Discrete Random Variables}}
+\subsection*{\underline{Discrete Random Variables (2.1)}}
+\addcontentsline{toc}{section}{Discrete Random Variables (2.1)}
+Recall from Section 1.1 that a random variable is a \textit{function} that maps outcomes in the sample space to real numbers. A probability mass function (p.m.f.) then maps the values of a random variable to their corresponding probabilities. In essence, we are simply adding a layer of abstraction to the sample space. Instead of working with the sample space directly, we can work with a random variable, allowing us to study the \textit{probability distribution} of an experiment.\\\\
+Also recall that a \textit{discrete random variable} is a random variable whose possible values are finite or countably infinite.\\\\
+\underline{Note:} \hl{Countably infinite} means that the values can be listed individually, even if the list never ends. Ex: $\{1,2,3,\dots\}$ is countably infinite, while $\{1,2,3,\dots,10\}$ is finite.
+\begin{theorem}{Properties of a Discrete Probability Mass Function (p.m.f.)}
+A p.m.f. $f(x)$ of a discrete random variable $X$ satisfies the following properties:
+\begin{enumerate}
+    \item For any value $x$ in the sample space $S$, the p.m.f. is non-negative (probabilities cannot be negative):
+    \[f(x) > 0,\quad x \in S\]
+    \item The possible values of the random variable $X$ accounts for all possible outcomes, \textit{something must happen}: 
+    \[\sum_{x \in S} f(x) = 1\]
+    \item The probability of an event $A$ (a subset of the sample space) is the sum of the probabilities of the individual values:
+    \[P(X \in A) = \sum_{x \in A} f(x)\]
+\end{enumerate}
+\underline{Note:}
+\begin{itemize}
+    \item $X$ is a random variable, a function that maps outcomes to numbers.
+    \item $x$ is a specific value that $X$ can take.
+    \item $A$ is a set of possible values of $X$.
+    \item $P(X=x)=f(x)$ is the probability that $X$ takes the value $x$.
+    \item $P(X\in A)=\sum_{x\in A}f(x)$ is the probability that $X$ takes any value in $A$.
+\end{itemize}
+
+\underline{Ex:} Roll a fair 6-sided die. Let $X$ represent the number rolled, with $S_X=\{1,2,3,4,5,6\}$. Define $A=\{2,3,4,5\}$ as the event that the number is between 2 and 5. By property 3,
+\[P(X\in A)=f(2)+f(3)+f(4)+f(5)=\frac{4}{6}\]
+\end{theorem}
+\begin{definition}{Support of a Random Variable}
+    The support $S$ of a random variable $X$ is the set of all inputs $x$ such that the p.m.f. is non-zero:
+    \[P(X=x) \neq 0,\quad x \in S\]
+\end{definition}
+\underline{Example: problem 2.1-7}\\
+Let a random experiment be the casting of a pair of unbiased six-sided dice, and let $X$ equal the smaller of the outcomes if they are different and the common value if they are equal.
+\begin{enumerate}
+    \item[(a)] With reasonable assumptions, find the p.m.f. of $X$.\\
+    This is a counting problem of favorable vs total outcomes.\\\\
+    Let $X$ be the random variable that equals the number of the smaller die OR the shared number if the two dice are equal. The possible values of $X$ are $\{1,2,3,4,5,6\}$. 
+    \begin{itemize}
+        \item Total outcomes: 
+        \[
+\underbrace{6}_{\substack{\text{First die}\\\text{outcomes}}}
+\times
+\underbrace{6}_{\substack{\text{Second die}\\\text{outcomes}}}
+=36\text{ equally likely outcomes}
+\]
+\item Favorable outcomes (Cases)
+\begin{itemize}
+    \item Case 1: First die is $x$ and second die is greater than $x$. There are $6-x$ outcomes for the second die.
+    \[
+\underbrace{1}_{\substack{\text{First die}\\\text{equals }x}}
+\times
+\underbrace{(6-x)}_{\substack{\text{Second die}\\\text{greater than }x}}
+=
+\underbrace{6-x}_{\text{Favorable outcomes}}
+\]
+    \item Case 2: Second die is $x$ and first die is greater than $x$. There are $6-x$ outcomes for the first die.
+    \[\underbrace{(6-x)}_{\substack{\text{First die}\\\text{greater than }x}}
+\times
+\underbrace{1}_{\substack{\text{Second die}\\\text{equals }x}}
+=
+\underbrace{6-x}_{\text{Favorable outcomes}}
+\]
+\item Case 3: Both dice equal $x$. There is only 1 outcome.
+\end{itemize}
+    \end{itemize}
+    Thus the p.m.f. of $X$ is:
+\[
+P(X=x)=
+\begin{cases}
+\displaystyle \frac{(1)(6-x)+(6-x)(1)+1}{36}
+=\frac{13-2x}{36}, & x\in\{1,2,3,4,5,6\}\\[8pt]
+0, & \text{otherwise}
+\end{cases}
+\]
+    \item[(b)] Let $Y$ equal the range of the two outcomes (i.e., the absolute value of the difference of the largest and the smallest outcomes). Determine the p.m.f. $g(y)$ of $Y$ for $y=0,1,2,3,4,5$.\\\\
+    Let $Y$ be the random variable that equals the range of the two dice. The possible values of $Y$ are $\{0,1,2,3,4,5\}$.
+    \begin{itemize}
+        \item Total outcomes: $36$ (same as before)
+        \item Favorable outcomes (Cases)
+        \begin{itemize}
+            \item Case 1: $Y=0$. This occurs when both dice are matching.
+    \[
+\underbrace{6}_{\substack{\text{First die}\\\text{outcomes}}}
+\times
+\underbrace{1}_{\substack{\text{Second die}\\\text{outcomes}}}
+=\underbrace{6}_{\substack{\text{Favorable outcomes}}}
+\]
+            \item Case 2: $Y>0$, first die is larger. Where (Die 1 \#) - (Die 2 \#) = $y$
+                \[
+\underbrace{(6-y)}_{\substack{\text{First die}\\\text{larger by }y}}
+\times
+\underbrace{1}_{\substack{\text{Second die}}}
+=
+\underbrace{6-y}_{\text{Favorable outcomes}}
+\]
+            \item Case 3: $Y>0$, second die is larger. Where (Die 2 \#) - (Die 1 \#) = $y$
+             \[
+\underbrace{1}_{\substack{\text{First die}}}
+\times
+\underbrace{(6-y)}_{\substack{\text{Second die}\\\text{larger by }y}}
+=
+\underbrace{6-y}_{\text{Favorable outcomes}}
+\]
+    \end{itemize}
+\end{itemize}
+Thus the p.m.f. of $Y$ is:
+\[
+P(Y=y)=
+\begin{cases}
+\displaystyle \frac{6-y}{36}, & y\in\{0\}\\[8pt]
+\frac{2(6-y)}{36}, & y\in\{1,2,3,4,5\}\\[8pt]
+0, & \text{otherwise}
+\end{cases}
+\]
+\end{enumerate} 
+\begin{notebox}[General approach to a p.m.f. counting problem]
+    \[
+\begin{gathered}
+\text{Translate the random variable into words}\\
+\downarrow\\
+\text{Count for one specific value of random variable}\\
+\downarrow\\
+\text{Find the pattern and generalize}\\
+\downarrow\\
+\text{Divide by total outcomes}
+\end{gathered}
+\]
+Multiply when combining independent choices within a case. Add when combining mutually exclusive cases.
+\end{notebox}
+\subsection*{\underline{Cumulative Distribution Function (c.d.f.) (2.4)}}
+\addcontentsline{toc}{section}{Cumulative Distribution Function (c.d.f.) (2.4)}
+\begin{definition}{Cumulative Distribution Function (c.d.f.)}
+    The cumulative distribution function gives the probability that \(X\) is less than or equal to some value \(x\).
+    \[\boxed{F(x)=P(X\leq x)}\]
+    Some properties of the c.d.f. are:
+    \begin{itemize}
+        \item $0 \leq F(x) \leq 1$ for all $x$
+        \item $F(x)$ is always weakly increasing (can stay constant or increase, but never decrease)
+        \item The total probability of all outcomes is 1. As \(x\) increases, the c.d.f. accumulates more probability, approaching 1. Conversely, as \(x\) decreases, fewer outcomes satisfy \(X\leq x\), so the accumulated probability approaches 0. Thus, the limits of the c.d.f. are:
+        \[\lim_{x \to -\infty} F(x) = 0 \quad \text{and} \quad \lim_{x \to \infty} F(x) = 1\]
+    \end{itemize}
+\end{definition}
+\subsubsection*{Relationship Between p.m.f. and c.d.f.}
+Generally, the c.d.f. of $X$ is just the sum of the p.m.f. of $X$ for all values less than or equal to $x$:
+\[F(x) = \sum_{i=0}^{\lfloor x \rfloor} p(i)\]
+Following this relationship, the p.m.f. can be derived from the c.d.f. as follows:
+\[f(x) = F(x) - F(x-1)\]
+Application wise, the c.d.f. is useful for calculating probabilities of ranges of values.\\\\
+For example:
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\textbf{Probability Requested} & \textbf{Calculation} \\
+\hline
+At most $k$    & $P(X \leq k) = F(k)$ \\
+Fewer than $k$ & $P(X < k) = F(k-1)$ \\
+At least $k$   & $P(X \geq k) = 1-F(k-1)$ \\
+More than $k$  & $P(X > k) = 1-F(k)$ \\
+Exactly $k$    & $P(X = k) = F(k)-F(k-1)$ \\
+\hline
+\end{tabular}
+\end{center}
+To minimize calculations, sum the probabilities over the shorter tail of the distribution, using the complement rule $P(X> x)=1-P(X\leq x)$ when the upper tail is shorter.
+\subsection*{Discrete c.d.f.s are step functions}
+Recall that c.d.f.s accumulate probability, and thus it is always weakly increasing (can stay constant or increase, but never decrease). For discrete random variables, the c.d.f. is a step function with jumps at values of the random variable with nonzero probability:
+\begin{center}
+\includegraphics[width=0.5\textwidth]{../DiscreteCDF.png}
+\end{center}
+\subsection*{Check for valid p.m.f.s and c.d.f.s}
+From the properties of p.m.f.s and c.d.f.s, we can check if a given function is a valid p.m.f. or c.d.f.\\\\
+\textbf{Check for valid p.m.f.}
+\begin{itemize}
+    \item Check that $f(x) \geq 0$ for all $x$ in the support $S$.
+    \item Check that $\sum_{x \in S} f(x) = 1$.
+\end{itemize}
+\textbf{Check for valid c.d.f.}
+\begin{itemize}
+    \item Check that for $x\to -\infty$, $F(x) \to 0$ and for $x \to \infty$, $F(x) \to 1$.
+    \item Check that $F(x)$ is weakly increasing (can stay constant or increase, but never decrease).
+    \item $F(x)$ must be right continuous, meaning that for any $x_0$, $\lim_{x \to x_0^+} F(x) = F(x_0)$.\\
+    \textit{Right-continuity means the c.d.f. must take the higher value at a jump.}
+\end{itemize}
+
+\subsection*{\underline{Mathematical Expectation (2.2)}}
+\addcontentsline{toc}{section}{Mathematical Expectation (2.2)}
+
+\leavevmode
+\begin{definition}{The Expectation Value of a Discrete Random Variable}
+    The expectation value (or expected value) represents the average value of a \textit{function of a random variable} over many trials of an experiment.\\\\
+    For a discrete random variable $X$ with p.m.f. $f(x)$, the expected value of $X$ is given by:
+    \[E(X) = \sum_{x \in S} x f(x)\]
+    Intuitively, each possible outcome $x$ is weighted by its probability $f(x)$, where more likely outcomes contribute more to the expected value. Note that the expected value does not have to equal a possible outcome, since it can be thought of as a weighted average.\\\\
+    We can also define the expected value of a function of a random variable $u(X)$ as:
+    \[E(u(X)) = \sum_{x \in S} u(x) f(x)\]
+\end{definition}
+ \underline{Note:} The definition of expected value requires that the sum converges absolutely, 
+\[\sum_{x \in S} |x|f(x) < \infty.\]
+If this condition is not satisfied, the expected value does not exist. However, for most applications considered, we can assume that the sum converges absolutely.
+\begin{theorem}{Properties of Expected Value}
+When the expected value exists, it satisfies the following properties:
+\begin{enumerate}
+    \item [(a)] Expectation of a constant $c$
+    \[E(c) = c\]
+    \item [(b)] If $c$ is a constant and $u$ is a function of a random variable $X$, then
+    \[E(c + u(X)) = c + E(u(X))\]
+    \item [(c)] If $c_1$ and $c_2$ are constants and $u_1$ and $u_2$ are functions of a random variable $X$, then
+    \[E(c_1 u_1(X) + c_2 u_2(X)) = c_1 E(u_1(X)) + c_2 E(u_2(X))\]
+\end{enumerate}
+All of these properties can be referred to as the \hl{Linearity of Expectation.}\\\\
+Let $X_1, X_2, \ldots, X_n$ be random variables. Then for any constants $c_1, c_2, \ldots, c_n$, we have:
+\[E\left(\sum_{i=1}^n c_i X_i\right) = \sum_{i=1}^n c_i E(X_i)\]
+\hl{Thus, if we can split up a random variable into a sum of simpler random variables, we can break it up into the sum of their expected values!}
+\end{theorem}
+\subsection*{\underline{The Mean, Variance, and Standard Deviation (2.3)}}
+\addcontentsline{toc}{section}{The Mean, Variance, and Standard Deviation (2.3)}
+\begin{definition}{Mean}
+    The mean is the expected value of a random variable $X$:
+    \[\mu = E(X) = \sum_{x \in S} x f(x)\]
+    \underline{Mechanical Analogy:} If probabilities $P(X=x)$ were treated as weights placed at their corresponding values $x$, then the mean is the centroid or balance point of the distribution.\\\\
+    \underline{Note:} the first moment of a random variable $X$ about the mean $\mu$ is zero:
+    \[E(X-\mu) = E(X) - \mu = 0\]
+\end{definition}
+\begin{definition}{Variance and Standard Deviation}
+    While the mean describes the center of a distribution, the variance and standard deviation describe how spread out the distribution is.\\\\
+    \textbf{Variance}\\
+    The variance of a random variable $X$ is the expected squared deviation from the mean:
+    \[
+\boxed{\sigma^2=\operatorname{Var}(X)=E[(X-\mu)^2]}
+\]
+Expanding and applying the linearity of expectation, we can rewrite the variance as:
+\[\boxed{\operatorname{Var}(X) = E(X^2) - [E(X)]^2}\]
+\underline{Intuition:} Squaring the deviations from the mean prevents positive and negative deviations from canceling each other out. It also has the property that larger deviations are weighted more heavily than smaller deviations (square of a number less than 1 is pushed closer to 0, while square of a number greater than 1 is pushed further away from 0).\\\\
+\textbf{Standard Deviation}\\
+The standard deviation is the square root of the variance:
+\[\boxed{\sigma = \sqrt{\operatorname{Var}(X)}}\]
+\underline{General Behavior of Variance:}
+\begin{itemize}
+    \item An offset in the random variable does not change the variance (spread of the distribution): $$\operatorname{Var}(X+b) = \operatorname{Var}(X)$$
+    \item Scaling the random variable by a constant $c$ scales the variance by $c^2$: $$\operatorname{Var}(cX) = c^2\operatorname{Var}(X)$$
+    \item Variance of a sum of independent random variables is the sum of their variances: $$\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)$$
+\end{itemize}
+\end{definition}
+\newpage
+\underline{Example: Expectation and Variance Group Work, Problem 2}\\
+Suppose that $X$ is a discrete random variable with $\mathrm{E}[X]=1$ and $\mathrm{E}[X(X-2)]=3$. Find $\mathrm{Var}(-3X+5)$.\\\\
+By property of variance, we have:
+\[\mathrm{Var}(-3X+5) = (-3)^2\mathrm{Var}(X) = 9\mathrm{Var}(X)\]
+Variance is also defined as 
+\[\mathrm{Var}(X) =\mathrm{E}(X^2) - [\mathrm{E}(X)]^2\]
+Linearity of expectation gives us $\mathrm{E}(X^2)$:
+\[\mathrm{E}[X(X-2)] = \mathrm{E}(X^2) - 2\mathrm{E}(X) = 3\]
+\[\implies \mathrm{E}(X^2) = 3 + 2(1) = 5\]
+Thus, 
+\[9\mathrm{Var}(X) = 9[5-(1)^2] = \boxed{36}\]
+\subsection*{\underline{Moments of a Distribution (2.3)}}
+\addcontentsline{toc}{section}{Moments of a Distribution (2.3)}
+\begin{definition}{Moments of a Distribution}
+    Given a random variable $X$ and positive integer $n$, then the \hl{$n$-th moment of $X$ about the origin} is defined as:
+    \[E(X^n) = \sum_{x \in S} x^n f(x)\]
+    The \hl{$n$-th moment of $X$ about the mean} is defined as:
+    \[E[(X-\mu)^n] = \sum_{x \in S} (x-\mu)^n f(x)\]
+    The \hl{$r$-th factorial moment of $X$} is defined as:
+    \[E[(X)_r] = E[X(X-1)(X-2)\cdots(X-r+1)]\]
+\end{definition}
+\subsubsection*{Special Cases for Moments of a Distribution}
+\begin{itemize}
+    \item The first moment about the origin is the mean: \[E(X)=\mu\]
+    \item The first moment about the mean is zero: \[E(X-\mu)=0\]
+    \item The second moment about the mean is the variance: \[E[(X-\mu)^2]=\sigma^2\]
+    \item The second factorial moment is related to the variance: \[E[(X)_2]=E[X(X-1)]=E(X^2)-E(X)=\sigma^2+\mu^2-\mu\]
+    \[\boxed{\implies \operatorname{Var}(X) = E[X(X-1)] + E(X) - [E(X)]^2}\] 
+\end{itemize}
+\subsection*{\underline{Moment Generating Functions (2.5)}}
+\addcontentsline{toc}{section}{Moment Generating Functions (2.5)}
+The moment generating function m.g.f. provides a way to calculate the moments of a probability distribution instead of calculating them directly from the p.m.f.
+\begin{definition}{Moment Generating Function (m.g.f.)}
+    The moment generating function $M(t)$ of a random variable $X$ is defined such that its derivatives evaluated at $t=0$ give the moments of the distribution:
+    \[\frac{dM}{dt}\bigg|_{t=0} = E(X),\quad \frac{d^2M}{dt^2}\bigg|_{t=0} = E(X^2),\quad \ldots,\quad \frac{d^nM}{dt^n}\bigg|_{t=0} = E(X^n)\]
+    Thus, the m.g.f. is defined as:
+    \[\boxed{M(t)=E(e^{tX})=\sum_{x\in S}e^{tx}f(x)}\]
+    Knowing the m.g.f. is therefore equivalent to knowing the distribution of a random variable, since the m.g.f. can be used to calculate all moments of the distribution.\\\\
+    \underline{Note:} An immediate property of the m.g.f. is that $M(0)=1$, since $e^{0X}=1$ and the sum of the p.m.f. is 1.\\\\
+    \textbf{Mean and Variance in terms of the m.g.f.}
+    \[
+\boxed{\mu=M'(0)}
+\]
+\[
+\boxed{\sigma^2=M''(0)-[M'(0)]^2}
+\]
+\textbf{m.g.f. of a sum of independent random variables}
+\[
+\boxed{M_{X+Y}(t)=M_X(t)M_Y(t)}
+\]
+\end{definition}
+\underline{Example: Exercise 2.5-1}\\
+Given the m.g.f. of a random variable $X$:
+\[
+M(t)=\frac{3}{6}e^t+\frac{2}{6}e^{2t}+\frac{1}{6}e^{3t}
+\]
+\newpage
+Find:
+\begin{enumerate}
+    \item Recovering the p.m.f. of $X$.\\\\
+    Recall that the m.g.f. is defined as:
+    \[
+M(t)=E(e^{tX})=\sum_{x\in S}e^{tx}f(x)
+=e^tf(1)+e^{2t}f(2)+e^{3t}f(3)
+\]
+Thus, the exponent of $e$ corresponds to the value of the random variable, and the coefficient corresponds to the probability of that value. Therefore, we can recover the p.m.f. of $X$ as:
+\[P(1) = \frac{3}{6}, \quad P(2) = \frac{2}{6}, \quad P(3) = \frac{1}{6}\]
+    \item Calculating $E[X]$ using $M'(0)$.\\
+    \[M'(t) = \frac{3}{6}e^t + \frac{2}{6} \cdot 2e^{2t} + \frac{1}{6} \cdot 3e^{3t}\]
+    \[\mathrm{E}[X]=M'(0)= \frac{3}{6} + \frac{2}{6} \cdot 2 + \frac{1}{6} \cdot 3 = \frac53 \]
+    \item Calculating $\operatorname{Var}(X)$ using $M''(0)-[M'(0)]^2$.
+    \[M''(t) = \frac{3}{6}e^t + \frac{2}{6} \cdot 2^2e^{2t} + \frac{1}{6} \cdot 3^2e^{3t}\]
+\[M''(0) = \frac{3}{6} + \frac{2}{6} \cdot 4 + \frac{1}{6} \cdot 9 = \frac{10}{3}\]
+\[\operatorname{Var}(X)=M''(0)-[M'(0)]^2=\frac{10}{3}-\left(\frac{5}{3}\right)^2=\frac{5}{9}\]
+\item Confirm that the mean and variance calculated from the m.g.f. match those calculated directly from the p.m.f.
+\[
+E[X]=\sum_x xP(X=x)=1\left(\frac36\right)+2\left(\frac26\right)+3\left(\frac16\right)=\frac53
+\]
+\[
+E[X^2]=\sum_x x^2P(X=x)=1^2\left(\frac36\right)+2^2\left(\frac26\right)+3^2\left(\frac16\right)=\frac{10}{3}
+\]
+\[
+\operatorname{Var}(X)=E[X^2]-(E[X])^2=\frac{10}{3}-\frac{25}{9}=\frac59
+\]
+Check for valid p.m.f.:
+\[
+\sum_x P(X=x)=\frac36+\frac26+\frac16=1
+\]
+\end{enumerate}
+\newpage
+\subsection*{\underline{Sample Mean and Variance (2.3)}}
+\addcontentsline{toc}{section}{Sample Mean and Variance (2.3)}
+\begin{definition}{\textit{Sample} Mean and Variance}
+    Instead of defining the mean and variance of a random variable, knowing its p.m.f., we can also define the mean and variance of a \textit{sample} of $n$ observations from some experiment (statistics).
+\[
+\boxed{\bar{x}=\frac1n\sum_{i=1}^{n}x_i\quad \text{(Sample Mean)}}
+\]
+\[
+\boxed{s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2 \quad \text{(Sample Variance)}}
+\]
+The sample standard deviation is the square root of the sample variance:
+\[\boxed{s=\sqrt{s^2} \quad \text{(Sample Standard Deviation)}}\]
+\underline{Note:} the variance of the empirical distribution is 
+\[\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2\]
+Empirical variance describes the spread of the data, while sample variance describes the population.
+\end{definition}
+\section*{\fbox{Part II: Distributions of Discrete Random Variables}}
+\subsection*{\underline{Discrete Uniform Distribution (2.1)}}
+\addcontentsline{toc}{section}{Discrete Uniform Distribution (2.1)}
+\begin{definition}{Discrete Uniform Distribution}
+    A discrete random variable $X$ has a uniform distribution if its p.m.f. is constant for all values $x\in S$.\\\\
+    For the first $m$ positive integers, the p.m.f. is given by:
+    \[
+\boxed{f(x) =
+\begin{cases}
+\frac{1}{m}, & x \in \{1,2,\dots,m\} \\[4pt]
+0, & \text{otherwise}
+\end{cases}}
+\]
+    All possible values are equally likely, so total probability is divided equally among them.
+\end{definition}
+\newpage
+\textbf{Cumumlative distribution function (c.d.f.)}\\
+\[F(x) = P(X\leq x) = \sum_{i\leq x} f(i)\]
+since $x\in\{1,2,\dots,m\}$, we have three cases:
+\begin{itemize}
+    \item $x<1$: $$F(x)=0$$
+    \item $1\leq x\leq m$:
+    \[
+F(x)=\sum_{i=1}^{\lfloor x\rfloor}\frac1m=\frac{\lfloor x \rfloor}{m}
+\]
+The c.d.f. accumulates equal probability for each integer value of $x$.
+    \item $x>m$: $$F(x)=1$$
+Above $m$, all possible values of $X$ have been accounted for, so the c.d.f. is 1.
+\end{itemize}
+Thus, the c.d.f. of a discrete uniform distribution is:
+\[
+\boxed{
+F(x)=
+\begin{cases}
+0,&x<1\\[3pt]
+\dfrac{\lfloor x\rfloor}{m},&1\leq x<m\\[6pt]
+1,&x\geq m
+\end{cases}
+}
+\]
+\textit{note that the boundaries must be RIGHT continuous, be careful of the equalities}\\\\
+\textbf{Expected value (mean)}
+\[
+E(X)=\sum_{x=1}^{m}xf(x)=\sum_{x=1}^{m}x\left(\frac1m\right)=\frac1m\sum_{x=1}^{m}x
+\]
+Recall that the sum of an arithmetic series is given by:
+\[
+\sum_{x=1}^{m}x=\frac{m(m+1)}2
+\]
+Thus,
+\[
+E(X)=\frac1m\cdot\frac{m(m+1)}2\quad\implies\quad \boxed{\mu=E(X)=\frac{m+1}{2}}
+\]
+This makes sense! The mean of a uniform distribution is the midpoint of the range of possible values ($1$ and $m$).\\\\
+\textbf{Variance}\\
+\[
+\operatorname{Var}(X)=E(X^2)-[E(X)]^2
+\]
+First, find \(E(X^2)\):
+\[
+E(X^2)=\sum_{x=1}^{m}x^2f(x)=\frac1m\sum_{x=1}^{m}x^2
+\]
+Recall the sum of squares:
+\[
+\sum_{x=1}^{m}x^2=\frac{m(m+1)(2m+1)}6
+\]
+Therefore:
+\[
+E(X^2)=\frac{(m+1)(2m+1)}6
+\]
+Substituting into the variance formula:
+\[
+\operatorname{Var}(X)=\frac{(m+1)(2m+1)}6-\left(\frac{m+1}{2}\right)^2\quad\implies\quad \boxed{\sigma^2=\operatorname{Var}(X)=\frac{m^2-1}{12}}
+\]
+\subsection*{\underline{Bernoulli Distribution (2.4)}}
+\addcontentsline{toc}{section}{Bernoulli Distribution (2.4)}
+\begin{definition}{Bernoulli Trials \& Bernoulli Random Variable}
+    A single Bernoulli trial for a random experiment has exactly two possible outcomes: success and failure. The probability of success is denoted by $p$, and the probability of failure is denoted by $q=1-p$.\\\\
+    The \hl{Bernoulli random variable $X$} is defined as:
+    \[X = \begin{cases}
+    1, & \text{if the trial is a success}\\
+    0, & \text{if the trial is a failure}
+    \end{cases}\]
+    The p.m.f. of a Bernoulli random variable is given by:
+    \[f(x) = \begin{cases}
+    p, & x=1\\
+    1-p, & x=0\\
+    0, & \text{otherwise}
+    \end{cases}\]
+    \[\implies \boxed{f(x)= p^x(1-p)^{1-x}, \quad x=0,1}\]
+\end{definition}
+\newpage
+\textbf{Cumumlative distribution function (c.d.f.)}\\
+\[
+F(x)=P(X\leq x)
+\]
+since $x\in\{0,1\}$, we have three cases:
+\begin{itemize}
+    \item $x<0$: $$F(x)=0$$
+    \item $0\leq x<1$: only $X=0$ is included  $$F(x)=P(X=0)=1-p$$
+    \item $x\geq 1$: all values of $X$ are included $$F(x)=P(X=0)+P(X=1)=1-p+p=1$$
+\end{itemize}
+\[
+\boxed{
+F(x)=
+\begin{cases}
+0,&x<0\\
+1-p,&0\leq x<1\\
+1,&x\geq1
+\end{cases}
+}
+\]
+\textbf{Expected value (mean)}\\
+The expected value of a Bernoulli random variable is equal to the probability of success:
+    \[E(X) = \sum_{x\in S}x\cdot f(x) =  0\cdot(1-p) + 1\cdot p = p\]
+\[
+\boxed{\mu=E(X)=p}
+\]
+Note that intuitively, the expected value can be thought of as the multiplication of each possible value by its probability and summing across all cases.\\\\
+\textbf{Variance}\\
+The variance of a Bernoulli random variable is given by:
+    \[\operatorname{Var}(X) = E(X^2) - [E(X)]^2\]
+First, find \(E(X^2)\):
+\[
+E(X^2)=\sum_{x\in S}x^2f(x)=0^2(1-p)+1^2p=p
+\]
+Thus,
+\[
+\operatorname{Var}(X)=p-p^2 =p(1-p)
+\]
+\[\boxed{\sigma^2 = \operatorname{Var}(X)=p(1-p)}\]
+\newpage
+\textbf{Moment generating function (m.g.f.)}
+\[
+M(t)=E(e^{tX})=\sum_{x\in S}e^{tx}f(x)
+\]
+Substituting the p.m.f. of a Bernoulli random variable:
+\[
+\begin{aligned}
+M(t)&=e^{0t}(1-p)+e^tp\\
+&=1-p+pe^t
+\end{aligned}
+\]
+Thus:
+\[
+\boxed{M(t)=1-p+pe^t}
+\]
+\begin{definition}{Indicator Random Variable}
+    An indicator random variable $I_A$ is a Bernoulli random variable that is defined in terms of an event $A$:
+    \[I_A = \begin{cases}
+    1, & \text{if } A \text{ occurs}\\
+    0, & \text{if } A \text{ does not occur}
+    \end{cases}\]
+    Where the probability of success is the probability of the event $A$ occurring:
+    \[p = P(A)\]
+    and the p.m.f., c.d.f., expected value, variance, and m.g.f. of $I_A$ are the same as those of a Bernoulli random variable with probability of success $p$.
+\end{definition}
+\subsection*{\underline{Binomial Distribution (2.4)}}
+\begin{definition}{Binomial Distribution}
+    A binomial experiment satisfies the following conditions:
+    \begin{enumerate}
+        \item The experiment consists of $n$ trials
+        \item Each trial is independent
+        \item Each trial has exactly two possible outcomes: success and failure
+        \item The probability of success $p$ is the constant for each trial
+    \end{enumerate}
+    \hl{The binomial random variable counts the number of successes for $n$ independent Bernoulli trials, each with probability of success $p$. }\\\\
+    A binomial random variable $X$ is denoted by:
+    \[X \sim Bin(n,p)\]
+    The p.m.f. of a binomial random variable is given by:
+    \[\boxed{f(x) = P(X=x) = \binom{n}{x} p^x (1-p)^{n-x}, \quad x=0,1,2,\ldots,n}\]
+\end{definition}
+\addcontentsline{toc}{section}{Binomial Distribution (2.4)}
+\textbf{Cumumlative distribution function (c.d.f.)}\\
+\[
+F(x)=P(X\leq x)=\sum_{k=0}^{\lfloor x \rfloor}f(k) = \sum_{k=0}^{\lfloor x \rfloor}\binom{n}{k} p^k (1-p)^{n-k}
+\]
+This is not generally solvable in closed form, so the c.d.f. is usually calculated term by term.\\\\
+\textbf{Expected value (mean)}\\
+We can represent the Binomial random variable as a sum of $n$ independent Bernoulli random variables. Let $X_i$ be the Bernoulli random variable for the $i$-th trial:
+\[
+X=X_1+X_2+\cdots+X_n
+\]
+Since each \(X_i\) has expected value \(p\), linearity of expectation gives:
+\[
+E(X)=\sum_{i=1}^{n}E(X_i)=\sum_{i=1}^{n}p=np
+\]
+Thus:
+\[
+\boxed{\mu=E(X)=np}
+\]
+The intuition is that for $n$ trials, each with equal probability $p$ of success, then the expected number of successes is $np$.\\\\
+\textbf{Variance}\\
+Using the variance property for a sum of independent random variables, we can again represent the Binomial random variable as a sum of $n$ independent Bernoulli random variables.\\\\
+Recall that the variance of a Bernoulli random variable is $p(1-p)$.
+\[
+\operatorname{Var}(X)=\sum_{i=1}^{n}\operatorname{Var}(X_i)=\sum_{i=1}^{n}p(1-p)=np(1-p)
+\]
+\[
+\boxed{\sigma^2=\operatorname{Var}(X)=np(1-p)}
+\]
+\textbf{Moment generating function (m.g.f.)}\\
+Approach: Use the m.g.f. of a Bernoulli random variable and the product property for independent sums.\\\\
+Recall that the m.g.f. of a Bernoulli random variable is:
+\[
+M_{X_i}(t)=1-p+pe^t
+\]
+Since \(X=X_1+\cdots+X_n\) and the trials are independent:
+\[
+M_X(t)=\prod_{i=1}^{n}M_{X_i}(t)=(1-p+pe^t)^n
+\]
+Thus:
+\[
+\boxed{M(t)=(1-p+pe^t)^n}
+\]
+\subsection*{\underline{Negative Binomial Distribution (2.5)}}
+\begin{definition}{Negative Binomial Distribution}
+    Unlike the binomial distribution, which counts the number of successes in a fixed number of trials, \hl{the negative binomial random variable \mbox{$X$} counts the number of independent Bernoulli trials required to obtain \mbox{$r$} successes, each trial having a constant probability of success \mbox{$p$}.}\\\\
+    To find the p.m.f., we need to count the possible sequences of \(x\) trials where the \(r\)-th success occurs on the final trial.
+    \begin{itemize}
+        \item The first $x-1$ trials must contain exactly $r-1$ successes
+        \item The $x$-th trial must be a success
+        \item We need at least $r$ trials to achieve $r$ successes, so $x \geq r$
+    \end{itemize}
+    The number of ways to arrange the first \(r-1\) successes among the first \(x-1\) trials is:
+\[
+\binom{x-1}{r-1}
+\]
+Since the entire sequence contains \(r\) successes and \(x-r\) failures, the probability of any particular sequence is:
+\[
+p^r(1-p)^{x-r}
+\]
+Therefore the p.m.f. of $X$ is given by:
+    \[\boxed{f(x)=\binom{x-1}{r-1}p^r(1-p)^{x-r},\quad x=r,r+1,\ldots}\]
+\end{definition}
+\addcontentsline{toc}{section}{Negative Binomial Distribution (2.5)}
+\textbf{Cumumlative distribution function (c.d.f.)}\\
+\[
+F(x)=P(X\leq x)=\sum_{k=r}^{\lfloor x \rfloor}f(k) = \sum_{k=r}^{\lfloor x \rfloor}\binom{k-1}{r-1}p^r(1-p)^{k-r}
+\]
+This is generally hard to simplify so it's best solved term by term.\\
+\textit{For problems involving at least or more than a certain number of trails, using the complement of the c.d.f. can be useful}\\\\
+\textbf{Expected value (mean)}\\
+The textbook derives the expected value using the moment generating function.
+\[
+\boxed{\mu=E(X)=\frac{r}{p}}
+\]
+Intuitively, the average number of trials per success (with probability of success $p$):
+\[
+\frac{\text{Total trials}}{\text{Total successes}}
+\approx \frac{n}{np}=\frac1p
+\]
+therefore, the average number of trials to achieve \(r\) successes is \(r/p\).\\\\
+\textit{We say approximately because $np$ is the expected value for the number of successes, not the exact value.}\\\\
+\textbf{Variance}\\
+Also by using the moment generating function, the variance is given by:
+\[
+\boxed{\sigma^2=\operatorname{Var}(X)=\frac{r(1-p)}{p^2}}
+\]
+\textbf{Moment generating function (m.g.f.)}
+Start from the fundamental definition:
+\[
+M(t)=E(e^{tX})=\sum_{x=r}^{\infty}e^{tx}\binom{x-1}{r-1}p^r(1-p)^{x-r}
+\]
+Factor out \((pe^t)^r\) and let \(k=x-r\):
+\[
+M(t)=(pe^t)^r\sum_{k=0}^{\infty}\binom{k+r-1}{r-1}\left[(1-p)e^t\right]^k
+\]
+Using the negative binomial series,
+\[
+\sum_{k=0}^{\infty}\binom{k+r-1}{r-1}z^k=\frac{1}{(1-z)^r},\qquad |z|<1
+\]
+we obtain:
+\[
+\boxed{M(t)=\left(\frac{pe^t}{1-(1-p)e^t}\right)^r}
+\]
+for \((1-p)e^t<1\).\\\\
+\hl{This is a case where memorizing the result is more useful than deriving it from the definition.}\\\\
+\textbf{Deriving moments from the m.g.f.}\\
+Since the m.g.f. is a rather complicated function, we can use \hl{logarithmic differentiation} to find the mean and variance.
+\begin{notebox}[Logarithmic Differentiation]
+We can simplify complicated functions by taking the logarithm of both sides, differentiating, and then solving for the derivative of the original function.\\\\
+For example $y=x^x$:
+\[\ln y = x \ln x\]
+Differentiating both sides (chain rule):
+\[
+\frac{d}{dx}(\ln y)=\frac1y\frac{dy}{dx}
+\]
+\[\implies 
+\frac1y\frac{dy}{dx}=\ln x+1
+\]
+Solve for \(\frac{dy}{dx}\):
+\[
+\frac{dy}{dx}=y(\ln x+1)
+\]
+Substituting back \(y=x^x\):
+\[
+\frac{dy}{dx}=x^x(\ln x+1)
+\]
+\end{notebox}
+For example, to find the expected value, we can take the logarithm of the m.g.f.:
+\[
+\ln M(t)=r\ln p+rt-r\ln[1-(1-p)e^t]
+\]
+\[
+\frac{M'(t)}{M(t)}=\frac{r}{1-(1-p)e^t}
+\]
+Since \(M(0)=1\), we have:
+\[
+E(X)=M'(0)=\frac rp
+\]
+\begin{definition}{Geometric Distribution (Neg. Binomial Distribution with $r=1$)}
+The geometric distribution is a special case of the negative binomial distribution where $r=1$, meaning we are counting the number of trials needed to achieve the \hl{first success.} The p.m.f. of a geometric random variable $X$ is given by:
+\[
+P(X=x)=\binom{x-1}{0}p(1-p)^{x-1}=p(1-p)^{x-1},\qquad x=1,2,3,\dots
+\]
+\[\boxed{f(x)=p(1-p)^{x-1},\qquad x=1,2,3,\dots}\]
+\textbf{c.d.f.}
+\[
+\begin{aligned}
+    F(k) = P(X \leq k) &= \sum_{x=1}^{k} p(1-p)^{x-1} \\
+    &= 1 - \sum_{x=k+1}^{\infty} p(1-p)^{x-1} 
+\end{aligned}
+\]
+Since the probability of success $p\leq 1$, the common ratio of the geometric series is \\$(1-p)<1$, so the series converges and we can rewrite the sum:
+\[F(k) = 1 - \frac{p(1-p)^k}{1-(1-p)} = 1 - (1-p)^k\]
+\[
+\boxed{F(x)=1-(1-p)^{\lfloor x\rfloor},\quad x\geq1}
+\]
+with \(F(x)=0\) for \(x<1\).\\\\
+\textbf{Mean and Variance}\\
+Plugging in $r=1$ into the formulas for the negative binomial distribution, we have:
+\[
+\boxed{\mu=\frac1p,\qquad \operatorname{Var}(X)=\frac{1-p}{p^2}}
+\]
+\end{definition}
+\subsection*{\underline{Hypergeometric Distribution (2.1--2.3)}}
+\addcontentsline{toc}{section}{Hypergeometric Distribution (2.1--2.3)}
+\begin{definition}{Hypergeometric Distribution}
+The hypergeometric distribution gives the probability of selecting exactly $x$ objects of a particular type when randomly sampling $n$ objects without replacement from a population containing two types of objects.\\\\
+The event of interest requires two selections: $x$ objects of the first type AND $n-x$ objects of the second type.\\\\
+For example, we have $N$ total objects consisting of:
+\begin{itemize}
+    \item $m$ red objects
+    \item $N-m$ black objects
+\end{itemize}
+If we pick a sample of $n$ objects without replacement, let $X$ be the number of red objects selected. Then the p.m.f. of $X$ is given by:
+\[\boxed{f(x) = \frac{\binom{m}{x}\binom{N-m}{n-x}}{\binom{N}{n}}}\]
+This is just the multiplication principle where:
+\begin{itemize}
+    \item Total ways to select $n$ objects out of $N$ where order does not matter (combination):
+    \[\binom{N}{n}\]
+    \item Favorable outcomes:
+    \[\text{(Ways to choose $x$ red obj)}\cdot\text{(Ways to choose $n-x$ black objects)}\]
+    \[\binom{m}{x}\binom{N-m}{n-x}\]
+\end{itemize}
+\end{definition}
+\textbf{Cumumlative distribution function (c.d.f.)}\\
+\[
+F(x)=P(X\leq x)=\sum_{k=a}^{\lfloor x \rfloor}f(k) = \sum_{k=a}^{\lfloor x \rfloor}\frac{\binom{m}{k}\binom{N-m}{n-k}}{\binom{N}{n}}
+\]
+Where \(a\) is the smallest possible value of \(X\), accounting for the number of each type of object available.\\
+There is no closed form for the c.d.f. of a hypergeometric distribution, so it is usually calculated term by term.\\\\
+\textbf{Expected value (mean)}\\
+The textbook derives this from the definition of expected value, but it is rather involved. This is a case where its simpler to memorize the result:
+\[
+\boxed{\mu=E(X)=n\frac mN}
+\]
+Intuitively, the fraction of desired objects (red) in the population is $m/N$, so the expected number of red objects in a sample of size $n$ is $n(m/N)$.
+\begin{notebox}[Derivation of the Expected Value of a Hypergeometric Distribution]
+By definition of expectation:
+\[
+E(X)=\sum_{i=0}^{n}iP(X=i) =\sum_{i=0}^{n}i\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}
+\]
+We can simplify this sum by doing the following (summarized):
+\begin{itemize}
+    \item For $i=0$, the summand is zero, so we can start the sum at $i=1$ instead of $i=0$.
+    \item Use the definition of the binomial coefficient to rewrite $\binom{m}{i}$ as $\frac{m}{i}\binom{m-1}{i-1}$.
+    \item Factor out $\frac{m}{\binom{N}{n}}$
+    \item Use the identity $\binom{N}{n}=\frac{N}{n}\binom{N-1}{n-1}$ to rewrite $\frac{1}{\binom{N}{n}}$ as $\frac{n}{N}\frac{1}{\binom{N-1}{n-1}}$.
+\end{itemize}
+This results in the following:
+\[
+\begin{aligned}
+E(X)
+&=\sum_{i=0}^{n}i\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}\\[6pt]
+&=\frac{mn}{N}\sum_{i=1}^{n}
+\underbrace{\frac{\binom{m-1}{i-1}\binom{N-m}{n-i}}{\binom{N-1}{n-1}}}_{\text{Hypergeometric p.m.f.}}
+\end{aligned}
+\]
+By definition, a valid probability mass function sums to 1, so the sum in the above expression is equal to 1. Finally, we have:
+\[E(X) = \frac{mn}{N} \quad \text{(Hypergeometric r.v.)}\]
+\end{notebox}
+\textbf{Variance}\\
+The derivation of the variance is also rather involved, so it is simpler to memorize the result:
+\[
+\boxed{\sigma^2=\operatorname{Var}(X)=n\frac mN\left(1-\frac mN\right)\frac{N-n}{N-1}}
+\]
+Notice that the variance of a hypergeometric distribution resembles the variance of a binomial distribution, except for the additional factor of \(\frac{N-n}{N-1}\). This factor is called the \textit{finite population correction factor}, and it accounts for the fact that we are sampling without replacement.
+\[
+\operatorname{Var}(X)=np(1-p)\frac{N-n}{N-1},\qquad p=\frac mN
+\]
+\begin{notebox}[Derivation of the Variance of a Hypergeometric Distribution]
+    Using the second factorial moment, we can compute the variance of a hypergeometric random variable $X$ as follows:
+\[\operatorname{Var}(X) = E[X(X-1)] + E(X) - [E(X)]^2\]
+Since we know $E(X) = \frac{mn}{N}$, we just need to compute $E[X(X-1)]$. By definition of expectation:
+\[
+E[X(X-1)]=\sum_{i=0}^{n}i(i-1)\frac{\binom mi\binom{N-m}{n-i}}{\binom Nn}
+\]
+We can simplify this sum by doing the following (summarized):
+\begin{itemize}
+    \item For $i=0$ and $i=1$, the summand is zero, so we can start the sum at $i=2$.
+    \item Use the identity
+    $i(i-1)\binom{m}{i}=m(m-1)\binom{m-2}{i-2}$.
+    \item Factor out $\dfrac{m(m-1)}{\binom{N}{n}}$.
+    \item Use the identity
+    $\binom{N}{n}=\dfrac{N(N-1)}{n(n-1)}\binom{N-2}{n-2}$
+    to rewrite the denominator.
+\end{itemize}
+This results in the following:
+\[
+\begin{aligned}
+E[X(X-1)]
+&=\sum_{i=0}^{n}i(i-1)
+\frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}\\[6pt]
+&=\frac{m(m-1)n(n-1)}{N(N-1)}
+\sum_{i=2}^{n}
+\underbrace{
+\frac{\binom{m-2}{i-2}\binom{N-m}{n-i}}
+{\binom{N-2}{n-2}}
+}_{\text{Hypergeometric p.m.f.}}
+\end{aligned}
+\]
+By definition, a valid probability mass function sums to 1, so the sum in the above expression is equal to 1. Thus,
+\[
+E[X(X-1)]=\frac{m(m-1)n(n-1)}{N(N-1)}.
+\]
+Substituting into the variance formula,
+\[
+\begin{aligned}
+\operatorname{Var}(X)
+&=E[X(X-1)]+E(X)-[E(X)]^2\\[6pt]
+&=\frac{m(m-1)n(n-1)}{N(N-1)}
++\frac{mn}{N}-\left(\frac{mn}{N}\right)^2\\[6pt]
+&=n\left(\frac{m}{N}\right)
+\left(1-\frac{m}{N}\right)
+\left(\frac{N-n}{N-1}\right)
+\end{aligned}
+\]
+\end{notebox}
+\textbf{Moment generating function (m.g.f.)}\\
+The general MGF can be written directly from its definition:
+\[
+M(t)=\sum_{x\in S} e^{tx}\frac{\binom mx\binom{N-m}{n-x}}{\binom Nn}
+\]
+However, unlike Bernoulli, binomial, and negative binomial, there isn't a particularly useful elementary closed form.
+\subsection*{\underline{Poisson Distribution (2.6)}}
+\addcontentsline{toc}{section}{Poisson Distribution (2.6)}
+    The Poisson distribution models the number of events occurring within a fixed interval of time, distance, area, or another measurement, assuming events occur independently at a constant average rate.\\\\
+Examples include the number of customers arriving at a store in one hour, the number of defects per meter of material, or the number of calls received in a minute.\\\\
+\textit{Importantly, the p.m.f. for a Poisson distribution is not derived using basic counting. So for this course, \hl{problems involving the Poisson distribution will be explicitly stated.}}
+\begin{definition}{Poisson Distribution}
+We say that a random variable $X$ has a Poisson distribution with parameter $\lambda>0$ if its p.m.f. is given by:
+\[
+\boxed{f(x)=P(X=x)=\frac{e^{-\lambda}\lambda^x}{x!},\qquad x=0,1,2,\ldots}
+\]
+\textbf{The Poisson distribution approximates the binomial distribution}\\
+Consider a binomial distribution with a large number of trials \(n\) and a small probability of success \(p\), while keeping the mean \(\lambda=np\) constant.\\\\
+The binomial p.m.f. is given by:
+\[
+P(X=x)=\binom nx p^x(1-p)^{n-x}
+\]
+Substitute \(p=\lambda/n\):
+\[
+P(X=x)=\frac{n!}{x!(n-x)!}\left(\frac{\lambda}{n}\right)^x\left(1-\frac{\lambda}{n}\right)^{n-x}
+\]
+Taking \(n\to\infty\) for fixed \(x\) and \(\lambda\):
+\[
+\lim_{n\to\infty}P(X=x)=\frac{\lambda^x}{x!}e^{-\lambda}
+\]
+Thus, \hl{the Poisson distribution can approximate the binomial distribution when \mbox{$n$} is large and \mbox{$p$} is small, with \mbox{$\lambda=np$}.}
+\end{definition}
+\textbf{Cumumlative distribution function (c.d.f.)}\\
+\[
+F(x)=P(X\leq x)=\sum_{k=0}^{\lfloor x \rfloor}f(k) = \sum_{k=0}^{\lfloor x \rfloor}\frac{e^{-\lambda}\lambda^k}{k!}
+\]
+for \(x\geq0\), and \(F(x)=0\) for \(x<0\).\\
+\textit{There is no need to further simplify.}\\\\
+\textbf{Expected value (mean)}\\
+The expected value can be derived from the definition of expectation:
+\[
+E(X)=\sum_{x=0}^{\infty}xf(x)=\sum_{x=1}^{\infty}x\frac{e^{-\lambda}\lambda^x}{x!}
+\]
+Since \(x/x!=1/(x-1)!\), we can simplify:
+\[
+E(X)=\lambda e^{-\lambda}\sum_{x=1}^{\infty}\frac{\lambda^{x-1}}{(x-1)!}
+\]
+Recognize the exponential series:
+\[
+e^\lambda=\sum_{k=0}^{\infty}\frac{\lambda^k}{k!}
+\]
+Therefore:
+\[
+E(X)=\lambda e^{-\lambda}e^\lambda=\lambda
+\]
+\[
+\boxed{\mu=E(X)=\lambda}
+\]
+\textit{Note that this is a case where its better to memorize than derive this.}\\\\
+\textbf{Variance}\\
+Start from the definition of variance:
+\[
+\operatorname{Var}(X)=E(X^2)-[E(X)]^2
+\]
+Rather than calculating \(E(X^2)\) directly, use the second factorial moment:
+\[
+E[X(X-1)]=\sum_{x=2}^{\infty}x(x-1)\frac{e^{-\lambda}\lambda^x}{x!}
+\]
+Since \(x(x-1)/x!=1/(x-2)!\):
+\[
+E[X(X-1)]=\lambda^2e^{-\lambda}\sum_{x=2}^{\infty}\frac{\lambda^{x-2}}{(x-2)!}=\lambda^2
+\]
+Recall that:
+\[
+E(X^2)=E[X(X-1)]+E(X)=\lambda^2+\lambda
+\]
+Thus:
+\[
+\operatorname{Var}(X)=\lambda^2+\lambda-\lambda^2=\lambda
+\]
+\[
+\boxed{\sigma^2=\operatorname{Var}(X)=\lambda}
+\]
+\textit{Also best to memorize this than derive.}\\\\
+\textbf{Moment generating function (m.g.f.)}\\
+Starting from the definition:
+\[
+M(t)=E(e^{tX})=\sum_{x=0}^{\infty}e^{tx}\frac{e^{-\lambda}\lambda^x}{x!}
+\]
+Factor and recognize the exponential series again:
+\[
+M(t)=e^{-\lambda}\sum_{x=0}^{\infty}\frac{(\lambda e^t)^x}{x!}
+=e^{-\lambda}e^{\lambda e^t}
+\]
+Therefore:
+\[
+\boxed{M(t)=e^{\lambda(e^t-1)}}
+\]
+\subsection*{\underline{Summary and Distribution Identification Guide}}
+\subsubsection*{Distribution Identification and PMFs}
+
+\renewcommand{\arraystretch}{1.6}
+\setlength{\tabcolsep}{5pt}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{
+    >{\raggedright\arraybackslash}p{2.6cm}
+    >{\raggedright\arraybackslash}X
+    >{\centering\arraybackslash}p{4.0cm}
+    >{\centering\arraybackslash}p{1.8cm}
+}
+\toprule
+\textbf{Distribution} & \textbf{What $X$ Represents}
+& \textbf{PMF $f(x)=P(X=x)$} & \textbf{Support} \\
+\midrule
+
+Discrete uniform
+& One of $m$ equally likely values
+& $\displaystyle \frac{1}{m}$
+& $1,\ldots,m$ \\
+
+Bernoulli
+& Success (1) or failure (0) in one trial
+& $\displaystyle p^x(1-p)^{1-x}$
+& $0,1$ \\
+
+Binomial
+& Number of successes in $n$ independent trials
+& $\displaystyle \binom{n}{x}p^x(1-p)^{n-x}$
+& $0,\ldots,n$ \\
+
+Negative binomial
+& Number of trials needed for $r$ successes
+& $\displaystyle \binom{x-1}{r-1}p^r(1-p)^{x-r}$
+& $r,r+1,\ldots$ \\
+
+Geometric
+& Number of trials needed for the first success
+& $\displaystyle p(1-p)^{x-1}$
+& $1,2,\ldots$ \\
+
+Hypergeometric
+& Number of desired objects in $n$ draws without replacement
+& $\displaystyle \frac{\binom{m}{x}\binom{N-m}{n-x}}{\binom{N}{n}}$
+& $a,\ldots,b$ \\
+
+Poisson
+& Number of events in a fixed interval
+& $\displaystyle \frac{e^{-\lambda}\lambda^x}{x!}$
+& $0,1,2,\ldots$ \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\renewcommand{\arraystretch}{1}
+\addcontentsline{toc}{section}{Summary and Distribution Identification Guide}
+For the hypergeometric distribution, \(a\) and \(b\) are the smallest and largest possible numbers of desired objects in the sample.
+\subsubsection*{Mean and Variance}
+
+\renewcommand{\arraystretch}{1.8}
+\setlength{\tabcolsep}{6pt}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{
+    >{\raggedright\arraybackslash}X
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+}
+\toprule
+\textbf{Distribution}
+& \textbf{Mean $\mu=E(X)$}
+& \textbf{Variance $\sigma^2$} \\
+\midrule
+
+Uniform
+& $\displaystyle \frac{m+1}{2}$
+& $\displaystyle \frac{m^2-1}{12}$ \\
+
+Bernoulli
+& $p$
+& $p(1-p)$ \\
+
+Binomial
+& $np$
+& $np(1-p)$ \\
+
+Negative binomial
+& $\displaystyle \frac{r}{p}$
+& $\displaystyle \frac{r(1-p)}{p^2}$ \\
+
+Geometric
+& $\displaystyle \frac{1}{p}$
+& $\displaystyle \frac{1-p}{p^2}$ \\
+
+Hypergeometric*
+& $\displaystyle np,\quad p = \frac{m}{N}$
+& $\displaystyle np\left(1-p\right)\frac{N-n}{N-1},\quad p = \frac{m}{N}$ \\
+
+Poisson
+& $\lambda$
+& $\lambda$ \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\renewcommand{\arraystretch}{1}
+
+\textit{(*): note for hypergeometric distribution: \(p\) is the proportion of desired objects in the population, not the same as the probability of success in a Bernoulli trial. I only used similar notation to show the similarity in the formulas for mean and variance.}
+\subsubsection*{Relationships Between Distributions}
+
+\textbf{1. Bernoulli $\rightarrow$ Binomial}
+
+One trial becomes $n$ independent trials.
+\[
+\begin{array}{r|cc}
+& E(X) & \mathrm{Var}(X) \\ \hline
+\text{Bernoulli} & p & p(1-p) \\
+\text{Binomial} & np & np(1-p)
+\end{array}
+\]
+The binomial mean and variance are simply $n$ times their
+Bernoulli counterparts.
+
+\medskip
+\hrule
+\medskip
+
+\textbf{2. Negative Binomial $\rightarrow$ Geometric}
+
+The geometric distribution is the special case $r=1$.
+\[
+\begin{array}{r|cc}
+& E(X) & \mathrm{Var}(X) \\ \hline
+\text{Negative binomial} &
+\displaystyle\frac{r}{p} &
+\displaystyle\frac{r(1-p)}{p^2} \\[8pt]
+\text{Geometric} &
+\displaystyle\frac{1}{p} &
+\displaystyle\frac{1-p}{p^2}
+\end{array}
+\]
+
+\medskip
+\hrule
+\medskip
+
+\textbf{3. Binomial vs. Hypergeometric}
+
+Both count successes in a fixed sample size $n$.
+The key difference is independence versus sampling
+without replacement.
+
+Set $p=m/N$ for the hypergeometric distribution:
+\[
+\begin{array}{r|cc}
+& E(X) & \mathrm{Var}(X) \\ \hline
+\text{Binomial} &
+np &
+np(1-p) \\[6pt]
+\text{Hypergeometric} &
+np &
+\displaystyle np(1-p)\frac{N-n}{N-1}
+\end{array}
+\]
+
+Same mean, but the hypergeometric variance has the
+finite population correction.
+
+\medskip
+\hrule
+\medskip
+
+\textbf{4. Binomial $\rightarrow$ Poisson Approximation}
+
+When $n$ is large and $p$ is small, with $\lambda=np$:
+\[
+\boxed{\mathrm{Bin}(n,p)\approx\mathrm{Poisson}(np)}
+\]
+The expected values match, and the variances become
+close when $p$ is small.
+\subsection*{{Summation Formulas Review}}
+
+\textbf{Arithmetic:}
+\[
+\sum_{k=1}^{n}k=\frac{n(n+1)}{2}
+\]
+
+\textbf{Geometric (infinite):}
+\[
+\sum_{k=m}^{\infty}ar^k
+=\frac{ar^m}{1-r}
+=\frac{\text{First term}}{1-\text{Ratio}}
+,\quad |r|<1
+\]
+\textbf{Telescoping:}
+\[
+\sum_{k=1}^{n}(a_k-a_{k+1})=a_1-a_{n+1}
+\]
+
+\textbf{Binomial theorem:}
+\[
+\sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k}=(a+b)^n
+\]
+
+\textbf{Exponential series:}
+\[
+\sum_{k=0}^{\infty}\frac{x^k}{k!}=e^x
+\]
+\section*{\fbox{Ch 3: Continuous Random Variables}}
+\end{document}
