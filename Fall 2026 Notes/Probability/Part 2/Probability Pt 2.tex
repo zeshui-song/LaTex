@@ -4,7 +4,7 @@
 \usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
 \usepackage{siunitx, soul}  % Eases typesetting of numbers and units
 \usepackage{mathrsfs}
-\usepackage{amsthm}
+\usepackage{amsthm,tikz}
 \usepackage[most]{tcolorbox}
 \usepackage[hidelinks]{hyperref}
 
@@ -957,6 +957,8 @@ Therefore:
 \boxed{M(t)=e^{\lambda(e^t-1)}}
 \]
 \subsection*{\underline{Summary and Distribution Identification Guide}}
+\addcontentsline{toc}{section}{Summary and Distribution Identification Guide}
+
 \subsubsection*{Distribution Identification and PMFs}
 
 \renewcommand{\arraystretch}{1.6}
@@ -1016,7 +1018,6 @@ Poisson
 \end{table}
 
 \renewcommand{\arraystretch}{1}
-\addcontentsline{toc}{section}{Summary and Distribution Identification Guide}
 For the hypergeometric distribution, \(a\) and \(b\) are the smallest and largest possible numbers of desired objects in the sample.
 \subsubsection*{Mean and Variance}
 
@@ -1171,5 +1172,436 @@ close when $p$ is small.
 \[
 \sum_{k=0}^{\infty}\frac{x^k}{k!}=e^x
 \]
-\section*{\fbox{Ch 3: Continuous Random Variables}}
+\section*{\fbox{Chapter 3: Continuous Random Variables}}
+\subsection*{\underline{3.1 Continuous-Type Data}}
+\addcontentsline{toc}{section}{3.1 Continuous-Type Data}
+In this section we will mostly discuss methods for analyzing continuous-type data. Since continuous data can take on a range of values rather than discrete values, we organize continuous data into groups called \textit{classes}.\\\\
+Instead of caring about single outcomes, we care about the \textit{classes} of outcomes. For example, instead of caring about the exact height of a person, we care about the range of heights that person falls into.
+\subsection*{Classes and Class Intervals}
+For a sample of $n$ data points, we can group the data into $k$ classes. The textbook recommends choosing between 5-20 classes, preferably with equal widths that cover the entire range of observations. 
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+\begin{tabular}{p{3.5cm} p{10cm}}
+\hline
+\textbf{Term} & \textbf{Definition} \\
+\hline
+Range & Difference between maximum and minimum observations, $R=x_{\max}-x_{\min}$ \\
+
+Class interval & An interval used to group observations \\
+
+Class boundaries & Endpoints of each class interval \\
+
+Class width & Difference between the boundaries, $w=c_{i+1}-c_i$, for equal-width classes \\
+
+Class limits & Smallest and largest observable recorded values within a class \\
+
+Class mark & Midpoint of a class interval, $u_i=(c_i+c_{i+1})/2$ \\
+
+Frequency & $f_i$: the number of observations in class $i$ \\
+
+Relative frequency & $f_i/n$, the proportion of observations in class $i$ \\
+\hline
+\end{tabular}
+\end{center}
+For equal-width classes, estimate the width using:
+\[
+w\approx\frac{R}{k}
+\]
+Choose convenient class boundaries that cover all observations, avoiding boundaries that split natural clusters of data points.
+\subsection*{Relative Frequency Histograms}
+A relative frequency histogram represents grouped continuous data using rectangles.\\\\
+The key idea is that the area of each rectangle represents the relative frequency of its class, so the total area of the histogram is 1.\\\\
+For class $i$, the rectangle has:
+\[
+\text{Width}=c_{i+1}-c_i,\qquad \text{Area}=\frac{f_i}{n}
+\]
+Therefore, the height of the rectangle is given by:
+\[
+\boxed{h_i=\frac{f_i}{n(c_{i+1}-c_i)}}
+\]
+if all classes have equal width $w$, then the height simplifies to:
+\[
+\boxed{h_i=\frac{f_i}{nw}}
+\]
+\textit{Note: If class widths differ, taller bars do not necessarily represent greater frequencies. Compare their areas instead.}\\\\
+\underline{Example: Example 3.1-1}\\
+\vspace{-2em}
+\begin{center}
+    \textbf{Candy Bar Weights}\\
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{cccccccccc}
+\hline
+20.5 & 20.7 & 20.8 & 21.0 & 21.0 & 21.4 & 21.5 & 22.0 & 22.1 & 22.5 \\
+22.6 & 22.6 & 22.7 & 22.7 & 22.9 & 22.9 & 23.1 & 23.3 & 23.4 & 23.5 \\
+23.6 & 23.6 & 23.6 & 23.9 & 24.1 & 24.3 & 24.5 & 24.5 & 24.8 & 24.8 \\
+24.9 & 24.9 & 25.1 & 25.1 & 25.2 & 25.6 & 25.8 & 25.9 & 26.1 & 26.7 \\
+\hline
+\end{tabular}
+\end{center}
+Determine the class intervals. First find the range of the data:
+\[
+R=x_{\max}-x_{\min}=26.7-20.5=6.2
+\]
+Choose number of classes $k=7$, then the approximate class width is:
+\[
+w\approx\frac{R}{k}=\frac{6.2}{7}\approx0.886
+\]
+Rounding to a convenient value, we can use $w=0.9$.\\\\
+Instead of starting at the minimum observation \(20.5\), the textbook chose \(20.45\), slightly below it. The remaining boundaries are obtained by repeatedly adding \(0.9\):
+\begin{center}
+    \textbf{Frequency Table}\\
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ccccc}
+\hline
+\textbf{Class Interval} & \textbf{Class Limits} &
+\textbf{Frequency} $(f_i)$ &
+$\boldsymbol{h(x)}$ & \textbf{Class Mark} \\
+\hline
+$(20.45,21.35)$ & 20.5--21.3 & 5 & $5/36$ & 20.9 \\
+$(21.35,22.25)$ & 21.4--22.2 & 4 & $4/36$ & 21.8 \\
+$(22.25,23.15)$ & 22.3--23.1 & 8 & $8/36$ & 22.7 \\
+$(23.15,24.05)$ & 23.2--24.0 & 7 & $7/36$ & 23.6 \\
+$(24.05,24.95)$ & 24.1--24.9 & 8 & $8/36$ & 24.5 \\
+$(24.95,25.85)$ & 25.0--25.8 & 5 & $5/36$ & 25.4 \\
+$(25.85,26.75)$ & 25.9--26.7 & 3 & $3/36$ & 26.3 \\
+\hline
+\end{tabular}
+\end{center}
+Note that class boundaries define the endpoints of the intervals, while the class limits are the smallest and largest recorded value within each class.
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{rel freq hist.png}
+\end{center}
+\subsection*{Frequency Polygon}
+A frequency polygon is constructed by connecting the points at the class marks and their corresponding histogram heights. It is another way to visualize continuous data.
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{freq polygon.png}
+\end{center}
+\subsection*{Grouped Sample Mean and Variance}
+When observations are grouped into classes, we can approximate the sample mean and variance by treating all observations within each class as if they were located at its class mark \(u_i\).\\\\
+Let \(f_i\) represent the frequency of class \(i\), such that:
+\[
+n=\sum_{i=1}^{k}f_i
+\]
+The grouped sample mean is:
+\[
+\boxed{\bar{x}=\frac1n\sum_{i=1}^{n}x_i\approx\frac{1}{n}\sum_{i=1}^{k}f_iu_i}
+\]
+The grouped sample variance is:
+\[
+\boxed{s^2=\frac1{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2\approx\frac{1}{n-1}\sum_{i=1}^{k}f_i(u_i-\bar{x})^2}
+\]
+\begin{notebox}[Bell Shaped Distribution approximation]
+For data with an approximately bell-shaped distribution, the textbook gives the following rule:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{cc}
+\hline
+\textbf{Interval} & \textbf{Approximate Proportion of Observations} \\
+\hline
+$(\bar{x}-s,\bar{x}+s)$ & $68\%$ \\
+$(\bar{x}-2s,\bar{x}+2s)$ & $95\%$ \\
+$(\bar{x}-3s,\bar{x}+3s)$ & $99.7\%$ \\
+\hline
+\end{tabular}
+\end{center}
+
+This rule applies to approximately bell-shaped distributions, not arbitrary datasets.
+\end{notebox}
+\subsection*{\underline{3.2 Exploratory Data Analysis}}
+\addcontentsline{toc}{section}{3.2 Exploratory Data Analysis}
+This section focuses on organizing data and summarizing its distributions.
+\subsection*{Stem-and-Leaf}
+A stem-and-leaf display organizes numerical observations into groups while preserving their individual values.\\\\
+Each data point is split into:
+\begin{itemize}
+    \item \textbf{Stem:} the leading digit(s)
+    \item \textbf{Leaf:} the trailing digit(s)
+\end{itemize}
+\underline{For example:} given the observations:
+\[
+23,\ 25,\ 27,\ 31,\ 32,\ 32,\ 36,\ 41
+\]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|l}
+\textbf{Stem} & \textbf{Leaves} \\
+\hline
+2 & 3 \quad 5 \quad 7 \\
+3 & 1 \quad 2 \quad 2 \quad 6 \\
+4 & 1 \\
+\end{tabular}
+\end{center}
+\textit{Key: $2 \mid 3$ represents $23$.}
+\begin{notebox}[Variations of Stem-and-Leaf Displays]
+\begin{itemize}
+    \item \textbf{Ordered stem-and-leaf display:} Leaves are arranged from smallest to largest.
+    \item \textbf{Depths:} Counts accumulated inward from the two ends of the distribution, helping locate the median.
+\end{itemize} 
+\newpage
+For example:
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|lcc}
+\hline
+\textbf{Stems} & \textbf{Leaves} & \textbf{Frequency} & \textbf{Depths} \\
+\hline
+3 & 4\,8 & 2 & 2 \\
+4 & 2\,7\,5\,2 & 4 & 6 \\
+5 & 2\,9\,1\,4\,7\,8\,8 & 7 & 13 \\
+6 & 7\,6\,3\,1\,5\,9\,0\,9\,8\,5 & 10 & 23 \\
+7 & 7\,2\,5\,3\,1\,9\,0\,6\,1\,4\,6\,3\,5 & 13 & (13) \\
+8 & 3\,4\,4\,1\,7\,3\,2\,1\,5 & 9 & 14 \\
+9 & 3\,7\,1\,0\,3 & 5 & 5 \\
+\hline
+\end{tabular}
+\end{center}
+Note: the median row is marked with its frequency in parentheses instead of a cumulative depth. (In this example, the median is between positions 25 and 26, inside stem 7.)
+\end{notebox}
+\subsection*{Order Statistics}
+Given \(n\) observations, arrange them in ascending order:
+\[
+\boxed{y_1\leq y_2\leq\cdots\leq y_n}
+\]
+The values \(y_1,y_2,\ldots,y_n\) are called order statistics.\\\\
+\underline{For example} given the observations:
+\[
+3,\ 8,\ 4,\ 2,\ 7\quad\longrightarrow\quad 2,\ 3,\ 4,\ 7,\ 8
+\]
+Then \(y_1=2\), \(y_3=4\), and \(y_5=8\).
+
+Order statistics are particularly useful for finding sample percentiles, quartiles, and the median.
+\subsection*{Sample Percentiles}
+The \(100p\)-th sample percentile is a value below which approximately \(100p\%\) of the ordered observations lie. Where $p$ is the percentile in decimal.\\\\
+Calculate the position:
+\[
+\boxed{L=(n+1)p}
+\]
+Where \(n\) is the number of observations and \(0<p<1\).
+
+If \(L\) is an integer, the percentile is the observation at position \(L\):
+\[
+\boxed{\pi_p=y_L}
+\]
+
+If \(L\) lies between two integers, interpolate between the neighboring ordered observations:
+\[
+\boxed{\text{Percentile}=\text{Lower value}+\text{Decimal part of }L\,(\text{Upper value}-\text{Lower value})}
+\]
+\underline{For example} given the ordered observations:
+\[
+2,\ 4,\ 5,\ 8,\ 10,\ 12,\ 15
+\]
+We have \(n=7\) and \(p=0.25\):
+\[
+L=(7+1)(0.25)=2
+\]
+Therefore the 25th percentile is the observation at position 2:
+\[
+\pi_{0.25}=y_2=4
+\]
+\subsection*{Quartiles and Five-Number Summary}
+The quartiles are particular sample percentiles that divide the ordered data into four equal parts:
+\begin{itemize}
+    \item First quartile \(Q_1\): 25th percentile, \(\pi_{0.25}\)
+    \item Second quartile \(Q_2\): 50th percentile, \(\pi_{0.50}\) (the median)
+    \item Third quartile \(Q_3\): 75th percentile, \(\pi_{0.75}\)
+\end{itemize}
+\textit{The first quartile ($Q_1$) can be thought of as the median of the lower half of the data, and the third quartile ($Q_3$) as the median of the upper half.}\\\\
+The five-number summary consists of the minimum, first quartile, median, third quartile, and maximum:
+\[
+\boxed{y_1,\quad Q_1,\quad \tilde{x},\quad Q_3,\quad y_n}
+\]
+The interquartile range (IQR) measures the spread of the middle 50\% of the observations:
+\[
+\boxed{\mathrm{IQR}=Q_3-Q_1}
+\]
+\textbf{Box and Whisker Plots}\\
+A box and whisker plot is a graphical representation of the five-number summary:
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{box and whisker.png}
+\end{center}
+\newpage
+\subsection*{\underline{3.3 Random Variables of the Continuous Type}}
+\addcontentsline{toc}{section}{3.3 Random Variables of the Continuous Type}
+Finally, we can begin to discuss continuous random variables. There are a lot of similarities between discrete and continuous random variables, however a key difference is that probabilities are defined with integrals over intervals instead of sums over discrete values.
+\subsection*{Continuous Random Variables and Probability Density Functions}
+\begin{definition}{Probability Density Function (p.d.f.)}
+For a continuous random variable $X$, a probability density function is a function $f(x)$ that satisfies the following properties:
+\begin{enumerate}
+    \item \textbf{Non-negativity} \[f(x) \geq 0\]
+    \item \textbf{Total probability equals 1 (normalization)} \[\int_{-\infty}^{\infty} f(x) \, dx = 1\]
+    \item \textbf{Probabilities are areas under the p.d.f. curve} \[P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx\]
+\end{enumerate}
+Unlike discrete random variables and their probability mass functions, \hl{the \textit{probability of a continuous random variable is NOT defined at a single point (it is equal to 0). Instead, probabilities are ONLY defined over intervals.}}\\\\
+p.d.f.s don't have to be continuous!
+\end{definition}
+\underline{For example: Example 3.3-1} consider a continuous random variable $X$ that represents the amount of time (in mins) between calls to a 911 of a city.\\\\
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+The probability that the time between calls is greater than 20 mins is:
+\[
+P(X>20)=\int_{20}^{\infty}\frac{1}{20}e^{-x/20}\,dx
+\]
+\[
+=e^{-1}\approx 0.368
+\]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0pt}
+\centering
+\includegraphics[width=\linewidth]{pdf.png}
+\end{minipage}
+\newpage
+\textbf{Probability at a single point}\\
+For a continuous random variable:
+\[
+\boxed{P(X=a)=\int_a^a f(x)\,dx=0}
+\]
+Therefore:
+\[
+\boxed{P(a<X<b)=P(a\leq X\leq b)}
+\]
+This is a major difference from discrete random variables. \hl{Including or excluding the endpoints of an interval does not change the probability} (since the probability at a single point is 0).\\\\
+Also, \(f(x)\) can exceed 1. The requirement is that the total area under the p.d.f. equals 1, not that its height is at most 1.
+\begin{definition}{Cumulative Distribution Function (c.d.f.)}
+    Just like for discrete random variables, the cumulative distribution function gives the probability that a continuous random variable \(X\) is less than or equal to a certain value \(x\):
+    \[
+\boxed{F(x)=P(X\leq x)=\int_{-\infty}^{x}f(t)\,dt}
+\]
+\hl{The c.d.f. accumulates the area under the p.d.f. from the left up to \mbox{\(x\)}.}\\\\
+\textbf{Property of c.d.f.}\\
+A cumulative distribution function is non-decreasing and satisfies:
+\[
+\lim_{x \to -\infty} F(x) = 0 \quad \text{and} \quad \lim_{x \to \infty} F(x) = 1
+\]
+\end{definition}
+\textbf{Relationship between p.d.f. and c.d.f.}\\
+By the Fundamental Theorem of Calculus, the p.d.f. is the derivative of the c.d.f.:
+\[
+\frac{d}{dx}\int_a^x f(t)\,dt=f(x)
+\]
+\[
+\boxed{f(x)=F'(x)}
+\]
+wherever the derivative exists.\\\\
+Thus:
+\begin{itemize}
+    \item p.d.f. $\longrightarrow$ c.d.f. via integration
+    \item c.d.f. $\longrightarrow$ p.d.f. via differentiation
+\end{itemize}
+\textbf{Calculating Interval Probabilities}\\
+From the definition of the c.d.f.:
+\[
+\boxed{P(a<X<b)=F(b)-F(a)}
+\]
+The same expression applies when the endpoints are included.\\\\
+This can be visualized on a number line:
+\begin{center}
+\begin{tikzpicture}
+    % Number line
+    \draw[<->] (-4,0) -- (4,0);
+
+    % Highlight interval
+    \draw[very thick, blue] (-1.5,0) -- (1.5,0);
+
+    % Endpoints
+    \draw[fill=white, draw=blue, thick] (-1.5,0) circle (2pt);
+    \draw[fill=white, draw=blue, thick] (1.5,0) circle (2pt);
+
+    % Labels
+    \node[below] at (-3.7,0) {$-\infty$};
+    \node[below] at (-1.5,0) {$a$};
+    \node[below] at (1.5,0) {$b$};
+    \node[below] at (3.7,0) {$\infty$};
+\end{tikzpicture}
+\end{center}
+\[\begin{aligned}
+P(a<X<b) &= P(-\infty < X < \infty) - P(-\infty < X <a) - P(b < X < \infty)\\
+&= 1 - F(a) - [1-F(b)]\\
+&= F(b) - F(a)
+\end{aligned}\]
+\subsection*{Functions of Continuous Random Variables}
+Suppose \(X\) is a continuous random variable with p.d.f. \(f_X(x)\) and c.d.f. \(F_X(x)\). We want to determine the distribution of a new random variable \(Y=g(X)\).
+
+Approach: Find the c.d.f. of \(Y\) first, then differentiate to obtain its p.d.f..\\\\
+\underline{Example:} \(Y=3X\)\\
+Starting from the definition of the c.d.f.:
+\[
+F_Y(a)=P(Y\leq a)=P(3X\leq a)=P\left(X\leq\frac a3\right)=F_X\left(\frac a3\right)
+\]
+Differentiate using the chain rule:
+\[
+\boxed{f_Y(a)=\frac{d}{da}F_Y(a)=\frac13f_X\left(\frac a3\right)}
+\]
+For the general transformation \(Y=cX\), where \(c>0\):
+\[
+\boxed{F_Y(y)=F_X\left(\frac yc\right),\qquad f_Y(y)=\frac1c f_X\left(\frac yc\right)}
+\]
+Important: Remember to transform the support of \(X\) when determining the support of \(Y\).
+\subsection*{Expected Value and Mean}
+\begin{definition}{Expected Value (Mean) of a Continuous Random Variable}
+The expected value of a continuous random variable \(X\) with probability density function \(f(x)\) follows the same idea as for discrete random variables, but is defined using an integral:
+\[
+\boxed{\mu=E(X)=\int_{-\infty}^{\infty}xf(x)\,dx}
+\]
+\newpage
+Generally, the expected value of a function of a continuous random variable \(u(X)\) is given by:
+\[
+\boxed{E[u(X)]=\int_{-\infty}^{\infty}u(x)f(x)\,dx}
+\]
+\textbf{The Properties of Expectation still hold}\\
+The properties for expected value for discrete random variables also hold for continuous random variables such as the linearity of expectation:
+\[
+E(aX+b)=aE(X)+b
+\]
+\end{definition}
+\begin{definition}{Variance and Standard Deviation of a Continuous Random Variable}
+    The fundamental definition of variance remains unchanged:
+\[
+\operatorname{Var}(X)=E[(X-\mu)^2]
+\]
+For a continuous random variable:
+\[
+\boxed{\sigma^2=\int_{-\infty}^{\infty}(x-\mu)^2f(x)\,dx}
+\]
+Or, using the computational formula:
+\[
+\boxed{\sigma^2=E(X^2)-[E(X)]^2}
+\]
+where:
+\[
+E(X^2)=\int_{-\infty}^{\infty}x^2f(x)\,dx
+\]
+The standard deviation remains:
+\[
+\boxed{\sigma=\sqrt{\operatorname{Var}(X)}}
+\]
+\end{definition}
+\begin{definition}{Moment Generating Function (m.g.f.) of a Continuous Random Variable}
+The moment generating function of a continuous random variable \(X\) is similar to that of a discrete random variable, but defined using an integral:
+\[
+\boxed{M(t)=E(e^{tX})=\int_{-\infty}^{\infty}e^{tx}f(x)\,dx}
+\]
+The first and second derivatives at \(t=0\) give:
+\[
+\boxed{\mu=M'(0),\qquad \sigma^2=M''(0)-[M'(0)]^2}
+\]
+The property for sums of independent random variables still applies, provided the MGFs exist:
+\[
+M_{X+Y}(t)=M_X(t)M_Y(t)
+\]
+\end{definition}
+\subsection*{Percentiles of Continuous Distributions}
+The \(100p\)-th percentile of a continuous distribution is the value \(\pi_p\) such that the probability to its left is \(p\).
+\[
+\boxed{P(X\leq\pi_p)=F(\pi_p)=p}
+\]
+If the c.d.f. is strictly increasing, we can solve for the percentile using its inverse:
+\[
+\boxed{\pi_p=F^{-1}(p)}
+\]
+\textit{Note that sample percentiles from section 3.2 are estimated from ordered observations while here we can derive them directly from the c.d.f.}
 \end{document}
