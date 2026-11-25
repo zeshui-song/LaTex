@@ -1,0 +1,266 @@
+﻿\documentclass[12pt]{article}
+\usepackage{amssymb, amsmath, amsfonts, bm, graphicx, geometry}
+\usepackage{tabularx, booktabs, float, enumitem, multicol, mathtools}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=$\bullet$}
+\setlist[itemize,2]{label=--}
+\setlist[itemize,3]{label=$\circ$}
+\setlist[itemize,4]{label=$\cdot$}
+\usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
+\usepackage{siunitx}  % Eases typesetting of numbers and units
+\usepackage[hidelinks]{hyperref}
+
+% US customary units
+\DeclareSIUnit{\inch}{in}
+\DeclareSIUnit{\foot}{ft}
+\DeclareSIUnit{\yard}{yd}
+\DeclareSIUnit{\mile}{mi}
+
+\DeclareSIUnit{\slug}{slug}
+\DeclareSIUnit{\lbm}{lbm}
+\DeclareSIUnit{\lbf}{lbf}
+
+\DeclareSIUnit{\psi}{psi}
+\DeclareSIUnit{\psf}{psf}
+
+\DeclareSIUnit{\gallon}{gal}
+\DeclareSIUnit{\quart}{qt}
+\DeclareSIUnit{\fahrenheit}{F}
+\DeclareSIUnit{\rankine}{R}
+\sisetup{
+    per-mode = fraction
+}
+\usepackage{soul}
+\usepackage{mathrsfs}
+
+\geometry{margin=1in}
+
+% Uppercase Volume with thicker, higher line
+\newcommand{\vol}{\mathord{\text{\ooalign{\hidewidth $V$\hidewidth\cr\kern-0.5pt\raisebox{0.8ex}{\rule[0pt]{1em}{0.5pt}}}}}}
+
+% Lowercase Volume with built-in shifts
+\newcommand{\svol}{%
+  \mathord{\text{\ooalign{%
+    \hfil$v$\hfil\cr
+    \hfil\rule[0.6ex]{0.8em}{0.5pt}\hfil
+  }}}%
+}
+
+\usepackage[most]{tcolorbox}
+
+% Minimal boxes: no colored title bars or rounded corners
+\newtcolorbox{examplebox}[1][Example]{
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=black!30,
+    boxrule=0.4pt,
+    arc=0pt,
+    left=7pt, right=7pt,
+    top=5pt, bottom=5pt,
+    before upper={\textbf{Example: #1}\par\smallskip}
+}
+
+\newtcolorbox{notebox}[1][Side Note]{
+    enhanced,
+    breakable,
+    colback=black!2,
+    colframe=black!20,
+    boxrule=0.3pt,
+    arc=0pt,
+    left=7pt, right=7pt,
+    top=5pt, bottom=5pt,
+    before upper={\textit{Side Note:} \textbf{#1}\par\smallskip}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE ME-300 \& Stress and Applied Elasticity Notes\par}
+\end{center}
+\hrule
+\vspace{1.5em}
+\begin{center}
+    {\large\bfseries Introduction: Overview of Mechanics of Materials and the Theory of Elasticity\par}
+\end{center}
+\addcontentsline{toc}{section}{Introduction: Overview of Mechanics of Materials and the Theory of Elasticity}
+
+
+\begin{center}
+    {\large\bfseries Part I: Fundamentals of Stress and Strain Analysis\par}
+\end{center}
+\addcontentsline{toc}{section}{Part I: Fundamentals of Stress and Strain Analysis}
+\section*{\fbox{\parbox{0.95\linewidth}{1.1 Review of Elementary Mechanics of Materials}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 1.4--1.7}}
+\addcontentsline{toc}{section}{1.1 Review of Elementary Mechanics of Materials}
+
+
+\section*{\fbox{\parbox{0.95\linewidth}{1.2 Traction and the Infinitesimal Stress Tensor}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 1.5, 1.7, 1.12, 1.14}}
+\addcontentsline{toc}{section}{1.2 Traction and the Infinitesimal Stress Tensor}
+
+
+\section*{\fbox{\parbox{0.95\linewidth}{1.3 Stress Transformations, Principal Stresses, and Stress Invariants}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 1.9--1.15}}
+\addcontentsline{toc}{section}{1.3 Stress Transformations, Principal Stresses, and Stress Invariants}
+
+\section*{\fbox{\parbox{0.95\linewidth}{1.4 Failure Criteria and Factor of Safety}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 4.1--4.11}}
+\addcontentsline{toc}{section}{1.4 Failure Criteria and Factor of Safety}
+
+\section*{\fbox{\parbox{0.95\linewidth}{1.5 Infinitesimal Strain Tensor and Strain Transformations}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 2.2--2.5}}
+\addcontentsline{toc}{section}{1.5 Infinitesimal Strain Tensor and Strain Transformations}
+
+\begin{center}
+    {\large\bfseries Part II: Governing Equations of Elasticity\par}
+\end{center}
+\addcontentsline{toc}{section}{Part II: Governing Equations of Elasticity}
+\section*{\fbox{\parbox{0.95\linewidth}{2.1 Kinematic Equations: Strain-Displacement Relations}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 2.2--2.3}}
+\addcontentsline{toc}{section}{2.1 Kinematic Equations: Strain-Displacement Relations}
+
+\section*{\fbox{2.2 Equations of Strain Compatibility}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 2.4}}
+\addcontentsline{toc}{section}{2.2 Equations of Strain Compatibility}
+
+
+\section*{\fbox{\parbox{0.95\linewidth}{2.3 Constitutive Equations: Generalized Hooke’s Law}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 2.7--2.10}}
+\addcontentsline{toc}{section}{2.3 Constitutive Equations: Generalized Hooke’s Law}
+
+
+\section*{\fbox{\parbox{0.95\linewidth}{2.4 Differential Equations of Stress Equilibrium}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 1.8}}
+\addcontentsline{toc}{section}{2.4 Differential Equations of Stress Equilibrium}
+
+
+\section*{\fbox{\parbox{0.95\linewidth}{2.5 Stress and Displacement Boundary Conditions}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 1.16, 3.2}}
+\addcontentsline{toc}{section}{2.5 Stress and Displacement Boundary Conditions}
+
+\section*{\fbox{\parbox{0.95\linewidth}{2.6 Formulation of the General Elasticity Problem}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 3.1--3.2}}
+\addcontentsline{toc}{section}{2.6 Formulation of the General Elasticity Problem}
+
+
+\section*{\fbox{2.7 Plane Stress and Plane Strain}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 3.3--3.5}}
+\addcontentsline{toc}{section}{2.7 Plane Stress and Plane Strain}
+
+
+\begin{center}
+    {\large\bfseries Part III: Analytical Solutions to Elasticity Problems\par}
+\end{center}
+\addcontentsline{toc}{section}{Part III: Analytical Solutions to Elasticity Problems}
+\section*{\fbox{\parbox{0.95\linewidth}{3.1 Airy’s Stress Function and the Biharmonic Equation}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 3.6}}
+\addcontentsline{toc}{section}{3.1 Airy’s Stress Function and the Biharmonic Equation}
+
+
+\section*{\fbox{3.2 Solutions in Cartesian Coordinates}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 3.7, 5.4}}
+\addcontentsline{toc}{section}{3.2 Solutions in Cartesian Coordinates}
+
+
+\section*{\fbox{3.3 Solutions in Polar Coordinates}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 3.9}}
+\addcontentsline{toc}{section}{3.3 Solutions in Polar Coordinates}
+
+
+\section*{\fbox{3.4 Principle of Superposition}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 2.2.1}}
+\addcontentsline{toc}{section}{3.4 Principle of Superposition}
+
+
+\begin{center}
+    {\large\bfseries Part IV: Numerical Methods: Finite Element Analysis\par}
+\end{center}
+\addcontentsline{toc}{section}{Part IV: Numerical Methods: Finite Element Analysis}
+\section*{\fbox{\parbox{0.95\linewidth}{4.1 Fundamentals of the Finite Element Method}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 7.6--7.7}}
+\addcontentsline{toc}{section}{4.1 Fundamentals of the Finite Element Method}
+\section*{\fbox{\parbox{0.95\linewidth}{4.2 Discretization, Shape Functions, and Element Formulation}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 7.12--7.14}}
+\addcontentsline{toc}{section}{4.2 Discretization, Shape Functions, and Element Formulation}
+
+\section*{\fbox{\parbox{0.95\linewidth}{4.3 Stiffness Matrices, Assembly, and Boundary Conditions}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 7.7--7.13}}
+\addcontentsline{toc}{section}{4.3 Stiffness Matrices, Assembly, and Boundary Conditions}
+\section*{\fbox{\parbox{0.95\linewidth}{4.4 Displacement, Strain, and Stress Recovery}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 7.12--7.14}}
+\addcontentsline{toc}{section}{4.4 Displacement, Strain, and Stress Recovery}
+
+\section*{\fbox{\parbox{0.95\linewidth}{4.5 Visualization and Interpretation of Stress Contours}}}
+\addcontentsline{toc}{section}{4.5 Visualization and Interpretation of Stress Contours}
+
+\section*{\fbox{\parbox{0.95\linewidth}{4.6 Finite Element Modeling and Analytical Validation}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 7.15--7.16}}
+\addcontentsline{toc}{section}{4.6 Finite Element Modeling and Analytical Validation}
+
+\begin{center}
+    {\large\bfseries Part V: Applications of Stress Analysis and Elasticity\par}
+\end{center}
+\addcontentsline{toc}{section}{Part V: Applications of Stress Analysis and Elasticity}
+\section*{\fbox{5.1 Stress Concentrations}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 3.10--3.12}}
+\addcontentsline{toc}{section}{5.1 Stress Concentrations}
+\section*{\fbox{\parbox{0.95\linewidth}{5.2 Contact Mechanics and Hertzian Contact Stresses}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 3.13--3.16}}
+\addcontentsline{toc}{section}{5.2 Contact Mechanics and Hertzian Contact Stresses}
+\section*{\fbox{\parbox{0.95\linewidth}{5.3 Advanced Beam Bending: Exact and Approximate Solutions}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 5.1--5.8}}
+\addcontentsline{toc}{section}{5.3 Advanced Beam Bending: Exact and Approximate Solutions}
+\section*{\fbox{5.4 Unsymmetrical Bending}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 5.3}}
+\addcontentsline{toc}{section}{5.4 Unsymmetrical Bending}
+
+\section*{\fbox{5.5 Curved Beam Bending}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 5.13--5.16}}
+\addcontentsline{toc}{section}{5.5 Curved Beam Bending}
+\section*{\fbox{5.6 Shear Center}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 5.10}}
+\addcontentsline{toc}{section}{5.6 Shear Center}
+\section*{\fbox{5.7 Bending of Thin Plates}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster Ch. 13, Part A}}
+\addcontentsline{toc}{section}{5.7 Bending of Thin Plates}
+\section*{\fbox{5.8 Torsion of Prismatic Bars and Tubes}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster Ch. 6}}
+\addcontentsline{toc}{section}{5.8 Torsion of Prismatic Bars and Tubes}
+
+\section*{\fbox{\parbox{0.95\linewidth}{5.9 Plastic Bending and Plastic Hinges (Supplementary)}}}
+\vspace{-0.5em}
+{\small\textit{Ugural and Fenster 12.5--12.8}}
+\addcontentsline{toc}{section}{5.9 Plastic Bending and Plastic Hinges (Supplementary)}
+
+
+\end{document}
