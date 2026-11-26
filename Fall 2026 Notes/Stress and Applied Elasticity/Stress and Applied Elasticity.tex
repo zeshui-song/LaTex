@@ -9,6 +9,7 @@
 \usepackage{parskip} % Auto-manages paragraph spacing and removes indentations
 \usepackage{siunitx}  % Eases typesetting of numbers and units
 \usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
 
 % US customary units
 \DeclareSIUnit{\inch}{in}
@@ -72,6 +73,12 @@
     top=5pt, bottom=5pt,
     before upper={\textit{Side Note:} \textbf{#1}\par\smallskip}
 }
+% Default image width is 0.8\textwidth, can be overridden by optional argument \img[0.5]{overview.png}
+\newcommand{\img}[2][0.8]{%
+    \begin{center}
+        \includegraphics[width=#1\textwidth]{#2}
+    \end{center}
+}
 
 \begin{document}
 
@@ -81,46 +88,714 @@
 \hrule
 \vspace{1.5em}
 \begin{center}
-    {\large\bfseries Introduction: Overview of Mechanics of Materials and the Theory of Elasticity\par}
+    {\large\bfseries Introduction: Overview of ME-300\par}
 \end{center}
-\addcontentsline{toc}{section}{Introduction: Overview of Mechanics of Materials and the Theory of Elasticity}
+The overarching goal of solid mechanics is to achieve satisfactory mechanical performance by bringing together loading, stress, strain, and material properties. \textit{This goal hasn't changed since Mechanics of Materials (ESC-201).} What is different in ME-300 is that we will be able to analyze more general and complex cases of stress and strain instead of simplified cases.
 
+Regardless of the approach or model, given a body of a particular geometry, material, loading, and constraints, we seek to determine its mechanical response and evaluate whether it satisfies the design requirements. 
+\img[0.8]{overview.png}
+\subsection*{Connecting Statics to Mechanics of Materials to Elasticity}
+\begin{itemize}
+    \item \textbf{Statics: Forces acting on a body}\\
+    In statics, bodies are typically treated as rigid. We are mostly concerned with the equilibrium of forces and moments in determining external reactions and internal forces.
+    \[
+\sum\vec F=0,\qquad \sum\vec M=0
+\]
+    However, we don't consider how the body deforms under the applied loads or how internal forces are distributed within the material.
+    \item \textbf{Mechanics of Materials: Simplified models of deformable bodies}\\
+    In MechMat, we took the ideas from statics and combined them with Materials Science to introduce stress, strain, and deformation. \hl{By making simplifying assumptions about geometry, loading and deformation, we obtain relatively simple analytical models.}\newpage
+\noindent
+\begin{minipage}[c]{0.40\textwidth}
+    \centering
+    \includegraphics[width=0.5\linewidth]{axial.png}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.55\textwidth}
+    \textbf{Axial loading}
 
+    \smallskip
+    Uniform normal stress distribution.
+
+    \medskip
+    $\displaystyle \sigma_x = \frac{P}{A}$
+\end{minipage}
+
+\begin{center}
+    \color{gray!50}\rule{0.9\textwidth}{0.3pt}
+\end{center}
+
+\noindent
+\begin{minipage}[c]{0.40\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{beam.png}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.55\textwidth}
+    \textbf{Beam bending}
+
+    \smallskip
+    Linear normal stress distribution from the neutral axis
+    under pure bending.
+
+    \medskip
+    $\displaystyle \sigma_x = -\frac{My}{I}$
+\end{minipage}
+
+\begin{center}
+    \color{gray!50}\rule{0.9\textwidth}{0.3pt}
+\end{center}
+
+\noindent
+\begin{minipage}[c]{0.40\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{torsion.png}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.55\textwidth}
+    \textbf{Circular shaft torsion}
+
+    \smallskip
+    Linear shear stress distribution with radial\\ position.
+
+    \medskip
+    $\displaystyle \tau = \frac{T\rho}{J}$
+\end{minipage}\\\\
+These are some of the simplified models we studied in MechMat. However, these models are restricted to specific geometries, loading conditions, and the assumptions used to derive them.
+    \item \textbf{Theory of Elasticity: Generalized models of deformable bodies}\\
+    Rather than applying the simplified models from MechMat, the theory of elasticity establishes the general equations that stress, strain, and displacement fields must satisfy.\\\\
+    For example, instead of only calculating the bending stress at a particular cross-section, we can investigate an entire stress field:
+\[
+\sigma_x(x,y,z),\quad \sigma_y(x,y,z),\quad
+\tau_{xy}(x,y,z),\quad \ldots
+\]  
+This allows us to investigate more complicated geometries, loading conditions and localized mechanical behavior.\\\\
+Note that the MechMat models can be thought of as special, simplified cases of the general elasticity models!
+\end{itemize}
+\newpage
+\phantomsection
 \begin{center}
     {\large\bfseries Part I: Fundamentals of Stress and Strain Analysis\par}
 \end{center}
-\addcontentsline{toc}{section}{Part I: Fundamentals of Stress and Strain Analysis}
-\section*{\fbox{\parbox{0.95\linewidth}{1.1 Review of Elementary Mechanics of Materials}}}
-\vspace{-0.5em}
-{\small\textit{Ugural and Fenster 1.4--1.7}}
-\addcontentsline{toc}{section}{1.1 Review of Elementary Mechanics of Materials}
-
-
-\section*{\fbox{\parbox{0.95\linewidth}{1.2 Traction and the Infinitesimal Stress Tensor}}}
+\addcontentsline{toc}{part}{Part I: Fundamentals of Stress and Strain Analysis}
+\section*{\fbox{\parbox{0.95\linewidth}{1.1 Traction and the Infinitesimal Stress Tensor}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 1.5, 1.7, 1.12, 1.14}}
-\addcontentsline{toc}{section}{1.2 Traction and the Infinitesimal Stress Tensor}
+\addcontentsline{toc}{section}{1.1 Traction and the Infinitesimal Stress Tensor}
+\subsection*{Stress at a point vs stress on a plane}
+In MechMat, we usually calculate normal and shear stresses on a particular cross-section of a body. However, at any given point within a body, we can consider an infinite number of planes passing through that point, each with its own unit normal vector describing its orientation.
 
+The normal and shear stresses acting on each of these planes may be different, even though they describe the same physical state of stress at that point. In other words, changing the orientation of the plane changes the stresses acting on that plane without changing the underlying physical state of stress.
 
-\section*{\fbox{\parbox{0.95\linewidth}{1.3 Stress Transformations, Principal Stresses, and Stress Invariants}}}
+This method of describing stresses is useful in cases where there exists a joint (e.g. glued joint, welded joint, etc.) that is not aligned with the loading direction of a structural member. By using stress transformations, we can determine the normal and shear stresses acting on the plane containing the joint and better predict failure.
+\img[]{stress in a plane.png}
+Instead of independently calculating the stresses on infinitely many possible planes, we describe the local state of stress using a stress tensor. Then, on any given plane defined by its unit normal vector $\hat n$, we can calculate the force per unit area acting on that plane, called the traction vector $\vec p$. 
+\subsection*{Traction Vector}
+The traction vector \(\vec p\) describes the force per unit area acting on an infinitesimal surface with outward unit normal vector \(\hat n\).
+\[
+\boxed{\vec p=\lim_{\Delta A\to0}\frac{\Delta\vec F}{\Delta A}}
+\]
+The traction vector and unit normal vector are expressed in Cartesian coordinates as
+\[
+\vec p=p_x\hat i+p_y\hat j+p_z\hat k
+\]
+\[
+\hat n=l\hat i+m\hat j+n\hat k
+\]
+where \(l,m,n\) are the \textbf{direction cosines}:
+\[
+\boxed{\begin{aligned}
+l&=\cos\alpha=\hat n\cdot\hat i\\
+m&=\cos\beta=\hat n\cdot\hat j\\
+n&=\cos\gamma=\hat n\cdot\hat k
+\end{aligned}}
+\]
+Here, \(\alpha,\beta,\gamma\) are the angles between \(\hat n\) and the \(x,y,z\) axes, respectively.
+\img[0.4]{direction cosine.png}
+Since \(\hat n\) is a unit vector,
+\[
+l^2+m^2+n^2=1
+\]
+\textbf{Derivation of traction components}\\
+Consider an infinitesimal tetrahedron with three faces oriented in the \(-x,-y,-z\) directions and a fourth face with outward unit normal \(\hat n\).
+\img[0.5]{traction components.png}
+From static equilibrium in the \(x\)-direction:
+\[
+\sum F_x=0\quad\implies\quad
+p_x\Delta A-\sigma_xl\Delta A
+-\tau_{yx}m\Delta A-\tau_{zx}n\Delta A=0
+\]
+\[
+\boxed{p_x=\sigma_xl+\tau_{yx}m+\tau_{zx}n}
+\]
+Similarly, applying equilibrium in the \(y\) and \(z\) directions:
+\[
+\boxed{
+\begin{aligned}
+p_y&=\tau_{xy}l+\sigma_ym+\tau_{zy}n\\
+p_z&=\tau_{xz}l+\tau_{yz}m+\sigma_zn
+\end{aligned}}
+\]
+Recall that the first stress subscript denotes the face orientation, while the second denotes the direction in which the stress acts.
+\img[0.4]{3D state of stress.png}
+\textbf{Matrix representation}\\
+Define the traction and normal vectors:
+\[
+\vec p=
+\begin{bmatrix}
+p_x\\p_y\\p_z
+\end{bmatrix},
+\qquad
+\hat n=
+\begin{bmatrix}
+l\\m\\n
+\end{bmatrix}
+\]
+Then, define the \textbf{stress tensor}:
+\[
+\boxed{
+[\tau]\equiv
+\begin{bmatrix}
+\sigma_x&\tau_{xy}&\tau_{xz}\\
+\tau_{yx}&\sigma_y&\tau_{yz}\\
+\tau_{zx}&\tau_{zy}&\sigma_z
+\end{bmatrix}
+}
+\]
+The traction component equations can then be expressed as a matrix-vector product:
+\[
+\begin{bmatrix}
+p_x\\p_y\\p_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sigma_x&\tau_{yx}&\tau_{zx}\\
+\tau_{xy}&\sigma_y&\tau_{zy}\\
+\tau_{xz}&\tau_{yz}&\sigma_z
+\end{bmatrix}
+\begin{bmatrix}
+l\\m\\n
+\end{bmatrix}
+\]
+Thus,
+\[
+\vec p=[\tau]^{tr}\cdot\hat n
+\]
+However, because the stress tensor is symmetric due to shear stress symmetry, $[\tau]^{tr}=[\tau]$. We can also write
+\[
+\boxed{\vec p=[\tau]\cdot\hat n}
+\]
+This is \textbf{Cauchy's traction equation}.
+\newpage
+\textbf{Normal and shear components of traction}\\
+The traction vector can be decomposed into its normal and tangential components relative to the plane.
+\img[0.5]{traction normal shear.png}
+Normal stress: Projection of the traction vector onto the unit normal vector.
+\[
+\boxed{\sigma=\vec p\cdot\hat n}
+\]
+Substituting Cauchy's traction equation:
+\[
+\boxed{\sigma=\hat n^{tr}[\tau]\hat n}
+\]
+Shear stress vector: Remaining component of the traction vector after removing its normal component.
+\[
+\boxed{\vec \tau=\vec p-\sigma\hat n}
+\]
+Shear stress magnitude:
+\[
+\boxed{\tau=\sqrt{p_x^2+p_y^2+p_z^2-\sigma^2}}
+\]
+\textbf{Summary}\\
+The stress tensor $[\tau]$ describes the complete state of stress at a point within a material. The traction vector $\vec p$ describes the force per unit area acting on a specific plane that passes through that point with outward normal vector $\hat n$. 
+\section*{\fbox{\parbox{0.95\linewidth}{1.2 Stress Transformations, Principal Stresses, and Stress Invariants}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 1.9--1.15}}
-\addcontentsline{toc}{section}{1.3 Stress Transformations, Principal Stresses, and Stress Invariants}
+\addcontentsline{toc}{section}{1.2 Stress Transformations, Principal Stresses, and Stress Invariants}\\
+Recall that the stress tensor describes the complete state of stress at a point within a material:
+\[
+[\tau]=
+\begin{bmatrix}
+\sigma_x&\tau_{xy}&\tau_{xz}\\
+\tau_{yx}&\sigma_y&\tau_{yz}\\
+\tau_{zx}&\tau_{zy}&\sigma_z
+\end{bmatrix}
+\]
+However, the components of the stress tensor depend on the orientation of the coordinate system.
 
-\section*{\fbox{\parbox{0.95\linewidth}{1.4 Failure Criteria and Factor of Safety}}}
+Stress transformations will allow us to determine the stress tensor components in a new coordinate system that is rotated relative to the original coordinate system, expressing the same physical state of stress relative to a different coordinate system.
+
+This is useful in cases where a material's natural directions of strength are not aligned with the loading direction (such as wood grain or composite fibers), or in cases where failure is expected to occur along planes that are not aligned with the coordinate axes (such as joints, welds, or cracks). Furthermore, under combined loading (e.g. tension and torsion), the principal directions corresponding to the maximum and minimum normal stresses may not align with the original loading directions. Stress transformations allow us to determine the magnitudes and orientations of these principal stresses to better predict potential modes of failure.
+\subsection*{3D Stress Transformations}
+\textbf{Direction Cosine Matrix}\\
+Let \(x,y,z\) denote the original coordinate system and \(x',y',z'\) denote the rotated coordinate system.
+
+The corresponding unit vectors are
+\[
+(\hat \imath,\hat \jmath,\hat k),\qquad
+(\hat \imath',\hat \jmath',\hat k')
+\]
+\img[0.35]{stress transformations.png}
+Express the rotated unit vectors in terms of the original basis vectors:
+\[
+\begin{aligned}
+\hat{\imath}'&=l_1\hat{\imath}+m_1\hat{\jmath}+n_1\hat{k}\\
+\hat{\jmath}'&=l_2\hat{\imath}+m_2\hat{\jmath}+n_2\hat{k}\\
+\hat{k}'&=l_3\hat{\imath}+m_3\hat{\jmath}+n_3\hat{k}
+\end{aligned}
+\]
+The nine direction cosines are organized into the transformation matrix \([L]\):
+\[
+\boxed{
+[L]=
+\begin{bmatrix}
+l_1&m_1&n_1\\
+l_2&m_2&n_2\\
+l_3&m_3&n_3
+\end{bmatrix}
+}
+\]
+Where each direction cosine is defined as the dot product of the rotated unit vector with the original unit vector:
+{
+\setlength{\arraycolsep}{30pt}
+\renewcommand{\arraystretch}{1.2}
+\[
+\begin{array}{c|ccc}
+ & \hat{\imath} & \hat{\jmath} & \hat{k}\\
+\hline
+\hat{\imath}' & l_1 & m_1 & n_1\\
+\hat{\jmath}' & l_2 & m_2 & n_2\\
+\hat{k}'      & l_3 & m_3 & n_3
+\end{array}
+\]
+}
+\begin{notebox}[]
+    \begin{itemize}
+        \item Dot products are commutative: $\vec a \cdot \vec b = \vec b \cdot \vec a$.
+        \item But matrix multiplication is not commutative: $[A][B]\neq[B][A]$ in general.
+        \item  Matrix multiplication can be thought of a series of dot products between the rows of the first matrix and the columns of the second matrix. \\\\
+        For example:
+        \[
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\begin{bmatrix}
+e & f\\
+g & h
+\end{bmatrix}
+=
+\begin{bmatrix}
+ae+bg & af+bh\\
+ce+dg & cf+dh
+\end{bmatrix}
+\]
+    \end{itemize}
+\end{notebox}
+Because both coordinate systems are orthonormal, it has the properties:
+\[
+\boxed{[L][L]^{tr}=
+\begin{bmatrix}
+\hat{\imath}'\cdot\hat{\imath}'&
+\hat{\imath}'\cdot\hat{\jmath}'&
+\hat{\imath}'\cdot\hat{k}'\\
+\hat{\jmath}'\cdot\hat{\imath}'&
+\hat{\jmath}'\cdot\hat{\jmath}'&
+\hat{\jmath}'\cdot\hat{k}'\\
+\hat{k}'\cdot\hat{\imath}'&
+\hat{k}'\cdot\hat{\jmath}'&
+\hat{k}'\cdot\hat{k}'
+\end{bmatrix}
+=[I]}
+\]
+\textit{After performing the matrix multiplication in terms of the direction cosines $l_1, m_1, n_1, \ldots$, recognize each resulting entry as the dot product of two rotated basis vectors.}
+\[
+\boxed{[L]^{-1}=[L]^{tr}}
+\]
+\textbf{Derivation of the stress transformation equation}\\
+\underline{Step 1:} Calculate the traction vectors on the rotated coordinate planes
+
+Recall Cauchy's traction equation from the previous section:
+\[
+\vec p=[\tau]\hat n
+\]
+For the three rotated coordinate planes, the outward unit normals are
+$\hat{\imath}', \hat{\jmath}', \hat{k}'$.
+
+Therefore,
+\[
+\begin{aligned}
+\vec p_1&=[\tau]\hat{\imath}'\\
+\vec p_2&=[\tau]\hat{\jmath}'\\
+\vec p_3&=[\tau]\hat{k}'
+\end{aligned}
+\]
+Combining these three traction vectors as columns of a matrix:
+\[
+\begin{bmatrix}
+\vec p_1&\vec p_2&\vec p_3
+\end{bmatrix}
+=[\tau]
+\underbrace{
+\begin{bmatrix}
+l_1&l_2&l_3\\
+m_1&m_2&m_3\\
+n_1&n_2&n_3
+\end{bmatrix}
+}_{[L]^{tr}}
+=[\tau][L]^{tr}
+\]
+Now \(\vec p_1,\vec p_2,\vec p_3\) are the traction vectors acting on the planes with outward unit normals \(\hat{\imath}',\hat{\jmath}',\hat{k}'\), respectively. However, their \hl{components are still expressed relative to the original coordinate system.}
+
+\underline{Step 2:} Project the traction vectors onto the rotated coordinate directions.
+
+To obtain the stress components relative to the rotated coordinate system, take the dot product of each traction vector with the rotated unit vectors.
+
+For example, consider for the plane normal to \(\hat{\imath}'\):
+\[
+\begin{aligned}
+\sigma_{x'}&=\vec p_1\cdot\hat{\imath}'\\
+\tau_{x'y'}&=\vec p_1\cdot\hat{\jmath}'\\
+\tau_{x'z'}&=\vec p_1\cdot\hat{k}'
+\end{aligned}
+\]
+
+Repeating this for all three traction vectors and organizing the resulting dot products in matrix form:
+\[\begin{aligned}
+    \begin{bmatrix}
+\hat{\imath}'\cdot\vec p_1&
+\hat{\imath}'\cdot\vec p_2&
+\hat{\imath}'\cdot\vec p_3\\
+\hat{\jmath}'\cdot\vec p_1&
+\hat{\jmath}'\cdot\vec p_2&
+\hat{\jmath}'\cdot\vec p_3\\
+\hat{k}'\cdot\vec p_1&
+\hat{k}'\cdot\vec p_2&
+\hat{k}'\cdot\vec p_3
+\end{bmatrix}
+=& \begin{bmatrix}
+\sigma_{x'} & \tau_{y'x'} & \tau_{z'x'}\\
+\tau_{x'y'} & \sigma_{y'} & \tau_{z'y'}\\
+\tau_{x'z'} & \tau_{y'z'} & \sigma_{z'}
+\end{bmatrix}\\
+=&
+\underbrace{
+\begin{bmatrix}
+l_1&m_1&n_1\\
+l_2&m_2&n_2\\
+l_3&m_3&n_3
+\end{bmatrix}
+}_{[L]}
+\underbrace{
+\begin{bmatrix}
+\vec p_1&\vec p_2&\vec p_3
+\end{bmatrix}
+}_{[\tau][L]^{tr}}\\
+=& [\tau']^{tr}
+\end{aligned}
+\]
+Like before, since the stress tensor is symmetric, \([\tau']^{tr}=[\tau']\).
+
+Therefore, the general three-dimensional stress transformation equation is
+\[
+\boxed{[\tau']=[L][\tau][L]^{tr}}
+\]
+
+Inverse stress transformation
+Since \([L]^{-1}=[L]^{tr}\),
+\[
+\boxed{[\tau]=[L]^{tr}[\tau'][L]}
+\]
+\textit{Intuition:} We have to transform the stress tensor twice using the direction cosine matrix \([L]\). This makes sense since each stress component (e.g. $\tau_{xy}$) is defined in terms of TWO coordinate directions (one for the plane orientation and one for the stress direction)! 
+
+Therefore, we need to transform both:
+\[
+\begin{gathered}
+[\tau]\\
+\text{Original planes, original component directions}\\[4pt]
+\downarrow\\[4pt]
+\text{Right-multiply by } [L]^{tr}\\
+[\tau][L]^{tr}\\
+\text{Rotated planes, original component directions}\\[4pt]
+\downarrow\\[4pt]
+\text{Left-multiply by } [L]\\
+[L][\tau][L]^{tr}=[\tau']\\
+\text{Rotated planes, rotated component directions}
+\end{gathered}
+\]
+\begin{notebox}[]
+    Since matrix multiplication is not commutative, the order of multiplication matters. We must multiply both sides of a matrix equation \textit{from the same side} to maintain equality.\\\\
+    For example:
+    \[
+[A][B]=[C]
+\]
+Right-multiply both sides by $[B]^{-1}$:
+\[
+[A][B][B]^{-1}
+=[C][B]^{-1}
+\]
+Then left-multiply both sides by $[A]^{-1}$:
+\[[A]^{-1}[A]
+=[A]^{-1}[C][B]^{-1}
+\]
+We get:
+\[
+[I]=[A]^{-1}[C][B]^{-1}
+\]
+\textit{The order of the left/right multiplication doesn't matter, so long as it is done consistently.}
+\end{notebox}
+\subsection*{Two-dimensional stress transformations}
+The 2D stress transformations using Mohr's circle from MechMat are a special case of the general 3D stress transformations. By rotating the coordinate axes about a principal direction (an axis normal to a shear-free plane), we only need to consider the transformation of stresses in the remaining two coordinate directions.
+\newpage
+\textbf{Mohr's Circle}\\
+Consider an in-plane rotation of the $x$-$y$ coordinate axes for a 2D state of stress in which the $z$-direction is a principal direction:
+\img[0.5]{in plane rotation.png}
+We can use the Mohr's circle construction to determine the normal and shear stresses acting on the rotated plane.
+\img[0.8]{Mohr's circle.png}
+\textit{Note: the physical state of stress is unchanged, we are simply determining the stress components acting on the rotated faces and expressing them in the rotated coordinate system.}
+\newpage
+\underline{Mohr's circle interpretation:}
+\begin{enumerate}
+    \item Plot points \(X\) and \(Y\) corresponding to the original, untransformed stress components:
+\[
+X=(\sigma_x,-\tau_{xy}),\qquad
+Y=(\sigma_y,\tau_{xy})
+\]
+\item Calculate the average normal stress and difference in normal stresses:
+\[
+\sigma_{\mathrm{ave}}=\frac{\sigma_x+\sigma_y}{2},
+\qquad \Delta\sigma=\sigma_x-\sigma_y
+\]
+\item Determine the center and radius of Mohr's circle:
+\[
+C=(\sigma_{\mathrm{ave}},0),\qquad
+R=\sqrt{\left(\frac{\Delta\sigma}{2}\right)^2+\tau_{xy}^2}
+\]
+\item Construct Mohr's circle centered at \(C\) and passing through \(X\) and \(Y\).\\\\
+\hl{All possible combinations of normal and shear stress obtained by rotating the coordinate axes about the $z$-axis are represented by points on Mohr's circle.}
+\item \hl{A physical counterclockwise rotation of the coordinate axes by \mbox{$\theta$} corresponds to a counterclockwise rotation by \mbox{$2\theta$} on Mohr's circle:}
+\img[0.7]{rotation on mohr's.png}
+\end{enumerate}
+\newpage
+\textit{Summary of Mohr's Circle eqns:}\\
+Define:
+\[
+\Delta\sigma=\sigma_x-\sigma_y,\qquad
+\sigma_{ave}=\frac{\sigma_x+\sigma_y}{2},\qquad R=\sqrt{\left(\frac{\Delta\sigma}{2}\right)^2+\tau_{xy}^2}
+\]
+Transformed stresses:
+\[
+\boxed{
+\sigma_{x'}=\sigma_{ave}
++\frac{\Delta\sigma}{2}\cos2\theta
++\tau_{xy}\sin2\theta
+}
+\]
+\[
+\boxed{
+\sigma_{y'}=\sigma_{ave}
+-\frac{\Delta\sigma}{2}\cos2\theta
+-\tau_{xy}\sin2\theta
+}
+\]
+\[
+\boxed{
+\tau_{x'y'}=\tau_{xy}\cos2\theta
+-\frac{\Delta\sigma}{2}\sin2\theta
+}
+\]
+\subsection*{2D Principal Stresses and Principal Directions}
+A \textbf{principal plane} is a plane on which the traction vector is entirely normal to the plane, \hl{such that no shear stress exists.} The normal stress acting on that plane is called a 
+\textbf{principal stress}, and its normal direction is called a 
+\textbf{principal direction}.
+
+From Mohr's circle, it can be seen that there are two principal 
+directions, separated by $90^\circ$, corresponding to the maximum 
+and minimum in-plane normal stresses (where $\tau_{x'y'}=0$):
+\[
+\boxed{\sigma_{\max}=\sigma_{\mathrm{ave}}+R,\quad
+\sigma_{\min}=\sigma_{\mathrm{ave}}-R}
+\]
+
+In terms of the original stress components (substituting the 
+equations for $\sigma_{\mathrm{ave}}$ and $R$):
+\[
+\boxed{
+\sigma_{a,b}=
+\frac{\sigma_x+\sigma_y}{2}
+\pm\sqrt{
+\left(\frac{\sigma_x-\sigma_y}{2}\right)^2
++\tau_{xy}^2
+}}
+\]
+\textit{Note: we are using $a,b$ to denote the principal stresses 
+for now.}
+
+The orientations of the principal directions can be determined from 
+Mohr's circle:
+\[
+\boxed{\tan 2\theta_p=\frac{2\tau_{xy}}{\Delta\sigma}}
+\]
+where the two principal directions are separated by $90^\circ$:
+\[
+\theta_{p2}=\theta_{p1}+90^\circ
+\]
+
+\textbf{Maximum and minimum in-plane shear stresses}\\
+From Mohr's circle, the maximum and minimum in-plane shear stresses 
+occur where \\
+$\sigma_{x'}=\sigma_{y'}=\sigma_{\mathrm{ave}}$:
+\[
+\boxed{\tau_{\max}=R,\quad\tau_{\min}=-R}
+\]
+
+In terms of the original stress components:
+\[
+\tau_{\max}=
+\sqrt{
+\left(\frac{\sigma_x-\sigma_y}{2}\right)^2
++\tau_{xy}^2
+}
+\]
+
+The orientations corresponding to the extreme shear stresses are:
+\[
+\boxed{\tan 2\theta_s=-\frac{\Delta\sigma}{2\tau_{xy}}}
+\]
+\img[0.45]{mohr's circle summary.png}
+\textit{Where $\theta_p$ and $\theta_s$ are the angles corresponding to the principal directions and extreme shear stresses, respectively. Also note that the max/min in plane stresses are not necessarily the max/min stresses in 3D.}
+
+\subsection*{Principal stresses in three dimensions}
+The three-dimensional problem is a generalization of the two-dimensional principal stress problem. Recall Cauchy's traction equation:
+\[
+\vec p=[\tau]\hat n
+\]
+On a principal plane, the shear traction vanishes. 
+\img[0.5]{3d principal.png}
+Therefore,
+\[
+\vec p=\sigma_p\hat n
+\]
+Equating these expressions:
+\[
+[\tau]\hat n=\sigma_p\hat n
+\]
+Introducing the identity matrix \([I]\):
+\[
+\boxed{([\tau]-\sigma_p[I])\hat n=\vec 0}
+\]
+Expressing this explicitly:
+\[
+\begin{bmatrix}
+\sigma_x-\sigma_p&\tau_{xy}&\tau_{xz}\\
+\tau_{xy}&\sigma_y-\sigma_p&\tau_{yz}\\
+\tau_{xz}&\tau_{yz}&\sigma_z-\sigma_p
+\end{bmatrix}
+\begin{bmatrix}
+l\\m\\n
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\0\\0
+\end{bmatrix}
+\]
+If $([\tau]-\sigma_p[I])$ were invertible, multiplying both sides by its inverse would result in the trivial solution $\hat n=\vec 0$. However, since $\hat n$ is a unit vector, it cannot be zero. Therefore, we require a nontrivial solution, which occurs when the determinant of the matrix is zero (matrix is singular and not invertible):
+\[
+\boxed{\det([\tau]-\sigma_p[I])=0}
+\]
+This is the \textbf{characteristic equation} of the stress tensor.
+
+This provides the physical interpretation of eigenvalues and eigenvectors in solid mechanics:
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l l l}
+\hline
+\textbf{Mathematical Quantity} & \textbf{Physical Quantity} & \textbf{Notation} \\
+\hline
+Eigenvalue & Principal stress & $\sigma_p$ \\
+Eigenvector & Principal direction & $\hat{n}$ \\
+Eigenvalue equation & Condition for zero shear stress
+& $[\tau]\hat{n}=\sigma_p\hat{n}$ \\
+Characteristic equation & Condition for nontrivial solutions
+& $\det([\tau]-\sigma_p[I])=0$ \\
+Diagonalization & Stress in principal coordinates
+& $[\tau']=[L][\tau][L]^{tr}$ \\
+\hline
+\end{tabular}
+\end{center}
+\textit{Note: The principal directions (eigenvectors) are obtained by substituting each principal stress $\sigma_p$ into 
+$([\tau]-\sigma_p[I])\hat{n}=\vec{0}$ and solving for 
+$l,m,n$ subject to $l^2+m^2+n^2=1$.}
+
+For the three resulting principal stresses, we can denote them as $\sigma_1,\sigma_2,\sigma_3$ such that
+\[\sigma_1\geq\sigma_2\geq\sigma_3\]
+
+Also note that in principal coordinates, the stress tensor is diagonal:
+\[
+[\tau_p]=
+\begin{bmatrix}
+\sigma_1&0&0\\
+0&\sigma_2&0\\
+0&0&\sigma_3
+\end{bmatrix}
+\]
+\textit{So if we choose the right principal direction cosine matrix $[L]$, we can diagonalize the stress tensor.}
+\begin{notebox}[Stress Invariants]
+    The individual components of the stress tensor change when we rotate the coordinate system. However, the principal stresses do not change because the underlying physical state of stress remains unchanged.\\\\
+Expanding the characteristic equation,
+\[
+\det([\tau]-\sigma_p[I])=0
+\]
+gives
+\[
+\sigma_p^3-I_1\sigma_p^2+I_2\sigma_p-I_3=0
+\]
+where \(I_1,I_2,I_3\) are the three stress invariants.\\\\
+These invariants give a good coordinate-independent sanity check for stress transformation calculations.
+\[
+\boxed{I_1=\sigma_x+\sigma_y+\sigma_z
+=\sigma_{x'}+\sigma_{y'}+\sigma_{z'}
+=\sigma_1+\sigma_2+\sigma_3}
+\]
+For two-dimensional transformations:
+\[
+\boxed{\sigma_x+\sigma_y=\sigma_{x'}+\sigma_{y'}}
+\]
+\textit{We already implicitly used this relationship when we
+defined the center of the 2D Mohr's circle as the average
+normal stress, which remains constant under coordinate rotation.}
+\end{notebox}
+\subsection*{Mohr's circles for three-dimensional stress}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{\fbox{\parbox{0.95\linewidth}{1.3 Failure Criteria and Factor of Safety}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 4.1--4.11}}
-\addcontentsline{toc}{section}{1.4 Failure Criteria and Factor of Safety}
+\addcontentsline{toc}{section}{1.3 Failure Criteria and Factor of Safety}
 
-\section*{\fbox{\parbox{0.95\linewidth}{1.5 Infinitesimal Strain Tensor and Strain Transformations}}}
+\section*{\fbox{\parbox{0.95\linewidth}{1.4 Infinitesimal Strain Tensor and Strain Transformations}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 2.2--2.5}}
-\addcontentsline{toc}{section}{1.5 Infinitesimal Strain Tensor and Strain Transformations}
+\addcontentsline{toc}{section}{1.4 Infinitesimal Strain Tensor and Strain Transformations}
 
+\phantomsection
 \begin{center}
     {\large\bfseries Part II: Governing Equations of Elasticity\par}
 \end{center}
-\addcontentsline{toc}{section}{Part II: Governing Equations of Elasticity}
+\addcontentsline{toc}{part}{Part II: Governing Equations of Elasticity}
 \section*{\fbox{\parbox{0.95\linewidth}{2.1 Kinematic Equations: Strain-Displacement Relations}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 2.2--2.3}}
@@ -161,10 +836,11 @@
 \addcontentsline{toc}{section}{2.7 Plane Stress and Plane Strain}
 
 
+\phantomsection
 \begin{center}
     {\large\bfseries Part III: Analytical Solutions to Elasticity Problems\par}
 \end{center}
-\addcontentsline{toc}{section}{Part III: Analytical Solutions to Elasticity Problems}
+\addcontentsline{toc}{part}{Part III: Analytical Solutions to Elasticity Problems}
 \section*{\fbox{\parbox{0.95\linewidth}{3.1 Airy’s Stress Function and the Biharmonic Equation}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 3.6}}
@@ -189,10 +865,11 @@
 \addcontentsline{toc}{section}{3.4 Principle of Superposition}
 
 
+\phantomsection
 \begin{center}
     {\large\bfseries Part IV: Numerical Methods: Finite Element Analysis\par}
 \end{center}
-\addcontentsline{toc}{section}{Part IV: Numerical Methods: Finite Element Analysis}
+\addcontentsline{toc}{part}{Part IV: Numerical Methods: Finite Element Analysis}
 \section*{\fbox{\parbox{0.95\linewidth}{4.1 Fundamentals of the Finite Element Method}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 7.6--7.7}}
@@ -219,10 +896,11 @@
 {\small\textit{Ugural and Fenster 7.15--7.16}}
 \addcontentsline{toc}{section}{4.6 Finite Element Modeling and Analytical Validation}
 
+\phantomsection
 \begin{center}
     {\large\bfseries Part V: Applications of Stress Analysis and Elasticity\par}
 \end{center}
-\addcontentsline{toc}{section}{Part V: Applications of Stress Analysis and Elasticity}
+\addcontentsline{toc}{part}{Part V: Applications of Stress Analysis and Elasticity}
 \section*{\fbox{5.1 Stress Concentrations}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 3.10--3.12}}
