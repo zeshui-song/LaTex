@@ -669,7 +669,7 @@ The three-dimensional problem is a generalization of the two-dimensional princip
 \[
 \vec p=[\tau]\hat n
 \]
-On a principal plane, the shear traction vanishes. 
+On a principal plane, the shear traction is zero by definition. 
 \img[0.5]{3d principal.png}
 Therefore,
 \[
@@ -704,35 +704,32 @@ If $([\tau]-\sigma_p[I])$ were invertible, multiplying both sides by its inverse
 \]
 This is the \textbf{characteristic equation} of the stress tensor.
 
-This provides the physical interpretation of eigenvalues and eigenvectors in solid mechanics:
+This characteristic equation is an \textit{eigenvalue problem} where:
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{l l l}
 \hline
-\textbf{Mathematical Quantity} & \textbf{Physical Quantity} & \textbf{Notation} \\
+\textbf{Mathematical Quantity} & \textbf{Physical Interpretation} & \textbf{Notation} \\
 \hline
-Eigenvalue & Principal stress & $\sigma_p$ \\
-Eigenvector & Principal direction & $\hat{n}$ \\
-Eigenvalue equation & Condition for zero shear stress
-& $[\tau]\hat{n}=\sigma_p\hat{n}$ \\
+Eigenvalues of $[\tau]$ & Principal stresses & $\sigma_p$ \\
+Eigenvectors of $[\tau]$ & Associated principal axes (orientations) & $\hat{n}$ \\
+Eigenvalue equation & Principal stress and orientation condition
+& $([\tau]-\sigma_p[I])\cdot\hat{n}=\vec{0}$ \\
 Characteristic equation & Condition for nontrivial solutions
 & $\det([\tau]-\sigma_p[I])=0$ \\
-Diagonalization & Stress in principal coordinates
-& $[\tau']=[L][\tau][L]^{tr}$ \\
 \hline
 \end{tabular}
 \end{center}
 \textit{Note: The principal directions (eigenvectors) are obtained by substituting each principal stress $\sigma_p$ into 
 $([\tau]-\sigma_p[I])\hat{n}=\vec{0}$ and solving for 
-$l,m,n$ subject to $l^2+m^2+n^2=1$.}
+$\hat n = l\hat{\imath} + m\hat{\jmath} + n\hat{k}$ subject to $l^2+m^2+n^2=1$.}
 
 For the three resulting principal stresses, we can denote them as $\sigma_1,\sigma_2,\sigma_3$ such that
 \[\sigma_1\geq\sigma_2\geq\sigma_3\]
-
 Also note that in principal coordinates, the stress tensor is diagonal:
 \[
-[\tau_p]=
-\begin{bmatrix}
+[\tau']=[L][\tau][L]^{tr}
+=\begin{bmatrix}
 \sigma_1&0&0\\
 0&\sigma_2&0\\
 0&0&\sigma_3
@@ -764,76 +761,678 @@ For two-dimensional transformations:
 defined the center of the 2D Mohr's circle as the average
 normal stress, which remains constant under coordinate rotation.}
 \end{notebox}
+
 \subsection*{Mohr's circles for three-dimensional stress}
+Let $a,b,c$ denote three mutually perpendicular principal axes with corresponding principal stresses $\sigma_a,\sigma_b,\sigma_c$, without imposing any numerical ordering yet. In these principal coordinates, the transformed stress tensor is diagonal:
+\[
+[\tau']=[L][\tau][L]^{tr}=
+\begin{bmatrix}
+\sigma_a&0&0\\
+0&\sigma_b&0\\
+0&0&\sigma_c
+\end{bmatrix}
+\]
+The plane normal is
+\[
+\hat n=l\hat a+m\hat b+n\hat c
+\]
+From the traction equation:
+\[\begin{aligned}
+\sigma=\vec p\cdot\hat n &= (\sigma_a l)l+(\sigma_b m)m+(\sigma_c n)n\\
+&= \sigma_al^2+\sigma_bm^2+\sigma_cn^2
+\end{aligned}
+\]
+\[
+\tau=\sqrt{p_x^2+p_y^2+p_z^2-\sigma^2}
+\quad\implies\quad 
+\tau^2=(\sigma_a l)^2+(\sigma_b m)^2+(\sigma_c n)^2-\sigma^2
+\]
+\[
+\tau^2=\sigma_a^2l^2+\sigma_b^2m^2+\sigma_c^2n^2-\sigma^2
+\]
+Consider a rotation about the principal axis $a$ (normal to the $bc$ plane). Then $l=0$, substituting and simplifying gives the equation of a circle in the $\sigma$-$\tau$ plane:
+\[
+\boxed{
+\left(\sigma-\frac{\sigma_b+\sigma_c}{2}\right)^2
++\tau^2
+=\left(\frac{\sigma_b-\sigma_c}{2}\right)^2
+}
+\]
+Where the center is at $\sigma_{\mathrm{ave}}=(\sigma_b+\sigma_c)/2$ and the radius is $R=(\sigma_b-\sigma_c)/2$. This matches the 2D Mohr's circle construction.
 
+We can therefore generalize:
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l l l}
+\hline
+\textbf{Axis of rotation} & \textbf{Constraint} & \textbf{Principal stresses defining circle} \\
+\hline
+$\hat{a}$ & $l=0$ & $\sigma_b,\sigma_c$ \\
+$\hat{b}$ & $m=0$ & $\sigma_a,\sigma_c$ \\
+$\hat{c}$ & $n=0$ & $\sigma_a,\sigma_b$ \\
+\hline
+\end{tabular}
+\end{center}
+Each Mohr's circle represents rotation about the principal axis \hl{whose corresponding principal stress is not used to define that circle.} This holds regardless of the numerical ordering.
 
+\textbf{Constructing the 3D Mohr's Circle}\\
+Only after establishing the principal stresses and their corresponding directions do we assign the numerical subscripts, ordering $\sigma_a,\sigma_b,\sigma_c$ from largest to smallest:
+\[
+\sigma_1\geq\sigma_2\geq\sigma_3
+\]
+Plotting the three Mohr's circles in the $\sigma$-$\tau$ plane, we have:
+\img[0.6]{3d mohrs.png}
+\hl{Where the allowable stress states lie within the shaded region bounded by the three Mohr's circles.}
 
+The largest circle is defined by $\sigma_1$ and $\sigma_3$, representing rotation about the principal axis corresponding to $\sigma_2$. Similarly, each of the other two circles represents rotation about the principal axis associated with the remaining principal stress.
 
+\textbf{Absolute maximum shear and normal stresses}\\
+Like the 2D Mohr's circle, the absolute maximum shear stress corresponds to the radius of the largest Mohr's circle:
+\[
+\boxed{\tau_{\max}=\frac{\sigma_1-\sigma_3}{2}}
+\]
 
+Likewise, the absolute maximum and minimum normal stresses correspond to the limits of the largest Mohr's circle:
+Maximum and minimum normal stresses:
+\[
+\boxed{\sigma_{\max}=\sigma_1,\qquad
+\sigma_{\min}=\sigma_3}
+\]
+\begin{notebox}[Problem-Solving Approach: 3D Mohr's Circles]
+\begin{enumerate}
+    \item Before performing stress transformations, examine the geometry, loading conditions, boundary conditions, and resulting stress element to identify any existing principal directions.
 
+    \item If one principal direction is already known, the remaining two principal stresses and directions can be determined through a two-dimensional stress transformation about that axis.
 
+    \item After determining all three principal stresses and their corresponding directions, order the stresses such that
+    \[
+    \sigma_1\geq\sigma_2\geq\sigma_3
+    \]
+    and construct the 3D Mohr's circles accordingly.
+\end{enumerate}
 
-
-
-
-
-
-
-
+\hl{Many seemingly three-dimensional stress analysis problems can be reduced to familiar two-dimensional stress transformation problems through physical inspection alone.}
+\end{notebox}
 
 \section*{\fbox{\parbox{0.95\linewidth}{1.3 Failure Criteria and Factor of Safety}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 4.1--4.11}}
-\addcontentsline{toc}{section}{1.3 Failure Criteria and Factor of Safety}
+\addcontentsline{toc}{section}{1.3 Failure Criteria and Factor of Safety}\\
+Failure criteria account for the combined 3D state of stress to predict material failure, rather than simply comparing individual stress components against the material strength. The appropriate failure criterion depends on the type of material and its failure mechanism.
+\subsection*{Maximum Shear Stress Criterion (Tresca)}
+\textbf{Assumptions and intuition}
+\begin{itemize}
+    \item Isotropic, ductile material with \textit{uniaxial} yield strength \(\sigma_y\)
+    \item \hl{Yielding occurs when the absolute maximum shear stress reaches a critical value}.
+    \item Conservative criterion for predicting ductile material yielding.
+\end{itemize}
+\textbf{Derivation}\\
+Consider a uniaxial tension test:
+\[
+\sigma_x=\frac{F}{A}=\sigma,\qquad \sigma_y=\sigma_z=0
+\]
+\[
+\tau_{xy}=\tau_{xz}=\tau_{yz}=0
+\]
+At the onset of yielding, \(\sigma=\sigma_Y\). From Mohr's circle:
+\[
+\tau_{\max}=\frac{\sigma-0}{2}
+\quad\Rightarrow\quad
+\tau_Y=\frac{\sigma_Y}{2}
+\]
+For a general 3D state of stress with unordered principal stresses
+$\sigma_a,\sigma_b,\sigma_c$, the maximum shear stress criterion requires
+\[
+\boxed{
+\tau_{\max}=\frac{1}{2}\max\left(
+|\sigma_a-\sigma_b|,
+|\sigma_b-\sigma_c|,
+|\sigma_c-\sigma_a|
+\right)\leq\frac{\sigma_Y}{2}
+}
+\]
+Equivalently, when the principal stresses are ordered such that
+$\sigma_1\geq\sigma_2\geq\sigma_3$,
+\[
+\boxed{\sigma_1-\sigma_3\leq\sigma_Y}
+\]
+For plane stress, taking $\sigma_c=0$, the criterion reduces to
+\[
+|\sigma_a-\sigma_b|\leq\sigma_Y,\quad
+|\sigma_a|\leq\sigma_Y,\quad
+|\sigma_b|\leq\sigma_Y
+\]
+These three constraints define the hexagonal region in the
+$\sigma_a$-$\sigma_b$ plane.\\\\
+\noindent
+\begin{minipage}[t]{0.55\textwidth}
+    \vspace{0pt}
+    \begin{itemize}
+        \item Inside: No yielding.
+        \item On the boundary: Onset of yielding.
+        \item Outside: Tresca criterion predicts yielding.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\textwidth}
+    \vspace{0pt}
+    \centering
+    \img[1.0]{tresca.png}
+\end{minipage}\\
+\textbf{Physical interpretation:} Yielding is predicted to begin when the radius of the largest Mohr's circle reaches $\sigma_Y/2$.
+\newpage
+\subsection*{Maximum Distortion Energy Criterion (von Mises)}
+\textbf{Assumptions and intuition}
+\begin{itemize}
+    \item Isotropic, ductile material with \textit{uniaxial} yield strength \(\sigma_y\)
+    \item \hl{Yielding based on the distortional strain energy.}
+    \item Generally more accurate than the Tresca criterion for predicting ductile material yielding.
+\end{itemize}
+\textbf{Derivation}\\
+From the textbook, the distortional energy per unit volume, expressed in terms of the unordered principal stresses $\sigma_a,\sigma_b,\sigma_c$, is:
+\[
+U_{od}=\frac{1+\nu}{6E}
+\left[(\sigma_a-\sigma_b)^2+(\sigma_b-\sigma_c)^2
++(\sigma_c-\sigma_a)^2\right]
+\]
+\textit{Note that since we are squaring the differences between all pairs of principal stresses and summing them up, it doesn't matter whether we order the principal stresses or not; the expression is symmetric!}
 
+For a uniaxial tension test at yielding, substitute
+$\sigma_a=\sigma_Y$, $\sigma_b=\sigma_c=0$:
+\[
+U_{od,Y}=\frac{1+\nu}{3E}\sigma_Y^2
+\]
+Equating $U_{od}=U_{od,Y}$ gives the yield condition:
+\[
+(\sigma_a-\sigma_b)^2+(\sigma_b-\sigma_c)^2
++(\sigma_c-\sigma_a)^2=2\sigma_Y^2
+\]
+Define the von Mises effective stress $\sigma_e$:
+\[
+\boxed{
+\sigma_e=\sqrt{\frac{(\sigma_a-\sigma_b)^2
++(\sigma_b-\sigma_c)^2+(\sigma_c-\sigma_a)^2}{2}}
+}
+\]
+The criterion becomes
+\[
+\boxed{\sigma_e\leq\sigma_Y}
+\]
+For plane stress, taking $\sigma_c=0$, the effective stress reduces to
+\[
+\boxed{\sigma_e=\sqrt{\sigma_a^2-\sigma_a\sigma_b+\sigma_b^2}}
+\]
+\newpage
+The von Mises yield criterion defines an elliptical region enclosing the Tresca hexagon, indicating that the Tresca criterion is more conservative.
+\img[0.4]{von mises.png}
+\subsection*{Mohr's Criterion}
+\textbf{Assumptions and intuition}
+\begin{itemize}
+    \item Isotropic material with \textit{different} uniaxial yield strengths in tension and compression
+    \item Failure occurs when the principal stresses fall outside the failure hexagon.
+    \item \hl{Conservative criterion for brittle material fracture.}
+\end{itemize}
+Define:
+\[
+\sigma_{UT}=\text{Ultimate tensile strength}
+\]
+\[
+\sigma_{UC}=\text{Ultimate compressive strength}
+\]
+Both are defined as positive magnitudes.
+
+
+For a general 3D stress state, order the principal stresses such that
+$\sigma_1\geq\sigma_2\geq\sigma_3$.
+
+The Mohr criterion can be summarized in three cases:
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l l}
+\hline
+\textbf{Stress state} & \textbf{Condition for no fracture} \\
+\hline
+All tensile & $\sigma_1<\sigma_{UT}$ \\
+All compressive & $|\sigma_3|<\sigma_{UC}$ \\
+Combined tension and compression &
+$\displaystyle\frac{\sigma_1}{\sigma_{UT}}
+-\frac{\sigma_3}{\sigma_{UC}}<1$ \\
+\hline
+\end{tabular}
+\end{center}
+\textit{Note that the intermediate principal stress $\sigma_2$ does matter for the criterion.}
+\newpage
+For plane stress, taking $\sigma_c=0$ and using the unordered principal stresses $\sigma_a$ and $\sigma_b$, the criterion defines a hexagonal failure envelope in the $\sigma_a$-$\sigma_b$ plane:
+\img[0.4]{mohrs.png}
+\subsection*{Factor of Safety}
+Define the allowable equivalent stress:
+\[
+\boxed{\sigma_{all}=\frac{\sigma_Y}{FS}}
+\]
+Substitute the allowable stress into the respective failure criterion:
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{l l}
+\hline
+\textbf{Criterion} & \textbf{Design requirement} \\
+\hline
+Tresca & $\displaystyle\tau_{\max}\leq\frac{\sigma_Y}{2FS}$ \\
+Von Mises & $\displaystyle\sigma_e\leq\frac{\sigma_Y}{FS}$ \\
+\hline
+\end{tabular}
+\end{center}
+Alternatively, to determine the factor of safety for a given state of stress:
+\[
+FS_T=\frac{\sigma_Y}{2\tau_{\max}},\quad FS_{VM}=\frac{\sigma_Y}{\sigma_e}
+\]
+\textbf{Important Takeaways:}
+\begin{itemize}
+    \item Always account for the 3D state of stress. Even for plane stress, the zero principal stress may be the maximum or minimum principal stress.
+    \item Choose the appropriate failure criterion based on the material.
+    \item Under combined loading, apply the factor of safety to the material strength $\sigma_Y$ before solving for the allowable load. Do not simply divide the load at yielding by the factor of safety when other loads remain constant.
+\end{itemize}
+\newpage
 \section*{\fbox{\parbox{0.95\linewidth}{1.4 Infinitesimal Strain Tensor and Strain Transformations}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 2.2--2.5}}
-\addcontentsline{toc}{section}{1.4 Infinitesimal Strain Tensor and Strain Transformations}
+\addcontentsline{toc}{section}{1.4 Infinitesimal Strain Tensor and Strain Transformations}\\
+Unlike stress, which describes the distribution of internal forces, strain describes the local deformation of a material.
 
+Much of the mathematics developed for stress transformations can be reused for strain transformations. \textit{The main difference to be careful about is the factor of two associated with engineering shear strain.}
+\subsection*{Displacement field and infinitesimal strain}
+The displacement field describes the displacement of any point $(x,y,z)$ in a body from its original position to its deformed position:
+\[
+\vec u(x,y,z)=u(x,y,z)\hat i+v(x,y,z)\hat j+w(x,y,z)\hat k
+\]
+where $u,v,w$ are the displacement components in the $x,y,z$ directions, respectively. The deformed position of the material point is therefore
+\[
+(x',y',z')=(x+u,y+v,z+w)
+\]
+While displacement describes how much a material point moves, strain describes how the displacement varies between points in the material.
+
+\textbf{Normal Strain}\\
+Normal strain describes the relative change in length of an infinitesimal material line element.
+\[
+\varepsilon=\lim_{\Delta L\to0}\frac{\Delta L'-\Delta L}{\Delta L}
+\]
+Under the infinitesimal deformation assumption:
+\[
+\boxed{
+\varepsilon_x=\frac{\partial u}{\partial x},\qquad
+\varepsilon_y=\frac{\partial v}{\partial y},\qquad
+\varepsilon_z=\frac{\partial w}{\partial z}
+}
+\]
+Deformation due to normal strain for a 2D element in the \(x\)-\(y\) plane:
+\img[0.5]{deformation from normal strain.png}
+\textbf{Engineering shear strain}\\
+Engineering shear strain \(\gamma_{xy}\) describes the decrease in angle, in radians, between two originally perpendicular lines 
+\img[0.5]{engineering shear strain.png}
+\textit{The engineering shear strain $\gamma_{xy}$ represents the change in angle from $\angle DAB$ to $\angle D'AB'$, measured in radians.}
+
+From the small angle approximation, the engineering shear strain can be expressed in terms of the displacement field:
+\[
+\boxed{
+\begin{aligned}
+\gamma_{xy}&=\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}\\
+\gamma_{yz}&=\frac{\partial v}{\partial z}+\frac{\partial w}{\partial y}\\
+\gamma_{xz}&=\frac{\partial u}{\partial z}+\frac{\partial w}{\partial x}
+\end{aligned}
+}
+\]
+The tensor shear strain is defined as half the engineering shear strain:
+\[
+\boxed{\varepsilon_{ij}=\frac{\gamma_{ij}}{2}\qquad(i\ne j)}
+\]
+\hl{This distinction is important when using shear strain in tensor transformations and Mohr's circle.}
+\subsection*{Infinitesimal strain tensor}
+The strain components can be assembled into a symmetric second-order tensor:
+\[
+\boxed{
+[\varepsilon]=
+\begin{bmatrix}
+\varepsilon_x&\frac{\gamma_{xy}}{2}&\frac{\gamma_{xz}}{2}\\
+\frac{\gamma_{xy}}{2}&\varepsilon_y&\frac{\gamma_{yz}}{2}\\
+\frac{\gamma_{xz}}{2}&\frac{\gamma_{yz}}{2}&\varepsilon_z
+\end{bmatrix}
+}
+\]
+\newpage
+In terms of index notation, the entries of the strain tensor are given by:
+\[
+\boxed{
+\varepsilon_{ij}=\frac12
+\left(
+\frac{\partial u_i}{\partial x_j}
++\frac{\partial u_j}{\partial x_i}
+\right)
+}
+\]
+where \(i,j=x,y,z\).
+
+\textit{Note that the strain tensor is symmetric by definition, unlike the stress tensor which is symmetric by shear stress symmetry.}
+\subsection*{Local rotation vs shear strain}
+Define:
+\[
+\alpha_x\approx\frac{\partial v}{\partial x},
+\qquad
+\alpha_y\approx-\frac{\partial u}{\partial y}
+\]
+where \(\alpha_x,\alpha_y\) are the rotations of originally \(x\)- and \(y\)-directed faces, respectively, with CCW rotation positive.
+
+The engineering shear strain is the difference between the two rotations:
+\[
+\boxed{\gamma_{xy}=\alpha_x-\alpha_y
+=\frac{\partial v}{\partial x}+\frac{\partial u}{\partial y}}
+\]
+The local net rotation is the average of the two rotations:
+\[
+\boxed{\omega_z=\frac{\alpha_x+\alpha_y}{2}
+=\frac12\left(\frac{\partial v}{\partial x}
+-\frac{\partial u}{\partial y}\right)}
+\]
+\textit{Note that zero strain does not mean zero displacement, the material element can still undergo rigid body translation and rotation without deformation.}
+\subsection*{Strain transformations}
+Since stress and strain are both second-order tensors, their transformation equations have the same mathematical form. Furthermore, the textbook explicitly states that the stress transformation equations can be converted into strain transformation equations using the substitutions:
+\[
+\boxed{\sigma\rightarrow\varepsilon,\qquad
+\tau\rightarrow\frac{\gamma}{2}}
+\]
+\textbf{General 3D strain transformation}\\
+Using the same direction cosine matrix $[L]$ as for stress transformations, the strain transformation is:
+\[
+\boxed{[\varepsilon']=[L][\varepsilon][L]^{tr}}
+\]
+\newpage
+\textbf{2D Strain transformations}\\
+The approach to 2D strain transformations is the same as for 2D stress transformations. We can use Mohr's circle relations to determine strain transformations in the $x$-$y$ plane:
+\img[0.7]{mohrs strain.png}
+\textit{Note that the Mohr's circle uses the strain tensor shear $\varepsilon_{xy}$ instead of the engineering shear $\gamma_{xy}$}
+
+Otherwise, the usual Mohr's circle relations apply, let:
+\[
+\Delta\varepsilon=\varepsilon_x-\varepsilon_y,\qquad
+\varepsilon_{ave}=\frac{\varepsilon_x+\varepsilon_y}{2}
+\]
+\[
+\boxed{
+\varepsilon_{x'}=\varepsilon_{ave}
++\frac{\Delta\varepsilon}{2}\cos2\theta
++\frac{\gamma_{xy}}{2}\sin2\theta
+}
+\]
+\[
+\boxed{
+\varepsilon_{y'}=\varepsilon_{ave}
+-\frac{\Delta\varepsilon}{2}\cos2\theta
+-\frac{\gamma_{xy}}{2}\sin2\theta
+}
+\]
+\[
+\boxed{\varepsilon_{x'y'}=
+\frac{\gamma_{x'y'}}{2}
+=\frac{\gamma_{xy}}{2}\cos2\theta
+-\frac{\Delta\varepsilon}{2}\sin2\theta
+}
+\]
+The principal directions are defined as the directions where the shear strain is zero \(\varepsilon_{x'y'}=0\):
+\[
+\boxed{\tan2\theta_p=\frac{\gamma_{xy}}{\varepsilon_x-\varepsilon_y}}
+\]
+with corresponding principal strains:
+\[
+\boxed{
+\varepsilon_{a,b}=\varepsilon_{ave}\pm R,\quad 
+R=\sqrt{
+\left(\frac{\Delta\varepsilon}{2}\right)^2+
+\left(\frac{\gamma_{xy}}{2}\right)^2
+}}
+\]
+\begin{examplebox}[Problem Solving Approach for Displacement Gradients and Strains (HW 3 Problem 1)]
+\img[0.5]{hw3 p1.png}
+Approach to finding the strain components $\varepsilon_x,\varepsilon_y,\gamma_{xy}, \varepsilon_{xy}$:
+\begin{itemize}
+    \item Define the strains at point Q using the following equations where $u$ is a displacement along $x$ and $v$ is a displacement along $y$:
+    \[
+    \varepsilon_x=\frac{\partial u}{\partial x},\qquad
+    \varepsilon_y=\frac{\partial v}{\partial y},\qquad
+    \gamma_{xy}=\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}
+    \]
+    \item The shearing strain and angular change is related by
+    \[
+    \varepsilon_{xy}=\frac{1}{2}\gamma_{xy}
+    \]
+    \item Assuming that the strain is small, we can approximate the differentials as displacements relative to Q
+    \[
+    \frac{\partial u}{\partial x}
+    =\frac{\Delta u}{\Delta x}
+    =\frac{u_Q-u_C}{x_Q-x_C},\qquad
+    \frac{\partial v}{\partial x}
+    =\frac{\Delta v}{\Delta x}
+    =\frac{v_Q-v_C}{x_Q-x_C}
+    \]
+    \[
+    \frac{\partial u}{\partial y}
+    =\frac{\Delta u}{\Delta y}
+    =\frac{u_Q-u_A}{y_Q-y_A},\qquad
+    \frac{\partial v}{\partial y}
+    =\frac{\Delta v}{\Delta y}
+    =\frac{v_Q-v_A}{y_Q-y_A}
+    \]
+\end{itemize}
+Given:
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \vspace{0pt}
+    \begin{itemize}
+        \item $u_Q=0.075\,mm$
+        \item $u_C=0.175\,mm$
+        \item $u_A=0.0\,mm$
+        \item $v_Q=-0.05\,mm$
+        \item $v_A=0.025\,mm$
+        \item $v_C=-0.125\,mm$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \vspace{0pt}
+    \begin{itemize}
+        \item $x_Q=0\,mm$
+        \item $x_C=150\,mm$
+        \item $y_A=100\,mm$
+        \item $y_Q=0\,mm$
+    \end{itemize}
+\end{minipage}\\\\
+Verify the infinitesimal strain assumption by checking that all displacement gradients are much less than 1.
+\end{examplebox}
+\newpage
 \phantomsection
 \begin{center}
     {\large\bfseries Part II: Governing Equations of Elasticity\par}
 \end{center}
 \addcontentsline{toc}{part}{Part II: Governing Equations of Elasticity}
-\section*{\fbox{\parbox{0.95\linewidth}{2.1 Kinematic Equations: Strain-Displacement Relations}}}
-\vspace{-0.5em}
-{\small\textit{Ugural and Fenster 2.2--2.3}}
-\addcontentsline{toc}{section}{2.1 Kinematic Equations: Strain-Displacement Relations}
+In Part I, we established the mathematical framework for describing the state of stress and strain in a material. In Part II, we will introduce the governing equations of elasticity, which are needed to solve for the unknown stress and strain fields in a deformable body under external loading.
 
-\section*{\fbox{2.2 Equations of Strain Compatibility}}
+\section*{\fbox{2.1 Equations of Strain Compatibility}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 2.4}}
-\addcontentsline{toc}{section}{2.2 Equations of Strain Compatibility}
+\addcontentsline{toc}{section}{2.1 Equations of Strain Compatibility}\\
+Recall that the stress-displacement relations establish a relationship between six stress components as functions of only three displacement components $u,v,w$. This implies that the six strain components are not independent, and must satisfy certain compatibility conditions to ensure that the resulting strain field is physically possible. 
 
+Therefore, the strain compatibility equations are necessary to ensure that the strain field corresponds to a continuous and single-valued displacement field.
 
-\section*{\fbox{\parbox{0.95\linewidth}{2.3 Constitutive Equations: Generalized Hooke’s Law}}}
+Intuitively, this means that the deformed material must remain continuous such that there aren't any gaps or overlaps in the material. Imagine subdividing a material into infinitesimal elements, the deformation of each element must agree with the deformation of its neighboring elements!
+\subsection*{Derivation of the 2D compatibility equation}
+Recall the strain-displacement relations from Section 1.4:
+\[
+\varepsilon_x=\frac{\partial u}{\partial x},\qquad
+\varepsilon_y=\frac{\partial v}{\partial y},\qquad
+\gamma_{xy}=\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}
+\]
+Differentiating the normal strain components twice:
+\[
+\frac{\partial^2\varepsilon_x}{\partial y^2}
+=\frac{\partial^3u}{\partial x\partial y^2}
+\]
+\[
+\frac{\partial^2\varepsilon_y}{\partial x^2}
+=\frac{\partial^3v}{\partial x^2\partial y}
+\]
+Taking the mixed partial derivative of the engineering shear strain:
+\[
+\frac{\partial^2\gamma_{xy}}{\partial x\partial y}
+=\frac{\partial^3u}{\partial x\partial y^2}
++\frac{\partial^3v}{\partial x^2\partial y}
+\]
+Assuming sufficiently smooth displacement functions such that the order of partial differentiation is interchangeable, we obtain the 2D strain compatibility equation:
+\[
+\boxed{
+\frac{\partial^2\varepsilon_x}{\partial y^2}
++\frac{\partial^2\varepsilon_y}{\partial x^2}
+=\frac{\partial^2\gamma_{xy}}{\partial x\partial y}
+}
+\]
+Alternatively, in terms of tensor shear strain:
+\[
+\boxed{
+\frac{\partial^2\varepsilon_x}{\partial y^2}
++\frac{\partial^2\varepsilon_y}{\partial x^2}
+=2\frac{\partial^2\varepsilon_{xy}}{\partial x\partial y}
+}
+\]
+Notice that we have \hl{eliminated the displacement components entirely, obtaining an equation expressed solely in terms of strains.}
+\subsection*{3D compatibility equations}
+The same procedure can be generalized to three dimensions, resulting in six compatibility equations.
+\[
+\boxed{\begin{aligned}
+\frac{\partial^2\varepsilon_x}{\partial y^2}
++\frac{\partial^2\varepsilon_y}{\partial x^2}
+&=\frac{\partial^2\gamma_{xy}}{\partial x\partial y},
+\qquad&
+2\frac{\partial^2\varepsilon_x}{\partial y\partial z}
+&=\frac{\partial}{\partial x}
+\left(
+-\frac{\partial\gamma_{yz}}{\partial x}
++\frac{\partial\gamma_{xz}}{\partial y}
++\frac{\partial\gamma_{xy}}{\partial z}
+\right)
+\\[10pt]
+\frac{\partial^2\varepsilon_y}{\partial z^2}
++\frac{\partial^2\varepsilon_z}{\partial y^2}
+&=\frac{\partial^2\gamma_{yz}}{\partial y\partial z},
+\qquad&
+2\frac{\partial^2\varepsilon_y}{\partial z\partial x}
+&=\frac{\partial}{\partial y}
+\left(
+\frac{\partial\gamma_{yz}}{\partial x}
+-\frac{\partial\gamma_{xz}}{\partial y}
++\frac{\partial\gamma_{xy}}{\partial z}
+\right)
+\\[10pt]
+\frac{\partial^2\varepsilon_z}{\partial x^2}
++\frac{\partial^2\varepsilon_x}{\partial z^2}
+&=\frac{\partial^2\gamma_{xz}}{\partial z\partial x},
+\qquad&
+2\frac{\partial^2\varepsilon_z}{\partial x\partial y}
+&=\frac{\partial}{\partial z}
+\left(
+\frac{\partial\gamma_{yz}}{\partial x}
++\frac{\partial\gamma_{xz}}{\partial y}
+-\frac{\partial\gamma_{xy}}{\partial z}
+\right)
+\end{aligned}}
+\]
+\textit{All strain fields must satisfy compatibility. This is automatically satisfied for strains derived from sufficiently smooth displacement fields, but must be explicitly enforced when solving directly for strain or stress fields.}
+\section*{\fbox{\parbox{0.95\linewidth}{2.2 Constitutive Equations:\\ Generalized Hooke’s Law}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 2.7--2.10}}
-\addcontentsline{toc}{section}{2.3 Constitutive Equations: Generalized Hooke’s Law}
+\addcontentsline{toc}{section}{2.2 Constitutive Equations: Generalized Hooke’s Law}\\
+Like in MechMat, while strain-displacement relations describe how the material deforms geometrically, constitutive equations describe how the material responds mechanically to the deformation.
+
+\textbf{Assumptions}\\
+For the generalized Hooke's law, we assume:
+\begin{itemize}
+    \item The material is linear elastic: stress and strain are linearly related, deformation is fully recoverable (no yielding or plasticity)
+    \item Homogeneous: material properties are uniform throughout the body
+    \item Isotropic: material properties are the same in all directions
+    \item Small deformations: the infinitesimal strain assumption holds
+\end{itemize}
+\subsection*{Derivation of the generalized Hooke's law}
+Recall from MechMat that for a uniaxial loading in the \(x\)-direction:
+\[
+\varepsilon_x=\frac{\sigma_x}{E},\qquad
+\varepsilon_y=\varepsilon_z=-\nu\frac{\sigma_x}{E}
+\]
+\textit{Where the modulus of elasticity $E$ describes a lengthening in the direction of loading, and Poisson's ratio $\nu$ describes a shortening in the transverse directions.}
+
+\textbf{Biaxial loading}\\
+For biaxial loading in the $x$- and $y$-directions, 
+consider the deformation in the $x$-direction as shown 
+in the figure below.
+\img[0.5]{multiaxial loading.png}
+Tensile stress $\sigma_x$ causes an elongation in 
+the $x$-direction, while the tensile stress $\sigma_y$ 
+causes a contraction in the $x$-direction due to the 
+Poisson effect.
+
+By superposition, the net strain in the $x$-direction is
+\[
+\varepsilon_x=
+\underbrace{\frac{\sigma_x}{E}}_{\text{Direct elongation}}
+-
+\underbrace{\frac{\nu\sigma_y}{E}}_{\text{Poisson contraction}}
+\]
+
+Extending this approach to loading in all three directions 
+and repeating for each strain component gives generalized 
+Hooke's law.
+
+\textbf{Generalized Hooke's law (multiaxial loading)}\\
+Accounting for the Poisson effect in all three directions, the generalized Hooke's law is:
+\[
+\boxed{
+\begin{aligned}
+\varepsilon_x&=\frac{1}{E}[\sigma_x-\nu(\sigma_y+\sigma_z)]
+&\qquad \gamma_{xy}&=\frac{\tau_{xy}}{G}
+\\[6pt]
+\varepsilon_y&=\frac{1}{E}[\sigma_y-\nu(\sigma_x+\sigma_z)]
+&\qquad \gamma_{yz}&=\frac{\tau_{yz}}{G}
+\\[6pt]
+\varepsilon_z&=\frac{1}{E}[\sigma_z-\nu(\sigma_x+\sigma_y)]
+&\qquad \gamma_{xz}&=\frac{\tau_{xz}}{G}
+\end{aligned}
+}
+\]
+Where $E$ is the modulus of elasticity (Young's modulus), $\nu$ is Poisson's ratio, and $G$ is the shear modulus. 
+
+These three properties are related to each other in linear isotropic materials by the equation:
+\[
+\boxed{G=\frac{E}{2(1+\nu)}}
+\]
+\textit{Note that due to the Poisson effect, a zero normal stress in a direction does not imply a zero normal strain in that direction. Likewise, zero strain does not imply zero stress.}
 
 
-\section*{\fbox{\parbox{0.95\linewidth}{2.4 Differential Equations of Stress Equilibrium}}}
+\section*{\fbox{\parbox{0.95\linewidth}{2.3 Differential Equations of Stress Equilibrium}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 1.8}}
-\addcontentsline{toc}{section}{2.4 Differential Equations of Stress Equilibrium}
+\addcontentsline{toc}{section}{2.3 Differential Equations of Stress Equilibrium}
 
 
-\section*{\fbox{\parbox{0.95\linewidth}{2.5 Stress and Displacement Boundary Conditions}}}
+\section*{\fbox{\parbox{0.95\linewidth}{2.4 Stress and Displacement Boundary Conditions}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 1.16, 3.2}}
-\addcontentsline{toc}{section}{2.5 Stress and Displacement Boundary Conditions}
+\addcontentsline{toc}{section}{2.4 Stress and Displacement Boundary Conditions}
 
-\section*{\fbox{\parbox{0.95\linewidth}{2.6 Formulation of the General Elasticity Problem}}}
+\section*{\fbox{\parbox{0.95\linewidth}{2.5 Formulation of the General Elasticity Problem}}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 3.1--3.2}}
-\addcontentsline{toc}{section}{2.6 Formulation of the General Elasticity Problem}
+\addcontentsline{toc}{section}{2.5 Formulation of the General Elasticity Problem}
 
 
-\section*{\fbox{2.7 Plane Stress and Plane Strain}}
+\section*{\fbox{2.6 Plane Stress and Plane Strain}}
 \vspace{-0.5em}
 {\small\textit{Ugural and Fenster 3.3--3.5}}
-\addcontentsline{toc}{section}{2.7 Plane Stress and Plane Strain}
+\addcontentsline{toc}{section}{2.6 Plane Stress and Plane Strain}
 
 
 \phantomsection
